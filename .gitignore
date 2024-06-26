@@ -1,0 +1,16 @@
+# Ignorer les fichiers de compilation et les fichiers temporaires
+*.o
+*.pyc
+*.exe
+*.dll
+*.log
+*.out
+
+# Ignorer le répertoire de dépendances
+/venv/
+/node_modules/
+
+# Ignorer les fichiers contenant des informations sensibles
+secret_key.txt
+credentials.json
+
