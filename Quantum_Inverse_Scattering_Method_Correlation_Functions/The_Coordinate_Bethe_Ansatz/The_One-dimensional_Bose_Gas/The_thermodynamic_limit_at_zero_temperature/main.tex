@@ -1,0 +1,121 @@
+Dans la limite thermodynamique, le nombre de particules \( N \) et le volume (ici la longueur de la boîte \( L \)) tendent vers l'infini, de sorte que leur rapport, la densité \( D = N/L \), reste constant :
+
+\begin{eqnarray}
+	N \to \infty, \quad L \to \infty, \quad \text{avec} \quad D = \frac{N}{L} = \text{constante}.	
+\end{eqnarray}
+
+Considérons maintenant le système à température nulle. Rappelons que l'état avec la plus basse énergie dans le secteur à nombre de particules fixé correspond aux solutions \( \lambda_j \) des équations de Bethe suivantes :
+\begin{eqnarray}
+	\lambda_j L + \sum_{k=1}^{N} \theta(\lambda_j - \lambda_k)  & = & 2\pi \left [ j - \left ( \frac{ N +1}{2} \right ) \right ], \quad j=1, \dots, N	
+\end{eqnarray}
+
+où les nombres \( n_j \) sont choisis conformément à l'équation (\ref{eq.2.26}). Dans la limite thermodynamique, les valeurs \( \lambda_j \) se condensent (\( \lambda_{j+1} - \lambda_j = O(1/L) \), voir (\ref{eq.2.23})), et remplissent l'intervalle symétrique \( [ -q, q ] \). En théorie des champs quantiques, cet état est appelé la mer de Dirac, et en physique de l'état solide, la sphère de Fermi, où
+\begin{eqnarray}
+	q = \lim \lambda_N.
+\end{eqnarray}
+Désignons par \( \rho(\lambda) \) la densité de particules dans l'espace des moments (voir (\ref{eq.2.22}), (\ref{eq.2.23}) et le théorème \ref{thm.3}) de la manière suivante :
+\begin{eqnarray}
+	\rho(\lambda)  &=  & \lim \frac{1}{L ( \lambda_{k+1} - \lambda_k )} > 0.
+\end{eqnarray}
+Comme toutes les vacantes à l'intérieur de l'intervalle \( [-q, q] \) sont occupées, on a (voir (\ref{eq.2.31})) :
+\begin{eqnarray}
+	\rho(\lambda) = \rho_t(\lambda) = \frac{dx(\lambda)}{d\lambda} > 0, \quad -q \leq \lambda \leq q.
+\end{eqnarray}
+Par définition, \( \rho(\lambda) \) est positive. La quantité \(L \int \rho(\lambda) d\lambda \) est égale au nombre de particules dans l'intervalle \( [-q, q] \).
+
+Revenons maintenant à l'équation (\ref{eq.2.31}), en remplaçant la somme par une intégrale :
+\begin{eqnarray}
+	\left . \begin{array}{rcl} \displaystyle \frac{1}{L} \sum_{k=1}^{N} K ( \lambda(x) , \lambda_l )  & = & \displaystyle \int_{-N/2L}^{+N/2L} K( \lambda(x) , \lambda( y) ) \, dy \\ & = & \displaystyle \int_{-q}^{+q} K( \lambda(x) , 	\mu ) \rho(\mu)  \, dy, \end{array}\right.
+\end{eqnarray}
+cela conduit à l'équation intégrale linéaire pour \( p(\lambda) \) :
+\begin{eqnarray}
+	\rho(\lambda) - \frac{1}{2\pi } \int_{-q}^q K ( \lambda , \mu ) \rho ( \mu ) \, d\mu  & =&  \frac{1}{2\pi} 
+\end{eqnarray}
+
+
+Cette équation a été obtenue pour la première fois dans \cite{14} ; nous l'appellerons l'équation de Lieb. Dans la méthode de diffusion inverse quantique, \( \lambda \) est le paramètre spectral additif et \( q \) est la valeur du paramètre spectral à la frontière de la sphère de Fermi. (Une définition plus complète de \( q \) est donnée dans la section 9.) À partir de la définition de \( \rho(\lambda) \), on a :
+
+\begin{eqnarray}
+	D & = & \frac{N}{L} = \int_{-q}^q \rho(\lambda) \, d\lambda .	
+\end{eqnarray}
+
+Avec l'aide de cette équation et de l'équation (\ref{eq.3.7}), nous pouvons calculer l'impulsion de Fermi comme une fonction unique de \( D \).
+
+Il est pratique d'introduire l'opérateur linéaire \( \hat{ K} \) avec noyau positif \( K(\lambda, \lambda') \). Cet opérateur agit sur la fonction \( \rho(\lambda) \) de la manière suivante :
+\begin{eqnarray}
+	\left . \begin{array}{rcl} ( \hat{K} p)(\lambda) & = &  \displaystyle \int_{-q}^{q} K(\lambda, \mu) \rho(\mu) d\mu. \\ K ( \lambda , \mu ) & = & \displaystyle \frac{ 2 c }{ c^2 + ( \lambda - \mu )^2 }  \end{array} \right .	
+\end{eqnarray}
+Le fait que l'équation (\ref{eq.3.7}) ait une solution unique découle de la non-dégénérescence de l'opérateur \( 1 - \frac{\hat{K}}{2\pi} \). En prenant la limite thermodynamique (\ref{eq.2.18})\( N \to \infty \) (voir (\ref{eq.2.16}), (\ref{eq.3.7})), on a
+\begin{eqnarray}
+	 \int_{-q}^q d\lambda v ( \lambda )^2 - \frac{1}{2\pi} \int_{-q}^q d \lambda \int_{-q}^q d\mu \, K ( \lambda , \mu ) v ( \lambda ) v ( \mu ) \geq \int_{-q}^{q} \frac{v(\lambda)^2}{2 \pi \rho ( \lambda ) }	\geq 0 
+\end{eqnarray}
+
+
+pour toute fonction réelle \( v(\lambda) \). Ainsi, l'opérateur \( 1 - \frac{\hat{K}}{2\pi} \) est en effet non dégénéré, et ses valeurs propres sont positives, étant séparées de zéro par une lacune \( (2\pi \rho_{\text{max}} )^{-1}\), où \( \rho_{\text{max}} \) est la valeur maximale de \( \rho(\lambda) \) sur l'intervalle \( -q \leq \lambda \leq q \).
+
+On obtient à partir de (\ref{eq.2.23}) que
+\begin{eqnarray}
+\left . \begin{array}{c}  \displaystyle \frac{1}{2\pi} \left ( 1 + 2 \frac{D}{c} \right ) \geq \rho_{ \text{max}} \geq \rho ( \lambda ) \geq \frac{1}{2 \pi } \\ \displaystyle 0 < \frac{1}{2 \pi} K \leq \frac{2D}{2D +c} < 1 \end{array}\right.
+\end{eqnarray}
+
+
+où \( K \) est une valeur propre de l'opérateur \( \hat{K} \). La positivité de \( \hat{K} \) est prouvée dans \cite{14}. Lorsque \( c \to \infty \), le noyau \( K(\lambda, \mu) \to 0 \) et toutes les équations peuvent être résolues exactement. Le modèle est alors équivalent au modèle des fermions libres au point \( c = \infty \) (voir Annexe 1) avec
+\begin{eqnarray}
+	\left . \begin{array}{rclll} \rho(\lambda) & = & \displaystyle \frac{1}{2 \pi} , & & \mbox{lorsque } \vert \lambda \vert  \leq q ; \\ \rho(\lambda) & = & \displaystyle 0 , & & \mbox{lorsque } \vert \lambda \vert  > q. \end{array} \right . 
+\end{eqnarray}
+
+Ainsi, l'état fondamental \( \vert \Omega \rangle \) du système à \( T = 0 \) est construit. Il est décrit par les équations (\ref{eq.3.7}), (\ref{eq.3.8}). Nous avons considéré l'ensemble microcanonique puisque l'état fondamental construit est une fonction propre de l'Hamiltonien. L'énergie de cet état est
+\begin{eqnarray}
+	\frac{ \langle \Omega \vert \operator{H} \vert  \Omega \rangle }{ \langle \Omega \vert \Omega \rangle } = E_L = L \int_{-q}^q \lambda^2 \rho ( \lambda ) \, d\lambda.	
+\end{eqnarray}
+
+
+Discutons maintenant d'une autre approche, celle de l'ensemble grand canonique. On modifie l'Hamiltonien \(  \operator{H}\) en
+\begin{eqnarray}
+	\operator{H}_h = \operator{H} - h\operator{Q}, 	
+\end{eqnarray}
+
+où \(\operator{Q} \) (voir (\ref{eq.1.6})) est l'opérateur du nombre de particules et \( h \) est le potentiel chimique. Un potentiel chimique positif \( (h > 0) \) correspond à une densité positive du gaz à température nulle, et un potentiel chimique négatif correspond à une densité nulle à température nulle (voir section 7). Le nombre de particules \( N \) n'est maintenant plus fixé ; il dépend de la valeur du potentiel chimique, ainsi que de l'énergie de l'état fondamental. Nous rappelons que \( [\operator{H}, \operator{Q}] = 0 \), et dans la section 1, les fonctions propres communes de \( \operator{H} \) et \( operator{Q }\) ont été construites. Les valeurs propres de \( operator{H}_h \) sont
+\begin{eqnarray}
+	E_N^h = \sum_{j=1}^{N} \left( \lambda_j^2 - h \right).	
+\end{eqnarray}
+
+Dans le cadre de l'ensemble grand canonique, nous pouvons considérer des excitations avec un nombre de particules différent de celui de l'état fondamental. De cette manière, nous allons construire des excitations à une particule. Comme l'énergie des particules avec de petits moments \( \lambda_j \) est négative, l'état fondamental de l'Hamiltonien correspond au même ensemble de nombres, (\ref{eq.2.26}) et (\ref{eq.3.2}). Dans la limite thermodynamique, on obtient à nouveau l'équation de Lieb (\ref{eq.3.7}), mais la densité \( D \) et le paramètre \( q \) sont maintenant définis par la valeur du potentiel chimique. Nous définissons la fonction \( \epsilon(\lambda) \) comme la solution de l'équation intégrale linéaire
+\begin{eqnarray}
+	\epsilon(\lambda) + \frac{1}{2 \pi} \int_{-q}^{q} K(\lambda, \mu) \epsilon(\mu) \, d\mu =  \lambda^2-h = \epsilon_0(\lambda)  , 	
+\end{eqnarray}
+
+en imposant que
+\begin{eqnarray}
+	\epsilon(q) = \epsilon(-q) = 0 		
+\end{eqnarray}
+
+
+Cette condition définit de manière unique la dépendance de \( q \) par rapport à \( h \). La densité \( D \), également définie par \( h \), est donnée par (\ref{eq.3.8}).
+
+Dans les sections suivantes, nous examinerons la thermodynamique du modèle à température non nulle. Les équations (\ref{eq.3.16}) et (\ref{eq.3.17}) seront obtenues naturellement dans la limite de température nulle (voir section 7), prouvant ainsi l'existence et l'unicité des deux équations (\ref{eq.3.16}) et (\ref{eq.3.17}). Il sera également montré que la fonction \( \epsilon(\lambda) \) possède les propriétés suivantes :
+
+\begin{eqnarray}
+	&&\left \{ \begin{array}{rclr} \epsilon'(\lambda) & > & 0 & \mbox{si} ~\lambda > 0 \\ \epsilon(\lambda ) & = & \epsilon(-\lambda ) \end{array} \right .\\
+	&&\epsilon ( \lambda ) < 0 ~ si ~ \lambda \in ] - q , q [ \\
+	&&\epsilon ( \lambda ) > 0 ~ si ~ \lambda \in  \mathbb{R} \backslash ] - q , q [ 	
+\end{eqnarray}
+
+La signification de la fonction \( \epsilon(\lambda) \) sera clarifiée. Il s'agit de l'énergie d'excitation d'une particule au-dessus de l'énergie de l'état fondamental. L'équation (\ref{eq.3.17}) découle de l'équilibre et montre qu'il n'y a pas de gap dans le spectre d'énergie.
+
+La densité \( D \) est une fonction strictement croissante (donc bijective) du potentiel chimique sur la demi-droite \( h > 0 \) (voir section 7) :
+\begin{eqnarray}
+	\frac{\partial D}{\partial h} > 0, \quad D|_{h=0} = 0, \quad D|_{h = \infty} = \infty.	
+\end{eqnarray}
+
+Pour des potentiels chimiques négatifs \( (h < 0) \), la densité est nulle \( (D = 0) \). Nous verrons que même la thermodynamique diffère de manière essentielle pour des valeurs positives et négatives du potentiel chimique \( h \). Dans la Partie IV, les fonctions de corrélation à température sont évaluées, et elles dépendent qualitativement du signe de \( h \). L'inégalité \( \frac{\partial D}{\partial h} > 0 \) correspond à la condition de stabilité thermodynamique à température nulle.
+
+Nous avons construit l'état fondamental \( | \Omega \rangle \) (le vide physique). L'énergie de l'état fondamental de l'Hamiltonien (\ref{eq.3.14}) est :
+\begin{eqnarray}
+	\frac{ \langle \Omega \vert \operator{H}_h \vert  \Omega \rangle }{ \langle \Omega \vert \Omega \rangle } = E_L^h = L \int_{-q}^q (\lambda^2-h) \rho ( \lambda ) \, d\lambda = \frac{L}{2\pi} \int_{-q}^q \epsilon( \lambda ) \, d \lambda  .	
+\end{eqnarray}
+
+La dérivation de cette dernière égalité est donnée en Annexe 4, voir les formules (\ref{eq.A.4.40})-(\ref{eq.A.4.42}).
+
+Nous avons construit l'état fondamental du gaz de Bose à température nulle avec une densité positive \( D \). Comment peut-on se le représenter ? Les particules dans l'état fondamental se déplacent de manière brownienne. Quelle est la probabilité que sur un certain intervalle d'espace il n'y ait aucune particule ? Cette caractéristique importante montre la relation entre le vide nu (densité nulle) et le vide habillé (véritable état fondamental à densité positive). Elle est calculée dans [12] (voir la formule (9.11) dans cet article).
+

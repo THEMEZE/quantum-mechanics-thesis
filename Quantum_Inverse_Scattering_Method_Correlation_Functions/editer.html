@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur de fichier LaTeX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <style>
+        #editor {
+            height: 500px;
+            width: 50%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Modifier le fichier .tex</h2>
+
+    <div id="editor">% Le fichier LaTeX sera chargé ici</div>
+    <button >Enregistrer ( pour l'instant de fait rien ) </button>
+    <!-- <button onclick="saveFile()">Enregistrer</button> -->
+
+    <script>
+        // Récupérer le paramètre 'file' de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+
+        // Initialiser Ace Editor
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/latex");
+
+        // Désactiver le wrap des lignes pour voir les lignes longues
+        editor.setOptions({
+            wrap: true
+        });
+
+        // Charger dynamiquement le fichier .tex en fonction du paramètre passé dans l'URL
+        if (file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => editor.setValue(data, -1))
+                .catch(error => console.error('Erreur lors du chargement du fichier:', error));
+        } else {
+            alert('Aucun fichier sélectionné.');
+        }
+
+        // Fonction pour enregistrer les modifications
+        function saveFile() {
+            const content = editor.getValue();
+            fetch('./save.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ filePath: file, fileContent: content })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Fichier sauvegardé avec succès !');
+                } else {
+                    alert('Erreur lors de la sauvegarde : ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la sauvegarde:', error);
+            });
+        }
+    </script>
+</body>
+</html>
