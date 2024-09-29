@@ -1,0 +1,9 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}The Lieb-Liniger model and the rapidities}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Le décalage de diffusion (ou délai temporel de Wigner)}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}La fonction d'onde de Bethe et les rapidités en tant que moments asymptotiques}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Thermodynamic limit}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Entropy maximization: the Yang-Yang equation}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Rappel Physique statistique}{7}{section.2}%
+\contentsline {section}{\numberline {3}1}{7}{section.3}%
+\contentsline {section}{\numberline {4}Calcul des densités d'états}{8}{section.4}%

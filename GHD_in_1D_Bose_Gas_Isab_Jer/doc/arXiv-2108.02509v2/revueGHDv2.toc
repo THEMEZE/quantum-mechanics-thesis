@@ -1,0 +1,59 @@
+\contentsline {title}{Generalized Hydrodynamics in the 1D Bose gas: theory and experiments}{1}{section*.2}%
+\contentsline {abstract}{Abstract}{1}{section*.1}%
+\contentsline {section}{\numberline {}Introduction}{2}{section*.3}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{5}{section*.4}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}The Lieb-Liniger model and the rapidities}{7}{section*.5}%
+\contentsline {subsection}{\numberline {A}The scattering shift (or Wigner time delay)}{7}{section*.6}%
+\contentsline {subsection}{\numberline {B}The Bethe wavefunction, and the rapidities as asymptotic momenta}{9}{section*.7}%
+\contentsline {subsection}{\numberline {C}Finite density and the Bethe equations}{10}{section*.8}%
+\contentsline {subsection}{\numberline {D}Conserved charges and currents}{11}{section*.9}%
+\contentsline {subsection}{\numberline {E}Thermodynamic limit}{13}{section*.10}%
+\contentsline {subsubsection}{\numberline {1}Thermodynamic form of the Bethe equations}{13}{section*.11}%
+\contentsline {subsubsection}{\numberline {2}The dressing}{14}{section*.12}%
+\contentsline {subsubsection}{\numberline {3}Expectation values of the currents in the thermodynamic limit}{15}{section*.13}%
+\contentsline {subsection}{\numberline {F}Entropy maximization: the Yang-Yang equation}{16}{section*.14}%
+\contentsline {subsection}{\numberline {G}Relaxation in the Lieb-Liniger model}{17}{section*.15}%
+\contentsline {subsection}{\numberline {H}Asymptotic regimes of the Lieb-Liniger gas and approximate descriptions}{18}{section*.16}%
+\contentsline {subsubsection}{\numberline {1}Ideal Bose gas regime}{19}{section*.17}%
+\contentsline {subsubsection}{\numberline {2}The quasicondensate regime}{19}{section*.18}%
+\contentsline {subsubsection}{\numberline {3}Hard-core regime}{20}{section*.19}%
+\contentsline {subsubsection}{\numberline {4}The thermal equilibrium phase diagram}{21}{section*.20}%
+\contentsline {subsubsection}{\numberline {5}The classical field approximation.}{22}{section*.21}%
+\contentsline {section}{\numberline {II}Generalized Hydrodynamics of the 1D Bose gas: theory results}{23}{section*.22}%
+\contentsline {subsection}{\numberline {A}Hydrodynamic approaches to the 1D Bose gas that preceded GHD}{23}{section*.23}%
+\contentsline {subsection}{\numberline {B}Modeling the quantum Newton Cradle setup with GHD}{25}{section*.24}%
+\contentsline {subsection}{\numberline {C}Other setups}{27}{section*.25}%
+\contentsline {subsection}{\numberline {D}Extensions of Euler-scale Generalized Hydrodynamics}{29}{section*.26}%
+\contentsline {subsubsection}{\numberline {1}Adiabatically varying interactions}{29}{section*.27}%
+\contentsline {subsubsection}{\numberline {2}Boltzmann kinetic equation for Bose gas at the 1D-3D crossover}{29}{section*.28}%
+\contentsline {subsubsection}{\numberline {3}Beyond the Euler scale: Navier-Stokes diffusive corrections}{31}{section*.29}%
+\contentsline {subsubsection}{\numberline {4}Quantum fluctuating hydrodynamics}{32}{section*.30}%
+\contentsline {section}{\numberline {III}The 1D Bose gas in cold atom experiments}{35}{section*.31}%
+\contentsline {subsection}{\numberline {A}The 1D regime}{35}{section*.32}%
+\contentsline {subsubsection}{\numberline {1}1D geometries}{35}{section*.33}%
+\contentsline {subsubsection}{\numberline {2}Effective 1D interaction parameter}{36}{section*.34}%
+\contentsline {subsubsection}{\numberline {3}Validity of the assumption of separation of scales}{37}{section*.35}%
+\contentsline {subsection}{\numberline {B}Benchmarking experiments: results at equilibrium}{38}{section*.36}%
+\contentsline {subsubsection}{\numberline {1}Measurement of zero-distance correlation function}{38}{section*.37}%
+\contentsline {subsubsection}{\numberline {2}Analysis of density profiles: Yang-Yang thermodynamics}{39}{section*.38}%
+\contentsline {subsubsection}{\numberline {3}Density fluctuations}{40}{section*.39}%
+\contentsline {subsubsection}{\numberline {4}Techniques for measuring the momentum distribution}{41}{section*.40}%
+\contentsline {subsubsection}{\numberline {5}Results in momentum space}{42}{section*.41}%
+\contentsline {subsubsection}{\numberline {6}Other higher-order correlation functions}{43}{section*.42}%
+\contentsline {subsubsection}{\numberline {7}Validity of the thermodynamic equilibrium}{44}{section*.43}%
+\contentsline {subsection}{\numberline {C}Measurement of the rapidity distribution}{45}{section*.44}%
+\contentsline {section}{\numberline {IV}Experimental tests of Generalized Hydrodynamics}{46}{section*.45}%
+\contentsline {subsection}{\numberline {A}The Quantum Newton Cradle experiment.}{46}{section*.46}%
+\contentsline {subsection}{\numberline {B}Test of GHD in an atom chip setup}{48}{section*.47}%
+\contentsline {subsection}{\numberline {C}Test of GHD in strongly interacting gases}{49}{section*.48}%
+\contentsline {section}{\numberline {V}Atom losses}{53}{section*.49}%
+\contentsline {subsection}{\numberline {A}Loss mechanisms in experiments}{53}{section*.50}%
+\contentsline {subsection}{\numberline {B}Theory of adiabatic losses}{54}{section*.51}%
+\contentsline {subsection}{\numberline {C}$1/\theta ^4$ tails in the rapidity distribution}{56}{section*.52}%
+\contentsline {subsection}{\numberline {D}Results in the quasicondensate regime}{57}{section*.53}%
+\contentsline {subsection}{\numberline {E}Other related recent results}{57}{section*.54}%
+\contentsline {section}{\numberline {}Conclusion and perspectives}{59}{section*.55}%
+\contentsline {section}{\numberline {}Acknowledgments}{60}{section*.56}%
+\contentsline {section}{\numberline {}References}{60}{section*.57}%

@@ -1,0 +1,212 @@
+\section{1}
+
+	Maintenant, considérons la matrice de densité à l'équilibre thermique à la température $T$. Dans le formalisme de la fonction de partition, la matrice de densité peut être écrite comme une exponentielle de l'hamiltonien $H$:
+	\begin{eqnarray}
+		\rho &= &  \frac{e^{-\beta H}}{Z}	
+	\end{eqnarray}
+	où $\beta  = 1/(k_B T)$ est l'inverse de la température, $k_B$ est la constante de Boltzmann et $Z$ est la fonction de partition. La fonction de partition est définie comme
+	
+	\begin{eqnarray}
+		Z &= &  \text{Tr}\left (e^{-\beta H} \right )	
+	\end{eqnarray}
+	
+	où la trace est prise sur tous les états du système.\\
+
+	En utilisant la diagonalisation de l'hamiltonien, on peut écrire la fonction de partition comme une somme sur tous les états propres $\vert n \rangle $ avec les énergies correspondantes $E_n$:
+	\begin{eqnarray}
+		Z &=& \sum_n e^{-\beta E_n}	
+	\end{eqnarray}
+	
+	En utilisant la formule de Stirling pour approximer le logarithme de la factorielle, on peut exprimer la somme ci-dessus comme une intégrale sur l'énergie $E$:
+	\begin{eqnarray}
+		Z &=& \frac{1}{h^N} \int dE \, e^{-\beta E} \, g(E)	
+	\end{eqnarray}
+	où $h$ est la constante de Planck divisée par $2\pi$ et $g(E)$ est la densité d'états d'énergie. La densité d'états est le nombre d'états qui ont une énergie entre $E$ et $E+dE$.\\
+	
+	En utilisant la densité d'états $g(E)$, on peut écrire la fonction de partition $Z$ comme une intégrale sur toutes les configurations possibles des rapides $\{\theta_a\}$:
+	\begin{eqnarray}
+		Z &=& \frac{1}{h^N} \int d\{\theta\} \, e^{-\beta E(\{\theta\})} 	
+	\end{eqnarray}
+	
+	où $E(\{\theta\})$ est l'énergie totale des particules pour une configuration donnée des rapides.\\
+	
+	En utilisant cette expression pour $Z$, on peut écrire la matrice de densité comme une intégrale sur toutes les configurations possibles des rapides:
+	\begin{eqnarray}
+		\rho &= & \frac{1}{h^N} \int d\{\theta\} , e^{-\beta E(\{\theta\})} \, |\{\theta\}\rangle\langle\{\theta\}| \	
+	\end{eqnarray}
+	
+	où $|\{\theta\}\rangle$ est l'état propre correspondant à la configuration des rapides $\{\theta\}$.\\
+	
+	La distribution des rapides $\rho(\theta)$ dans la matrice de densité est donnée par l'expression suivante:
+	\begin{eqnarray}
+		\rho(\theta) &= & \frac{1}{h^N} \int d\{\theta'\} \, e^{-\beta E(\{\theta'\})} \, \delta(\theta - \theta')	
+	\end{eqnarray}
+	
+	où $\delta(\theta-\theta')$ est la fonction delta de Dirac. Cette expression montre que la distribution des rapides est déterminée par la fonction d'énergie $E(\{\theta\})$, qui dépend de l'hamiltonien du système. En général, la fonction d'énergie ne peut pas être calculée exactement, mais des approximations peuvent être utilisées pour estimer la distribution des rapides à l'équilibre thermique.\\
+	
+	En fait, une généralisation directe consiste à considérer la matrice de densité de l'ensemble de Gibbs généralisé (Rigol et al. 2008, 2007), donnée par :
+	\begin{eqnarray}
+		\rho_{GGE} = \frac{1}{Z_{GGE}} e^{-\sum_{j=1}^M \lambda_j Q_j  }	
+	\end{eqnarray}
+
+	
+	où les coefficients $\lambda_j$ sont des multiplicateurs de Lagrange fixés de manière à ce que les valeurs moyennes des charges conservées coïncident avec celles données par l'état thermique, c'est-à-dire :
+	\begin{eqnarray}
+		\langle Q_j \rangle = \text{Tr} ( \rho T_j ) = \frac{1}{Z} \sum_n \langle \Psi_n \vert T_j \vert \Psi_j \rangle e^{- \beta E_n }  = \langle Q_j \rangle_{th}	
+	\end{eqnarray}
+
+	
+	où $T_j$ est une charge conservée et $\langle Q_j \rangle_{th}$ est sa valeur moyenne dans l'état thermique. La fonction de partition $Z_{GGE}$ est définie comme la trace de $\rho_{GGE}$ :
+	\begin{eqnarray}
+		Z_{GGE} & = & 	\text{Tr} ( \rho_{GGE} ) .
+	\end{eqnarray}
+
+	
+	L'état thermique est alors obtenu en prenant la limite $\lambda_j \rightarrow 0$. Le GGE est une généralisation de l'ensemble de Gibbs standard qui prend en compte les charges conservées supplémentaires et permet ainsi de décrire des systèmes qui ne sont pas en équilibre thermique local.\\
+	
+	
+	
+	\section{Calcul des densités d'états}
+        
+        \begin{exer}             
+            \centering            
+            %\input{Tikz_PHD/Physique-Statistique/Equilibre_chimique_2}
+        \end{exer}
+                            
+        
+        %\begin{bclogo}[couleur=red!0,arrondi=0.1,logo=\bclampe , imageBarre=brace, nobreak=false, noborder=true ]{\textsc{Calcul des densités d'états}} %barre=snake,
+        
+            \begin{eqnarray*}
+                \sum_l f(E_l) & = & \int dE \rho(E) f(E) \quad \left \{ \begin{array}{rcl} f & est & \mbox{est une fonction régulière} \\ \rho(E) & est & \mbox{ la densité d'état} \\ \rho(E) dE & \overset{\mbox{def}}{=} & \mbox{nombre d'états dans } [E,E+dE]\end{array}\right.
+            \end{eqnarray*}
+            
+            \begin{eqnarray*}
+                \rho(E) & = & \sum_l \delta( E - E_l ) \quad \mbox{ où la somme est sur les {\em états quantiques }} \\
+                \rho(E) & = & \sum_{E_l} g_l\delta( E - E_l )
+            \end{eqnarray*}
+            
+            \begin{eqnarray*}
+                \Phi (E) & \overset{\mbox{def}}{=} & \mbox{ nombre d'états d'énergies inférieures à E} \\
+                & = &  \int^{E} \rho(E') dE' \\
+                & = & \sum_l \Pi ( E - E_l )  \quad \theta_H = \Pi 
+            \end{eqnarray*}
+            
+            \begin{eqnarray*}
+                \vec{k} = \frac{2\pi}L ( n_1 , \cdots , n_d ) & avec & n_i \int \ZZ \\
+                \Phi(E) = \sum_{\vec{k}} \Pi \left ( E - \frac{\hbar^2 \vec{k}^2}{2m} \right )  & avec & \sum_{\vec{k}} \equiv \bigotimes_{i = 1}^d \sum_{n_i \in \ZZ } =  \sum_{n_i  \in \ZZ } \cdots \sum_{n_d  \in \ZZ } 
+            \end{eqnarray*}
+            
+            %à retenir 
+            
+            \begin{eqnarray*}
+                \sum_{\vec{k}} & = & \frac{V}{(2\pi)^d } \int d^d \vec{k}  \quad d = dim \times n 
+            \end{eqnarray*}
+            
+            $\vec{p} = \hbar \vec{k} $ 
+            
+            \begin{eqnarray*}
+                \Phi(E) & = & \int_{\vec{q_i} \in V } \int  \prod_{i = 1 }^n \left ( \frac{ d^q \vec{q_i} \cdot d^q \vec{p_i} }{h^q} \Pi \left ( E - h_i\left (\vec{q_i}, \vec{p_i}\right )  \right )  \right )  \quad d = q n \\
+                 & = & \int_{\vec{q_i} \in V } \int_{h_i\left (\vec{q_i}, \vec{p_i}\right ) \leq E }   \prod_{i = 1 }^n \left ( \frac{ d^q \vec{q_i} \cdot d^q \vec{p_i} }{h^q}   \right )  \quad q = 1 ,2 ,  3  \\
+                 & = & \frac{1}{h^d} \left ( \begin{array}{c} \mbox{ volume de l'espace des phases occupé}\\ \mbox{ par les microétatas d'énergies } < E \end{array} \right)  
+            \end{eqnarray*}
+            
+            %pour les notation du TD 
+            \begin{eqnarray*}
+                \rho & \overset{\mbox{1 p.c}}{\longleftrightarrow} & \cD \\
+                \Phi & \overset{\mbox{1 p.c}}{\longleftrightarrow}  & \cN 
+            \end{eqnarray*}
+            
+            \begin{eqnarray*}
+                d \cN  (\cE ) &  = & \cD (\cE ) d \cE \\
+                \cD (\cE ) & = & \frac{ d \cN }{ d \cE } (\cE )
+            \end{eqnarray*}
+            
+            \begin{eqnarray*}
+                \overline{N} & = & \int_0^\infty d \cE \cD( \cE) f_{FD} ( \cE)\\
+                \overline{E} & = & \int_0^\infty d \cE \cD( \cE) f_{FD} ( \cE)\cE 
+            \end{eqnarray*}
+
+
+                  
+            \begin{enumerate}
+                \item 
+                \begin{eqnarray*}
+                    \cN( \cE )  & \overset{\mbox{def}}{=} & \mbox{ nombre d'états d'énergies inférieures à E pour une paricule } \\
+                    \cN( \cE )  & = &  g_s  \int_{x_i \in [ 0  , L ] } \int_{p_i^2/(2m) < \cE }  \frac{ d^dx \cdot d^dp }{ h^d }\\
+                     & = &     g_s  \frac{1}{h^d}\underbrace{\int_{x_i \in [ 0  , L ] }  d^dx}_{\displaystyle L^d}   \underbrace{\int_{p_i < \sqrt{2m \cE } } d^dp }_{\displaystyle  \cV_d ( \underbrace{\sqrt{2m\ \cE }}_{\displaystyle R}  )  = \frac{ R^d \pi ^{d/2 }}{\Gamma ( d/2 +2 ) }}\\
+                     & = & g_s  \frac{L^d}{h^d} \frac{ \sqrt[d]{2m\epsilon}  \pi ^{d/2 }}{\Gamma ( d/2 + 1) }\\
+                      & = & \frac{g_s}{\Gamma ( d/2 + 1 ) }  L^d \underbrace{\frac{(2\pi)^d}{h^d}}_{\displaystyle 1/ \hbar^d}   \sqrt[d]{ \frac{ \cE  m }{ 2\pi } }\\
+                      & = & \frac{g_s}{\Gamma ( d/2 +1 ) } \left (  \sqrt{ \frac{ \cE   }{ \varepsilon_0 } } \right )^d  \quad \mbox{où } \varepsilon_0 = \frac{2\pi \hbar^2}{ mL^2} 
+                \end{eqnarray*}
+                
+                \begin{eqnarray*}
+                     \cD ( \cE ) & = &  \underbrace{ \frac{g_s}{\Gamma ( d/2 ) }  \left (  \frac{ 1  }{ \varepsilon_0 }\right )^{d/2}}_{\displaystyle \equiv K_d}  \cE^{ d/2 - 1 }   \quad \mbox{où } \varepsilon_0 = \frac{2\pi \hbar^2}{ mL^2}  
+                \end{eqnarray*}
+                
+                $$
+                \begin{array}{rrrclrcl}                	 
+                	\mbox{Degrès} & & \multicolumn{3}{c}{K_d } & \multicolumn{3}{c}{\mbox{Dépendence en $\mathcal{E}$}}\\ 
+                	\hline
+                	\hline
+                	1 D & \rightarrow & K_1 & = & g_s \frac{L}{h} (2m)^{1/2} & \cD(\cE) & \propto & \cE^{-1/2} \\
+                    2 D & \rightarrow &  K_2 & = & g_s \left ( \frac{L}{h} \right )^2 (2m ) \pi & \cD(\cE) & \propto &  cont \\
+                    3 D & \rightarrow & K_3 & = & 2 g_s \left ( \frac{L}{h} \right )^3 (2m )^{3/2} \pi   & \cD(\cE)  & \propto  &\cE^{1/2} \\ 
+                    \hline
+                	\hline               		
+                \end{array}
+                $$
+                
+
+
+                
+                   
+                
+            \end{enumerate}
+                
+        
+        %\end{bclogo} 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

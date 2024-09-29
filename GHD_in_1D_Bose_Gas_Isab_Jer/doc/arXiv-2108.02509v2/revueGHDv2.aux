@@ -1,0 +1,840 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\newlabel{FirstPage}{{}{1}{}{section*.1}{}}
+\@writefile{toc}{\contentsline {title}{Generalized Hydrodynamics in the 1D Bose gas: theory and experiments}{1}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {abstract}{Abstract}{1}{section*.1}\protected@file@percent }
+\citation{brazier1972interaction}
+\@writefile{toc}{\contentsline {section}{\numberline {}Introduction}{2}{section*.3}\protected@file@percent }
+\newlabel{eq:liouville}{{1}{2}{}{equation.0.1}{}}
+\newlabel{eq:continuity3}{{2}{2}{}{equation.0.2}{}}
+\newlabel{eq:euler}{{3}{2}{}{equation.0.3}{}}
+\citation{castro2016emergent,bertini2016transport}
+\citation{rigol2007relaxation,rigol2008thermalization}
+\citation{percus1976equilibrium,lebowitz1967kinetic,aizenman1975ergodic,boldrighini1983one,spohn2012large,boldrighini1997one,doyon2017dynamics,cao2018incomplete}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The simplest system that exhibits `Generalized Hydrodynamics' is arguably the classical hard rod gas, i.e. identical billiard balls whose motion is restricted to a line. Left: the balls collide elastically and exchange their velocities. One can re-index the balls after each collision so that the `bare' velocity $v_j$ is constant (here the red ball is the one with velocity $v_2$ at any time). Right: at large distance and time scales, the effective velocity of the red ball $v^{\rm  eff}$ (red trajectory) is different from its `bare' velocity $v$ (orange trajectory). The `Generalized Hydrodynamics' description of the hard rod gas (\ref {eq:GHDintro}) is an Euler hydrodynamic limit where the interactions between the particles enter through the effective velocity.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:hardrod}{{1}{3}{The simplest system that exhibits `Generalized Hydrodynamics' is arguably the classical hard rod gas, i.e. identical billiard balls whose motion is restricted to a line. Left: the balls collide elastically and exchange their velocities. One can re-index the balls after each collision so that the `bare' velocity $v_j$ is constant (here the red ball is the one with velocity $v_2$ at any time). Right: at large distance and time scales, the effective velocity of the red ball $v^{\rm eff}$ (red trajectory) is different from its `bare' velocity $v$ (orange trajectory). The `Generalized Hydrodynamics' description of the hard rod gas (\ref {eq:GHDintro}) is an Euler hydrodynamic limit where the interactions between the particles enter through the effective velocity}{figure.1}{}}
+\citation{percus1976equilibrium}
+\citation{boldrighini1983one}
+\citation{cao2018incomplete}
+\citation{castro2016emergent,bertini2016transport}
+\citation{kinoshita2006quantum}
+\citation{castro2016emergent,bertini2016transport}
+\newlabel{eq:GHDintro}{{4}{4}{}{equation.0.4}{}}
+\newlabel{eq:introGHD_continuity}{{5}{4}{}{equation.0.5}{}}
+\@writefile{toc}{\tocdepth@munge}
+\@writefile{toc}{\contentsline {section}{\numberline {}Contents}{5}{section*.4}\protected@file@percent }
+\gdef \tocmax@section{18.6667pt}
+\gdef \tocmax@subsection{15.12502pt}
+\gdef \tocmax@subsubsection{12.2778pt}
+\gdef \tocmax@paragraph{5.0pt}
+\gdef \tocmax@appendix{5.0pt}
+\gdef \tocmax@pagenum{10.00003pt}
+\@writefile{toc}{\tocdepth@restore}
+\citation{lieb1963exact}
+\citation{korepin1997quantum,gaudin2014bethe}
+\citation{eisenbud1948formal}
+\citation{wigner1955lower}
+\citation{wigner1955lower}
+\@writefile{toc}{\contentsline {section}{\numberline {I}The Lieb-Liniger model and the rapidities}{7}{section*.5}\protected@file@percent }
+\newlabel{sec:LiebLiniger}{{I}{7}{}{section*.5}{}}
+\newlabel{eq:hamLL}{{6}{7}{}{equation.1.6}{}}
+\newlabel{eq:gamma}{{7}{7}{}{equation.1.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}The scattering shift (or Wigner time delay)}{7}{section*.6}\protected@file@percent }
+\newlabel{subsec:Wigner}{{I\,A}{7}{}{section*.6}{}}
+\newlabel{eq:ham_2p}{{8}{7}{}{equation.1.8}{}}
+\newlabel{eq:singularity}{{9}{7}{}{equation.1.9}{}}
+\newlabel{eq:2bd_wf}{{10}{7}{}{equation.1.10}{}}
+\newlabel{eq:2bd_scattering_phase}{{11}{7}{}{equation.1.11}{}}
+\citation{lieb1963exact,korepin1997quantum,gaudin2014bethe}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Left: the wavefunction (\ref {eq:2bd_wf}) on the infinite line corresponds to a two-body scattering process. Semiclassically, the scattering phase in that two-body process is reflected in the scattering shift (\ref {eq:scattering_phase}): after the collision, the position of the particle has been shifted by a distance $\Delta (\theta _1-\theta _2)$. Right: the Bethe wavefunction (\ref {eq:bethewf}) on the infinite line corresponds to an $N$-body scattering process which factorizes into two-body processes (the scattering shift $\Delta $ is also present here, but it is not drawn in the cartoon). In that $N$-body process, the rapidities $\theta _j$ are the asymptotic momenta of the bosons.}}{8}{figure.2}\protected@file@percent }
+\newlabel{fig:scattering}{{2}{8}{Left: the wavefunction (\ref {eq:2bd_wf}) on the infinite line corresponds to a two-body scattering process. Semiclassically, the scattering phase in that two-body process is reflected in the scattering shift (\ref {eq:scattering_phase}): after the collision, the position of the particle has been shifted by a distance $\Delta (\theta _1-\theta _2)$. Right: the Bethe wavefunction (\ref {eq:bethewf}) on the infinite line corresponds to an $N$-body scattering process which factorizes into two-body processes (the scattering shift $\Delta $ is also present here, but it is not drawn in the cartoon). In that $N$-body process, the rapidities $\theta _j$ are the asymptotic momenta of the bosons}{figure.2}{}}
+\newlabel{eq:incoming2}{{13}{8}{}{equation.1.13}{}}
+\newlabel{eq:scattering_phase}{{16}{8}{}{equation.1.16}{}}
+\citation{rigol2005fermionization,minguzzi2005exact,buljan2008fermi,jukic2008free,del2008fermionization,bolech2012long,campbell_sudden_2015,mei2016unveiling,caux2019hydrodynamics,wilson_observation_2020,malvania2020generalized}
+\citation{campbell_sudden_2015}
+\citation{campbell_sudden_2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}The Bethe wavefunction, and the rapidities as asymptotic momenta}{9}{section*.7}\protected@file@percent }
+\newlabel{subsec:asymptotic_momenta}{{I\,B}{9}{}{section*.7}{}}
+\newlabel{eq:bethewf}{{17}{9}{}{equation.1.17}{}}
+\newlabel{eq:thetaPE}{{18}{9}{}{equation.1.18}{}}
+\newlabel{eq:decomp_psit}{{20}{9}{}{equation.1.20}{}}
+\newlabel{eq:1D_expansion}{{22}{9}{}{equation.1.22}{}}
+\citation{wilson_observation_2020}
+\citation{girardeau1960relationship}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Finite density and the Bethe equations}{10}{section*.8}\protected@file@percent }
+\newlabel{eq:logbethe}{{24}{10}{}{equation.1.24}{}}
+\newlabel{eq:orderrapidities}{{25}{10}{}{equation.1.25}{}}
+\newlabel{eq:logbethe_bosons}{{27}{10}{}{equation.1.27}{}}
+\citation{davies1990higher,davies2011higher}
+\citation{korepin1997quantum}
+\citation{ilievski2016quasilocal,doyon2017thermalization,palmai2018quasilocal}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Blue curves: rapidities $\theta _a$ obtained by solving the Bethe equations (\ref {eq:logbethe}) with $N=10$ and $(p_a)_{1 \leq a\leq 10} = \frac  {2\pi }{L} (7.5,6.5,5.5,4.5,3.5,-1.5,-3.5, -5.5,-6.5,-7.5)$, or the equivalent form (\ref {eq:logbethe_bosons}) with $(p^{({\rm  B})}_a)_{1 \leq a\leq 10} = \frac  {2\pi }{L} (3,3,3,3,3,-1,-2,-3,-3,-3,-2)$. The rapidity $\theta _a$ interpolates between $p_a^{({\rm  B})}$ (when $c \rightarrow 0$) and $p_a$ ($c\rightarrow \infty $). Red curves: rapidities obtained after the modification $(p_5 = 3.5) \rightarrow (p_5 = 1.5)$. It shows that the rapidities are all coupled: changing only one of the $p_a$'s results in small shifts of all the other rapidities.}}{11}{figure.3}\protected@file@percent }
+\newlabel{fig:bethe_rapidities}{{3}{11}{Blue curves: rapidities $\theta _a$ obtained by solving the Bethe equations (\ref {eq:logbethe}) with $N=10$ and $(p_a)_{1 \leq a\leq 10} = \frac {2\pi }{L} (7.5,6.5,5.5,4.5,3.5,-1.5,-3.5, -5.5,-6.5,-7.5)$, or the equivalent form (\ref {eq:logbethe_bosons}) with $(p^{({\rm B})}_a)_{1 \leq a\leq 10} = \frac {2\pi }{L} (3,3,3,3,3,-1,-2,-3,-3,-3,-2)$. The rapidity $\theta _a$ interpolates between $p_a^{({\rm B})}$ (when $c \rightarrow 0$) and $p_a$ ($c\rightarrow \infty $). Red curves: rapidities obtained after the modification $(p_5 = 3.5) \rightarrow (p_5 = 1.5)$. It shows that the rapidities are all coupled: changing only one of the $p_a$'s results in small shifts of all the other rapidities}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D}Conserved charges and currents}{11}{section*.9}\protected@file@percent }
+\newlabel{subsec:chargescurrents}{{I\,D}{11}{}{section*.9}{}}
+\newlabel{eq:chargeQf}{{28}{11}{}{equation.1.28}{}}
+\citation{borsi2020current}
+\citation{pozsgay2020algebraic,pozsgay2020current}
+\citation{borsi2020current,pozsgay2020algebraic,pozsgay2020current}
+\citation{castro2016emergent}
+\citation{borsi2020current,pozsgay2020algebraic,pozsgay2020current}
+\citation{borsi2020current}
+\citation{bonnes2014light,bertini2016transport,castro2016emergent,doyon2018soliton,doyon2019lecture}
+\newlabel{eq:expectationqf}{{30}{12}{}{equation.1.30}{}}
+\newlabel{eq:jfx}{{31}{12}{}{equation.1.31}{}}
+\newlabel{eq:pozsgay}{{32}{12}{}{equation.1.32}{}}
+\newlabel{eq:gaudin}{{33}{12}{}{equation.1.33}{}}
+\newlabel{eq:jgfx}{{34}{12}{}{equation.1.34}{}}
+\newlabel{eq:gpozsgay}{{35}{12}{}{equation.1.35}{}}
+\citation{lieb1963exact}
+\citation{love1949electrostatic}
+\citation{takahashi1975validity,popov1977theory,lang2017ground,prolhac2017ground,marino2019exact}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E}Thermodynamic limit}{13}{section*.10}\protected@file@percent }
+\newlabel{subsec:thermodynamic_limit}{{I\,E}{13}{}{section*.10}{}}
+\newlabel{eq:rapidity_dist}{{36}{13}{}{equation.1.36}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Thermodynamic form of the Bethe equations}{13}{section*.11}\protected@file@percent }
+\newlabel{eq:def:rhos}{{38}{13}{}{equation.1.38}{}}
+\newlabel{eq:constitutive}{{41}{13}{}{equation.1.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Fermion momenta $p_a$ plotted against the rapidities $\theta _a$ for the solution of the Bethe equations (\ref {eq:logbethe}) defined by $p_a = \frac  {2\pi }{L} (-14.5,-13.5,-10.5,-8.5,-7.5,-6.5,-5.5,-3.5,-1.5,1.5,4.5,5.5,6.5,7.5,8.5,10.5,15.5,17.5)$ with $\gamma =0.2$. As the density of momenta $p_a$ and of rapidities $\theta _a$ increases, this becomes a smooth curve, whose slope is $ 2\pi $ times the density of states $\rho _{\rm  s}(\theta )$, see Eq.\nobreakspace  {}(\ref {eq:def:rhos}).}}{14}{figure.4}\protected@file@percent }
+\newlabel{fig:bethe_rho_s}{{4}{14}{Fermion momenta $p_a$ plotted against the rapidities $\theta _a$ for the solution of the Bethe equations (\ref {eq:logbethe}) defined by $p_a = \frac {2\pi }{L} (-14.5,-13.5,-10.5,-8.5,-7.5,-6.5,-5.5,-3.5,-1.5,1.5,4.5,5.5,6.5,7.5,8.5,10.5,15.5,17.5)$ with $\gamma =0.2$. As the density of momenta $p_a$ and of rapidities $\theta _a$ increases, this becomes a smooth curve, whose slope is $ 2\pi $ times the density of states $\rho _{\rm s}(\theta )$, see Eq.~(\ref {eq:def:rhos})}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}The dressing}{14}{section*.12}\protected@file@percent }
+\newlabel{eq:dressing}{{42}{14}{}{equation.1.42}{}}
+\newlabel{eq:gaudin_dressing}{{44}{14}{}{equation.1.44}{}}
+\citation{castro2016emergent}
+\citation{doyon2017drude}
+\citation{doyon2017note}
+\citation{bastianello2019generalized}
+\citation{de2018hydrodynamic,gopalakrishnan2018hydrodynamics,de2019diffusion}
+\citation{castro2016emergent,bertini2016transport}
+\citation{bertini2016transport}
+\citation{bonnes2014light}
+\citation{borsi2020current,pozsgay2020algebraic,pozsgay2020current}
+\citation{vu2019equations,cubero2019generalized,cubero2020generalized}
+\citation{yoshimura2020collision}
+\citation{bulchandani2019kinetic,cao2019gge,doyon2019generalized,spohn2020collision}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Expectation values of the currents in the thermodynamic limit}{15}{section*.13}\protected@file@percent }
+\newlabel{subsec:expectation_thermodynamic}{{I\,E\,3}{15}{}{section*.13}{}}
+\newlabel{eq:currents_ghd}{{46}{15}{}{equation.1.46}{}}
+\newlabel{eq:veff}{{47}{15}{}{equation.1.47}{}}
+\newlabel{eq:veff_quantum}{{48}{15}{}{equation.1.48}{}}
+\citation{yang1969thermodynamics}
+\citation{rigol2007relaxation,rigol2008thermalization}
+\citation{cassidy2011generalized,pozsgay2011mean,he2013single,pozsgay2014failure,vidmar2016generalized,dymarsky2019generalized}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F}Entropy maximization: the Yang-Yang equation}{16}{section*.14}\protected@file@percent }
+\newlabel{subsec:yangyang}{{I\,F}{16}{}{section*.14}{}}
+\newlabel{eq:SYY}{{49}{16}{}{equation.1.49}{}}
+\newlabel{eq:thermalrho}{{51}{16}{}{equation.1.51}{}}
+\newlabel{eq:GGErho}{{52}{16}{}{equation.1.52}{}}
+\newlabel{eq:generalized-ETH}{{54}{16}{}{equation.1.54}{}}
+\citation{caux2012constructing,wouters2014quenching}
+\citation{yang1969thermodynamics,korepin1997quantum}
+\citation{polkovnikov2011colloquium}
+\citation{vidmar2016generalized,caux2016quench,essler2016quench}
+\newlabel{eq:thermO_GGE}{{55}{17}{}{equation.1.55}{}}
+\newlabel{eq:yangyang}{{57}{17}{}{equation.1.57}{}}
+\newlabel{eq:pressure}{{58}{17}{}{equation.1.58}{}}
+\newlabel{eq:pressure2}{{59}{17}{}{equation.1.59}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {G}Relaxation in the Lieb-Liniger model}{17}{section*.15}\protected@file@percent }
+\newlabel{subsec:GGE}{{I\,G}{17}{}{section*.15}{}}
+\citation{armijo_probing_2010,jacqmin_sub-poissonian_2011}
+\newlabel{eq:rho_reservoirs}{{63}{18}{}{equation.1.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H}Asymptotic regimes of the Lieb-Liniger gas and approximate descriptions}{18}{section*.16}\protected@file@percent }
+\newlabel{sec:regimes}{{I\,H}{18}{}{section*.16}{}}
+\citation{kheruntsyan2003pair}
+\citation{mora_extension_2003}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Ideal Bose gas regime}{19}{section*.17}\protected@file@percent }
+\newlabel{eq:g2_IBG}{{64}{19}{}{equation.1.64}{}}
+\newlabel{eq:condition_IBG_degenerate}{{65}{19}{}{equation.1.65}{}}
+\newlabel{eq:condition_IBG_equilibrium}{{66}{19}{}{equation.1.66}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}The quasicondensate regime}{19}{section*.18}\protected@file@percent }
+\newlabel{eq:g2_quasicondensate}{{67}{19}{}{equation.1.67}{}}
+\newlabel{eq:ham_quasicondensate}{{68}{19}{}{equation.1.68}{}}
+\citation{lieb_exact_1963}
+\citation{ristivojevic_excitation_2014}
+\citation{takahashi1975validity,popov1977theory,lang2017ground,prolhac2017ground,marino2019exact}
+\citation{girardeau1960relationship}
+\citation{bouchoule_effect_2020}
+\newlabel{eq:ham_quasicondensate_diagonal}{{70}{20}{}{equation.1.70}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Hard-core regime}{20}{section*.19}\protected@file@percent }
+\newlabel{eq:g2_hardcore}{{71}{20}{}{equation.1.71}{}}
+\newlabel{eq:Jordan_Wigner}{{72}{20}{}{equation.1.72}{}}
+\citation{lenard1964momentum,vaidya1979one}
+\citation{minguzzi2002high,rigol2004universal}
+\citation{cazalilla2004bosonizing,cazalilla2011one}
+\citation{olshanii2003short}
+\citation{rigol2007relaxation}
+\citation{collura2013equilibration,collura2013quench}
+\citation{scopa2017one,scopa2018exact}
+\citation{li_relaxation_2020,mazets_breakdown_2008}
+\citation{bastianello_thermalization_2020}
+\citation{berges_prethermalization_2004}
+\citation{petrov_regimes_2000,gangardt2003local}
+\citation{kheruntsyan2003pair}
+\citation{kheruntsyan2003pair}
+\citation{yang1969thermodynamics}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}The thermal equilibrium phase diagram}{21}{section*.20}\protected@file@percent }
+\newlabel{eq:HelmanFeynam}{{75}{21}{}{equation.1.75}{}}
+\citation{castin_coherence_2000,castin_simple_2004,jacqmin_momentum_2012,bouchoule_two-body_2012}
+\citation{arzamasovs_full_2019}
+\citation{bouchoule_finite-temperature_2016,thomas_thermalization_2021}
+\citation{vecchio_exact_2020,bettelheim2020whitham}
+\citation{davis_simulations_2001,blakie_dynamics_2008,cockburn_comparison_2011,cockburn_quantitative_2011}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Phase diagram of the Lieb-Liniger model at thermal equilibrium. Different asymptotic regimes are separated by smooth crossovers. The crossover between the ideal Bose gas regime and the quasicondensate regime occurs for $t\simeq \gamma ^{-3/2}$, the crossover between the quasicondensate regime and the hard-core regime occurs for $\gamma \simeq 1$ and the crossover between the hard-core regime and the ideal Bose gas regime occurs for $t\simeq 1$. The dashed line represent the quantum degeneracy condition, which writes $t\simeq \gamma ^{-2}$. Note that thermal equilibrium is not granted for the Lieb-Liniger model, because of its integrability.}}{22}{figure.5}\protected@file@percent }
+\newlabel{fig:phase_diagram}{{5}{22}{Phase diagram of the Lieb-Liniger model at thermal equilibrium. Different asymptotic regimes are separated by smooth crossovers. The crossover between the ideal Bose gas regime and the quasicondensate regime occurs for $t\simeq \gamma ^{-3/2}$, the crossover between the quasicondensate regime and the hard-core regime occurs for $\gamma \simeq 1$ and the crossover between the hard-core regime and the ideal Bose gas regime occurs for $t\simeq 1$. The dashed line represent the quantum degeneracy condition, which writes $t\simeq \gamma ^{-2}$. Note that thermal equilibrium is not granted for the Lieb-Liniger model, because of its integrability}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}The classical field approximation.}{22}{section*.21}\protected@file@percent }
+\newlabel{subsubsec:classicalfield}{{I\,H\,5}{22}{}{section*.21}{}}
+\citation{dubail2016more}
+\citation{dubail2016more}
+\citation{castro2016emergent,bertini2016transport}
+\citation{doyon2017note}
+\citation{stringari1996collective,stringari1998dynamics,cazalilla2011one}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Generalized Hydrodynamics of the 1D Bose gas: theory results}{23}{section*.22}\protected@file@percent }
+\newlabel{sec:GHDtheory}{{II}{23}{}{section*.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces [From \citep  {dubail2016more}.] Like any other hydrodynamic approach, Generalized Hydrodynamics applies in the limit where separations of distance and time scales hold. When the characteristic distance $L$ over which densities vary is much larger than the microscopic length scale $d$, one can view the system as a continuum of locally homogeneous fluid cells of size $\ell $ ($d \ll \ell \ll L$) which contain a thermodynamically large number of particle. Similarly, assuming slow variation in time, each fluid cell is locally relaxed to a stationary state. In standard hydrodynamics, this local stationary state is a thermal equilibrium state, while in Generalized Hydrodynamics it is a Generalized Gibbs Ensemble.}}{23}{figure.6}\protected@file@percent }
+\newlabel{fig:sos}{{6}{23}{[From \citep {dubail2016more}.] Like any other hydrodynamic approach, Generalized Hydrodynamics applies in the limit where separations of distance and time scales hold. When the characteristic distance $L$ over which densities vary is much larger than the microscopic length scale $d$, one can view the system as a continuum of locally homogeneous fluid cells of size $\ell $ ($d \ll \ell \ll L$) which contain a thermodynamically large number of particle. Similarly, assuming slow variation in time, each fluid cell is locally relaxed to a stationary state. In standard hydrodynamics, this local stationary state is a thermal equilibrium state, while in Generalized Hydrodynamics it is a Generalized Gibbs Ensemble}{figure.6}{}}
+\newlabel{eq:ghd}{{78}{23}{}{equation.2.78}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Hydrodynamic approaches to the 1D Bose gas that preceded GHD}{23}{section*.23}\protected@file@percent }
+\newlabel{subsec:conventional_hydro}{{II\,A}{23}{}{section*.23}{}}
+\citation{kolomeisky2000low,menotti2002collective,damski2006shock}
+\citation{menotti2002collective,ohberg2002dynamical,pedri2003violation,damski2006shock,peotta2014quantum,sarishvili2016pulse}
+\citation{bouchoule_finite-temperature_2016,doyon2017large,schemmer2019generalized}
+\citation{menotti2002collective,ohberg2002dynamical,pedri2003violation}
+\citation{peotta2014quantum}
+\citation{peotta2014quantum}
+\citation{doyon2017large}
+\citation{peotta2014quantum}
+\citation{doyon2017large}
+\citation{peotta2014quantum}
+\citation{simmons2020quantum}
+\citation{bettelheim2020whitham}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Left: [from \citep  {peotta2014quantum}] evolution of the density profile of the 1D Bose gas after a quench from a double-well to harmonic potential (left column), and after a quench from harmonic to harmonic, with a different frequency (right column). $\tau $ is the oscillation period of the harmonic trap during the evolution. The red curve is obtained by numerically solving the hydrodynamic equation (\ref {eq:GPmadelung}) with the pressure $\mathcal  {P}$ of the Lieb-Lininger model; the black curve is a numerically exact t-DMRG simulation. Clearly, the `conventional' hydrodynamics (\ref {eq:GPmadelung}) works well for the second quench (right column), but not for the first one (left column). Right: [from \citep  {doyon2017large}] evolution of the density profile from an initial thermal equilibrium state at non-zero temperature in an inverted Gaussian potential $V(x) = -5e^{-(x/50)^2}-1$, which creates an initial density bump. At $t>0$ the potential is switched off, $V(x)=0$. The density profile evolves according to `conventional' Euler hydrodynamics (\ref {eq:euler}) at finite temperature (black curve), or according to GHD (green curve). We see that the predictions of both hydrodynamic theories differ at finite temperature (while they would coincide at zero temperature before the appearance of a shock).}}{24}{figure.7}\protected@file@percent }
+\newlabel{fig:peotta_diventra}{{7}{24}{Left: [from \citep {peotta2014quantum}] evolution of the density profile of the 1D Bose gas after a quench from a double-well to harmonic potential (left column), and after a quench from harmonic to harmonic, with a different frequency (right column). $\tau $ is the oscillation period of the harmonic trap during the evolution. The red curve is obtained by numerically solving the hydrodynamic equation (\ref {eq:GPmadelung}) with the pressure $\mathcal {P}$ of the Lieb-Lininger model; the black curve is a numerically exact t-DMRG simulation. Clearly, the `conventional' hydrodynamics (\ref {eq:GPmadelung}) works well for the second quench (right column), but not for the first one (left column). Right: [from \citep {doyon2017large}] evolution of the density profile from an initial thermal equilibrium state at non-zero temperature in an inverted Gaussian potential $V(x) = -5e^{-(x/50)^2}-1$, which creates an initial density bump. At $t>0$ the potential is switched off, $V(x)=0$. The density profile evolves according to `conventional' Euler hydrodynamics (\ref {eq:euler}) at finite temperature (black curve), or according to GHD (green curve). We see that the predictions of both hydrodynamic theories differ at finite temperature (while they would coincide at zero temperature before the appearance of a shock)}{figure.7}{}}
+\newlabel{eq:GPmadelung}{{79}{24}{}{equation.2.79}{}}
+\citation{doyon2017large}
+\citation{kinoshita2006quantum}
+\citation{kinoshita2006quantum}
+\citation{caux2019hydrodynamics}
+\citation{caux2019hydrodynamics}
+\citation{bulchandani2017solvable}
+\citation{caux2019hydrodynamics}
+\citation{doyon2018soliton}
+\citation{bulchandani2017solvable,bulchandani2018bethe,doyon2017large,bastianello2019generalized,moller2020introducing,bastianello_thermalization_2020,moller_extension_2021}
+\citation{moller2020introducing}
+\citation{van2016separation}
+\citation{bastianello2017quenches}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Modeling the quantum Newton Cradle setup with GHD}{25}{section*.24}\protected@file@percent }
+\newlabel{susec:modelingNC}{{II\,B}{25}{}{section*.24}{}}
+\newlabel{eq:initial_Bragg}{{80}{25}{}{equation.2.80}{}}
+\citation{kinoshita2006quantum}
+\citation{cao2018incomplete}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces [From \citep  {caux2019hydrodynamics}.] GHD simulation of the 1D Bose gas in the Newton Cradle setup. Top figure: the evolution of the phase-space rapidity density $\rho (x,\theta ,t)$ during the first oscillation cycle is shown for a harmonic trap with period $\tau $ (first row), and a quasi-harmonic trap with a small anharmonicity (second row). The corresponding density profiles $n(x,t) = \DOTSI \intop \ilimits@ \rho (x,\theta ,t ) d\theta $ are shown in blue and red respectively (third row). Bottom: same as the top one, but on longer time scales.}}{26}{figure.8}\protected@file@percent }
+\newlabel{fig:QNCtheory}{{8}{26}{[From \citep {caux2019hydrodynamics}.] GHD simulation of the 1D Bose gas in the Newton Cradle setup. Top figure: the evolution of the phase-space rapidity density $\rho (x,\theta ,t)$ during the first oscillation cycle is shown for a harmonic trap with period $\tau $ (first row), and a quasi-harmonic trap with a small anharmonicity (second row). The corresponding density profiles $n(x,t) = \int \rho (x,\theta ,t ) d\theta $ are shown in blue and red respectively (third row). Bottom: same as the top one, but on longer time scales}{figure.8}{}}
+\citation{doyon2017note}
+\citation{caux2019hydrodynamics}
+\citation{caux2019hydrodynamics}
+\citation{caux2019hydrodynamics}
+\citation{bastianello_thermalization_2020}
+\citation{de2018edge}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{dubessy2021universal}
+\citation{doyon2017large}
+\citation{fokkema2014split,eliens2016general,eliens2017quantum}
+\newlabel{eq:GHDstationary}{{81}{27}{}{equation.2.81}{}}
+\newlabel{eq:Sf_conserved}{{82}{27}{}{equation.2.82}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Other setups}{27}{section*.25}\protected@file@percent }
+\newlabel{subsec:other_setups}{{II\,C}{27}{}{section*.25}{}}
+\newlabel{eq:wall_boundary_conditions}{{84}{27}{}{equation.2.84}{}}
+\citation{doyon2017large}
+\citation{el2005kinetic,bulchandani2017classical,doyon2017large}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces [From \citep  {dubessy2021universal}] Left: GHD simulation of a gas in an infinite box trap. (a) The initial state is the ground state, on which a boost of $+k_0$ is applied at $t=0$. The blue region is the region of phase space where the Fermi occupation ratio $\nu (x,\theta , t) = \rho (x,\theta , t)/ \rho _{\rm  s}(x,\theta , t)$ is one. Outside this region, it is zero. (b) After some time the contour of the blue region gets deformed. (c) The corresponding real-space density profile $n(x,t) = \DOTSI \intop \ilimits@ \rho (x,\theta , t) d\theta $. Right: evolution of the particle density (top) and current (bottom). Here $\tau = t/(v L)$ where $v$ is the sound velocity. The blue curve is obtained with the Gross-Pitaevskii equation (valid for small $\gamma $), the yellow curve is obtained from a free fermion calculation in the $\gamma \rightarrow \infty $ limit, and the red curve is the GHD simulation at $\gamma =1$. The dashed black line correspond to an effective model, see \citep  {dubessy2021universal}. }}{28}{figure.9}\protected@file@percent }
+\newlabel{fig:dubessy}{{9}{28}{[From \citep {dubessy2021universal}] Left: GHD simulation of a gas in an infinite box trap. (a) The initial state is the ground state, on which a boost of $+k_0$ is applied at $t=0$. The blue region is the region of phase space where the Fermi occupation ratio $\nu (x,\theta , t) = \rho (x,\theta , t)/ \rho _{\rm s}(x,\theta , t)$ is one. Outside this region, it is zero. (b) After some time the contour of the blue region gets deformed. (c) The corresponding real-space density profile $n(x,t) = \int \rho (x,\theta , t) d\theta $. Right: evolution of the particle density (top) and current (bottom). Here $\tau = t/(v L)$ where $v$ is the sound velocity. The blue curve is obtained with the Gross-Pitaevskii equation (valid for small $\gamma $), the yellow curve is obtained from a free fermion calculation in the $\gamma \rightarrow \infty $ limit, and the red curve is the GHD simulation at $\gamma =1$. The dashed black line correspond to an effective model, see \citep {dubessy2021universal}}{figure.9}{}}
+\newlabel{eq:ghd_convective}{{86}{28}{}{equation.2.86}{}}
+\newlabel{eq:zero_entropy_ghd}{{88}{28}{}{equation.2.88}{}}
+\citation{castro2016emergent,bertini2016transport}
+\citation{doyon2017note}
+\citation{doyon2017note}
+\citation{bastianello2019generalized}
+\citation{bastianello2019generalized}
+\citation{bastianello2019generalized}
+\citation{bastianello2019generalized}
+\citation{moller_extension_2021}
+\citation{moller_extension_2021}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces [From \citep  {bastianello2019generalized}] The GHD equations (\ref {eq:ghd}) can be extended to include an repulsion strength $c(x,t)$ that varies slowly in time or in space, which would correspond to slowly varying the transverse trapping frequency in an experimental setup.}}{29}{figure.10}\protected@file@percent }
+\newlabel{fig:spacetime_interactions}{{10}{29}{[From \citep {bastianello2019generalized}] The GHD equations (\ref {eq:ghd}) can be extended to include an repulsion strength $c(x,t)$ that varies slowly in time or in space, which would correspond to slowly varying the transverse trapping frequency in an experimental setup}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D}Extensions of Euler-scale Generalized Hydrodynamics}{29}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Adiabatically varying interactions}{29}{section*.27}\protected@file@percent }
+\newlabel{eq:inhomogeneous_interaction}{{89}{29}{}{equation.2.89}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boltzmann kinetic equation for Bose gas at the 1D-3D crossover}{29}{section*.28}\protected@file@percent }
+\citation{moller_extension_2021}
+\citation{yang1967some,gaudin2014bethe,caux2009polarization,klauser2011equilibrium,klumper2011efficient,pactu2015thermodynamics,robinson2016exact,robinson2017excitations}
+\citation{moller_extension_2021}
+\citation{moller_extension_2021}
+\citation{moller_extension_2021}
+\citation{moller_extension_2021}
+\citation{moller_extension_2021}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces  [From \citep  {moller_extension_2021}] Left: evolution of the rapidity distribution $\rho (\theta )$ under GHD in the quantum Newton Cradle setup (top), compared to the Eq.\nobreakspace  {}(\ref {eq:Boltzmann-Moller}) that includes a phenomenological Boltzmann collision integral modeling excitations to transverse modes when the gas is at the 1D-3D crossover. Right: the cloud is initially in the ideal Bose gas regime, and it stays in that regime under time evolution with Eq.\nobreakspace  {}(\ref {eq:Boltzmann-Moller}).}}{30}{figure.11}\protected@file@percent }
+\newlabel{fig:newton_cradle_Dcrossover}{{11}{30}{[From \citep {moller_extension_2021}] Left: evolution of the rapidity distribution $\rho (\theta )$ under GHD in the quantum Newton Cradle setup (top), compared to the Eq.~(\ref {eq:Boltzmann-Moller}) that includes a phenomenological Boltzmann collision integral modeling excitations to transverse modes when the gas is at the 1D-3D crossover. Right: the cloud is initially in the ideal Bose gas regime, and it stays in that regime under time evolution with Eq.~(\ref {eq:Boltzmann-Moller})}{figure.11}{}}
+\newlabel{eq:ham_multicomponent}{{90}{30}{}{equation.2.90}{}}
+\newlabel{eq:Boltzmann-Moller}{{91}{30}{}{equation.2.91}{}}
+\newlabel{eq:collisionIntegralMoeller}{{92}{30}{}{equation.2.92}{}}
+\citation{li_relaxation_2020}
+\citation{moller_extension_2021}
+\citation{bastianello_thermalization_2020}
+\citation{bastianello_thermalization_2020}
+\citation{de2018hydrodynamic}
+\citation{gopalakrishnan2018hydrodynamics,de2019diffusion}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Beyond the Euler scale: Navier-Stokes diffusive corrections}{31}{section*.29}\protected@file@percent }
+\newlabel{sec:diffusive_corrections}{{II\,D\,3}{31}{}{section*.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces [From \citep  {bastianello_thermalization_2020}] When the Navier-Stokes term (\ref {eq:NavierStokes}) is included in the GHD equation, it is found that the 1D Bose gas in the quantum Newton Cradle does reach thermal equilibrium. Bottom left: cartoon of the quench protocol (quench from double-well to harmonic potential). Top: evolution of the density profile $n(x,t)$ under GHD-Navier-Stokes evolution. In the top right plot, one sees that the density goes to the thermal equilibrium density at long times. Bottom right: the entropy invreases and ultimately reaches its thermal equilibrium value.}}{31}{figure.12}\protected@file@percent }
+\newlabel{fig:thermalization_diffusion}{{12}{31}{[From \citep {bastianello_thermalization_2020}] When the Navier-Stokes term (\ref {eq:NavierStokes}) is included in the GHD equation, it is found that the 1D Bose gas in the quantum Newton Cradle does reach thermal equilibrium. Bottom left: cartoon of the quench protocol (quench from double-well to harmonic potential). Top: evolution of the density profile $n(x,t)$ under GHD-Navier-Stokes evolution. In the top right plot, one sees that the density goes to the thermal equilibrium density at long times. Bottom right: the entropy invreases and ultimately reaches its thermal equilibrium value}{figure.12}{}}
+\newlabel{eq:NavierStokes}{{93}{31}{}{equation.2.93}{}}
+\citation{de2019diffusion}
+\citation{bastianello_thermalization_2020}
+\citation{cao2018incomplete,caux2019hydrodynamics}
+\citation{panfil2019linearized,medenjak2020diffusion}
+\citation{kadanoff1963hydrodynamic}
+\citation{doyon2018exact,moller2020euler}
+\citation{cazalilla2004bosonizing,cazalilla2011one}
+\citation{ruggiero2020quantum}
+\citation{ruggiero2020quantum}
+\citation{landau1941theory}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Quantum fluctuating hydrodynamics}{32}{section*.30}\protected@file@percent }
+\newlabel{eq:correl_vanish}{{95}{32}{}{equation.2.95}{}}
+\newlabel{eq:euler_zeroT}{{96}{32}{}{equation.2.96}{}}
+\newlabel{eq:sound_wave}{{97}{32}{}{equation.2.97}{}}
+\newlabel{eq:sound_wave2}{{98}{32}{}{equation.2.98}{}}
+\citation{giamarchi2003quantum,cazalilla2004bosonizing,tsvelik2007quantum}
+\citation{giamarchi2003quantum,cazalilla2004bosonizing,tsvelik2007quantum}
+\citation{giamarchi2003quantum,cazalilla2004bosonizing,tsvelik2007quantum}
+\citation{imambekov2012one}
+\citation{ruggiero2020quantum}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces [From \citep  {ruggiero2020quantum}] Quench from a double-well to harmonic potential (with period $\tau $) in a 1D Bose gas at zero temperature and $\gamma \simeq 1$. Top row: evolution of the contour $\Gamma _t$ according to the zero-entropy GHD equation (\ref {eq:zero_entropy_ghd}). Second row: the corresponding density profiles $n(x,t)$ (orange), compared to t-DMRG results for $N=10$ and $N=20$ particles. Third and fourth rows: the equal-time density-density correlation function $\left < \delta n(x_1) \delta n(x_2) \right >_{\rm  conn.}$ obtained by quantizing the sound waves around zero-entropy GHD.}}{33}{figure.13}\protected@file@percent }
+\newlabel{fig:qghd}{{13}{33}{[From \citep {ruggiero2020quantum}] Quench from a double-well to harmonic potential (with period $\tau $) in a 1D Bose gas at zero temperature and $\gamma \simeq 1$. Top row: evolution of the contour $\Gamma _t$ according to the zero-entropy GHD equation (\ref {eq:zero_entropy_ghd}). Second row: the corresponding density profiles $n(x,t)$ (orange), compared to t-DMRG results for $N=10$ and $N=20$ particles. Third and fourth rows: the equal-time density-density correlation function $\left < \delta n(x_1) \delta n(x_2) \right >_{\rm conn.}$ obtained by quantizing the sound waves around zero-entropy GHD}{figure.13}{}}
+\newlabel{eq:landau_canonical}{{99}{33}{}{equation.2.99}{}}
+\newlabel{eq:Luttinger_ham}{{100}{33}{}{equation.2.100}{}}
+\newlabel{eq:rhorho}{{101}{33}{}{equation.2.101}{}}
+\citation{ruggiero2020quantum}
+\citation{cazalilla2004bosonizing,dubail2017conformal,brun2018inhomogeneous,bastianello2020entanglement}
+\citation{ruggiero2019conformal,ruggiero2020quantum,collura2020domain}
+\citation{fagotti2017higher,fagotti2020locally}
+\citation{moyal1949quantum,bettelheim2006orthogonality,bettelheim2011universal,bettelheim2012quantum,protopopov2013dynamics,doyon2017large,dean2018wigner,ruggiero2019conformal,dean2019nonequilibrium,fagotti2020locally}
+\citation{moyal1949quantum}
+\citation{pethick_boseeinstein_2008}
+\citation{kinoshita_local_2005,haller_realization_2009,fabbri_momentum-resolved_2011}
+\citation{haller_realization_2009}
+\citation{haller_realization_2009}
+\citation{haller_realization_2009}
+\citation{reichel_atomic_1999}
+\citation{folman_controlling_2000}
+\citation{reichel2011atom}
+\citation{van_amerongen_yang-yang_2008,armijo_mapping_2011,jacqmin_sub-poissonian_2011}
+\citation{jacqmin_sub-poissonian_2011}
+\citation{rauer_cooling_2016,schemmer_cooling_2018,bouchoule_asymptotic_2020}
+\citation{olshanii_atomic_1998}
+\@writefile{toc}{\contentsline {section}{\numberline {III}The 1D Bose gas in cold atom experiments}{35}{section*.31}\protected@file@percent }
+\newlabel{sec:experiments_beforeGHD}{{III}{35}{}{section*.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}The 1D regime}{35}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}1D geometries}{35}{section*.33}\protected@file@percent }
+\citation{olshanii_atomic_1998}
+\citation{olshanii_atomic_1998}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Creating 1D gases in cold atom experiments. {\bf  A.} [From\nobreakspace  {}\cite  {haller_realization_2009}] : a 2D optical lattice produces an array of 1D tubes. {\bf  B.} Guiding atoms along a 3-wire guide on an atom-chip [pictures from the atom-chip setup in Palaiseau, France]. (a) Three parallel wires, running current in alternate directions, guide the atoms along a line above the central wire. (b) Chip layout (wires edges shown). In addition to the 3-wire guide, other wires are used for the longitudinal confinement and for preparation stages. (c) The atom-chip, covered with a gold mirror. }}{36}{figure.14}\protected@file@percent }
+\newlabel{fig:real1Dgasesexp}{{14}{36}{Creating 1D gases in cold atom experiments. {\bf A.} [From~\cite {haller_realization_2009}] : a 2D optical lattice produces an array of 1D tubes. {\bf B.} Guiding atoms along a 3-wire guide on an atom-chip [pictures from the atom-chip setup in Palaiseau, France]. (a) Three parallel wires, running current in alternate directions, guide the atoms along a line above the central wire. (b) Chip layout (wires edges shown). In addition to the 3-wire guide, other wires are used for the longitudinal confinement and for preparation stages. (c) The atom-chip, covered with a gold mirror}{figure.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Effective 1D interaction parameter}{36}{section*.34}\protected@file@percent }
+\newlabel{subsec:olshanii}{{III\,A\,2}{36}{}{section*.34}{}}
+\newlabel{eq:expansion_harmonic_transv}{{103}{36}{}{equation.3.103}{}}
+\newlabel{eq:g1D}{{104}{36}{}{equation.3.104}{}}
+\citation{bergeman_atom-atom_2003}
+\citation{haller_realization_2009}
+\citation{jacqmin_momentum_2012}
+\citation{yao_tans_2018}
+\citation{ketterle_bose-einstein_1996}
+\citation{petrov_regimes_2000}
+\citation{bouchoule_interaction-induced_2007}
+\citation{armijo_mapping_2011}
+\citation{jacqmin_momentum_2012}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Validity of the assumption of separation of scales}{37}{section*.35}\protected@file@percent }
+\newlabel{subsubsec:validityLDA}{{III\,A\,3}{37}{}{section*.35}{}}
+\citation{lieb_exact_1963}
+\citation{kinoshita_local_2005}
+\citation{kinoshita_local_2005}
+\citation{kinoshita_local_2005}
+\citation{kinoshita_local_2005}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces [From \cite  {kinoshita_local_2005}] Measurement of the local two-body pair correlation, using photoassociation data and comparison with exact prediction from Lieb-Liniger model for the ground state. $\gamma _{\rm  eff}$ is the effective interaction parameter, that takes into account the inhomogeneity of linear densities across the cloud.}}{38}{figure.15}\protected@file@percent }
+\newlabel{fig:PairCorrelationWeiss}{{15}{38}{[From \cite {kinoshita_local_2005}] Measurement of the local two-body pair correlation, using photoassociation data and comparison with exact prediction from Lieb-Liniger model for the ground state. $\gamma _{\rm eff}$ is the effective interaction parameter, that takes into account the inhomogeneity of linear densities across the cloud}{figure.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Benchmarking experiments: results at equilibrium}{38}{section*.36}\protected@file@percent }
+\newlabel{subsec:benchmarkingexp}{{III\,B}{38}{}{section*.36}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Measurement of zero-distance correlation function}{38}{section*.37}\protected@file@percent }
+\newlabel{subsec:g20}{{III\,B\,1}{38}{}{section*.37}{}}
+\citation{kinoshita_observation_2004}
+\citation{tolra_observation_2004}
+\citation{yang1969thermodynamics}
+\citation{yang1969thermodynamics}
+\citation{van_amerongen_yang-yang_2008}
+\citation{vogler_thermodynamics_2013}
+\citation{yang1969thermodynamics}
+\citation{van_amerongen_yang-yang_2008}
+\citation{vogler_thermodynamics_2013}
+\citation{van_amerongen_yang-yang_2008}
+\citation{van_amerongen_yang-yang_2008}
+\citation{van_amerongen_yang-yang_2008}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Density profiles of 1D gases, fitted with thermal equilibrium density profiles. The latter are computed, knowing the longitudinal potential, using the equation of state of Yang-Yang\nobreakspace  {}(\cite  {yang1969thermodynamics}), and assuming a local density approximation. {\bf  A.} [From\nobreakspace  {}\cite  {van_amerongen_yang-yang_2008}] Measured density profiles (black circles), compared to Yang-Yang profiles (solid lines). Transversally excited states are taken into account as ideal Bose gases. {\bf  B.} [From\nobreakspace  {}\cite  {vogler_thermodynamics_2013}] Density profiles for different 1D gases, located at different position in an array of 1D tubes. They are obtained from the raw data, which include a column integration of the signal, by an Abel's transformation. The Yang-Yang fit is shown in solid smooth line.}}{39}{figure.16}\protected@file@percent }
+\newlabel{fig:YangYangThermo}{{16}{39}{Density profiles of 1D gases, fitted with thermal equilibrium density profiles. The latter are computed, knowing the longitudinal potential, using the equation of state of Yang-Yang~(\cite {yang1969thermodynamics}), and assuming a local density approximation. {\bf A.} [From~\cite {van_amerongen_yang-yang_2008}] Measured density profiles (black circles), compared to Yang-Yang profiles (solid lines). Transversally excited states are taken into account as ideal Bose gases. {\bf B.} [From~\cite {vogler_thermodynamics_2013}] Density profiles for different 1D gases, located at different position in an array of 1D tubes. They are obtained from the raw data, which include a column integration of the signal, by an Abel's transformation. The Yang-Yang fit is shown in solid smooth line}{figure.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Analysis of density profiles: Yang-Yang thermodynamics}{39}{section*.38}\protected@file@percent }
+\newlabel{subsec:analysisnx}{{III\,B\,2}{39}{}{section*.38}{}}
+\citation{armijo_mapping_2011,vogler_thermodynamics_2013}
+\citation{vogler_thermodynamics_2013}
+\citation{jacqmin_sub-poissonian_2011}
+\citation{armijo_probing_2010}
+\citation{jacqmin_sub-poissonian_2011}
+\citation{armijo_probing_2010}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Density fluctuations in 1D Bose gases, compared to Yang-Yang prediction (see Eq.\eqref  {eq.fluctudiss}). {\bf  A}. [From \cite  {jacqmin_sub-poissonian_2011}] Dots : measured density fluctuations. Solid line : Yang-Yang predictions. The reduced temperature $t$ is $t=2\hbar ^2 k_B T /(mg^2)$. The dashed line shows the shot noise limit, whose amplitude is reduced because of the smearing produced by the finite optical resolution. The fact that gas never shows super-Poissonian fluctuations, that would be associated to bosonic bunching, signals the entrance into the strongly interacting regime. $\langle N \rangle = n\Delta $ where $n$ is the linear density and $\Delta $ the pixel size, equal to 4.5$\mu $m. {\bf  B}. [From \cite  {armijo_probing_2010}] Third moment of the density fluctuations. Solid lines show the Yang-Yang prediction, with transversely excited states taken into account as ideal Bose gases. Dotted line gives the shot-noise level, corrected for the effect of finite resolution. The dashed lines shows the predictions for an ideal Bose gas. The graphs (c) and (d) shows the skewness of the atom number distribution, defined as $S_m= \langle \delta N^3\rangle /\langle \delta N^2\rangle ^{2/3}$. In the inset of Fig.(b), the deviation of the measured $\langle \delta N^2\rangle $ to the Yang-Yang prediction (solid line), is due to the swelling of the transverse wave function, which occurs because the condition $\mu \ll \omega _\perp $ is not fulfilled. This 3D effect is taken into account into the quasi-condensate predictions shown as dotted-dashed lines. }}{40}{figure.17}\protected@file@percent }
+\newlabel{fig:densityfluctu}{{17}{40}{Density fluctuations in 1D Bose gases, compared to Yang-Yang prediction (see Eq.\eqref {eq.fluctudiss}). {\bf A}. [From \cite {jacqmin_sub-poissonian_2011}] Dots : measured density fluctuations. Solid line : Yang-Yang predictions. The reduced temperature $t$ is $t=2\hbar ^2 k_B T /(mg^2)$. The dashed line shows the shot noise limit, whose amplitude is reduced because of the smearing produced by the finite optical resolution. The fact that gas never shows super-Poissonian fluctuations, that would be associated to bosonic bunching, signals the entrance into the strongly interacting regime. $\langle N \rangle = n\Delta $ where $n$ is the linear density and $\Delta $ the pixel size, equal to 4.5$\mu $m. {\bf B}. [From \cite {armijo_probing_2010}] Third moment of the density fluctuations. Solid lines show the Yang-Yang prediction, with transversely excited states taken into account as ideal Bose gases. Dotted line gives the shot-noise level, corrected for the effect of finite resolution. The dashed lines shows the predictions for an ideal Bose gas. The graphs (c) and (d) shows the skewness of the atom number distribution, defined as $S_m= \langle \delta N^3\rangle /\langle \delta N^2\rangle ^{2/3}$. In the inset of Fig.(b), the deviation of the measured $\langle \delta N^2\rangle $ to the Yang-Yang prediction (solid line), is due to the swelling of the transverse wave function, which occurs because the condition $\mu \ll \omega _\perp $ is not fulfilled. This 3D effect is taken into account into the quasi-condensate predictions shown as dotted-dashed lines}{figure.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Density fluctuations}{40}{section*.39}\protected@file@percent }
+\newlabel{subsubsec:densityfluctu}{{III\,B\,3}{40}{}{section*.39}{}}
+\citation{esteve_observations_2006}
+\citation{armijo_mapping_2011,armijo_probing_2010,jacqmin_sub-poissonian_2011}
+\citation{armijo_mapping_2011}
+\citation{stenger_bragg_1999}
+\citation{richard_momentum_2003}
+\citation{fabbri_momentum-resolved_2011}
+\citation{fabbri_dynamical_2015}
+\citation{meinert_probing_2015}
+\citation{stewart_verification_2010}
+\newlabel{eq.fluctudiss}{{107}{41}{}{equation.3.107}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4}Techniques for measuring the momentum distribution}{41}{section*.40}\protected@file@percent }
+\newlabel{subsubsec:analysisnp}{{III\,B\,4}{41}{}{section*.40}{}}
+\citation{fabbri_momentum-resolved_2011}
+\citation{wilson_observation_2020,malvania2020generalized}
+\citation{shvarchuck_bose-einstein_2002}
+\citation{fabbri_momentum-resolved_2011}
+\citation{jacqmin_momentum_2012}
+\citation{jacqmin_momentum_2012}
+\citation{davis_yang-yang_2012}
+\citation{jacqmin_momentum_2012}
+\citation{fang_momentum-space_2016}
+\citation{bouchoule_two-body_2012}
+\citation{fang_momentum-space_2016}
+\citation{fang_momentum-space_2016}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5}Results in momentum space}{42}{section*.41}\protected@file@percent }
+\citation{dettmer_observation_2001}
+\citation{manz_two-point_2010}
+\citation{schemmer_monitoring_2018}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces [From \citep  {fang_momentum-space_2016}] Correlations in momentum space. (A1,A2,B1,B2,C1,C2) show the correlation $\langle \delta n_\alpha \delta n_\beta \rangle $, where $\alpha $ and $\beta $ denote the index of the pixel in momentum space (equal to $\hbar \times 0.15\mu $m$^{-1}$). Column A corresponds to a in the ideal Bose gas regime; column C to gas in the quasicondensate regime; column B to a gas at the crossover between both regimes. Experimental data (first line) are compared to Monte-Carlo calculations (second line). The third line shows cuts along the diagonal and the anti-diagonal.}}{43}{figure.18}\protected@file@percent }
+\newlabel{fig:npnpp}{{18}{43}{[From \citep {fang_momentum-space_2016}] Correlations in momentum space. (A1,A2,B1,B2,C1,C2) show the correlation $\langle \delta n_\alpha \delta n_\beta \rangle $, where $\alpha $ and $\beta $ denote the index of the pixel in momentum space (equal to $\hbar \times 0.15\mu $m$^{-1}$). Column A corresponds to a in the ideal Bose gas regime; column C to gas in the quasicondensate regime; column B to a gas at the crossover between both regimes. Experimental data (first line) are compared to Monte-Carlo calculations (second line). The third line shows cuts along the diagonal and the anti-diagonal}{figure.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6}Other higher-order correlation functions}{43}{section*.42}\protected@file@percent }
+\newlabel{eq:densityripples}{{110}{43}{}{equation.3.110}{}}
+\citation{li_relaxation_2020,moller_extension_2021}
+\citation{mazets_breakdown_2008,mazets_dynamics_2011,tan_relaxation_2010}
+\citation{mazets_integrability_2011}
+\citation{bastianello_thermalization_2020}
+\citation{langen_experimental_2015}
+\citation{langen_experimental_2015}
+\citation{gring_relaxation_2012}
+\citation{mazets_dephasing_2009}
+\citation{johnson_long-lived_2017}
+\citation{johnson_long-lived_2017}
+\citation{kinoshita2006quantum}
+\citation{mazets_integrability_2011}
+\citation{bastianello_thermalization_2020}
+\citation{wilson_observation_2020}
+\citation{wilson_observation_2020}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7}Validity of the thermodynamic equilibrium}{44}{section*.43}\protected@file@percent }
+\citation{wilson_observation_2020}
+\citation{wilson_observation_2020}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces [From \cite  {wilson_observation_2020}] Measurement of the rapidity distribution. Density profiles recorded after a 1D expansion during a time $t_{\rm  {exp}}$, followed by a ballistic (free) expansion during $t_{{\rm  free}}$. $t_{\rm  exp}$ equals to (from left to right and top to bottom) 0,1,3,6,9,12 ms and $t_{\rm  free}=70$ms$-t_{\rm  exp}$. Experimental data (solid lines) are in remarkable agreement with theoretical predictions for hard-core Bosons (dashed lines). For long 1D expansion times, the momentum distribution converges towards the rapidity distribution. }}{45}{figure.19}\protected@file@percent }
+\newlabel{fig:measurement_rapidity_distribution}{{19}{45}{[From \cite {wilson_observation_2020}] Measurement of the rapidity distribution. Density profiles recorded after a 1D expansion during a time $t_{\rm {exp}}$, followed by a ballistic (free) expansion during $t_{{\rm free}}$. $t_{\rm exp}$ equals to (from left to right and top to bottom) 0,1,3,6,9,12 ms and $t_{\rm free}=70$ms$-t_{\rm exp}$. Experimental data (solid lines) are in remarkable agreement with theoretical predictions for hard-core Bosons (dashed lines). For long 1D expansion times, the momentum distribution converges towards the rapidity distribution}{figure.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Measurement of the rapidity distribution}{45}{section*.44}\protected@file@percent }
+\newlabel{subsec:rapidity_dist_measurement}{{III\,C}{45}{}{section*.44}{}}
+\citation{mazets_integrability_2011}
+\citation{kinoshita2006quantum}
+\citation{kinoshita2006quantum}
+\citation{van2016separation}
+\citation{kinoshita2006quantum}
+\citation{kinoshita2006quantum}
+\citation{kinoshita2006quantum}
+\citation{kinoshita2006quantum}
+\citation{caux2019hydrodynamics}
+\citation{caux2019hydrodynamics,cao2018incomplete}
+\citation{bastianello_thermalization_2020}
+\citation{thomas_thermalization_2021}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Experimental tests of Generalized Hydrodynamics}{46}{section*.45}\protected@file@percent }
+\newlabel{sec:GHDexperiment}{{IV}{46}{}{section*.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}The Quantum Newton Cradle experiment.}{46}{section*.46}\protected@file@percent }
+\newlabel{subsection:NewtonCradle}{{IV\,A}{46}{}{section*.46}{}}
+\citation{mazets_breakdown_2008}
+\citation{tang_thermalization_2018,schemmer2019generalized,li_relaxation_2020}
+\citation{li_relaxation_2020}
+\citation{tang_thermalization_2018}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Quantum Newton Cradle experiment [taken from \cite  {kinoshita2006quantum}]. Two "clouds" at different mean momenta are prepared by Bragg pulses. Left picture: absorption images of the cloud after an evolution time $t$ in the longitudinal potential, followed by a 1D expansion during a given time $t_{\rm  exp}$. The period of the dipole motion in the longitudinal harmonic trap is spanned: 13 ms$=\tau =(2\pi )/\omega _z$. Right image: longitudinal density profiles. Green : profile averaged over the first oscillating period. For times $ t>10\tau $, the longitudinal profile barely changes during an oscillation period, as expected because of dephasing induced by the spread of $\omega _z$ among the 1D tubes. Bleu and red : profiles at $t=15\tau $ and $t=30\tau $. One observes a decrease of the total atom number, due to 3-body recombination effect. The shape of the distribution however barely changes and does not converges towards the shape of a thermal equilibrium state. }}{47}{figure.20}\protected@file@percent }
+\newlabel{fig:NewtonCradleWeiss}{{20}{47}{Quantum Newton Cradle experiment [taken from \cite {kinoshita2006quantum}]. Two "clouds" at different mean momenta are prepared by Bragg pulses. Left picture: absorption images of the cloud after an evolution time $t$ in the longitudinal potential, followed by a 1D expansion during a given time $t_{\rm exp}$. The period of the dipole motion in the longitudinal harmonic trap is spanned: 13 ms$=\tau =(2\pi )/\omega _z$. Right image: longitudinal density profiles. Green : profile averaged over the first oscillating period. For times $ t>10\tau $, the longitudinal profile barely changes during an oscillation period, as expected because of dephasing induced by the spread of $\omega _z$ among the 1D tubes. Bleu and red : profiles at $t=15\tau $ and $t=30\tau $. One observes a decrease of the total atom number, due to 3-body recombination effect. The shape of the distribution however barely changes and does not converges towards the shape of a thermal equilibrium state}{figure.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Test of GHD in an atom chip setup}{48}{section*.47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces  Top. [From \nobreakspace  {}\cite  {schemmer2019generalized}] Experimental test of GHD theory. Shown are density profiles after a quench from a double well potential to a flat potential. The experimental date (noisy curves) are in very good agreement with GHD predictions (smooth solid lines). The standart hydrodynamics (dashed lines on the right figures) fails to capture the physics. \\ Bottom. [From Supplemental Material of \citep  {schemmer2019generalized}] Calculations of the expected rapidity distributions after a release from a double-well potential. The figures show the evolution of the Fermi occupation ratio $\nu (x,\theta )$, which is in one-to-one correspondence with the rapidity distribution $\rho (x,\theta )$ (see Subsection\nobreakspace  {}\ref {subsec:thermodynamic_limit}). The top line shows prediction from GHD theory, and the bottom line shows prediction from standard Euler hydrodynamics. The GHD predicts the appearance a of double peaked rapidity distribution around the center of the cloud (clearly visible on the plot at $t=55$ms). Standard Euler hydrodynamics, on the other hand, assumes that at each point $x$ the rapidity distribution $\rho (x,\theta )$ is the one at thermal equilibrium, which is a single peaked function. This theory is thus unable to capture the correct physics. }}{48}{figure.21}\protected@file@percent }
+\newlabel{fig:testGHDSchemmer}{{21}{48}{Top. [From ~\cite {schemmer2019generalized}] Experimental test of GHD theory. Shown are density profiles after a quench from a double well potential to a flat potential. The experimental date (noisy curves) are in very good agreement with GHD predictions (smooth solid lines). The standart hydrodynamics (dashed lines on the right figures) fails to capture the physics. \\ Bottom. [From Supplemental Material of \citep {schemmer2019generalized}] Calculations of the expected rapidity distributions after a release from a double-well potential. The figures show the evolution of the Fermi occupation ratio $\nu (x,\theta )$, which is in one-to-one correspondence with the rapidity distribution $\rho (x,\theta )$ (see Subsection~\ref {subsec:thermodynamic_limit}). The top line shows prediction from GHD theory, and the bottom line shows prediction from standard Euler hydrodynamics. The GHD predicts the appearance a of double peaked rapidity distribution around the center of the cloud (clearly visible on the plot at $t=55$ms). Standard Euler hydrodynamics, on the other hand, assumes that at each point $x$ the rapidity distribution $\rho (x,\theta )$ is the one at thermal equilibrium, which is a single peaked function. This theory is thus unable to capture the correct physics}{figure.21}{}}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\citation{schemmer2019generalized}
+\citation{kinoshita2006quantum}
+\citation{malvania2020generalized}
+\citation{malvania2020generalized}
+\citation{schemmer2019generalized}
+\citation{malvania2020generalized}
+\citation{malvania2020generalized}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces [From \citep  {schemmer2019generalized}] Dynamics induced by a quench from a double well potential to a harmonic potential, which realizes a situation similat to the Quantum Newton Cradle. Experimental data (noisy lines) are compared to GHD calculations (smooth solid lines). Because of atom losses, the number of atoms drops by approx. $15\%$ from $t=0$ to $t=180$ms. This is not taken into account in the GHD theory.}}{49}{figure.22}\protected@file@percent }
+\newlabel{fig.SchemmerNC}{{22}{49}{[From \citep {schemmer2019generalized}] Dynamics induced by a quench from a double well potential to a harmonic potential, which realizes a situation similat to the Quantum Newton Cradle. Experimental data (noisy lines) are compared to GHD calculations (smooth solid lines). Because of atom losses, the number of atoms drops by approx. $15\%$ from $t=0$ to $t=180$ms. This is not taken into account in the GHD theory}{figure.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}Test of GHD in strongly interacting gases}{49}{section*.48}\protected@file@percent }
+\newlabel{subsec:testGHDWeiss}{{IV\,C}{49}{}{section*.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Test of GHD using strongly interacting gases [from \citep  {malvania2020generalized}]. The dynamics is generated by a sudden increase of the depth of the Gaussian longitudinal confinement by a factor 100. The first two compression cycles are shown. Experimental data (red curves in (a) and red dots in (b-d)) are compared to GHD predictions for a gas initially in the ground state (blue lines in (a)). The blue dots in (b-c) are the GHD calculation using the measured atom number at each time, while the dashed line in (b-c) is the theory using the average atom number. {\bf  a} Measured rapidity distribution $f(\theta )$, integrated over positions $x$ and averaged over all 1D tubes, compared to the GHD prediction. {\bf  b} Rapidity energy $E$, {\it  i.e.} $\DOTSI \intop \ilimits@ d\theta f(\theta ) (\theta ^2/(2m))$, in units of the recoil energy $E_{\rm  r}$. {\bf  c} Evolution of the kinetic energy, obtained from the measured momentum distribution $w(p)$: $K = \DOTSI \intop \ilimits@ dp w(p) (p^2/(2m))$. {\bf  d} Interaction energy $E-K$. (To prevent confusion with notations used in sec.\ref {sec:losses}, $K$ is noted $E_K$ in the main text)}}{50}{figure.23}\protected@file@percent }
+\newlabel{fig:GHDWeiss}{{23}{50}{Test of GHD using strongly interacting gases [from \citep {malvania2020generalized}]. The dynamics is generated by a sudden increase of the depth of the Gaussian longitudinal confinement by a factor 100. The first two compression cycles are shown. Experimental data (red curves in (a) and red dots in (b-d)) are compared to GHD predictions for a gas initially in the ground state (blue lines in (a)). The blue dots in (b-c) are the GHD calculation using the measured atom number at each time, while the dashed line in (b-c) is the theory using the average atom number. {\bf a} Measured rapidity distribution $f(\theta )$, integrated over positions $x$ and averaged over all 1D tubes, compared to the GHD prediction. {\bf b} Rapidity energy $E$, {\it i.e.} $\int d\theta f(\theta ) (\theta ^2/(2m))$, in units of the recoil energy $E_{\rm r}$. {\bf c} Evolution of the kinetic energy, obtained from the measured momentum distribution $w(p)$: $K = \int dp w(p) (p^2/(2m))$. {\bf d} Interaction energy $E-K$. (To prevent confusion with notations used in sec.\ref {sec:losses}, $K$ is noted $E_K$ in the main text)}{figure.23}{}}
+\citation{schemmer2019generalized}
+\citation{malvania2020generalized}
+\citation{wilson_observation_2020}
+\citation{malvania2020generalized}
+\citation{fokkema2014split,eliens2016general,eliens2017quantum}
+\citation{malvania2020generalized}
+\citation{fokkema2014split,eliens2016general,eliens2017quantum}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces [From \citep  {malvania2020generalized}] `Zero-entropy' GHD simulation of a sudden increase of the trap depth of the quasi-harmonic (Gaussian) potential $V(x)$: at $t=0$, the depth is increased by a factor 100, corresponding to the experimental situation of Fig.\nobreakspace  {}\ref {fig:GHDWeiss}. Because the gas is initially at zero temperature, the Fermi occupation $\nu (x,\theta ,t)$ is either one (in the orange area) or zero (white area) at any time. The contour $\Gamma _t$ (black curve) that separates the two regions evolves according to Eq.\nobreakspace  {}(\ref {eq:zero_entropy_ghd}). Here the dimensionless repulsion strength $\gamma $ is initially of order $1$ in the center of the cloud, and it drops to a value of order $0.1$ at the maximum of the compression. One clearly sees that the contour $\Gamma _t$ gets deformed, as a combined effect of the interactions and of the small trap anharmonicity. Additionally, one observes the appearance of multiple Fermi seas: when a vertical line passing through a point $x$ can intersect the contour $\Gamma _t$ at more than two points, the gas is locally in state known as a `split Fermi sea' \citep  {fokkema2014split,eliens2016general,eliens2017quantum}. For instance, a double Fermi sea appears near the first compression point (1.38ms panel). At this point, the conventional hydrodynamic approaches of Subsection\nobreakspace  {}\ref {subsec:conventional_hydro} typically fail because of the appearance of shocks, and GHD is necessary to describe the full evolution. }}{51}{figure.24}\protected@file@percent }
+\newlabel{fig:fermi_contour}{{24}{51}{[From \citep {malvania2020generalized}] `Zero-entropy' GHD simulation of a sudden increase of the trap depth of the quasi-harmonic (Gaussian) potential $V(x)$: at $t=0$, the depth is increased by a factor 100, corresponding to the experimental situation of Fig.~\ref {fig:GHDWeiss}. Because the gas is initially at zero temperature, the Fermi occupation $\nu (x,\theta ,t)$ is either one (in the orange area) or zero (white area) at any time. The contour $\Gamma _t$ (black curve) that separates the two regions evolves according to Eq.~(\ref {eq:zero_entropy_ghd}). Here the dimensionless repulsion strength $\gamma $ is initially of order $1$ in the center of the cloud, and it drops to a value of order $0.1$ at the maximum of the compression. One clearly sees that the contour $\Gamma _t$ gets deformed, as a combined effect of the interactions and of the small trap anharmonicity. Additionally, one observes the appearance of multiple Fermi seas: when a vertical line passing through a point $x$ can intersect the contour $\Gamma _t$ at more than two points, the gas is locally in state known as a `split Fermi sea' \citep {fokkema2014split,eliens2016general,eliens2017quantum}. For instance, a double Fermi sea appears near the first compression point (1.38ms panel). At this point, the conventional hydrodynamic approaches of Subsection~\ref {subsec:conventional_hydro} typically fail because of the appearance of shocks, and GHD is necessary to describe the full evolution}{figure.24}{}}
+\citation{malvania2020generalized}
+\citation{atas_collective_2017}
+\citation{malvania2020generalized}
+\citation{malvania2020generalized}
+\citation{burrows_nonadiabatic_2017}
+\citation{labouvie_bistability_2016}
+\citation{rauer_cooling_2016,bouchoule_asymptotic_2020}
+\citation{traverso_inelastic_2009,yamaguchi_inelastic_2008}
+\citation{kinoshita_local_2005}
+\citation{soding_three-body_1999,tolra_observation_2004}
+\citation{gurian_observation_2012,ferlaino_evidence_2009}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Atom losses}{53}{section*.49}\protected@file@percent }
+\newlabel{sec:losses}{{V}{53}{}{section*.49}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Loss mechanisms in experiments}{53}{section*.50}\protected@file@percent }
+\newlabel{eq:Lindblad}{{111}{53}{}{equation.5.111}{}}
+\citation{bouchoule_effect_2020}
+\citation{bouchoule_effect_2020}
+\citation{bouchoule_effect_2020}
+\citation{bouchoule_effect_2020}
+\citation{pozsgay2011mean,piroli2015exact}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Theory of adiabatic losses}{54}{section*.51}\protected@file@percent }
+\newlabel{eq:drho_dt_loss}{{112}{54}{}{equation.5.112}{}}
+\newlabel{eq:dqd_dt_loss}{{113}{54}{}{equation.5.113}{}}
+\newlabel{eq:F_limsigma}{{114}{54}{}{equation.5.114}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces [From\nobreakspace  {}\cite  {bouchoule_effect_2020}] Rapidity distributions of the homogeneous 1D Bose gas, initially at thermal equilibrium at temperature $T_{\rm  init}$, after a fraction of the atoms have escaped the system because of $K$-body loss processes. Left: results for one-body losses in the hard core limit. The colored lines are obtained by evaluating the functional $F[\rho ](\theta )$ (Eq.\nobreakspace  {}(\ref {eq:drho_dt_loss})) numerically, with a Monte-Carlo summation over eigenstates. The black dashed line is the analytical result available for the hard core limit. Right: numerical results for three-body losses at finite repulsion strength ($\gamma = 1$ in the initial state).}}{55}{figure.25}\protected@file@percent }
+\newlabel{fig:losses}{{25}{55}{[From~\cite {bouchoule_effect_2020}] Rapidity distributions of the homogeneous 1D Bose gas, initially at thermal equilibrium at temperature $T_{\rm init}$, after a fraction of the atoms have escaped the system because of $K$-body loss processes. Left: results for one-body losses in the hard core limit. The colored lines are obtained by evaluating the functional $F[\rho ](\theta )$ (Eq.~(\ref {eq:drho_dt_loss})) numerically, with a Monte-Carlo summation over eigenstates. The black dashed line is the analytical result available for the hard core limit. Right: numerical results for three-body losses at finite repulsion strength ($\gamma = 1$ in the initial state)}{figure.25}{}}
+\citation{pozsgay2011mean,bastianello2018exact,bastianello2018sinh}
+\citation{kheruntsyan2003pair,gangardt2003local,cheianov2006three,cheianov2006exact,kormos2009expectation,kormos2011exact}
+\citation{tolra_observation_2004}
+\citation{zundel_energy-dependent_2019}
+\citation{gangardt2003stability}
+\citation{mehta_three-body_2007}
+\citation{hutsalyuk2020integrability}
+\citation{pozsgay2011mean,bastianello2018exact,hutsalyuk2020integrability}
+\citation{bouchoule_breakdown_2020}
+\citation{de2014solution}
+\citation{bouchoule_breakdown_2020}
+\citation{minguzzi2002high,olshanii2003short}
+\citation{tan2008energetics,tan2008large,tan2008generalized}
+\citation{minguzzi2002high,olshanii2003short,tan2008energetics,tan2008large,tan2008generalized,braaten2008exact,barth2011tan,werner2012generalI,werner2012generalII,yao_tans_2018}
+\citation{kuhnle2010universal,stewart_verification_2010,wild2012measurements}
+\newlabel{eq:de_dt_loss}{{118}{56}{}{equation.5.118}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C}$1/\theta ^4$ tails in the rapidity distribution}{56}{section*.52}\protected@file@percent }
+\newlabel{eq:cusp_condition}{{119}{56}{}{equation.5.119}{}}
+\newlabel{eq:Tan}{{120}{56}{}{equation.5.120}{}}
+\citation{bouchoule_breakdown_2020}
+\citation{bouchoule_breakdown_2020}
+\citation{rauer_cooling_2016,grisins_degenerate_2016}
+\citation{johnson_long-lived_2017,bouchoule_cooling_2018}
+\citation{schemmer_cooling_2018}
+\citation{bouchoule_asymptotic_2020}
+\citation{grisins_degenerate_2016,johnson_long-lived_2017}
+\citation{johnson_long-lived_2017}
+\citation{lieb_exact_1963}
+\citation{bouchoule_breakdown_2020}
+\citation{rossini2020strong}
+\citation{garcia2009dissipation}
+\citation{rossini2020strong}
+\citation{bouchoule_effect_2020}
+\citation{caux2019hydrodynamics}
+\citation{bastianello2020generalized}
+\citation{lange2017pumping,lange2018time,lenarvcivc2018perturbative}
+\citation{friedman2020diffusive,vznidarivc2020weak}
+\newlabel{eq:CrCc}{{121}{57}{}{equation.5.121}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D}Results in the quasicondensate regime}{57}{section*.53}\protected@file@percent }
+\newlabel{eq:Tphonons}{{122}{57}{}{equation.5.122}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E}Other related recent results}{57}{section*.54}\protected@file@percent }
+\citation{riemann1860fortpflanzung}
+\citation{bertini2016transport}
+\citation{castro2016emergent}
+\citation{moller_extension_2021}
+\citation{li_relaxation_2020}
+\citation{mazets_breakdown_2008}
+\@writefile{toc}{\contentsline {section}{\numberline {}Conclusion and perspectives}{59}{section*.55}\protected@file@percent }
+\bibcite{aizenman1975ergodic}{{1}{1975}{{Aizenman et~al.}}{{Aizenman, Goldstein and\ Lebowitz}}}
+\bibcite{armijo_mapping_2011}{{2}{2011}{{Armijo et~al.}}{{Armijo, Jacqmin, Kheruntsyan and\ Bouchoule}}}
+\bibcite{armijo_probing_2010}{{3}{2010}{{Armijo et~al.}}{{Armijo, Jacqmin, Kheruntsyan and\ Bouchoule}}}
+\bibcite{arzamasovs_full_2019}{{4}{2019}{{Arzamasovs and\ Gangardt}}{{}}}
+\bibcite{atas_collective_2017}{{5}{2017}{{Atas et~al.}}{{Atas, Bouchoule, Gangardt and\ Kheruntsyan}}}
+\bibcite{barth2011tan}{{6}{2011}{{Barth and\ Zwerger}}{{}}}
+\bibcite{bastianello2019generalized}{{7}{2019}{{Bastianello et~al.}}{{Bastianello, Alba and\ Caux}}}
+\bibcite{bastianello2017quenches}{{8}{2017}{{Bastianello et~al.}}{{Bastianello, Collura and\ Sotiriadis}}}
+\bibcite{bastianello_thermalization_2020}{{9}{2020}{{Bastianello, De~Luca, Doyon and\ De~Nardis}}{{}}}
+\bibcite{bastianello2020generalized}{{10}{2020}{{Bastianello, De~Nardis and\ De~Luca}}{{}}}
+\bibcite{bastianello2020entanglement}{{11}{2020}{{Bastianello, Dubail and\ St{\'e}phan}}{{}}}
+\bibcite{bastianello2018sinh}{{12}{2018}{{Bastianello and\ Piroli}}{{}}}
+\bibcite{bastianello2018exact}{{13}{2018}{{Bastianello et~al.}}{{Bastianello, Piroli and\ Calabrese}}}
+\bibcite{bergeman_atom-atom_2003}{{14}{2003}{{Bergeman et~al.}}{{Bergeman, Moore and\ Olshanii}}}
+\bibcite{berges_prethermalization_2004}{{15}{2004}{{Berges}}{{}}}
+\bibcite{bertini2016transport}{{16}{2016}{{Bertini et~al.}}{{Bertini, Collura, De~Nardis and\ Fagotti}}}
+\bibcite{bettelheim2020whitham}{{17}{2020}{{Bettelheim}}{{}}}
+\bibcite{bettelheim2006orthogonality}{{18}{2006}{{Bettelheim et~al.}}{{Bettelheim, Abanov and\ Wiegmann}}}
+\bibcite{bettelheim2012quantum}{{19}{2012}{{Bettelheim and\ Glazman}}{{}}}
+\bibcite{bettelheim2011universal}{{20}{2011}{{Bettelheim and\ Wiegmann}}{{}}}
+\bibcite{blakie_dynamics_2008}{{21}{2008}{{Blakie† et~al.}}{{Blakie†, Bradley†, Davis, Ballagh and\ Gardiner}}}
+\bibcite{boldrighini1983one}{{22}{1983}{{Boldrighini et~al.}}{{Boldrighini, Dobrushin and\ Sukhov}}}
+\bibcite{boldrighini1997one}{{23}{1997}{{Boldrighini and\ Suhov}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{60}{section*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{60}{section*.57}\protected@file@percent }
+\bibcite{bolech2012long}{{24}{2012}{{Bolech et~al.}}{{Bolech, Heidrich-Meisner, Langer, McCulloch, Orso and\ Rigol}}}
+\bibcite{bonnes2014light}{{25}{2014}{{Bonnes et~al.}}{{Bonnes, Essler and\ L{\"a}uchli}}}
+\bibcite{borsi2020current}{{26}{2020}{{Borsi et~al.}}{{Borsi, Pozsgay and\ Pristy{\'a}k}}}
+\bibcite{bouchoule_two-body_2012}{{27}{2012}{{Bouchoule et~al.}}{{Bouchoule, Arzamasovs, Kheruntsyan and\ Gangardt}}}
+\bibcite{bouchoule_effect_2020}{{28}{2020}{{Bouchoule et~al.}}{{Bouchoule, Doyon and\ Dubail}}}
+\bibcite{bouchoule_breakdown_2020}{{29}{2020}{{Bouchoule and\ Dubail}}{{}}}
+\bibcite{bouchoule_interaction-induced_2007}{{30}{2007}{{Bouchoule et~al.}}{{Bouchoule, Kheruntsyan and\ Shlyapnikov}}}
+\bibcite{bouchoule_asymptotic_2020}{{31}{2020}{{Bouchoule and\ Schemmer}}{{}}}
+\bibcite{bouchoule_cooling_2018}{{32}{2018}{{Bouchoule et~al.}}{{Bouchoule, Schemmer and\ Henkel}}}
+\bibcite{bouchoule_finite-temperature_2016}{{33}{2016}{{Bouchoule et~al.}}{{Bouchoule, Szigeti, Davis and\ Kheruntsyan}}}
+\bibcite{braaten2008exact}{{34}{2008}{{Braaten and\ Platter}}{{}}}
+\bibcite{brazier1972interaction}{{35}{1972}{{Brazier-Smith et~al.}}{{Brazier-Smith, Jennings and\ Latham}}}
+\bibcite{brun2018inhomogeneous}{{36}{2018}{{Brun and\ Dubail}}{{}}}
+\bibcite{bulchandani2017classical}{{37}{2017}{{Bulchandani}}{{}}}
+\bibcite{bulchandani2019kinetic}{{38}{2019}{{Bulchandani et~al.}}{{Bulchandani, Cao and\ Moore}}}
+\bibcite{bulchandani2017solvable}{{39}{2017}{{Bulchandani et~al.}}{{Bulchandani, Vasseur, Karrasch and\ Moore}}}
+\bibcite{bulchandani2018bethe}{{40}{2018}{{Bulchandani et~al.}}{{Bulchandani, Vasseur, Karrasch and\ Moore}}}
+\bibcite{buljan2008fermi}{{41}{2008}{{Buljan et~al.}}{{Buljan, Pezer and\ Gasenzer}}}
+\bibcite{burrows_nonadiabatic_2017}{{42}{2017}{{Burrows et~al.}}{{Burrows, Perrin and\ Garraway}}}
+\bibcite{campbell_sudden_2015}{{43}{2015}{{Campbell et~al.}}{{Campbell, Gangardt and\ Kheruntsyan}}}
+\bibcite{cao2018incomplete}{{44}{2018}{{Cao et~al.}}{{Cao, Bulchandani and\ Moore}}}
+\bibcite{cao2019gge}{{45}{2019}{{Cao et~al.}}{{Cao, Bulchandani and\ Spohn}}}
+\bibcite{cassidy2011generalized}{{46}{2011}{{Cassidy et~al.}}{{Cassidy, Clark and\ Rigol}}}
+\bibcite{castin_simple_2004}{{47}{2004}{{Castin}}{{}}}
+\bibcite{castin_coherence_2000}{{48}{2000}{{Castin et~al.}}{{Castin, Dum, Mandonnet, Minguzzi and\ Carusotto}}}
+\bibcite{castro2016emergent}{{49}{2016}{{Castro-Alvaredo et~al.}}{{Castro-Alvaredo, Doyon and\ Yoshimura}}}
+\bibcite{caux2016quench}{{50}{2016}{{Caux}}{{}}}
+\bibcite{caux2019hydrodynamics}{{51}{2019}{{Caux et~al.}}{{Caux, Doyon, Dubail, Konik and\ Yoshimura}}}
+\bibcite{caux2009polarization}{{52}{2009}{{Caux et~al.}}{{Caux, Klauser and\ van~den Brink}}}
+\bibcite{caux2012constructing}{{53}{2012}{{Caux and\ Konik}}{{}}}
+\bibcite{cazalilla2004bosonizing}{{54}{2004}{{Cazalilla}}{{}}}
+\bibcite{cazalilla2011one}{{55}{2011}{{Cazalilla et~al.}}{{Cazalilla, Citro, Giamarchi, Orignac and\ Rigol}}}
+\bibcite{cheianov2006exact}{{56}{2006{\em  a}}{{Cheianov et~al.}}{{Cheianov, Smith and\ Zvonarev}}}
+\bibcite{cheianov2006three}{{57}{2006{\em  b}}{{Cheianov et~al.}}{{Cheianov, Smith and\ Zvonarev}}}
+\bibcite{cockburn_quantitative_2011}{{58}{2011}{{Cockburn, Gallucci and\ Proukakis}}{{}}}
+\bibcite{cockburn_comparison_2011}{{59}{2011}{{Cockburn, Negretti, Proukakis and\ Henkel}}{{}}}
+\bibcite{collura2020domain}{{60}{2020}{{Collura et~al.}}{{Collura, De~Luca, Calabrese and\ Dubail}}}
+\bibcite{collura2013equilibration}{{61}{2013{\em  a}}{{Collura et~al.}}{{Collura, Sotiriadis and\ Calabrese}}}
+\bibcite{collura2013quench}{{62}{2013{\em  b}}{{Collura et~al.}}{{Collura, Sotiriadis and\ Calabrese}}}
+\bibcite{cubero2020generalized}{{63}{2020}{{Cubero}}{{}}}
+\bibcite{cubero2019generalized}{{64}{2020}{{Cubero and\ Panfil}}{{}}}
+\bibcite{damski2006shock}{{65}{2006}{{Damski}}{{}}}
+\bibcite{davies1990higher}{{66}{1990}{{Davies}}{{}}}
+\bibcite{davies2011higher}{{67}{2011}{{Davies and\ Korepin}}{{}}}
+\bibcite{davis_yang-yang_2012}{{68}{2012}{{Davis et~al.}}{{Davis, Blakie, van Amerongen, van Druten and\ Kheruntsyan}}}
+\bibcite{davis_simulations_2001}{{69}{2001}{{Davis et~al.}}{{Davis, Morgan and\ Burnett}}}
+\bibcite{de2018hydrodynamic}{{70}{2018}{{De~Nardis et~al.}}{{De~Nardis, Bernard and\ Doyon}}}
+\bibcite{de2019diffusion}{{71}{2019}{{De~Nardis et~al.}}{{De~Nardis, Bernard and\ Doyon}}}
+\bibcite{de2018edge}{{72}{2018}{{De~Nardis and\ Panfil}}{{}}}
+\bibcite{de2014solution}{{73}{2014}{{De~Nardis et~al.}}{{De~Nardis, Wouters, Brockmann and\ Caux}}}
+\bibcite{dean2018wigner}{{74}{2018}{{Dean et~al.}}{{Dean, Le~Doussal, Majumdar and\ Schehr}}}
+\bibcite{dean2019nonequilibrium}{{75}{2019}{{Dean et~al.}}{{Dean, Le~Doussal, Majumdar and\ Schehr}}}
+\bibcite{del2008fermionization}{{76}{2008}{{Del~Campo}}{{}}}
+\bibcite{dettmer_observation_2001}{{77}{2001}{{Dettmer et~al.}}{{Dettmer, Hellweg, Ryytty, Arlt, Ertmer, Sengstock, Petrov, Shlyapnikov, Kreutzmann, Santos and\ Lewenstein}}}
+\bibcite{doyon2017thermalization}{{78}{2017}{{Doyon}}{{}}}
+\bibcite{doyon2018exact}{{79}{2018}{{Doyon}}{{}}}
+\bibcite{doyon2019generalized}{{80}{2019{\em  a}}{{Doyon}}{{}}}
+\bibcite{doyon2019lecture}{{81}{2019{\em  b}}{{Doyon}}{{}}}
+\bibcite{doyon2017large}{{82}{2017}{{Doyon et~al.}}{{Doyon, Dubail, Konik and\ Yoshimura}}}
+\bibcite{doyon2017drude}{{83}{2017{\em  a}}{{Doyon and\ Spohn}}{{}}}
+\bibcite{doyon2017dynamics}{{84}{2017{\em  b}}{{Doyon and\ Spohn}}{{}}}
+\bibcite{doyon2017note}{{85}{2017}{{Doyon and\ Yoshimura}}{{}}}
+\bibcite{doyon2018soliton}{{86}{2018}{{Doyon et~al.}}{{Doyon, Yoshimura and\ Caux}}}
+\bibcite{dubail2016more}{{87}{2016}{{Dubail}}{{}}}
+\bibcite{dubail2017conformal}{{88}{2017}{{Dubail et~al.}}{{Dubail, St{\'e}phan, Viti and\ Calabrese}}}
+\bibcite{dubessy2021universal}{{89}{2021}{{Dubessy et~al.}}{{Dubessy, Polo, Perrin, Minguzzi and\ Olshanii}}}
+\bibcite{dymarsky2019generalized}{{90}{2019}{{Dymarsky and\ Pavlenko}}{{}}}
+\bibcite{eisenbud1948formal}{{91}{1948}{{Eisenbud}}{{}}}
+\bibcite{el2005kinetic}{{92}{2005}{{El and\ Kamchatnov}}{{}}}
+\bibcite{eliens2017quantum}{{93}{2017}{{Eli{\"e}ns}}{{}}}
+\bibcite{eliens2016general}{{94}{2016}{{Eli{\"e}ns and\ Caux}}{{}}}
+\bibcite{essler2016quench}{{95}{2016}{{Essler and\ Fagotti}}{{}}}
+\bibcite{esteve_observations_2006}{{96}{2006}{{Esteve et~al.}}{{Esteve, Trebbia, Schumm, Aspect, Westbrook and\ Bouchoule}}}
+\bibcite{fabbri_momentum-resolved_2011}{{97}{2011}{{Fabbri et~al.}}{{Fabbri, Clément, Fallani, Fort and\ Inguscio}}}
+\bibcite{fabbri_dynamical_2015}{{98}{2015}{{Fabbri et~al.}}{{Fabbri, Panfil, Clément, Fallani, Inguscio, Fort and\ Caux}}}
+\bibcite{fagotti2017higher}{{99}{2017}{{Fagotti}}{{}}}
+\bibcite{fagotti2020locally}{{100}{2020}{{Fagotti}}{{}}}
+\bibcite{fang_momentum-space_2016}{{101}{2016}{{Fang et~al.}}{{Fang, Johnson, Roscilde and\ Bouchoule}}}
+\bibcite{ferlaino_evidence_2009}{{102}{2009}{{Ferlaino et~al.}}{{Ferlaino, Knoop, Berninger, Harm, D’Incao, Nägerl and\ Grimm}}}
+\bibcite{fokkema2014split}{{103}{2014}{{Fokkema et~al.}}{{Fokkema, Eli{\"e}ns and\ Caux}}}
+\bibcite{folman_controlling_2000}{{104}{2000}{{Folman et~al.}}{{Folman, Krüger, Cassettari, Hessmo, Maier and\ Schmiedmayer}}}
+\bibcite{friedman2020diffusive}{{105}{2020}{{Friedman et~al.}}{{Friedman, Gopalakrishnan and\ Vasseur}}}
+\bibcite{gangardt2003local}{{106}{2003{\em  a}}{{Gangardt and\ Shlyapnikov}}{{}}}
+\bibcite{gangardt2003stability}{{107}{2003{\em  b}}{{Gangardt and\ Shlyapnikov}}{{}}}
+\bibcite{garcia2009dissipation}{{108}{2009}{{Garc{\'\i }a-Ripoll et~al.}}{{Garc{\'\i }a-Ripoll, D{\"u}rr, Syassen, Bauer, Lettner, Rempe and\ Cirac}}}
+\bibcite{gaudin2014bethe}{{109}{2014}{{Gaudin}}{{}}}
+\bibcite{giamarchi2003quantum}{{110}{2003}{{Giamarchi}}{{}}}
+\bibcite{girardeau1960relationship}{{111}{1960}{{Girardeau}}{{}}}
+\bibcite{gopalakrishnan2018hydrodynamics}{{112}{2018}{{Gopalakrishnan et~al.}}{{Gopalakrishnan, Huse, Khemani and\ Vasseur}}}
+\bibcite{gring_relaxation_2012}{{113}{2012}{{Gring et~al.}}{{Gring, Kuhnert, Langen, Kitagawa, Rauer, Schreitl, Mazets, Smith, Demler and\ Schmiedmayer}}}
+\bibcite{grisins_degenerate_2016}{{114}{2016}{{Grišins et~al.}}{{Grišins, Rauer, Langen, Schmiedmayer and\ Mazets}}}
+\bibcite{gurian_observation_2012}{{115}{2012}{{Gurian et~al.}}{{Gurian, Cheinet, Huillery, Fioretti, Zhao, Gould, Comparat and\ Pillet}}}
+\bibcite{haller_realization_2009}{{116}{2009}{{Haller et~al.}}{{Haller, Gustavsson, Mark, Danzl, Hart, Pupillo and\ Nägerl}}}
+\bibcite{he2013single}{{117}{2013}{{He et~al.}}{{He, Santos, Wright and\ Rigol}}}
+\bibcite{hutsalyuk2020integrability}{{118}{2020}{{Hutsalyuk and\ Pozsgay}}{{}}}
+\bibcite{ilievski2016quasilocal}{{119}{2016}{{Ilievski et~al.}}{{Ilievski, Medenjak, Prosen and\ Zadnik}}}
+\bibcite{imambekov2012one}{{120}{2012}{{Imambekov et~al.}}{{Imambekov, Schmidt and\ Glazman}}}
+\bibcite{jacqmin_sub-poissonian_2011}{{121}{2011}{{Jacqmin et~al.}}{{Jacqmin, Armijo, Berrada, Kheruntsyan and\ Bouchoule}}}
+\bibcite{jacqmin_momentum_2012}{{122}{2012}{{Jacqmin et~al.}}{{Jacqmin, Fang, Berrada, Roscilde and\ Bouchoule}}}
+\bibcite{johnson_long-lived_2017}{{123}{2017}{{Johnson et~al.}}{{Johnson, Szigeti, Schemmer and\ Bouchoule}}}
+\bibcite{jukic2008free}{{124}{2008}{{Juki{\'c} et~al.}}{{Juki{\'c}, Pezer, Gasenzer and\ Buljan}}}
+\bibcite{kadanoff1963hydrodynamic}{{125}{1963}{{Kadanoff and\ Martin}}{{}}}
+\bibcite{ketterle_bose-einstein_1996}{{126}{1996}{{Ketterle and\ van Druten}}{{}}}
+\bibcite{kheruntsyan2003pair}{{127}{2003}{{Kheruntsyan et~al.}}{{Kheruntsyan, Gangardt, Drummond and\ Shlyapnikov}}}
+\bibcite{kinoshita_observation_2004}{{128}{2004}{{Kinoshita et~al.}}{{Kinoshita, Wenger and\ Weiss}}}
+\bibcite{kinoshita_local_2005}{{129}{2005}{{Kinoshita et~al.}}{{Kinoshita, Wenger and\ Weiss}}}
+\bibcite{kinoshita2006quantum}{{130}{2006}{{Kinoshita et~al.}}{{Kinoshita, Wenger and\ Weiss}}}
+\bibcite{klauser2011equilibrium}{{131}{2011}{{Klauser and\ Caux}}{{}}}
+\bibcite{klumper2011efficient}{{132}{2011}{{Kl{\"u}mper and\ P{\^a}{\c {t}}u}}{{}}}
+\bibcite{kolomeisky2000low}{{133}{2000}{{Kolomeisky et~al.}}{{Kolomeisky, Newman, Straley and\ Qi}}}
+\bibcite{korepin1997quantum}{{134}{1997}{{Korepin et~al.}}{{Korepin, Bogoliubov and\ Izergin}}}
+\bibcite{kormos2011exact}{{135}{2011}{{Kormos et~al.}}{{Kormos, Chou and\ Imambekov}}}
+\bibcite{kormos2009expectation}{{136}{2009}{{Kormos et~al.}}{{Kormos, Mussardo and\ Trombettoni}}}
+\bibcite{kuhnle2010universal}{{137}{2010}{{Kuhnle et~al.}}{{Kuhnle, Hu, Liu, Dyke, Mark, Drummond, Hannaford and\ Vale}}}
+\bibcite{labouvie_bistability_2016}{{138}{2016}{{Labouvie et~al.}}{{Labouvie, Santra, Heun and\ Ott}}}
+\bibcite{landau1941theory}{{139}{1941}{{Landau}}{{}}}
+\bibcite{lang2017ground}{{140}{2017}{{Lang et~al.}}{{Lang, Hekking and\ Minguzzi}}}
+\bibcite{lange2017pumping}{{141}{2017}{{Lange et~al.}}{{Lange, Lenar{\v {c}}i{\v {c}} and\ Rosch}}}
+\bibcite{lange2018time}{{142}{2018}{{Lange et~al.}}{{Lange, Lenar{\v {c}}i{\v {c}} and\ Rosch}}}
+\bibcite{langen_experimental_2015}{{143}{2015}{{Langen et~al.}}{{Langen, Erne, Geiger, Rauer, Schweigler, Kuhnert, Rohringer, Mazets, Gasenzer and\ Schmiedmayer}}}
+\bibcite{lebowitz1967kinetic}{{144}{1967}{{Lebowitz and\ Percus}}{{}}}
+\bibcite{lenarvcivc2018perturbative}{{145}{2018}{{Lenar{\v {c}}i{\v {c}} et~al.}}{{Lenar{\v {c}}i{\v {c}}, Lange and\ Rosch}}}
+\bibcite{lenard1964momentum}{{146}{1964}{{Lenard}}{{}}}
+\bibcite{li_relaxation_2020}{{147}{2020}{{Li et~al.}}{{Li, Zhou, Mazets, Stimming, Møller, Zhu, Zhai, Xiong, Zhou, Chen and\ Schmiedmayer}}}
+\bibcite{lieb_exact_1963}{{148}{1963}{{Lieb}}{{}}}
+\bibcite{lieb1963exact}{{149}{1963}{{Lieb and\ Liniger}}{{}}}
+\bibcite{love1949electrostatic}{{150}{1949}{{Love}}{{}}}
+\bibcite{malvania2020generalized}{{151}{2021}{{Malvania et~al.}}{{Malvania, Zhang, Le, Dubail, Rigol and\ Weiss}}}
+\bibcite{manz_two-point_2010}{{152}{2010}{{Manz et~al.}}{{Manz, Bücker, Betz, Koller, Hofferberth, Mazets, Imambekov, Demler, Perrin, Schmiedmayer and\ Schumm}}}
+\bibcite{marino2019exact}{{153}{2019}{{Marino and\ Reis}}{{}}}
+\bibcite{mazets_dynamics_2011}{{154}{2011{\em  a}}{{Mazets}}{{}}}
+\bibcite{mazets_integrability_2011}{{155}{2011{\em  b}}{{Mazets}}{{}}}
+\bibcite{mazets_dephasing_2009}{{156}{2009}{{Mazets and\ Schmiedmayer}}{{}}}
+\bibcite{mazets_breakdown_2008}{{157}{2008}{{Mazets et~al.}}{{Mazets, Schumm and\ Schmiedmayer}}}
+\bibcite{medenjak2020diffusion}{{158}{2020}{{Medenjak et~al.}}{{Medenjak, Nardis and\ Yoshimura}}}
+\bibcite{mehta_three-body_2007}{{159}{2007}{{Mehta et~al.}}{{Mehta, Esry and\ Greene}}}
+\bibcite{mei2016unveiling}{{160}{2016}{{Mei et~al.}}{{Mei, Vidmar, Heidrich-Meisner and\ Bolech}}}
+\bibcite{meinert_probing_2015}{{161}{2015}{{Meinert et~al.}}{{Meinert, Panfil, Mark, Lauber, Caux and\ Nägerl}}}
+\bibcite{menotti2002collective}{{162}{2002}{{Menotti and\ Stringari}}{{}}}
+\bibcite{minguzzi2005exact}{{163}{2005}{{Minguzzi and\ Gangardt}}{{}}}
+\bibcite{minguzzi2002high}{{164}{2002}{{Minguzzi et~al.}}{{Minguzzi, Vignolo and\ Tosi}}}
+\bibcite{moller2020euler}{{165}{2020}{{M{\o }ller et~al.}}{{M{\o }ller, Perfetto, Doyon and\ Schmiedmayer}}}
+\bibcite{moller2020introducing}{{166}{2020}{{M{\o }ller and\ Schmiedmayer}}{{}}}
+\bibcite{mora_extension_2003}{{167}{2003}{{Mora and\ Castin}}{{}}}
+\bibcite{moyal1949quantum}{{168}{1949}{{Moyal}}{{}}}
+\bibcite{moller_extension_2021}{{169}{2021}{{Møller et~al.}}{{Møller, Li, Mazets, Stimming, Zhou, Zhu, Chen and\ Schmiedmayer}}}
+\bibcite{ohberg2002dynamical}{{170}{2002}{{{\"O}hberg and\ Santos}}{{}}}
+\bibcite{olshanii_atomic_1998}{{171}{1998}{{Olshanii}}{{}}}
+\bibcite{olshanii2003short}{{172}{2003}{{Olshanii and\ Dunjko}}{{}}}
+\bibcite{palmai2018quasilocal}{{173}{2018}{{Palmai and\ Konik}}{{}}}
+\bibcite{panfil2019linearized}{{174}{2019}{{Panfil and\ Pawe{\l }czyk}}{{}}}
+\bibcite{pactu2015thermodynamics}{{175}{2015}{{P{\^a}{\c {t}}u and\ Kl{\"u}mper}}{{}}}
+\bibcite{pedri2003violation}{{176}{2003}{{Pedri et~al.}}{{Pedri, Santos, {\"O}hberg and\ Stringari}}}
+\bibcite{peotta2014quantum}{{177}{2014}{{Peotta and\ Di~Ventra}}{{}}}
+\bibcite{percus1976equilibrium}{{178}{1976}{{Percus}}{{}}}
+\bibcite{pethick_boseeinstein_2008}{{179}{2008}{{Pethick and\ Smith}}{{}}}
+\bibcite{petrov_regimes_2000}{{180}{2000}{{Petrov et~al.}}{{Petrov, Shlyapnikov and\ Walraven}}}
+\bibcite{piroli2015exact}{{181}{2015}{{Piroli and\ Calabrese}}{{}}}
+\bibcite{polkovnikov2011colloquium}{{182}{2011}{{Polkovnikov et~al.}}{{Polkovnikov, Sengupta, Silva and\ Vengalattore}}}
+\bibcite{popov1977theory}{{183}{1977}{{Popov}}{{}}}
+\bibcite{pozsgay2011mean}{{184}{2011}{{Pozsgay}}{{}}}
+\bibcite{pozsgay2014failure}{{185}{2014}{{Pozsgay}}{{}}}
+\bibcite{pozsgay2020algebraic}{{186}{2020{\em  a}}{{Pozsgay}}{{}}}
+\bibcite{pozsgay2020current}{{187}{2020{\em  b}}{{Pozsgay}}{{}}}
+\bibcite{prolhac2017ground}{{188}{2017}{{Prolhac}}{{}}}
+\bibcite{protopopov2013dynamics}{{189}{2013}{{Protopopov et~al.}}{{Protopopov, Gutman, Schmitteckert and\ Mirlin}}}
+\bibcite{rauer_cooling_2016}{{190}{2016}{{Rauer et~al.}}{{Rauer, Grišins, Mazets, Schweigler, Rohringer, Geiger, Langen and\ Schmiedmayer}}}
+\bibcite{reichel_atomic_1999}{{191}{1999}{{Reichel et~al.}}{{Reichel, Hänsel and\ Hänsch}}}
+\bibcite{reichel2011atom}{{192}{2011}{{Reichel and\ Vuletic}}{{}}}
+\bibcite{richard_momentum_2003}{{193}{2003}{{Richard et~al.}}{{Richard, Gerbier, Thywissen, Hugbart, Bouyer and\ Aspect}}}
+\bibcite{riemann1860fortpflanzung}{{194}{1860}{{Riemann}}{{}}}
+\bibcite{rigol2008thermalization}{{195}{2008}{{Rigol et~al.}}{{Rigol, Dunjko and\ Olshanii}}}
+\bibcite{rigol2007relaxation}{{196}{2007}{{Rigol et~al.}}{{Rigol, Dunjko, Yurovsky and\ Olshanii}}}
+\bibcite{rigol2004universal}{{197}{2004}{{Rigol and\ Muramatsu}}{{}}}
+\bibcite{rigol2005fermionization}{{198}{2005}{{Rigol and\ Muramatsu}}{{}}}
+\bibcite{ristivojevic_excitation_2014}{{199}{2014}{{Ristivojevic}}{{}}}
+\bibcite{robinson2016exact}{{200}{2016}{{Robinson et~al.}}{{Robinson, Caux and\ Konik}}}
+\bibcite{robinson2017excitations}{{201}{2017}{{Robinson and\ Konik}}{{}}}
+\bibcite{rossini2020strong}{{202}{2020}{{Rossini et~al.}}{{Rossini, Ghermaoui, Aguilera, Vatr{\'e}, Bouganne, Beugnon, Gerbier and\ Mazza}}}
+\bibcite{ruggiero2019conformal}{{203}{2019}{{Ruggiero et~al.}}{{Ruggiero, Brun and\ Dubail}}}
+\bibcite{ruggiero2020quantum}{{204}{2020}{{Ruggiero et~al.}}{{Ruggiero, Calabrese, Doyon and\ Dubail}}}
+\bibcite{sarishvili2016pulse}{{205}{2016}{{Sarishvili et~al.}}{{Sarishvili, Protopopov and\ Gutman}}}
+\bibcite{schemmer_cooling_2018}{{206}{2018}{{Schemmer and\ Bouchoule}}{{}}}
+\bibcite{schemmer2019generalized}{{207}{2019}{{Schemmer et~al.}}{{Schemmer, Bouchoule, Doyon and\ Dubail}}}
+\bibcite{schemmer_monitoring_2018}{{208}{2018}{{Schemmer et~al.}}{{Schemmer, Johnson and\ Bouchoule}}}
+\bibcite{scopa2017one}{{209}{2017}{{Scopa and\ Karevski}}{{}}}
+\bibcite{scopa2018exact}{{210}{2018}{{Scopa et~al.}}{{Scopa, Unterberger and\ Karevski}}}
+\bibcite{shvarchuck_bose-einstein_2002}{{211}{2002}{{Shvarchuck et~al.}}{{Shvarchuck, Buggle, Petrov, Dieckmann, Zielonkowski, Kemmann, Tiecke, von Klitzing, Shlyapnikov and\ Walraven}}}
+\bibcite{simmons2020quantum}{{212}{2020}{{Simmons et~al.}}{{Simmons, Bayocboc~Jr, Pillay, Colas, McCulloch and\ Kheruntsyan}}}
+\bibcite{spohn2012large}{{213}{2012}{{Spohn}}{{}}}
+\bibcite{spohn2020collision}{{214}{2020}{{Spohn}}{{}}}
+\bibcite{stenger_bragg_1999}{{215}{1999}{{Stenger et~al.}}{{Stenger, Inouye, Chikkatur, Stamper-Kurn, Pritchard and\ Ketterle}}}
+\bibcite{stewart_verification_2010}{{216}{2010}{{Stewart et~al.}}{{Stewart, Gaebler, Drake and\ Jin}}}
+\bibcite{stringari1996collective}{{217}{1996}{{Stringari}}{{}}}
+\bibcite{stringari1998dynamics}{{218}{1998}{{Stringari}}{{}}}
+\bibcite{soding_three-body_1999}{{219}{1999}{{Söding et~al.}}{{Söding, Guéry-Odelin, Desbiolles, Chevy, Inamori and\ Dalibard}}}
+\bibcite{takahashi1975validity}{{220}{1975}{{Takahashi}}{{}}}
+\bibcite{tan2008energetics}{{221}{2008{\em  a}}{{Tan}}{{}}}
+\bibcite{tan2008generalized}{{222}{2008{\em  b}}{{Tan}}{{}}}
+\bibcite{tan2008large}{{223}{2008{\em  c}}{{Tan}}{{}}}
+\bibcite{tan_relaxation_2010}{{224}{2010}{{Tan et~al.}}{{Tan, Pustilnik and\ Glazman}}}
+\bibcite{tang_thermalization_2018}{{225}{2018}{{Tang et~al.}}{{Tang, Kao, Li, Seo, Mallayya, Rigol, Gopalakrishnan and\ Lev}}}
+\bibcite{thomas_thermalization_2021}{{226}{2021}{{Thomas et~al.}}{{Thomas, Davis and\ Kheruntsyan}}}
+\bibcite{tolra_observation_2004}{{227}{2004}{{Tolra et~al.}}{{Tolra, O’Hara, Huckans, Phillips, Rolston and\ Porto}}}
+\bibcite{traverso_inelastic_2009}{{228}{2009}{{Traverso et~al.}}{{Traverso, Chakraborty, Martinez~de Escobar, Mickelson, Nagel, Yan and\ Killian}}}
+\bibcite{tsvelik2007quantum}{{229}{2007}{{Tsvelik}}{{}}}
+\bibcite{vaidya1979one}{{230}{1979}{{Vaidya and\ Tracy}}{{}}}
+\bibcite{van_amerongen_yang-yang_2008}{{231}{2008}{{van Amerongen et~al.}}{{van Amerongen, van Es, Wicke, Kheruntsyan and\ van Druten}}}
+\bibcite{van2016separation}{{232}{2016}{{Van~den Berg et~al.}}{{Van~den Berg, Wouters, Eli{\"e}ns, De~Nardis, Konik and\ Caux}}}
+\bibcite{vecchio_exact_2020}{{233}{2020}{{Vecchio et~al.}}{{Vecchio, Bastianello, Luca and\ Mussardo}}}
+\bibcite{vidmar2016generalized}{{234}{2016}{{Vidmar and\ Rigol}}{{}}}
+\bibcite{vogler_thermodynamics_2013}{{235}{2013}{{Vogler et~al.}}{{Vogler, Labouvie, Stubenrauch, Barontini, Guarrera and\ Ott}}}
+\bibcite{vu2019equations}{{236}{2019}{{Vu and\ Yoshimura}}{{}}}
+\bibcite{werner2012generalII}{{237}{2012{\em  a}}{{Werner and\ Castin}}{{}}}
+\bibcite{werner2012generalI}{{238}{2012{\em  b}}{{Werner and\ Castin}}{{}}}
+\bibcite{wigner1955lower}{{239}{1955}{{Wigner}}{{}}}
+\bibcite{wild2012measurements}{{240}{2012}{{Wild et~al.}}{{Wild, Makotyn, Pino, Cornell and\ Jin}}}
+\bibcite{wilson_observation_2020}{{241}{2020}{{Wilson et~al.}}{{Wilson, Malvania, Le, Zhang, Rigol and\ Weiss}}}
+\bibcite{wouters2014quenching}{{242}{2014}{{Wouters et~al.}}{{Wouters, De~Nardis, Brockmann, Fioretto, Rigol and\ Caux}}}
+\bibcite{yamaguchi_inelastic_2008}{{243}{2008}{{Yamaguchi et~al.}}{{Yamaguchi, Uetake, Hashimoto, Doyle and\ Takahashi}}}
+\bibcite{yang1967some}{{244}{1967}{{Yang}}{{}}}
+\bibcite{yang1969thermodynamics}{{245}{1969}{{Yang and\ Yang}}{{}}}
+\bibcite{yao_tans_2018}{{246}{2018}{{Yao et~al.}}{{Yao, Clément, Minguzzi, Vignolo and\ Sanchez-Palencia}}}
+\bibcite{yoshimura2020collision}{{247}{2020}{{Yoshimura and\ Spohn}}{{}}}
+\bibcite{vznidarivc2020weak}{{248}{2020}{{{\v {Z}}nidari{\v {c}}}}{{}}}
+\bibcite{zundel_energy-dependent_2019}{{249}{2019}{{Zundel et~al.}}{{Zundel, Wilson, Malvania, Xia, Riou and\ Weiss}}}
+\bibdata{revueGHDv2Notes}
+\bibstyle{apsrev4-1}
+\citation{REVTEX41Control}
+\citation{apsrev41Control}
+\newlabel{LastBibItem}{{249}{67}{}{section*.57}{}}
+\newlabel{LastPage}{{}{67}{}{}{}}
+\gdef \@abspage@last{67}

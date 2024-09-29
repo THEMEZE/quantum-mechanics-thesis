@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparaisons</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/style_lectures.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../static/css/style.css" /> -->
+  <link rel="shortcut icon" href="./img/icon.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+
+<body>
+
+  <div id="titre">
+    <h1>Comparaisons</h1>
+  </div>
+
+  <style>
+
+  </style>
+
+  <div id="head">
+
+    <!-- Menu -->
+    <div id="menu">
+      <table border="0" cellpadding="10">
+        <tr>
+          <th> <a href="index.html">Home</a> </th>
+        </tr>
+        <!-- <tr><th> <a href="outlook.html">Outlook</a> </th></tr>
+      <tr><th> <a href="errata.html">Errata</a> </th></tr>
+      <tr><th> <a href="sage.html">Sage codes</a> </th></tr>
+      <tr><th> <a href="biblio.html">Bibliography</a> </th></tr>
+      <tr><th> <a href="links.html">Links</a> </th></tr>
+      <tr><td><img src="fol_foliat.gif" alt="Foliation" width="150" height="148"/></td></tr> -->
+      </table>
+    </div>
+    <!-- Contenue -->
+    <div id="contenu">
+      <p><div id="deuxiemeTrait"></div></p>
+      <p style="font-size:150%"><strong><i>Comparaison</i></strong><br />
+        <strong><i><small></small></i></strong>
+      </p>
+      <ul>
+
+        <li> Explication [<a target="_blank" href="./doc/arXiv-1910.00570v2_trad/draft_qGHD_main.pdf">pdf</a>][<a
+            href="../editer.html?file=./QGHD/doc/arXiv-1910.00570v2_trad/draft_qGHD_main.tex" target="_blank">éditer</a>[ <i>server_pdflatex.fr pour compier à finir  et edior a finir  pour </i> ]          
+        </li>
+
+
+        </ul>
+
+      </ul>
+
+      <p>
+        <a target="_blank" href="https://arxiv.org/abs/2205.15826">arXiv:2205.15826</a> or
+        the
+        <a target="_blank"
+          href="./doc/arXiv-2205.15826v2_trad/main.pdf">pdf</a>
+      </p>
+      <p>
+        <a target="_blank" href="https://arxiv.org/abs/1201.6363">arXiv:1201.6363</a> or
+        the
+        <a target="_blank"
+          href="./doc/arXiv-1201.6363v2_trad/GPEtoKPZ.pdf">pdf</a>
+      </p>
+
+    </div>
+
+    <div id="cover">
+      <!-- <img src="./img/cover.jpg" alt="book cover" width="274" height="415" /> -->
+      <canvas id="pdf-canvas" alt="book cover" style="width: 100%;"></canvas>
+      <!-- <canvas id="pdf-canvas"></canvas> -->
+
+        <button id="prev-page">Page précédente</button>
+        <button id="next-page">Page suivante</button>
+        <button id="num-page">
+          <input id="page-num" type="number" min="1" value="1" />
+        / <span id="page-count"></span>
+        </button>
+        
+        <!-- <a target="_blank"
+        href="./GHD_in_Bos_gas_theo_exp.pdf">pdf</a> -->
+
+      <!-- Déclare les fichiers PDF à utiliser -->
+<script>
+    var file = "";
+</script>
+
+<!-- Inclusion du fichier script.js -->
+<script src="../static/js/script_1_pdf.js"></script>
+    </div>
+
+
+
+  </div>
+
+
+
+  <!-- Fin du contenu principal -->
+  <!-- En traveau à metre dans ./static/css/style.css -->
+  <style>
+
+  </style>
+
+  <div class="affichage-pdf">
+
+
+    <!-- Premier PDF -->
+    <canvas id="canvas-1"></canvas>
+    <button id="prev-page-1">Page précédente</button>
+    <button id="next-page-1">Page suivante</button>
+    <button id="num-page-1">
+      <span>Page: <input type="number" id="page-num-1" min="1" value="1" style="width: 50px;"> / <span
+          id="page-count-1"></span></span>
+    </button>
+
+
+    <!-- Deuxième PDF -->
+    <canvas id="canvas-2"></canvas>
+    <button id="prev-page-2">Page précédente</button>
+    <button id="next-page-2">Page suivante</button>
+    <button id="num-page-2">
+      <span>Page: <input type="number" id="page-num-2" min="1" value="1" style="width: 50px;"> / <span
+          id="page-count-2"></span></span>
+    </button>
+
+
+
+
+    <!-- Déclare les fichiers PDF à utiliser -->
+    <script>
+      var file1 = "./doc/arXiv-2205.15826v2_trad/main.pdf";
+      var file2 = "./doc/arXiv-1201.6363v1_trad/GPEtoKPZ.pdf"; // Remplacez par le chemin vers votre second PDF
+    </script>
+
+    <!-- Inclusion du fichier script.js -->
+    <script src="../static/js/script_2_pdf.js"></script>
+  </div>
+
+
+
+  <!-- Pied de page -->
+  <div id="pied">
+    <hr />
+    <address><small>
+        <a href="http://127.0.0.1:5500/">Guillaume THEMEZE</a> / 28/09/2024
+      </small></address>
+  </div>
+  <!-- Fin du pied de page -->
+
+</body>
+
+</html>
