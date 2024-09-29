@@ -36,7 +36,7 @@
     };
 
     // Charger le document PDF
-    const file = './These_Memoire.pdf';  // URL de ton PDF
+    // const file = './These_Memoire.pdf';  // URL de ton PDF
     pdfjsLib.getDocument(file).promise.then(pdfDoc_ => {
         pdfDoc = pdfDoc_;
         document.getElementById('page-count').textContent = pdfDoc.numPages;

@@ -18,10 +18,26 @@ body {
 }
 
 input {
-  background: #D5F6FF;
-  font-family: sans-serif
+  background: rgba(244, 248, 249, 0.2); /* Fond transparent à 20% */
+  font-family: sans-serif;
+  font-size: 18px; /* Augmente la taille de la police */
+  width: 50%; /* La largeur prend 100% de l'espace parent */
+  height: 10px; /* Hauteur plus grande */
+  border: 1px solid #D5F6FF; /* Bordure visible */
+  padding: 10px; /* Ajoute du padding intérieur */
+  color: #000; /* Couleur du texte */
+  box-sizing: border-box; /* S'assure que la bordure et le padding sont inclus dans les dimensions */
 }
 
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Placeholder avec une couleur semi-transparente */
+}
+
+
+a {
+  text-decoration: none;
+  color: #070918;
+}
 
 /* Titre gÈnÈral */
 #titre {
@@ -69,14 +85,14 @@ input {
 }
 
 #menu a:link {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #menu a:visited {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-#menu a:hover {
+a:hover, #menu a:hover {
   color: #FF0000;
 }
 
@@ -159,6 +175,12 @@ input {
   grid-area: pn;
 }
 
+#deuxiemeTrait {
+  height: 1px;
+  width: 75%;
+  background-color: #FFFAE1;
+  margin: 60px auto;
+}
 
 #pdf-canvas {
   border: 1px solid black;

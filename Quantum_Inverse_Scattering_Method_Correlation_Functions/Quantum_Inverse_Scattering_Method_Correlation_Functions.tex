@@ -135,6 +135,9 @@ decorations.pathreplacing}
 \newcommand{\ddvec}[1]{\xvec[:]{#1}}
 % FIN PREAMBULE
 
+\usepackage{mdframed}
+\newmdenv[backgroundcolor=gray!10!white,roundcorner=5pt,hidealllines=true]{greybox}
+
 
 \def\pgf{\textsc{pgf}}
 \def\pstricks{\textsc{pstricks}}
@@ -254,7 +257,7 @@ decorations.pathreplacing}
 	\newtheorem{Conj}[Theo]{ Conjecture}
 	\newtheorem{Aff}[Theo]{Affirmation}
 
-    \newtheorem{TheoPrinc}{Th\'eor\`eme}     %compteur spÃécifique pour les thÃéorÃèmes les plus importants du papier
+    %\newtheorem{TheoPrinc}{Th\'eor\`eme}     %compteur spÃécifique pour les thÃéorÃèmes les plus importants du papier
         
 \theoremstyle{definition}
 	\newtheorem{Defi}[Theo]{D\'efinition}
@@ -270,6 +273,32 @@ decorations.pathreplacing}
 	\newtheorem{Consequence}[Theo]{Conséquence}
 	\newtheorem{Rap}[Theo]{Rappel}
 	\newtheorem*{Merci}{Remerciements}
+	
+\mdfdefinestyle{propstyle}{%
+linecolor=black,linewidth=2pt,%
+hidealllines=true,
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+backgroundcolor=gray!10!white,
+roundcorner=5pt,
+innertopmargin=\topskip,
+}
+
+\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+\mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
+\mdtheorem[style=propstyle]{TheoPrinc}{Th\'eor\`eme}[chapter]
+
+%\mdfdefinestyle{proofer}{%
+%linecolor=black,linewidth=2pt,%
+%hidealllines=true,
+%frametitlerule=true,%
+%frametitlebackgroundcolor=gray!20,
+%backgroundcolor=gray!10!white,
+%roundcorner=5pt,
+%innertopmargin=\topskip,
+%}
+%
+%\mdtheorem[style=proofer]{proof}{D\'emonstration}[chapter]
 	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

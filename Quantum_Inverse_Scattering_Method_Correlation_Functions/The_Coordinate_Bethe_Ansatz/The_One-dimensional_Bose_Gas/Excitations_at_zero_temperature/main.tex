@@ -2,79 +2,21 @@
 
 Nous allons d'abord considérer les excitations sur le vide physique dans le secteur avec une charge physique nulle (c'est-à-dire des excitations où le nombre de particules \( N \) dans l'état excité est le même que le nombre de particules dans l'état fondamental). Commençons avec des conditions aux limites périodiques (équation (\ref{eq.2.13})) :
 
-\begin{eqnarray}
+\begin{eqnarray*}
 	L\lambda_j + \sum_{k=1}^N\theta( \lambda_j - \lambda_k ) & =  &2 \pi n_j.
+\end{eqnarray*}
+
+
+
+L'état fondamental est décrit par un ensemble spécial d'entiers $n_j$, voir (\ref{eq.2.26}) et (\ref{eq.3.2}). Tous les autres ensembles de $\{n_j\}$ (ils doivent être différents, $n_j \neq n_k$) donnent des états excités. C'est la description complète de tous les états excités. Ces excitations sont obtenues en retirant un certain nombre de particules ayant des moments $-q < \lambda_h < q$ de la distribution de particules du vide (c'est-à-dire en créant des trous avec des moments $\lambda_h$) et en ajoutant un nombre égal de particules avec des moments $ \vert \lambda_p \vert  > q$. Tout d'abord, nous allons construire l'état où une particule ayant un moment $\lambda_p  > q$ se propage avec un trou ayant un moment $-q < \lambda_h < q$. La particule et le trou étant maintenant présents, les valeurs permises des moments des particules du vide sont modifiées : $\lambda_j  \to  \tilde{\lambda}_j$, de sorte que les équations de Bethe pour les particules du vide sont réécrites comme
+
+\begin{eqnarray}
+	L \tilde{\lambda}_j + \sum_k \theta ( \tilde{\lambda}_j - \tilde{\lambda}_k ) + \theta(\tilde{\lambda}_j - \lambda_p ) - \theta(\tilde{\lambda}_j - \lambda_h ) = 2 \pi \left (  j - \frac{N+1}{2}\right ).  
 \end{eqnarray}
 
-	
-L'état fondamental est décrit par un ensemble particulier d'entiers \( n_j \), voir les équations (\ref{eq.2.26}) et (\ref{eq.3.2}). Tous les autres ensembles de \( \{n_j\} \) (où \( n_i \neq n_k \)) correspondent à des états excités. Ainsi, nous sommes capables de décrire la polarisation du vide causée par une particule et un trou. Cela permet de calculer les observables (énergie, quantité de mouvement, et matrice de diffusion) pour les excitations au-dessus de l'état fondamental. Ces quantités observables sont obtenues en ajoutant les contributions de la polarisation du vide aux quantités « nues » correspondantes. Commençons par calculer l'énergie observable \( \Delta E \), qui est égale à l'énergie de l'état excité moins l'énergie de l'état fondamental :
+En soustrayant ceci de la distribution du vide (\ref{eq.3.2}) et en prenant en compte que $\lambda_j - \tilde{\lambda}_j = O(L-1 )$, $\theta(\lambda + \Delta) - \theta(\lambda) = O(\Delta)$, on obtient
 
-\[
-\Delta E (\lambda_p, \lambda_h) = \epsilon_0 (\lambda_p) - \epsilon_0 (\lambda_h) + 2 \int_{-q}^{q} R(\lambda - \lambda') \epsilon_0(\lambda') d\lambda',
-\]
+\begin{eqnarray}
+	L (\lambda_j - \tilde{\lambda}_j ) - \theta (\lambda_j - \lambda_p)	+ \theta( \lambda_j - \lambda_h ) + ( \lambda_j -\tilde{\lambda}_j ) \sum_k K ( \lambda_j , \lambda_k ) - \sum_k K( \lambda_j , \lambda_k ) ( \lambda_k - \tilde{\lambda}_k ) & = & 0 
+\end{eqnarray}
 
-où \( \epsilon_0(\lambda) = \lambda^2 - h \). De même, on a pour la quantité de mouvement observable (la quantité de mouvement nue est simplement égale à \( \lambda \)) :
-
-\[
-\Delta P(\lambda_p, \lambda_h) = P(\lambda_p) - P(\lambda_h),
-\]
-
-où la fonction \( \epsilon(\lambda) \) est définie par :
-
-\[
-\epsilon(\lambda) = \lambda^2 - \int_{-q}^{q} K(\lambda, \lambda') \epsilon(\lambda') d\lambda',
-\]
-
-avec la condition suivante sur les bords :
-
-\[
-\epsilon(q) = \epsilon(-q) = 0.
-\]
-
-Afin de prouver cette relation, il est utile de différencier l'équation ci-dessus par rapport à \( \lambda \). Le résultat peut être écrit comme suit :
-
-\[
-\left( 1 - \frac{K}{2\pi} \right) \epsilon(\lambda) = \epsilon_0(\lambda),
-\]
-
-où l'opérateur \( K \) est défini dans (3.9). Il est également pratique de définir l'opérateur intégral linéaire \( L \) comme suit :
-
-\[
-L = \left( 1 - \frac{K}{2\pi} \right)^{-1}.
-\]
-
-Le noyau de l'opérateur \( L \) est la fonction symétrique \( L(\lambda, \lambda') \). L'équation peut maintenant être réécrite sous la forme :
-
-\[
-\epsilon(\lambda) = \epsilon_0(\lambda) - \int_{-q}^{q} L(\lambda, \lambda') R(\lambda') d\lambda'.
-\]
-
-Ces excitations sont obtenues en retirant un certain nombre de particules avec des moments \( q- < \lambda_h < q \) de la distribution de particules du vide (créant ainsi des trous avec des moments \( \lambda_h \)) et en ajoutant un nombre égal de particules avec des moments \( \lambda_p > q \). Pour un état avec une particule ayant un moment \( \lambda_p > q \) qui se propage avec un trou ayant un moment \( q- < \lambda_h < q \), les valeurs permises pour les moments des particules du vide sont modifiées : \( \lambda_j \to \lambda'_j \), et les équations de Bethe sont réécrites comme suit :
-
-\[
-\theta(\lambda_j - \lambda_p) + \theta(\lambda_j - \lambda_h) = 2\pi n_j.
-\]
-
-En soustrayant cette équation de la distribution de vide (3.2) et en tenant compte que \( \lambda_j - \lambda_j' = O(1/L) \), on obtient :
-
-\[
-\sum_{k=1}^{N} \left[ \theta(\lambda_j - \lambda_k) - \theta(\lambda_j - \lambda'_k) \right] = \theta(\lambda_j - \lambda_p) - \theta(\lambda_j - \lambda_h).
-\]
-
-En utilisant les équations (2.31), (3.5), et (3.7), on a :
-
-\[
-2\pi p(\lambda_j) = \theta(\lambda_j - \lambda_p) - \theta(\lambda_j - \lambda_h),
-\]
-
-et en introduisant la fonction de décalage \( F \) :
-
-\[
-F(\lambda_j | \lambda_p, \lambda_h) = \frac{1}{L} \left( \theta(\lambda_j - \lambda_p) - \theta(\lambda_j - \lambda_h) \right).
-\]
-
-Dans la limite thermodynamique, la somme est remplacée par une intégrale, ce qui donne :
-
-\[
-F(\lambda | \lambda_p, \lambda_h) = \int_{-q}^{q} \frac{R(\lambda, \lambda')}{2\pi} F(\lambda' | \lambda_p, \lambda_h) d\lambda'.
-\]
