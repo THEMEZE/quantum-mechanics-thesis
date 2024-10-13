@@ -1,0 +1,17 @@
+Pour construire les variables action-angle, il est nécessaire de calculer les crochets de Poisson (PB) entre les éléments de matrice de la matrice de transition (voir [5]). Il existe une méthode efficace pour effectuer de tels calculs, basée sur la matrice r classique. Nous utiliserons la notation suivante pour les produits tensoriels. Le produit tensoriel de deux matrices \( k \times k \), \( A \) et \( B \), sera noté \( A \otimes B \) (une matrice \( k^2 \times k^2 \)). La matrice de permutation \( \sqcap \) de taille \( k^2 \times k^2 \) possède la propriété suivante :
+
+
+\begin{eqnarray}
+	\sqcap ( A \otimes B ) \sqcap & = & B \otimes A 
+\end{eqnarray}
+
+Cette égalité est valide pour toutes les matrices numériques \( A \) et \( B \). La dimension minimale de \( \sqcap \) est \( 4 \times 4 \); dans ce cas, elle peut être écrite sous la forme :
+
+\begin{eqnarray}
+	\sqcap =\begin{pmatrix}1 & 0 & 0 & 0 \\0 & 0 & 1 & 0 \\0 & 1 & 0 & 0 \\0 & 0 & 0 & 1\end{pmatrix}	
+\end{eqnarray}
+
+\begin{Defi}
+	Les crochets de Poisson du produit tensoriel \(\{A \otimes B\}\) sont une matrice \( k^2 \times k^2 \), dont les éléments de matrice sont égaux au crochet de Poisson de certains éléments de matrice de \( A \) avec certains éléments de matrice de \( B \). La numérotation des éléments de la matrice \(\{A \otimes B\}\) est la même que pour la matrice \( A \otimes B \). (La notation tensorielle est discutée en détail dans l'Annexe 1.)
+\end{Defi}
+

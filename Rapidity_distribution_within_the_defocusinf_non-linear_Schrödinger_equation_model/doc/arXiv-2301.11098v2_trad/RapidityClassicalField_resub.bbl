@@ -1,0 +1,239 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{lieb_exact_1963}
+E.~H. Lieb and W.~Liniger,
+\newblock \emph{Exact {Analysis} of an {Interacting} {Bose} {Gas}. {I}. {The}
+  {General} {Solution} and the {Ground} {State}},
+\newblock Phys. Rev. \textbf{130}(4), 1605 (1963),
+\newblock \doi{10.1103/PhysRev.130.1605}.
+
+\bibitem{bouchoule_generalized_2022}
+I.~Bouchoule and J.~Dubail,
+\newblock \emph{Generalized hydrodynamics in the one-dimensional {Bose} gas:
+  theory and experiments},
+\newblock J. Stat. Mech. \textbf{2022}(1), 014003 (2022),
+\newblock \doi{10.1088/1742-5468/ac3659}.
+
+\bibitem{kinoshita_quantum_2006}
+T.~Kinoshita, T.~Wenger and D.~S. Weiss,
+\newblock \emph{A quantum {Newton}'s cradle},
+\newblock Nature \textbf{440}(7086), 900 (2006),
+\newblock \doi{10.1038/nature04693}.
+
+\bibitem{bastianello_non_2016}
+A.~Bastianello, A.~D. Luca and G.~Mussardo,
+\newblock \emph{Non relativistic limit of integrable {QFT} and
+  {Lieb}–{Liniger} models},
+\newblock J. Stat. Mech. \textbf{2016}(12), 123104 (2016),
+\newblock \doi{10.1088/1742-5468/aa4f98},
+\newblock Publisher: IOP Publishing and SISSA.
+
+\bibitem{bastianello_non_2017}
+A.~Bastianello, A.~D. Luca and G.~Mussardo,
+\newblock \emph{Non relativistic limit of integrable {QFT} with fermionic
+  excitations},
+\newblock J. Phys. A: Math. Theor. \textbf{50}(23), 234002 (2017),
+\newblock \doi{10.1088/1751-8121/aa6f69},
+\newblock Publisher: IOP Publishing.
+
+\bibitem{caux_time_2013}
+J.-S. Caux and F.~H.~L. Essler,
+\newblock \emph{Time {Evolution} of {Local} {Observables} {After} {Quenching}
+  to an {Integrable} {Model}},
+\newblock Phys. Rev. Lett. \textbf{110}(25), 257203 (2013),
+\newblock \doi{10.1103/PhysRevLett.110.257203}.
+
+\bibitem{essler_generalized_2015}
+F.~H.~L. Essler, G.~Mussardo and M.~Panfil,
+\newblock \emph{Generalized {Gibbs} ensembles for quantum field theories},
+\newblock Phys. Rev. A \textbf{91}(5), 051602 (2015),
+\newblock \doi{10.1103/PhysRevA.91.051602},
+\newblock Publisher: American Physical Society.
+
+\bibitem{mussardo_infinite-time_2013}
+G.~Mussardo,
+\newblock \emph{Infinite-{Time} {Average} of {Local} {Fields} in an
+  {Integrable} {Quantum} {Field} {Theory} {After} a {Quantum} {Quench}},
+\newblock Phys. Rev. Lett. \textbf{111}(10), 100401 (2013),
+\newblock \doi{10.1103/PhysRevLett.111.100401},
+\newblock Publisher: American Physical Society.
+
+\bibitem{bastianello_exact_2018}
+A.~Bastianello, L.~Piroli and P.~Calabrese,
+\newblock \emph{Exact local correlations and full counting statistics for
+  arbitrary states of the one-dimensional interacting {Bose} gas},
+\newblock Phys. Rev. Lett. \textbf{120}(19), 190601 (2018),
+\newblock \doi{10.1103/PhysRevLett.120.190601},
+\newblock ArXiv: 1802.02115.
+
+\bibitem{negro_one-point_2013}
+S.~Negro and F.~Smirnov,
+\newblock \emph{On one-point functions for sinh-{Gordon} model at finite
+  temperature},
+\newblock Nuclear Physics B \textbf{875}(1), 166 (2013),
+\newblock \doi{10.1016/j.nuclphysb.2013.06.023}.
+
+\bibitem{negro_sinhgordon_2014}
+S.~Negro,
+\newblock \emph{On sinh–{Gordon} thermodynamic {Bethe} ansatz and fermionic
+  basis},
+\newblock Int. J. Mod. Phys. A \textbf{29}(20), 1450111 (2014),
+\newblock \doi{10.1142/S0217751X14501115},
+\newblock Publisher: World Scientific Publishing Co.
+
+\bibitem{castro-alvaredo_emergent_2016}
+O.~A. Castro-Alvaredo, B.~Doyon and T.~Yoshimura,
+\newblock \emph{Emergent {Hydrodynamics} in {Integrable} {Quantum} {Systems}
+  {Out} of {Equilibrium}},
+\newblock Phys. Rev. X \textbf{6}(4), 041065 (2016),
+\newblock \doi{10.1103/PhysRevX.6.041065}.
+
+\bibitem{bertini_transport_2016}
+B.~Bertini, M.~Collura, J.~De~Nardis and M.~Fagotti,
+\newblock \emph{Transport in {Out}-of-{Equilibrium} \${XXZ}\$ {Chains}: {Exact}
+  {Profiles} of {Charges} and {Currents}},
+\newblock Phys. Rev. Lett. \textbf{117}(20), 207201 (2016),
+\newblock \doi{10.1103/PhysRevLett.117.207201}.
+
+\bibitem{castin_simple_2004}
+Y.~Castin,
+\newblock \emph{Simple theoretical tools for low dimension {Bose} gases},
+\newblock J. Phys. IV France \textbf{116}, 89 (2004),
+\newblock \doi{10.1051/jp4:2004116004},
+\newblock Publisher: EDP Sciences.
+
+\bibitem{cockburn_comparison_2011}
+S.~P. Cockburn, A.~Negretti, N.~P. Proukakis and C.~Henkel,
+\newblock \emph{A comparison between microscopic methods for finite temperature
+  {Bose} gases},
+\newblock Physical Review A \textbf{83}(4) (2011),
+\newblock \doi{10.1103/PhysRevA.83.043619},
+\newblock ArXiv: 1012.1512.
+
+\bibitem{blakie_dynamics_2008}
+P.~B. Blakie†, A.~S. Bradley†, M.~J. Davis, R.~J. Ballagh and C.~W.
+  Gardiner,
+\newblock \emph{Dynamics and statistical mechanics of ultra-cold {Bose} gases
+  using c-field techniques},
+\newblock Advances in Physics \textbf{57}(5), 363 (2008),
+\newblock \doi{10.1080/00018730802564254},
+\newblock Publisher: Taylor \& Francis \_eprint:
+  https://doi.org/10.1080/00018730802564254.
+
+\bibitem{bienaime_quantitative_2021}
+T.~Bienaimé, M.~Isoard, Q.~Fontaine, A.~Bramati, A.~Kamchatnov, Q.~Glorieux
+  and N.~Pavloff,
+\newblock \emph{Quantitative {Analysis} of {Shock} {Wave} {Dynamics} in a
+  {Fluid} of {Light}},
+\newblock Phys. Rev. Lett. \textbf{126}(18), 183901 (2021),
+\newblock \doi{10.1103/PhysRevLett.126.183901},
+\newblock Publisher: American Physical Society.
+
+\bibitem{novikov_theory_1984}
+S.~Novikov, S.~V. Manakov, L.~P. Pitaevskii and V.~E. Zakharov,
+\newblock \emph{Theory of {Solitons}},
+\newblock Springer edn. (1984).
+
+\bibitem{korepin_quantum_1993}
+V.~E. Korepin, N.~M. Bogoliubov and A.~G. Izergin,
+\newblock \emph{Quantum {Inverse} {Scattering} {Method} and {Correlation}
+  {Functions}},
+\newblock Cambridge {Monographs} on {Mathematical} {Physics}. Cambridge
+  University Press, Cambridge,
+\newblock ISBN 978-0-521-58646-7,
+\newblock \doi{10.1017/CBO9780511628832} (1993).
+
+\bibitem{luca_equilibration_2016}
+A.~D. Luca and G.~Mussardo,
+\newblock \emph{Equilibration properties of classical integrable field
+  theories},
+\newblock J. Stat. Mech. \textbf{2016}(6), 064011 (2016),
+\newblock \doi{10.1088/1742-5468/2016/06/064011},
+\newblock Publisher: IOP Publishing.
+
+\bibitem{bettelheim_whitham_2020}
+E.~Bettelheim,
+\newblock \emph{The {Whitham} approach to the
+  \${\textbackslash}less\$i\${\textbackslash}greater\$c\${\textbackslash}less\$/i\${\textbackslash}greater\$
+  \${\textbackslash}rightarrow\$ 0 limit of the {Lieb}–{Liniger} model and
+  generalized hydrodynamics},
+\newblock J. Phys. A: Math. Theor. \textbf{53}(20), 205204 (2020),
+\newblock \doi{10.1088/1751-8121/ab8676},
+\newblock Publisher: IOP Publishing.
+
+\bibitem{del_vecchio_del_vecchio_exact_2020}
+G.~del Vecchio~del Vecchio, A.~Bastianello, A.~De~Luca and G.~Mussardo,
+\newblock \emph{Exact out-of-equilibrium steady states in the semiclassical
+  limit of the interacting {Bose} gas},
+\newblock SciPost Physics \textbf{9}(1), 002 (2020),
+\newblock \doi{10.21468/SciPostPhys.9.1.002}.
+
+\bibitem{wittig_landauzener_2005}
+C.~Wittig,
+\newblock \emph{The landau-zener {Formula}},
+\newblock J. Phys. Chem. B \textbf{109}(17), 8428 (2005),
+\newblock \doi{10.1021/jp040627u},
+\newblock Publisher: American Chemical Society.
+
+\bibitem{solovev_nonadiabatic_1989}
+E.~A. Solov’ev,
+\newblock \emph{Nonadiabatic transitions in atomic collisions},
+\newblock Physics-Uspekhi \textbf{32}(3), 228 (1989).
+
+\bibitem{zener_non-adiabatic_1932}
+C.~Zener and R.~H. Fowler,
+\newblock \emph{Non-adiabatic crossing of energy levels},
+\newblock Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character \textbf{137}(833), 696
+  (1932),
+\newblock \doi{10.1098/rspa.1932.0165},
+\newblock Publisher: Royal Society.
+
+\bibitem{miao_interplay_2019}
+Y.~Miao, E.~Ilievski and O.~Gamayun,
+\newblock \emph{Interplay of solitons and radiation in one-dimensional {Bose}
+  gases},
+\newblock Phys. Rev. A \textbf{99}(2), 023605 (2019),
+\newblock \doi{10.1103/PhysRevA.99.023605},
+\newblock Publisher: American Physical Society.
+
+\bibitem{de_nardis_probing_2017}
+J.~De~Nardis, M.~Panfil, A.~Gambassi, L.~Cugliandolo, R.~Konik and L.~Foini,
+\newblock \emph{Probing non-thermal density fluctuations in the one-dimensional
+  {Bose} gas},
+\newblock SciPost Physics \textbf{3}(3), 023 (2017),
+\newblock \doi{10.21468/SciPostPhys.3.3.023}.
+
+\bibitem{nardis_relaxation_2015}
+J.~D. Nardis, L.~Piroli and J.-S. Caux,
+\newblock \emph{Relaxation dynamics of local observables in integrable
+  systems},
+\newblock J. Phys. A: Math. Theor. \textbf{48}(43), 43FT01 (2015),
+\newblock \doi{10.1088/1751-8113/48/43/43FT01},
+\newblock Publisher: IOP Publishing.
+
+\bibitem{de_nardis_solution_2014}
+J.~De~Nardis, B.~Wouters, M.~Brockmann and J.-S. Caux,
+\newblock \emph{Solution for an interaction quench in the {Lieb}-{Liniger}
+  {Bose} gas},
+\newblock Phys. Rev. A \textbf{89}(3), 033601 (2014),
+\newblock \doi{10.1103/PhysRevA.89.033601},
+\newblock Publisher: American Physical Society.
+
+\bibitem{piroli_multiparticle_2016}
+L.~Piroli, P.~Calabrese and F.~H. Essler,
+\newblock \emph{Multiparticle {Bound}-{State} {Formation} following a {Quantum}
+  {Quench} to the {One}-{Dimensional} {Bose} {Gas} with {Attractive}
+  {Interactions}},
+\newblock Phys. Rev. Lett. \textbf{116}(7), 070408 (2016),
+\newblock \doi{10.1103/PhysRevLett.116.070408},
+\newblock Publisher: American Physical Society.
+
+\end{thebibliography}

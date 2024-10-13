@@ -1,0 +1,854 @@
+%\documentclass[twocolumn,amsfonts,showpacs,superscriptaddress]{revtex4-1}
+\documentclass[submission,Phys,10pt]{SciPost}%[submission,Phys]{SciPost}
+
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath,amsthm,booktabs,mathtools}
+\usepackage{bbm}
+\usepackage{bm}% bold math
+\usepackage{color}
+%\usepackage[colorlinks,bookmarks=false,citecolor=blue,linkcolor=red,urlcolor=blue]{hyperref}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{esint}
+\usepackage[normalem]{ulem}
+
+
+\def\ben#1{{\color{blue} #1}}
+
+%\def\tit#1{{\em #1},}
+\def\etal#1{#1}
+
+\def\tit#1{}
+%\def\etal#1{ {\em et al.}}
+\newcommand{\half}{{\textstyle\frac{1}{2}}}
+\newcommand{\nhalf}{{\frac{1}{2}}}
+\newcommand{\nthalf}{{\frac{3}{2}}}
+\newcommand{\nfhalf}{{\frac{5}{2}}}
+\newcommand{\thalf}{{\textstyle\frac{3}{2}}}
+\newcommand{\quart}{{\textstyle\frac{1}{4}}}
+\newcommand{\iquart}{{\textstyle\frac{\ii}{4}}}
+\usepackage{color}
+\def\red#1{\textcolor{red}{#1}}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\lsp}{lsp}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+
+
+
+
+\newcommand{\comJ}[1]{{\color{orange}#1}}
+\newcommand{\comIsa}[1]{{\color{red}#1}}
+\newcommand{\comLea}[1]{{\color{blue}#1}}
+
+
+\usepackage{amsmath}	% required for `\align' (yatex added)
+
+
+\begin{document}
+
+%\title{Rapidity distribution in the non-linear shr\"odinger equation }
+\begin{center}{\Large \textbf{
+%      Rapidity distribution within the classical  field limit of the Lieb-Liniger model: a simple derivation
+      Rapidity distribution within the defocusing non-linear Schr\"odinger equation model
+}}\end{center}
+
+\begin{center}
+{\bf Y. Bezzaz ,
+L. Dubois %\textsuperscript{2} 
+and I. Bouchoule\textsuperscript{*}}
+  
+\end{center}
+
+% TODO: write all affiliations here.
+% Format: institute, city, country
+\begin{center}
+%{\bf 1} School of Physics and Astronomy, University of Birmingham, Edgbaston, Birmingham, B15 2TT, UK
+%\\
+  %{\bf 2} 
+  Laboratoire Charles Fabry, Institut d’Optique Graduate School, CNRS, Université Paris-Saclay, 91127 Palaiseau, France \\
+  * isabelle.bouchoule@institutoptique.fr
+\end{center}
+
+
+\begin{center}
+\today
+\end{center}
+
+\author{Les auteurs } %Isabelle Bouchoule}
+%\affiliation{Laboratoire Charles Fabry, Institut d’Optique, CNRS, Universit\'e Paris Sud 11, 2 Avenue Augustin Fresnel, 91127 Palaiseau Cedex, France}
+%\author{Yasser Bezzaz}
+%\affiliation{School of Physics and Astronomy, University of Birmingham, Edgbaston, Birmingham, B15 2TT, UK}
+
+
+\begin{abstract}
+We consider the classical field integrable system whose 
+evolution equation is the nonlinear Schr\"odinger equation with defocusing non-linearities, which is the
+classical limit of the quantum Lieb-Liniger model.
+ We propose a simple 
+derivation of the relation between 
+%relate 
+two sets of conserved quantities: on the one hand the trace of the monodromy matrix, parameterized by the spectral parameter
+ and introduced in the inverse-scattering framework,
+ and on the other hand the rapidity distribution, a concept 
+imported from the Lieb-Liniger model. To do so we use the definition of the rapidity distribution
+as 
+the asymptotic momentum distribution after a very large expansion. 
+We propose two different ways to derive the result, each one using a thought experiment 
+that implements an expansion.
+\end{abstract}
+
+
+\section{Introduction}
+The Lieb-Liniger model, that describes one-dimensional Bosons with contact repulsive interactions~\cite{lieb_exact_1963},  
+plays a key role in quantum many body systems. On the experimental point of view, it describes remarkably 
+well cold-atoms experiments~(see for instance the review \cite{bouchoule_generalized_2022}), among them 
+the famous Newton's Craddle experiment~\cite{kinoshita_quantum_2006}.
+On the theoretical point of view, it is a paradigmatic integrable model, that is the non-relativistic limit 
+of all known integrable quantum field theories~\cite{bastianello_non_2016,bastianello_non_2017}.
+The integrability
+manifests itself by the fact that the eigenstates take the form of Bethe-Ansatz wave functions.
+The latter are labeled by numbers, whose unit is mass$\times$velocity, and
+whose number is equal to the particles number, called
+the rapidities or the Bethe-roots.
+For a large system, one defines the coarse-grained
+rapididty distribution $\Pi(p)$ as the density of rapidities: $\Pi(p) \mathrm{d}p$ is the number of Bethe-roots in the interval $[p,p+\mathrm{d}p]$. 
+By construction,
+it is a conserved quantity.  Moreover, for a system confined on a length $L$,
+its intensive counterpart $\rho(p)=\Pi(p)/L$
+plays a crucial role in the long time behavior:
+as long as mean values of local quantities are concerned,
+the system shows a relaxation phenomena and the relaxed system is
+entirely characterized by $\rho(p)$~\cite{caux_time_2013,bouchoule_generalized_2022,essler_generalized_2015}.
+Many results have been obtained in recent years for relaxed states, expressing
+mean values of local operators in terms
+of $\rho(p)$~\cite{mussardo_infinite-time_2013,bastianello_exact_2018}\footnote{Note also 
+related work in another quantum integrable model in\cite{negro_one-point_2013} and \cite{negro_sinhgordon_2014}}.
+The fact that relaxed states are entirely parameterized by $\rho(p)$ is
+also at the heart of the Generalized
+Hydrodynamics theory, that assumes local
+relaxation~\cite{castro-alvaredo_emergent_2016,bertini_transport_2016,bouchoule_generalized_2022}. 
+
+A very famous asymptotic description of the Lieb-Liniger
+model is the classical field description
+which ignores quantization of the particles 
+and describes the system as a classical field $\psi(x)$, where $\psi$ is a complex field and
+$x$ is the spatial coordinate~\cite{bouchoule_generalized_2022,castin_simple_2004,cockburn_comparison_2011,blakie_dynamics_2008}.
+The time evolution of $\psi(x)$ is given by the nonlinear Shr\"odinger equation (NLSE), also called the
+Gross-Pitaevskii equation. 
+The classical field description has proven to be extremely powerful in describing
+many experimental results in the field of cold atoms experiments~\cite{cockburn_comparison_2011}.
+It also successfully describes many other experiments such as propagation
+of light in \comIsa{a} non-linear medium~\cite{bienaime_quantitative_2021}.
+The NLSE belongs to the class of classical integrable models
+which have been the subject of a whole domain of mathematical physics since the 1960's. 
+The inverse scattering method
+enables to construct an infinite set of independent conserved quantities, parameterized
+by a 
+spectral parameter $\lambda$, called
+inverse scattering constants of motion in the rest of this paper
+and denoted $\tau_\lambda$~\cite{novikov_theory_1984}. Importantly, these constants of motion can be computed at any time, provided that the field configuration at this particular moment is known. 
+
+
+Making the connection between the classical and the
+quantum framework is a highly desirable task as it enables to
+extend recent results obtained for relaxed states of the Lieb-Liniger model
+to the classical framework.
+One needs for this to
+identify the classical counterpart of  the rapidity distribution and to express
+it in terms of the inverse scattering constants of motion.
+To do so one can use the very powerful
+Quantum Inverse Scattering Method (QISM), the link with the
+Bethe-Ansatz rapidities being done via 
+the  Algebraic Bethe-Ansatz method~\cite{korepin_quantum_1993}.
+This task  has been done  for
+the sinh-Gordon model in ~\cite{luca_equilibration_2016}
+and more recently in ~\cite{bettelheim_whitham_2020} for the Lieb-Liniger model.
+These results made it possible 
+to generalize calculations of  correlation functions
+in relaxed states of the quantum model 
+to the classical framework~\cite{luca_equilibration_2016,del_vecchio_del_vecchio_exact_2020}, and  
+to identify the classical counterpart of  the
+Generalized Hydrodynamics theory~\cite{bettelheim_whitham_2020}.
+
+
+
+
+
+The results cited above use very advanced mathematical techniques.
+In this paper, we propose on the contrary
+a very simple way to extend the notion of rapidity distribution
+ to the classical framework and
+ we propose a simple and elementary derivation of the link between the rapidity distribution
+ and the inverse scattering  constants of motion.
+ For this, we will not rely on the  definition of
+ the rapidity distribution
+ based on the Bethe-Ansatz form of the eigenstates of the Lieb-Liniger model.
+ Instead, we use the
+ fact that the rapidity distribution is the asymptotic
+ momentum distribution of the Bosons after their  expansion
+ to very large distances, a property which provides an alternative definition
+ of the rapidity distribution~\cite{bouchoule_generalized_2022}.
+ This definition of the rapidity distribution
+ %is easily transposable 
+ can also apply within the classical field framework:
+ the notion of expansion is of course meaningful within the classical model,
+ and the momentum distribution of the Bosons is nothing else, in the classical
+ field framework, but
+ the field density in Fourier space.
+ The fact that, upon expansion on sufficiently large distances, the momentum distribution
+ reaches a stationary asymptotic function is not a surprise: once diluted enough, the
+ non-linear terms, which are the classical field counterpart of the interactions
+ in the many-body quantum model,  become negligible and the momentum
+ distribution no longer evolves in time.
+ What is very special about integrability 
+ is that this asymptotic momentum distribution, which is %called
+ the rapidity distribution,
+ does not depend on the  time at which the
+ expansion is performed, even though
+ a complex dynamic could occur in the system prior
+ to the expansion.
+
+
+ Using thought experiments that exploit the above definition
+ of the rapidity distribution, we 
+derive  the link between the rapidity distribution
+and  the inverse scattering  constants of motion: more precisely,
+we express the inverse scattering constants of motion  in terms
+of the rapidity distribution. 
+For pedagogical purposes, we propose  two different derivations in this paper,
+both related to different thought experiments and leading to different
+mathematical approaches.
+
+
+  
+\section{Main result}  
+We consider the classical field description of 1D Bosons of mass $m$
+with contact repulsive interactions.
+The system is described by
+ the one-dimensional complex field $\psi(x)$,
+that fulfills the Poisson-Bracket relations $\{\psi(x),\psi^*(x')\}=i\delta(x-x')/\hbar$, $\{\psi(x),\psi(x')\}=0$  and
+ whose Hamiltonian is
+ \begin{equation}
+   H=\frac{\hbar^2}{2m}\int_0^L \mathrm{d}x \left |\frac{\partial \psi}{\partial x}\right |^2
+   + \frac{g}{2} \int \mathrm{d}x \left | \psi(x)\right |^4
+   \end{equation}
+ where $g$, which governs the non-linear term, is the coupling constant. Here we assume periodic
+ boundary conditions on the box of length $L$.
+ The equation of motion of $\psi$ is the NLSE
+ \begin{equation}
+ \label{eq.GPE}
+   i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + g |\psi|^2 \psi.
+ \end{equation}
+In the following, to lighten the notations, we use a unit 
+system in which $\hbar=m=1$.
+The Fourier components of $\psi$ are
+$\psi_k=\int_0^L \mathrm{d}x \psi(x)e^{-ikx}/\sqrt{L}$
+where $k$ takes the discrete values which are the multiples of $2\pi/L$ and  one defines the momentum
+distribution as the continuous function
+\begin{equation}
+n(p)=  \frac{L}{2\pi}\langle |\psi_{k}|^2\rangle_{\mathrm{c.g.}}
+\end{equation}
+where the right-hand-side is computed for $k$ values close to $p$ and 
+$\mathrm{c.g.}$ means coarse-graining on a width in $k$ small compared to the
+width in $p$ of $n(p)$ but sufficient to wash out 
+fluctuations of $\psi_k$  that may occur on a small scale in $k$ space. 
+It is normalized by $\int \mathrm{d}p\, n(p)=\int \mathrm{d}x |\psi(x)|^2$. Note that
+the weights $|\psi_k|^2$ are not constants of motion since interactions 
+mix different Fourier components,
+and the function $n(p)$ 
+evolves in time in general. 
+
+
+
+The integrability of the NLSE is manifested
+by the fact that the {\it asymptotic} momentum distribution after a very long expansion, $n_\infty(p)$, is a conserved distribution, in
+the sense that it does not depend on the time at which the expansion is performed. As explained in the introduction, this conserved distribution is nothing else but the rapidity distribution,  $\Pi(p)$, namely
+\begin{equation}
+    \Pi(p)=n_\infty(p).
+\end{equation}
+% In the following, we 
+%consider a quantization  box of length  $L$ large enough so that the momentum distribution of the gas, once expanded in this box, 
+%has converged towards its rapidity distribution. The gas being initially confined in a smaller box of size $L_0$, 
+%one extends the initial field configuration to the box of size $L$ by setting $\psi(x)=0$ outside the box of size $L_0$.
+This equality provides a definition of the rapidity distribution, which is that used in this paper.
+The values $\Pi(p)$, labeled by the momentum $p$, define an infinite  set of constants of motion.
+
+The inverse scattering method provides an alternative
+set of constants of motion~\cite{korepin_quantum_1993},  denoted $\tau_\lambda$,
+labeled by a real parameter $\lambda$ called the spectral parameter,  whose unit is a momentum. More  precisely,  $\tau_\lambda$ is the trace of the monodromy matrix,
+itself parametrized by $\lambda$, whose 
+definition is recalled in section~\ref{sec:ISM}.
+The constants $\tau_\lambda$ can be computed at any time, knowing the field configuration $\psi(x)$ at this time. 
+In the following, for the calculation of the inverse scattering constants of motion, we 
+consider a quantization  box of length  $L$ large enough so that the momentum distribution of the gas, if it expanded in this box, would have
+ converged towards its rapidity distribution. The gas being initially confined in a smaller box of size $L_0$, 
+one extends the initial field configuration to the box of size $L$ by setting $\psi(x)=0$ outside the box of size $L_0$. 
+The goal of this paper is to establish the link between the inverse scattering constants of motion and the rapidity distribution.  Our result
+ is 
+ \begin{equation}
+ \label{eq:main}
+ \tau_\lambda = 2e^{\pi  \Pi(\lambda)gm/\hbar}\cos\left ( \frac{\lambda L}{2\hbar}+\frac{m g}{\hbar}\fint \frac{\Pi(p)\mathrm{d}p}{p-\lambda}\right )
+ \end{equation}
+ where $\fint$ means the Cauchy principal value and we reintroduced $\hbar$ and $m$ for more clarity. 
+This expression is compatible with the results obtained in ~\cite{bettelheim_whitham_2020} by 
+taking the semi-classical limit of formulas derived from the QISM and the Algebraic Bethe-Ansatz, 
+ provided that we go to the thermodynamic limit. 
+As expected, for large $\lambda$ the famous trace identities are recovered %At large $\lambda$, one recovers the famous trace identities
+\cite{korepin_quantum_1993}.\footnote{This is shown taking  the limit  $\lambda\rightarrow i\infty$, using $\Pi(\lambda)\simeq 0$ and expanding $1/(\lambda -p)$ in power of $p/\lambda$ to evaluate the integral in the cosinus. }. A similar  expression was derived for the Sh-Gordon model in~\cite{luca_equilibration_2016} (see Eq. (421) and (424) of ~\cite{luca_equilibration_2016}) using classical
+limit of Bethe-Ansatz equations.  Eq.~\eqref{eq:main} also coincides with 
+the formula (76) of \cite{del_vecchio_del_vecchio_exact_2020} at large $\lambda$. 
+
+
+Eq.~\eqref{eq:main} shows that, for a given rapidity distribution $\Pi(p)$, the inverse scattering constants of motion oscillate rapidly with $\lambda$.  Such oscillations 
+are smeared out if one considers the coarse-grained 
+quantity $\langle \tau_\lambda^2\rangle_{\rm{c.g.}}$, where coarse-graining is done on a width  large compared to $1/L$.
+Eq.~\eqref{eq:main} then leads to $$\langle \tau_\lambda^2\rangle_{\rm{c.g.}}=e^{2\pi\Pi(\lambda)gm/\hbar},$$
+a quantity which no longer depends on the size of the 
+quantization box. 
+
+
+
+\section{Sketch of the derivation}
+
+ 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.8\linewidth]{Schema_sketch.pdf}
+       \caption{Na\"ive illustration of the thought experiments used in this paper 
+     to relate the rapidity distribution to the inverse scattering  constants of motion  $\tau_\lambda$, {\it i.e.} to derive Eq.~\eqref{eq:main}. 
+     In both thought experiments, the field undergoes an expansion that we assume large enough so that the momentum distribution
+     of the system after the expansion has converged towards the rapidity distribution.
+     The red regions schematically represent  
+     $|\psi(x)|^2$ at three different times: just before the expansion, at the beginning of the expansion and after the expansion. 
+     The constants $\tau_\lambda$ are computed from  the monodromy matrix evaluated for the field after the expansion. $(a)$: at $t=0$, we let the system expand and relax to a very large box
+     of size $L$.
+     The key point of the calculation  is the use of a  Markovian approximation, valid since the field amplitude is very small (see section \ref{sec:markov}). 
+     $(b)$: at $t=0$, we let the system expand freely. We consider  expansions large enough to reach  the far field regime in which
+     not only the momentum
+     distribution has converged towards the rapidity distribution %(for times
+     %     $t\gg t_{\Pi}$)
+     but the %cloud reaches the far-field
+     %regime where the 
+     density distribution has become homothetic to the
+     rapidity distribution. % momentum distribution (for times $t\gg t_{ff}$).
+     We then compute the inverse scattering constants of motion using a calculation
+     similar to the one made to derive the Landau-Zener formula (see section \ref{sec:zener}).     
+   }
+   \label{fig:sketch}
+\end{figure}
+ 
+As advertised in the introduction, we propose two different methods to derive Eq.~\eqref{eq:main}. They are based on two different thought experiments, depicted in Fig.\ref{fig:sketch}. The first method assumes relaxation of the system in a large box while in the second method, we consider an expansion of the system to the
+far-field regime.  
+In both thought experiments, in its final state, the gas has expanded sufficiently so that its momentum distribution has converged towards its rapidity distribution. 
+
+The inverse scattering constants of motion $\tau_\lambda$ are computed from the knowledge of the field configuration $\psi(x)$, at a given time.  Since they are preserved by the dynamics, one can choose to estimate them after the expansion, which is what we do in this paper. For each thought experiment, we use a dedicated technique to express the constants of motion  $\tau_\lambda$ in terms of the momentum distribution of the field. Since the latter is nothing else but the rapidity distribution, we thus obtain an expression relating the 
+inverse scattering constants of motion $\tau_\lambda$ to the rapidity distribution. As it should, the calculations for both thought experiments
+lead to the same result, which is the one given in Eq.~\eqref{eq:main}. 
+
+
+ 
+ In the following sections, details of the calculation are shown. We first recall how the
+ inverse scattering constants of motion $\tau_\lambda$ are constructed.
+ We then present the heart and the most technical part of our derivations,
+ namely the calculation of $\tau_\lambda$  for a a system that has
+ expanded on a sufficiently large zone. The first derivation, based on the thought experiment shown in Fig.~\ref{fig:sketch}(a), uses a Markovian approximation to compute $\tau_\lambda$.  The second derivation, based on the thought experiment shown in Fig.~\ref{fig:sketch}(b), uses a calculation similar to what is  done to extract the Landau-Zener formula. 
+
+
+ 
+ 
+
+ \section{The inverse scattering constants of motion }
+\label{sec:ISM}
+We consider a field $\psi(x,t)$ whose time evolution is given by  the NLSE Eq.~\eqref{eq.GPE} and  
+which obeys periodic boundary conditions on a box of length $L$.
+Within the framework of the inverse scattering method, it is possible to construct an infinite set of constants of motion labeled by a spectral parameter $\lambda$. 
+At any time $t$, one can compute these constants of motion  knowing the field configuration  at the time $t$. Thus in the following we consider  the  one-dimensional function $x\rightarrow \psi(x,t)$ and we omit the time variable.
+%to emphasize this point, we choose to omit  the time variable in the following. } 
+We first introduce the $2\times 2$ matrix $T_{\lambda}(x)$, called the propagator, which fulfills $T_{\lambda}(0)=\mathrm{Id}$ and which obeys the evolution equation 
+\begin{eqnarray}
+    \partial_{x}T_{\lambda}(x)=V_{\lambda}(x)T_{\lambda}(x)
+    \label{eq:evoleq}
+    \end{eqnarray}
+where the matrix $V_{\lambda}(x)$ depends on $\psi(x)$ according to
+\begin{equation}
+    V_{\lambda}(x)=
+    \begin{pmatrix} 
+    -i\frac{\lambda}{2} & \sqrt{g}\psi^*(x)\\
+     \sqrt{g}\psi(x)& i\frac{\lambda}{2}
+    \end{pmatrix}.
+    \label{eq:U}
+\end{equation}
+The propagator computed on the total length of the box, $T_\lambda(L)$, is called the monodromy matrix. The monodromy matrix depends on time via the time dependence of $\psi(x)$. However, for a field $\psi$ that obeys the NLSE \eqref{eq.GPE} with periodic boundary conditions, the monodromy matrix has the  remarkable property that its trace is time-independent, namely
+\begin{equation}
+    \tau_\lambda=\mathrm{Tr}(T_\lambda(L))
+    \label{eq:tau}
+\end{equation} is time independent~\cite{korepin_quantum_1993}. The quantities $\tau_\lambda$ thus constitute a set of constants of motion, labeled by the spectral parameter $\lambda$ and denoted inverse scattering constants of motion in this paper. Note that since, upon exchange of rows and columns, $V_\lambda$ becomes its complex conjugate, the diagonal entries of $T_\lambda (x)$ are complex conjugate, the same being true for the off-diagonal entries.
+
+Eq.~\eqref{eq:evoleq} recalls the one  obeyed by the evolution operator in quantum physics, where $x$ plays the role of time and $iV_\lambda(x)$, although it is not hermitian, plays the role of the time-dependant Hamiltonian. Inspired by this similarity,  we will use, for the estimation of the monodromy matrix,  techniques similar to those developed in quantum physics. 
+
+{\color{blue}
+\section*{Les constantes du mouvement par la méthode de diffusion inverse}
+\label{sec:ISM}
+Nous considérons un champ $\psi(x,t)$ dont l'évolution temporelle est donnée par l'équation NLSE Eq.~\eqref{eq.GPE} et qui satisfait aux conditions aux limites périodiques dans une boîte de longueur $L$. 
+Dans le cadre de la méthode de diffusion inverse, il est possible de construire un ensemble infini de constantes du mouvement étiquetées par un paramètre spectral $\lambda$. 
+À tout moment $t$, on peut calculer ces constantes du mouvement en connaissant la configuration du champ au temps $t$. Ainsi, dans ce qui suit, nous considérons la fonction unidimensionnelle $x\rightarrow \psi(x,t)$ et nous omettons la variable temporelle.
+%Pour souligner ce point, nous choisissons d'omettre la variable temporelle dans ce qui suit. 
+Nous introduisons d'abord la matrice $2\times 2$ $T_{\lambda}(x)$, appelée propagateur, qui satisfait $T_{\lambda}(0)=\mathrm{Id}$ et qui obéit à l'équation d'évolution suivante
+\begin{eqnarray}
+    \partial_{x}T_{\lambda}(x)=V_{\lambda}(x)T_{\lambda}(x)
+    \label{eq:evoleq}
+    \end{eqnarray}
+{\color{magenta} 
+ou encore  
+\begin{eqnarray}
+    [\partial_{x} - V_{\lambda}(x) ] T_{\lambda}(x)= 0
+\end{eqnarray}
+} 
+  
+où la matrice $V_{\lambda}(x)$ dépend de $\psi(x)$ selon
+\begin{equation}
+    V_{\lambda}(x)=
+    \begin{pmatrix} 
+    -i\frac{\lambda}{2} & \sqrt{g}\psi^*(x)\\
+     \sqrt{g}\psi(x)& i\frac{\lambda}{2}
+    \end{pmatrix}.
+    \label{eq:U}
+\end{equation}
+
+{\color{magenta} 
+ou encore 
+
+\begin{equation*}
+    V_{\lambda}(x)= - i \frac{\lambda}2 \sigma_z  + \sqrt{g} ( \Re(\psi(x))\sigma_x + \Im( \psi(x))  \sigma_y ) ,\quad \sigma_x =  
+    \begin{pmatrix} 
+    0 & 1\\
+    1 & 0 
+    \end{pmatrix},
+    \sigma_y =  
+    \begin{pmatrix} 
+    0 & -i\\
+    i & 0 
+    \end{pmatrix},
+    \sigma_z =  
+    \begin{pmatrix} 
+    1 & 0\\
+    0& -1 
+    \end{pmatrix}.
+\end{equation*}
+
+} 
+Le propagateur calculé sur la longueur totale de la boîte, $T_\lambda(L)$, est appelé la matrice de monodromie. La matrice de monodromie dépend du temps via la dépendance temporelle de $\psi(x)$. Cependant, pour un champ $\psi$ qui obéit à la NLSE \eqref{eq.GPE} avec des conditions aux limites périodiques, la matrice de monodromie a la propriété remarquable que sa trace est indépendante du temps, à savoir
+\begin{equation}
+    \tau_\lambda=\mathrm{Tr}(T_\lambda(L))
+    \label{eq:tau}
+\end{equation}
+est indépendante du temps~\cite{korepin_quantum_1993}. Les quantités $\tau_\lambda$ constituent ainsi un ensemble de constantes du mouvement, étiquetées par le paramètre spectral $\lambda$ et appelées dans cet article les constantes du mouvement par diffusion inverse. Remarquons que, suite à une permutation des lignes et colonnes, $V_\lambda$ devient son conjugué complexe, et les éléments diagonaux de $T_\lambda(x)$ sont conjugués complexes, ce qui est également vrai pour les éléments hors-diagonaux.
+
+L'équation \eqref{eq:evoleq} rappelle celle obéie par l'opérateur d'évolution en physique quantique, où $x$ joue le rôle du temps et $iV_\lambda(x)$, bien qu'il ne soit pas hermitien, joue le rôle du hamiltonien dépendant du temps. Inspirés par cette similarité, nous utiliserons, pour l'estimation de la matrice de monodromie, des techniques similaires à celles développées en physique quantique.
+}
+
+\section{Calculation assuming relaxation in a very large box}
+\label{sec:markov}
+In this section we consider the thought experiment depicted in Fig.~\ref{fig:sketch}(a), namely we assume the gas has expanded and relaxed to a very large box of length $L$, large enough so that the momentum distribution is equal to the rapidity distribution.
+To compute the inverse scattering constants of motion we will calculate the monodromy matrix using the properties of the field after relaxation in the box of size $L$.
+
+The relaxed system is time-independent and spatially homogeneous in the following sense: if $f(\{u_i\},x,t)$ is \comIsa{an} N-points correlation function of the field at positions $x,x+u_1,\dots ,x+u_{N-1}$,
+the time-averaged quantity  
+$\langle f(\{u_i\},x,t)\rangle=\underset{\tau\rightarrow\infty}{\lim} \int_0^\tau \mathrm{d} t' f(\{u_i\},x,t+t') / \tau$, where the asymptotic value is reached  as soon as $\tau$ is 
+much larger than the correlation time of the field, is independent of $x$ and $t$. In particular,
+$\langle \psi^*(x+u,t)\psi(x,t)\rangle$ is independent of $x$ and $t$. Moreover, the time-average of $\psi(x,t)$ vanishes. 
+
+
+
+
+The crucial point for the calculation of $\tau_\lambda$ is that, since it is time independent,
+it can be computed via Eq.~\eqref{eq:tau} using the monodromy matrix 
+at any time $t$. It implies in particular that  $\tau_\lambda=\mathrm{Tr}(\langle T_\lambda(L)\rangle)$
+where 
+ averaging of the monodromy matrix is done over time. 
+This is why in the following  we compute the averaged propagator   
+ $\langle T_\lambda(x)\rangle$\footnote{
+Note that, since $T_\lambda(x)$ is a functional of the 
+field  $\{\psi(y)\}$, and depends on time only via the time-dependence of $\{\psi(y)\}$, the time-averaged propagator $\langle T_\lambda(x)\rangle $ is also equal to the propagator averaged 
+over the field configurations 
+$\{\psi(y)\}$, the weight of a configuration being equal to the proportion of time the system spends in this particular configuration during its time evolution. Thus, for the following calculations, one is free to think of averaging either  in terms of time-averaging or in terms of averaging over field configurations.}.
+ 
+ 
+Let us first go to the interaction picture by considering 
+$\tilde{T_\lambda}=T_{0,\lambda}^{-1} T_\lambda$
+, 
+where $T_{0,\lambda}=e^{-i\lambda x \sigma_z/2}$
+is the propagator in the case of a vanishing field. Here $\sigma_z$ is the Pauli matrix. 
+Then,  the evolution equation \eqref{eq:evoleq} becomes $
+    \partial_{x}\Tilde{T}_{\lambda}(x)={\Tilde{V}_{\lambda}(x)}\Tilde{T}_{\lambda}(x)$
+with 
+\begin{equation}
+\Tilde{V}_{\lambda}(x)=\begin{pmatrix}
+    0 & \sqrt{g}e^{i\lambda x}\psi^*(x) \\
+    \sqrt{g}e^{-i\lambda x}\psi(x) & 0
+    \end{pmatrix}
+    \label{eq:Utilde}
+    \end{equation}
+   % \textcolor{blue}{il n'y a pas de $\sqrt{g}$ devant }
+
+    
+Let us consider the modification of the propagator  from a position $x$ to a position $x+\mathrm{d}x$. The evolution equation gives 
+\begin{equation}
+\begin{split}
+        \Tilde{T}_{\lambda}(x+\mathrm{d}x)=\Tilde{T}_{\lambda}(x)+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \Tilde{V}_{\lambda}(x')\Tilde{T}_{\lambda}(x)
+        \\+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \Tilde{V}_{\lambda}(x')\int_{x}^{x'}\mathrm{d}x'' \Tilde{V}_{\lambda}(x'')\Tilde{T}_{\lambda}(x'').
+        \end{split}
+        \label{eq:Txdx}
+\end{equation}
+
+This equation can be greatly simplified by the averaging %over %the field configurations 
+%time
+procedure
+and by the following estimation of length scales. On the one hand, the matrix $\tilde{V}_\lambda$ given in \eqref{eq:Utilde} evolves in $x$ with a typical correlation length $l_\psi$, which is the correlation length of $\psi$ and which is of the order of the inverse of the 
+width of the momentum distribution. On the other hand, the amplitude of $\psi$ is very small since we consider that the gas has relaxed into a very large box. Thus the elements of $\Tilde{V}_{\lambda}$ are very small, which means that the matrix $\Tilde{T}_{\lambda}(x)$ evolves on a typical length scale $l_T$ which is very large.  If the size $L$ of the box in which we have let the gas relax is large enough, the two lengths will obey the Markovian approximation  $l_T\gg l_\psi$, which enable to 
+%The markovian approximation enables us to 
+consider a step $\mathrm{d}x$ which fulfills 
+\begin{equation}
+    l_\psi \ll \mathrm{d}x \ll l_T.
+\end{equation} %both $dx\ll  L_c$ and $dx\gg l_c$. 
+The second inequality in the above scale hierarchy permits to replace $\Tilde{T}_{\lambda}(x'')$ by $\Tilde{T}_{\lambda}(x)$ in Eq.\eqref{eq:Txdx}. The first inequality, together with the averaging procedure, has several consequences on Eq.~\eqref{eq:Txdx}. First, one can ignore correlations between $\tilde{T}_\lambda(x)$ and the 
+matrices $\tilde{V}_\lambda(x')$, $\tilde{V}_\lambda(x'')$ since such correlations impact only a negligible part of the integrals. Second,  the effect of the first integral averages out since
+%$\int_x^{x+dx} \langle \tilde U_\lambda(x)\tilde{T}_\lambda (x)\rangle\simeq
+%\int_x^{x+dx} \langle \tilde U_\lambda(x)\rangle \langle \tilde{T}_\lambda %(x)\rangle$ and since 
+$\langle \tilde V_\lambda(x)\rangle =0$. Finally, in the double integral, 
+one can
+ extend the integral over $x''$ from $-\infty$ to $x'$ since  $\langle \tilde V_\lambda(t,x')\tilde V_\lambda(t,x'')\rangle$ vanishes for distances much larger than $l_\psi$. 
+All the above observations lead to 
+\begin{eqnarray}
+\langle \Tilde{T}_{\lambda}(x+\mathrm{d}x) \rangle= \left [ I_d+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \int_{-\infty}^{x'}\mathrm{d}x'' \langle \Tilde{V}_{\lambda}(x')\Tilde{V}_{\lambda}(x'')\rangle \right ] \langle \Tilde{T}_{\lambda}(x)\rangle
+\label{equ:d}
+\end{eqnarray}
+Using the translation invariance of 
+$\langle \Tilde{V}_{\lambda}(x')\Tilde{V}_{\lambda}(x'')\rangle$ and  the fact that we consider an interval $\mathrm{d}x\ll l_T$, the above equation reduces to 
+$\partial \langle  \tilde{T}_\lambda\rangle / \partial x =\int_{-\infty}^0 \mathrm{d} y \langle \Tilde{V}_{\lambda}(0)\Tilde{V}_{\lambda}(y)\rangle   \langle \tilde{T}_\lambda(x)\rangle . $
+Plugging Eq.~\ref{eq:Utilde} into the integrand, this gives 
+\begin{equation}
+    \frac{\partial \langle  \tilde{T}_\lambda\rangle }{\partial x }=\begin{pmatrix} a_\lambda & 0 \\ 0 & a_\lambda^*\end{pmatrix}
+    \langle  \tilde{T}_\lambda(x)\rangle .   
+    \label{eq:evolTtildemoy}
+\end{equation}
+where  $a_\lambda$ reads, in terms of the Fourier components of the field, 
+\begin{equation}
+a_{\lambda} = \frac{g}{L}\sum_{k,k'} \langle \psi_{k}^*\psi_{k'}\rangle \int_{-\infty}^{0}\mathrm{d}y~e^{(i(k'-\lambda)+\epsilon) y}
+\label{eq:alambdakkp}
+\end{equation}
+where we have introduced a small positive parameter $\epsilon$, that does not change the result as long as $\epsilon \ll 1/l_\psi$ and that we will let go to zero at the end of the calculation.
+Invariance under translation of the relaxed system implies that  $\langle \psi_k\psi_{k'}^*\rangle = \langle |\psi_k|^2\rangle \delta_{k,k'}$. 
+We assume moreover that $L$, the box size in which the gas has relaxed, is large enough so that $\langle |\psi_k|^2\rangle L /(2\pi)= n_\infty(p)= \Pi(p)$. 
+Plugging  these results into Eq.~\eqref{eq:alambdakkp}, replacing the discrete sum by an integral and computing the integral over $y$, we obtain
+\begin{equation}
+a_{\lambda} =\frac{g}{L}\int_{-\infty}^\infty \mathrm{d}k \Pi(k) %\int_{-\infty}^{0}dy~e^{(i(k-\lambda) +\epsilon) y} .
+\frac{1}{i(k-\lambda)+\epsilon}
+\label{eq:alambdaint}
+\end{equation} 
+which leads to
+ \begin{equation}
+a_{\lambda}=\frac{g}{L}\left ( \pi \Pi(\lambda) - i \fint \mathrm{d}k \frac{\Pi(k)}{k-\lambda} \right ) .
+\label{eq:alambda_fin}
+\end{equation}
+
+
+
+
+
+Since $a_\lambda$ is independent on position, integration  of Eq.~\eqref{eq:evolTtildemoy} simply gives
+\begin{equation}
+    \langle \tilde{T}_\lambda(L)\rangle =\begin{pmatrix}e^{L a_\lambda }& 0\\ 0 & e^{L a_\lambda^* }\end{pmatrix}.
+\end{equation}
+Coming back to the bare representation by multiplying  with
+ $T_{0,\lambda}$ and taking the trace,  
+we  
+obtain the result given in Eq.~\eqref{eq:main}.
+
+{\color{blue}
+\section*{Calcul en supposant la relaxation dans une très grande boîte}
+\label{sec:markov}
+Dans cette section, nous considérons l'expérience de pensée illustrée dans la Fig.~\ref{fig:sketch}(a), où l'on suppose que le gaz s'est étendu et relaxé dans une boîte très grande de longueur $L$, suffisamment grande pour que la distribution des moments soit égale à la distribution des rapidités. 
+Pour calculer les constantes du mouvement par diffusion inverse, nous allons déterminer la matrice de monodromie en utilisant les propriétés du champ après la relaxation dans une boîte de taille $L$.
+
+Le système relaxé est indépendant du temps et homogène spatialement au sens suivant : si $f(\{u_i\},x,t)$ est une fonction de corrélation à N points du champ aux positions $x,x+u_1,\dots,x+u_{N-1}$, la quantité moyennée sur le temps 
+$\langle f(\{u_i\},x,t)\rangle=\underset{\tau\rightarrow\infty}{\lim} \int_0^\tau \mathrm{d}t' f(\{u_i\},x,t+t') / \tau$, où la valeur asymptotique est atteinte dès que $\tau$ est bien plus grande que le temps de corrélation du champ, est indépendante de $x$ et $t$. En particulier, $\langle \psi^*(x+u,t)\psi(x,t)\rangle$ est indépendante de $x$ et $t$. De plus, la moyenne temporelle de $\psi(x,t)$ est nulle.
+
+Le point crucial pour le calcul de $\tau_\lambda$ est que, puisqu'elle est indépendante du temps, elle peut être calculée via Eq.~\eqref{eq:tau} en utilisant la matrice de monodromie à n'importe quel moment $t$. Cela implique en particulier que $\tau_\lambda=\mathrm{Tr}(\langle T_\lambda(L)\rangle)$ où la moyenne de la matrice de monodromie est effectuée sur le temps. C'est pourquoi, dans ce qui suit, nous calculons le propagateur moyenné $\langle T_\lambda(x)\rangle$\footnote{
+Notez que, comme $T_\lambda(x)$ est une fonctionnelle du champ $\{\psi(y)\}$ et dépend du temps uniquement via la dépendance temporelle de $\{\psi(y)\}$, le propagateur moyenné $\langle T_\lambda(x)\rangle$ est également égal au propagateur moyenné sur les configurations du champ $\{\psi(y)\}$, le poids d'une configuration étant égal à la proportion de temps que le système passe dans cette configuration particulière au cours de son évolution temporelle. Ainsi, pour les calculs suivants, on est libre de penser en termes de moyennes temporelles ou de moyennes sur les configurations du champ.}.
+
+Passons d'abord à l'image d'interaction en considérant $\tilde{T_\lambda}=T_{0,\lambda}^{-1} T_\lambda$, où $T_{0,\lambda}=e^{-i\lambda x \sigma_z/2}$ est le propagateur dans le cas d'un champ nul. Ici, $\sigma_z$ est la matrice de Pauli. Ensuite, l'équation d'évolution \eqref{eq:evoleq} devient 
+$\partial_{x}\Tilde{T}_{\lambda}(x)={\Tilde{V}_{\lambda}(x)}\Tilde{T}_{\lambda}(x)$
+avec 
+\begin{equation}
+\Tilde{V}_{\lambda}(x)=\begin{pmatrix}
+    0 & \sqrt{g}e^{i\lambda x}\psi^*(x) \\
+    \sqrt{g}e^{-i\lambda x}\psi(x) & 0
+    \end{pmatrix}
+    \label{eq:Utilde}
+    \end{equation}
+    
+{\color{magenta}
+\begin{eqnarray*}
+	\partial_x ( \overbrace{ e^{i \lambda x \sigma_z /2 }  T_\lambda ( x )}^{\tilde{T}_\lambda ( x) } ) & = & i \frac{\lambda}{2} \sigma_x  \tilde{T}_\lambda (x) + e^{i\frac{\lambda}{2}x \sigma_x } \overbrace{ V_\lambda (x) T_\lambda (x)}^{ \partial_x T_\lambda (x)} + 
+\end{eqnarray*}
+
+avec $\vec{\omega} = ( \omega_x , \omega_y , \omega_z )$ ,  $\vec{\sigma} = ( \sigma_x , \sigma_y , \sigma_z )$ , $ \hat{\omega} = \vec{\omega}/ \omega$ et $\omega = \Vert \vec{\omega} \Vert $ 
+et on rapelle que $(\vec{\sigma} \cdot \vec{\omega})^{2n} = \omega^{2n}$ et $(\vec{\sigma} \cdot \vec{\omega})^{2n+1 } = \vec{\sigma} \cdot \hat{\omega} \overbrace{(\vec{\sigma} \cdot \hat{\omega})^{2n}}^{1}  \omega^{2n+1}$
+
+\begin{eqnarray*}
+	e^{-i \vec{\sigma} \cdot \vec{\omega} /2 } & = & \sum_n \frac{ \overbrace{(-i \vec{\sigma} \cdot \vec{\omega} /2)^{2n}}^{(-1)^n ( \omega/2) ^{2n}  }}{(2n)!}  + 	\sum_n \frac{ \overbrace{(-i \vec{\sigma} \cdot \vec{\omega} /2)^{2n}}^{-i\vec{\sigma} \cdot \hat{\omega} (-1)^n ( \omega/2) ^{2n+1}  }}{(2n+1)!} \\
+	& = & \cos  ( \omega/2 ) - i\vec{\sigma} \cdot \hat{\omega} \sin ( \omega/2 ) 
+\end{eqnarray*}
+
+avec $\vec{\omega} = - \lambda x  \vec{e}_z  \Rightarrow \vec{\sigma} \cdot \hat{\omega} = - \sigma_z  $ 
+
+\begin{eqnarray*}
+	e^{i \lambda x \sigma_z /2 } & = & 	\cos  ( \lambda x / 2 ) + i \sigma_z  \sin ( \lambda x /2 ) 
+\end{eqnarray*}
+
+ et avec $\sigma_i \sigma_j = - \sigma_j \sigma_i,  ~ i \neq j $ 
+
+\begin{eqnarray*}
+	e^{i \lambda x \sigma_z /2} \sigma_j = \sigma_j (cos  ( \lambda x /2 ) + i \sigma_z  \sin ( \lambda x /2 )) = 	 \sigma_j e^{ - i \lambda x \sigma_z /2} ,~ j\in\{ x , y \}
+\end{eqnarray*}
+
+
+or $e^{- i \lambda x \sigma_z /2 } = e^{ -i \lambda x \sigma_z } e^{ i \lambda x \sigma_z /2 }$ et $\sigma_x \sigma_z = - i \sigma_y$ et $\sigma_y \sigma_z = i \sigma_x$
+
+\begin{eqnarray*}
+	\sigma_x e^{- i \lambda x \sigma_z }   & = & 	\sigma_x ( \cos  ( \lambda x) - i \sigma_z  \sin (\lambda x   ) )  = \cos  ( \lambda x  ) 	\sigma_x   -  \sin ( \lambda x ) \sigma_y \\
+	\sigma_y e^{ - i \lambda x \sigma_z   }   & = & 	\sigma_y ( \cos  ( \lambda x) - i \sigma_z  \sin (\lambda x   ) )  = 	\cos  ( \lambda x  ) 	\sigma_y   +  \sin ( \lambda x ) \sigma_x
+\end{eqnarray*}
+
+
+
+or avec $\sigma^+ = \frac{1}2 ( \sigma_x + i \sigma_y )  = \begin{pmatrix}
+    0 & 1\\
+    0 & 0
+    \end{pmatrix},
+    \sigma^- = \frac{1}2 ( \sigma_x - i \sigma_y )  = \begin{pmatrix}
+    0 & 0\\
+    1 & 0
+    \end{pmatrix}$ donc $\sigma_x =  ( \sigma^+ + \sigma^-) ,~ \sigma_y = \frac{1}{i} ( \sigma^+ - \sigma^-)$
+    
+\begin{eqnarray*}
+	\sigma_x e^{  -i \lambda x \sigma_z  }   & = & 	 ( \cos (\lambda x)  + i \sin (\lambda x )  ) \sigma^+ + ( \cos (\lambda x) - i \sin (\lambda x) ) \sigma^- = e^{i \lambda x  }\sigma^+ + e^{-i \lambda x }\sigma^-  \\
+	\sigma_y e^{ - i \lambda x \sigma_z  }   & = & 	 \frac{1}{i} ( \cos (\lambda x)  + i \sin (\lambda x )  ) \sigma^+  - \frac{1}{i} ( \cos (\lambda x) - i \sin (\lambda x) ) \sigma^- = \frac{1}{i}e^{i \lambda x  }\sigma^+ -\frac{1}{i} e^{-i \lambda x }\sigma^- \end{eqnarray*}
+    
+    
+ 
+%\begin{eqnarray*}
+%	e^{i \lambda x \sigma_z  /2 } \sigma_x  = \frac{1}2 ( \sigma^+ + \sigma^- ) e^{ - i \lambda x \sigma_z   } e^{ i \lambda x \sigma_z /2  },\\
+%	e^{i \lambda x \sigma_z  /2 } \sigma_z  = \frac{1}{2i} ( \sigma^+ - \sigma^- ) e^{ - i \lambda x \sigma_z   } e^{ i \lambda x \sigma_z /2  }	
+%\end{eqnarray*}
+
+donc 
+
+\begin{eqnarray*}
+	e^{ i \lambda x \sigma_z/2  } \Big(\overbrace{- i \frac{\lambda}2 \sigma_z  + \sqrt{g} ( \Re(\psi(x))\sigma_x + \Im( \psi(x))  \sigma_y )}^{V_\lambda ( x) } \Big) & = & 	\Big( - i \frac{\lambda}2 \sigma_z \Big )  e^{ i \lambda x \sigma_z/2  } \\
+	&&  + \sqrt{g} \Big ( \Re(\psi(x))\sigma_x + \Im( \psi(x))  \sigma_y \Big ) e^{ - i \lambda x \sigma_z  }e^{ + i \lambda x \sigma_z/2   }	\\
+	& =&  \Big ( - i \frac{\lambda}2 \sigma_z \Big )  e^{ i \lambda x \sigma_z /2  } \\ \\
+	&& + \sqrt{g} \Big ( e^{ i \lambda x  } \psi^\ast(x) \sigma^+ + e^{ - i \lambda x } \psi(x) \sigma^- \Big ) 
+\end{eqnarray*}
+
+soit 
+
+\begin{eqnarray*}
+	\partial_{x}\Tilde{T}_{\lambda}(x) & = &{\Tilde{V}_{\lambda}(x)}\Tilde{T}_{\lambda}(x)
+\end{eqnarray*}
+
+avec 
+\begin{eqnarray*}
+\Tilde{V}_{\lambda}(x)/\sqrt{g}= e^{i\lambda x} \psi^\ast(x) \sigma^+  +  e^{-i\lambda x} \psi(x) \sigma^- , ~ \sigma^+ = \frac{1}2 ( \sigma_x + i \sigma_y )  = \begin{pmatrix}
+    0 & 1\\
+    0 & 0
+    \end{pmatrix},
+    \sigma^- = \frac{1}2 ( \sigma_x - i \sigma_y )  = \begin{pmatrix}
+    0 & 0\\
+    1 & 0
+    \end{pmatrix}
+    \end{eqnarray*}
+}
+
+Considérons maintenant la modification du propagateur d'une position $x$ à une position $x+\mathrm{d}x$. L'équation d'évolution donne 
+\begin{equation}
+\begin{split}
+        \Tilde{T}_{\lambda}(x+\mathrm{d}x)=\Tilde{T}_{\lambda}(x)+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \Tilde{V}_{\lambda}(x')\Tilde{T}_{\lambda}(x)
+        \\+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \Tilde{V}_{\lambda}(x')\int_{x}^{x'}\mathrm{d}x'' \Tilde{V}_{\lambda}(x'')\Tilde{T}_{\lambda}(x'').
+        \end{split}
+        \label{eq:Txdx}
+\end{equation}
+
+Cette équation peut être grandement simplifiée par la procédure de moyenne et par l'estimation des échelles de longueur. D'une part, la matrice $\tilde{V}_\lambda$ donnée dans \eqref{eq:Utilde} évolue avec une longueur de corrélation typique $l_\psi$, qui est la longueur de corrélation de $\psi$ et qui est de l'ordre de l'inverse de la largeur de la distribution des moments. D'autre part, l'amplitude de $\psi$ est très petite puisque nous considérons que le gaz a relaxé dans une très grande boîte. Ainsi, les éléments de $\Tilde{V}_{\lambda}$ sont très petits, ce qui signifie que la matrice $\Tilde{T}_{\lambda}(x)$ évolue sur une échelle de longueur typique $l_T$ qui est très grande. Si la taille $L$ de la boîte dans laquelle le gaz s'est relaxé est suffisamment grande, les deux longueurs obéiront à l'approximation markovienne $l_T\gg l_\psi$, ce qui permet de considérer un pas $\mathrm{d}x$ qui satisfait 
+\begin{equation}
+    l_\psi \ll \mathrm{d}x \ll l_T.
+\end{equation}
+La seconde inégalité dans cette hiérarchie d'échelles permet de remplacer $\Tilde{T}_{\lambda}(x'')$ par $\Tilde{T}_{\lambda}(x)$ dans l'équation \eqref{eq:Txdx}. La première inégalité, combinée à la procédure de moyenne, a plusieurs conséquences sur l'équation \eqref{eq:Txdx}. Premièrement, on peut ignorer les corrélations entre $\tilde{T}_\lambda(x)$ et les matrices $\tilde{V}_\lambda(x')$, $\tilde{V}_\lambda(x'')$ puisque ces corrélations n'impactent qu'une partie négligeable des intégrales. Deuxièmement, l'effet de la première intégrale est négligeable puisque $\langle \tilde V_\lambda(x)\rangle =0$. Enfin, dans la double intégrale, on peut étendre l'intégrale sur $x''$ de $-\infty$ à $x'$ puisque $\langle \tilde V_\lambda(t,x')\tilde V_\lambda(t,x'')\rangle$ s'annule pour des distances bien supérieures à $l_\psi$. Toutes ces observations mènent à 
+\begin{eqnarray}
+\langle \Tilde{T}_{\lambda}(x+\mathrm{d}x) \rangle= \left [ I_d+\int_{x}^{x+\mathrm{d}x}\mathrm{d}x' \int_{-\infty}^{x'}\mathrm{d}x'' \langle \Tilde{V}_{\lambda}(x')\Tilde{V}_{\lambda}(x'')\rangle \right ] \langle \Tilde{T}_{\lambda}(x)\rangle
+\label{equ:d}
+\end{eqnarray}
+
+En utilisant l'invariance par translation de $\langle \Tilde{V}_{\lambda}(x')\Tilde{V}_{\lambda}(x'')\rangle$ et en considérant un intervalle $\mathrm{d}x\ll l_T$, l'équation ci-dessus se réduit à 
+$\partial \langle  \tilde{T}_\lambda\rangle / \partial x =\int_{-\infty}^0 \mathrm{d} y \langle \Tilde{V}_{\lambda}(0)\Tilde{V}_{\lambda}(y)\rangle   \langle \tilde{T}_\lambda(x)\rangle . $
+En insérant l'équation \ref{eq:Utilde} dans l'intégrande, cela donne 
+\begin{equation}
+    \frac{\partial \langle  \tilde{T}_\lambda\rangle }{\partial x }=\begin{pmatrix} a_\lambda & 0 \\ 0 & a_\lambda^*\end{pmatrix}
+    \langle  \tilde{T}_\lambda(x)\rangle .   
+    \label{eq:evolTtildemoy}
+\end{equation}
+où $a_\lambda$ s'écrit en termes des composantes de Fourier du champ : 
+\begin{equation}
+a_{\lambda} = \frac{g}{L}\sum_k \langle \psi_k^* \psi_{k-\lambda} \rangle .
+\label{eq:alambda}
+\end{equation}
+
+L'équation d'évolution \eqref{eq:evolTtildemoy} est triviale à résoudre, et son résultat donne l'expression de $\tau_\lambda$ :
+\begin{equation}
+    \tau_\lambda =\mathrm{Tr} (T_{0,\lambda} (L) \langle \tilde{T}_\lambda(0)\rangle e^{\mathrm{diag}(a_\lambda,a_\lambda^*)L }  ) = 2\cosh(\Re a_\lambda L).
+    \label{eq:resulttau}
+\end{equation}
+}
+\section{Calculation assuming expansion to the far-field regime}
+\label{sec:zener}
+In this section, we derive Eq.~\ref{eq:main} using the thought experiment presented in  Fig.~\ref{fig:sketch}(b):  we assume that we let the cloud freely expand during a very long expansion time  so that not only the momentum distribution become equal to the rapidity distribution, but the spatial distribution, if expressed as a function of $\frac{x}{t}$ where $x$ is the spatial coordinate and $t$ the expansion time, has become proportional to the rapidity distribution. We will compute the monodromy matrix using the field after the expansion to extract the inverse scattering constants of motion.
+We assume here that the field density profile is initially centered on $x=0$ and we use a quantization box which spans the interval $[-L/2,L/2]$ where $L$
+is large enough so that the density at the borders of the box is vanishing.
+
+
+At sufficiently large expansion time, nonlinear effects become negligible since the density is very low. As a result the 
+Fourier components become time-independent, up to the phase factor 
+$e^{ik^2t/2}$. Thus the field is well approximated for long expansion times by
+\begin{equation}
+    \psi(x,t)\underset{t\rightarrow\infty}{\simeq} \frac{1}{\sqrt{L}}\sum_k \varphi (k) 
+    e^{ikx}e^{-ik^2t/2}
+\end{equation}
+where $\varphi (k)$ does not depend on time. 
+The momentum distribution for such long times is $L|\varphi (k)|^2/(2\pi)$ and is nothing else but the rapidity distribution.
+Note that we neglect here a phase factor evolving slowly in $\log(t)$ due to the nonlinear term~\cite{novikov_theory_1984}. The quantization box in this section is assumed to be much larger than the size on which the field extends and we replace in the following the sum by an integral.
+The argument of the exponential terms in the integrand is rapidly evolving in $k$. Making a stationary phase approximation, we obtain, up to a global phase factor,
+\begin{equation}
+    \psi (x,t) \simeq \frac{\sqrt{L}}{\sqrt{ 2\pi t}} e^{ i \frac{x^{2}}{2 t}}  \varphi(x/t).
+    \label{eq:fieldfarexp}
+\end{equation}
+%where $\psi_{k}^{(\infty)} = \psi_{k}(t_{\Pi})$.
+In what follows we compute the monodromy matrix using  the asymptotic expression of the field given in the above equation.
+
+In order to emphasize the similarity  with known quantum physics, let us change representation and introduce the propagator
+$\bar{T}_{\lambda}(x) = A_{\lambda} T_{\lambda} $ with $A_{\lambda} = \mathrm{e}^{i \frac{x^2}{4t} \sigma_{z}}$.
+The evolution equation \eqref{eq:evoleq} then becomes  
+ $i\partial_{x}\bar{T}_{\lambda}(x) = i\bar{V}_{\lambda}(x)  \bar{T}_{\lambda}(x)  $ with
+\begin{equation}
+    i\bar{V}_{\lambda} (x)  =   \begin{pmatrix} \frac{1}{2} \left( \lambda - \frac{x}{t} \right) & i\sqrt{\frac{gL}{2\pi t}}\, \varphi^*(x/t)  \\ i\sqrt{\frac{gL}{2\pi t}}\,  \varphi(x/t) & -\frac{1}{2} \left( \lambda - \frac{x}{t} \right).
+    \end{pmatrix}
+\end{equation}
+Although $i \bar{V}_\lambda$ is not hermitian, this matrix is similar to the time-dependent Hamiltonian 
+of an avoided crossing, the time -- not to be confused with the expansion time $t$ which appears in the expression of $\bar{V}_\lambda$ -- corresponding to $x$ in the above equation and the crossing occurring for $x=\lambda t$. In this analogy, the diagonal elements of the monodromy matrix correspond to the amplitude associated with diabatic processes. We will indeed use,  to compute the diagonal entries of $T_\lambda(L)$, calculations similar to those performed  to extract the Landau-Zener formula.
+More precisely, because of its simplicity, we choose to follow a derivation similar to the one performed in~\cite{wittig_landauzener_2005}. 
+
+
+For the calculation, let us use the same representation as in the previous section, namely let us compute $\tilde{T}_\lambda=T_{0,\lambda}^{-1} T_\lambda$, where 
+$T_{0,\lambda} = \mathrm{e}^{-i x \lambda \sigma_{z}/2}$, such that  $\tilde{T}_\lambda(x)$ is stationary in $x$ in regions where the field is vanishing. Since the quantification box is assumed to be very large compared to the extension of the field, on can take the limit $L\rightarrow\infty$ for the calculations. 
+Let us denote $c_+$ and $c_-$ the elements of the first column of the propagator $\tilde{T}_\lambda(x)$, whose values at $x=-\infty$ are $c_+(-\infty)=1$ and $c_-(-\infty)=0$.  They evolve according to 
+ \begin{equation}
+     \left \{ 
+     \begin{array}{l}
+     \frac{\mathrm{d}c_+}{\mathrm{d}x}= \sqrt{\frac{gL}{2\pi t}}e^{i(\lambda x - x^2/(2t))}\varphi^*(x/t) c_-\\
+     \frac{\mathrm{d} c_-}{\mathrm{d}x}= \sqrt{\frac{gL}{2\pi t}}e^{-i(\lambda x - x^2/(2t))}\varphi(x/t) c_+
+     \end{array} \right . 
+ \end{equation}
+%where we use the dot notation for $x$ derivative. 
+ Introducing  $u=x/t$, taking the derivative of the first equation and using the second equation, we obtain 
+ \begin{equation}
+     \ddot{c_+}= t \left ( i(\lambda- u) + \frac{1}{t} \frac{\varphi'^*(u)}{\varphi^*(u)}\right ) \dot{c_+} + t \frac{gL}{2\pi } |\varphi(u)|^2 c_+
+ \end{equation}
+ where   we use the dot notation for derivative with respect to $u$ and $\varphi'= \mathrm{d}\varphi(k)/ \mathrm{d} k$.
+Dividing  by $t(\lambda  -u)c_+$ and integrating 
+over $u$ we get 
+\begin{equation}
+\label{eq:equadiffcpp}
+    \int_{- \infty}^{\infty} \frac{\ddot c_+}{c_+} \frac{\mathrm{d}u}{t(\lambda  -u) } = i \int_{-\infty}^{\infty} \mathrm{d}u\frac{\dot{c}_+}{c_+} + \frac{gL}{2\pi} \int_{-\infty}^{\infty} |\varphi(u) |^{2} \frac{\mathrm{d}u}{\lambda  -u} + \frac{1}{t} \int_{- \infty}^{\infty}  \frac{\dot{c_+}}{c_+} \frac{\varphi'^{*}(u) }{\varphi^{ *}(u) } \frac{\mathrm{d}u}{\lambda  -u} \, .
+\end{equation}
+The last term of the right-hand side is negligible for large enough $t$ 
+since it scales as $1/t$. % instead of $1/t$ for the other terms.
+The first term of the right hand side is computed easily changing the variable $x$ to $c_+$: denoting \comIsa{by} $c_+^\infty$ the asymptotic value of $c_+$ at very large $x$ and using the fact that $c_+(-\infty)=1$, this term gives $i\log(c_+^\infty)$. 
+For the evaluation of the other integrals, let us suppose one approaches the real axis from below in the complex plane, a choice which will be justified afterwards.
+As in~\cite{wittig_landauzener_2005}, we assume that 
+the function $\ddot{c}_+/c_+$ can be continued analytically  in the  complex plane and goes to zero at large distances and has no poles, so that the 
+term on the left-hand side vanishes.
+The second term of the right-hand-side is evaluated using the Sokhotski–Plemelj theorem. 
+Finally, we obtain, using the fact that $L|\varphi(k)|^2/(2\pi)=\Pi(k)$, 
+\begin{equation}
+    \log (c_+^{\infty})=g \pi \Pi(\lambda) 
+    -ig\fint \mathrm{d}q \frac{\Pi (q)}{q-\lambda}.
+    \label{eq:cplusinf}
+\end{equation}
+Note that if one would had chosen to estimate the integrals by approaching the real axis from above, then one would have  $\log(c_+^\infty)<0$
+so that $|c_+^\infty|^2<1$, which is not compatible with the fact that
+$\mathrm{det}(\tilde{T}_\lambda)=1$ ~\cite{novikov_theory_1984}\footnote{Because the columns of $\tilde{T}_\lambda$ are the solutions of the same differential linear equation for two orthogonal initial states,  the Wronskian property, together with the fact that $\mathrm{Tr}(\tilde{V}_\lambda)=0$, imply that $\mathrm{det}(\tilde{T}_\lambda(x))=\mathrm{det}(\tilde{T}_\lambda(-\infty))=1$.} : together with the fact that the second column of $\tilde{T}_\lambda$ is obtained by permuting the entries of the first column and taking their complex conjugates, the condition $\mathrm{det}(\tilde{T}_\lambda)=1$ leads to $|c_+(x)|^2=1+|c_-(x)|^2>1$.
+
+There are other ways to derive  Eq.~\eqref{eq:cplusinf}.  Following the calculations made in \cite{solovev_nonadiabatic_1989} and coming back to the bare representation, one could connect the true solution close to the crossing\footnote{The solution close to the crossing take the from of a parabolic cylindrical function\cite{zener_non-adiabatic_1932}.} at $x\simeq \lambda/t$ to the asymptotic solutions at large distance.
+In such an approach, the principal value integral comes from the effect of the field to second order in $\varphi(k)$
+outside the crossing region.
+Finally, note that the large time expansion was also studied using advance techniques of inverse scattering~\cite{novikov_theory_1984,miao_interplay_2019}.
+
+Taking the exponential of Eq.\eqref{eq:cplusinf}, we obtain $c_+^\infty$. We come back to the 
+bare representation by mutliplying with $e^{-i\lambda L/2}$, thus obtaining the first diagonal element of the monodromy matrix. Using the fact that the diagonal elements of the monodromy matrix are complex conjugate, 
+and using Eq.~\eqref{eq:tau}, we  
+recover Eq.~\eqref{eq:main}.
+
+%\comIsa{Note that, within the framework
+%of the focusing NLSE, the far field expansion was explored  in~\cite{miao_interplay_2019w} and the relation between the 
+%inverse scattering constant of motion and the 
+%Fourier component of the field in the far field was derived using involved techniques of inverse scattering theory.} 
+
+
+\section{Conclusion}
+
+The link %that we establish in this paper 
+between the rapidity distribution and the inverse scattering constants of motion, Eq.~\eqref{eq:main}, offers a  way to 
+compute the rapidity distribution for a given field configuration $\psi(x)$: indeed the inverse scattering constants of motion can be computed once the field configuration $\psi(x)$ at a given time is known. %\comIsa{[Soucis, comment inverser cette équation ? Est-ce qu'une méthode itérative converge ?]}
+The rapidity distribution, once computed, \comIsa{allows us} to predict many interesting features. By definition, it predicts the asymptotic momentum distribution if an expansion is performed. 
+The rapidity distribution shows also  its importance when one considers local properties of the system after relaxation: the latter are 
+functional of $\rho(k)$. 
+For instance, one can compute, within the classical field model, local correlation functions after relaxation, adapting results obtained for the Lieb-Liniger model as done in~\cite{del_vecchio_del_vecchio_exact_2020}.
+One can also apply the Generalized Hydrodynamics theory that describes long wave-length dynamics to the classical field model. 
+
+%\comIsa{Derivations made in this paper uses the 
+%definition of  the
+%rapidity distribution as the asymptotic momentum %distribution after a very large expansion. The rapidity distribution  can also be derived from the dynamical structure factor
+%after relaxation~\cite{}.w}
+
+%The rapidity distribution is particularly relevant if one is interested in a relaxed gas, confined on a size of length $L_0$, since it fully characterises its local properties. In this paper, the size $L$ used to compute the inverse scattering constant of motion is that of a much larger box in which we let the system expand. To compute the inverse scattering constant of motions for the gas confined on $l_0$, one simply extends the field $\psi(x)$
+%setting it to 
+
+
+
+Although %the result derived in this paper, {\it i.e. } 
+Eq.~\eqref{eq:main}
+has previously been derived using  more mathematical 
+approaches, this paper offers an original derivation 
+ which does not require knowledge on 
+quantum inverse scattering theory. It might be interesting 
+to explore other methods to derive Eq.~\eqref{eq:main}. One possibility might be to use  
+the fact that the rapidity distribution can be derived from the dynamical structure factor
+after relaxation~\cite{de_nardis_probing_2017}. 
+
+
+The protocol of section 3 belongs to the class of protocols dubbed quenches, that are protocols where the Hamiltonian is modified suddenly. Many studies investigated the rapidity distribution after a quantum quench in the Lieb-Liniger model~\cite{caux_time_2013,nardis_relaxation_2015,de_nardis_solution_2014,piroli_multiparticle_2016}, thus characterizing the system after it has relaxed. The quench considered in section 3 is trivial  since the rapidity distribution $\Pi(p)$ is preserved by the quench:  the rapidity distribution per unit length $\rho(p)$ after the quench is simply obtained from the initial one by multiplication with $L/L_0$ where $L$ is the length of the system after the quench and $L_0$ its length before the quench. 
+
+\section{Acknowledgment}
+This work was
+supported by the ANR Project QUADY -
+ANR-20-CE30-0017-01. The authors thanks D. Gangardt and J. Dubail for 
+reading the manuscrit. 
+
+%\bibliography{RapiditiesClassicalField.bib}
+\input{RapidityClassicalField_resub.bbl}
+
+
+\end{document}
