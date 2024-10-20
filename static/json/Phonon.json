@@ -1,0 +1,20 @@
+[
+    {
+        "file1-1": "../docaranger/Phonon/GPEtoKPZ_pdf.pdf",
+        "page1-1": 1,
+        "file2-1": "../docaranger/Phonon/Offre-9603_pdf.pdf",
+        "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/Phonon/main_pdf.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/Phonon/seminaireGroupeSept2023_pdf.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/Phonon/2106.06236v2.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/Phonon/2206.00112v2.pdf",
+        "page2-3": 1
+    }
+]

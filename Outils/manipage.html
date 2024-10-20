@@ -1,0 +1,1141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Wall Dynamics for a 1D Bose gas</title>
+    <link rel="shortcut icon" href="./img/icon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+    /* @font-face {
+        font-family: "DMSerif";
+        src: url(./fonts/DMSerifDisplay-Regular.ttf)
+    } */
+
+    body {
+        background: #D5F6FF;
+        font-family: sans-serif
+    }
+
+    input,
+    select,
+    span {
+        background: rgba(242, 237, 237, 0.108);
+        /* Fond transparent à 20% */
+        font-family: "DMSerif";
+        /* Police personnalisée */
+        font-size: 1vw;
+        /* Augmente la taille de la police */
+        width: 100%;
+        /* La largeur prend 100% de l'espace parent */
+        height: auto;
+        /* Ajuste automatiquement la hauteur selon le contenu */
+        border: 0.1px solid #D5F6FF;
+        /* Bordure visible */
+        padding: 0px;
+        /* Ajoute du padding intérieur */
+        color: darkblue;
+        /* Couleur du texte */
+        box-sizing: border-box;
+        /* S'assure que la bordure et le padding sont inclus dans les dimensions */
+        justify-content: center;
+    }
+
+    input::placeholder,
+    select::placeholder,
+    button::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        /* Placeholder avec une couleur semi-transparente */
+    }
+
+
+
+    a {
+        text-decoration: none;
+        color: #070918;
+    }
+
+    .class_jsonSelect {
+        border: 2px solid skyblue;
+        border-radius: 10px;
+        padding: 0px;
+        margin-top: 20px;
+        /* min-height: 150px; */
+        /* list-style-type: disc; */
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        unicode-bidi: isolate;
+        /*Centre horizontalement chaque élément dans sa cellule */
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 2fr 5fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "t s d"
+            "c c c"
+            "m m m";
+    }
+
+    .class_jsonSelect .text_jsonSelect {
+        grid-area: t;
+    }
+
+    .class_jsonSelect .jsonSelect {
+        grid-area: s;
+    }
+
+    .class_jsonSelect .changeButton {
+        grid-area: d;
+    }
+
+    .class_jsonSelect .loading {
+        grid-area: c;
+    }
+
+    .class_jsonSelect .message {
+        grid-area: m;
+    }
+
+    .class_jsonSelect_save {
+        border: 2px solid skyblue;
+        border-radius: 10px;
+        padding: 0px;
+        margin-top: 20px;
+        /* min-height: 150px; */
+        /* list-style-type: disc; */
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        unicode-bidi: isolate;
+        /*Centre horizontalement chaque élément dans sa cellule */
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "t s p m"
+            "me me me me";
+    }
+
+    .class_jsonSelect_save .text_jsonSelect_save {
+        grid-area: t;
+    }
+
+    .class_jsonSelect_save .jsonSelect_save {
+        grid-area: s;
+    }
+
+    .class_jsonSelect .plus {
+        grid-area: p;
+    }
+
+    .class_jsonSelect .moins {
+        grid-area: m;
+    }
+
+    .class_jsonSelect .message {
+        grid-area: me;
+    }
+
+
+    .affichage-pdf {
+        border: 2px dashed skyblue;
+        border-radius: 10px;
+        padding: 0px;
+        margin-top: 20px;
+        /* min-height: 150px; */
+        /* list-style-type: disc; */
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        unicode-bidi: isolate;
+        /*Centre horizontalement chaque élément dans sa cellule */
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 3fr 0.01fr 3fr;
+        grid-template-rows: 1fr 15fr 1fr;
+        grid-template-areas:
+            "f1 vi f2"
+            "i1 vi i2"
+            "p1 vi p2";
+    }
+
+
+    /* #pdf-render {
+width: 100%; /* Largeur du conteneur */
+    /* max-width: 800px; /* Largeur maximale */
+    /* margin: 0 auto; Centrer le conteneur */
+    /* } */
+    .affichage-pdf .id_file1,
+    .affichage-pdf .canvas-1,
+    .affichage-pdf .id_file2,
+    .affichage-pdf .canvas-2 {
+        margin: 5px;
+        border: 2px solid darkblue;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        align-items: center;
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        justify-items: center;
+    }
+
+    .affichage-pdf .id_file1,
+    .affichage-pdf .prev-page-1,
+    .affichage-pdf .next-page-1,
+    .affichage-pdf .num-page-1,
+    .affichage-pdf .id_file2,
+    .affichage-pdf .prev-page-2,
+    .affichage-pdf .next-page-2,
+    .affichage-pdf .num-page-2 {
+        height: 30px;
+        font-family: "DMSerif";
+        text-align: center;
+    }
+
+    .affichage-pdf .canvas-1,
+    .affichage-pdf .canvas-2 {
+        width: 90%;
+        height: auto;
+    }
+
+    .affichage-pdf .id_file1 {
+        grid-area: f1;
+    }
+
+    .affichage-pdf .id_file1,
+    .affichage-pdf .id_file2 {
+        width: 90%;
+        justify-items: center;
+        /* Centre horizontalement chaque élément dans sa cellule */
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "t f c";
+    }
+
+    .affichage-pdf .id_file1 .text1,
+    .affichage-pdf .id_file2 .text2 {
+        grid-area: t;
+        width: 100%;
+        font-size: 1vw;
+        color: darkblue;
+        font-family: "DMSerif";
+    }
+
+    .affichage-pdf .id_file1 .file1,
+    .affichage-pdf .id_file2 .file2 {
+        grid-area: f;
+        width: 90%;
+        font-family: "DMSerif";
+    }
+
+    .affichage-pdf .id_file1 .load-npage-file-1,
+    .affichage-pdf .id_file2 .load-npage-file-2 {
+        grid-area: c;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "load npage";
+    }
+
+    .affichage-pdf .id_file1 .load-npage-file-1 .load-file-1,
+    .affichage-pdf .id_file2 .load-npage-file-2 .load-file-2 {
+        grid-area: load;
+    }
+
+    .affichage-pdf .id_file1 .load-npage-file-1 .npage-file-1,
+    .affichage-pdf .id_file2 .load-npage-file-2 .npage-file-2 {
+        grid-area: npage;
+    }
+
+    .affichage-pdf .canvas-1 {
+        grid-area: i1;
+    }
+
+    .affichage-pdf .id_page-1 {
+        grid-area: p1;
+    }
+
+    .affichage-pdf .id_page-2 {
+        grid-area: p2;
+    }
+
+    .affichage-pdf .id_page-1,
+    .affichage-pdf .id_page-2 {
+        /* border: 2px solid darkblue;
+border-radius: 10px; */
+        width: 90%;
+        display: grid;
+        justify-items: center;
+        /*Centre horizontalement chaque élément dans sa cellule */
+        align-items: center;
+        /* Centre verticalement chaque élément dans sa cellule */
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "prec nbm next";
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .affichage-pdf .prev-page-1,
+    .affichage-pdf .next-page-1,
+    .affichage-pdf .num-page-1,
+    .affichage-pdf .prev-page-2,
+    .affichage-pdf .next-page-2,
+    .affichage-pdf .num-page-2 {
+        /* margin: 5px; */
+        border: 2px solid darkblue;
+        font-size: 1.1rem;
+        border-radius: 5px;
+    }
+
+    .affichage-pdf .prev-page-1,
+    .affichage-pdf .prev-page-2 {
+        /* display: grid;           
+align-items: start;        
+justify-items: start;  */
+    }
+
+
+    .affichage-pdf .id_page-1 .prev-page-1,
+    .affichage-pdf .id_page-2 .prev-page-2 {
+        grid-area: prec;
+        text-align: left;
+    }
+
+    .affichage-pdf .id_page-1 .next-page-1,
+    .affichage-pdf .id_page-2 .next-page-2 {
+        grid-area: next;
+        text-align: right;
+    }
+
+    .affichage-pdf .id_page-1 .num-page-1,
+    .affichage-pdf .id_page-2 .num-page-2 {
+        grid-area: nbm;
+        width: 90%;
+        text-align: center;
+    }
+
+    .affichage-pdf .id_file2 {
+        grid-area: f2
+    }
+
+    .affichage-pdf .canvas-2 {
+        grid-area: i2;
+    }
+
+
+    .affichage-pdf .prev-page-2 {
+        grid-area: p2;
+    }
+
+    .affichage-pdf .next-page-2 {
+        grid-area: n2;
+    }
+
+    .affichage-pdf .num-page-2 {
+        grid-area: pn2;
+    }
+
+
+    canvas {
+        width: 100%;
+        /* Largeur du canvas */
+        height: auto;
+        /* Hauteur automatique pour maintenir le ratio */
+    }
+</style>
+
+<body>
+
+    <div class="class_jsonSelect">
+        <label for="jsonSelect" class="text_jsonSelect">Sélectionnez un fichier JSON :</label>
+        <select class="jsonSelect" id="jsonSelect"> <!-- On retire onchange et on utilise le bouton -->
+            <option value="" >-- Ne rien charger --</option> <!-- Option par défaut -->
+            <option value="../static/json/article Wall.json" selected>-- Article Wall --</option> <!-- Option par défaut -->
+        </select>
+
+        <a class="changeButton" id="changeButton">&#128076;</a>
+        <!--onclick="loadPdfList()"  Bouton pour charger la liste des PDF -->
+
+        <div class="loading" id="loading" style="display: none;">Chargement en cours...</div>
+
+        <div class="message" id="message" style="display:none; color:red;"></div> <!-- Message d'erreur -->
+
+    </div>
+
+    <div id="pdf-container"></div>
+
+    <div class="class_jsonSelect_save">
+        <label for="jsonSelect_save" class="text_jsonSelect_save">Sélectionnez un fichier JSON save :</label>
+        <select class="jsonSelect_save" id="jsonSelect_save"> <!-- On retire onchange et on utilise le bouton -->
+            <option value="" selected>-- Ne rien charger --</option> <!-- Option par défaut -->
+        </select>
+
+        <!-- Boutons pour ajouter ou supprimer des paires de PDF -->
+        <button class="plus" id="add-pdf-pair">+</button>
+        <button class="moins" id="remove-pdf-pair">-</button>
+        <div class = "message" id="message" style="color: red; display: none;"></div>
+    </div>
+
+    <div id="pied"></div>
+        <hr />
+        <address><small>
+                <a href="http://127.0.0.1:5500/">Guillaume THEMEZE</a> / 28/09/2024
+            </small></address>
+    </div>
+
+    <script>
+
+
+        (function () {
+            let pdfPairCount = 0; // Pour suivre le nombre de paires de PDF
+            const maxPairs = 10; // Limite maximale de paires de PDF
+            const pdfContainer = document.getElementById('pdf-container');
+            const addPdfButton = document.getElementById('add-pdf-pair');
+            const removePdfButton = document.getElementById('remove-pdf-pair');
+            const messageDiv = document.getElementById('message');
+
+            // Fonction pour charger les options dans le <select>
+            function loadJsonFiles() {
+                const jsonDir = '../static/json/';
+                const select = document.getElementById('jsonSelect');
+
+                // Liste des fichiers JSON disponibles
+                const jsonFiles = [
+                    'article Wall.json',
+                    'Gase 1D.json',
+                    'Integrabilite.json',
+                    'pdf_list.json',
+                    'hydrodynamique.json',
+                    'Wall.json',
+                    'Seminaire.json',
+                    'Cominication ordi.json',
+                    'InverseScatering.json',
+                    'data.json',
+                    'These Predecesseur.json',
+                    'article.json',
+                    'Dipolaire.json',
+                    'Phonon.json',
+                    'En vrac.json',
+                    'Rapiditie.json',
+                ];
+
+                // Crée les options pour chaque fichier JSON
+                jsonFiles.forEach(file => {
+                    const option = document.createElement('option');
+                    option.value = jsonDir + file;
+                    option.textContent = file.replace('.json', ''); // Le nom du dossier sans l'extension
+                    select.appendChild(option);
+                });
+            }
+
+            // Charge les options lorsque la page est chargée
+            window.onload = loadJsonFiles;
+
+            document.getElementById('changeButton').addEventListener('click', function () {
+                // Code à exécuter lorsque le bouton est cliqué
+                loadPdfList();
+            });
+
+
+            // Déclarer un tableau pour stocker les données des PDF
+            const pdfData = [];
+
+            // Fonction pour enregistrer les données PDF sur le serveur
+            const savePdfData = async () => {
+                try {
+                    const response = await fetch('http://localhost:8000/static/php/save_pdf.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(pdfData), // Convertir le tableau en JSON
+                    });
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        console.log('Données enregistrées avec succès.');
+                    } else {
+                        console.error('Erreur lors de l\'enregistrement des données.');
+                    }
+                } catch (error) {
+                    console.error('Erreur de réseau :', error);
+                }
+            };
+
+
+
+            // Exemple d'utilisation
+            // let pdfPairCount = 1; // Ou une variable dynamique pour le compteur
+            let selectedFilePath1 = '../docaranger/Rapiditie/2312.15344v2.pdf'; // Chemin du fichier sélectionné pour le premier PDF
+            let selectedFilePath2 = '../Domain_Wall_Dynamics_for_a_1D_Bose_ga/main.pdf'; // Chemin du fichier sélectionné pour le deuxième PDF
+
+
+            // Fonction pour charger les PDF à partir du fichier JSON sélectionné
+            async function loadPdfList() {
+                const select = document.getElementById('jsonSelect');
+                const selectedFile = select.value; // Récupère le fichier JSON sélectionné
+
+                if (!selectedFile) {
+                    console.log("Aucun fichier sélectionné");
+                    removeAllPdfPairs();
+                    return;
+                }
+
+                // Affiche un indicateur de chargement
+                const loadingMessage = document.getElementById('loading');
+                loadingMessage.style.display = 'block';
+
+                // Réinitialiser les PDF précédemment ajoutés
+                // resetPdfList();
+                removeAllPdfPairs();
+                try {
+                    const response = await fetch(selectedFile);
+                    // const response = await fetch('./static/json/Integrabilite.json');
+
+                    if (!response.ok) {
+                        throw new Error(`Erreur HTTP : ${response.status}`);
+
+                    }
+
+                    const pdfList = await response.json();
+
+                    pdfList.forEach((pdf, index) => {
+                        const file1 = pdf[`file1-${index + 1}`];
+                        const page1 = pdf[`page1-${index + 1}`];
+                        const file2 = pdf[`file2-${index + 1}`];
+                        const page2 = pdf[`page2-${index + 1}`];
+
+
+                        addPdfPair(file1, page1, file2, page2);
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du chargement de la liste des PDF:', error);
+                    const messageDiv = document.getElementById('message');
+                    messageDiv.innerText = "Erreur lors du chargement de la liste des PDF. Vérifiez l'existence du fichier sélectionné.";
+                    messageDiv.style.display = 'block';
+                } finally {
+                    // Masque l'indicateur de chargement
+                    loadingMessage.style.display = 'none';
+                }
+            }
+
+            // Fonction pour réinitialiser la liste des PDF affichés
+            // function resetPdfList() {
+            //     const pdfContainer = document.getElementById('pdfContainer');
+            //     pdfContainer.innerHTML = ''; // Vide le conteneur des PDF
+            // }
+
+            const pdfFiles = [
+                "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/main.pdf",
+                "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/main_trad.pdf",
+                "../GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf",
+                "../docaranger/Rapiditie/2312.15344v2.pdf",
+                "../docaranger/Wall/2309.15846v3.pdf",
+                "../docaranger/Wall/1510.03686v1.pdf",
+                "../docaranger/Wall/1703.05971v2.pdf",
+                "../docaranger/Wall/1709.04193v1.pdf",
+                "../docaranger/Wall/1111.5134v2.pdf",
+                "../docaranger/Wall/1902.06975v2.pdf",
+                "../docaranger/InverseScatering/2004_05791.pdf",
+                "../docaranger/InverseScatering/9211111v1.pdf",
+                "../docaranger/InverseScatering/LectureZvonarev.pdf",
+                "../docaranger/InverseScatering/Brouilllon.pdf",
+                "../docaranger/InverseScatering/2106.02336v2.pdf",
+                "../docaranger/InverseScatering/WhatIsIST.pdf",
+                "../docaranger/InverseScatering/laxpair3.pdf",
+                "../docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf",
+                "../docaranger/InverseScatering/2301_11098v2_pdf.pdf",
+                "../docaranger/InverseScatering/nlsStep_pdf.pdf",
+                "../docaranger/InverseScatering/note_inverse_scatering.pdf",
+                "../docaranger/InverseScatering/SupportdeCours_pdf.pdf",
+                "../docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf",
+                "../docaranger/InverseScatering/C_Sulem_One.pdf",
+                "../docaranger/Phonon/GPEtoKPZ_pdf.pdf",
+                "../docaranger/Phonon/Offre-9603_pdf.pdf",
+                "../docaranger/Phonon/main_pdf.pdf",
+                "../docaranger/Phonon/seminaireGroupeSept2023_pdf.pdf",
+                "./.docaranger/Phonon/2106.06236v2.pdf",
+                "../docaranger/Phonon/2206.00112v2.pdf",
+                "../docaranger/Gase 1D/1810.07170v2.pdf",
+                "../docaranger/Gase 1D/lieb1963.pdf",
+                "../docaranger/Integrabilite/arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf",
+                "../docaranger/Integrabilite/2109.14280v2.pdf",
+                "./docaranger/Cominication ordi/box_expansion_julia - Jupyter Notebook.pdf",
+                "../docaranger/En vrac/TQC_UJF_17.pdf",
+                "../docaranger/En vrac/jkp.pdf",
+                "../docaranger/article/1901_00446.pdf",
+                "../docaranger/article/lieb1963.pdf",
+                "../docaranger/article/1112.0013.pdf",
+                "../docaranger/These Predecesseur/VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf",
+                "../docaranger/These Predecesseur/VA2_JACQMIN_Thibault_22112012.pdf",
+                "../docaranger/These Predecesseur/Thèse___Mémoire-2_pdf.pdf",
+                "../docaranger/These Predecesseur/70805_SCHEMMER_2019_archivage.pdf",
+                "../docaranger/These Predecesseur/2014IOTA0005.pdf",
+                "../docaranger/These Predecesseur/Thèse_Mémoire_pdf.pdf",
+                "../docaranger/These Predecesseur/69553_JOHNSON_2016_archivage.pdf",
+                "../docaranger/hydrodynamique/2108.02509v2.pdf",
+                "../docaranger/Dipolaire/9902072v1.pdf",
+                "../docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf",
+                "../docaranger/Dipolaire/1211.2673v2.pdf",
+                "../docaranger/Seminaire/Oleksandr.pdf",
+                "../docaranger/Seminaire/Stage_2022_Final (6).pdf",
+                "../docaranger/Seminaire/seminaireGroupeDec2021.pdf",
+                "../docaranger/Seminaire/nardis2015.pdf",
+                "../docaranger/Seminaire/Buschandani_construction.pdf",
+                "../docaranger/Seminaire/notes_Isa.pdf",
+                "../docaranger/Seminaire/chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf",
+                "../docaranger/Seminaire/cours-Barcelone.pdf",
+                // Ajoutez d'autres fichiers ici...
+            ];
+
+            const createSelectOptions = (selectedFilePath) => {
+                return pdfFiles.map(file => `
+        <option value="${file}" ${selectedFilePath === file ? 'selected' : ''}>
+            ${file.split('/').pop()}
+        </option>
+    `).join('');
+            };
+
+            function generateNewPairHtml(pdfPairCount, selectedFilePath1, selectedFilePath2, PageNum1 = 1, PageNum2 = 1) {
+
+                return `
+        <div class="affichage-pdf" id="affichage-pdf-${pdfPairCount}">
+            <div class="id_file1" id="id_file_1-${pdfPairCount}">
+                <label for="file1" class="text1" id="text_1-${pdfPairCount}">Fichier PDF :</label>
+                <select name="file1" class="file1 file_1-${pdfPairCount}" id="file_1-${pdfPairCount}">
+                    ${createSelectOptions(selectedFilePath1)}
+                </select>
+                <div class="load-npage-file-1">
+                    <button class="load-file-1" id="load-file_1-${pdfPairCount}">&#128076;</button>
+                    <a href="#" class="npage-file_1 npage-file_1-${pdfPairCount}" id="npage-file_1-${pdfPairCount}" target="_blank">&#129304;</a>
+                </div>
+            </div>
+
+            <canvas class="canvas-1" id="canvas_1-${pdfPairCount}"></canvas>
+
+            <div class="id_page-1" id="id_page_1-${pdfPairCount}">
+                <button class="prev-page-1" id="prev-page_1-${pdfPairCount}">&#128281;</button>
+                <button class="next-page-1" id="next-page_1-${pdfPairCount}">&#128284;</button>
+                <div class="num-page-1" id="num-page_1-${pdfPairCount}">
+                    <span>Page: <input type="number" class="page-num-1" id="page-num-1-${pdfPairCount}" min="1" value="${PageNum1}" style="width: 50px;"> / <span class="page-count-1" id="page-count_1-${pdfPairCount}"></span></span>
+                </div>
+            </div>
+
+            <!-- Deuxième PDF -->
+            <div class="id_file2" id="id_file_2-${pdfPairCount}">
+                <label for="file2" class="text2" id="text_2-${pdfPairCount}">Fichier PDF :</label>
+                <select name="file2" class="file2 file_2-${pdfPairCount}" id="file_2-${pdfPairCount}">
+                    ${createSelectOptions(selectedFilePath2)}
+                </select>
+                <div class="load-npage-file-2">
+                    <button class="load-file-2" id="load-file_2-${pdfPairCount}">&#128076;</button>
+                    <a href="#" class="npage-file_2 npage-file_2-${pdfPairCount}" id="npage-file_2-${pdfPairCount}" target="_blank">&#129304;</a>
+                </div>
+            </div>
+
+            <canvas class="canvas-2" id="canvas_2-${pdfPairCount}"></canvas>
+
+            <div class="id_page-2" id="id_page_2-${pdfPairCount}">
+                <button class="prev-page-2" id="prev-page_2-${pdfPairCount}">&#128281;</button>
+                <button class="next-page-2" id="next-page_2-${pdfPairCount}">&#128284;</button>
+                <div class="num-page-2" id="num-page_2-${pdfPairCount}">
+                    <span>Page: <input type="number" class="page-num-2" id="page-num-2-${pdfPairCount}" min="1" value="${PageNum2}" style="width: 50px;"> / <span class="page-count-2" id="page-count_2-${pdfPairCount}"></span></span>
+                </div>
+            </div>
+        </div>
+    `;
+            }
+
+
+
+
+
+
+
+
+            // Fonction pour ajouter une nouvelle paire de PDF
+            const addPdfPair = (file1 = '', pageNum1 = 1, file2 = '', pageNum2 = 1) => {
+                if (pdfPairCount >= maxPairs) {
+                    messageDiv.innerText = `Nombre maximum de paires de PDF atteint (${maxPairs}).`;
+                    messageDiv.style.display = 'block'; // Afficher le message
+                    return; // Limiter à 10 paires
+                } else {
+                    messageDiv.style.display = 'none'; // Cacher le message si on peut ajouter
+                }
+
+
+                pdfPairCount++;
+                if (file1 !== '') {
+                    selectedFilePath1 = file1
+                }
+                if (file2 !== '') {
+                    selectedFilePath2 = file2
+                }
+                const newPairHtml = generateNewPairHtml(pdfPairCount, selectedFilePath1, selectedFilePath2, pageNum1, pageNum2);
+                // document.getElementById('container').insertAdjacentHTML('beforeend', newPairHtml); // Assurez-vous que 'container' est l'ID de votre élément de conteneur
+                console.log(newPairHtml);
+
+
+                //             const newPairHtml_1 = `
+                //             <div class="affichage-pdf" id="affichage-pdf-${pdfPairCount}">
+                //                 <div class="id_file1" id="id_file_1-${pdfPairCount}">
+                //                     <label for="file1" class="text1" id="text_1-${pdfPairCount}">Fichier PDF :</label>
+                //                     <select name="file1" class="file1 file_1-${pdfPairCount}" id="file_1-${pdfPairCount}">
+                //                         <option value="./Domain_Wall_Dynamics_for_a_1D_Bose_ga/main.pdf">Original</option>
+                //                         <option value="./Domain_Wall_Dynamics_for_a_1D_Bose_ga/main_trad.pdf">Traduction</option>
+                //                         <option value="./GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf">GHD</option>
+                //                         <option selected="selected" value="./docaranger/Rapiditie/2312.15344v2.pdf">2312.15344v2.pdf</option>
+                // <option value="./docaranger/Rapiditie/2312.15344v2.pdf">2312.15344v2.pdf</option>
+                // <option value="./docaranger/Wall/2309.15846v3.pdf">2309.15846v3.pdf</option>
+                // <option value="./docaranger/Wall/1510.03686v1.pdf">1510.03686v1.pdf</option>
+                // <option value="./docaranger/Wall/1703.05971v2.pdf">1703.05971v2.pdf</option>
+                // <option value="./docaranger/Wall/1709.04193v1.pdf">1709.04193v1.pdf</option>
+                // <option value="./docaranger/Wall/1111.5134v2.pdf">1111.5134v2.pdf</option>
+                // <option value="./docaranger/Wall/1902.06975v2.pdf">1902.06975v2.pdf</option>
+                // <option value="./docaranger/InverseScatering/2004_05791.pdf">2004_05791.pdf</option>
+                // <option value="./docaranger/InverseScatering/9211111v1.pdf">9211111v1.pdf</option>
+                // <option value="./docaranger/InverseScatering/LectureZvonarev.pdf">LectureZvonarev.pdf</option>
+                // <option value="./docaranger/InverseScatering/Brouilllon.pdf">Brouilllon.pdf</option>
+                // <option value="./docaranger/InverseScatering/2106.02336v2.pdf">2106.02336v2.pdf</option>
+                // <option value="./docaranger/InverseScatering/WhatIsIST.pdf">WhatIsIST.pdf</option>
+                // <option value="./docaranger/InverseScatering/laxpair3.pdf">laxpair3.pdf</option>
+                // <option value="./docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf">Quantum Inverse Scattering Method And Correlation Functions.pdf</option>
+                // <option value="./docaranger/InverseScatering/2301_11098v2_pdf.pdf">2301_11098v2_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/nlsStep_pdf.pdf">nlsStep_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/note_inverse_scatering.pdf">note_inverse_scatering.pdf</option>
+                // <option value="./docaranger/InverseScatering/SupportdeCours_pdf.pdf">SupportdeCours_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf">Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf</option>
+                // <option value="./docaranger/InverseScatering/C_Sulem_One.pdf">C_Sulem_One.pdf</option>
+                // <option value="./docaranger/Phonon/GPEtoKPZ_pdf.pdf">GPEtoKPZ_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/Offre-9603_pdf.pdf">Offre-9603_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/main_pdf.pdf">main_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/seminaireGroupeSept2023_pdf.pdf">seminaireGroupeSept2023_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/2106.06236v2.pdf">2106.06236v2.pdf</option>
+                // <option value="./docaranger/Phonon/2206.00112v2.pdf">2206.00112v2.pdf</option>
+                // <option value="./docaranger/Gase 1D/1810.07170v2.pdf">1810.07170v2.pdf</option>
+                // <option value="./docaranger/Gase 1D/lieb1963.pdf">lieb1963.pdf</option>
+                // <option value="./docaranger/Integrabilite/arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf">arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf</option>
+                // <option value="./docaranger/Integrabilite/2109.14280v2.pdf">2109.14280v2.pdf</option>
+                // <option value="./docaranger/Cominication ordi/box_expansion_julia - Jupyter Notebook.pdf">box_expansion_julia - Jupyter Notebook.pdf</option>
+                // <option value="./docaranger/En vrac/TQC_UJF_17.pdf">TQC_UJF_17.pdf</option>
+                // <option value="./docaranger/En vrac/jkp.pdf">jkp.pdf</option>
+                // <option value="./docaranger/article/1901_00446.pdf">1901_00446.pdf</option>
+                // <option value="./docaranger/article/lieb1963.pdf">lieb1963.pdf</option>
+                // <option value="./docaranger/article/1112.0013.pdf">1112.0013.pdf</option>
+                // <option value="./docaranger/These Predecesseur/VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf">VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf</option>
+                // <option value="./docaranger/These Predecesseur/VA2_JACQMIN_Thibault_22112012.pdf">VA2_JACQMIN_Thibault_22112012.pdf</option>
+                // <option value="./docaranger/These Predecesseur/Thèse___Mémoire-2_pdf.pdf">Thèse___Mémoire-2_pdf.pdf</option>
+                // <option value="./docaranger/These Predecesseur/70805_SCHEMMER_2019_archivage.pdf">70805_SCHEMMER_2019_archivage.pdf</option>
+                // <option value="./docaranger/These Predecesseur/2014IOTA0005.pdf">2014IOTA0005.pdf</option>
+                // <option value="./docaranger/These Predecesseur/Thèse_Mémoire_pdf.pdf">Thèse_Mémoire_pdf.pdf</option>
+                // <option value="./docaranger/These Predecesseur/69553_JOHNSON_2016_archivage.pdf">69553_JOHNSON_2016_archivage.pdf</option>
+                // <option value="./docaranger/hydrodynamique/2108.02509v2.pdf">2108.02509v2.pdf</option>
+                // <option value="./docaranger/Dipolaire/9902072v1.pdf">9902072v1.pdf</option>
+                // <option value="./docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf">PhotonsAtomesClaudeFabrepoly2011.pdf</option>
+                // <option value="./docaranger/Dipolaire/1211.2673v2.pdf">1211.2673v2.pdf</option>
+                // <option value="./docaranger/Seminaire/Oleksandr.pdf">Oleksandr.pdf</option>
+                // <option value="./docaranger/Seminaire/Stage_2022_Final (6).pdf">Stage_2022_Final (6).pdf</option>
+                // <option value="./docaranger/Seminaire/seminaireGroupeDec2021.pdf">seminaireGroupeDec2021.pdf</option>
+                // <option value="./docaranger/Seminaire/nardis2015.pdf">nardis2015.pdf</option>
+                // <option value="./docaranger/Seminaire/Buschandani_construction.pdf">Buschandani_construction.pdf</option>
+                // <option value="./docaranger/Seminaire/notes_Isa.pdf">notes_Isa.pdf</option>
+                // <option value="./docaranger/Seminaire/chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf">chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf</option>
+                // <option value="./docaranger/Seminaire/cours-Barcelone.pdf">cours-Barcelone.pdf</option>
+                //                     </select>
+                //                     <div class="load-npage-file-1">
+                //                         <button class="load-file-1" id="load-file_1-${pdfPairCount}">&#128076;</button>
+                //                         <a href="#" class="npage-file_1 npage-file_1-${pdfPairCount}" id="npage-file_1-${pdfPairCount}" target="_blank">&#129304;</a>
+                //                     </div>
+                //                 </div>
+
+                //                 <canvas class="canvas-1" id="canvas_1-${pdfPairCount}"></canvas>
+
+                //                 <div class="id_page-1" id="id_page_1-${pdfPairCount}">
+                //                     <button class="prev-page-1" id="prev-page_1-${pdfPairCount}">&#128281;</button>
+                //                     <button class="next-page-1" id="next-page_1-${pdfPairCount}">&#128284;</button>
+                //                     <div class="num-page-1" id="num-page_1-${pdfPairCount}">
+                //                         <span>Page: <input type="number" class="page-num-1" id="page-num-1-${pdfPairCount}" min="1" value="${pageNum1}" style="width: 50px;"> / <span class="page-count-1" id="page-count_1-${pdfPairCount}"></span></span>
+                //                     </div>
+                //                 </div>
+
+                //                 <!-- Deuxième PDF -->
+                //                 <div class="id_file2" id="id_file_2-${pdfPairCount}">
+                //                     <label for="file2" class="text2" id="text_2-${pdfPairCount}">Fichier PDF :</label>
+                //                     <select name="file2" class="file2 file_2-${pdfPairCount}" id="file_2-${pdfPairCount}">
+                //                         <option value="./Domain_Wall_Dynamics_for_a_1D_Bose_ga/main.pdf">Original</option>
+                //                         <option selected="selected" value="./Domain_Wall_Dynamics_for_a_1D_Bose_ga/main_trad.pdf">Traduction</option>
+                //                         <option value="./GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf">GHD</option>
+                //                         <option value="./doc a ranger/Rapiditie/2312.15344v2.pdf">2312.15344v2.pdf</option>
+                // <option value="./docaranger/Rapiditie/2312.15344v2.pdf">2312.15344v2.pdf</option>
+                // <option value="./docaranger/Wall/2309.15846v3.pdf">2309.15846v3.pdf</option>
+                // <option value="./docaranger/Wall/1510.03686v1.pdf">1510.03686v1.pdf</option>
+                // <option value="./docaranger/Wall/1703.05971v2.pdf">1703.05971v2.pdf</option>
+                // <option value="./docaranger/Wall/1709.04193v1.pdf">1709.04193v1.pdf</option>
+                // <option value="./docaranger/Wall/1111.5134v2.pdf">1111.5134v2.pdf</option>
+                // <option value="./docaranger/Wall/1902.06975v2.pdf">1902.06975v2.pdf</option>
+                // <option value="./docaranger/InverseScatering/2004_05791.pdf">2004_05791.pdf</option>
+                // <option value="./docaranger/InverseScatering/9211111v1.pdf">9211111v1.pdf</option>
+                // <option value="./docaranger/InverseScatering/LectureZvonarev.pdf">LectureZvonarev.pdf</option>
+                // <option value="./docaranger/InverseScatering/Brouilllon.pdf">Brouilllon.pdf</option>
+                // <option value="./docaranger/InverseScatering/2106.02336v2.pdf">2106.02336v2.pdf</option>
+                // <option value="./docaranger/InverseScatering/WhatIsIST.pdf">WhatIsIST.pdf</option>
+                // <option value="./docaranger/InverseScatering/laxpair3.pdf">laxpair3.pdf</option>
+                // <option value="./docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf">Quantum Inverse Scattering Method And Correlation Functions.pdf</option>
+                // <option value="./docaranger/InverseScatering/2301_11098v2_pdf.pdf">2301_11098v2_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/nlsStep_pdf.pdf">nlsStep_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/note_inverse_scatering.pdf">note_inverse_scatering.pdf</option>
+                // <option value="./docaranger/InverseScatering/SupportdeCours_pdf.pdf">SupportdeCours_pdf.pdf</option>
+                // <option value="./docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf">Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf</option>
+                // <option value="./docaranger/InverseScatering/C_Sulem_One.pdf">C_Sulem_One.pdf</option>
+                // <option value="./docaranger/Phonon/GPEtoKPZ_pdf.pdf">GPEtoKPZ_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/Offre-9603_pdf.pdf">Offre-9603_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/main_pdf.pdf">main_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/seminaireGroupeSept2023_pdf.pdf">seminaireGroupeSept2023_pdf.pdf</option>
+                // <option value="./docaranger/Phonon/2106.06236v2.pdf">2106.06236v2.pdf</option>
+                // <option value="./docaranger/Phonon/2206.00112v2.pdf">2206.00112v2.pdf</option>
+                // <option value="./docaranger/Gase 1D/1810.07170v2.pdf">1810.07170v2.pdf</option>
+                // <option value="./docaranger/Gase 1D/lieb1963.pdf">lieb1963.pdf</option>
+                // <option value="./docaranger/Integrabilite/arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf">arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf</option>
+                // <option value="./docaranger/Integrabilite/2109.14280v2.pdf">2109.14280v2.pdf</option>
+                // <option value="./docaranger/Cominication ordi/box_expansion_julia - Jupyter Notebook.pdf">box_expansion_julia - Jupyter Notebook.pdf</option>
+                // <option value="./docaranger/En vrac/TQC_UJF_17.pdf">TQC_UJF_17.pdf</option>
+                // <option value="./docaranger/En vrac/jkp.pdf">jkp.pdf</option>
+                // <option value="./docaranger/article/1901_00446.pdf">1901_00446.pdf</option>
+                // <option value="./docaranger/article/lieb1963.pdf">lieb1963.pdf</option>
+                // <option value="./docaranger/article/1112.0013.pdf">1112.0013.pdf</option>
+                // <option value="./docaranger/These Predecesseur/VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf">VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf</option>
+                // <option value="./docaranger/These Predecesseur/VA2_JACQMIN_Thibault_22112012.pdf">VA2_JACQMIN_Thibault_22112012.pdf</option>
+                // <option value="./docaranger/These Predecesseur/Thèse___Mémoire-2_pdf.pdf">Thèse___Mémoire-2_pdf.pdf</option>
+                // <option value="./docaranger/These Predecesseur/70805_SCHEMMER_2019_archivage.pdf">70805_SCHEMMER_2019_archivage.pdf</option>
+                // <option value="./docaranger/These Predecesseur/2014IOTA0005.pdf">2014IOTA0005.pdf</option>
+                // <option value="./docaranger/These Predecesseur/Thèse_Mémoire_pdf.pdf">Thèse_Mémoire_pdf.pdf</option>
+                // <option value="./docaranger/These Predecesseur/69553_JOHNSON_2016_archivage.pdf">69553_JOHNSON_2016_archivage.pdf</option>
+                // <option value="./docaranger/hydrodynamique/2108.02509v2.pdf">2108.02509v2.pdf</option>
+                // <option value="./docaranger/Dipolaire/9902072v1.pdf">9902072v1.pdf</option>
+                // <option value="./docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf">PhotonsAtomesClaudeFabrepoly2011.pdf</option>
+                // <option value="./docaranger/Dipolaire/1211.2673v2.pdf">1211.2673v2.pdf</option>
+                // <option value="./docaranger/Seminaire/Oleksandr.pdf">Oleksandr.pdf</option>
+                // <option value="./docaranger/Seminaire/Stage_2022_Final (6).pdf">Stage_2022_Final (6).pdf</option>
+                // <option value="./docaranger/Seminaire/seminaireGroupeDec2021.pdf">seminaireGroupeDec2021.pdf</option>
+                // <option value="./docaranger/Seminaire/nardis2015.pdf">nardis2015.pdf</option>
+                // <option value="./docaranger/Seminaire/Buschandani_construction.pdf">Buschandani_construction.pdf</option>
+                // <option value="./docaranger/Seminaire/notes_Isa.pdf">notes_Isa.pdf</option>
+                // <option value="./docaranger/Seminaire/chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf">chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf</option>
+                // <option value="./docaranger/Seminaire/cours-Barcelone.pdf">cours-Barcelone.pdf</option>
+                //                     </select>
+                //                     <div class="load-npage-file-2">
+                //                         <button class="load-file-2" id="load-file_2-${pdfPairCount}">&#128076;</button>
+                //                         <a href="#" class="npage-file_2 npage-file_2-${pdfPairCount}" id="npage-file_2-${pdfPairCount}" target="_blank">&#129304;</a>
+                //                     </div>
+                //                 </div>
+
+                //                 <canvas class="canvas-2" id="canvas_2-${pdfPairCount}"></canvas>
+
+                //                 <div class="id_page-2" id="id_page_2-${pdfPairCount}">
+                //                     <button class="prev-page-2" id="prev-page_2-${pdfPairCount}">&#128281;</button>
+                //                     <button class="next-page-2" id="next-page_2-${pdfPairCount}">&#128284;</button>
+                //                     <div class="num-page-2" id="num-page_2-${pdfPairCount}">
+                //                         <span>Page: <input type="number" class="page-num-2" id="page-num-2-${pdfPairCount}" min="1" value="${pageNum2}" style="width: 50px;"> / <span class="page-count-2" id="page-count_2-${pdfPairCount}"></span></span>
+                //                     </div>
+                //                 </div>
+                //             </div>`;
+
+
+
+                pdfContainer.insertAdjacentHTML('beforeend', newPairHtml);
+
+                console.log(`pdfPairCount = ${pdfPairCount}`);
+                // file1 = document.getElementById(`file_1-${pdfPairCount}`).value;
+                console.log(`Nouvelle valeur pour file2-${pdfPairCount}: ${file2}`);
+                console.log(`Nouvelle valeur pour file1-${pdfPairCount}: ${file1}`);
+
+                setupPdfEvents(pdfPairCount, file1, pageNum1, file2, pageNum2);
+            };
+
+            // Fonction pour retirer la dernière paire de PDF
+            const removePdfPair = () => {
+                if (pdfPairCount <= 0) {
+                    messageDiv.innerText = "Impossible de supprimer, aucune paire de PDF.";
+                    messageDiv.style.display = 'block'; // Afficher le message
+                    return; // Toujours garder au moins une paire visible
+                } else {
+                    messageDiv.style.display = 'none'; // Cacher le message si on peut supprimer
+                }
+
+                const lastPair = document.getElementById(`affichage-pdf-${pdfPairCount}`);
+                if (lastPair) {
+                    lastPair.remove();
+                    pdfPairCount--; // Décrémenter après avoir supprimé
+                }
+            };
+
+            // Fonction pour supprimer toutes les paires de PDF tant que pdfPairCount > 0
+            const removeAllPdfPairs = () => {
+                while (pdfPairCount > 0) {
+                    removePdfPair(); // Appeler removePdfPair jusqu'à ce que pdfPairCount atteigne 0
+                    console.log(`pdfPairCount = ${pdfPairCount}`)
+                }
+                console.log("Toutes les paires de PDF ont été supprimées.");
+            };
+
+            // Charger les événements pour une paire de PDF
+            function setupPdfEvents(id, file1 = '', pageNum1 = 1, file2 = '', pageNum2 = 1) {
+                if (file1 === '') {
+                    const file2 = document.getElementById(`file_1-${id}`).value;
+                    console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                }
+                if (file2 === '') {
+                    const file2 = document.getElementById(`file_2-${id}`).value;
+                    console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                }
+
+                // file1 = document.getElementById(`file_1-${id}`).value;
+                console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                let pdfDoc1 = null, pdfDoc2 = null;
+                const scale = 1.5;
+
+                // Canvas et contexte
+                const canvas1 = document.getElementById(`canvas_1-${id}`);
+                const ctx1 = canvas1.getContext('2d');
+                const canvas2 = document.getElementById(`canvas_2-${id}`);
+                const ctx2 = canvas2.getContext('2d');
+
+                // Fonction pour charger le premier PDF basé sur la sélection
+                const loadPDF1 = (id, file1 = '', pageNum1 = 1) => {
+
+                    console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                    if (file1 === '') {
+                        file1 = document.getElementById(`file_1-${id}`).value;
+                        console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                    }
+                    console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                    pdfjsLib.getDocument(file1).promise.then(pdfDoc_ => {
+                        pdfDoc1 = pdfDoc_; // Assigner le document à pdfDoc1
+                        renderPage1(pageNum1); // Charger la première page
+                        document.getElementById(`page-count_1-${id}`).textContent = pdfDoc_.numPages; // Mettre à jour le nombre de pages
+                    }).catch(error => {
+                        console.error('Erreur lors du chargement du premier fichier PDF:', error);
+                    });
+                };
+
+                // Fonction pour charger le second PDF basé sur la sélection
+                const loadPDF2 = (id, file2 = '', pageNum2 = 1) => {
+
+                    console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                    if (file2 === '') {
+                        file2 = document.getElementById(`file_2-${id}`).value;
+                        console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                    }
+                    console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                    pdfjsLib.getDocument(file2).promise.then(pdfDoc_ => {
+                        pdfDoc2 = pdfDoc_; // Assigner le document à pdfDoc2
+                        renderPage2(pageNum2); // Charger la première page
+                        document.getElementById(`page-count_2-${id}`).textContent = pdfDoc_.numPages; // Mettre à jour le nombre de pages
+                    }).catch(error => {
+                        console.error('Erreur lors du chargement du second fichier PDF:', error);
+                    });
+                };
+
+                // Appeler les fonctions pour charger automatiquement un fichier au démarrage
+                loadPDF1(id, file1, pageNum1); // Charger automatiquement le PDF 1
+                loadPDF2(id, file2, pageNum2); // Charger automatiquement le PDF 2
+
+                // lien clicable pour avoir plus grand 
+                document.querySelector(`.npage-file_1-${id}`).addEventListener('click', (e) => {
+                    e.preventDefault(); // Empêche le comportement par défaut du lien
+
+                    // Récupérer le fichier sélectionné
+                    const selectedFile = document.querySelector(`.file_1-${id}`).value;
+
+                    // Mettre à jour le href du lien
+                    const link = document.getElementById(`npage-file_1-${id}`);
+                    link.href = selectedFile;
+
+                    // Ouvrir le PDF sélectionné dans un nouvel onglet
+                    window.open(selectedFile, '_blank');
+                });
+                document.querySelector(`.npage-file_2-${id}`).addEventListener('click', (e) => {
+                    e.preventDefault(); // Empêche le comportement par défaut du lien
+
+                    // Récupérer le fichier sélectionné
+                    const selectedFile = document.querySelector(`.file_2-${id}`).value;
+
+                    // Mettre à jour le href du lien
+                    const link = document.getElementById(`npage-file_2-${id}`);
+                    link.href = selectedFile;
+
+                    // Ouvrir le PDF sélectionné dans un nouvel onglet
+                    window.open(selectedFile, '_blank');
+                });
+
+                /// Ajouter une fonction pour envoyer les données une seule fois après toutes les modifications
+                const sendPdfDataOnce = () => {
+                    const uniqueData = Array.from(new Set(pdfData.map(JSON.stringify))).map(JSON.parse); // Éliminer les doublons
+                    pdfData.length = 0; // Réinitialiser le tableau après l'envoi
+                    savePdfData(uniqueData);
+                };
+
+                // Rendre les pages et envoyer les données uniquement une fois par paire
+                const renderPage1 = (num) => {
+                    pdfDoc1.getPage(num).then(page => {
+                        const viewport = page.getViewport({ scale });
+                        canvas1.height = viewport.height;
+                        canvas1.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext: ctx1,
+                            viewport: viewport,
+                        };
+                        page.render(renderContext);
+
+                        // Récupérer le fichier actuel et ajouter les informations au tableau pdfData
+                        // const file1 = document.getElementById(`file_1-${id}`).value;
+                        pdfData.push({ [`file1-${id}`]: file1, [`page1-${id}`]: num });
+
+                        // Appeler sendPdfDataOnce pour envoyer les données
+                        // sendPdfDataOnce();
+                    });
+                };
+
+                const renderPage2 = (num) => {
+                    pdfDoc2.getPage(num).then(page => {
+                        const viewport = page.getViewport({ scale });
+                        canvas2.height = viewport.height;
+                        canvas2.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext: ctx2,
+                            viewport: viewport,
+                        };
+                        page.render(renderContext);
+
+                        // Récupérer le fichier actuel et ajouter les informations au tableau pdfData
+                        // const file2 = document.getElementById(`file_2-${id}`).value;
+                        pdfData.push({ [`file2-${id}`]: file2, [`page2-${id}`]: num });
+
+                        // Appeler sendPdfDataOnce pour envoyer les données
+                        // sendPdfDataOnce();
+                    });
+                };
+
+                // console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+
+                document.getElementById(`load-file_1-${id}`).addEventListener('click', () => {
+                    // Réinitialiser le numéro de page à 1
+                    const file1 = document.getElementById(`file_1-${id}`).value;
+                    console.log(`Nouvelle valeur pour file1-${id}: ${file1}`);
+                    pageNum1 = 1;
+                    document.getElementById(`page-num-1-${id}`).value = pageNum1
+                    loadPDF1(id, file1); // Appeler la fonction avec l'id et le numéro de page
+                });
+
+                document.getElementById(`load-file_2-${id}`).addEventListener('click', () => {
+                    // Réinitialiser le numéro de page à 1
+                    const file2 = document.getElementById(`file_2-${id}`).value;
+                    console.log(`Nouvelle valeur pour file2-${id}: ${file2}`);
+                    pageNum2 = 1;
+                    document.getElementById(`page-num-2-${id}`).value = pageNum2
+                    loadPDF2(id, file2); // Appeler la fonction avec l'id et le numéro de page
+                });
+
+                document.getElementById(`prev-page_1-${id}`).addEventListener('click', () => {
+                    const pageNum = parseInt(document.getElementById(`page-num-1-${id}`).value, 10);
+                    if (pageNum <= 1) return;
+                    document.getElementById(`page-num-1-${id}`).value = pageNum - 1; // Décrémenter le numéro de page
+                    renderPage1(pageNum - 1); // Re-render la page
+                });
+
+                document.getElementById(`next-page_1-${id}`).addEventListener('click', () => {
+                    const pageNum = parseInt(document.getElementById(`page-num-1-${id}`).value, 10);
+                    if (pageNum >= pdfDoc1.numPages) return;
+                    document.getElementById(`page-num-1-${id}`).value = pageNum + 1; // Incrémenter le numéro de page
+                    renderPage1(pageNum + 1); // Re-render la page
+                });
+
+                document.getElementById(`prev-page_2-${id}`).addEventListener('click', () => {
+                    const pageNum = parseInt(document.getElementById(`page-num-2-${id}`).value, 10);
+                    if (pageNum <= 1) return;
+                    document.getElementById(`page-num-2-${id}`).value = pageNum - 1; // Décrémenter le numéro de page
+                    renderPage2(pageNum - 1); // Re-render la page
+                });
+
+                document.getElementById(`next-page_2-${id}`).addEventListener('click', () => {
+                    const pageNum = parseInt(document.getElementById(`page-num-2-${id}`).value, 10);
+                    if (pageNum >= pdfDoc2.numPages) return;
+                    document.getElementById(`page-num-2-${id}`).value = pageNum + 1; // Incrémenter le numéro de page
+                    renderPage2(pageNum + 1); // Re-render la page
+                });
+
+                // Mise à jour via l'input de page
+                document.getElementById(`page-num-1-${id}`).addEventListener('change', (event) => {
+                    const pageNumber = parseInt(event.target.value);
+                    if (pageNumber > 0 && pageNumber <= pdfDoc1.numPages) {
+                        pageNum1 = pageNumber;
+                        renderPage1(pageNum1);
+                    }
+                });
+
+                document.getElementById(`page-num-2-${id}`).addEventListener('change', (event) => {
+                    const pageNumber = parseInt(event.target.value);
+                    if (pageNumber > 0 && pageNumber <= pdfDoc2.numPages) {
+                        pageNum2 = pageNumber;
+                        renderPage2(PageNum2);
+                    }
+                });
+            }
+
+            // Écouteurs d'événements
+            // addPdfButton.addEventListener('click', addPdfPair);
+            addPdfButton.addEventListener('click', () => {
+                const file1 = '';
+                const file2 = '';
+                const pageNum1 = 1;
+                const pageNum2 = 1;
+                addPdfPair(file1, pageNum1, file2, pageNum2);
+            });
+            removePdfButton.addEventListener('click', removePdfPair);
+
+            // window.addEventListener('load', () => {
+            //     loadPdfList(); // Appel initial pour charger les PDF
+            // });
+            // loadPdfList();
+
+        })();
+    </script>
+
+
+
+
+
+</body>
+
+</html>

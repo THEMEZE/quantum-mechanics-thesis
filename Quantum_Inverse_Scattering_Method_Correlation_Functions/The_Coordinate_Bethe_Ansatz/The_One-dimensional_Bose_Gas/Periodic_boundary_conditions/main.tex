@@ -1,0 +1,268 @@
+Pour analyser les différentes propriétés du gaz de Bose et notamment pour construire la thermodynamique du modèle, il est pratique d'imposer des conditions aux limites périodiques sur les fonctions d'onde. Considérons un système dans une boîte périodique de longueur \( L \). La fonction d'onde \( \chi_N \) doit alors être périodique en chaque \( z_j \), avec toutes les autres \( z_k \) (où \( k \neq j \)) fixées :
+
+\begin{eqnarray}
+	\chi_N(z_1, \dots, z_j + L, \dots, z_N \mid \lambda_1, \dots, \lambda_N) & = &\chi_N(z_1, \dots, z_j, \dots, z_N \mid \lambda_1, \dots, \lambda_N).
+\end{eqnarray}
+
+Les conditions imposées par les limites périodiques conduisent au système d'équations suivant pour les valeurs permises des moments $\lambda_j$ (voir équation (\ref{eq.1.26})) :
+\begin{eqnarray}
+	\exp \{ i \lambda_j L  \} & = & - \prod_{k =1}^N \frac{ \lambda_j - \lambda_k +ic}{\lambda_j - \lambda_k -ic}, \quad j = 1 , \cdots , N \label{eq.2.2}
+\end{eqnarray}
+
+Ces équations sont connues sous le nom d'équations de Bethe. Le système d'équations de Bethe est d'une importance primordiale, et ses principales propriétés sont étudiées en détail par la suite.
+
+\begin{TheoPrinc}
+	 Toutes les solutions \( \lambda_j \) du système (\ref{eq.2.2}) avec \( c > 0 \) sont des nombres réels.	
+\end{TheoPrinc}
+
+\begin{proof}
+	Utilisons les propriétés suivantes de \( \exp(i \lambda L) \) et \( \frac{\lambda + i c}{\lambda - i c} \) :
+	
+	\begin{eqnarray}
+		\left \{ \begin{array}{rclr} \vert \exp\{ i \lambda L\}\vert  &\leq  &  1 & \quad \text{lorsque} \quad \Im(\lambda) \geq 0 \\ \vert \exp\{ i \lambda L\}\vert  &\geq  &  1 & \quad \text{lorsque} \quad \Im(\lambda) \leq  0  \end{array} \right . \label{eq.2.3}\\
+		\left \{ \begin{array}{rclr} \displaystyle \left \vert  \frac{\lambda + ic}{\lambda - ic} \right \vert  &\geq  &  1  & \quad \text{lorsque} \quad \Im(\lambda) \geq  0, \\ \displaystyle \left \vert  \frac{\lambda + ic}{\lambda - ic} \right \vert  &\leq  &  1  & \quad \text{lorsque} \quad \Im(\lambda) \leq  0, \end{array} \right . \label{eq.2.4}
+	\end{eqnarray}
+	
+	Considérons l'ensemble des nombres complexes \( \{\lambda_j\} \) qui satisfont l'équation (\ref{eq.2.2}). Désignons par \( \lambda_{\text{max}} \)  avec la partie imaginaire maximale, c'est-à-dire :
+	
+	\begin{eqnarray}
+		\left \{ \begin{array}{rclr} \Im(\lambda_{\text{max}}) &  \geq  & \Im(\lambda_j),&  \quad j = 1, \dots, N, \\  \lambda_{\text{max}} & \in & \{\lambda_j\}.	 \end{array} \right . \label{eq.2.5}	
+	\end{eqnarray}
+
+	Si plusieurs moments ont cette même propriété, on en prend un d'eux. Prenons le module des deux côtés de l'équation pour \( \lambda_j = \lambda_{\text{max}} \) dans (\ref{eq.2.2}) et utilisons l'estimation (\ref{eq.2.4}) pour le côté droit, obtenant ainsi :
+	
+	\begin{eqnarray}
+		|\exp(i \lambda_{\text{max}} L)| = \left| \prod_{k} \frac{\lambda_{\text{max}} - \lambda_k + ic}{\lambda_{\text{max}} - \lambda_k - ic} \right| \geq 1.	
+	\end{eqnarray}
+
+	D'après (\ref{eq.2.3}), cela implique que \( \Im(\lambda_{\text{max}}) \leq 0 \), et, par conséquent, selon (\ref{eq.2.5}) :
+	
+	\begin{eqnarray}
+		\Im(\lambda_j)  & \leq &  0, \quad j = 1, \dots, N.	
+	\end{eqnarray}
+
+	
+	Définissons maintenant \( \lambda_{\text{min}} \) comme le moment avec la partie imaginaire minimale : \( \Im(\lambda_{\text{min}}) \leq \Im(\lambda_j) \). De manière similaire, on prouve que \( \Im(\lambda_{\text{min}}) \geq 0 \). La seule possibilité restante est donc que \( \Im(\lambda_j) = 0 \) pour tous \( j = 1, \dots, N \).
+	
+	Le théorème est ainsi prouvé.
+	
+\end{proof}
+
+
+\textbf{Existence des solutions de (\ref{eq.2.2}):}
+Transformons maintenant le système en forme logarithmique :
+
+
+\begin{eqnarray}
+	\varphi_j & = &	2 \pi \tilde{n}_j 	, \quad j = 1, \dots, N, \label{eq.2.8}
+\end{eqnarray}
+
+
+où \( \tilde{n}_j \) est un ensemble arbitraire d'entiers. Les variables \( \varphi(\lambda_j - \lambda_k) \) sont définies comme :
+
+\begin{eqnarray}
+	\varphi_j & = & \lambda_j L + \underset{k \neq j}{\sum_{k = 1}^N } \varphi(\lambda_j - \lambda_k)	\label{eq.2.9}
+\end{eqnarray}
+
+où
+
+\begin{eqnarray}
+	\varphi(\lambda) = i \ln \left( \frac{\lambda + ic}{\lambda - ic} \right); \quad - 2 \pi < \varphi(\lambda ) < 0 , \quad \Im(\lambda_j) = 0.		
+\end{eqnarray}
+
+
+Il est plus pratique d'utiliser la fonction antisymétrique \( \theta(\lambda) \) au lieu de \( \varphi(\lambda) \) :
+
+\begin{eqnarray}
+	\left \{ \begin{array}{rclr} \theta(\lambda)  &=& \varphi(\lambda) + \pi , & \quad \theta(\lambda)   =   -\theta(-\lambda) \\ \theta(\lambda) &  = &  \displaystyle  i  \ln\left( \frac{i c + \lambda }{ic - \lambda } \right). \end{array} \right. 	
+\end{eqnarray}
+
+Cette fonction est strictement croissante en \( \lambda \) : 
+
+\begin{eqnarray}
+	\left \{ \begin{array}{ccc}  \theta(\lambda_2) > \theta(\lambda_1), &   \mbox{quand} ~ \lambda_2 > \lambda_1 & \theta(\pm \infty) = \pm \pi \\ & \displaystyle \theta'(\lambda) = \frac{2c}{\lambda^2 + c^2}\end{array} \right .		
+\end{eqnarray}
+
+Récrivons les équations (\ref{eq.2.8}) et (\ref{eq.2.9}) sous la forme suivante :
+
+\begin{eqnarray}
+	\lambda_j L + \sum_{k \neq j} \theta(\lambda_j - \lambda_k) = 2 \pi n_j, \quad j = 1, \dots, N,	\label{eq.2.13}	
+\end{eqnarray}
+
+où les nombres \( n_j \) sont des entiers ou des demi-entiers.
+
+\begin{eqnarray}
+	n_j & = & \tilde{n}_j + \frac{N-1}{2}.	
+\end{eqnarray}
+
+
+Ce système d'équations est équivalent au système (\ref{eq.2.2}). Les équations (\ref{eq.2.13}) sont également appelées les équations de Bethe.
+
+\begin{TheoPrinc}
+	Les solutions des équations de Bethe (\ref{eq.2.13}) existent et peuvent être paramétrées de manière unique par un ensemble de nombres entiers (ou demi-entiers) \( n_j \).	
+\end{TheoPrinc}
+
+\begin{proof}
+	 La preuve est basée sur le fait que les équations (\ref{eq.2.13}) peuvent être obtenues à partir d'un principe variationnel. L'action correspondante a été introduite par C.N. Yang et C.P. Yang (22) :	
+	 \begin{eqnarray}
+	 	S = \frac{1}{2} L \sum_{j=1}^N  \lambda_j^2 - 2 \pi L \sum_{j=1}^N  n_j  \lambda_j + \frac{1}2 \sum_{ j , k } ^N \theta_1 § \lambda_j - \lambda_k ) 		
+	 \end{eqnarray}
+	 
+	 ou $ \theta_1 ( \lambda )  = \int_0^\lambda \theta ( \mu ) \, d \mu $.
+	 Les équations (\ref{eq.2.13}) sont les conditions d'extrémum pour \( S \) (\( \partial S / \partial \lambda_j = 0 \)), cet extrémum étant un minimum. Pour prouver cela, il suffit d'établir que la matrice des dérivées secondes \( \partial^2 S / \partial \lambda_j \partial \lambda_k \) est définie positive (tous les valeurs propres sont positives). On a :
+	 
+	 \begin{eqnarray}
+	 	\frac{\partial^2 S}{\partial \lambda_j \partial \lambda_\ell} = \frac{ \partial \varphi_j }{\partial \lambda_ \ell } = \varphi_{j\ell}' = \delta_{j\ell} 	\left [  L + \sum_{m = 1 }^N K ( \lambda_j , \lambda_m ) \right ]  - K ( \lambda_j , \lambda_\ell )
+	 \end{eqnarray}
+	 
+	 où
+	 \begin{eqnarray}
+	 	K(\lambda, \mu) = \varphi' ( \lambda - \mu ) = \theta' ( \lambda - \mu ) = \frac{2c}{(\lambda_j - \lambda_k)^2 + c^2},	
+	 \end{eqnarray}
+	 
+	 Ainsi,
+	 
+	 \begin{eqnarray}
+	 	\frac{\partial^2 S}{\partial \lambda_j \partial \lambda_\ell} v_j v_\ell = \sum_{ j = 1 } ^N L v_j^2 + \sum_{1 = \ell < j }^N K ( \lambda_j , \lambda_\ell ) ( v_j - v_\ell ) ^2 \geq L \sum_{ j = 1 }^N v_j^2 >0 	 
+	 \end{eqnarray}
+	 
+	 pour tout vecteur \( v_j \) à composantes réelles. La matrice des dérivées secondes est donc définie positive : l'action est effectivement convexe. Ainsi, \( S \) possède un unique minimum qui définit les solutions des équations de Bethe.
+
+	Le Théorème est donc prouvé.
+
+
+\end{proof}
+
+
+Dans le chapitre ??? , nous verrons que le carré de la norme de la fonction d'onde dans la boîte périodique est égal au déterminant de la dérivée seconde de l'action de Yang-Yang évaluée sur les solutions des équations de Bethe :
+
+\begin{eqnarray}
+	\int_0^L d^N z \, \vert \chi_N \vert^2 & = & \det \left ( \frac{ \partial^2 S}{ \partial \lambda_j \partial \lambda_\ell }  \right ). 
+\end{eqnarray}
+
+L'antisymétrie de \( \theta(\lambda) \) conduit à l'égalité suivante :
+
+\begin{eqnarray}
+	P_N  = \sum_{j=1}^N \lambda_j = \frac{2 \pi}L \sum_{j=1}^N n_j,		
+\end{eqnarray}
+
+où \( P_N \) est l'impulsion du système (voir l'équation (\ref{eq.1.29}).
+
+La solution du système (\ref{eq.2.13}) possède la propriété importante suivante :
+
+\begin{TheoPrinc}
+	Si \( n_j > n_k \), alors \( \lambda_j > \lambda_k \). Si \( n_j = n_k \), alors \( \lambda_j = \lambda_k \).
+\end{TheoPrinc}
+
+\begin{proof}
+	Substituons l'équation \( k \)-ème du système à l'équation \( j \)-ème :
+	\begin{eqnarray}
+		L(\lambda_j - \lambda_k) + \sum_{l=1}^N \left[ \theta(\lambda_j - \lambda_l) - \theta(\lambda_k - \lambda_l) \right] = 2 \pi (n_j - n_k).
+	\end{eqnarray}
+	En raison de l'augmentation monotone de la fonction \( \theta(\lambda) \) par rapport à \( \lambda \), le côté gauche est du même signe que son premier terme. Le théorème est ainsi prouvé.
+\end{proof}
+
+En particulier, si \( n_j = n_k \), alors \( \lambda_j = \lambda_k \), ce qui implique que la fonction d'onde est nulle en vertu du principe de Pauli. Ainsi, seuls les \( n_j \neq n_k \) (avec \( j \neq k \)) doivent être pris en compte. Puisque la fonction d'onde est antisymétrique par rapport aux \( \lambda \), on peut toujours ordonner les \( \lambda_j > \lambda_k \) lorsque \( j > k \), d'où :
+\begin{eqnarray}
+	n_j > n_k \quad \text{lorsque} \quad j > k.
+\end{eqnarray}
+
+Pour passer à la limite thermodynamique, nous aurons besoin des propriétés suivantes :
+
+\begin{enumerate}
+    \item Les différentes solutions \( \lambda_j \) du système (\ref{eq.2.13}) sont séparées par un certain intervalle :
+    \begin{eqnarray}
+    	\frac{2 \pi ( n_j - n_k )}{ L } \geq \vert \lambda_j - \lambda_k \vert \geq \frac{2 \pi ( n_j - n_k )}{ L ( 1 + \frac{2D}c )} \geq \frac{ 2 \pi }{ L ( 1 + \frac{2D}c )} ; \quad j \neq k 	
+    \end{eqnarray}
+
+    
+    où \( D = N / L \) est la densité du gaz de Bose. Cette estimation découle de l'équation (\ref{eq.2.21}) si l'on utilise les inégalités :
+    \begin{eqnarray}
+    	0 < K(\lambda, \mu) < \frac{2}{c}; \in  \lambda = \in \mu = 0 	
+    \end{eqnarray}
+
+    et 
+    
+    \begin{eqnarray}
+    	\theta( \lambda ) - \theta ( \mu ) & = & \int_\mu^\lambda K ( \nu , 0 ) \, d \nu \leq \frac{2}c ( \lambda - \mu ) , \quad \lambda = \mu .	
+    \end{eqnarray}
+
+    
+    \item La fonctionnelle d'énergie \( \sum_{j = 1}^N \lambda_j^2  \) dans le secteur avec un nombre de particules \( N \) fixé, sous la condition que \( \{\lambda_j\} \) sont des solutions des équations de Bethe (\ref{eq.2.13}), est minimisée par l'ensemble suivant de nombres \( n_j \), qui sont des entiers (pour \( N \) impair) ou des demi-entiers (pour \( N \) pair) :
+    \begin{eqnarray}
+    	n_j = -\frac{N - 1}{2} + j - 1, \quad j = 1, \cdots, N.	
+    \end{eqnarray}
+
+    (C'est évident lorsque \( c \to \infty \).)
+    
+    \item Définissons une fonction \( \lambda(x) \) (où \( x \in \mathbb{R}^1 \)) qui est étroitement liée à la solution \( \{\lambda_j\} \) des équations de Bethe (\ref{eq.2.13}). Cette fonction est définie par la relation suivante :
+    \begin{eqnarray}
+    	L \lambda(x) + \sum_{k=1}^N \theta(\lambda(x) - \lambda_k) = 2 \pi L  x.	
+    \end{eqnarray}
+
+    En introduisant une action \( S \) similaire à (\ref{eq.2.15}) :
+    \begin{eqnarray}
+    	S & = & \frac{1}{2} L  \lambda^2 (x) + \sum_{j=1}^N  \theta_1  ( \lambda(x) - \lambda_k )  - 2 \pi L x \lambda ( x) 	
+    \end{eqnarray}
+
+    
+
+    on peut facilement prouver qu'une valeur unique \( \lambda(x) \) existe pour chaque \( x \) réel, et que \( \lambda(x) \) est une fonction strictement croissante et bijective de \( x \). La valeur de la fonction \( \lambda(x) \) à \( x = n_j / L \) correspond à \( \lambda_j \) de la solution des équations de Bethe (\ref{eq.2.13}) : 
+    
+    \begin{eqnarray}
+    	\lambda\left( \frac{n_j}{L} \right) = \lambda_j \quad \text{avec} \quad n_j \in \{n_k\}.	
+    \end{eqnarray}
+
+\end{enumerate}
+
+Les valeurs \( \lambda_j \) seront appelées les moments des particules présentes dans l'état \( \chi_N \) (voir équation (\ref{eq.1.26})). Prenons maintenant le nombre \( m \in \{n_j\} \) (où \( m \) est entier pour \( N \) impair et demi-entier pour \( N \) pair). On peut appeler la valeur correspondante de \( \lambda(x) \) :
+\begin{eqnarray}
+	\lambda_m  & = & \lambda \left ( \frac{m}{L}\right ) 	
+\end{eqnarray}
+
+le moment \( \lambda_m \) du trou. Ainsi, chaque nombre \( n \) (entier ou demi-entier), avec \( n \mod 1 = [(N - 1)/2] \), définit une « vacance ». Une vacance remplie correspond à une particule, et une vacance libre correspond à un trou. Le nombre total de particules et de trous donne le nombre complet de vacances. La quantité \( \rho_t(\lambda) \), ou sous forme logarithmique :
+\begin{eqnarray}
+	\rho_t(\lambda(x)) = \frac{d x(\lambda)}{d \lambda},	
+\end{eqnarray}
+
+
+est la densité de vacances. En différenciant l'équation (\ref{eq.2.27}) par rapport à \( \lambda \), on obtient :
+
+\begin{eqnarray}
+	1 + \frac{1}{L} \sum_{k=1}^N K(\lambda(x), \lambda_k)  & =  & 2 \pi \rho_t(\lambda(x)),		
+\end{eqnarray}
+
+où \( K(\lambda(x), \lambda_k) \) est un terme de couplage.
+
+Il est parfois utile de considérer des conditions aux limites antipériodiques :
+
+\begin{eqnarray}
+	\chi_N(z_j + L) &  =  & -\chi_N(z_j),	
+\end{eqnarray}
+
+au lieu des conditions périodiques (\ref{eq.2.1}). Cette condition élimine le signe moins du côté droit des équations de Bethe (\ref{eq.2.2}). Les considérations ultérieures restent les mêmes.
+
+Faisons quelques remarques sur le cas où \( c \to \infty \). Il est facile de voir que les équations de Bethe (\ref{eq.2.2}) deviennent :
+
+\begin{eqnarray}
+	e^{i L \lambda_j} = (-1)^{N+1}.	
+\end{eqnarray}
+
+ou dans la forme logarithmique
+
+\begin{eqnarray}
+	 L \lambda_j & = & 2 \pi \tilde{\tilde{n}}_j 	
+\end{eqnarray}
+
+
+Cette équation décrit des particules non-interagissantes et, en raison du principe d'exclusion de Pauli (voir chapitre VII.4), le modèle dans cette limite est équivalent au modèle des fermions libres \cite{ref1}, \cite{ref2}, et \cite{ref3}. Voir l'Appendice ???? pour plus de détails.
+
+
+
+
+
+
+
+
+
+

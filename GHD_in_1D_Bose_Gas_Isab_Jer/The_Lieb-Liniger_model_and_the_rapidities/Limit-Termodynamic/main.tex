@@ -1,0 +1,100 @@
+Jusqu'à présent, nous nous sommes concentrés sur un nombre fini de bosons $N$, d'abord sur une ligne infinie, puis dans une boîte périodique de longueur $L$. Pour faire de l'hydrodynamique, il est nécessaire de comprendre d'abord les propriétés thermodynamiques du système. Dans cette sous-section, nous passons brièvement en revue les techniques permettant de prendre la limite thermodynamique $N, L \to \infty$, tout en maintenant la densité de bosons $n = N/L$ fixée.\\
+
+L'idée clé est de se concentrer sur une séquence infinie d'états propres $(\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket} )_{ N \in \mathbb{Z}}$ de l'hamiltonien de Lieb-Liniger (??), avec $L = N/n$, de telle sorte que la limite de la distribution des rapidités
+\begin{eqnarray}
+	\rho(\theta) & \doteq & \underset{N \to \infty}{\lim} \frac{1}{L} \sum_{a = 1 }^N \delta ( \theta - \theta_a)
+\end{eqnarray}
+
+est bien définie et est une fonction (par morceaux) régulière de $\theta$. Les propriétés thermodynamiques du système (telles que sa densité d'énergie, sa pression, etc.) deviennent alors des fonctionnelles particulières de cette densité de rapidité $\rho( \theta ) $, et l'objectif est de trouver ces fonctionnelles et de les évaluer. Dans ce qui suit, nous écrivons $$\guillemotleft \underset{\tiny \mbox{therm.}}{\lim} \doteq \underset{\underset{\underset{\frac{N}{L} = const}{L \to \infty }}{N \to \infty}}{\lim}\guillemotright$$ pour cette procédure de limite.\\
+
+Par exemple, considérons les valeurs attendues des densités de charge (??) : dans la limite thermodynamique, celles-ci deviennent
+\begin{eqnarray}
+	\underset{\tiny \mbox{therm.}}{\lim} \langle \{ \theta_a \} \vert q[f] \vert \{ \theta_a \} \rangle & = & \int_{-\infty}^{+\infty}  f(\theta) \rho ( \theta )  d\theta 	
+\end{eqnarray}
+
+En particulier, la densité de particules, la densité de momentum et la densité d'énergie sont, respectivement, les suivantes :
+\begin{eqnarray*}
+	n = \langle q[\theta \mapsto 1] \rangle & = & 	\int_{-\infty}^{+\infty} \rho ( \theta )  d\theta, \\
+	\langle q[\theta \mapsto \theta] \rangle & = & 	\int_{-\infty}^{+\infty} \theta \rho ( \theta )  d\theta,\\
+	\langle q[\theta \mapsto \theta^2 /2 ] \rangle & = & 	\int_{-\infty}^{+\infty} \frac{\theta^2}{2} \rho ( \theta )  d\theta,
+\end{eqnarray*}
+
+\subsubsection{Thermodynamic form of the Bethe equations}
+
+De manière cruciale, étant donné que tous les états dans la séquence infinie $(\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket} )_{ N \in \mathbb{Z}}$ sont des états de Bethe, chaque ensemble de rapidités $\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket}$ doit satisfaire les équations de Bethe (??). Pour mettre en œuvre cette contrainte, il est courant de considérer l'ensemble des moments de fermions $\{p_a\}_{ a \in \llbracket 1 , N \rrbracket}$ associés à l'ensemble des rapidités $\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket}$, tous deux ordonnés comme dans (??), et de définir la densité d'états $\rho_s(\theta )$ comme suit :
+\begin{eqnarray}
+	2\pi \rho_s ( \theta ) & = & \underset{\tiny \mbox{therm.}}{\lim}\frac{ \vert p_a - p_{a+1} \vert}{ \vert \theta_a - \theta_{a+1} \vert }	
+\end{eqnarray}
+
+où la séquence d'indices a du côté droit est choisie de telle sorte que $\underset{\tiny \mbox{therm.}}{\lim} \theta_a  = \theta $. Étant donné que les moments des fermions pa doivent satisfaire le principe d'exclusion de Pauli (ils doivent tous être différents), il est clair que $\vert p_a - p_{a+1}\vert \geq  \frac{2 \pi}{L}$ . De plus, remarquez que, par définition, $\underset{\tiny \mbox{therm.}}{\lim} \frac{1}{L \vert \theta_a - \theta_{a+1} \vert } \doteq  \rho ( \theta ) $. Par conséquent, le rapport d'occupation de Fermi
+\begin{eqnarray}
+	\nu & \doteq & \frac{ \rho }{ \rho_s } 	
+\end{eqnarray}
+doit toujours satisfaire
+\begin{eqnarray}
+	\nu & \colon & \begin{array}{lcr} \mathbb{R} & \rightarrow & {\color{red} [ 0 , 1 ]}  \\ \theta & \mapsto &  {\color{red} \nu ( \theta )}  \end{array} 	
+\end{eqnarray}
+
+De plus, la densité de rapidité $\rho(\theta ) $ et la densité d'états $\rho(\theta ) $ sont liées par la version thermodynamique de l'équation de Bethe (??). En insérant l'équation (??) dans la définition (??), on obtient l'équation constitutive :
+{\tiny 
+\begin{eqnarray}
+	2\pi \rho_s ( \theta ) & = & \underset{\tiny \mbox{therm.}}{\lim} \frac{1}{ \vert \theta_a - \theta_{a+1} \vert } \left [ \left ( \theta_a + \frac{1}{L} \sum_{b \neq a} 2 \arctan \left( \frac{\theta_a - \theta_b }{c} \right ) \equiv p_a \right ) -  \left ( \theta_{a+1} + \frac{1}{L} \sum_{b \neq a + 1 } 2 \arctan \left( \frac{\theta_{a+1}  - \theta_b }{c} \right ) \equiv p_{a+1} \right ) \right ] 		
+\end{eqnarray}
+}
+et $$ \sum_{ b \neq a } f ( a , b ) - \sum_{ b \neq a + 1  }  f ( a + 1  , b ) = \sum_{ b }  \left \{  f ( a - b ) -  f ( a + 1  - b )  \right \} - \underbrace{(f ( a  - a ) - f ( a + 1  -  a + 1 ) )}_{0} $$
+
+{\tiny 
+\begin{eqnarray}
+	2\pi \rho_s ( \theta ) & = & \underset{\tiny \mbox{therm.}}{\lim} \frac{1}{ \vert \theta_a - \theta_{a+1} \vert } \left [ \theta_a - \theta_{a+1} + \frac{1}{L} \sum_{b }  \left \{2 \arctan \left( \frac{\theta_a - \theta_b }{c} \right )  - 2 \arctan \left( \frac{\theta_{a+1} - \theta_b }{c} \right )\right \}   \right ] 		
+\end{eqnarray}
+}
+
+\begin{eqnarray*}
+	{\color{gray} f \mapsto } \underset{\tiny \mbox{therm.}}{\lim}  \frac{{\color{blue} f}(\theta_{a}) - {\color{blue} f}(\theta_{a+1})}{\theta_{a} - \theta_{a+1 }}&  = & {\color{gray} f \mapsto } \frac{\partial {\color{blue} f} }{ \partial \theta } ( \theta), \\
+	\frac{\partial \left \{  \theta \mapsto 2 \arctan \left ( \frac{ \theta - \theta_b}{ c}  \right ) \right \} }{ \partial \theta } ( \theta )     & = &  \frac{1}{c} \frac{2}{ 1 + \left( \frac{ \theta - \theta_b}{ c} \right )^2 } = \frac{ 2 c }{ c^2 + ( \theta - \theta_b)^2 } = \Delta ( \theta - \theta_b ) ;\\ 
+	{\color{gray} f \mapsto }\underset{\tiny \mbox{therm.}}{\lim} \sum_{b} {\color{blue} f(\theta_b)} & = &  {\color{gray} f \mapsto}  \int {\color{blue} f(\theta_b)}  \rho(\theta_b ) d \theta_b ; \\ 
+	{\color{gray} f \mapsto }\underset{\tiny \mbox{therm.}}{\lim} \sum_{b}  \frac{{\color{blue}f}(\theta_{a} - \theta_{b}) - {\color{blue}f}(\theta_{a+1}  - \theta_{b})}{\theta_{a} - \theta_{a+1 }} & = &  {\color{gray}   f \mapsto}  \int  \frac{\partial {\color{blue}f}}{\partial \theta } ( \theta - \theta_b)  \rho(\theta_b ) d \theta_b ;    	
+\end{eqnarray*}
+d'où
+\begin{eqnarray}\label{eq:therm.rho_s_2}
+	2\pi \rho_s ( \theta ) & = & 1 + \int_{ - \infty} ^{ + \infty } \Delta ( \theta - \theta' ) \rho ( \theta' ) d \theta' , \\
+	& = & 1 + \{ \Delta \star \rho \} (\theta) 	 		
+\end{eqnarray}
+
+où $\Delta ( \theta - \theta' )$ représente le décalage différentiel de diffusion à deux corps (??).\\
+
+En pratique, pour construire des états thermodynamiques intéressants, on peut spécifier le rapport d'occupation de Fermi $\nu(\theta)$, puis utiliser l'équation constitutive (\ref{eq:therm.rho_s_2}) pour reconstruire la densité de rapidité $\rho(\theta)$ et la densité d'états $\rho_s(\theta)$ . Un exemple important est l'état fondamental de l'hamiltonien de Lieb-Liniger, qui correspond à un rapport d'occupation en forme de fonction rectangulaire : $\nu(\theta) = 1$ pour $\theta \in  [-\theta_F, \theta_F]$, et $\nu(\theta) = 0$ sinon. Ici, $\theta_F$ est la rapidité de Fermi, qui est une fonction de la densité de particules $n$. Dans ce cas, l'équation constitutive devient l'équation de Lieb (Lieb et Liniger 1963) (également connue sous le nom d'équation de Love (Love 1949) ; pour des études de cette équation particulière, voir par exemple Lang et al. (2017), Marino et Reis (2019), Popov (1977), Prolhac (2017), Takahashi (1975)). Un autre exemple important est celui d'une distribution d'équilibre thermique $\rho(\theta)$ obtenue en résolvant l'équation de Yang-Yang (éq. (??) ci-dessous).\\
+
+En général, l'équation constitutive ne peut pas être résolue analytiquement. Cependant, étant donné qu'elle est linéaire, elle peut être facilement résolue numériquement en discrétisant l'intégrale.
+
+\subsubsection{The dressing}
+
+Dans les manipulations thermodynamiques, il s'avère que l'opération suivante est omniprésente : à une fonction $f(\theta)$, on associe sa contrepartie « habillée » $f^{dr}(\theta)$
+, définie par l'équation intégrale :
+\begin{eqnarray}
+	f^{dr}(\theta) & = & f(\theta) + \int K ( \theta - \theta' ) \nu ( \theta' ) f^{dr}(\theta') d \theta ' \\
+	& = & 	f(\theta) + \{ K \star (\nu \cdot f^{dr}) \} ( \theta ) 		
+\end{eqnarray}
+
+
+où $K ( \theta - \theta' )$ est un noyau de convolution spécifique qui dépend du problème considéré. Cette équation permet de capturer les effets de l'interaction entre les particules et de rendre compte des corrections « habillées » à la fonction initiale $f(\theta)$. En résolvant cette équation, on obtient la fonction habillée $f^{dr}(\theta)$ associée à la fonction donnée $f(\theta)$. Cette opération est couramment utilisée dans les calculs thermodynamiques pour prendre en compte les interactions et les corrections aux propriétés des systèmes physiques.\\
+
+Dans notre problème $K ( \theta - \theta' ) = \frac{\Delta ( \theta - \theta') }{ 2 \pi } $ soit : 
+\begin{eqnarray}
+	f^{dr}(\theta) & = & f(\theta) + \int \frac{ d \theta '}{2\pi}  \Delta ( \theta - \theta' ) \nu ( \theta' ) f^{dr}(\theta'),\\
+	& = & 	f(\theta) + \frac{1}{2 \pi} \{ \Delta  \star (\nu \cdot f^{dr}) \} ( \theta ) 	 		
+\end{eqnarray}
+
+Bien que cela ne soit pas explicite dans la notation, $f^{dr}(\theta)$ est toujours fonctionnelle de la distribution de rapidité, à travers sa dépendance vis-à-vis du rapport d'occupation de Fermi. Par exemple, avec cette définition, l'équation constitutive (\ref{eq:therm.rho_s_2}) est reformulée comme suit :
+\begin{eqnarray}
+	2\pi \rho_s ( \theta ) & = & \mathrm{1}^{dr}(\theta)		
+\end{eqnarray}
+
+où $\mathrm{1}(\theta) = 1$ est la fonction constante.
+
+
+
+
+
+
+

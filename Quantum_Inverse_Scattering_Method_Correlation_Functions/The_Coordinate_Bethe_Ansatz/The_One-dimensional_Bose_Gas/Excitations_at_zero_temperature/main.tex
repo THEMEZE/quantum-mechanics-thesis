@@ -1,0 +1,22 @@
+%\section{Excitations sur le vide physique avec charge nulle}
+
+Nous allons d'abord considérer les excitations sur le vide physique dans le secteur avec une charge physique nulle (c'est-à-dire des excitations où le nombre de particules \( N \) dans l'état excité est le même que le nombre de particules dans l'état fondamental). Commençons avec des conditions aux limites périodiques (équation (\ref{eq.2.13})) :
+
+\begin{eqnarray*}
+	L\lambda_j + \sum_{k=1}^N\theta( \lambda_j - \lambda_k ) & =  &2 \pi n_j.
+\end{eqnarray*}
+
+
+
+L'état fondamental est décrit par un ensemble spécial d'entiers $n_j$, voir (\ref{eq.2.26}) et (\ref{eq.3.2}). Tous les autres ensembles de $\{n_j\}$ (ils doivent être différents, $n_j \neq n_k$) donnent des états excités. C'est la description complète de tous les états excités. Ces excitations sont obtenues en retirant un certain nombre de particules ayant des moments $-q < \lambda_h < q$ de la distribution de particules du vide (c'est-à-dire en créant des trous avec des moments $\lambda_h$) et en ajoutant un nombre égal de particules avec des moments $ \vert \lambda_p \vert  > q$. Tout d'abord, nous allons construire l'état où une particule ayant un moment $\lambda_p  > q$ se propage avec un trou ayant un moment $-q < \lambda_h < q$. La particule et le trou étant maintenant présents, les valeurs permises des moments des particules du vide sont modifiées : $\lambda_j  \to  \tilde{\lambda}_j$, de sorte que les équations de Bethe pour les particules du vide sont réécrites comme
+
+\begin{eqnarray}
+	L \tilde{\lambda}_j + \sum_k \theta ( \tilde{\lambda}_j - \tilde{\lambda}_k ) + \theta(\tilde{\lambda}_j - \lambda_p ) - \theta(\tilde{\lambda}_j - \lambda_h ) = 2 \pi \left (  j - \frac{N+1}{2}\right ).  
+\end{eqnarray}
+
+En soustrayant ceci de la distribution du vide (\ref{eq.3.2}) et en prenant en compte que $\lambda_j - \tilde{\lambda}_j = O(L-1 )$, $\theta(\lambda + \Delta) - \theta(\lambda) = O(\Delta)$, on obtient
+
+\begin{eqnarray}
+	L (\lambda_j - \tilde{\lambda}_j ) - \theta (\lambda_j - \lambda_p)	+ \theta( \lambda_j - \lambda_h ) + ( \lambda_j -\tilde{\lambda}_j ) \sum_k K ( \lambda_j , \lambda_k ) - \sum_k K( \lambda_j , \lambda_k ) ( \lambda_k - \tilde{\lambda}_k ) & = & 0 
+\end{eqnarray}
+

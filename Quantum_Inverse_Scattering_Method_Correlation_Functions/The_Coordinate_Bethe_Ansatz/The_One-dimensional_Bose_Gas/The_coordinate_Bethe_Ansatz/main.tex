@@ -1,0 +1,251 @@
+Le gaz de Bose unidimensionnel est décrit par les champs de Bose quantiques canoniques \( \Psi(x, t) \) avec les relations de commutation canoniques à temps égal :
+
+
+\begin{eqnarray}
+	\left . \begin{array}{rcl}
+		[ \operator{\Psi}(x, t),  \operator{\Psi}^\dagger(y, t) ]  &=&  \operator{\delta}(x - y) \\
+		\left [ \operator{\Psi}(x, t),  \operator{\Psi}(y, t) \right ]   =  [ \operator{\Psi}^\dag(x, t),  \operator{\Psi}^\dag(y, t) ]  &=&  0 
+	\end{array} \right . \label{eq.1.1}
+\end{eqnarray}
+
+Par la suite, l'argument \( t \) sera en général omis, car toutes les considérations de ce chapitre s'appliquent à un moment fixe dans le temps.
+
+Le Hamiltonien du modèle est donné par
+
+\begin{eqnarray}
+	\operator{H} & = & \int dx \left [ \operator{\partial}_x \operator{\Psi}^\dag (x) \operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] 
+\end{eqnarray}
+
+
+où \( c \) est la constante de couplage. L'équation du mouvement correspondante
+\begin{eqnarray}
+	i \operator{\partial}_t \operator{\Psi}	 & = & - \operator{\partial}_x^2 \operator{\Psi} + 2 c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+\end{eqnarray}
+
+est appelée l'équation de Schrödinger non linéaire (NS).
+
+Pour $c > 0$, l'état fondamental à température nulle est une sphère de Fermi. Seul ce cas sera considéré par la suite. Le vide de Fock $\vert 0 \rangle$, défini par 
+
+
+\begin{eqnarray}
+	\forall x \in \mathbb{R} & \colon & \operator{\Psi} (x) \vert 0 \rangle = 	0 \label{eq.1.4}
+\end{eqnarray}
+
+est d'une grande importance.
+
+It will be called the pseudovacum and it is to be distinguihed from the physical vacuum which is the ground state of the Hamiltonian (the Dirac sea). The dual pseudovacuum $\langle 0 \vert$ is defined as $\langle 0 \vert =  \vert 0 \rangle^\dag$ and satisfies the relations ... where the dagger denotes Hermitian conjugation. The number of particles aperator $\operator{Q}$ and momentum operator $\operator{P}$ are 
+
+Il sera appelé le pseudovacuum et doit être distingué du vide physique, qui est l'état fondamental de l'Hamiltonien (la mer de Dirac). Le pseudovacuum dual $\langle 0 \vert$ est défini comme $\langle 0 \vert = \vert 0 \rangle^\dag$ et satisfait les relations 
+
+\begin{eqnarray}
+	\forall x \in \mathbb{R} & \colon & \langle 0 \vert \operator{\Psi}^\dag (x)  = 	0, ~\langle 0 \vert 0 \rangle = 1 
+\end{eqnarray}
+
+où la dague ($^\dag$) désigne la conjugaison hermitienne. 
+
+L'opérateur du nombre de particules $\operator{Q}$ et l'opérateur de moment $\operator{P}$ sont définis comme 
+\begin{eqnarray}
+	\operator{Q} & = & \int \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, d x \\
+	\operator{P} & = & - \frac{i}2 \int \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [ \operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} dx \label{eq.1.7}
+\end{eqnarray}
+
+Ce sont des opérateurs hermitiens et ils constituent des intégrales du mouvement
+
+\begin{eqnarray}
+	[ \operator{H} , \operator{Q} ] = 	[ \operator{H} , \operator{P} ] = O. 
+\end{eqnarray}
+
+Il convient de noter que dans la Partie II, nous allons construire un nombre infini d'intégrales du mouvement. Nous pouvons maintenant chercher les fonctions propres communes $\vert \psi_N\rangle$ des opérateurs $\operator{H}$, $\operator{Q}$, et $\operator{P}$ :
+
+\begin{eqnarray}
+	\vert \psi ( \lambda_1 , \cdots , \lambda_N ) \rangle & = & \frac{1}{\sqrt{N!}} \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \lambda_1 , \cdots , \lambda _N ) \operator{\Psi}^\dag (z_1 ) \cdots \operator{\Psi}^\dag (z_N )	 \vert 0 \rangle. \label{eq.1.9}
+\end{eqnarray}
+
+Ici, $\chi_N$ est une fonction symétrique de toutes les variables $z_j$. L'équation aux valeurs propres 
+
+\begin{eqnarray}
+	\operator{H} |\psi_N\rangle = E_N |\psi_N\rangle, \quad \operator{P} |\psi_N\rangle = p_N |\psi_N\rangle, \quad \operator{Q} |\psi_n\rangle = q_N |\psi_N\rangle,	
+\end{eqnarray}
+
+conduit au fait que $\chi_N$ est une fonction propre à la fois de l'Hamiltonien mécanique quantique $\operator{\mathcal{H}}_N$ et de l'opérateur du moment mécanique quantique $\operator{\mathcal{P}}_N$ :
+
+\begin{eqnarray}
+	&& \left \{ \begin{array}{rcl} \operator{ \mathcal{H}}_N & = & \displaystyle \sum_{j=1}^N   - \operator{\partial}_{z_j}^2 + 2c \sum_{1 \leq k < j \leq N } \operator{\delta} ( z_j - z_k) \\ \operator{\mathcal{P}}_N & = & \displaystyle \sum_{j=1}^N -i \operator{\partial}_{z_j}\end{array} \right .  \label{eq.1.11}\\
+	&& ~~~\operator{ \mathcal{H}}_N \chi_N ~= ~	E_N \chi_N .\label{eq.1.12}
+\end{eqnarray}
+
+Cela peut être expliqué en utilisant l'opérateur du moment $\operator{P}$ (\ref{eq.1.7}) comme exemple. Tout d'abord, nous intégrons (\ref{eq.1.7}) par parties pour représenter $\operator{P}$ sous la forme :
+
+\begin{eqnarray*}
+	\operator{P} & = & i \int \left [ \operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x) dx 
+\end{eqnarray*}
+
+Agir avec cet opérateur sur la fonction propre (\ref{eq.1.9}) donne 
+\begin{eqnarray*}
+	\operator{P}\vert \psi ( \lambda_1 , \cdots , \lambda_N ) \rangle & = & \frac{i}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \lambda_1 , \cdots , \lambda _N ) 	\left [\operator{\partial}_x \operator{\Psi}^\dag(x)\right ]  \\ & & \times \sum_{k = 1 }^N \operator{\Psi}^\dag(z_1) \cdots [\operator{\Psi}(x) , \operator{\Psi}^\dag(z_k)] \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle
+\end{eqnarray*}
+
+où l'équation (\ref{eq.1.4}) a été utilisée. La formule (\ref{eq.1.1}) donne une fonction delta pour le commutateur, qui peut ensuite être intégrée pour donner
+
+\begin{eqnarray*}
+	\operator{P}\vert \psi ( \lambda_1 , \cdots , \lambda_N ) \rangle & = & \frac{i}{ \sqrt{N!}}  \int d^N z 	\, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \lambda_1 , \cdots , \lambda _N ) \\ & & \times  \sum_{k = 1 }^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_k} \operator{\Psi}^\dag(z_k)\right ] \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle. 
+\end{eqnarray*}
+
+Nous intégrons maintenant par parties par rapport à $z_k$ pour obtenir
+
+\begin{eqnarray*}
+	\operator{P}\vert \psi ( \lambda_1 , \cdots , \lambda_N ) \rangle & = & \frac{1}{ \sqrt{N!}}  \int d^N z 	 \left \{  -i \sum_{k = 1 }^N  \operator{\partial}_{z_k}\chi_N ( z_1 , \cdots , z_N  ~\vert ~ \lambda_1 , \cdots , \lambda _N ) \right \} \\ && \times \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle. 
+\end{eqnarray*}
+
+Ainsi, nous avons prouvé que l'action de l'équation (\ref{eq.1.7}) sur l'équation (\ref{eq.1.9}) est équivalente à l'action de $\operator{\mathcal{P}}_N$ sur \(\chi_N\). La construction de l'Hamiltonien mécanique quantique est assez similaire.
+
+Le problème de la théorie quantique des champs est donc réduit à un problème de mécanique quantique. L'Hamiltonien $\operator{\mathcal{H}}_N$ décrivant \(N\) particules bosoniques est répulsif pour \(c > 0\). En raison de la symétrie de \(\chi\) par rapport à toutes les \(z_i\), il est suffisant de considérer le domaine suivant \(T\) dans l'espace des coordonnées :
+
+\begin{eqnarray}
+	T & : & z_1 < z_2 < \cdots < z_N \label{eq.1.13}. 
+\end{eqnarray}
+
+Dans ce domaine, la fonction \(\chi_N\) est une fonction propre de l'Hamiltonien libre.
+
+\begin{eqnarray}
+	\left \{ \begin{array}{rcl} \operator{\mathcal{H}}_N^0 & = & \displaystyle - \sum_{j=1}^N \operator{\partial}_{z_j}^2 \\  \operator{\mathcal{H}}_N^0 \chi_N  & = & E_N \chi_N  \end{array} \right .	\label{eq.1.14}
+\end{eqnarray}
+
+Les conditions aux limites suivantes doivent être satisfaites :
+
+\begin{eqnarray}
+	( \operator{\partial}_{z_{j+1}}	- \operator{\partial}_{z_{j}} - c ) \chi_N &= & 0 , \quad z_{j+1} = z_j + 0 .\label{eq.1.15}
+\end{eqnarray}
+
+{\color{blue}
+
+\begin{eqnarray*}
+	\left ( \begin{array}{c} Y \\ Z \end{array} \right ) = \underbrace{\left ( \begin{array}{cc} -1 & 1  \\ 1/2  &  1/2 \end{array} \right )}_{P_{x \to X} }  \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right ), & & \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right ) = \underbrace{\left ( \begin{array}{cc} -1/2 & 1  \\ 1/2  &  1 \end{array} \right )}_{P_{X \to x} = P_{x \to X}^{-1} }  \left ( \begin{array}{c} Y \\ Z \end{array} \right ),\\
+	\operator{\partial}_{\left ( \begin{array}{c} Y \\ Z \end{array} \right )} = \underbrace{\left ( \begin{array}{cc} -1/2 & 1/2  \\ 1  &  1 \end{array} \right )}_{P_{\operator{\partial}x \to \operator{\partial}X} =  {}^t(P_{x \to X}^{-1}) } \operator{\partial}_{  \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right )}, & & \operator{\partial}_{\left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right )} = \underbrace{\left ( \begin{array}{cc} -1 & 1/2  \\ 1  &  1/2 \end{array} \right )}_{P_{\operator{\partial}X \to \operator{\partial}x} = P_{\operator{\partial}x \to \operator{\partial}X}^{-1} }  \operator{\partial}_{\left ( \begin{array}{c} Y \\ Z \end{array} \right )},
+\end{eqnarray*}
+
+
+}
+
+L'équation (\ref{eq.1.14}) et la condition aux limites (\ref{eq.1.15}) sont équivalentes à l'équation (\ref{eq.1.12}). En effet, le potentiel dans (\ref{eq.1.11}) est égal à zéro dans le domaine \(T\). En intégrant l'équation (1.12) sur la variable \((z_{j+1} - z_j)\) dans la petite région \(|z_{j+1} - z_j| < \epsilon\), en considérant tous les autres \(z_k\) (\(k \neq j,j+1\)) comme fixes dans \(T\), on obtient exactement la condition (\ref{eq.1.15}).
+
+Une fonction satisfaisant (\ref{eq.1.14}) et (\ref{eq.1.15}) peut être construite comme suit. Considérons la fonction propre de l'Hamiltonien (\ref{eq.1.14}) dans le domaine \(T\) donnée comme le déterminant de la matrice \(N \times N\) \(\exp\{i\lambda_j z_k \}\)
+
+\begin{eqnarray}
+	\det [ \exp\{i\lambda_j z_k \}] 
+\end{eqnarray}
+
+avec des nombres arbitraires \(\lambda_j\). Cette fonction est égale à zéro sur la frontière du domaine \(T\) en raison de son antisymétrie par rapport à \(z_k\). Il est alors facile de voir que la fonction \(\chi_N\) donnée par
+
+\begin{eqnarray}
+	\chi_N & \propto & \left [  \prod_{ 1 \leq k < j \leq N } \left ( \partial_{z_j} - \partial_{z_k} +c \right ) \right ] \det [ \exp\{i\lambda_j z_k \}] 	\label{eq.1.17}
+\end{eqnarray}
+
+satisfait les équations (\ref{eq.1.14}) et (\ref{eq.1.15}). Pour vérifier, par exemple, l'égalité
+
+\begin{eqnarray}
+	\left( \partial_{z_2} - \partial_{z_1} +c \right )	\chi_N & =& 	 0 , \quad z_{2} = z_1 + 0  \label{eq.1.18}.
+\end{eqnarray}
+
+réécrivons $\chi_N$ comme
+
+\begin{eqnarray}
+	\chi_N & =& \left( \partial_{z_2} - \partial_{z_1} + c \right ) \tilde{\chi}_N
+\end{eqnarray}
+
+où
+
+\begin{eqnarray}
+	\tilde{\chi}_N & \propto & 	\prod_{j=3 }^N \left ( \partial_{z_j} - \partial_{z_1} +c \right )	\left ( \partial_{z_j} - \partial_{z_2} +c \right ) \times \left [  \prod_{ 3 \leq k < j \leq N } \left ( \partial_{z_j} - \partial_{z_k} +c \right ) \right ] \det [ \exp\{i\lambda_j z_k \}] 	.
+\end{eqnarray}
+
+Cette fonction est antisymétrique par rapport à $z_1 \leftrightarrow z_2$,
+
+\begin{eqnarray}
+	\tilde{\chi}_N(z_1 , z_2) & =& - 	\tilde{\chi}_N(z_2 , z_1)	
+\end{eqnarray}
+
+et elle est égale à zéro lorsque $z_1 = z_2$. En revenant à l'équation (\ref{eq.1.18}),
+
+\begin{eqnarray}
+	\left [ \left ( \partial_{z_2} -  \partial_{z_1} \right )^2 - c^2   \right ] \tilde{\chi}_N & = & 0, \quad z_2 = z_1  \label{eq.1.22}	
+\end{eqnarray}
+
+nous voyons que le membre de gauche change de signe lorsque $z_1 \leftrightarrow z_2$, et donc l'égalité (\ref{eq.1.22}) est correcte. Nous pouvons de la même manière vérifier les autres conditions aux limites. Ainsi, $\chi_n$ dans (\ref{eq.1.17}) est la fonction propre souhaitée de l'Hamiltonien $\operator{\mathcal{H}}_N$ (\ref{eq.1.11}). Le déterminant dans (\ref{eq.1.17}) peut être écrit comme une somme sur toutes les permutations $\mathcal{P}$ des nombres $1, 2, \cdots, N$ :
+
+\begin{eqnarray}
+	\det [ \exp\{i\lambda_j z_k \}] & = & 	\sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} 
+\end{eqnarray}
+
+où $[\mathcal{P}]$ désigne la parité de la permutation. On obtient, dans le domaine $T$ (\ref{eq.1.13}) :
+
+\begin{eqnarray}
+	\chi_N & = &	\left \{ N! \prod_{k<j} \left [ ( \lambda_j - \lambda_k )^2 + c^2 \right ] \right \}^{-1} \notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} \prod_{k<j} \left [  \lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  -i c \right ]
+\end{eqnarray}
+
+avec la constante spécifiée. Continuons maintenant $\chi_N$ par symétrie à l'ensemble de $\mathbb{R}^N$ :
+
+\begin{eqnarray}
+	\chi_N & = &	\left \{ N! \prod_{k<j} \left [ ( \lambda_j - \lambda_k )^2 + c^2 \right ] \right \}^{-1} \notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} \prod_{k<j} \left [  \lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  -i c \epsilon (z_j -z_k ) \right ]
+\end{eqnarray}
+
+où $\epsilon(x)$ est la fonction signe. La méthode décrite ci-dessus a apparemment été suggérée par M. Gaudin [9].
+Une autre manière utile d'écrire $\chi_N$ est la suivante :
+
+\begin{eqnarray}
+	\chi_N & = &	\frac{(-i){\frac{N(N-1)}2}}{ \sqrt{N!}}\left \{  \prod_{1\leq k<j\leq N} \epsilon (z_j -z_k ) \right \}\notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{k = 1}^N  z_k \lambda_{ \mathcal{P}(k) } \right \} \notag \\
+	&& \times \exp \left \{  \frac{i}{2} \sum_{1\leq k<j\leq N} \epsilon (z_j -z_k ) \theta(\lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  )  \right \} \label{eq.1.26} 
+\end{eqnarray}
+où
+\begin{eqnarray*}
+	\theta ( x ) & = & i \ln \left ( \frac{ic + x }{ic - x } \right ) .
+\end{eqnarray*}
+
+La formule (\ref{eq.1.26}) détermine la fonction d'onde de Bethe ; cette fonction est réductible à deux particules. Il convient de mentionner que les fonctions d'onde de tous les modèles résolubles par l'Ansatz de Bethe ont une forme similaire à (\ref{eq.1.26}). Discutons maintenant des propriétés de la fonction d'onde $\chi_N$. La fonction $\chi_N$ est une fonction symétrique des variables $z_j \ (j = 1, \dots, N)$ et une fonction continue de chacune d'elles. Ces propriétés deviennent évidentes si l'on réécrit la représentation (\ref{eq.1.26}) sous la forme suivante :
+
+\begin{eqnarray}
+	\chi_N & = &	\frac{  \displaystyle \prod_{k<j} ( \lambda_j - \lambda_k ) }{ \sqrt{N! \displaystyle \prod_{k<j}  [ ( \lambda_j - \lambda_k )^2 +c^2 ] } }  \sum_{\mathcal{P}}\exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} \notag \\
+	&& \times \prod_{k<j}  	\left [ 1 - \frac{ic \epsilon(z_j - z_k ) }{( \lambda_{ \mathcal{P}(j) }  - \lambda_{ \mathcal{P}(k) }  ) }.  \right ] 
+\end{eqnarray}
+
+On peut également voir à partir de cette formule que $\chi_N$ est une fonction antisymétrique des $\lambda_j$ :
+
+\begin{eqnarray}
+	\chi_N ( z_1 , \cdots , z_N \vert \lambda_1 , \cdots , \lambda_j , \cdots , \lambda_k , \cdots , \lambda_N ) & =& - 	\chi_N ( z_1 , \cdots , z_N \vert \lambda_1 , \cdots , \lambda_k , \cdots , \lambda_j , \cdots , \lambda_N ).
+\end{eqnarray}
+
+Ainsi, $\chi_N = 0 \ \text{si} \ \lambda_j = \lambda_k$, $j \neq k$. C’est la base du \textbf{principe d'exclusion de Pauli} pour les bosons en interaction en une dimension, qui joue un rôle fondamental dans la construction de l'état fondamental, appelé \textbf{mer de Dirac}. La démonstration complète du principe de Pauli est donnée dans la section VII.4.
+
+Il est connu que le théorème reliant le spin et les statistiques ne s'applique pas dans des dimensions 1 + 1 de l'espace-temps. Par conséquent, certains modèles de bosons sont équivalents à des modèles de fermions. Par exemple, le \textbf{modèle de sine-Gordon} est équivalent au \textbf{modèle de Thirring massif}, tandis que le gaz de bosons unidimensionnel pour $c = \infty$ est équivalent au modèle de fermions libres.
+
+Nous avons déjà construit les fonctions propres communes $\chi_N$ (équations (\ref{eq.1.26}), (\ref{eq.1.9})) des opérateurs $\operator{H}$, $\operator{P}$ et $\operator{Q}$, les valeurs propres correspondantes étant données par
+
+\begin{eqnarray}
+	E_N = \sum_{j = 1 }^N \lambda_j^2 ; ~ 	P_N = \sum_{j = 1 }^N \lambda_j^1 ; Q_N = \sum_{j = 1 }^N \lambda_j^0 = N 
+\end{eqnarray}
+
+Considérons maintenant les fonctions propres dans tout l'espace des coordonnées $\mathbb{R}^N : -\infty < z_j < \infty$ (avec $j = 1, \cdots, N$). La normalisation dans ce cas a été calculée dans \cite{g} :
+
+\begin{eqnarray}
+	\int_{-\infty}^{+\infty} d^N z \, \chi_N^\ast ( z_1 , \cdots , z_N \vert \lambda_1 , \cdots , \lambda_N ) \chi_N ( z_1 , \cdots , z_N \vert \mu_1 , \cdots , \mu_N ) & = & ( 2 \pi )^N 	\prod_{ j = 1 }^N \delta ( \lambda_j - \mu _1 ).
+\end{eqnarray}
+
+Les moments \(\{ \lambda \}\) et \(\{\mu\}\) sont supposés être ordonnés :
+
+\begin{eqnarray}
+	\lambda_1 < \lambda_2 < \cdots < \lambda_N , && 		\mu_1 < \mu_2 < \cdots < \mu_N 
+\end{eqnarray}
+
+Dans le même livre \cite{9}, la complétude du système \(\chi_N\) est également prouvée :
+
+\begin{eqnarray}
+	\int_{-\infty}^{+\infty} d^N \lambda \, \chi_N^\ast ( z_1 , \cdots , z_N \vert \lambda_1 , \cdots , \lambda_N ) \chi_N ( y_1 , \cdots , y_N \vert \lambda_1 , \cdots , \lambda_N ) & = & ( 2 \pi )^N 	\prod_{ j = 1 }^N \delta ( z_j - y_1 ).
+\end{eqnarray}
+
+\begin{eqnarray}
+	z_1 < z_2 < \cdots < z_N , && 		y_1 < y_2 < \cdots < y_N .
+\end{eqnarray}
+

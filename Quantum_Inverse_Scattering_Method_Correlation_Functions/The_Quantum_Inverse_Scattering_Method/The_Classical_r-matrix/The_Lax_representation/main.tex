@@ -1,0 +1,195 @@
+Considérons une équation évolutive hamiltonienne non linéaire classique dans un espace-temps bidimensionnel. Le hamiltonien correspondant sera noté \( H \). Nous étudions le système sur un intervalle périodique de longueur \( L \) ( \( 0 < x < L \) ). La base traditionnelle pour l'application de la méthode de diffusion inverse (ISM) à cette équation est qu'elle peut être représentée sous la forme de Lax :
+
+\begin{equation}
+    [\partial_t U(x|\lambda), \partial_x + V(x|\lambda)] = 0,\label{eq.1.1}
+\end{equation}
+qui est valide pour tout \( \lambda \). Ici, \( U \) et \( V \) sont des matrices \( k \times k \) (l'entier \( k \) dépend de l'équation considérée) qui dépendent d'un paramètre spectral complexe \( \lambda \) et des variables dynamiques du problème. La matrice \( V(x|\lambda) \) est appelée le potentiel et \( U(x|\lambda) \) est l'opérateur d'évolution temporelle. La condition (1.1) doit être valide pour tout \( \lambda \) et peut être considérée comme la condition de cohérence pour les équations différentielles suivantes :
+
+\begin{eqnarray}
+	\left \{ \begin{array}{rcl} \partial_t \Phi(x,t) = U(x|\lambda) \Phi(\lambda,t), \\ \partial_x \Phi(x,t) = - V(x|\lambda) \Phi(x,t). \end{array} \right . \label{eq.1.2}
+\end{eqnarray}
+    
+
+Ici, \( \Phi(x,t) \) est une fonction vectorielle inconnue qui dépend également de \( \lambda \). Dans le livre [5], la similarité avec les champs de Yang-Mills est expliquée. La condition (\ref{eq.1.1}) joue le rôle de la condition de courbure nulle, avec \( U \) et \( V \) jouant le rôle de champs de jauge. Dans les chapitres XIV et XV, nous dériverons des équations différentielles partielles non linéaires pour les fonctions de corrélation quantiques, à partir de la représentation de Lax. Cela donnera des exemples intéressants d'équations différentielles complètement intégrables.
+
+Il est utile de considérer la translation de la solution du système (\ref{eq.1.2}), \( \Phi \), le long de la direction \( x \) (à temps fixe \( t \)) :
+
+\begin{equation}
+    \Phi(x) = T(x,y|\lambda) \Phi(y).\label{eq.1.3}
+\end{equation}
+
+(Ici, nous avons supprimé l'argument temporel.) La matrice \( T(n, y|\lambda) \) est appelée la matrice de transition. Ci-dessous, nous discuterons en détail de cette matrice \( k \times k \). Mais d'abord, discutons de la représentation de Lax pour les modèles sur réseau (avec temps continu). Nous utiliserons des versions en réseau des modèles de théorie quantique des champs pour résoudre le problème des divergences ultraviolettes. Pour la quantification, nous avons également besoin de la représentation de Lax sur le réseau périodique avec \( M \) sites et un espacement de réseau \( \Delta \) :
+
+\begin{equation}
+    \partial_t L(n|\lambda) = U(n + 1|\lambda) L(n) - L(n) U(n|\lambda).\label{eq.1.4} 
+\end{equation}
+Ici, \( L \) et \( U \) sont des matrices \( k \times k \) qui dépendent du paramètre spectral et des variables dynamiques. L'égalité (\ref{eq.1.4}) est une conséquence de la condition de cohérence pour le problème suivant sur le réseau :
+
+\begin{eqnarray*}
+	\partial_t \Phi(n,t) &=  &U(n|\lambda) \Phi(n,t), \\
+    \Phi(n + 1,t) &=& L(n|\lambda) \Phi(n,t),	
+\end{eqnarray*}
+
+où \( n \) est le numéro du site du réseau. Pour étudier les modèles continus, il est pratique de considérer le réseau infinitésimal (\( \Delta \to 0 \)). La coordonnée du \( n \)-ème site du réseau ainsi obtenu est \( x_n = n\Delta \) (où \( n = 1, \cdots, M \) et \( M = \frac{L}{\Delta} \)). Pour un tel réseau, nous avons
+
+\begin{eqnarray}
+    L(n|\lambda)& = &I - V(x_n|\lambda) A + O(\Delta^2),
+\end{eqnarray}
+où \( I \) est la matrice unité \( k \times k \).
+
+Étudions maintenant la matrice de transition \( T(x, y|\lambda) \) (\ref{eq.1.3}), qui joue un rôle important dans la méthode d'inversion de diffusion (ISM). Dans le cas continu, cette matrice \( k \times k \) est définie sur l'intervalle \( [y, x] \) (\( x \geq y \)), par les exigences suivantes :
+
+\begin{eqnarray}
+	\left. \begin{array}{rcl} [\partial_x + V(x|\lambda)] T(x, y|\lambda)  &=& 0, \\ T(y, y|\lambda) & =  & I.\end{array} \right. \label{eq.1.6}
+\end{eqnarray}
+
+Parfois, il est utile d'écrire une solution formelle de cette équation :
+
+\begin{eqnarray}
+    T(x, y|\lambda) &=& \text{P} \exp \left\{ -\int_y^x V(z|\lambda) \, dz \right\}, \label{eq.1.7}
+\end{eqnarray}
+où \( \text{P} \) désigne l'ordonnancement de chemin des facteurs non commutatifs.
+
+La matrice de transition possède la propriété suivante semblable à un groupe : si \( z \) est un point intérieur dans l'intervalle \( [y, x] \), alors
+
+\begin{eqnarray*}
+    T(x, z|\lambda) T(z, y|\lambda) & = & T(x, y|\lambda) \quad (x \geq z \geq y).
+\end{eqnarray*}
+
+Le côté gauche ici est le produit de deux matrices \( k \times k \). La matrice de transition pour l'ensemble de l'intervalle périodique \([0, L]\) est appelée la matrice de monodromie \( T(L, 0|\lambda) \).
+
+La matrice de transition du \( m \)-ième site au \( (n + 1) \)-ième site peut être représentée comme le produit de \( (n - m + 1) \) matrices :
+
+\begin{eqnarray}
+    T(n, m|\lambda) & = & L(n|\lambda) L(n - 1|\lambda) \cdots L(m|\lambda), \quad n \geq m,
+\end{eqnarray}
+où \( L(k|\lambda) \equiv T(k, k|\lambda) \) est la matrice de transition élémentaire pour un site de réseau. La matrice de transition pour la longueur totale du réseau, \( T(M, 1|\lambda) \), est appelée la matrice de monodromie. La matrice \( L(k|\lambda) \) est appelée l'opérateur \( L \).
+
+
+La trace de la matrice de monodromie, tant dans les cas continu que sur réseau, joue un rôle particulièrement important :
+\begin{eqnarray}
+    \tau(\lambda) =  \mathrm{tr} \, T(L, 0|\lambda);&& \quad \tau(\lambda) = \mathrm{tr} \, T(M, 1|\lambda).
+\end{eqnarray}
+Dans la section suivante, nous verrons que \(  \tau(\lambda)  \) est indépendante du temps. L'Hamiltonien de l'équation évolutive initiale est exprimé en termes de dérivées logarithmiques de \(  \tau(\lambda)  \) au moyen d'identités de trace.
+
+Comme exemple, nous considérerons l'équation de Schrödinger non linéaire
+\begin{eqnarray}
+    i\partial_t \Psi = - \partial_x^2 \Psi + 2c \Psi^\ast \Psi \Psi,
+\end{eqnarray}
+avec l'Hamiltonien
+\begin{eqnarray}
+    H  & = &  \int_0^L dx \left( \partial_x \Psi^\ast \partial_x \Psi + c \Psi^\ast \Psi^\ast \Psi \Psi \right),
+\end{eqnarray}
+et les crochets de Poisson des champs \( \Psi \) et \( \Psi^* \) donnés par
+\begin{equation}
+    \{ \Psi(x), \Psi^*(y) \} = i\delta(x - y).
+\end{equation}
+
+La charge (nombre de particules) \( Q \) et l'impulsion \( P \) sont données par
+\begin{eqnarray}
+    Q = \int_0^L  \Psi^\ast \Psi \, dx ; \quad  P = -i \int_0^L \Psi^\ast \partial_x \Psi \, dx.
+\end{eqnarray}
+
+Ces quantités commutent avec \( H \) : $\{H, Q\} = \{H, P\} = 0$ 
+Ce modèle est la limite classique de l'équation quantique de Schrödinger non linéaire étudiée en détail dans le Chapitre \textit{I}. L'équation de Schrödinger non linéaire peut être représentée sous la forme de Lax (\ref{eq.1.1}) ; les matrices \( V \) et \( U \) \( 2 \times 2 \) sont données par
+\begin{eqnarray}
+    V(x\vert\lambda) &  = & i \frac{\lambda}2 \sigma_z + \Omega(x), \\
+    U(x\vert\lambda) & =  &i \frac{\lambda^2}2 \sigma_z + \lambda\Omega(x) + i \sigma_z ( \partial_x \Omega + c \Psi^\ast \Psi ),
+\end{eqnarray}
+Ici, \( \sigma_z \) est la matrice de Pauli \( \sigma_z = \mathrm{diag}(1, -1) \) et la matrice \( \Omega \) est donnée par
+\begin{eqnarray}
+    \Omega(x) & = & -\sqrt{c} (  \Im(\Psi(x) \sigma_x + \Re(\Psi(x) \sigma_y) =   \left ( \begin{array}{cc}  0 & i \sqrt{c} \Psi^\ast ( x) \\   - i \sqrt{c} \Psi ( x) & 0  \end{array} \right ) . \quad \sigma_x = \left ( \begin{array}{cc}  0 & 1\\  1  & 0  \end{array} \right ) ,  \& ~\sigma_y = \left ( \begin{array}{cc}  0 & -i\\  i  & 0  \end{array} \right )
+\end{eqnarray}
+
+La matrice de transition possède les propriétés suivantes :
+\begin{eqnarray}
+    \det T(x, y|\lambda) & =  & 1;\\
+    \sigma_x T^*(x, y|\lambda^*) \sigma_x & = & T(x, y|\lambda); \quad \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+\end{eqnarray}
+
+L'opérateur \( L \) correspondant sur le réseau infime est donné par :
+\begin{eqnarray}
+    L(n|\lambda) & =  &\begin{pmatrix} 1 - i \frac{\lambda \Delta}{2}  & -i \sqrt{c} \Psi_n^\ast \Delta  \\ i \sqrt{c} \Psi_n \Delta  & 1 + i \frac{\lambda \Delta}{2} \lambda \end{pmatrix} + O ( \Delta^2 ) , 
+\end{eqnarray}
+
+\begin{eqnarray}
+	\Psi_n = \frac{1}{\Delta} \int_{x_{n-1}}^{x_n} \Psi (x) \, dx ; \quad \{ \Psi_n , \Psi_m^\ast \} = \frac{i}{\Delta} \delta_{n,m}.	
+\end{eqnarray}
+
+Les identités de trace pour ce modèle sont les suivantes (voir (\ref{eq.1.9}), (\ref{eq.1.11}), (\ref{eq.1.13})) :
+\begin{eqnarray}
+	\ln \left [ e^{i \lambda L/2} \tau ( \lambda) \right ]  & \underset{\lambda \to i \infty }{ \longrightarrow} i c \left [ \lambda^{-1} Q + \lambda^{-2} P + \lambda^{-3} H + O\left ( \lambda^{-4} \right )  \right ] .
+\end{eqnarray}
+
+Dérivons cette formule. En prenant \( \lambda \to i\infty \), le potentiel \( V \) dans (1.14) devient proche de la diagonale, et on peut représenter la matrice de transition comme suit :
+\begin{eqnarray}
+    T(x, y|\lambda) & = &  G(x|\lambda) D(x, y|\lambda) G^{-1}(y|\lambda). \label{eq.1.22}
+\end{eqnarray}
+Ici, \( D \) est une matrice diagonale, et la matrice \( G \) est choisie sous la forme suivante :
+\begin{eqnarray}
+    G(x|\lambda) & =  &I + \sum_{k=1}^\infty \lambda^{-k} G_k(x)
+\end{eqnarray}
+où \( I \) est la matrice unité et les \( G_k \) sont des matrices antidiagonales. La signification de la représentation (\ref{eq.1.22}) est que la matrice de transition peut être diagonalisee par une transformation de jauge. L'équation différentielle (\ref{eq.1.6}) aboutit à l'équation suivante pour \( D \) :
+\begin{eqnarray}
+    [\partial_x + W(x\vert \lambda] D(x, y|\lambda) = 0; \quad D(y, y\vert\lambda) = I
+\end{eqnarray}
+où le potentiel \( W \) est égal à
+\begin{eqnarray}
+    W(x \vert \lambda) & =  &G^{-1}(x) \partial_x G(x) + i \frac{\lambda}2  G^{-1}(x) \sigma_z G(x) + G^{-1}(x) \Omega(x) G(x).
+\end{eqnarray}
+Les matrices \( G_k \) sont définies par la condition que le potentiel \( W \) soit une matrice diagonale. Il est facile de montrer que
+\begin{eqnarray}
+	G_1 = i \sigma_z \Omega;\quad G_2= - \partial_x \Omega; \quad G_3=i\sigma_z ( - \partial_x^2 \Omega + \Omega^3).	
+\end{eqnarray}
+
+Ainsi, le potentiel \( W \) est donné par
+
+\begin{eqnarray}
+	W & = & i \frac{\lambda}2 \sigma_z + \lambda^{-1} W_1 + \lambda^{-2} W_2 + \lambda^{-3} W_3 + O (\lambda^{-4}) 	
+\end{eqnarray}
+
+où
+\begin{eqnarray}
+	\left \{ \begin{array}{rcl} W_1 & = & -i \sigma_z \Omega^2 \\ W_2 & = & - \Omega \partial_x \Omega \\ W_3 & = & i \sigma_z \left [ \Omega \partial_x^2 \Omega - \Omega^4 \right ] \end{array}\right .
+\end{eqnarray}
+
+En raison de la diagonale de la matrice \( W \), l'équation (\ref{eq.1.24}) peut être résolue explicitement :
+\begin{eqnarray}
+    D(x, y|\lambda) & = & \exp \left\{ - \int_y^x W(z|\lambda) \, dz \right\}.
+\end{eqnarray}
+Prenons maintenant \( y = 0 \) et \( x = L \). Les conditions aux limites périodiques impliquent que \( G(L) = G(0) \). En utilisant (\ref{eq.1.17}) et (\ref{eq.1.22}), on a que \( \det D(L, 0) = 1 \). Ainsi,
+\begin{eqnarray}
+    D(L, 0|\lambda) &  =  & \exp \{ \sigma_z Z(X) \}
+\end{eqnarray}
+où \( Z(X) \) est une fonction scalaire. Il est facilement montré à partir de (\ref{eq.1.27})-(\ref{eq.1.29}) que
+\begin{eqnarray}
+	Z(\lambda) & = & - i \frac{\lambda L}{2} + i c \left [ \lambda^{-1} Q + \lambda^{-2} P + \lambda^{-3} H + O \left ( \lambda^{-4}  \right )  \right ] 	
+\end{eqnarray}
+
+
+En raison des conditions aux limites périodiques, nous avons
+
+\begin{eqnarray}
+	\tau ( \lambda ) = 	\text{tr} \, T(L, 0|\lambda) = \text{tr} \, D(L, 0|\lambda)
+\end{eqnarray}
+
+
+Pour \( \lambda \to i\infty \), nous avons \( D_{11}(L, 0|\lambda) \gg D_{22}(L, 0|\lambda) \). En utilisant (\ref{eq.1.30})-(\ref{eq.1.32}), nous pouvons calculer \( \ln \tau ( \lambda ) \) et obtenir (\ref{eq.1.21}). En réalité, les termes d'ordre supérieur dans (\ref{eq.1.21}) sont également intéressants :
+
+\begin{eqnarray}
+	\ln \left [ e^{i \lambda L /2 } \tau ( \lambda ) \right ]  & \underset{ \lambda \to i \infty }{ \longrightarrow}& ic \sum_{n = 1 }^\infty \lambda^{-n} I_n  	
+\end{eqnarray}
+
+Dans la section suivante, nous verrons que chaque \( I_n \) est indépendant du temps. Ainsi, les \( \{ I_n \} \) constituent l'ensemble infini des lois de conservation que possèdent les modèles exactement résolubles.
+
+Écrivons la première loi de conservation non triviale : 
+
+\begin{eqnarray}
+	\int dx \, \left \{  \Psi^\ast \Psi_{xxx} - \frac{3c}{2} {\Psi^\ast}^2 \Big ( \Psi^2  \Big )_x \right \} .	
+\end{eqnarray}
+
+
+
+
+
+

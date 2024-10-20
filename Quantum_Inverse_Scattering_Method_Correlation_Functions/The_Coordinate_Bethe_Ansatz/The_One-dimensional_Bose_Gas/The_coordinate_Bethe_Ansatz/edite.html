@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur LaTeX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <style>
+        #editor {
+            height: 500px;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Modifier fichier .tex</h2>
+    <div id="editor">% Voici ton fichier .tex</div>
+    <button onclick="saveFile()">Enregistrer</button>
+
+    <script>
+        // Initialiser Ace Editor
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/latex");
+
+        // Désactiver le wrap des lignes pour voir les lignes longues
+        editor.setOptions({
+            wrap: false
+        });
+
+        // Charger un fichier .tex via une requête fetch
+        fetch('./The_Coordinate_Bethe_Ansatz/The_One-dimensional_Bose_Gas/Introduction/main.tex')
+            .then(response => response.text())
+            .then(data => editor.setValue(data, -1));
+
+
+        // Fonction pour enregistrer les modifications
+        function saveFile() {
+            const content = editor.getValue();
+            fetch('./save.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ fileContent: content })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Fichier sauvegardé avec succès !');
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

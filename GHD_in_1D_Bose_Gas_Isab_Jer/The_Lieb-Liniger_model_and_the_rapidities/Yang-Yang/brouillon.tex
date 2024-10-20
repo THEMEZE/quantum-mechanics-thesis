@@ -1,0 +1,49 @@
+$$
+\begin{array}{c||ccc}
+	& x & F_1( x )  & b \\
+	\hline\hline
+	(\ref{eq:1Bess}) & \tilde{\epsilon} & x + \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \ln \left ( 1 + e^{x} \right )  \right \} & - \tilde{\mu} + \frac{x \mapsto x^2 }{t}	\\
+	(\ref{eq:2Bess}) & \tilde{\rho}  & x -\frac{\tilde{\nu}}{2 \pi} \cdot  \left \{\tilde{\Delta} \star x \right \} & \frac{\tilde{\nu}}{2 \pi} \\
+	(\ref{eq:3Bess}) & \tilde{\rho}_s  & x - \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \tilde{\nu} \cdot x \right \} & \frac{1}{2 \pi} 
+\end{array}
+$$
+
+		{~}\\
+
+		La notation tensorielle 		
+		\begin{eqnarray}
+			\{F_1\}^i_j  x^j   & = & b^i  	
+		\end{eqnarray} 
+		
+
+		
+$$
+\begin{array}{c||ccc}
+	& x^i & \{F_1\}^i_j  x^j & b^i\\
+	\hline\hline
+	(\ref{eq:1Bess}) & \tilde{\epsilon}^i & x^i + \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \ln \left ( 1 + e^{x } \right )  \right \}^i  & - \tilde{\mu} + \frac{x^i  \mapsto {x^i }^2 }{t}	\\
+	(\ref{eq:2Bess}) & \tilde{\rho}^i  & x^i - \left  \{ \frac{\tilde{\nu}}{2 \pi} \cdot \left \{\tilde{\Delta} \star x \right  \} \right \}^i & \frac{\tilde{\nu^i}}{2 \pi} \\
+	(\ref{eq:3Bess}) & {\tilde{\rho}_s}^i  & x^i - \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \tilde{\nu} \cdot  x \right \}^i & \frac{1}{2 \pi} 
+\end{array}
+$$
+		
+
+			
+		
+		Numériquement on résout dans l'espace des vecteur $x_i$ et non dans l'espace dual $x^i$. Ce que je fait réellement c'est résoudre 
+		
+		\begin{eqnarray}
+			\{F_1(x_i) \}_i    & = & b_i   	
+		\end{eqnarray}
+		
+
+		
+$$
+\begin{array}{c||ccc}
+	& x_i & \{F_1(x_i) \}_i & b_i \\
+	\hline\hline
+	(\ref{eq:1Bess}) & \left \{\tilde{\epsilon}(\tilde{\theta}_i) \right \}_i  & x_i + \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \ln \left ( 1 + e^{x } \right )  \right \}_i  & - \tilde{\mu} + \frac{\tilde{\theta}_i^2 }{t}	\\
+	(\ref{eq:2Bess}) & \left \{\tilde{\rho}(\tilde{\theta}_i) \right \}_i  & x_i  - \left  \{ \frac{\tilde{\nu}}{2 \pi} \cdot \left \{\tilde{\Delta} \star x \right  \} \right \}_i & \frac{\left \{\tilde{\nu}(\tilde{\theta}_i) \right \}_i}{2 \pi} \\
+	(\ref{eq:3Bess}) &  \left \{\tilde{\rho}_s(\tilde{\theta}_i) \right \}_i & x_i - \frac{1}{2 \pi} \left \{\tilde{\Delta} \star \tilde{\nu} \cdot  x \right \}_i & \frac{1}{2 \pi} 
+\end{array}\\
+$$

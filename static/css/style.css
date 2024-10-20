@@ -1,0 +1,119 @@
+body {
+    /*  background: #F9FFC9; */
+    background: #e7f6f7;
+    font-family: sans-serif;
+}
+
+a {
+    color: #565b5f;
+    /* Change la couleur du lien (bleu personnalisé) */
+    cursor: pointer;
+    text-decoration: none;
+    text-decoration-color: #ff6347;
+    /* Change la couleur du soulignement (orange personnalisé) */
+    text-decoration-style: wavy;
+    /* Style du soulignement : solide, ondulé, pointillé, etc. */
+}
+
+a:hover {
+    color: #f8fcf9;
+    /* Change la couleur du lien au survol (vert personnalisé) */
+    text-decoration-color: #e74c3c;
+    /* Change la couleur du soulignement au survol (rouge personnalisé) */
+}
+
+/* Titre gÈnÈral */
+#titre {
+    background: #d2c8b3;
+    color: #7bff00;
+    text-align: center;
+}
+
+/* Titre des sections*/
+#section {
+    text-align: center;
+}
+
+/* Menu vertical */
+#menu {
+    float: left;
+    width: 20%;
+    background: #b6c4c5;
+    text-align: center;
+}
+
+/* #menu a:link {
+    color: #372b18;
+    text-decoration: underline;
+} */
+
+#menu a:visited {
+    text-decoration: underline;
+}
+
+/* #menu a:hover {
+    color: #FF0000;
+} */
+
+#menu a:active {
+    text-decoration: none;
+}
+
+/* Corps du texte */
+#contenu {
+    margin-left: 20%;
+    padding: 10px 20px;
+}
+
+/* Pied de page */
+#pied {}
+
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Dancing+Script&display=swap');
+
+#deuxiemeTrait {
+    height: 1px;
+    width: 75%;
+    background-color: #FFFAE1;
+    margin: 60px auto;
+}
+
+#copyrightEtIcons {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 10%;
+}
+
+#copyright {
+    width: 50%;
+    text-align: left;
+    color: #182230;
+}
+
+#icons {
+    width: 50%;
+    text-align: right;
+}
+
+#icons a {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 1.3em;
+    color: #2d2c26;
+}
+
+#icons a:hover {
+    transform: scale(1.5);
+    transition: 0.1s;
+}
+
+
+/* Titre d'un exposÈ */
+.expose {
+    font-weight: bold;
+}
+
+/* Lieux des confÈrences */
+.lieu {
+    font-weight: bold;
+    color: rgb(102, 51, 51);
+}

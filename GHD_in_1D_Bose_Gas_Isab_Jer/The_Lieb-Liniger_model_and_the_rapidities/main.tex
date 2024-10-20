@@ -1,0 +1,29 @@
+En l'absence d'un potentiel externe, l'hamiltonien des bosons unidimensionnels avec une répulsion delta s'écrit, sous forme quantifiée du second ordre :
+\begin{eqnarray}\label{eq:I-0-6}
+	H & =& \int \Psi^\dag(x) \left [ - \frac{\hbar^2 \partial_x^2}{2m} - \mu + \frac{g}{2}\Psi^\dag(x)\Psi(x) \right ] \Psi(x) \, dx.
+\end{eqnarray}
+
+Ici, $\Psi^\dag(x)$ et $\Psi(x)$ sont les opérateurs de création/annihilation des bosons qui satisfont aux relations canoniques de commutation $[ \Psi(x) , \Psi^\dag(x')] = \delta ( x - x')$, $m$ représente la masse des bosons, $g > 0$ est la force de répulsion en une dimension, et $\mu$ est le potentiel chimique. Le nombre total de particules dans le système est $N = \int \langle  \Psi^\dag(x)\Psi(x) \rangle dx$. Dans la littérature, il est courant de définir le paramètre $c = mg/\hbar^2$, homogène à une inverse de longueur. Dans une boîte de longueur $L$, le rapport de $c$ à la densité de particules $n = N/L$ donne la force de répulsion adimensionnelle, ou paramètre de Lieb,
+\begin{eqnarray}
+	\gamma & = & \frac{c}{n} = \frac{mg}{\hbar^2n}.	
+\end{eqnarray}
+
+Dans le reste de cette section, nous examinons quelques faits fondamentaux sur la solution exacte du modèle (\ref{eq:I-0-6}) de {\color{blue} Lieb et Liniger} ({\color{blue}1963}), consultez ({\color{blue}Gaudin 2014, Korepin et al. 1997}) pour des introductions. En particulier, nous mettons l'accent sur le concept crucial des {\em rapidités}, et nous passons en revue un certain nombre de résultats qui se sont révélés utiles dans les développements récents de la dynamique hydrodynamique généralisée. Nous choisissons $\hbar  = m = 1$.\\
+
+Modèle de {\sc Lieb-Liniger} :
+\begin{eqnarray}
+	 H & = & - \frac{\hbar^2 }{2m} \sum_{i = 1}^N \partial_{z_i}^2  + g\sum_{i < j } \delta ( z_i - z_j ) 	~\overset{\hbar  = m = 1}{=}~ - \frac{1 }{2} \sum_{i = 1}^N \partial_{z_i}^2  + c\sum_{i < j } \delta ( z_i - z_j ).
+\end{eqnarray}
+
+\subsection{Le décalage de diffusion (ou délai temporel de Wigner)}
+\input{The_Lieb-Liniger_model_and_the_rapidities/The_scattering_shift/main}
+
+\subsection{La fonction d'onde de Bethe et les rapidités en tant que moments asymptotiques}
+\input{The_Lieb-Liniger_model_and_the_rapidities/La_fonction_d_onde_de_Bethe_et_les_rapidites_en_tant_que_moments_asymptotiques/main}
+
+\subsection{Thermodynamic limit}
+\input{The_Lieb-Liniger_model_and_the_rapidities/Limit-Termodynamic/main}
+
+\subsection{Entropy maximization: the Yang-Yang equation}
+\input{The_Lieb-Liniger_model_and_the_rapidities/Yang-Yang/main}
+

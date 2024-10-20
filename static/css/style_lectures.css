@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face {
+  font-family: "DMSerif";
+  src: url(./fonts/DMSerifDisplay-Regular.ttf)
+}
+
+/* L'étoile donne du style a tous les élement  */
+/* * {
+    margin : 0 ;
+    padding : 0;
+    border: 2px solid red
+}  */
+
+body {
+  background: #D5F6FF;
+  font-family: sans-serif
+}
+
+input,
+select, span {
+  background: rgba(242, 237, 237, 0.108);
+  /* Fond transparent à 20% */
+  font-family: "DMSerif";
+  /* Police personnalisée */
+  font-size: 1vw;
+  /* Augmente la taille de la police */
+  width: 100%;
+  /* La largeur prend 100% de l'espace parent */
+  height: auto;
+  /* Ajuste automatiquement la hauteur selon le contenu */
+  border: 0.1px solid #D5F6FF;
+  /* Bordure visible */
+  padding: 0px;
+  /* Ajoute du padding intérieur */
+  color: darkblue;
+  /* Couleur du texte */
+  box-sizing: border-box;
+  /* S'assure que la bordure et le padding sont inclus dans les dimensions */
+  justify-content: center;
+}
+
+input::placeholder,
+select::placeholder,
+button::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  /* Placeholder avec une couleur semi-transparente */
+}
+
+
+
+a {
+  text-decoration: none;
+  color: #070918;
+}
+
+/* Titre gÈnÈral */
+#titre {
+  background: #0044AA;
+  color: #D5F6FF;
+  text-align: center;
+}
+
+/* Titre des sections*/
+#section {
+  text-align: center;
+}
+
+#head {
+  border: 2px dashed skyblue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "me con cov"
+  ;
+}
+
+#deuxiemeTrait {
+  height: 1px;
+  width: 75%;
+  background-color: #FFFAE1;
+  margin: 60px auto;
+}
+
+/* Menu vertical */
+#head #menu {
+  grid-area: me;
+  vertical-align: text-top;
+  float: left;
+  width: 100%;
+  height: 400px;
+  background: #AACCFF;
+}
+
+#head #menu a:link {
+  text-decoration: none;
+}
+
+#head #menu a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+#menu a:hover {
+  color: #FF0000;
+}
+
+#menu a:active {
+  text-decoration: none;
+}
+
+
+/* Corps du texte */
+#head #contenu {
+  grid-area: con;
+  margin-left: 2%;
+  padding: 10px 20px;
+}
+
+#head #cover {
+  grid-area: cov;
+}
+
+#head #cover {
+  border: °px solid rgba(139, 49, 0, 0.355) ;
+  border-radius: 10px;
+  background: #aaccff24;
+  /* padding: 10px; */
+  margin-top: 20px;
+  /* min-height: 150px; */
+  list-style-type: disc;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  /* padding-inline-start: 40px; */
+  unicode-bidi: isolate;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas:
+    "fi"
+    "ii"
+    "pi"
+  ;
+}
+
+#head #cover #id_file,
+#head #cover #pdf-canvas{
+  margin: 5px;
+  border: 2px solid darkblue;
+  border-radius: 5px;
+}
+
+#head #cover #id_file {
+  grid-area: fi;
+  height: 30px;
+  font-family: "DMSerif";
+  text-align: center;
+  font-size: 0.5rem;
+  border: 2px solid darkblue ;
+  border-radius: 10px;
+  padding: 0px;
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  /*Centre horizontalement chaque élément dans sa cellule */
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "t f c";
+    /* margin: 0;
+  padding: 0;
+  gap: 0;
+  box-sizing: border-box; */
+}
+
+#head #cover #id_file #texte{
+  grid-area: t;
+  width: 100%;
+  font-size: 1vw;
+  color: darkblue;
+  font-family: "DMSerif";
+}
+
+#head #cover #id_file #file{
+  grid-area: f;
+}
+
+#head #cover #id_file #load-file{
+  grid-area: c;
+}
+
+
+#head #cover #pdf-canvas {
+  grid-area: ii;
+  width: 90%;
+  height: auto;
+  border: 2px solid darkblue ;
+  border-radius: 10px;
+  direction: ltr;
+}
+
+
+#head #cover #id_page {
+  grid-area: pi;
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  /*Centre horizontalement chaque élément dans sa cellule */
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "prec nbm next";
+    /* border: 2px solid darkblue ;
+    border-radius: 10px; */
+    /* margin: 0;
+  padding: 0;
+  gap: 0;
+  box-sizing: border-box;
+  overflow: hidden; */
+}
+
+#head #cover #id_page #prev-page {
+  grid-area: prec;
+  border: 2px solid darkblue ;
+  border-radius: 10px;
+}
+
+#head #cover #id_page #next-page {
+  grid-area: next;
+  border: 2px solid darkblue ;
+  border-radius: 10px;
+}
+
+#head #cover #id_page #num-page {
+  grid-area: nbm;
+  border: 2px solid darkblue ;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+/* Responsive */
+
+
+@media screen and (max-width:1000px) {
+
+  #head {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "me vi cov"
+      "con con con"
+  }
+
+}
+
+@media screen and (max-width:400px) {
+
+  #head {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "me"
+      "cov"
+      "con"
+  }
+
+}
+
+
+/* #pdf-render {
+  width: 50%;
+    height: 60px;
+    border: 1px solid #ccc;
+    overflow: auto; 
+} */
+
+#affichage-pdf {
+  border: 2px dashed skyblue;
+  border-radius: 10px;
+  padding: 0px;
+  margin-top: 20px;
+  /* min-height: 150px; */
+  /* list-style-type: disc; */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+  /*Centre horizontalement chaque élément dans sa cellule */
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 3fr 0.01fr 3fr;
+  grid-template-rows: 1fr 15fr 1fr;
+  grid-template-areas:
+    "f1 vi f2"
+    "i1 vi i2"
+    "p1 vi p2";
+}
+
+
+/* #pdf-render {
+  width: 100%; /* Largeur du conteneur */
+/* max-width: 800px; /* Largeur maximale */
+/* margin: 0 auto; Centrer le conteneur */
+/* } */
+#affichage-pdf #id_file1,
+#affichage-pdf #canvas-1,
+#affichage-pdf #id_file2,
+#affichage-pdf #canvas-2
+{
+  margin: 5px;
+  border: 2px solid darkblue;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  align-items: center;
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  justify-items: center;
+}
+
+#affichage-pdf #id_file1,
+#affichage-pdf #prev-page-1,
+#affichage-pdf #next-page-1,
+#affichage-pdf #num-page-1,
+#affichage-pdf #id_file2,
+#affichage-pdf #prev-page-2,
+#affichage-pdf #next-page-2,
+#affichage-pdf #num-page-2 {
+  height: 30px;
+  font-family: "DMSerif";
+  text-align: center;
+}
+
+#affichage-pdf #canvas-1,
+#affichage-pdf #canvas-2 {
+  width: 90%;
+  height: auto;
+}
+
+#affichage-pdf #id_file1 {
+  grid-area: f1;
+}
+
+#affichage-pdf #id_file1,
+#affichage-pdf #id_file2 {
+  width: 90%;
+  justify-items: center;
+  /* Centre horizontalement chaque élément dans sa cellule */
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "t f c";
+}
+
+#affichage-pdf #id_file1 #text1,
+#affichage-pdf #id_file2 #text2 {
+  grid-area: t;
+  width: 100%;
+  font-size: 1vw;
+  color: darkblue;
+  font-family: "DMSerif";
+}
+
+#affichage-pdf #id_file1 #file1,
+#affichage-pdf #id_file2 #file2 {
+  grid-area: f;
+  width: 90%;
+  font-family: "DMSerif";
+}
+
+#affichage-pdf #id_file1 #load-file-1,
+#affichage-pdf #id_file2 #load-file-2 {
+  grid-area: c;
+}
+
+#affichage-pdf #canvas-1 {
+  grid-area: i1;
+}
+
+#affichage-pdf #id_page-1 {
+  grid-area: p1;
+}
+
+#affichage-pdf #id_page-2 {
+  grid-area: p2;
+}
+
+#affichage-pdf #id_page-1,
+#affichage-pdf #id_page-2 {
+  /* border: 2px solid darkblue;
+  border-radius: 10px; */
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  /*Centre horizontalement chaque élément dans sa cellule */
+  align-items: center;
+  /* Centre verticalement chaque élément dans sa cellule */
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "prec nbm next";
+    margin: 0;
+  padding: 0;
+  gap: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#affichage-pdf #prev-page-1,
+#affichage-pdf #next-page-1,
+#affichage-pdf #num-page-1,
+#affichage-pdf #prev-page-2,
+#affichage-pdf #next-page-2,
+#affichage-pdf #num-page-2 {
+  /* margin: 5px; */
+  border: 2px solid darkblue;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+#affichage-pdf #prev-page-1, #affichage-pdf #prev-page-2 {
+  /* display: grid;           
+  align-items: start;        
+  justify-items: start;  */
+}
+
+
+#affichage-pdf #id_page-1 #prev-page-1,
+#affichage-pdf #id_page-2 #prev-page-2 {
+  grid-area: prec;
+  text-align: left;
+}
+
+#affichage-pdf #id_page-1 #next-page-1,
+#affichage-pdf #id_page-2 #next-page-2 {
+  grid-area: next;
+  text-align: right;
+}
+
+#affichage-pdf #id_page-1 #num-page-1,
+#affichage-pdf #id_page-2 #num-page-2 {
+  grid-area: nbm;
+  width: 90%;
+  text-align: center;
+}
+
+#affichage-pdf #id_file2 {
+  grid-area: f2
+}
+
+#affichage-pdf #canvas-2 {
+  grid-area: i2;
+}
+
+#affichage-pdf #prev-page-2 {
+  grid-area: p2;
+}
+
+#affichage-pdf #next-page-2 {
+  grid-area: n2;
+}
+
+#affichage-pdf #num-page-2 {
+  grid-area: pn2;
+}
+
+
+canvas {
+  width: 100%;
+  /* Largeur du canvas */
+  height: auto;
+  /* Hauteur automatique pour maintenir le ratio */
+}
+
+/* Responsive */
+
+
+@media screen and (max-width:1000px) {
+
+  .affichage-pdf {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15fr 1fr 1fr 15fr 1fr 1fr;
+    grid-template-areas:
+      "i1 i1"
+      "p1 n1"
+      "pn1 pn1"
+      "i2 i2"
+      "p2 n2"
+      "pn2 pn2";
+  }
+
+}
+
+@media screen and (max-width:400px) {
+
+  .affichage-pdf {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10fr 1fr 1fr 1fr 10fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "i1"
+      "p1"
+      "n1"
+      "pn1"
+      "i2"
+      "p2"
+      "n2"
+      "pn2";
+  }
+
+}
+
+/* Pied de page */
+#pied {}

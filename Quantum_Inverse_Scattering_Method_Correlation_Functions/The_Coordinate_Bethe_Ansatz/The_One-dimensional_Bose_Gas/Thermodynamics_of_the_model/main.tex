@@ -1,0 +1,22 @@
+Considérons l'ensemble canonique et calculons la fonction de partition $Z$ du modèle :
+\begin{equation}
+    Z = \mathrm{tr}\left(e^{- \operator{H}/T}\right) = e^{- F/T}. \label{eq.5.1}
+\end{equation}
+Ici, $\operator{H}$ est le hamiltonien donné par (\ref{eq.1.2}) et $T$ est la température. L'énergie libre $F$ est donnée par (\ref{eq.5.1}). Rappelons que nous étudions la limite thermodynamique ($L \rightarrow \infty, N \rightarrow \infty$) avec la densité du gaz restant fixe :
+\begin{equation}
+    D = \frac{N}{L} = \text{const}
+\end{equation}
+Dans la limite thermodynamique, les vacants, particules et trous (ceux définis dans la section 2, voir (\ref{eq.2.29}), (\ref{eq.2.30})) ont des densités de distribution finies $\rho_p(\lambda)$, $\rho_h(\lambda)$ et $\rho_t(\lambda)$ dans l'espace des impulsions, qui sont définies comme suit :
+\begin{align}
+    L \rho_p(\lambda) d\lambda & = \text{nombre de particules dans } [\lambda, \lambda + d\lambda] \\
+    L \rho_h(\lambda) d\lambda & = \text{nombre de trous dans } [\lambda, \lambda + d\lambda] ,\\
+    L \rho_t(\lambda) d\lambda & = \text{nombre de vacants dans } [\lambda, \lambda + d\lambda].
+\end{align}
+Le nombre de vacants étant simplement la somme du nombre de particules et de trous :
+\begin{equation}
+    \rho_t(\lambda) = \rho_p(\lambda) + \rho_h(\lambda)
+\end{equation}
+Par vacants, nous entendons les positions potentielles dans l'espace des impulsions qui peuvent être occupées par des particules ou des trous. Dans la limite thermodynamique, la somme de l'équation (\ref{eq.2.31}) se transforme en une intégrale impliquant la densité $\rho_p(\lambda)$, et on obtient :
+\begin{equation}
+    2\pi \rho_t(\lambda) = 1 + \int_{-\infty}^{\infty} K(\lambda, \mu) \rho_p(\mu) d\mu
+\end{equation}
