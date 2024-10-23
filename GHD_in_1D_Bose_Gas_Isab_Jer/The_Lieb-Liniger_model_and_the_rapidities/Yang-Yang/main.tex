@@ -16,7 +16,7 @@
 	\end{eqnarray}
 
 	\begin{eqnarray}
-		\ln n! & \underset{n \to \infty}{\sim} & n \ln n \underbrace{- n + \ln \sqrt{2 \pi n }}_{o \left ( n \ln n \right ) } ,\\
+		\ln n! & \underset{n \to \infty}{\rightarrow} & n \ln n \underbrace{- n + \ln \sqrt{2 \pi n }}_{o \left ( n \ln n \right ) } ,\\
 		&  \underset{n \to \infty}{\sim} & n \ln n  
 	\end{eqnarray}
 
@@ -36,104 +36,218 @@
 	\end{eqnarray}
 	
 	
+	On écrit l'observable énergie et nombre :
+	\begin{eqnarray}
+		\operator{\mathcal{E}} & = & \sum_{ \vert \{ \theta_a\} \rangle }  \left ( \sum_{a=1}^N  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert, \\
+		\operator{\mathcal{N}} & = & \sum_{\vert \{\theta_a\} \rangle }   \left ( \sum_{a=1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert,
+	\end{eqnarray}
+	
+	avec $  \sum_{a=1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{ \mathcal{E}}  \vert \{ \theta_a\}\rangle $ et $\sum_{a=1}^N  1  \equiv \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{\mathcal{N}}  \vert \{ \theta_a\}\rangle $
+
+	
+	La probabilité que le système soit dans configuration $\vert \{ \theta_a \}\rangle $  est 
+	\begin{eqnarray}
+		P_{\vert \{\theta_a \} \rangle} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
+	\end{eqnarray}
+	
+	avec la fonction de partition $Z_{thermal} = e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )} =  e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
+	
+	Soit les moyennes , variance et équatype de l'observable 
+	\begin{eqnarray}
+		\operator{\mathcal{O}}_i & = & \sum_{\vert \{\theta_a \} \rangle} \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert
+	\end{eqnarray}
+	
+	$\operator{\mathcal{O}}_i \in \{\operator{\mathcal{N}} , \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \} $  tel que $\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} = \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right ) $ et pour simplifier ici $Z \equiv Z_{thermal}$:
+	
+	\begin{eqnarray}
+		\overline{\operator{\mathcal{O}}_i } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} \overbrace{\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z}}^{P_{\vert \{\theta_a \} \rangle}} = - \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i } =  - \frac{ \partial \ln Z }{ \partial \beta_i } \\
+		\overline{\operator{\mathcal{O}}_i^2 } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}^2 \frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} = \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }\\
+		\Delta_{\operator{\mathcal{O}}_i}^2  & = & 	\overline{(\operator{\mathcal{O}}_i - \overline{\operator{\mathcal{O}}_i})^2 }  = 	\overline{\operator{\mathcal{O}}_i^2 }  -  \overline{\operator{\mathcal{O}}_i }^2 = \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 } - \left ( \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }\right )^2 = \frac{\partial}{\partial \beta_i } \left ( \frac{1}{Z} \frac{\partial Z}{\partial \beta_i } \right )	
+	\end{eqnarray}
+	
+	si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta$.\\
+	
+	\begin{eqnarray}
+		\overline{\operator{\mathcal{O}}_i } & = & 	\sum_{\vert \{\theta_a \} \rangle} 	\langle \{\theta_a \}  \vert \operator{\mathcal{O}}_i \vert \{\theta_a \}  \rangle \frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z},\\
+		& = & 	\sum_{\vert \{\theta_b \} \rangle} \langle \{\theta_b \}  \vert  \operator{\mathcal{O}}_i \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle  	\langle \{\theta_a \}  \vert  \{\theta_b \}  \rangle ,\\
+		& = & Tr (  \operator{\mathcal{O}}_i \operator{\rho}) 
+	\end{eqnarray}
+	
+	avec $\operator{\rho} = \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert $ et $Z = Tr (  \operator{\rho}) $\\
+
+	
 	
 	
 	La matrice densité thermique est :
 	\begin{eqnarray}
-		\hat{\rho}_{thermal} & = & \frac{e^{-H/T}}{Z_{thermal}}, \\
-		e^{-H/T} & = & 	\sum_{\vert \theta_a \rangle} e^{- \sum_a ( \varepsilon(\theta_a)- \mu ) /T } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+		\operator{\rho}_{thermal} & = & \frac{e^{- \beta \operator{H}}}{Z_{thermal}}, \\
+		e^{-\beta \operator{H}} & = & 	\sum_{\vert \theta_a \rangle} e^{- \beta \sum_a ( \varepsilon(\theta_a)- \mu ) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
 	\end{eqnarray}
 	
-	La matrice densité GGE est :
+		
+	
+
+
+
+	
+
+	
+	La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 	\begin{eqnarray}
-		\hat{\rho}_{GGE}[f] & = & \frac{e^{-Q[f]}}{Z_{GGE}}, \\
-		e^{-Q[f]} & = & 	\sum_{\vert \theta_a \rangle} e^{- \sum_a f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+		\operator{\rho}_{GGE}[f] & = & \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert = \frac{e^{-\operator{Q}[f]}}{Z_{GGE}}, \\
+		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_{a=1}^N  f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
 	\end{eqnarray}
 	
-	pour une certaine fonction f. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
+	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_{a = 1}^N f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
 	La moyenne GGE d'un observable s'écrit ,
 	
 	\begin{eqnarray}
-		\langle \mathcal{O} \rangle_{GGE} & \doteq & \frac{\text{Tr} (\mathcal{O}\hat{\rho}_{GGE}[f])}{\text{Tr} (\hat{\rho}_{GGE}[f])} = \frac{\text{Tr} (\mathcal{O}e^{-Q[f]})}{\text{Tr} (e^{-Q[f]})}	 = \frac{\sum_{\vert \theta_a \rangle} \langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle e^{- \sum_a f(\theta_a) }  }{\sum_{\vert \theta_a \rangle} e^{- \sum_a f(\theta_a) } }
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \frac{\text{Tr} (\operator{\mathcal{O}}\operator{\rho}_{GGE}[f])}{\text{Tr} (\operator{\rho}_{GGE}[f])} = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[f]})}{\text{Tr} (e^{-\operator{Q}[f]})}	 = \frac{ \sum_{\vert \{\theta_a \}\rangle} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1 }^\infty f(\theta_a) }  }{\sum_{\vert  \{\theta_a  \} \rangle} e^{- \sum_{a=1}^\infty  f(\theta_a) } }
 	\end{eqnarray}
 	
-	pour une certaine observable $\mathcal{O}$. Lorsque l'observable O est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\rho$ dans la limite thermodynamique.
+	pour une certaine observable $\operator{\mathcal{O}}$. Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\rho$ dans la limite thermodynamique.
 	\begin{eqnarray}
-		\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle & = & \langle \mathcal{O}\rangle_{[\rho]}
+		\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]}
 	\end{eqnarray}
 	
 	Cette hypothèse est liée à une "Hypothèse de thermalisation généralisée des états propres", voir par exemple (Cassidy et al. 2011, Dymarsky and Pavlenko 2019, He et al. 2013, Pozsgay 2011, 2014, Vidmar and Rigol 2016). Sous cette hypothèse, on peut remplacer la somme précédente sur tous les états propres par une intégrale fonctionnelle sur la distribution des rapides à grains grossiers $\rho$,
 	\begin{eqnarray}
-		\underset{\mbox{\tiny therm.}}{\lim} \langle \mathcal{O}\rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \langle \mathcal{O}\rangle_{[\rho]} \, \#\mbox{microstates.}\,  e^{-L\int f ( \theta ) \rho ( \theta ) d \theta } }{\int \mathcal{D} \rho  \, \#\mbox{microstates.}\,  e^{-L\int f ( \theta ) \rho ( \theta ) d \theta }},\\
-		& = & \frac{\int \mathcal{D} \rho \langle \mathcal{O}\rangle_{[\rho]} \,   e^{L ( S_{YY}[\rho] -  \int f ( \theta ) \rho ( \theta ) d \theta) }}{\int \mathcal{D} \rho  \,  e^{L ( S_{YY}[\rho] -  \int f ( \theta ) \rho ( \theta ) d \theta)  }},
+		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}}\rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \langle \operator{\mathcal{O}}\rangle_{[\rho]} \, \#\mbox{microstates.}\,  e^{-L\int f ( \theta ) \rho ( \theta ) d \theta } }{\int \mathcal{D} \rho  \, \#\mbox{microstates.}\,  e^{-L\int f ( \theta ) \rho ( \theta ) d \theta }},\\
+		& = & \frac{\int \mathcal{D} \rho \langle \operator{\mathcal{O}}\rangle_{[\rho]} \,   e^{L ( S_{YY}[\rho] -  \int f ( \theta ) \rho ( \theta ) d \theta) }}{\int \mathcal{D} \rho  \,  e^{L ( S_{YY}[\rho] -  \int f ( \theta ) \rho ( \theta ) d \theta)  }},
 	\end{eqnarray}
 	
 	L'intégrale fonctionnelle est alors dominée par la distribution des racines qui minimise une fonctionnelle d'énergie libre (généralisée) :
 	
 	\begin{eqnarray}
-		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \mathcal{O}\rangle_{GGE} = 0 & \Leftarrow & \frac{\delta}{\delta \rho} \left [ \int  f(\theta) \rho(\theta )  d\theta - S_{YY} [\rho] \right ] = 0  
+		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} = 0 & \Leftarrow & \frac{\delta}{\delta \rho} \left [ \int  f(\theta) \rho(\theta )  d\theta - S_{YY} [\rho] \right ] = 0  
 	\end{eqnarray}
 	
 	En utilisant la définition de l'entropie de Yang-Yang et l'équation constitutive (??), on obtient la relation suivante entre la fonction $f(\theta)$ définissant la matrice de densité diagonale (??) et la distribution de rapidité $\rho (\theta)$ qui domine l'intégrale fonctionnelle (??).\\
 	
-	\begin{eqnarray}
-		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \mathcal{O}\rangle_{GGE} = 0 & \Leftarrow &   	f(\theta) \rho(\theta )  -  \rho_s (\theta ) \ln \rho_s ( \theta ) +  \rho (\theta ) \ln \rho ( \theta ) + ( \rho_s (\theta ) - \rho ( \theta ) )  \ln   ( \rho_s ( \theta ) - \rho ( \theta ) ) = <0	
-	\end{eqnarray}
+%	\begin{eqnarray}
+%		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}}\rangle_{GGE} = 0 & \Leftarrow &   	f(\theta) \rho(\theta )  -  \rho_s (\theta ) \ln \rho_s ( \theta ) +  \rho (\theta ) \ln \rho ( \theta ) + ( \rho_s (\theta ) - \rho ( \theta ) )  \ln   ( \rho_s ( \theta ) - \rho ( \theta ) ) = <0	
+%	\end{eqnarray}
 
 	
 	On rappel que le scattering shift $\Delta(\theta ) $ est donné par
 	\begin{eqnarray*}
 		\Delta( \theta ) & \doteq & \frac{d \phi }{d \theta } ( \theta ) = \frac{ 2c} { c^2 + \theta^2}	
 	\end{eqnarray*}
-	et que 
-	\begin{eqnarray}
-		\theta_a + \frac{1}{L} \sum_{b \neq a} 2 \arctan \left( \frac{\theta_a - \theta_b }{c} \right ) = p_a \quad \mbox{où}\quad \left \{\begin{array}{rclll} p_a & \in & \frac{2\pi}{L} \mathbb{Z} & \mbox{pour} & N \in 2\mathbb{N} + 1 ~\mbox{\em (odd)} \\ p_a & \in & \frac{2\pi}{L} \left ( \mathbb{Z}+ \frac{1}{2} \right ) & \mbox{pour} & N \in \mathbb{N} ~\mbox{\em(even)} \end{array} \right. 	
-	\end{eqnarray}
+%	et que 
+%	\begin{eqnarray}
+%		\theta_a + \frac{1}{L} \sum_{b \neq a} 2 \arctan \left( \frac{\theta_a - \theta_b }{c} \right ) = p_a \quad \mbox{où}\quad \left \{\begin{array}{rclll} p_a & \in & \frac{2\pi}{L} \mathbb{Z} & \mbox{pour} & N \in 2\mathbb{N} + 1 ~\mbox{\em (odd)} \\ p_a & \in & \frac{2\pi}{L} \left ( \mathbb{Z}+ \frac{1}{2} \right ) & \mbox{pour} & N \in \mathbb{N} ~\mbox{\em(even)} \end{array} \right. 	
+%	\end{eqnarray}
+	
+	On rappel que $2 \pi \rho_s = 1 + \Delta \underset{\theta}{\star} \rho $ avec le produit de convolution $\underset{\theta}{\star} $ :  $(f \underset{\theta}{\star} g ) ( \theta) =  \int g( \theta - \theta' ) f(\theta' ) d \theta' $ dons je vais simplifier la notation en $\underset{\theta}{\star} \equiv \star $.
 	
 	\begin{eqnarray}
-		\frac{\delta \rho_s }{ \delta \rho } ( \theta ) & = & 	\int  \frac{d \theta ' }{ 2 \pi } \Delta ( \theta - \theta' ), \\
-		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = & \int  d\theta\left \{  \frac{\delta \rho_s }{ \delta \rho } \left ( \ln  \rho_s + {\color{blue} \cancel{ \color{black}1}}  \right ) - \left (  \ln \rho + {\color{blue} \cancel{ \color{black}1}} ) \right )  -  \left ( \frac{\delta \rho_s }{ \delta \rho } - 1 \right ) \left ( \ln ( \rho_s -\rho ) +  {\color{blue} \cancel{ \color{black} 1}}  \right ) \right  \} ( \theta )  ,\\
-		& = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \frac{\delta \rho_s }{ \delta \rho } \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta ) , \\
+		\frac{\delta \rho_s }{ \delta \rho_i }  & = & \frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i } , \\
+		\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta\left \{   \left ( \ln  \rho_s + {\color{blue} \cancel{ \color{black}1}}  \right )\frac{\delta \rho_s }{ \delta \rho_i } - \left (  \ln \rho + {\color{blue} \cancel{ \color{black}1}} ) \right )\frac{\delta \rho }{ \delta \rho_i }   -   \left ( \ln ( \rho_s -\rho ) +  {\color{blue} \cancel{ \color{black} 1}}  \right ) \left ( \frac{\delta \rho_s }{ \delta \rho_i } - \frac{\delta \rho }{ \delta \rho_i }  \right )\right  \} ( \theta )  ,\\
+		& = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right )\frac{\delta \rho_s }{ \delta \rho_i } \right \} ( \theta ) , \\
+		& = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right )\frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i } \right \} ( \theta ) ,
 	\end{eqnarray}
 	
-	en injectant $\frac{\delta \rho_s }{ \delta \rho }$,
+	et si $\rho_i = \rho$ alors $\frac{\delta \rho }{ \delta \rho_i } = 1 $ et $\int d \theta \, f (\theta ) \cdot \Delta \star 1 = \int d \theta \,  \Delta \star f $ car $\Delta$ est symétrique. 	Soit on retrouve 
+
 	
 	\begin{eqnarray}
-		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = &\int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \int  \frac{d \theta ' }{ 2 \pi } \Delta ( \cdot  - \theta' ) \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta ) , \\  
-		& = &\int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )  \right \} ( \theta ) - \int  d\theta\left \{ \int  \frac{d \theta ' }{ 2 \pi } \Delta ( \cdot  - \theta' ) \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta ) , \\ 
-		& = &\int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )  \right \} ( \theta ) -  \int  d\theta' \int  \frac{d\theta}{2 \pi}  \left \{  \Delta ( \cdot  - \theta' ) \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta ) ,		
+		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \frac{ \Delta}{2 \pi} \star \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta )	.	
 	\end{eqnarray}
+
 	
-	$\theta$ et $\theta'$ sont des variables muettes. On les echange dans la deuxième intégrale.
+	
+
+	
+	Ainsi soit la distribution $\rho^\ast$ qui minimise $\left [ (   f ,  \cdot  )  - S_{YY}  \right ]$ avec $(   f ,  \cdot  )[g] =  \int  f(\theta) g(\theta )  d\theta$
+	 
 	
 	\begin{eqnarray}
-		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = &\int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )  \right \} ( \theta ) -  \int  d\theta    \int  \frac{d\theta'}{2 \pi}  \Delta (   \theta '  - \theta ) \left ( \ln \left ( 1 - \frac{ \rho  ( \theta ')}{ \rho_s  ( \theta ')}\right ) \right )  ,		
-	\end{eqnarray}
-	or $\delta$ est une fonction symétrique donc, 
-	
-	\begin{eqnarray}
-		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = & \int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )  \right \} ( \theta ) -  \int  d\theta    \int  \frac{d\theta'}{2 \pi}  \Delta (   \theta   - \theta' ) \left ( \ln \left ( 1 - \frac{ \rho  ( \theta ')}{ \rho_s  ( \theta ')}\right ) \right )  ,	\\
-		& = & \int  d\theta\left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \frac{1}{2 \pi} \Delta \underset{ \tiny \theta }{\star} \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right \} (\theta ) 		
+		0 = \frac{\delta}{\delta \rho} \left [ (   f ,  \cdot  )  - S_{YY}  \right ][\rho^\ast ] & = & 	\int  d\theta\left \{ f - \ln \left ( \frac{ \rho_s}{ \rho^\ast } - 1 \right ) + \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho^\ast }{ \rho_s}\right )  \right \} (\theta )
 	\end{eqnarray}
 	
-	où $\{ g \underset{ \tiny x }{\star} f \} ( x ) = \int d x g ( x - x') f ( x' ) $ pour simplifier les notation  $\underset{ \tiny x }{\star}\equiv  \star $ 
 	
-	Ainsi 
-	
-	\begin{eqnarray}
-		\frac{\delta}{\delta \rho} \left [ \int  f(\theta) \rho(\theta )  d\theta - S_{YY} [\rho] \right ] & = & 	\int  d\theta\left \{ f - \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) + \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right \} (\theta )
-	\end{eqnarray}
+%	\begin{eqnarray}
+%		\frac{\delta}{\delta \rho} \left [ \int  f(\theta) \rho(\theta )  d\theta - S_{YY} [\rho] \right ] & = & 	\int  d\theta\left \{ f - \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) + \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right \} (\theta )
+%	\end{eqnarray}
 	
 	donc 
 	
 	\begin{eqnarray} 
-		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \mathcal{O}\rangle_{GGE} = 0 & \Leftarrow & f = \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )		
+		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}}\rangle_{GGE} = 0 & \Leftarrow & f = \ln \left ( \frac{ \rho_s}{ \rho^\ast } - 1 \right ) - \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho^\ast }{ \rho_s}\right )		
 	\end{eqnarray}
 	
-	Mais est-ce la seule solution ? 
+%	Mais est-ce la seule solution ? 
  
 	
 	{\color{red} $\cdots$}\\
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &\int  d\theta\left \{ \frac{\frac{\rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j}}{\rho^2}}{\frac{\rho_s}{\rho} -1}\frac{\delta \rho}{\delta \rho_i}  - \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} \right .\\
+		& & +\left .  \frac{\frac{\rho_s \frac{\delta \rho}{\delta \rho_j}- \rho\frac{\delta \rho_s}{\delta \rho_j}}{\rho_s^2}}{1 - \frac{\rho}{\rho_s}}\frac{\delta \rho_s}{\delta \rho_i}  - \ln \left (1- \frac{ \rho}{ \rho_s}  \right )\frac{\delta^2 \rho_s}{\delta \rho_j\delta \rho_i}\right \} ( \theta ) 
+	\end{eqnarray}
+	
+	et $\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} =0 $ et $\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} = \frac{\Delta}{2\pi} \star \frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} = 0 $.Donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &\int  d\theta\left \{ \frac{\rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j}}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  + \frac{\rho_s \frac{\delta \rho}{\delta \rho_j}- \rho\frac{\delta \rho_s}{\delta \rho_j}}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right \}(\theta) \\	
+		& = & 	\int  d\theta\left \{ \left ( \rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j} \right ) \left ( \frac{1}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  - \frac{1}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right )  \right \}(\theta),\\
+		& = & \int  d\theta\left \{  \frac{\rho_s}{(\rho^2  - \rho_s\rho)} \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right . \\
+		&  &  +  \left . \frac{\rho }{(\rho_s\rho -\rho^2) } \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j}   \right ) \frac{\delta \rho}{\delta \rho_i}+ \frac{\rho_s }{( \rho_s^2 - \rho \rho_s) }\frac{\delta \rho}{\delta \rho_j} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right . \\
+		& & + \left .  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right \}(\theta),
+	\end{eqnarray}
+	
+	or 
+	\begin{eqnarray}
+		\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right ) & = & \left (  \frac{\Delta}{2\pi} \star 1  \right )	\frac{\delta \rho}{\delta \rho_i} 
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\frac{\rho }{(\rho_s\rho -\rho^2) } + \frac{\rho_s }{( \rho_s^2 - \rho \rho_s) } & = & 	\frac{1}{(\rho_s -\rho) } + 	\frac{1}{( \rho_s - \rho ) } = \frac{2}{( \rho_s - \rho ) }
+	\end{eqnarray}
+	
+	donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [  \frac{\rho_s}{(\rho^2  - \rho_s\rho)}  +  \frac{2}{( \rho_s - \rho ) } \left (  \frac{\Delta}{2\pi} \star 1    \right )  +  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star 1 \right )^2  \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\left ( \frac{\Delta}{2\pi} \star 1 \right ) (\theta ) & = & \frac{1}{2\pi} \int d \theta' \, \frac{2}{c} \frac{ 1 }{1 +\left (  \frac{ \theta - \theta'}{c}  \right )^2 } =1 
+	\end{eqnarray}
+
+	et 
+	
+	\begin{eqnarray}
+		\frac{\rho_s}{(\rho^2  - \rho_s\rho)}  + 	\frac{\rho }{\rho\rho_s - \rho_s^2 } & = & \left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s }\right ) 	\frac{1 }{\rho - \rho_s }
+	\end{eqnarray}
+	
+	donc
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [  \left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right ) \frac{1 }{\rho - \rho_s  } \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray} 
+
+
+
+	
+	On note $\rho = \rho^\ast + \delta \rho$ tel que $ \delta \rho = o ( \rho^\ast ) $ .
+	
+	\begin{eqnarray}
+		\left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho ] & = &  \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] + 	\frac{\delta}{\delta \rho } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] \delta \rho  + 	\frac{\delta^2 }{\delta \rho_i \delta \rho_j  } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] \delta \rho_i \delta \rho_j + o (...) 
+	\end{eqnarray}
+	
+	or $\frac{\delta}{\delta \rho } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] = 0$ et $\frac{\delta^2 ( f , . ) }{\delta \rho_i \delta \rho_j  } = 0 $ donc 
+	
+	\begin{eqnarray}
+		\left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho ] & = &  \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ]  + 	\frac{\delta^2 S_{YY} }{\delta \rho_i \delta \rho_j  }   [\rho^\ast  ] \delta \rho_i \delta \rho_j + o (...) 
+	\end{eqnarray} 
+
+
+	
 	
 \subsubsection{Calcule de Bess}
 
@@ -371,7 +485,7 @@ Soit deux applications $f , g $. La notation Tensorielle de leurs multiplication
 
 
 
-\include{The_Lieb-Liniger_model_and_the_rapidities/Yang-Yang/brouillon}
+\input{The_Lieb-Liniger_model_and_the_rapidities/Yang-Yang/brouillon}
 	
 	
 	
@@ -400,3 +514,4 @@ Soit deux applications $f , g $. La notation Tensorielle de leurs multiplication
 	
 	
 
+s
