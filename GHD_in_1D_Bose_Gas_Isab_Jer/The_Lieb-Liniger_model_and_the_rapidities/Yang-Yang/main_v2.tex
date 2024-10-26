@@ -1,0 +1,190 @@
+Dans la sous-section précédente, nous avons expliqué comment les observables physiques, telles que les valeurs d'attente des charges et des courants, deviennent des fonctionnelles de la distribution de rapidité $\rho(\theta)$ dans la limite thermodynamique. Cependant, nous n'avons pas expliqué comment construire des distributions de rapidité physiquement significatives (sauf pour l'état fondamental de l'hamiltonien de Lieb-Liniger, pour lequel $\nu(\theta)$) est une fonction rectangulaire, voir la sous-section (??)). {\em Par exemple, quelle est la distribution de rapidité correspondant à un état d'équilibre thermique à une température non nulle ?}\\
+	
+	La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Tout d'abord, nous observons qu'il existe de nombreuses choix différents de séquences d'états propres $(\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket} )_{ N \in \mathbb{Z}}$ qui conduisent à la même distribution de rapidité thermodynamique (??). La description du système en termes de distribution de rapidité extensive $\Pi( \theta ) $ est seulement une description grossière : on devrait considérer la distribution de rapidité $\Pi ( \theta ) $ comme caractérisant un macro-état du système, correspondant à un très grand nombre de micro-états possibles $\vert \{ \theta_a \} \rangle $. {\em Pour faire de la thermodynamique, il faut estimer le nombre de ces micro-états.}\\
+	
+	Pour estimer ce nombre, on se concentre sur une petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $\Pi(\theta) \delta \theta$ rapidités. Les équations de Bethe (??) relient ces rapidités aux moments de fermions pa dans une cellule de moment $[p, p+\delta p]$, où $\delta \Pi/\delta \theta$ est d'environ $2\pi \Pi_s(\theta)$, voir l'équation (??). Il est important de noter que les moments de fermions $p_a$ sont soumis au principe d'exclusion de Pauli. Le nombre de micro-états est alors évalué en comptant le nombre de configurations de moments de fermions mutuellement distincts, équivalent à $\Pi (\theta)\delta \theta$, qui peuvent être placées dans la boîte $[p, p + \delta p]$. Comme l'espacement minimal entre deux moments est de $2\pi /L$, la réponse est
+	
+	
+	\begin{eqnarray}
+		\# \mbox{conf.}(\theta) & \approx  & \frac{[ \Pi_s ( \theta ) \delta \theta ] ! }{ [ \Pi ( \theta ) \delta \theta ] ! [( \Pi_s ( \theta ) - \Pi ( \theta ) )  \delta \theta ] ! } , 	
+	\end{eqnarray}
+	
+	or avec la formule de Sterling :  
+	\begin{eqnarray}
+		n! & \underset{n \to \infty}{\sim} n^n e^{-n} \sqrt{2\pi n}.,
+	\end{eqnarray}
+	
+	composé du fonction logarithmique, il vient cette équivalence : 
+	\begin{eqnarray}
+		\ln n! & \underset{n \to \infty}{\rightarrow} & n \ln n \underbrace{- n + \ln \sqrt{2 \pi n }}_{o \left ( n \ln n \right ) } ,\\
+		&  \underset{n \to \infty}{\sim} & n \ln n  
+	\end{eqnarray}
+	
+	$\# \mbox{conf.}$ est jamais null donc on peut écrire que : 
+\begin{eqnarray}
+    \ln \# \mbox{conf.}(\theta) & \underset{\underset{\Pi (\theta )\leq  \Pi_s (\theta )}{\Pi \delta \theta  \to \infty}}{\sim}   & [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi) ] (\theta )\delta \theta .
+\end{eqnarray}
+
+Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. En prenant le logarithme et en remplaçant la somme par une intégrale sur $d \theta$, nous obtenons l'entropie de Yang-Yang :
+\begin{eqnarray}
+    \ln \# \mbox{microstates.} & = & \sum_{a\vert tranche} \ln \# \mbox{conf.}(\theta_a), \\
+    & \approx &  L S_{YY} [ \Pi ] , 	
+\end{eqnarray}
+
+\begin{eqnarray}
+    S_{YY}[\Pi] & \doteq & \frac{1}{L} \sum_{a\vert tranche} \, [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) ] (\theta_a) \delta \theta .
+\end{eqnarray}
+
+Soit les moyennes , variance et équatype de l'observable 
+	\begin{eqnarray}
+		\operator{\mathcal{O}}_i & = & \sum_{\vert \{\theta_a \} \rangle} \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert
+	\end{eqnarray}
+	
+	$\operator{\mathcal{O}}_i \in \{\operator{\mathcal{N}} , \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \} $  tel que $\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} = \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right ) $ et pour simplifier ici $Z \equiv Z_{thermal}$:
+	
+	\begin{eqnarray}
+		\overline{\operator{\mathcal{O}}_i } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} \overbrace{\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z}}^{P_{\vert \{\theta_a \} \rangle}} = - \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i } =  - \frac{ \partial \ln Z }{ \partial \beta_i } \\
+		\overline{\operator{\mathcal{O}}_i^2 } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}^2 \frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} = \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }\\
+		\Delta_{\operator{\mathcal{O}}_i}^2  & = & 	\overline{(\operator{\mathcal{O}}_i - \overline{\operator{\mathcal{O}}_i})^2 }  = 	\overline{\operator{\mathcal{O}}_i^2 }  -  \overline{\operator{\mathcal{O}}_i }^2 = \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 } - \left ( \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }\right )^2 = \frac{\partial}{\partial \beta_i } \left ( \frac{1}{Z} \frac{\partial Z}{\partial \beta_i } \right )	
+	\end{eqnarray}
+	
+	si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta$.\\
+	
+	\begin{eqnarray}
+		\overline{\operator{\mathcal{O}}_i } & = & 	\sum_{\vert \{\theta_a \} \rangle} 	\langle \{\theta_a \}  \vert \operator{\mathcal{O}}_i \vert \{\theta_a \}  \rangle \frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z},\\
+		& = & 	\sum_{\vert \{\theta_b \} \rangle} \langle \{\theta_b \}  \vert  \operator{\mathcal{O}}_i \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle  	\langle \{\theta_a \}  \vert  \{\theta_b \}  \rangle ,\\
+		& = & Tr (  \operator{\mathcal{O}}_i \operator{\rho}) 
+	\end{eqnarray}
+	
+	avec $\operator{\rho} = \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert $ et $Z = Tr (  \operator{\rho}) $\\
+
+
+La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
+	\begin{eqnarray}
+		\operator{\rho}_{GGE}[f] & = & \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert = \frac{e^{-\operator{Q}[f]}}{Z_{GGE}}, \\
+		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_{a = 1}^N f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	\end{eqnarray}
+	
+	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_{a = 1}^N f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
+	La moyenne GGE d'un observable s'écrit ,
+	
+	\begin{eqnarray}
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \frac{\text{Tr} (\operator{\mathcal{O}}\operator{\rho}_{GGE}[f])}{\text{Tr} (\operator{\rho}_{GGE}[f])} = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[f]})}{\text{Tr} (e^{-\operator{Q}[f]})}	 = \frac{ \sum_{\vert \{\theta_a \}\rangle} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N f(\theta_a) }  }{\sum_{\vert  \{\theta_a  \} \rangle} e^{- \sum_{a = 1}^N  f(\theta_a) } }
+		%& =  & \frac{ \sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N f(\theta_a) }  }{\sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a = 1}^N  f(\theta_a) } }
+	\end{eqnarray}
+		
+	pour une certaine observable $\operator{\mathcal{O}}$.
+	
+	Les variation de $f$ sont négligeables sur $\delta \theta $ alors  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
+	
+	
+	\begin{eqnarray}
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+	\end{eqnarray}
+	
+	Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+	\begin{eqnarray}
+		\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\Pi]},
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi}  \langle \operator{\mathcal{O}}\rangle_{[\Pi]} \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi} \# \mbox{microstates.}  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } },\\
+		& = & \frac{ \sum_{\Pi}  \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ L S_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi}  e^{ L S_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+	\end{eqnarray}
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s}{ \Pi  } - 1 \right )\frac{\delta \Pi  }{ \delta \Pi(\theta_b)} -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s }\right ) \right )\frac{\delta \Pi_s  }{ \delta \Pi(\theta_b) } \right \} (\theta_a) ,\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & 	\sum_{a \vert tranche}   \delta \theta \left \{ \left ( \Pi  \frac{\delta \Pi_s  }{\delta \Pi ( \theta_c) }- \Pi_s  \frac{\delta \Pi  }{\delta \Pi ( \theta_c ) } \right ) \right.   \\
+			&&   \left. \left ( \frac{1}{\Pi_s\Pi  -\Pi^2  }\frac{\delta \Pi }{\delta \Pi(\theta_b) }- \frac{1}{\Pi_s^2  - \Pi \Pi_s }\frac{\delta \Pi_s }{\delta \Pi(\theta_b) } \right )  \right \}(\theta_a).
+		\end{eqnarray}
+		
+	Or 
+	\begin{eqnarray}
+		2\pi \Pi_s  & = &  L + ( \Delta \star \Pi ), 		
+	\end{eqnarray}
+	
+	avec le produit de convolution discret $( f \star g )(x) = \sum_{x'\vert tranche } f( x - x') g(x') $, donc 
+	\begin{eqnarray}
+			\frac{\delta \Pi_s }{\delta \Pi( \theta_b)}   & = &\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta_b) }  \right )	
+		\end{eqnarray}
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right )\frac{\delta \Pi }{ \delta \Pi (\theta_b) } -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \Pi }{ \delta \Pi(\theta_b) }  \right)\right \} ( \theta_	a ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
+		&  &  +  \left . \frac{1 }{(\Pi_s -\Pi) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)}   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}+ \frac{\delta \Pi}{\delta \Pi(\theta_c)} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \right ] \right . \\
+		& & + \left .  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+%	or 
+%	
+%		\begin{eqnarray}
+%			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta_b) }  \right ) & = & 	\left  ( \frac{\Delta}{2\pi} \star  1  \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}
+%		\end{eqnarray}
+		
+		En remarquant que $\Delta$ est symetrique il vient que : 
+	\begin{eqnarray}
+		\sum_{a\vert tranche}   \delta \theta \,  \left \{ g  \cdot  	\left  ( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi}{\delta \Pi(\theta_b)} \right ) \right \}( \theta_a) & = & \sum_{a\vert tranche}   \delta \theta \,  \left \{ g  \cdot  \sum_{c\vert tranche}    	
+		 \frac{\Delta ( \cdot - \theta_c)}{2\pi}  \frac{\delta \Pi (\theta_c) }{\delta \Pi(\theta_b)}\right \}( \theta_a),\\
+		 & = & \sum_{c\vert tranche}   \delta \theta \,  \left \{  \sum_{a\vert tranche}      	
+		  \left ( \frac{\Delta ( \theta_a - \cdot )}{2\pi}  g ( \theta_a) \right ) \frac{\delta \Pi (\cdot) }{\delta \Pi(\theta_b)}\right \}( \theta_c),\\
+		  & = & \sum_{c\vert tranche}   \delta \theta \,  \left \{  \sum_{a\vert tranche}      	
+		  \left ( \frac{\Delta ( \cdot - \theta_a)}{2\pi}  g ( \theta_a) \right ) \frac{\delta \Pi (\cdot) }{\delta \Pi(\theta_b)}\right \}( \theta_c),\\
+		  & = & \sum_{a\vert tranche}   \delta \theta \,  \left \{        	
+		  \left ( \frac{\Delta}{2\pi}   \star g \right ) \frac{\delta \Pi  }{\delta \Pi(\theta_b)}\right \}( \theta_a),\\
+	\end{eqnarray}	
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \left [ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right )  \right) \right ]\frac{\delta \Pi }{ \delta \Pi (\theta_b) } \right \} ( \theta_	a ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
+		&  &  +  \left . \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1 }{(\Pi_s -\Pi) }  \frac{\delta \Pi}{\delta \Pi(\theta_b)}  \right )   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_c)}+  \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1}{( \Pi_s -  \Pi) } \frac{\delta \Pi}{\delta \Pi(\theta_c)} \right) \right )\frac{\delta \Pi}{\delta \Pi(\theta_b)}  \right . \\
+		& & + \left .  \left (  \frac{\Delta}{2\pi} \star \left ( \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\right ) \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+	Avec 
+	
+	\begin{eqnarray}
+			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta_b) }  \right ) & = & 	\frac{\Delta ( \cdot - \theta_b )}{2\pi}
+		\end{eqnarray}
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
+		&  &  +  \left . \frac{\Pi }{(\Pi_s\Pi -\Pi^2) } \left ( \frac{\Delta ( \cdot - \theta_c )}{2\pi}   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}+ \frac{\Pi_s }{( \Pi_s^2 - \Pi_s \Pi) } \left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right ) \frac{\delta \Pi}{\delta \Pi(\theta_c)} \right . \\
+		& & + \left .  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+	
+		
+
+
+		
+	%Or $2\pi \Pi_s(\theta_a)  = L + \sum_{c \vert tranche } \Delta( \theta_a  - \theta_c ) \Pi(\theta_c)  $ donc $ 2 \pi \frac{\delta \Pi_s(\theta_a)  }{ \delta \Pi(\theta_b) }  = \sum_{c \vert tranche } \Delta ( \theta_a - \theta_c )   \frac{\delta \Pi(\theta_c)  }{ \delta \Pi(\theta_b) }$ et de plus $\frac{\delta \Pi(\theta_a)  }{ \delta \Pi(\theta_b) } = \delta ( a - b ) $ donc  $ 2 \pi \frac{\delta \Pi_s(\theta_a)  }{ \delta \Pi(\theta_b) }  = \Delta ( \theta_a - \theta_b )   $ et 
+%	\begin{eqnarray}
+%		\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)  } [\Pi ]  & = &   \ln \left ( \frac{ \Pi_s(\theta_b) }{ \Pi (\theta_b) } - 1 \right )  \delta \theta  -  \sum_{a\vert tranche}  \left \{  \frac{ \Delta( \theta_a - \theta_b )}{2\pi} \left ( \ln \left ( 1 - \frac{ \Pi(\theta_a)}{ \Pi_s(\theta_a) }\right ) \right ) \right \}  \delta \theta  	
+%	\end{eqnarray}
+%	
+	%Je vais noter le produit de convolution discret $( f \star g )(x) = \sum_{x'\vert tranche } f( x - x') g(x') $ 
+	
+	%En remarquant que $\Delta$ est symetrique il vient que : 
+	
+	\begin{eqnarray}
+		\frac{ \delta S_{YY} }{ \delta \Pi(\theta_a)  } [\Pi ]  & = &    \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi  } - 1 \right )   -  \frac{ \Delta}{2\pi}  \star \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s }\right ) \right ) \right \} (\theta_a) \delta \theta , \\
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = &   \left (  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)}    \right )(\theta_b) \delta( \theta_b - \theta_c)  \delta \theta  \\
+		&  &  +   \frac{ \Delta ( \theta_b - \theta_c)}{ 2\pi}  \frac{1 }{(\Pi_s(\theta_b) -\Pi(\theta_b)) } \delta \theta +  \frac{\Delta ( \theta_c - \theta_b )}{2\pi}\frac{1 }{( \Pi_s(\theta_c)  -   \Pi(\theta_c) ) }\delta \theta  \\
+		& & + \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )  \right \}(\theta_a) ,	 	
+	\end{eqnarray}
+	
+	
+
+		
+	Or $\Delta$ symetrique 
+		
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = &   \left (  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)}    \right )(\theta_b) \delta( \theta_b - \theta_c)  \delta \theta  \\
+		&  &  +   \frac{ \Delta ( \theta_b - \theta_c)}{ 2\pi} \left (  \frac{1 }{(\Pi_s(\theta_b) -\Pi(\theta_b)) }  +  \frac{1 }{( \Pi_s(\theta_c)  -   \Pi(\theta_c) ) } \right )\delta \theta  \\
+		& & + \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )  \right \}(\theta_a) ,		
+	\end{eqnarray}
+
+
+
