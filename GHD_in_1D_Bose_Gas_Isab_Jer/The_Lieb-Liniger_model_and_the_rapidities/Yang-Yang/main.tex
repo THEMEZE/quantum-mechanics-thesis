@@ -38,19 +38,19 @@
 	
 	On écrit l'observable énergie et nombre :
 	\begin{eqnarray}
-		\operator{\mathcal{E}} & = & \sum_{ \vert \{ \theta_a\} \rangle }  \left ( \sum_{a=1}^N  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert, \\
-		\operator{\mathcal{N}} & = & \sum_{\vert \{\theta_a\} \rangle }   \left ( \sum_{a=1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert,
+		\operator{\mathcal{E}} & = & \sum_{ \vert \{ \theta_a\} \rangle }  \left ( \sum_a  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert, \\
+		\operator{\mathcal{N}} & = & \sum_{\vert \{\theta_a\} \rangle }   \left ( \sum_a  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert,
 	\end{eqnarray}
 	
-	avec $  \sum_{a=1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{ \mathcal{E}}  \vert \{ \theta_a\}\rangle $ et $\sum_{a=1}^N  1  \equiv \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{\mathcal{N}}  \vert \{ \theta_a\}\rangle $
+	avec $  \sum_{a}  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{ \mathcal{E}}  \vert \{ \theta_a\}\rangle $ et $\sum_a1  \equiv \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{\mathcal{N}}  \vert \{ \theta_a\}\rangle $
 
 	
 	La probabilité que le système soit dans configuration $\vert \{ \theta_a \}\rangle $  est 
 	\begin{eqnarray}
-		P_{\vert \{\theta_a \} \rangle} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
+		P_{\vert \{\theta_a \} \rangle} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_a  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
 	\end{eqnarray}
 	
-	avec la fonction de partition $Z_{thermal} = e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )} =  e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
+	avec la fonction de partition $Z_{thermal} = e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )} =  e^{- \beta \sum_a  ( \varepsilon( \theta_a )   - \mu  )}$
 	
 	Soit les moyennes , variance et équatype de l'observable 
 	\begin{eqnarray}
@@ -95,14 +95,14 @@
 	La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 	\begin{eqnarray}
 		\operator{\rho}_{GGE}[f] & = & \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert = \frac{e^{-\operator{Q}[f]}}{Z_{GGE}}, \\
-		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_{a=1}^N  f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_a f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
 	\end{eqnarray}
 	
-	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_{a = 1}^N f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
+	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_a f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
 	La moyenne GGE d'un observable s'écrit ,
 	
 	\begin{eqnarray}
-		\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \frac{\text{Tr} (\operator{\mathcal{O}}\operator{\rho}_{GGE}[f])}{\text{Tr} (\operator{\rho}_{GGE}[f])} = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[f]})}{\text{Tr} (e^{-\operator{Q}[f]})}	 = \frac{ \sum_{\vert \{\theta_a \}\rangle} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1 }^\infty f(\theta_a) }  }{\sum_{\vert  \{\theta_a  \} \rangle} e^{- \sum_{a=1}^\infty  f(\theta_a) } }
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \frac{\text{Tr} (\operator{\mathcal{O}}\operator{\rho}_{GGE}[f])}{\text{Tr} (\operator{\rho}_{GGE}[f])} = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[f]})}{\text{Tr} (e^{-\operator{Q}[f]})}	 = \frac{ \sum_{\vert \{\theta_a \}\rangle} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_a f(\theta_a) }  }{\sum_{\vert  \{\theta_a  \} \rangle} e^{- \sum_a  f(\theta_a) } }
 	\end{eqnarray}
 	
 	pour une certaine observable $\operator{\mathcal{O}}$. Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\rho$ dans la limite thermodynamique.
@@ -153,6 +153,16 @@
 	\begin{eqnarray}
 		\frac{ \delta S_{YY} }{ \delta \rho } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) - \frac{ \Delta}{2 \pi} \star \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \right \} ( \theta )	.	
 	\end{eqnarray}
+	
+	\begin{aff}
+		Et remarque/question $  \frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i } = \left (\frac{ \Delta}{2 \pi} \star  1 \right ) \frac{\delta \rho }{ \delta \rho_i } $ et $\left (\frac{ \Delta}{2 \pi} \star  1 \right ) = 1 $. Si cest bien vrais alors 
+	
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho}\right )\frac{\delta \rho }{ \delta \rho_i } \right \}( \theta )	.	
+		\end{eqnarray}	
+	\end{aff}
+
+	
 
 	
 	
@@ -230,6 +240,22 @@
 	\begin{eqnarray}
 		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [  \left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right ) \frac{1 }{\rho - \rho_s  } \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
 	\end{eqnarray} 
+	
+	et 
+	
+	\begin{eqnarray}
+		\left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right )  & = & 	\left ( \frac{\rho_s^2 + \rho^2  - 2\rho_s \rho }{\rho_s \rho} \right ) =  \left ( \frac{ (\rho - \rho_s )^2  }{\rho_s \rho} \right ),\\
+		\left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right ) \frac{1 }{\rho - \rho_s   } & = &  \frac{ \rho - \rho_s}{\rho_s\rho} = \frac{1}{\rho_s} - \frac{1}{\rho}  		
+	\end{eqnarray}
+	
+	donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [ \frac{1}{\rho_s} - \frac{1}{\rho} \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+
+	
+	
 
 
 
@@ -245,6 +271,56 @@
 	\begin{eqnarray}
 		\left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho ] & = &  \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ]  + 	\frac{\delta^2 S_{YY} }{\delta \rho_i \delta \rho_j  }   [\rho^\ast  ] \delta \rho_i \delta \rho_j + o (...) 
 	\end{eqnarray} 
+	
+	\begin{aff}[Si je peut écrire que :
+		]
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right )\frac{\delta \rho_s }{ \delta \rho_i } \right \} ( \theta ) ,\\	
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = & 	\int  d\theta\left \{ \left ( \rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j} \right ) \left ( \frac{1}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  - \frac{1}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right )  \right \}(\theta).
+		\end{eqnarray}
+		
+		Si 
+		\begin{eqnarray}
+			\frac{\delta \rho_s}{\delta \rho_i}   & = &\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) 	
+		\end{eqnarray}
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i }  \right)\right \} ( \theta ) ,\\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = & \int  d\theta\left \{  \frac{\rho_s}{(\rho^2  - \rho_s\rho)} \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right . \\
+		&  &  +  \left . \frac{1}{(\rho_s -\rho) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j}   \right ) \frac{\delta \rho}{\delta \rho_i}+ \frac{\delta \rho}{\delta \rho_j} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right ] \right . \\
+		& & + \left .  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right \}(\theta),
+	\end{eqnarray}
+	
+	Si
+	
+		\begin{eqnarray}
+			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) =  \left  ( \frac{\Delta}{2\pi} \star  1 \right )	\frac{\delta \rho}{\delta \rho_i} 
+		\end{eqnarray}
+		
+		Alors 
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{  \left [ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star   1  \right) \right ]  \frac{\delta \rho }{ \delta \rho_i }\right \} ( \theta ) ,\\
+			& = & \int  d\theta \left \{  \left [ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star   \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right) \right ]  \frac{\delta \rho }{ \delta \rho_i }\right \} ( \theta ), \\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &  \int  d\theta\left \{  \left [  \frac{\rho_s}{(\rho^2  - \rho_s\rho)}  +  \frac{2}{( \rho_s - \rho ) } \left (  \frac{\Delta}{2\pi} \star 1    \right )  +  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star 1 \right )^2  \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+	
+	Si 
+		
+		\begin{eqnarray}
+			\frac{\delta \rho_s}{\delta \rho_i}  = \left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) =  \left  ( \frac{\Delta}{2\pi} \star  1 \right )	\frac{\delta \rho}{\delta \rho_i}  = \frac{\delta \rho}{\delta \rho_i} 	
+		\end{eqnarray}
+		
+		
+		Alors 
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho}\right )\frac{\delta \rho }{ \delta \rho_i } \right \}( \theta ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [ \frac{1}{\rho_s} - \frac{1}{\rho} \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),	
+		\end{eqnarray}	
+	\end{aff}
+
 
 
 	

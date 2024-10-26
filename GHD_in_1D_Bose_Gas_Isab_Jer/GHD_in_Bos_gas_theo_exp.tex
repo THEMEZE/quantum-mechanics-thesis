@@ -274,6 +274,39 @@ decorations.pathreplacing}
 	\newtheorem{Rap}[Theo]{Rappel}
 	\newtheorem*{Merci}{Remerciements}
 	
+\usepackage{mdframed}
+
+\mdfdefinestyle{propstyle}{%
+linecolor=black,linewidth=2pt,%
+hidealllines=true,
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+backgroundcolor=gray!10!white,
+roundcorner=5pt,
+innertopmargin=\topskip,
+}
+
+\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+\mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
+\mdtheorem[style=propstyle]{TheoPrinc}{Th\'eor\`eme}[chapter]
+
+% Définition d'un style personnalisé pour les Affirmations
+\mdfdefinestyle{affirmestyle}{%
+    linecolor=gray, % Couleur de la bordure
+    linewidth=1pt, % Épaisseur de la bordure
+    backgroundcolor=gray!10, % Couleur de fond (gris clair)
+    roundcorner=5pt, % Coins arrondis
+    innertopmargin=\topskip, % Marge intérieure
+    skipabove=10pt, % Espace au-dessus du cadre
+    skipbelow=10pt % Espace en-dessous du cadre
+}
+
+% Définition de l'environnement Affirmation
+\theoremstyle{definition} % Style de théorème pour les affirmations
+\newmdtheoremenv[style=affirmestyle]{aff}{Affirmation} % Environnement Affirmation avec le style personnalisé
+
+
+	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Accolades, guillemets, etc.
