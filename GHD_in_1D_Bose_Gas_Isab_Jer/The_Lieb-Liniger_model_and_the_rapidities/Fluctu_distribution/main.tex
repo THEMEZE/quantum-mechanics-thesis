@@ -1,28 +1,32 @@
+\subsubsection{Rappel}
+
 On écrit l'observable énergie et nombre :
 	\begin{eqnarray}
-		\operator{\mathcal{E}} & = & \sum_{ \vert \{ \theta_a\} \rangle }  \left ( \sum_{a = 1}^N  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert, \\
-		\operator{\mathcal{N}} & = & \sum_{\vert \{\theta_a\} \rangle }   \left ( \sum_{a = 1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert,
+		\operator{\mathcal{N}} & = & \sum_{\vert \{\theta_a\} \rangle }   \left ( \sum_{a = 1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert,\\
+		\operator{\mathcal{E}} & = & \sum_{ \vert \{ \theta_a\} \rangle }  \left ( \sum_{a = 1}^N  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,		
 	\end{eqnarray}
 	
-	avec $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{ \mathcal{E}}  \vert \{ \theta_a\}\rangle $ et $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{\mathcal{N}}  \vert \{ \theta_a\}\rangle $
+	avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{\mathcal{N}}  \vert \{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}  \doteq  \langle \{ \theta_a \} \vert  \operator{ \mathcal{E}}  \vert \{ \theta_a\}\rangle $.
 
 	
 	La probabilité que le système soit dans configuration $\vert \{ \theta_a \}\rangle $  est 
 	\begin{eqnarray}
-		P_{\vert \{\theta_a \} \rangle} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_a  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
+		P_{\vert \{\theta_a \} \rangle} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
 	\end{eqnarray}
 	
-	avec la fonction de partition $Z_{thermal} = e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )} =  e^{- \beta \sum_a  ( \varepsilon( \theta_a )   - \mu  )}$
+	avec la fonction de partition $Z_{thermal} = \sum_{ \vert \{ \theta_a\} \rangle }e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right )} = \sum_{ \vert \{ \theta_a\} \rangle } e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
 	
-	On commence à 
+	On peut commence à généraliser avec l'operateur :
 	
-	Soit les moyennes , variance et équatype de l'observable 
+	
 	\begin{eqnarray}
 		\operator{\mathcal{O}}_i & = & \sum_{\vert \{\theta_a \} \rangle} \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \} \vert
 	\end{eqnarray}
 	
 	$\operator{\mathcal{O}}_i \in \{\operator{\mathcal{N}} , \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \} $  tel que $\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} = \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\vert \{\theta_a \} \rangle}   - \mu \langle \operator{\mathcal{N}} \rangle_{\vert \{\theta_a \} \rangle} \right ) $ et pour simplifier ici $Z \equiv Z_{thermal}$:
 	
+	Sa  moyenne , variance et équatype de l'observable :
+		
 	\begin{eqnarray}
 		\overline{\operator{\mathcal{O}}_i } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} \overbrace{\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z}}^{P_{\vert \{\theta_a \} \rangle}} = - \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i } =  - \frac{ \partial \ln Z }{ \partial \beta_i } \\
 		\overline{\operator{\mathcal{O}}_i^2 } & = & \sum_{\vert \{\theta_a \} \rangle} 	\langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle}^2 \frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} = \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }\\
@@ -37,16 +41,44 @@ On écrit l'observable énergie et nombre :
 		& = & Tr (  \operator{\mathcal{O}}_i \operator{\rho}) 
 	\end{eqnarray}
 	
-	avec $\operator{\rho} = \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert $ et $Z = Tr (  \operator{\rho}) $\\
+	avec $\operator{\rho} = \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert $ et $Z = \sum_{\vert \{\theta_a \} \rangle }e^{-\sum_i \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } } $ tel que $Tr (  \operator{\rho}) = 1 $\\
+	
+	La matrice densité thermique est :
+	\begin{eqnarray}
+		\operator{\rho}_{thermal} & = & \frac{e^{- \beta \operator{H}}}{Z_{thermal}}, \\
+		e^{-\beta \operator{H}} & = & 	\sum_{\vert \theta_a \rangle} e^{- \beta \sum_{a=1}^N ( \varepsilon(\theta_a)- \mu ) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	\end{eqnarray}
 
 
 La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 	\begin{eqnarray}
-		\operator{\rho}_{GGE}[f] & = & \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert = \frac{e^{-\operator{Q}[f]}}{Z_{GGE}}, \\
-		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_{a = 1}^N f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+		\operator{\rho}_{GGE}[f] & = & \sum_{\vert \{\theta_a \} \rangle }\frac{e^{-\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{\vert \{\theta_a \} \rangle} }}{Z} \vert \{\theta_a \}  \rangle   	\langle \{\theta_a \} \vert. 
 	\end{eqnarray}
 	
-	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_{a = 1}^N f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $. Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
+	Dans le cas thermique, on peut remarquer que $\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 $ et $\langle \operator{\mathcal{E}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 $. On peut donc réécrire $\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} }$
+	
+	\begin{eqnarray}
+		\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{i = 0}^\infty \alpha_i \sum_{a = 1 }^N \theta_a^i		
+	\end{eqnarray}
+	
+	et pour chaque $a \in \llbracket 1 , N  \rrbracket \colon \sum_i \alpha_i \theta_a^i$ converge donc on peut échanger les deux sommes soit 
+	
+	\begin{eqnarray}
+		\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{a = 1 }^N  f(\theta_a) 
+	\end{eqnarray}
+	
+	avec $f(\theta) =  \sum_{i = 0}^\infty \alpha_i  \theta^i$.	 Et on peut réecrire la matrice densité  :
+	
+	\begin{eqnarray}
+		\operator{\rho}_{GGE}[f] & = & \frac{e^{-\operator{Q}[f]}}{Z_{GGE}}, \\
+		e^{-\operator{Q}[f]} & = & 	\sum_{\vert \{\theta_a \} \rangle } e^{- \sum_{a = 1}^N f(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	\end{eqnarray}
+ 
+	
+	pour une certaine fonction $f$ relié à la charge $\operator{Q} [f]  = \sum_{\vert \{\theta_a \} \rangle } \left ( \sum_{a = 1}^N f ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
+	Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ : $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[f] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N f(\theta_a)} / Z $ avec $Z = \sum_{\vert \{\theta_a \} \rangle } e^{-\sum_{a = 1}^N f(\theta_a)}$.\\
+	
+	 Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
 	La moyenne GGE d'un observable s'écrit ,
 	
 	\begin{eqnarray}
@@ -54,7 +86,13 @@ La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 		%& =  & \frac{ \sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N f(\theta_a) }  }{\sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a = 1}^N  f(\theta_a) } }
 	\end{eqnarray}
 		
-	pour une certaine observable $\operator{\mathcal{O}}$.
+	pour une certaine observable $\operator{\mathcal{O}}$.\\
+	
+	Dans la sous-section précédente, nous avons expliqué comment les observables physiques, telles que les valeurs d'attente des charges et des courants, deviennent des fonctionnelles de la distribution de rapidité $\rho(\theta)$ dans la limite thermodynamique. Cependant, nous n'avons pas expliqué comment construire des distributions de rapidité physiquement significatives (sauf pour l'état fondamental de l'hamiltonien de Lieb-Liniger, pour lequel $\nu(\theta)$) est une fonction rectangulaire, voir la sous-section (??)). {\em Par exemple, quelle est la distribution de rapidité correspondant à un état d'équilibre thermique à une température non nulle ?}\\
+	
+	La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Tout d'abord, nous observons qu'il existe de nombreuses choix différents de séquences d'états propres $(\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket} )_{ N \in \mathbb{Z}}$ qui conduisent à la même distribution de rapidité thermodynamique (??). La description du système en termes de distribution de rapidité extensive $\Pi( \theta ) $ est seulement une description grossière : on devrait considérer la distribution de rapidité $\Pi ( \theta ) $ comme caractérisant un macro-état du système, correspondant à un très grand nombre de micro-états possibles $\vert \{ \theta_a \} \rangle $. {\em Pour faire de la thermodynamique, il faut estimer le nombre de ces micro-états.}\\
+	
+	Pour estimer ce nombre, on se concentre sur une petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $\Pi(\theta) \delta \theta$ rapidités. Les équations de Bethe (??) relient ces rapidités aux moments de fermions pa dans une cellule de moment $[p, p+\delta p]$, où $\delta \Pi/\delta \theta$ est d'environ $2\pi \Pi_s(\theta)$, voir l'équation (??). Il est important de noter que les moments de fermions $p_a$ sont soumis au principe d'exclusion de Pauli. Le nombre de micro-états est alors évalué en comptant le nombre de configurations de moments de fermions mutuellement distincts, équivalent à $\Pi (\theta)\delta \theta$, qui peuvent être placées dans la boîte $[p, p + \delta p]$. Comme l'espacement minimal entre deux moments est de $2\pi /L$, la réponse est :
 	
 	Les variation de $f$ sont négligeables sur $\delta \theta $ alors  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
 	
