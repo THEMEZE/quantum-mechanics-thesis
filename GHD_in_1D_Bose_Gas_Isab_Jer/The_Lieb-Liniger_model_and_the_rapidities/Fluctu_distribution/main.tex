@@ -98,9 +98,14 @@ La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 	
 	\begin{figure}[H]
 		\centering 
-		\begin{tikzpicture}[transform canvas={scale=0.5}]
+		\begin{tikzpicture}
 			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/Occupation_code}	
+			\begin{scope}[transform canvas={scale=0.5}]
 			\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/Occupation_theta_code}	
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5] (-10.5 , 0) rectangle (11 , 5) ; 
+				
 			
 		\end{tikzpicture}	
 		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
