@@ -3,7 +3,7 @@
 \def\Occupation{
 	\def\traitx{0.3}
 	\def\traity{0.5}
-	\draw
+	\draw[shift={(0,0)}]
 		(-10.5 , 0 ) edge [thick,line width=0.8ex ]( -3.2  , 0 )
 		( -3.2 - \traitx  , 0 - \traity ) edge [thick,line width=0.8ex ]( -3.2 + \traitx  , 0 + \traity  )
 		( -2.8 - \traitx  , 0 - \traity ) edge [thick,line width=0.8ex ]( -2.8 + \traitx  , 0 + \traity  )
@@ -12,6 +12,8 @@
 		( 3.2 - \traitx  , 0 - \traity ) edge [thick,line width=0.8ex ]( 3.2 + \traitx  , 0 + \traity  )
 		(3.2, 0 ) edge [thick,line width=0.8ex,->,>=triangle 45 , color = black ]node [pos=1.01,below  ]{\huge$a$}	( 11  , 0 )
 	;
+	
+
 	
 	
 	% Graduation abcsisse 
@@ -40,45 +42,45 @@
 	
 	\def\nmax{6};
 	\def\nsmax{10}; % les trous
-	%\foreach \r in {\nmax + 1 ,...,\nsmax} { % proble dans le -\r 
-	\foreach \r in {4 ,...,\nsmax} {
-		\draw [color=gray] 
-			(\r,-0.3) edge [thick,line width=0.5ex]  (\r,0.3)
-			(-\r,-0.3) edge [thick,line width=0.5ex]  (-\r,0.3)
-		;
-		\filldraw [line width=0.5ex , color = red ,outer color=white,inner color=white ] (\r,0) circle (4pt);
-		\filldraw [line width=0.5ex , color = red ,outer color=white,inner color=white] (-\r,0) circle (4pt);
-	}
+%	%\foreach \r in {\nmax + 1 ,...,\nsmax} { % proble dans le -\r 
+%	\foreach \r in {4 ,...,\nsmax} {
+%		\draw [color=gray] 
+%			(\r,-0.3) edge [thick,line width=0.5ex]  (\r,0.3)
+%			(-\r,-0.3) edge [thick,line width=0.5ex]  (-\r,0.3)
+%		;
+%		\filldraw [line width=0.5ex , color = red ,outer color=white,inner color=white ] (\r,0) circle (4pt);
+%		\filldraw [line width=0.5ex , color = red ,outer color=white,inner color=white] (-\r,0) circle (4pt);
+%	}
+%	
 	
-	
-	\foreach \r in {4,...,\nmax} {
-		\ifnum\r=\nmax
-			\draw [color=gray] 
-				(\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $\frac{N}{2}$ } (\r,0.3)
-				(-\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $-\frac{N}{2}$ } (-\r,0.3)
-			;
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
-		\else\ifnum\r>4
-			%\def\nreste{\nmax-\r}
-			\pgfmathtruncatemacro{\nreste}{\nmax-\r}
-
-			\draw [color=gray] 
-				(\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $\frac{N}{2} - \nreste$ } (\r,0.3)
-				(-\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{$-\frac{N}{2}+\nreste$ } (-\r,0.3)
-			;
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
-		\else
-			\draw [color=gray] 
-				(\r,-0.3) edge [thick,line width=0.5ex] (\r,0.3)
-				(-\r,-0.3) edge [thick,line width=0.5ex] (-\r,0.3)
-			;
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
-			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
-		\fi\fi
-	}
-	
+%	\foreach \r in {4,...,\nmax} {
+%		\ifnum\r=\nmax
+%			\draw [color=gray] 
+%				(\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $\frac{N}{2}$ } (\r,0.3)
+%				(-\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $-\frac{N}{2}$ } (-\r,0.3)
+%			;
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
+%		\else\ifnum\r>4
+%			%\def\nreste{\nmax-\r}
+%			\pgfmathtruncatemacro{\nreste}{\nmax-\r}
+%
+%			\draw [color=gray] 
+%				(\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{ $\frac{N}{2} - \nreste$ } (\r,0.3)
+%				(-\r,-0.3) edge [thick,line width=0.5ex] node [pos=-0.5]{$-\frac{N}{2}+\nreste$ } (-\r,0.3)
+%			;
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
+%		\else
+%			\draw [color=gray] 
+%				(\r,-0.3) edge [thick,line width=0.5ex] (\r,0.3)
+%				(-\r,-0.3) edge [thick,line width=0.5ex] (-\r,0.3)
+%			;
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (\r,0) circle (4pt);
+%			\filldraw [line width=0.5ex , color = red ,outer color=red,inner color=red ] (-\r,0) circle (4pt);
+%		\fi\fi
+%	}
+%	
 	
 			
 }
