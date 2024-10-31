@@ -28,11 +28,11 @@ Dans la sous-section précédente, nous avons expliqué comment les observables 
 Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. En prenant le logarithme et en remplaçant la somme par une intégrale sur $d \theta$, nous obtenons l'entropie de Yang-Yang :
 \begin{eqnarray}
     \ln \# \mbox{microstates.} & = & \sum_{a\vert tranche} \ln \# \mbox{conf.}(\theta_a), \\
-    & \approx &  L S_{YY} [ \Pi ] , 	
+    & \approx &   S_{YY} [ \Pi ] , 	
 \end{eqnarray}
 
 \begin{eqnarray}
-    S_{YY}[\Pi] & \doteq & \frac{1}{L} \sum_{a\vert tranche} \, [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) ] (\theta_a) \delta \theta .
+    S_{YY}[\Pi] & \doteq & sum_{a\vert tranche} \, [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) ] (\theta_a) \delta \theta .
 \end{eqnarray}
 
 Soit les moyennes , variance et équatype de l'observable 
@@ -102,7 +102,7 @@ La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 		
 	Or 
 	\begin{eqnarray}
-		2\pi \Pi_s  & = &  L + ( \Delta \star \Pi ), 		
+		2\pi \Pi_s  & = &  L + ( \Delta \star \Pi ) \delta \theta, 		
 	\end{eqnarray}
 	
 	avec le produit de convolution discret $( f \star g )(x) = \sum_{x'\vert tranche } f( x - x') g(x') $, donc 
@@ -111,10 +111,10 @@ La matrice densité GGE avec $Z \equiv Z_{GGE}$ est :
 		\end{eqnarray}
 	
 	\begin{eqnarray}
-			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right )\frac{\delta \Pi }{ \delta \Pi (\theta_b) } -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \Pi }{ \delta \Pi(\theta_b) }  \right)\right \} ( \theta_	a ),\\
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right )\frac{\delta \Pi }{ \delta \Pi (\theta_b) } -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \Pi }{ \delta \Pi(\theta_b) }  \right)  \delta \theta \right \} ( \theta_	a ),\\
 			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
-		&  &  +  \left . \frac{1 }{(\Pi_s -\Pi) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)}   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}+ \frac{\delta \Pi}{\delta \Pi(\theta_c)} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \right ] \right . \\
-		& & + \left .  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \right \}(\theta_a),	
+		&  &  +  \left . \frac{1 }{(\Pi_s -\Pi) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)}   \right )   \delta \theta \frac{\delta \Pi}{\delta \Pi(\theta_b)}+ \frac{\delta \Pi}{\delta \Pi(\theta_c)} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \delta \theta  \right ] \right . \\
+		& & + \left .  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )   (\delta \theta)^2 \right \}(\theta_a),	
 	\end{eqnarray}
 	
 %	or 
