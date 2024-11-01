@@ -10,8 +10,7 @@
 \usepackage[T1]{fontenc}  % For correct {}s in \texttt
 \usepackage{accents}
 \usepackage[francais]{babel}
-\usepackage{amsmath, amssymb, amsthm}
-%\usepackage{amssymb, amsthm}
+\usepackage{amssymb, amssymb, amsthm}
 \usepackage[utf8]{inputenc}             
 \usepackage{amstext, amsfonts, a4}
 \usepackage{pgf,pgfarrows,pgfautomata,pgfheaps,pgfnodes,pgfshade}
@@ -52,6 +51,7 @@
 \usetikzlibrary{hobby, decorations.markings, arrows.meta}
 \usetikzlibrary{decorations.markings} 
 \usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary {arrows.meta}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pour le tag
@@ -59,7 +59,7 @@
 %\usepackage{fourier}
 \usepackage{mathtools}
 %\usepackage{cleveref}
-%\usepackage{xcolor}
+\usepackage{xcolor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -296,7 +296,7 @@ roundcorner=5pt,
 innertopmargin=\topskip,
 }
 
-\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+%\mdtheorem[style=propstyle]{prop}{Property}[chapter]
 \mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
 \mdtheorem[style=propstyle]{TheoPrinc}{Th\'eor\`eme}[chapter]
 
