@@ -1,0 +1,34 @@
+% Définition des couleurs avec les codes HTML
+\definecolor{colorOne}{HTML}{443E46}
+\definecolor{colorTwo}{HTML}{F6DEB8}
+\definecolor{colorThree}{HTML}{908CA4}
+\definecolor{colorFour}{HTML}{57659E}
+\definecolor{colorFive}{HTML}{C57284}
+\definecolor{colorSix}{HTML}{FF5B69}
+
+% Raccourcis pour les couleurs
+\def\colorOne{colorOne}
+\def\colorTwo{colorTwo}
+\def\colorThree{colorThree}
+\def\colorFour{colorFour}
+\def\colorFive{colorFive}
+\def\colorSix{colorSix}
+
+\def\colorslide{blue!50!black}
+
+
+
+\begin{scope}
+	% Tracer une courbe lisse entre des points
+	\draw[shift={(0,0)}]
+		(-1 , 0 ) edge [thick,line width=0.8ex , ->,>=triangle 45  ]node [pos=0.5,below  ]{\huge$\{ \overline{\pi}^d(\theta_a) \}$}( 5  , 0 )
+	;
+	\draw[shift={(0,0)}, color=\colorOne]
+		(0, -1.5 ) edge [thick,line width=0.8ex , ->,>=triangle 45  ]node [pos=0.9,left ]{\huge$A[\pi]$}( 0  , 5 )
+	;
+    \draw[thick, \colorFour] plot[smooth, tension=0.7] coordinates {
+        (0, 0) (2.5, 5) (5, 0)
+    };		
+	
+\end{scope}
+

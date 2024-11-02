@@ -150,7 +150,7 @@ Le nombre total de micro-états est le produit de toutes ces configurations pour
 	
 	
 	\begin{eqnarray}
-		\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  \# \mbox{microstates.}e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
 	\end{eqnarray}
 	
 	Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
@@ -162,8 +162,37 @@ Le nombre total de micro-états est le produit de toutes ces configurations pour
 	
 	\begin{eqnarray}
 		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi}  \langle \operator{\mathcal{O}}\rangle_{[\Pi]} \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi} \# \mbox{microstates.}  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } },\\
-		& = & \frac{ \sum_{\Pi}  \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ L S_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi}  e^{ L S_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+		& = & \frac{ \sum_{\Pi}  \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ S_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{\sum_{\Pi}  e^{S_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
 	\end{eqnarray}
+	
+\subsubsection{.....}
+
+	Maintenant $\{\theta_a \}$ désigne l'ensemble de rapidité où $a$ est l'indice des tranches. La probalilité de cette configuration $\{ \pi^d(\theta_a) \}$ est : 
+	
+	\begin{eqnarray}
+		P_{\{ \pi^d(\theta_a)\} } & = & \frac{ e^{ A[\pi^d]  }}{Z} 	
+	\end{eqnarray}
+	
+	ou $A[\pi^d] = S_{YY}[\pi^d] - \sum_{a\vert tranche} f(\theta_a) \pi^d ( \theta) \delta \theta $. On fait l'hypothèse que la configuration $\{ \overline{\pi}_a^d \}$ domine tous les configurations (ie $\forall \{ \theta_a\} } \colon P_{\{ \pi^d(\theta_a)\} } \leq P_{\{ \overline{\pi}^d(\theta_a)\} }$) ce qui implique que  
+	\begin{eqnarray*}
+		\forall \theta_a  \in \{\theta_a \}\colon  \left ( \frac{\partial A}{\partial \pi^d(\theta_a) } [\overline{\pi}^d]	 = 0 , ~ \& \,  \forall \theta_b \in \{\theta_a \} \colon  \forall \pi^d \colon \frac{\partial^2 A}{\partial \pi^d(\theta_a) \partial \pi^d(\theta_b) } [\overline{\pi^d}] \leq  0 	\right ) 
+	\end{eqnarray*}
+	
+	\begin{figure}[H]
+		\centering 
+		\begin{tikzpicture}
+			\begin{scope}[transform canvas={scale=0.5}]
+			\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/fonc_A_code}	
+			
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5] (-13.5 , -1) rectangle (13 , 10) ; 
+				
+			
+		\end{tikzpicture}	
+		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+	\end{figure}
+
 	
 	\begin{eqnarray}
 			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s}{ \Pi  } - 1 \right )\frac{\delta \Pi  }{ \delta \Pi(\theta_b)} -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s }\right ) \right )\frac{\delta \Pi_s  }{ \delta \Pi(\theta_b) } \right \} (\theta_a) ,\\
