@@ -186,12 +186,21 @@ Le nombre total de micro-états est le produit de toutes ces configurations pour
 			
 			\end{scope}
 			
-			\draw[color = red , scale = 0.5] (-13.5 , -1) rectangle (13 , 10) ; 
+			\draw[color = red , scale = 0.5] (-2 , -1) rectangle (5, 6) ; 
 				
 			
 		\end{tikzpicture}	
 		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
 	\end{figure}
+	
+	On note $\pi^d = \overline{\pi}^d + \delta \pi^d $, donc le debellopement limité de A autour de $\overline{\pi}^d$ est :
+	\begin{eqnarray}
+		A[\pi^d]  &  =  & 	A[\overline{\pi}^d]  + \frac{1}{1!} \sum_{a \vert tranche } \left \{ A^{(1)}\right \}_{a} [\overline{\pi}^d] \delta \pi^d(\theta_a)  + \frac{1}{2!} \sum_{a , b \vert tranche } \left \{ A^{(2)}\right \}_{a, b } [\overline{\pi}^d] \delta \pi^d(\theta_a)\delta  \pi^d(\theta_b) + R[\overline{\pi}^d], 
+	\end{eqnarray}
+	
+	avec $ \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  }  = \frac{\partial^k A }{ \partial \pi^d ( \theta_{i_1} ) \cdots \partial \pi^d ( \theta_{i_k} )  } $ et $R[\overline{\pi}^d] = \sum_{ k = 3 }^\infty \frac{1}{k!} \sum_{i_1 , \cdots , i_k } \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  } [ \overline{\pi}^d ] \delta \pi^d(\theta_{i_1}) \cdots   \delta \pi^d(\theta_{i_k})$
+
+	
 
 	
 	\begin{eqnarray}
