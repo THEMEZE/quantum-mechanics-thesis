@@ -173,7 +173,7 @@ Le nombre total de micro-états est le produit de toutes ces configurations pour
 		P_{\{ \pi^d(\theta_a)\} } & = & \frac{ e^{ A[\pi^d]  }}{Z} 	
 	\end{eqnarray}
 	
-	ou $A[\pi^d] = S_{YY}[\pi^d] - \sum_{a\vert tranche} f(\theta_a) \pi^d ( \theta) \delta \theta $. On fait l'hypothèse que la configuration $\{ \overline{\pi}_a^d \}$ domine tous les configurations (ie $\forall \{ \theta_a\} } \colon P_{\{ \pi^d(\theta_a)\} } \leq P_{\{ \overline{\pi}^d(\theta_a)\} }$) ce qui implique que  
+	ou $A[\pi^d] = S_{YY}[\pi^d] - \sum_{a\vert tranche} f(\theta_a) \pi^d ( \theta) \delta \theta $. On fait l'hypothèse que la configuration $\{ \overline{\pi}_a^d \}$ domine tous les configurations (ie $\forall \{ \theta_a\}  \colon P_{\{ \pi^d(\theta_a)\} } \leq P_{\{ \overline{\pi}^d(\theta_a)\} }$) ce qui implique que  
 	\begin{eqnarray*}
 		\forall \theta_a  \in \{\theta_a \}\colon  \left ( \frac{\partial A}{\partial \pi^d(\theta_a) } [\overline{\pi}^d]	 = 0 , ~ \& \,  \forall \theta_b \in \{\theta_a \} \colon  \forall \pi^d \colon \frac{\partial^2 A}{\partial \pi^d(\theta_a) \partial \pi^d(\theta_b) } [\overline{\pi^d}] \leq  0 	\right ) 
 	\end{eqnarray*}
@@ -198,8 +198,57 @@ Le nombre total de micro-états est le produit de toutes ces configurations pour
 		A[\pi^d]  &  =  & 	A[\overline{\pi}^d]  + \frac{1}{1!} \sum_{a \vert tranche } \left \{ A^{(1)}\right \}_{a} [\overline{\pi}^d] \delta \pi^d(\theta_a)  + \frac{1}{2!} \sum_{a , b \vert tranche } \left \{ A^{(2)}\right \}_{a, b } [\overline{\pi}^d] \delta \pi^d(\theta_a)\delta  \pi^d(\theta_b) + R[\overline{\pi}^d], 
 	\end{eqnarray}
 	
-	avec $ \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  }  = \frac{\partial^k A }{ \partial \pi^d ( \theta_{i_1} ) \cdots \partial \pi^d ( \theta_{i_k} )  } $ et $R[\overline{\pi}^d] = \sum_{ k = 3 }^\infty \frac{1}{k!} \sum_{i_1 , \cdots , i_k } \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  } [ \overline{\pi}^d ] \delta \pi^d(\theta_{i_1}) \cdots   \delta \pi^d(\theta_{i_k})$
+	avec $ \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  }  = \frac{\partial^k A }{ \partial \pi^d ( \theta_{i_1} ) \cdots \partial \pi^d ( \theta_{i_k} )  } $ et $R[\overline{\pi}^d] = \sum_{ k = 3 }^\infty \frac{1}{k!} \sum_{i_1 , \cdots , i_k } \left \{ A^{(k)}\right \}_{ i_1 , \cdots ,  i_k  } [ \overline{\pi}^d ] \delta \pi^d(\theta_{i_1}) \cdots   \delta \pi^d(\theta_{i_k})$.
+	
+	On se restrins au second ordre soit $e^{R[\overline{\pi}^d]} \sim 1 $ soit 
+	
+	\begin{eqnarray}
+		P_{\{\pi^d(\theta_a)\} } & 	\sim & B e^{\displaystyle \frac{1}{2} \sum_{a , b \vert tranche } \left \{ A^{(2)}\right \}_{a, b } [\overline{\pi}^d] \delta \pi^d(\theta_a)\delta  \pi^d(\theta_b) }, 
+	\end{eqnarray}
+	
+	avec $ B = e^{A[\overline{\pi}^d]}/Z $.
+	
+	On reconnais une loi normale multidimensionelle
+	\footnote{
+	{\em \bf Loi normale multidimensionnelle} \\
+	\begin{itemize}
+		\item $x \in \mathbb{R}^N$ : fonction caractéristique : $\phi_{\mu , \Sigma} = \exp \left ( i x^T \mu - \frac{1}2 x^T \Sigma x  \right ) $.
+		\item cas non-dégénéré où $Sigma$ est définie positive : $f_{ \mu , \Sigma } (x) = \frac{1}{(2 \pi)^{N/2} \det ( \Sigma ) ^{1/2}} \exp \left ( - \frac{1}{2} ( x - \mu )^T \Sigma^{-1} ( x - \mu ) \right ) $
+		\item théorème centrale limite fait apparaitre un variable U de Gauss centré réduite 
+			$$
+			\begin{array}{cccc}
+				& \mathbb{E} (U) = 0, & \mathbb{E} (U^2) = 1 & p_U(u) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} u^2 } \\
+				\mbox{ si $X = \sigma U + \mu $}, & \mathbb{E} (X) = \mu, & \mathbb{E} ((X-\mu)^2) = \sigma^2 & p_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}  }
+			\end{array}
+			$$
+		\item loi unitaire à plusieurs variable 
+			$$
+			\begin{array}{ccc}
+				 \mathbb{E} (U) = 0, & \mathbb{E} (UU^T) = id  & p_U(u) = \frac{1}{(2 \pi)^{N/2} } e^{-\frac{1}{2} u u^T } \\
+			\end{array}
+			$$
+		\item loi générale à plusieurs variables
+			$$
+			\begin{array}{cccc}
+				 X = a U + \mu & \mathbb{E} (X) = a \mathbb{E}(U) + \mu = \mu , & \mathbb{E} ((X-\mu)(X-\mu)^T) = \mathbb{E} (aUU^T a^T) = a a^T = \Sigma & p_X(x) = \frac{1}{(2 \pi)^{N/2}  \vert \Sigma\vert^2 } e^{-\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) } \\
+			\end{array}
+			$$
+	\end{itemize}
+	
+	}
+	:
+	
+	\begin{eqnarray}
+		P_{\{\pi^d(\theta_a)\} } & \sim & 	\frac{1}{(2 \pi)^{N/2} \det ( \Sigma ) ^{1/2}} \exp \left ( - \frac{1}{2} ( x - \mu )^T \Sigma^{-1} ( x - \mu ) \right )	,
+	\end{eqnarray}
+	avec $( x - \mu ) = (\delta \pi^d ( \theta_1) , \underset{tranche}{ \cdots} )$ , $Z \sim (2 \pi)^{N/2} A[\overline{\pi}^d] \det ( \Sigma )^{1/2}$ et la matrice écartype :
+	\begin{eqnarray}
+		\Sigma & =& - \left [ A^{(2)} \right ]^{-1} 	
+	\end{eqnarray}
 
+
+
+\subsubsection{.....}
 	
 
 	
