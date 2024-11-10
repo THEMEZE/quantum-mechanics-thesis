@@ -606,6 +606,39 @@ innertopmargin=\topskip,
 			\end{enumerate}
 			
 	\subsection{Méthode 2 (Ajustement sur l'expansion ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
+	
+		\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
+        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 556.975 ~nK$ et $\mu ( T =556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ }  }
+        		\label{fig:ajustementdeform}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ et ($T = 556.975 ~nK$ et $\mu=556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
+        		\label{fig:expansion1}
+    		\end{subfigure}
+    		
+    		\vspace{1em}
+    		
+     		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 556.975 ~nK$ , $\mu=556.975 ~nK$ , $x_0 = 19.6~\mu m$ , et $\ell = 24.78~\mu m$} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = 0$ pour  $T = 556.975 ~nK$ , $\mu=556.975 ~nK$} }
+        		\label{fig:expansion30}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/Nat}
+        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
+        		\label{fig:nat}
+    		\end{subfigure}
+				
+		\end{figure}
 		
 			\begin{enumerate}[label =\Alph*)]
 			
@@ -617,17 +650,14 @@ innertopmargin=\topskip,
 							\end{itemize}
 				
 
-				\item Deformation + Expansion 
+				\item Deformation + Expansion , Ajustement sur les données Expansion $\tau = 30 ~ms$ 
 					\begin{enumerate}[label =\alph*)]
 
-							 
-						\item Ajustement sur les données Expansion $\tau = 30 ~ms$ 
-							\begin{enumerate}[label =\alph*)]
+	
 						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
 						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
 						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
-					\end{enumerate} 
-							\begin{itemize}
+
 								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
 								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig:expansion30}}  
 									\begin{itemize}
@@ -636,7 +666,7 @@ innertopmargin=\topskip,
 										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig:nat}})
 										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig:nat}})
 									\end{itemize}	 	
-							\end{itemize}
+
 
 					\end{enumerate}
 			\end{enumerate}
