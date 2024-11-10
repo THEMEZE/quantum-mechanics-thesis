@@ -63,6 +63,8 @@
 \usepackage{graphicx}
 \usepackage{enumitem} % Pour personnaliser les listes
 \usepackage{caption} % Pour personnaliser les légendes des figures
+\usepackage{xcolor}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -439,7 +441,8 @@ innertopmargin=\topskip,
 \usepackage{marvosym}
 \usepackage{changepage}
  
-
+\definecolor{OliveGreen}{HTML}{808000}
+\def\OliveGreen{OliveGreen}
 
 \begin{document}
 	\begin{figure}[H]
@@ -472,10 +475,10 @@ innertopmargin=\topskip,
     \vspace{1em} % Espacement entre la figure et la liste d'énumération
     
     \begin{enumerate}[label=\alph*)]
-        \item "Deformation bord $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données $1~ms$ après la sélection en $x = 0$.
-        \item "Deformation bord $\tau = 18~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $18~ms$ de déformation du bord.
-        \item "Expansion 1D $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $1~ms$ d'expansion.
-        \item "Expansion 1D $\tau = 30~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $30~ms$ d'expansion.
+        {\color{blue} \item \color{blue} "Deformation bord $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données $1~ms$ après la sélection en $x = 0$.}
+        {\color{orange}\item "Deformation bord $\tau = 18~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $18~ms$ de déformation du bord.}
+        {\color{\OliveGreen} \item "Expansion 1D $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $1~ms$ d'expansion.}
+        {\color{red} \item "Expansion 1D $\tau = 30~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $30~ms$ d'expansion.}
     \end{enumerate}
   \end{minipage}
   \hfill % Espacement flexible entre les deux minipages
@@ -488,7 +491,7 @@ innertopmargin=\topskip,
 				\item Système dans une potentiel quartique  :
 					\begin{itemize}[label =$\bullet$]
 						\item fréquence transverse : $\omega_\perp \overset{exp}{=} 2 \pi * 2.56 ~KHz$	
-						\item la densité spatial théorique : $n_0 = n_p $  sur les données "deformation bord $\tau = 1~ ms$" (\ref{fig:donnes}), je mesure   $n_p \overset{exp}{=} 56.6 ~{\mu m}^{-1}$.
+						\item la densité spatial: $n_0 = n_p $  sur les données {\color{blue} "deformation bord $\tau = 1~ ms$" (\ref{fig:donnes}), je mesure   $n_p \overset{exp}{=} 56.6 ~{\mu m}^{-1}$.}
 					\end{itemize}
 				\item Selection de $x\geq 0$  :
 					\begin{itemize}[label =$\bullet$]
@@ -530,22 +533,23 @@ innertopmargin=\topskip,
 	\end{minipage}
 	
 	\section{Simulation GHD}
+		
 		\begin{figure}[!ht]
 			\begin{subfigure}[b]{0.45\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
-        		\caption{Déformation du bord $\tau = 18 ~ms$ et Ajustement }
-        		\label{fig:sub1}
+        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 556.975 ~nK$ et $\mu ( T =556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ }  }
+        		\label{fig:ajustementdeform}
     		\end{subfigure}
-    		\vspace{1em}
-
+    		\hfill
     		\begin{subfigure}[b]{0.45\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
-        		\caption{expension : $\tau = 1ms$}
-        		\label{fig:sub1}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ et ($T = 556.975 ~nK$ et $\mu=556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
+        		\label{fig:expansion1}
     		\end{subfigure}
-    		\hfill
+    		
+    		\vspace{1em}
      		\begin{subfigure}[b]{0.45\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
@@ -559,8 +563,22 @@ innertopmargin=\topskip,
 		\subsection{Méthode 1 : } 
 		
 			\begin{enumerate}[label =\Alph*)]
-				\item le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu = f ( T , n_p)$
-				\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord (\ref{fig:donnes})	
+				
+				\item Ajustement de la déformation du bord (\ref{fig:ajustementdeform}):
+
+					\begin{enumerate}[label =\alph*)]
+						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
+						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
+						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
+					\end{enumerate}
+				\item Selection et Expansion 
+					\begin{enumerate}[label =\alph*)]
+						\item Selection 
+							\begin{itemize}
+								\item $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
+								\item $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} )
+							\end{itemize} 
+					\end{enumerate}
 			\end{enumerate}
 
 			
