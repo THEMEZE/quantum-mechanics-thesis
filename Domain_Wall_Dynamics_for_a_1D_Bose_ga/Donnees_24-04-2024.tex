@@ -60,6 +60,10 @@
 \usepackage{mathtools}
 %\usepackage{cleveref}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem} % Pour personnaliser les listes
+\usepackage{caption} % Pour personnaliser les légendes des figures
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -438,30 +442,45 @@ innertopmargin=\topskip,
 
 
 \begin{document}
-	\section{Les données } 
-	\begin{itemize}
-		\item[date :] 2024-04-24
-		\item[scanes :] 89-97-102-108
-		\item[Parametres :] With1 , DeadtimeDMD, With1$\_$bis, DeadtimeDMD$\_$bis
-	\end{itemize}
-	
-	\begin{figure}[ht]
+	\begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\textwidth]{figures/donnees_24-04-2024}
-        \caption{les profiles du 24-04-2024 : 
-         }
+		%\includegraphics[width=1\textwidth]{Figures/Shema.pdf}
+	\caption{les profiles du 24-04-2024 : }
         \label{fig:donnes}
     \end{figure}
     
-    \begin{enumerate}[label =\alph*)]
-    	\item "deformation bord $\tau = 1~ ms$ (\ref{fig:donnes}) : profile longitudinale des données $1 ~ms$ aprés la selection en $x = 0$ 
-    	\item "deformation bord $\tau = 18~ ms$ (\ref{fig:donnes}): profile longitudinale des données après $18~ms$  de déformation du bord
-    	\item "expansion 1D $\tau =1~ms$"(\ref{fig:donnes}) : profile longitudinale des données après $1~ms$ d'expansion.
-    	\item "expansion 1D $\tau =30~ms$" (\ref{fig:donnes}): profile longitudinale des données après $30~ms$ d'expansion.	
-    \end{enumerate}
-
-	{~}\\
+    
+    
+	\section{Les données } 
 	
+	\begin{minipage}[b]{0.45\textwidth} 
+    \begin{itemize}
+        \item[Date :] 2024-04-24
+        \item[Scan :] 89-97-102-108
+        \item[Paramètres :] With1, DeadtimeDMD, With1\_bis, DeadtimeDMD\_bis
+    \end{itemize}
+
+    \vspace{1em} % Espacement entre la liste et la figure
+    
+    %\begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\textwidth]{Figures/donnees_24-04-2024} % Remplacez par le chemin correct de l'image
+        \captionof{figure}{Les profils du 24-04-2024}
+        %\label{fig:donnes}
+    %\end{figure}
+
+    \vspace{1em} % Espacement entre la figure et la liste d'énumération
+    
+    \begin{enumerate}[label=\alph*)]
+        \item "Deformation bord $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données $1~ms$ après la sélection en $x = 0$.
+        \item "Deformation bord $\tau = 18~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $18~ms$ de déformation du bord.
+        \item "Expansion 1D $\tau = 1~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $1~ms$ d'expansion.
+        \item "Expansion 1D $\tau = 30~ms$" (\ref{fig:donnes}) : Profil longitudinal des données après $30~ms$ d'expansion.
+    \end{enumerate}
+  \end{minipage}
+  \hfill % Espacement flexible entre les deux minipages
+	\begin{minipage}[b]{0.45\textwidth}
+			
 	\begin{enumerate}[label =\Alph*)]
 
 		\item Système semi-infinie pour $x\geq 0$ :
@@ -508,26 +527,28 @@ innertopmargin=\topskip,
 
 	\end{enumerate}
 	
+	\end{minipage}
+	
 	\section{Simulation GHD}
-		\begin{figure}[ht]
+		\begin{figure}[!ht]
 			\begin{subfigure}[b]{0.45\textwidth}
         		\centering
-        		\includegraphics[width=\textwidth]{figures/simul_deformation_18_24-04-2024}
-        		\caption{les profiles du 24-04-2024}
+        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
+        		\caption{Déformation du bord $\tau = 18 ~ms$ et Ajustement }
         		\label{fig:sub1}
     		\end{subfigure}
     		\vspace{1em}
 
     		\begin{subfigure}[b]{0.45\textwidth}
         		\centering
-        		\includegraphics[width=\textwidth]{figures/simul_expansion_1_24-04-2024}
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
         		\caption{expension : $\tau = 1ms$}
         		\label{fig:sub1}
     		\end{subfigure}
     		\hfill
      		\begin{subfigure}[b]{0.45\textwidth}
         		\centering
-        		\includegraphics[width=\textwidth]{figures/simul_expansion_30_24-04-2024}
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
         		\caption{expension : $\tau = 30ms$}
         		\label{fig:sub1}
     		\end{subfigure}
@@ -538,7 +559,8 @@ innertopmargin=\topskip,
 		\subsection{Méthode 1 : } 
 		
 			\begin{enumerate}[label =\Alph*)]
-				\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 	
+				\item le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu = f ( T , n_p)$
+				\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord (\ref{fig:donnes})	
 			\end{enumerate}
 
 			
