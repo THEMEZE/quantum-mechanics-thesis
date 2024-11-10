@@ -88,14 +88,14 @@
 
     .class_jsonSelect .text_jsonSelect {
         grid-area: t;
-        color : white;
+        color: white;
     }
 
     .class_jsonSelect .jsonSelect {
         grid-area: s;
         background-color: #fffdfd00;
         background: transparent;
-        color : white;
+        color: white;
     }
 
     .class_jsonSelect .changeButton {
@@ -382,8 +382,9 @@ justify-items: start;  */
     <div class="class_jsonSelect">
         <label for="jsonSelect" class="text_jsonSelect">Sélectionnez un fichier JSON :</label>
         <select class="jsonSelect" id="jsonSelect"> <!-- On retire onchange et on utilise le bouton -->
-            <option value="" >-- Ne rien charger --</option> <!-- Option par défaut -->
-            <option value="../static/json/article Wall.json" selected>-- Article Wall --</option> <!-- Option par défaut -->
+            <option value="">-- Ne rien charger --</option> <!-- Option par défaut -->
+            <option value="../static/json/article Wall.json" selected>-- Article Wall --</option>
+            <!-- Option par défaut -->
         </select>
 
         <a class="changeButton" id="changeButton">&#128076;</a>
@@ -406,14 +407,14 @@ justify-items: start;  */
         <!-- Boutons pour ajouter ou supprimer des paires de PDF -->
         <button class="plus" id="add-pdf-pair">+</button>
         <button class="moins" id="remove-pdf-pair">-</button>
-        <div class = "message" id="message" style="color: red; display: none;"></div>
+        <div class="message" id="message" style="color: red; display: none;"></div>
     </div>
 
     <div id="pied"></div>
-        <hr />
-        <address><small>
-                <a href="http://127.0.0.1:5500/">Guillaume THEMEZE</a> / 28/09/2024
-            </small></address>
+    <hr />
+    <address><small>
+            <a href="http://127.0.0.1:5500/">Guillaume THEMEZE</a> / 28/09/2024
+        </small></address>
     </div>
 
     <script>
@@ -617,6 +618,8 @@ justify-items: start;  */
                 "../docaranger/Seminaire/notes_Isa.pdf",
                 "../docaranger/Seminaire/chrome-extension___mhjfbmdgcfjbbpaeojofohoefgiehjai_index.html.pdf",
                 "../docaranger/Seminaire/cours-Barcelone.pdf",
+                "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Donnees_24-04-2024.pdf",
+                "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Figures/Shema.pdf",
                 // Ajoutez d'autres fichiers ici...
             ];
 
