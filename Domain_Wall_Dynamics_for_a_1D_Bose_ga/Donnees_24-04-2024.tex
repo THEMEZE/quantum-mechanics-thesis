@@ -575,6 +575,9 @@ innertopmargin=\topskip,
 		
 			\begin{enumerate}[label =\Alph*)]
 				
+
+
+				
 				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}):
 
 					\begin{enumerate}[label =\alph*)]
@@ -582,15 +585,14 @@ innertopmargin=\topskip,
 						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
 						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
 					\end{enumerate}
-				\item Selection et Expansion 
-					\begin{enumerate}[label =\alph*)]
-						\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
-							\begin{itemize}
+					
+				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
+					\begin{itemize}
 								\item[$\circ$] $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
 								\item[$\circ$] $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} )
-							\end{itemize} 
-						\item Expansion 
-							\begin{itemize}
+							\end{itemize}
+				\item Expansion 
+					\begin{itemize}
 								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
 								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig:expansion30}}  
 									\begin{itemize}
@@ -601,7 +603,6 @@ innertopmargin=\topskip,
 									\end{itemize}	 	
 							\end{itemize}
 
-					\end{enumerate}
 			\end{enumerate}
 			
 	\subsection{Méthode 2 (Ajustement sur l'expansion ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
@@ -622,7 +623,7 @@ innertopmargin=\topskip,
 						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
 						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
 					\end{enumerate}
-				\item Selection et Expansion 
+				\item Deformation + Expansion 
 					\begin{enumerate}[label =\alph*)]
 						\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
 							 
