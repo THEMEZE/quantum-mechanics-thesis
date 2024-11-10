@@ -499,6 +499,7 @@ innertopmargin=\topskip,
 						\item la densité spatial théorique : $n_0 = n_p \Theta (x) $  
 						\item garde le potentiel transverse
 					\end{itemize}
+
 			\end{enumerate}
 			
 			 
@@ -511,7 +512,7 @@ innertopmargin=\topskip,
 			\end{itemize}
 		\item Mesure locale de distribution de rapidité , Expansion 1D   : 
 			\begin{enumerate}[label =\alph*)]
-				\item Local : selection de la tranche $[ x_0 - \ell/2 , x_0 + \ell/2 ]$:
+				\item Local : selection de la tranche $[ x_0 - \ell/2 , x_0 + \ell/2 [$:
 					\begin{itemize}[label =$\bullet$]
 						\item $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur "expansion 1D $\tau =1~ms$" (\ref{fig:donnes}) ) 
 						\item $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient de s données "expansion 1D $\tau =1~ms$" (\ref{fig:donnes}) ) 	
@@ -533,6 +534,11 @@ innertopmargin=\topskip,
 	\end{minipage}
 	
 	\section{Simulation GHD}
+
+	
+		\subsection{Méthode 1 (Ajustement sur la déformation du bord ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
+		
+		
 		
 		\begin{figure}[!ht]
 			\begin{subfigure}[b]{0.45\textwidth}
@@ -550,21 +556,26 @@ innertopmargin=\topskip,
     		\end{subfigure}
     		
     		\vspace{1em}
+    		
      		\begin{subfigure}[b]{0.45\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
-        		\caption{expension : $\tau = 30ms$}
-        		\label{fig:sub1}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 556.975 ~nK$ , $\mu=556.975 ~nK$ , $x_0 = 19.6~\mu m$ , et $\ell = 24.78~\mu m$} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = 0$ pour  $T = 556.975 ~nK$ , $\mu=556.975 ~nK$} }
+        		\label{fig:expansion30}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/Nat}
+        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
+        		\label{fig:nat}
     		\end{subfigure}
 				
 		\end{figure}
-
-	
-		\subsection{Méthode 1 : } 
 		
 			\begin{enumerate}[label =\Alph*)]
 				
-				\item Ajustement de la déformation du bord (\ref{fig:ajustementdeform}):
+				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}):
 
 					\begin{enumerate}[label =\alph*)]
 						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
@@ -573,13 +584,63 @@ innertopmargin=\topskip,
 					\end{enumerate}
 				\item Selection et Expansion 
 					\begin{enumerate}[label =\alph*)]
-						\item Selection 
+						\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
 							\begin{itemize}
-								\item $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
-								\item $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} )
+								\item[$\circ$] $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
+								\item[$\circ$] $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} )
 							\end{itemize} 
+						\item Expansion 
+							\begin{itemize}
+								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
+								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig:expansion30}}  
+									\begin{itemize}
+										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig:nat}})
+										\item Les simulations GHD de l'expansion commencent avec une erreur $10\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig:nat}}) 
+										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig:nat}})
+										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig:nat}})
+									\end{itemize}	 	
+							\end{itemize}
+
 					\end{enumerate}
 			\end{enumerate}
+			
+	\subsection{Méthode 2 (Ajustement sur l'expansion ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
+		
+			\begin{enumerate}[label =\Alph*)]
+			
+				
+				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ (Idem)
+					\begin{itemize}
+								\item[$\circ$] $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
+								\item[$\circ$] $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} )
+							\end{itemize}
+				
+				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}):
+
+					\begin{enumerate}[label =\alph*)]
+						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
+						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
+						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
+					\end{enumerate}
+				\item Selection et Expansion 
+					\begin{enumerate}[label =\alph*)]
+						\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
+							 
+						\item Expansion 
+							\begin{itemize}
+								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
+								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig:expansion30}}  
+									\begin{itemize}
+										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig:nat}})
+										\item Les simulations GHD de l'expansion commencent avec une erreur $10\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig:nat}}) 
+										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig:nat}})
+										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig:nat}})
+									\end{itemize}	 	
+							\end{itemize}
+
+					\end{enumerate}
+			\end{enumerate}
+
 
 			
 
