@@ -459,7 +459,7 @@ innertopmargin=\topskip,
 	
 	[Version 1 ] 
 	Pour avoir $x_0$ et $\ell$ j'ajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $  et $\ell$ et la largeur à demis hauteur : $\ell = 2\sqrt{ 2 \ln (2) } \sqrt{ \sigma^2 + \left ( \frac{ A}{2} \right )^2 } $. On trouve $x_0 = 18.34 ~\mu m $ et $\ell = 33.51 ~\mu m $ \ref{fig:expansion_1_33}.\\
-	Puis on fait une expansion unidimentionnelle pentan $\tau = 30 ~ ms $. Les sumulation GHD aplique à la petite tranche nous donne une profile lois des donné \ref{fig:expansion_30_33} 
+	Puis on fait une expansion unidimentionnelle pentan $\tau = 30 ~ ms $. Les sumulation GHD aplique à la petite tranche nous donne une profile lois des donné \ref{fig:expansion_30_33}.Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut mais pas aux donnée.   
 	
 		\begin{figure}[h]
 			\begin{subfigure}[b]{0.45\textwidth}
@@ -481,7 +481,7 @@ innertopmargin=\topskip,
 
 	
 	[Version 2 ] 
-	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On  ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 1~ms$ . On trouve $\ell = 28.1 ~\mu m $ \ref{fig:expansion_1_28}.
+	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On  ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 1~ms$ . On trouve $\ell = 28.1 ~\mu m $ \ref{fig:expansion_1_28}.près expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et mais pas au  donnée.  
 	
 	\begin{figure}[h]
 			\begin{subfigure}[b]{0.45\textwidth}
@@ -502,7 +502,7 @@ innertopmargin=\topskip,
 		\end{figure}
 	
 	[Version 3 ] 
-	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simu  
+	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et au donnée.  
 	
 	\begin{figure}[ht]
 			\begin{subfigure}[b]{0.45\textwidth}
