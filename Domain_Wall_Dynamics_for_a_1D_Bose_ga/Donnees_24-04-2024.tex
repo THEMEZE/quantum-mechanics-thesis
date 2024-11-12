@@ -448,12 +448,12 @@ innertopmargin=\topskip,
 
 	\section{Essancielle}
 	
-	Nous commençons par faire un ajustement le profil de déformation bord avec des sumulations GDH. La temperature est le paramètre ajustable. Le potentiel chimique $\mu$ est parametrés avec la temperature $T$ et la densité initiale spatiale du nuage $n_p$. Le potentiel chimique $\mu$ est une fonctioin de $T$ et de la densité initiale spatiale du nuage $n_p$. aillant $T$ on ajuste $\mu$ pour avec un modele de thermique Yang-Yang, trouver une densité spatiale initiale de $n_p$. $n_p$ est mesuré à $56.6 ~\mu m ^{-1}$.  le meilleure ajustement de la déformation du bord est pour une temperature $T = 558.9 ~nK$ soit une potentiel chimique $\mu = 64~nK$ \ref{}.\\
-	\begin{figure}[H]
+	Nous commençons par faire un ajustement le profil de déformation bord avec des sumulations GDH. La temperature est le paramètre ajustable. Le potentiel chimique $\mu$ est parametrés avec la temperature $T$ et la densité initiale spatiale du nuage $n_p$. Le potentiel chimique $\mu$ est une fonctioin de $T$ et de la densité initiale spatiale du nuage $n_p$. aillant $T$ on ajuste $\mu$ pour avec un modele de thermique Yang-Yang, trouver une densité spatiale initiale de $n_p$. $n_p$ est mesuré à $56.6 ~\mu m ^{-1}$.  le meilleure ajustement de la déformation du bord est pour une temperature $T = 558.9 ~nK$ soit une potentiel chimique $\mu = 64~nK$ \ref{fig:simul_deformation}.\\
+	\begin{figure}[ht]
         \centering
 		\includegraphics[width=0.5\textwidth]{Figures/simul_deformation}
         \caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{orange}[Orange]  Ajustement avec $T = 558.939 ~nK$ et $\mu ( T =558.939 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$} }
-        		\label{fig1.1:ajustementdeform}
+        		\label{fig:simul_deformation}
     \end{figure}
 	On veux extraire une distribution locale de rapidité. Pour cela avant de faire une expantion unidimentionnel nous faisont on selection une tranche du nuage \cite{dubois_probing_2024}. Tranche $[ x_0 - \ell/2 ,x_0 + \ell/2 [$ dont on veux extraire sa distribution de rapidité $\Pi_{x_0 , \ell}$ . Où $x_0$ est le centre de la tranche et $\ell$ est la largeur de la tranche.\\
 	
@@ -502,9 +502,9 @@ innertopmargin=\topskip,
 		\end{figure}
 	
 	[Version 3 ] 
-	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide traduisant  
+	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simu  
 	
-	\begin{figure}[h]
+	\begin{figure}[ht]
 			\begin{subfigure}[b]{0.45\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_22}
