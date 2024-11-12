@@ -445,6 +445,91 @@ innertopmargin=\topskip,
 \def\OliveGreen{OliveGreen}
 
 \begin{document}
+
+	\section{Essancielle}
+	
+	Nous commençons par faire un ajustement le profil de déformation bord avec des sumulations GDH. La temperature est le paramètre ajustable. Le potentiel chimique $\mu$ est parametrés avec la temperature $T$ et la densité initiale spatiale du nuage $n_p$. Le potentiel chimique $\mu$ est une fonctioin de $T$ et de la densité initiale spatiale du nuage $n_p$. aillant $T$ on ajuste $\mu$ pour avec un modele de thermique Yang-Yang, trouver une densité spatiale initiale de $n_p$. $n_p$ est mesuré à $56.6 ~\mu m ^{-1}$.  le meilleure ajustement de la déformation du bord est pour une temperature $T = 558.9 ~nK$ soit une potentiel chimique $\mu = 64~nK$ \ref{}.\\
+	\begin{figure}[H]
+        \centering
+		\includegraphics[width=0.5\textwidth]{Figures/simul_deformation}
+        \caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{orange}[Orange]  Ajustement avec $T = 558.939 ~nK$ et $\mu ( T =558.939 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$} }
+        		\label{fig1.1:ajustementdeform}
+    \end{figure}
+	On veux extraire une distribution locale de rapidité. Pour cela avant de faire une expantion unidimentionnel nous faisont on selection une tranche du nuage \cite{dubois_probing_2024}. Tranche $[ x_0 - \ell/2 ,x_0 + \ell/2 [$ dont on veux extraire sa distribution de rapidité $\Pi_{x_0 , \ell}$ . Où $x_0$ est le centre de la tranche et $\ell$ est la largeur de la tranche.\\
+	
+	[Version 1 ] 
+	Pour avoir $x_0$ et $\ell$ j'ajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $  et $\ell$ et la largeur à demis hauteur : $\ell = 2\sqrt{ 2 \ln (2) } \sqrt{ \sigma^2 + \left ( \frac{ A}{2} \right )^2 } $. On trouve $x_0 = 18.34 ~\mu m $ et $\ell = 33.51 ~\mu m $ \ref{fig:expansion_1_33}.\\
+	Puis on fait une expansion unidimentionnelle pentan $\tau = 30 ~ ms $. Les sumulation GHD aplique à la petite tranche nous donne une profile lois des donné \ref{fig:expansion_30_33} 
+	
+		\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_33}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 33.5~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 33.5~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
+        		\label{fig:expansion_1_33}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_33}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 33.5~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
+        		\label{fig:expansion_30_33}
+    		\end{subfigure}
+    		\caption{}
+			\label{}	
+		\end{figure}
+
+	
+	[Version 2 ] 
+	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On  ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 1~ms$ . On trouve $\ell = 28.1 ~\mu m $ \ref{fig:expansion_1_28}.
+	
+	\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_28}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 28.1~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 28.1~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
+        		\label{fig:expansion_1_28}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_28}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 28.1~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
+        		\label{fig:expansion_30_28}
+    		\end{subfigure}
+    		\caption{}
+			\label{}	
+		\end{figure}
+	
+	[Version 3 ] 
+	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ \ref{fig:expansion_1_22}
+	
+	\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_22}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 22.2~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 22.2~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
+        		\label{fig:expansion_1_22}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_22}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 22.2~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
+        		\label{fig:expansion_30_22}
+    		\end{subfigure}
+    		\caption{}
+			\label{}	
+		\end{figure}
+	
+	{\color{blue} centre bouge entre $\tau = 0$ et $\tau = 1~ms$ et mon mesure une diference de 17$\%$ de nombre d'atome sentre $\tau = 1~ms$ et $\tau = 30 ~ms$ sur les données d'expension}
+	
+	
+	
+	
+	
+	
+	
 	\begin{figure}[H]
         \centering
 		%\includegraphics[width=1\textwidth]{Figures/Shema.pdf}
@@ -605,6 +690,144 @@ innertopmargin=\topskip,
 
 			\end{enumerate}
 			
+			
+\subsection{Méthode 1.1 (Ajustement sur la déformation du bord + ajustement $x_0$ et $\ell$ ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 18.852 ~\mu m  , \ell = 27.860 ~ \mu m  $ ): } 
+		
+		
+		
+		\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024-1.1.png}
+        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 558.939 ~nK$ et $\mu ( T =558.939 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $18.852 ~\mu m $ et $\ell = 27.860 ~ \mu m $ }  }
+        		\label{fig1.1:ajustementdeform}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024-1.1.png}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 8.852 ~\mu m $ et $\ell = 27.860 ~ \mu m $ et ($T = 558.939 ~nK$ et $\mu=64.529 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
+        		\label{fig1.1:expansion1}
+    		\end{subfigure}
+    		
+    		\vspace{1em}
+    		
+     		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024-1.1.png}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.939 ~nK$ , $\mu=64.529 ~nK$ , $x_0 = 18.852 ~\mu m $ , et $\ell = 27.860 ~ \mu m $} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.939 ~nK$ , $\mu=64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité en $x = x_0$ avec $\ell = 27.860 ~ \mu m $,  pour  $T = 558.939 ~nK$ , $\mu=64.529 ~nK$} }
+        		\label{fig1.1:expansion30}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/Nat-1.1.png}
+        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
+        		\label{fig1.1:nat}
+    		\end{subfigure}
+				
+		\end{figure}
+		
+			\begin{enumerate}[label =\Alph*)]
+				
+
+
+				
+				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}) ou (\ref{fig1.1:ajustementdeform}) :
+
+					\begin{enumerate}[label =\alph*)]
+						\item[$\circ$] (idem)
+						\item[$\circ$] L'ajustement donne $T = 558.939 ~nK$ et $\mu( T=558.939 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
+					\end{enumerate}
+					
+				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
+					\begin{itemize}
+								\item[$\circ$] $x_0 = 18.852 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig1.1:ajustementdeform}) } ou {\color{blue}(\ref{fig1.1:expansion1})} ) 
+								\item[$\circ$] $\ell = 27.860 ~ \mu m $ (en ajustant pour que les simulation $ \tau = 0$ donne le mement nombre d'atome que pour les donné à $\tau = 1~ms$  {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig1.1:ajustementdeform}) } ou {\color{blue}(\ref{fig1.1:expansion1})} )
+							\end{itemize}
+				\item Expansion 
+					\begin{itemize}
+								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
+								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig1.1:expansion30}}  
+									\begin{itemize}
+										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig1.1:nat}})
+										\item[x] Les simulations GHD de l'expansion commencent avec une erreur $0\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig1.1:nat}}) 
+										\item[x] Les simulations GHD de l'expansion se terminent avec une erreur $23\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig1.1:nat}})
+										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig1.1:nat}})
+									\end{itemize}	 	
+							\end{itemize}
+
+			\end{enumerate}
+			
+			
+	\subsection{Méthode 1.2 (Ajustement sur la déformation du bord + ajustement $x_0$ et $\ell$ ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 18.852 ~\mu m  , \ell = 22.14 ~ \mu m  $ ): } 
+		
+		
+		
+		\begin{figure}[H]
+			\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024-1.2.png}
+        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 558.939 ~nK$ et $\mu ( T =558.939 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $18.852 ~\mu m $ et $\ell = 22.14 ~ \mu m $ }  }
+        		\label{fig1.2:ajustementdeform}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024-1.2.png}
+        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 8.852 ~\mu m $ et $\ell = 22.14~ \mu m $ et ($T = 558.939 ~nK$ et $\mu=64.529 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
+        		\label{fig1.2:expansion1}
+    		\end{subfigure}
+    		
+    		\vspace{1em}
+    		
+     		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024-1.2.png}
+        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.939 ~nK$ , $\mu=64.529 ~nK$ , $x_0 = 18.852 ~\mu m $ , et $\ell = 27.860 ~ \mu m $} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.939 ~nK$ , $\mu=64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité en $x = x_0$ avec $\ell = 22.14 ~ \mu m $,  pour  $T = 558.939 ~nK$ , $\mu=64.529 ~nK$} }
+        		\label{fig1.2:expansion30}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/Nat-1.2.png}
+        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
+        		\label{fig1.2:nat}
+    		\end{subfigure}
+				
+		\end{figure}
+		
+			\begin{enumerate}[label =\Alph*)]
+				
+
+
+				
+				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}) ou (\ref{fig1.2:ajustementdeform}) :
+
+					\begin{enumerate}[label =\alph*)]
+						\item[$\circ$] (idem)
+						\item[$\circ$] L'ajustement donne $T = 558.939 ~nK$ et $\mu( T=558.939 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
+					\end{enumerate}
+					
+				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
+					\begin{itemize}
+								\item $x_0 = 18.852 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig1.2:ajustementdeform}) } ou {\color{blue}(\ref{fig1.2:expansion1})} ) 
+								\item[x] $x_0 = 22.14 ~ \mu m $ (en ajustant pour que les simulation $ \tau = 0$ donne le mement nombre d'atome que pour les donné à $\tau = 30~ms$  {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig1.2:ajustementdeform}) } ou {\color{blue}(\ref{fig1.2:expansion30})} )
+							\end{itemize}
+				\item Expansion 
+					\begin{itemize}
+								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
+								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig1.2:expansion30}}  
+									\begin{itemize}
+										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig1.2:nat}})
+										\item[x] Les simulations GHD de l'expansion commencent avec une erreur $0\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig1.2:nat}}) 
+										\item[x] Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig1.2:nat}})
+										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig1.2:nat}})
+									\end{itemize}	 	
+							\end{itemize}
+
+			\end{enumerate}		
+			
 	\subsection{Méthode 2 (Ajustement sur l'expansion ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
 	
 		\begin{figure}[H]
@@ -665,7 +888,7 @@ innertopmargin=\topskip,
 									\begin{itemize}
 										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig4:nat}})
 										\item Les simulations GHD de l'expansion commencent avec une erreur $10\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig4:nat}}) 
-										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig4:nat}})
+										\item[x] Les simulations GHD de l'expansion se terminent avec une erreur $23\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig4:nat}})
 										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig4:nat}})
 									\end{itemize}	 	
 
@@ -675,245 +898,6 @@ innertopmargin=\topskip,
 
 
 			
-\subsection{Méthode 3 (Ajustement sur la déformation du bord ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
-		
-		
-		
-		\begin{figure}[H]
-			\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
-        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 556.975 ~nK$ et $\mu ( T =556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ }  }
-        		\label{fig5:ajustementdeform}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
-        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ et ($T = 556.975 ~nK$ et $\mu=556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
-        		\label{fig5:expansion1}
-    		\end{subfigure}
-    		
-    		\vspace{1em}
-    		
-     		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
-        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 556.975 ~nK$ , $\mu=556.975 ~nK$ , $x_0 = 19.6~\mu m$ , et $\ell = 24.78~\mu m$} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = 0$ pour  $T = 556.975 ~nK$ , $\mu=556.975 ~nK$} }
-        		\label{fig5:expansion30}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/Nat}
-        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
-        		\label{fig5:nat}
-    		\end{subfigure}
-				
-		\end{figure}
-		
-			\begin{enumerate}[label =\Alph*)]
-				
-
-
-				
-				\item Ajustement sur la déformation du bord (\ref{fig:ajustementdeform}):
-
-					\begin{enumerate}[label =\alph*)]
-						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
-						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
-						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
-					\end{enumerate}
-					
-				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ 
-					\begin{itemize}
-								\item[$\circ$] $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig5:ajustementdeform}) } ou {\color{blue}(\ref{fig:expansion1})} ) 
-								\item[$\circ$] $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig5:donnes})} ou {\color{orange} (\ref{fig:ajustementdeform}) } ou {\color{blue}(\ref{fig5:expansion1})} )
-							\end{itemize}
-				\item Expansion 
-					\begin{itemize}
-								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
-								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig5:expansion30}}  
-									\begin{itemize}
-										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig5:nat}})
-										\item Les simulations GHD de l'expansion commencent avec une erreur $10\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig5:nat}}) 
-										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig5:nat}})
-										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig5:nat}})
-									\end{itemize}	 	
-							\end{itemize}
-
-			\end{enumerate}
-			
-	\subsection{Méthode 4 (Ajustement sur l'expansion ($\mu( T , n_p = 56.6 ~{\mu m}^{-1} ) , T , x_0 = 19.6 ~\mu m  , \ell = 24.78 ~ \mu m  $ ): } 
-	
-		\begin{figure}[H]
-			\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
-        		\caption{{\color{blue} [Bleu] Donnée de Déformation du bord $t= 18 ~ms$},{\color{OliveGreen}[ Vert ]  Ajustement avec $T = 556.975 ~nK$ et $\mu ( T =556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$}, {\color{orange}[Orange] Donnée de Selection après expansion $\tau = 1~ms$} et {\color{red}[Rouge] Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ }  }
-        		\label{fig6:ajustementdeform}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
-        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$}, {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 1~ms$  , avec $x_0 = 19.6~\mu m$ et $\ell = 24.78~\mu m$ et ($T = 556.975 ~nK$ et $\mu=556.975 ~nK  , n_p = 56.6 ~{\mu m}^{-1} )= 64.554~nK$)} et { \color{orange}[Orange] Données de l'expansion pour $\tau = 30~ms$  } }
-        		\label{fig6:expansion1}
-    		\end{subfigure}
-    		
-    		\vspace{1em}
-    		
-     		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
-        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 556.975 ~nK$ , $\mu=556.975 ~nK$ , $x_0 = 19.6~\mu m$ , et $\ell = 24.78~\mu m$} et {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = 0$ pour  $T = 556.975 ~nK$ , $\mu=556.975 ~nK$} }
-        		\label{fig6:expansion30}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/Nat}
-        		\caption{{\color{blue}[Bleu] Déviation de du nombre d'atome simulé par raport au nombre d'atome simulé à $\tau = 0 ~ms$ } , {\color{orange}[Orange] Déviation de du nombre d'atome simulé par rapport au nombre d'atome mesuré dans les donné à $\tau = 1 ~ms$} ,  {\color{\OliveGreen}[Vert] Déviation de du nombre d'atome simulé par raport au nombre d'atome mesuré sur les donné à $\tau = 30 ~ms$} et {\color{red}[Rouge] Déviation de du nombre d'atome mesurer sur les donné à $\tau = 30 ~ms$ rapport au nombre d'atome mesuré sur les donné à $\tau = 1 ~ms$} }
-        		\label{fig6:nat}
-    		\end{subfigure}
-    		
-    		\caption{}
-				
-		\end{figure}
-		
-			\begin{enumerate}[label =\Alph*)]
-			
-				
-				\item Selection $[ x_0 - \ell/2 , x_0 + \ell/2[$ (Idem)
-					\begin{itemize}
-								\item[$\circ$] $x_0 = 19.6 ~\mu m $ (trouvé avec un ajustement gaussien sur {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig4:ajustementdeform}) } ou {\color{blue}(\ref{fig4:expansion1})} ) 
-								\item[$\circ$] $\ell = 24.78 ~ \mu m $ (trouvé en faisant la différence des positions des extremums du gradient des données {\color{OliveGreen}"expansion 1D $\tau =1~ms$" (\ref{fig:donnes})} ou {\color{orange} (\ref{fig6:ajustementdeform}) } ou {\color{blue}(\ref{fig4:expansion1})} )
-							\end{itemize}
-				
-
-				\item Deformation + Expansion , Ajustement sur les données Expansion $\tau = 30 ~ms$ 
-					\begin{enumerate}[label =\alph*)]
-
-	
-						\item On extrais la temperature $T$ en faisant un ajustement sur le profil de bord 
-						\item Le potentiel chimique est une fonction de la temperature $T$ et la densité $n_p$ : $\mu( T , n_p = 56.6 ~{\mu m}^{-1} )$ tel que $\int \rho_{ [ \nu_{\{T,\mu\}} ] } (\theta) \, d \theta  = n_p $ 
-						\item[$\circ$] L'ajustement donne $T = 556.975 ~nK$ et $\mu( T=556.975 ~nK , n_p = 56.6 ~{\mu m}^{-1} ) = 64.554~nK $ 
-
-								\item[$\bullet$]	 On considère que la tranche $[ x_0 - \ell/2 , x_0 + \ell/2[$ n'est pas homogène 
-								\item[$\circ$] Après Simulation GHD on obtiens les profil {\color{orange} orange de \ref{fig6:expansion30}}  
-									\begin{itemize}
-										\item Les simulations GHD Conservent le nombre d'atoms à $3\%$ près ({\color{blue} blue de \ref{fig4:nat}})
-										\item Les simulations GHD de l'expansion commencent avec une erreur $10\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion à $\tau = 1~ms$ ({\color{orange} Premier point de la courbe orange de \ref{fig6:nat}}) 
-										\item Les simulations GHD de l'expansion se terminent avec une erreur $13\%$ en nombre d'atome par rapport au nombre d'atome mesuré les données d'expansion $\tau = 30~ms$ ({\color{\OliveGreen} Dernier point de la courbe verte de \ref{fig6:nat}})
-										\item Les mesures sur les données du nombre d'atomes lors de l'expansion montrent une perte de $17\%$ du nombre d'atomes ({\color{red} rouge \ref{fig6:nat}})
-									\end{itemize}	 	
-
-
-					\end{enumerate}
-			\end{enumerate}
-
-
-	
-	
-	
-	
-	\begin{figure}[ht]
-    \centering
-    % Première sous-figure
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/donnees_24-04-2024}
-        \caption{les profiles du 24-04-2024}
-        \label{fig:sub1}
-    \end{subfigure}
-    \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/simul_deformation_18_24-04-2024}
-        \caption{les profiles du 24-04-2024}
-        \label{fig:sub1}
-    \end{subfigure}
-    
-    \vspace{1em}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
-        \caption{expansion $\tau = 1ms$}
-        \label{fig:sub4}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
-        \caption{expensuin : $\tau = 30ms$}
-        \label{fig:sub3}
-    \end{subfigure}
-    
-    \vspace{1em}
-
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/donnees_expansion_1_24-04-2024}
-        \caption{expensuin : $\tau = 1ms$}
-        \label{fig:sub2}
-    \end{subfigure}
-	\hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/donnees_expansion_30_24-04-2024}
-        \caption{expensuin : $\tau = 30ms$}
-        \label{fig:sub3}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/Nat}
-        \caption{Nombre d'atomes}
-        \label{fig:sub3}
-    \end{subfigure}
-    
-    % Quatrième sous-figure
-
-
-    \caption{Données du 24-04-2024 et simulation avec ajustement sur déformation du bord , où $\mu = f(T , n_p)$ avec $n_p$ mesuré sur donné "déformation bord $\tau = 1ms$}
-    \label{fig:main}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    % Première sous-figure
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_24-04-2024}
-        \caption{expension : $\tau = 1ms$}
-        \label{fig:sub1}
-    \end{subfigure}
-    \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_24-04-2024}
-        \caption{expension : $\tau = 30ms$}
-        \label{fig:sub1}
-    \end{subfigure}
-    
-    \vspace{1em}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/Nat}
-        \caption{Nombre d'atomes}
-        \label{fig:sub4}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figures/Nat}
-        \caption{Nombre d'atomes}
-        \label{fig:sub3}
-    \end{subfigure}
-    
-    
-
-    \caption{Données du 24-04-2024 et simulation avec ajustement sur expension du bord , où $\mu = f(T , n_p)$ avec $n_p$ mesuré sur donné "déformation bord $\tau = 1ms$}
-    \label{fig:main}
-\end{figure}
 	
 \end{document}
 
