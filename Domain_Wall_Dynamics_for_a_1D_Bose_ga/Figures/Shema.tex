@@ -91,6 +91,12 @@
 
 }
 
+\newcommand{\Palette}[1][\colorOne]{
+	\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
+        	(-1,-1) rectangle (1,1);
+	\draw[fill=#1 , color = #1 ] (-2,-2) rectangle (2,2);
+}
+
 
 \begin{document}
 
@@ -145,36 +151,34 @@
 %\clip (53 , -55) rectangle (95 , 20) ; \draw[color = red ] (53 , -55) rectangle (95 , 20) ; % voire coupure 1 18ms 
 
 
+
 % palette de couleur 
 \node at (40,6) [rectangle , rotate = -90] { 
 	\begin{tikzpicture}
 	
 	\node at (0,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-1,-1) rectangle (1,1);
-			\draw[fill=\colorOne , color = \colorOne ] (-2,-2) rectangle (2,2);
+			\Palette[\colorOne]
 		\end{tikzpicture}} ;
 	\node at (3,0) [rectangle, ] {
 		\begin{tikzpicture}
-			
-			\draw[fill=\colorTwo , color = \colorTwo] (-1,-1) rectangle (1,1);
+			\Palette[\colorTwo]
 		\end{tikzpicture}} ;
 	\node at (6,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\draw[fill=\colorThree , color = \colorThree] (-1,-1) rectangle (1,1);
+			\Palette[\colorThree]
 		\end{tikzpicture}} ;
 	\node at (9,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\draw[fill=\colorFour , color = \colorFour] (-1,-1) rectangle (1,1);
+			\Palette[\colorFour]
 		\end{tikzpicture}} ;
 	\node at (12,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\draw[fill=\colorFive , color = \colorFive] (-1,-1) rectangle (1,1);
+			\Palette[\colorFive]
 		\end{tikzpicture}} ;
 	\node at (15,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\draw[fill=\colorSix  , color = \colorSix] (-1,-1) rectangle (1,1);
+			\Palette[\colorSix]
 		\end{tikzpicture}} ;
 	
 	\end{tikzpicture}
