@@ -151,10 +151,13 @@
 	
 	\node at (0,0) [rectangle, ] {
 		\begin{tikzpicture}
-			\draw[fill=\colorOne , color = \colorOne ] (-1,-1) rectangle (1,1);
+			\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
+        			(-1,-1) rectangle (1,1);
+			\draw[fill=\colorOne , color = \colorOne ] (-2,-2) rectangle (2,2);
 		\end{tikzpicture}} ;
 	\node at (3,0) [rectangle, ] {
 		\begin{tikzpicture}
+			
 			\draw[fill=\colorTwo , color = \colorTwo] (-1,-1) rectangle (1,1);
 		\end{tikzpicture}} ;
 	\node at (6,0) [rectangle, ] {
