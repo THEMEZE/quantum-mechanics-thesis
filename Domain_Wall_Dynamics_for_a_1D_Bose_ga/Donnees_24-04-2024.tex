@@ -466,34 +466,15 @@ innertopmargin=\topskip,
 Nous souhaitons extraire une distribution locale de rapidité. Pour cela, avant de procéder à une expansion unidimensionnelle, nous sélectionnons une tranche du nuage \cite{dubois_probing_2024}. La tranche $[x_0 - \ell/2, x_0 + \ell/2[$ est celle dont nous voulons extraire la distribution de rapidité, notée $\Pi_{x_0, \ell}$. Ici, $x_0$ est le centre de la tranche et $\ell$ sa largeur.
 
 	
-	[Version 1 ] 
-	Pour avoir $x_0$ et $\ell$ j'ajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $  et $\ell$ et la largeur à demis hauteur : $\ell = 2\sqrt{ 2 \ln (2) } \sqrt{ \sigma^2 + \left ( \frac{ A}{2} \right )^2 } $. On trouve $x_0 = 18.34 ~\mu m $ et $\ell = 33.51 ~\mu m $ \ref{fig:expansion_1_33}.\\
-	Puis on fait une expansion unidimentionnelle pentan $\tau = 30 ~ ms $. Les sumulation GHD aplique à la petite tranche nous donne une profile lois des donné \ref{fig:expansion_30_33}.Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut mais pas aux donnée.   
-	
-		\begin{figure}[h]
-			\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_33}
-        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 33.5~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 33.5~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
-        		\label{fig:expansion_1_33}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_33}
-        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 33.5~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
-        		\label{fig:expansion_30_33}
-    		\end{subfigure}
-    		\caption{}
-			\label{}	
-		\end{figure}
 		
 	[Version 1] 
-Pour obtenir $x_0$ et $\ell$, j'ajuste , sur les données d'expansion à $\tau = 1~\text{ms}$,  une fonction porte convoluée avec une gaussienne\footnote{$f(x; A, x_0, \sigma) = \frac{A}{2} \left( \operatorname{erf} \left( \frac{x + \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) - \operatorname{erf} \left( \frac{x - \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) \right)$}  où $x_0$ est le centre de la fonction et $\ell$ est la largeur à mi-hauteur \footnote{$\ell = 2\sqrt{2 \ln (2)} \sqrt{\sigma^2 + \left( \frac{A}{2} \right)^2}$}. 
+	
+Pour obtenir $x_0$ et $\ell$, on ajuste, sur les données d'expansion à $\tau = 1~\text{ms}$, une fonction porte convoluée avec une gaussienne\footnote{$f(x; A, x_0, \sigma) = \frac{A}{2} \left( \operatorname{erf} \left( \frac{x + \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) - \operatorname{erf} \left( \frac{x - \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) \right)$}, où $x_0$ est le centre de la fonction et $\ell$ est la largeur à mi-hauteur\footnote{$\ell = 2\sqrt{2 \ln (2)} \sqrt{\sigma^2 + \left( \frac{A}{2} \right)^2}$}. 
 
- On trouve $x_0 = 18.34~\mu \text{m}$ et $\ell = 33.51~\mu \text{m}$ (voir la Fig. \ref{fig:expansion_1_33}).
+On trouve $x_0 = 18.34~\mu \text{m}$ et $\ell = 33.51~\mu \text{m}$ (voir la Fig. \ref{fig:expansion_1_33}).
 
-Ensuite, une expansion unidimensionnelle est effectuée pendant $\tau = 30~\text{ms}$. Les simulations GHD appliquées à la petite tranche donnent un profil conforme aux données (voir Fig. \ref{fig:expansion_30_33}). Après expansion, on observe une asymétrie dans les données, avec un côté plus raide. Cette asymétrie est visible dans les simulations, qui se rapprochent de la distribution de rapidité attendue mais pas parfaitement des données.
+Ensuite, une expansion unidimensionnelle est effectuée pendant $\tau = 30~\text{ms}$. Les simulations GHD appliquées à la petite tranche donnent un profil conforme aux données (voir Fig. \ref{fig:expansion_30_33}). Après expansion, on observe une asymétrie dans les données, avec un côté plus raide. Cette asymétrie est visible dans les simulations, qui se rapprochent de la distribution de rapidité attendue, mais pas parfaitement des données.
+
 
 \begin{figure}[h]
     \begin{subfigure}[b]{0.45\textwidth}
@@ -513,31 +494,35 @@ Ensuite, une expansion unidimensionnelle est effectuée pendant $\tau = 30~\text
     \label{}
 \end{figure}
 
+[Version 2 ] 
+
+	Pour déterminer $x_0$, on ajuste les données d'expansion à $\tau = 1~\text{ms}$ avec une fonction porte convoluée avec une gaussienne, où $x_0$ est le centre de la fonction. J'obtiens $x_0 = 18.34~\mu \text{m}$. Ensuite, on multiplie le profil du bord par une fonction porte centrée en $x_0$ et de diamètre $\ell$. On ajuste $\ell$ pour obtenir, dans la tranche, le même nombre d'atomes que mesuré dans les données à $\tau = 1~\text{ms}$. On trouve ainsi $\ell = 28.1~\mu \text{m}$ (voir Fig. \ref{fig:expansion_1_28}). 
+
+Après l'expansion, on observe une asymétrie dans les données, avec un côté plus raide. Cette asymétrie est visible dans les simulations, qui sont proches de la distribution de rapidité attendue mais ne correspondent pas parfaitement aux données.
+
+\begin{figure}[h]
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_28}
+        \caption{{\color{blue}[Bleu] Données de sélection après expansion $\tau = 1~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 28.1~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)} et {\color{OliveGreen}[Vert] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 28.1~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)}}
+        \label{fig:expansion_1_28}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_28}
+        \caption{{\color{blue}[Bleu] Données d'expansion $\tau = 30~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion $\tau = 30~\text{ms}$ avec $n_p = 56.6~\mu \text{m}^{-1}$, $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$, $x_0 = 18.4~\mu \text{m}$, et $\ell = 28.1~\mu \text{m}$}, {\color{OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$}, et {\color{red}[Rouge] Distribution de rapidité dans la tranche $[x_0 - \ell/2, x_0 + \ell/2 [$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$}}
+        \label{fig:expansion_30_28}
+    \end{subfigure}
+    \caption{}
+    \label{}
+\end{figure}
 
 	
-	[Version 2 ] 
-	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On  ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 1~ms$ . On trouve $\ell = 28.1 ~\mu m $ \ref{fig:expansion_1_28}.près expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et mais pas au  donnée.  
-	
-	\begin{figure}[h]
-			\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_28}
-        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 28.1~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 28.1~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
-        		\label{fig:expansion_1_28}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_28}
-        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 28.1~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
-        		\label{fig:expansion_30_28}
-    		\end{subfigure}
-    		\caption{}
-			\label{}	
-		\end{figure}
-	
-	[Version 3 ] 
-	Pour avoir $x_0$  onajuste les donnés d'expension à $\tau = 1 ~ ms$ avec un modelle de fonction porte convoluée avec une gaussienne  $ \left [ f(x;A, x_0 , \sigma) = \frac{A}{2} \left ( \mbox{erf} \left (  \frac{x + \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) - \mbox{erf} \left (  \frac{x - \frac{A}2 - x_0 }{\sqrt{2} \sigma } \right ) \right ) \right ] $. J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et au donnée.  
+		
+	[Version 3 ]
+	 
+	Pour avoir $x_0$,  on ajuste sur les donnés d'expension à $\tau = 1 ~ ms$ par un modelle de fonction porte convoluée avec une gaussienne où $x_0$ est le centre de la fonction . J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et au donnée.  
 	
 	\begin{figure}[ht]
 			\begin{subfigure}[b]{0.45\textwidth}
