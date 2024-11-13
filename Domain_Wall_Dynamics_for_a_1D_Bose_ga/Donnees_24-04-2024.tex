@@ -451,7 +451,7 @@ innertopmargin=\topskip,
 	%On souhaite extraire une distribution locale de rapidité sur le bord deformé. On s'attend  
 	
 	%Nous commençons par faire un ajustement le profil de déformation bord avec des sumulations GDH. La temperature est le paramètre ajustable. Le potentiel chimique $\mu$ est parametrés avec la temperature $T$ et la densité initiale spatiale du nuage $n_p$. Le potentiel chimique $\mu$ est une fonctioin de $T$ et de la densité initiale spatiale du nuage $n_p$. aillant $T$ on ajuste $\mu$ pour avec un modele de thermique Yang-Yang, trouver une densité spatiale initiale de $n_p$. $n_p$ est mesuré à $56.6 ~\mu m ^{-1}$.  le meilleure ajustement de la déformation du bord est pour une temperature $T = 558.9 ~nK$ soit une potentiel chimique $\mu = 64~nK$ \ref{fig:simul_deformation}.\\
-	
+	[Version 1]
 	Nous commençons par ajuster le profil de déformation du bord en utilisant des simulations GHD, en prenant la température $T$ comme paramètre ajustable. Le potentiel chimique $\mu$ est paramétré en fonction de la température et de la densité spatiale initiale du nuage, notée $n_p$.  $\mu$  est ajusté en utilisant un modèle thermique de Yang-Yang afin de retrouver une densité spatiale initiale correspondant à $n_p$, mesurée à $56.6 ~\mu \text{m}^{-1}$. L'ajustement optimal de la déformation du bord est obtenu pour une température $T = 558.9~\text{nK}$ et un potentiel chimique $\mu = 64~\text{nK}$ (voir la Fig. \ref{fig:simul_deformation}).
 
 
@@ -467,7 +467,7 @@ Nous souhaitons extraire une distribution locale de rapidité. Pour cela, avant 
 
 	
 		
-	[Version 1] 
+	[Version 1.1] 
 	
 Pour obtenir $x_0$ et $\ell$, on ajuste, sur les données d'expansion à $\tau = 1~\text{ms}$, une fonction porte convoluée avec une gaussienne\footnote{$f(x; A, x_0, \sigma) = \frac{A}{2} \left( \operatorname{erf} \left( \frac{x + \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) - \operatorname{erf} \left( \frac{x - \frac{A}{2} - x_0}{\sqrt{2} \sigma} \right) \right)$}, où $x_0$ est le centre de la fonction et $\ell$ est la largeur à mi-hauteur\footnote{$\ell = 2\sqrt{2 \ln (2)} \sqrt{\sigma^2 + \left( \frac{A}{2} \right)^2}$}. 
 
@@ -494,7 +494,7 @@ Ensuite, une expansion unidimensionnelle est effectuée pendant $\tau = 30~\text
     \label{}
 \end{figure}
 
-[Version 2 ] 
+[Version 1.2 ] 
 
 	Pour déterminer $x_0$, on ajuste les données d'expansion à $\tau = 1~\text{ms}$ avec une fonction porte convoluée avec une gaussienne, où $x_0$ est le centre de la fonction. J'obtiens $x_0 = 18.34~\mu \text{m}$. Ensuite, on multiplie le profil du bord par une fonction porte centrée en $x_0$ et de diamètre $\ell$. On ajuste $\ell$ pour obtenir, dans la tranche, le même nombre d'atomes que mesuré dans les données à $\tau = 1~\text{ms}$. On trouve ainsi $\ell = 28.1~\mu \text{m}$ (voir Fig. \ref{fig:expansion_1_28}). 
 
@@ -520,7 +520,7 @@ Après l'expansion, on observe une asymétrie dans les données, avec un côté 
 
 	
 		
-	[Version 3 ]
+	[Version 1.3 ]
 	
 	Pour déterminer $x_0$, on ajuste les données d'expansion à $\tau = 1~\text{ms}$ avec un modèle de fonction porte convoluée avec une gaussienne, où $x_0$ est le centre de la fonction. J'obtiens $x_0 = 18.34~\mu \text{m}$. Ensuite, on multiplie le profil de bord par une fonction porte centrée en $x_0$ et de diamètre $\ell$. On ajuste $\ell$ pour obtenir, dans la tranche, le même nombre d'atomes que mesuré dans les données à $\tau = 30~\text{ms}$. On trouve ainsi $\ell = 22.2~\mu \text{m}$ (voir Fig. \ref{fig:expansion_1_22}).
 
@@ -550,12 +550,12 @@ Après l'expansion, on observe une asymétrie dans les données, avec un côté 
 	{\color{blue} centre bouge entre $\tau = 0$ et $\tau = 1~ms$ et mon mesure une diference de 17$\%$ de nombre d'atome sentre $\tau = 1~ms$ et $\tau = 30 ~ms$ sur les données d'expension}
 	
 	
-	[Version 4.1]
+	[Version 1.4.1]
 	
 	La tranche a une dynamique moyenne. Donc  les donnée etais prisent après un temps d'expansion $\tau$ de 1ms, on ne sais pas directement où est le centre  $x_0$ et la taille $\ell$ de la tranche.
 	On peut faire un ajustement des simulation GHD sur le profile à une temps d'expansion $\tau$ de 1ms. .....
 	
-	[Version 4.2]	
+	[Version 1.4.2]	
 	
 	La tranche a une dynamique moyenne. Donc  les donnée etais prisent après un temps d'expansion $\tau$ de 1ms, on ne sais pas directement où est le centre  $x_0$ et la taille $\ell$ de la tranche.
 	On peut faire un ajustement des simulation GHD sur le profile à une temps d'expansion $\tau$ de 30ms. .....
@@ -639,7 +639,7 @@ Après l'expansion, on observe une asymétrie dans les données, avec un côté 
 \end{figure}
 	
 	
-	[Version 5]
+	[Version 2]
 	
 	On fait un ajustement sur l'expension ... 
 	
