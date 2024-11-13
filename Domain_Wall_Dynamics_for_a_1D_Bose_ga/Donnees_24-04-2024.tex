@@ -643,29 +643,47 @@ Après l'expansion, on observe une asymétrie dans les données, avec un côté 
 	
 	%Nous voulons extraire une distribution locale de rapidités. Pour cela nous commençons par sélectionner une tranche $[x_0 - \ell/2 , x_0 + \ell/2 [ $ du bord. Puis nous faisons une expansion undimensionnele pendant une durée $\tau$ de $30~ms$. 
 	
-	Nous avons des données d'expansion unidimensionnel pour $\tau = 1~ms$ et $\tau = 30~ms$. La tranche as une dynamique moyenne pendant $1~ms$ donc on ne peut pas ni extraire directement le centre de la trance $x_0$, ni la largeur de la tranche $\ell$ sur nos donnée d'expansion à $\tau = 1~ms$. Pour ce faire , on a supposer que pendant $1~ms$ le centre de la tranche n'a pas bouger et on a ajuste $\ell$ pour que ne nombre d'atome mesuré dans la tranche sois la même  que mesuré dans sur les donnés à un temps d'expansion $\tau = 30~ms$. 
+	Nous avons des données d'expansion unidimensionnel pour $\tau = 1~ms$ et $\tau = 30~ms$. La tranche as une dynamique moyenne pendant $1~ms$ et les atomes hors de la tranche n'ont pas eu le temps de completement sortir du piège donc on ne peut pas ni extraire directement le centre de la trance $x_0$, ni la largeur de la tranche $\ell$ sur nos donnée d'expansion à $\tau = 1~ms$. Pour ce faire , on a supposer que pendant $1~ms$ le centre de la tranche n'a pas bouger et on a ajuste $\ell$ pour que ne nombre d'atome mesuré dans la tranche sois la même  que mesuré dans sur les donnés à un temps d'expansion $\tau = 30~ms$. On trouve ainsi $\ell = 22.2~\mu \text{m}$ (voir Fig. \ref{simul_deformation_expansion})
+	
+	\begin{figure}[H]
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_deformation_expansion}
+        \caption{{\color{blue} [Bleu] Données de déformation du bord à $t = 18~\text{ms}$}, {\color{orange}[Orange] Ajustement avec $T = ~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$},{\color{blue}[Bleu] Données de sélection après expansion $\tau = 1~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = ~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$)} et {\color{OliveGreen}[Vert] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = ~\mu \text{m}$, ($T = ~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$)}.}
+        \label{fig:simul_deformation_expansion}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_expansion}
+        \caption{{\color{blue}[Bleu] Données d'expansion $\tau = 30~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion $\tau = 30~\text{ms}$ avec $n_p = 56.6~\mu \text{m}^{-1}$, $T = ~\text{nK}$, $\mu = ~\text{nK}$, $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$}, {\color{OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour $T = ~\text{nK}$, $\mu = ~\text{nK}$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche $[x_0 - \ell/2, x_0 + \ell/2[$ pour $T = ~\text{nK}$, $\mu = ~\text{nK}$}}
+        \label{fig:expansion_30_expansion}
+    \end{subfigure}
+    \caption{}
+    \label{}
+\end{figure}
 	
 	
 	\begin{figure}[H]
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/simul_deformation_expansion}
+        \includegraphics[width=\textwidth]{Figures/simul_deformation_expansion1}
         \caption{{\color{blue} [Bleu] Données de déformation du bord à $t = 18~\text{ms}$}, {\color{orange}[Orange] Ajustement avec $T = ~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$}.}
-        \label{simul_deformation_expansion}
+        \label{fig1:simul_deformation_expansion}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_expansion}
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_expansion1}
         \caption{{\color{blue}[Bleu] Données de sélection après expansion $\tau = 1~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = ~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$)} et {\color{OliveGreen}[Vert] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = ~\mu \text{m}$, ($T = ~\text{nK}$ et $\mu(T = ~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = ~\text{nK}$)}}
-        \label{fig:expansion_1_expansion}
+        \label{fig1:expansion_1_expansion}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_expansion}
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_expansion1}
         \caption{{\color{blue}[Bleu] Données d'expansion $\tau = 30~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion $\tau = 30~\text{ms}$ avec $n_p = 56.6~\mu \text{m}^{-1}$, $T = ~\text{nK}$, $\mu = ~\text{nK}$, $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$}, {\color{OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour $T = ~\text{nK}$, $\mu = ~\text{nK}$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche $[x_0 - \ell/2, x_0 + \ell/2[$ pour $T = ~\text{nK}$, $\mu = ~\text{nK}$}}
-        \label{fig:expansion_30_expansion}
+        \label{fig1:expansion_30_expansion}
     \end{subfigure}
     \caption{}
     \label{}
