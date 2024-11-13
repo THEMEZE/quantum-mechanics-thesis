@@ -521,28 +521,65 @@ Après l'expansion, on observe une asymétrie dans les données, avec un côté 
 	
 		
 	[Version 3 ]
-	 
-	Pour avoir $x_0$,  on ajuste sur les donnés d'expension à $\tau = 1 ~ ms$ par un modelle de fonction porte convoluée avec une gaussienne où $x_0$ est le centre de la fonction . J'obtiens $x_0 = 18.34 ~\mu m$ . Puis on multiplie le profile de bord par une fonction prote de centre $x_0$ et de diametre $\ell$. On ajuste $\ell$ pour avoir dans la tranche le meme nombre d'atome que mesuré dans le donné à $\tau = 30~ms$ . On trouve $\ell = 22.2 ~\mu m $ (Fig.\ref{fig:expansion_1_22}). Après expansion on vois apparetre sur les données une assymetrie et une coté plus raide. Cette assymetrie est visible sur les simulations. Les simulations sont proche au distribution de rapidité attendut et au donnée.  
 	
-	\begin{figure}[ht]
-			\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_1_22}
-        		\caption{{\color{blue}[Bleu] Donnée de Selection après expansion $\tau = 1~ms$},{\color{orange}[Orange]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 22.2~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}et {\color{OliveGreen}[Vert]  Simulation de l'expansion pour $\tau= 0~ms$  , avec $x_0 = 18.4~\mu m$ et $\ell = 22.2~\mu m$ , ($T = 558.9 ~nK$ et $\mu( T = 558.9 ~nK , n_p = 56.6 ~{\mu m}^{-1} )= 64.529~nK$)}   }
-        		\label{fig:expansion_1_22}
-    		\end{subfigure}
-    		\hfill
-    		\begin{subfigure}[b]{0.45\textwidth}
-        		\centering
-        		\includegraphics[width=\textwidth]{Figures/simul_expansion_30_22}
-        		\caption{{\color{blue}[Bleu] Donnée  expansion $\tau = 30~ms$} , {\color{orange}[Orange] Simulation de  expansion $\tau = 30~ms$ avec $n_p = 56.6 ~{\mu m}^{-1}$ , $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$ , $x_0 = 18.4~\mu m$ , et $\ell = 22.2~\mu m$} ,  {\color{\OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche  $[x_0 - \ell/2 , x_0à + \ell/2 [ $ pour  $T = 558.9 ~nK$ , $\mu= 64.529 ~nK$}}
-        		\label{fig:expansion_30_22}
-    		\end{subfigure}
-    		\caption{}
-			\label{}	
-		\end{figure}
+	Pour déterminer $x_0$, on ajuste les données d'expansion à $\tau = 1~\text{ms}$ avec un modèle de fonction porte convoluée avec une gaussienne, où $x_0$ est le centre de la fonction. J'obtiens $x_0 = 18.34~\mu \text{m}$. Ensuite, on multiplie le profil de bord par une fonction porte centrée en $x_0$ et de diamètre $\ell$. On ajuste $\ell$ pour obtenir, dans la tranche, le même nombre d'atomes que mesuré dans les données à $\tau = 30~\text{ms}$. On trouve ainsi $\ell = 22.2~\mu \text{m}$ (voir Fig. \ref{fig:expansion_1_22}).
+
+Après l'expansion, on observe une asymétrie dans les données, avec un côté plus raide. Cette asymétrie est également visible dans les simulations, qui sont proches de la distribution de rapidité attendue et des données.
+
+\begin{figure}[ht]
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_1_22}
+        \caption{{\color{blue}[Bleu] Données de sélection après expansion $\tau = 1~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)} et {\color{OliveGreen}[Vert] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)}}
+        \label{fig:expansion_1_22}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_22}
+        \caption{{\color{blue}[Bleu] Données d'expansion $\tau = 30~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion $\tau = 30~\text{ms}$ avec $n_p = 56.6~\mu \text{m}^{-1}$, $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$, $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$}, {\color{OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche $[x_0 - \ell/2, x_0 + \ell/2[$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$}}
+        \label{fig:expansion_30_22}
+    \end{subfigure}
+    \caption{}
+    \label{}
+\end{figure}
+
+	 
+	
 	
 	{\color{blue} centre bouge entre $\tau = 0$ et $\tau = 1~ms$ et mon mesure une diference de 17$\%$ de nombre d'atome sentre $\tau = 1~ms$ et $\tau = 30 ~ms$ sur les données d'expension}
+	
+	
+	[Version 4]
+	
+	On fait un ajustement sur l'expension ... 
+	
+	
+	\begin{figure}[ht]
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_deformation_expansion}
+        \caption{{\color{blue} [Bleu] Données de déformation du bord à $t = 18~\text{ms}$}, {\color{orange}[Orange] Ajustement avec $T = 558.939~\text{nK}$ et $\mu(T = 558.939~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$}.}
+        \label{simul_deformation_expansion}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_expansion}
+        \caption{{\color{blue}[Bleu] Données de sélection après expansion $\tau = 1~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)} et {\color{OliveGreen}[Vert] Simulation de l'expansion pour $\tau = 0~\text{ms}$, avec $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$, ($T = 558.9~\text{nK}$ et $\mu(T = 558.9~\text{nK}, n_p = 56.6~\mu \text{m}^{-1}) = 64.529~\text{nK}$)}}
+        \label{fig:expansion_1_expansion}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/simul_expansion_30_expansion}
+        \caption{{\color{blue}[Bleu] Données d'expansion $\tau = 30~\text{ms}$}, {\color{orange}[Orange] Simulation de l'expansion $\tau = 30~\text{ms}$ avec $n_p = 56.6~\mu \text{m}^{-1}$, $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$, $x_0 = 18.4~\mu \text{m}$ et $\ell = 22.2~\mu \text{m}$}, {\color{OliveGreen}[Vert] Distribution de rapidité en $x = x_0$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$} et {\color{red}[Rouge] Distribution de rapidité dans la tranche $[x_0 - \ell/2, x_0 + \ell/2[$ pour $T = 558.9~\text{nK}$, $\mu = 64.529~\text{nK}$}}
+        \label{fig:expansion_30_expansion}
+    \end{subfigure}
+    \caption{}
+    \label{}
+\end{figure}
+
 	
 	
 	
