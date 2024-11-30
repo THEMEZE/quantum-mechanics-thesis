@@ -27,7 +27,7 @@
         --accent-color: #e74c3c;
         /* Rouge accent */
 
-        --text-color: #2c3e50;
+        --text-color: #f8e5d7;
         /* Gris foncé */
         --highlight-color: #f1c40f;
         /* Jaune */
@@ -55,7 +55,7 @@
         /* Bordure visible */
         padding: 0px;
         /* Ajoute du padding intérieur */
-        color: #d4ece9;
+        color: var(--text-color);
         /* Couleur du texte */
         box-sizing: border-box;
         /* S'assure que la bordure et le padding sont inclus dans les dimensions */
@@ -65,7 +65,7 @@
     input::placeholder,
     select::placeholder,
     button::placeholder {
-        color: #d4ece9;
+        color: var(--text-color);
         /* Placeholder avec une couleur semi-transparente */
     }
 
@@ -73,12 +73,12 @@
 
     a {
         text-decoration: none;
-        color: #d4ece9;
+        color: var(--text-color);
     }
 
     .class_jsonSelect {
         border: 2px solid var(--primary-color);
-        color: #d4ece9;
+        color: var(--text-color);
         border-radius: 10px;
         padding: 0px;
         margin-top: 20px;
@@ -105,14 +105,14 @@
 
     .class_jsonSelect .text_jsonSelect {
         grid-area: t;
-        color: #d4ece9;
+        color: var(--text-color);
     }
 
     .class_jsonSelect .jsonSelect {
         grid-area: s;
-        background-color: #fffdfd00;
+        background-color: var(--background-color)0;
         background: transparent;
-        color: #d4ece9;
+        color: var(--text-color);
     }
 
     .class_jsonSelect .changeButton {
@@ -129,7 +129,7 @@
 
     .class_jsonSelect_save {
         border: 2px solid var(--primary-color);
-        color: #d4ece9;
+        color: var(--text-color);
         border-radius: 10px;
         padding: 0px;
         margin-top: 20px;
@@ -211,7 +211,7 @@ width: 100%; /* Largeur du conteneur */
     .affichage-pdf .id_file2,
     .affichage-pdf .canvas-2 {
         margin: 5px;
-        border: 2px solid var(--primary-color);
+        border: 2px solid var(--secondary-color);
         font-size: 1.1rem;
         border-radius: 5px;
         align-items: center;
@@ -262,7 +262,7 @@ width: 100%; /* Largeur du conteneur */
         grid-area: t;
         width: 100%;
         font-size: 1vw;
-        color: var(--secondary-color);
+        color: var(--text-color);
         font-family: "DMSerif";
     }
 
@@ -333,7 +333,7 @@ border-radius: 10px; */
     .affichage-pdf .next-page-2,
     .affichage-pdf .num-page-2 {
         /* margin: 5px; */
-        border: 2px solid var(--primary-color);
+        border: 2px solid var(--secondary-color);
         font-size: 1.1rem;
         border-radius: 5px;
     }
