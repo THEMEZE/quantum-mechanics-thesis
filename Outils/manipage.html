@@ -17,8 +17,24 @@
         src: url(./fonts/DMSerifDisplay-Regular.ttf)
     } */
 
+    :root {
+        --background-color: #30393e;
+        /* Variables de couleurs */
+        --primary-color: #F8BD97;
+        /* Bleu principal */
+        --secondary-color: #2ecc71;
+        /* Vert secondaire */
+        --accent-color: #e74c3c;
+        /* Rouge accent */
+
+        --text-color: #2c3e50;
+        /* Gris foncé */
+        --highlight-color: #f1c40f;
+        /* Jaune */
+    }
+
     body {
-        background: #132c47;
+        background: var(--background-color);
         font-family: sans-serif
     }
 
@@ -61,7 +77,7 @@
     }
 
     .class_jsonSelect {
-        border: 2px solid #d89350;
+        border: 2px solid var(--primary-color);
         color: #d4ece9;
         border-radius: 10px;
         padding: 0px;
@@ -112,7 +128,7 @@
     }
 
     .class_jsonSelect_save {
-        border: 2px solid #d89350;
+        border: 2px solid var(--primary-color);
         color: #d4ece9;
         border-radius: 10px;
         padding: 0px;
@@ -159,7 +175,7 @@
 
 
     .affichage-pdf {
-        border: 2px solid #d89350;
+        border: 2px solid var(--primary-color);
         border-radius: 1px;
         padding: 0px;
         margin-top: 20px;
@@ -195,7 +211,7 @@ width: 100%; /* Largeur du conteneur */
     .affichage-pdf .id_file2,
     .affichage-pdf .canvas-2 {
         margin: 5px;
-        border: 2px solid #d89350;
+        border: 2px solid var(--primary-color);
         font-size: 1.1rem;
         border-radius: 5px;
         align-items: center;
@@ -317,7 +333,7 @@ border-radius: 10px; */
     .affichage-pdf .next-page-2,
     .affichage-pdf .num-page-2 {
         /* margin: 5px; */
-        border: 2px solid #d89350;
+        border: 2px solid var(--primary-color);
         font-size: 1.1rem;
         border-radius: 5px;
     }
