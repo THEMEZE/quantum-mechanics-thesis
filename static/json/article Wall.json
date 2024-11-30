@@ -12,16 +12,22 @@
         "page2-2": 1
     },
     {
-        "file1-3": "../docaranger/Wall/2309.15846v3.pdf",
+        "file1-3": "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Donnees_bord_essenctielle.pdf",
         "page1-3": 1,
-        "file2-3": "../docaranger/Wall/1510.03686v1.pdf",
+        "file2-3": "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Figures/Shema.pdf",
         "page2-3": 1
     },
     {
-        "file1-4": "../docaranger/Wall/1703.05971v2.pdf",
+        "file1-4": "../docaranger/Wall/2309.15846v3.pdf",
         "page1-4": 1,
-        "file2-4": "../docaranger/Wall/1709.04193v1.pdf",
-        "page2-4": 1
+        "file2-4": "../docaranger/Wall/1510.03686v1.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-5": "../docaranger/Wall/1703.05971v2.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/Wall/1709.04193v1.pdf",
+        "page2-5": 1
     },
     {
         "file1-6": "../docaranger/Wall/1111.5134v2.pdf",
