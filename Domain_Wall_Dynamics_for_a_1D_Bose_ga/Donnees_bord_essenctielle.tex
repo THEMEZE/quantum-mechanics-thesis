@@ -448,27 +448,138 @@ innertopmargin=\topskip,
 
 	%\includegraphics[width=\textwidth]{Figures/Shema}
 	
+	
 	\section{Essancielle}
+	
+		For an initial state whose occupation factor distribution smoothly goes to zero, such as a thermal state, the occupation factor distribution within the border, is expected    to be highly asymetric according to Eq.\eqref{eq:nuetoile}:  its left side shows a discontinuity similar to that of ground states while its right side shows the smooth behavior of the initial state.  This implies in turn a highly asymetric rapidity local rapidity distribution.  
+		To reveal such a peculiar behavior, we use the protocol described in \cite{dubois_probing_2024} as detailed below.
+		
+		First we let the border expand for a time $t=28~18— \mbox{ms}$. 
+		%{\color{blue}[Il faudra un graphe avec le profil de bord à 18ms pour ces données pour pouvoir visualiser ce que représente 37 $\mu$m.]} 
+		To probe the rapidity distribution around $x=x_0$, we then select the slice of the gas that lies in the interval  $[x_0-\ell/2, x_0+\ell/2]$. Finally, we let this slice expand in 1D for an expansion time $\tau$  after which we measure the longitudinal density $\tilde{n}(x, {\tau} )$.  The latter reflects the rapidity distribution of the slice $\Pi(\theta)$, the asymptotic behavior being  $\lim_{\tau\rightarrow\infty} (\tau \tilde{n}(x, {\tau} )) =\Pi(x/\tau)$. The asymetry of $\Pi$ thus induces an asymetry of  $\tilde{n}(x,\tau)$ in $x$.
+		Such an asymetry is seen in the experimental profile obtained for $\tau=~50~(30)~ \mbox{ms}$ shown in Fig. (\ref{fig:asymetrie}).
+		
+		\begin{figure}[ht]
+			\centering
+			\begin{subfigure}[b]{0.24\textwidth}
+				\includegraphics[width=\textwidth]{Figures/article_asymetrie_29-02-2024}
+			\caption{(Donnée du 29-02-2024)}
+   			\label{fig:asymetrie}	
+			\end{subfigure}
+			\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+   				 \includegraphics[width=\textwidth]{Figures/article_simul_deformation_1_29-02-2024}
+        			\caption{}
+        		\label{fig:simul_deformation}
+   			\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/article_simul_expansion_1_29-02-2024}
+        		\caption{}
+        		\label{fig:simul_expansion}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+    			\centering
+				\includegraphics[width=\textwidth]{Figures/article_distribution_29-02-2024}		
+				\caption{Donnée du 29-02-2024}
+   				\label{}    			
+    		\end{subfigure}    		
+    		\caption{Donnée du 29-02-2024}
+   			\label{}					
+		\end{figure}
+		
+		\begin{figure}[ht]
+			\centering
+			\begin{subfigure}[b]{0.24\textwidth}
+				\includegraphics[width=\textwidth]{Figures/article_asymetrie_24-04-2024}
+			\caption{(Donnée du 24-04-2024)}
+   			\label{fig:asymetrie}	
+			\end{subfigure}
+			\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+   				 \includegraphics[width=\textwidth]{Figures/article_simul_deformation_1_24-04-2024}
+        			\caption{}
+        		\label{fig:simul_deformation}
+   			\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/article_simul_expansion_1_24-04-2024}
+        		\caption{}
+        		\label{fig:simul_expansion}
+    		\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.24\textwidth}
+    			\centering
+				\includegraphics[width=\textwidth]{Figures/article_distribution_24-04-2024}		
+				\caption{Donnée du 24-04-2024}
+   				\label{}    			
+    		\end{subfigure}    		
+    		\caption{Donnée du 24-04-2024}
+   			\label{}					
+		\end{figure}
+		
+		%Nous commençons par ajuster le profil de déformation du bord en utilisant des simulations GHD  $n_{\mbox{\tiny GHD}}$, en prenant la température $T$ comme paramètre ajustable. Le potentiel chimique $\mu$ est paramétré en fonction de la température et de la densité spatiale initiale du nuage, notée $n_p$.  $\mu$  est ajusté en utilisant un modèle thermique de Yang-Yang afin de retrouver une densité spatiale initiale correspondant à $n_p$, mesurée à $47~(56.6)~\mu \text{m}^{-1}$. L'ajustement optimal de la déformation du bord est obtenu pour une température $T = 966 ~(559)~\text{nK}$ et un potentiel chimique $\mu = 43~(65)~\text{nK}$ (voir courbe orange de la Fig. \ref{fig:simul_deformation}).Sur un intervalle $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$, $\chi^2 = \Vert (n - n_{\mbox{\tiny GHD}}) / n_{\mbox{\tiny GHD}} \Vert^2_\infty  = ? (?)$ .
+		We start by fitting the edge deformation profile using GHD simulations $n_{\mbox{\tiny GHD}}$, with the temperature $T$ as an adjustable parameter. The chemical potential $\mu$ is parameterized as a function of the temperature and the initial spatial density of the cloud, denoted $n_p$. $\mu$ is determined using a Yang-Yang thermal model to match the initial spatial density $n_p$, measured at $47~(56.6)~\mu \text{m}^{-1}$. The optimal fit for the edge deformation is obtained with a temperature $T = 966~(559)~\text{nK}$ and a chemical potential $\mu = 43~(65)~\text{nK}$ (see orange curve in Fig. \ref{fig:simul_deformation}). Over the interval $[-220, 70]~([-150, 100])~\mu \mbox{m}$, $\chi^2 = \Vert (n - n_{\mbox{\tiny GHD}})\Vert^2_\infty  = ? (?) ~ \mu \text{m}^{-2} $.
+
+		
+		%Pour déterminer $x_0$, on ajuste les données d'expansion à $\tau = 1~\text{ms}$ avec un modèle de fonction porte convoluée avec une gaussienne, où $x_0$ est le centre de la fonction. J'obtiens $x_0 = 5.7~(18.4)~\mu \text{m}$. Ensuite, on multiplie le profil de bord par une fonction porte centrée en $x_0$ et de diamètre $\ell$. On ajuste $\ell$ pour obtenir, dans la tranche, le même nombre d'atomes que mesuré dans les données à $\tau = 50~(30)~\text{ms}$. On trouve ainsi $\ell = 41.5~(22.2)~\mu \text{m}$ .
+		To determine $x_0$, we fit the expansion data at $\tau = 1~\text{ms}$ with a model of a rectangular function convolved with a Gaussian, where $x_0$ is the center of the function. We obtain $x_0 = 5.5~(18.4)~\mu \text{m}$. Next, we multiply the edge profile by a rectangular function centered at $x_0$ with a diameter $\ell$. We adjust $\ell$ to match the number of atoms in the slice to the one measured in the data at $\tau = 50~(30)~\text{ms}$. This gives $\ell = 41.5~(22.2)~\mu \text{m}$.
+
+		
+		%Après l'expansion, on observe une asymétrie dans les données, avec un côté plus raide. Cette asymétrie est également visible dans les simulations GHD $\tilde{n}_{\mbox{\tiny GHD}}$ , mais on observe des diference entre les données la les simulations GHD, notament sur la partie de droite non-termique. Sur un intervalle $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$, $\chi^2 = \Vert (\tilde{n} - \tilde{n}_{\mbox{\tiny GHD}}) / \tilde{n}_{\mbox{\tiny GHD}} \Vert^2_\infty  = ? (?)$ (voir courbe orange de la Fig. \ref{fig:simul_expansion}).  On a envie d'augmenter $T$ et diminuer $x_0$. 
+		
+		After the expansion, we observe an asymmetry in the data, with one side being steeper. This asymmetry is also visible in the GHD simulations $\tilde{n}_{\mbox{\tiny GHD}}$, but differences are noticeable between the data and the GHD simulations, particularly on the non-thermal right-hand side. Over the interval $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$, $\chi^2 = \Vert (\tilde{n} - \tilde{n}_{\mbox{\tiny GHD}}) \Vert^2_\infty  = ? (?) ~$ (see orange curve in Fig. \ref{fig:simul_expansion}). We consider increasing $T$ and decreasing $x_0$.
+
+		
+		%On a donc fait un ajustement des simulation GHD aus des donnée aprés expansion. On a fait un ajustement avec $T$ et $x_0$ comme parametres ajustables, $\mu$ et $\ell$ gardent les même contraintes que précedement. Les paramètre après cette ajustement sont $T= 1350~(1000) ~ \mbox{nK}$ et $x_0 = -6.7~(17.8)~\mu\mbox{m}$ (voir courbe rouge de la Fig. \ref{fig:simul_expansion}).Sur un intervalle $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$, $\chi^2 = \Vert (\tilde{n} - \tilde{n}_{\mbox{\tiny GHD}}) / \tilde{n}_{\mbox{\tiny GHD}} \Vert^2_\infty  = ? (?)$ .
+		
+		We therefore performed a fit of the GHD simulations to the data after expansion. The fit was conducted with $T$ and $x_0$ as adjustable parameters, while $\mu$ and $\ell$ retained the same constraints as previously described. The parameters obtained after this fit are $T = 1350~(1000)~\mbox{nK}$ and $x_0 = -3.18~(17.8)~\mu\mbox{m}$ (see red curve in Fig. \ref{fig:simul_expansion}). Over the interval $[-222, 70]~([-150, 100])~\mu \mbox{m}$, $\chi^2 = \Vert (\tilde{n} - \tilde{n}_{\mbox{\tiny GHD}}) \Vert^2_\infty  = ? (?)~\mu \text{m}^{-2}$.
+
+		
+		%Mais maintenant avec c'est nouveau paramêtre les simulation GHD sont moin en accord avec les profils de bords. Sur un intervalle $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$, $\chi^2 = \Vert (n - n_{\mbox{\tiny GHD}}) / n_{\mbox{\tiny GHD}} \Vert^2_\infty  = ? (?)$ (voir courbe rouge de la Fig. \ref{fig:simul_deformation). {\color{bleu} Et meme les $x_0$ ???}.
+		
+		However, with these new parameters, the GHD simulations show less agreement with the edge deformation profiles. Over the interval $[-220, 70]~([-150, 100])~\mu \mbox{m}$, $\chi^2 = \Vert (n - n_{\mbox{\tiny GHD}})  \Vert^2_\infty  = ? (?)~ \mu \text{m}^{-2}$ (see red curve in Fig. \ref{fig:simul_deformation}). {\color{blue} And even the $x_0$ ???}.
+		
+
+		
+		%Hors de l'instervale $[-222 , 70] ~([-150 , 100])~\mu \mbox{m}$ on voit du bruit qui ne sont pas expliqué par les simulation GDH.
+		
+		Outside the interval $[-222, 70]~([-150, 100])~\mu \mbox{m}$, we observe noise that is not explained by the GHD simulations.
+
+		
+		%Les simulation GHD sont déjà pour un temps d'expanstion fini $\tau = 50~(30)~\mbox{ms}$ assez proches au prevision pour $\tau^\ast \to \infty$ , avec $\ell\to 0$ négligeable , la distribution $\rho_{x_0}/\tau*\ell$. La difference notable est un bord verticale non-termique pour $\rho_{x_0}/\tau*\ell$. Pour $\ell$ $\Pi_{x_0 , \ell}/\tau$ ,  non négligeable la difference s'amoindrie. 
+		
+		The GHD simulations, already performed for a finite expansion time $\tau = 50~(30)~\mbox{ms}$, are quite close to the predictions for $\tau^\ast \to \infty$, with $\ell \to 0$ being negligible, and the distribution $\rho_{x_0}/\tau*\ell$. The notable difference is a non-thermal vertical edge for $\rho_{x_0}/\tau*\ell$. For $\ell$ $\Pi_{x_0 , \ell}/\tau$, as $\ell$ becomes non-negligible, the difference diminishes.
+		
+
+\newpage
+\newpage
+
+		
+		 
 		\begin{figure}[H]
 			\centering
 			\begin{subfigure}[b]{1\textwidth}
 				\centering
 				\includegraphics[width=0.48\textwidth]{Figures/article_asymetrie_09-02-2024}
 				\caption{}
-        		\label{}
+        		\label{fig:asymetrie}
 			\end{subfigure}
 			\vspace{1em}
 			\begin{subfigure}[b]{0.48\textwidth}
    				 \includegraphics[width=\textwidth]{Figures/article_simul_deformation_1_09-02-2024}
         			\caption{}
-        		\label{}
+        		\label{fig:simul_deformation}
    			\end{subfigure}
     		\hfill
     		\begin{subfigure}[b]{0.48\textwidth}
         		\centering
         		\includegraphics[width=\textwidth]{Figures/article_simul_expansion_1_09-02-2024}
         		\caption{}
-        		\label{}
+        		\label{fig:simul_expansion}
     		\end{subfigure}
     		\vspace{1em}
     		\begin{subfigure}[b]{1\textwidth}
@@ -477,11 +588,76 @@ innertopmargin=\topskip,
 				\caption{}
         		\label{}
 			\end{subfigure}
+			\caption{Donnée du 09-02-2024}
+   			\label{}
+				
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.48\textwidth]{Figures/article_asymetrie_29-02-2024}
+				\caption{}
+        		\label{fig:asymetrie}
+			\end{subfigure}
+			\vspace{1em}
+			\begin{subfigure}[b]{0.48\textwidth}
+   				 \includegraphics[width=\textwidth]{Figures/article_simul_deformation_1_29-02-2024}
+        			\caption{}
+        		\label{fig:simul_deformation}
+   			\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.48\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/article_simul_expansion_1_29-02-2024}
+        		\caption{}
+        		\label{fig:simul_expansion}
+    		\end{subfigure}
+    		\vspace{1em}
+    		\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.48\textwidth]{Figures/article_distribution_29-02-2024}
+				\caption{}
+        		\label{}
+			\end{subfigure}
+			\caption{Donnée du 29-02-2024}
+   			\label{}
+				
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.48\textwidth]{Figures/article_asymetrie_24-04-2024}
+				\caption{}
+        		\label{fig:asymetrie}
+			\end{subfigure}
+			\vspace{1em}
+			\begin{subfigure}[b]{0.48\textwidth}
+   				 \includegraphics[width=\textwidth]{Figures/article_simul_deformation_1_24-04-2024}
+        			\caption{}
+        		\label{fig:simul_deformation}
+   			\end{subfigure}
+    		\hfill
+    		\begin{subfigure}[b]{0.48\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Figures/article_simul_expansion_1_24-04-2024}
+        		\caption{}
+        		\label{fig:simul_expansion}
+    		\end{subfigure}
+    		\vspace{1em}
+    		\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.48\textwidth]{Figures/article_distribution_24-04-2024}
+				\caption{}
+        		\label{}
+			\end{subfigure}
 			\caption{Donnée du 24-04-2024}
    			\label{}
 				
 		\end{figure}
-
 		
 
 	\section{Essancielle}
