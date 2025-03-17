@@ -1,0 +1,247 @@
+\begin{eqnarray*}
+	\mathcal{S}_{YY} [ \Pi ] & = & \left \langle \Pi_s \ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) , 1 \right \rangle 
+\end{eqnarray*}
+
+Or 
+
+\begin{eqnarray*}
+	\Pi_s \ln \Pi_s & = & ( \Pi_s - \Pi )\ln \Pi_s + \Pi \ln \Pi_s	
+\end{eqnarray*}
+
+Soit 
+
+\begin{eqnarray*}
+	\Pi_s \ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) & = &  ( \Pi_s - \Pi )\ln \Pi_s + \Pi \ln \Pi_s  - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi )\\
+	& = &  ( \Pi_s - \Pi ) \ln \left ( \frac{\Pi_s}{\Pi_s - \Pi} \right )  + \Pi \ln \left ( \frac{\Pi_s}{\Pi} \right ) \\
+	& = & - \Pi_s  \left \{ \left (1 - \frac{\Pi}{\Pi_s} \right ) \ln\left (1 - \frac{\Pi}{\Pi_s} \right ) + \frac{\Pi}{\Pi_s} \ln \left ( \frac{\Pi}{\Pi_s}  \right )   \right \} \\
+	& \underset{\underset{\underset{\nu = \frac{\Pi}{\Pi_s}}{\Pi = L \rho}}{\Pi_s = L \rho_s }}{=} & - L \rho_s \left \{ \left (1 - \nu  \right ) \ln\left (1 - \nu \right ) + \nu \ln \left ( \nu  \right )\right \}   
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\mathcal{S}_{YY} [ \Pi ] & = & - L\left \langle \left (1 - \nu  \right ) \ln\left (1 - \nu \right ) + \nu \ln \left ( \nu  \right ) , \rho_s \right \rangle 
+\end{eqnarray*}
+
+Or
+
+\begin{eqnarray*}
+	\frac{\delta [ ( 1 - \nu ) \ln ( 1 - \nu ) ]}{\delta \nu ( \theta )  } & = & - \frac{\delta \nu }{ \delta \nu(\theta )} \{  1 + 	\ln ( 1 - \nu ) \} \\
+	\frac{\delta[  \nu \ln\nu]  }{\delta \nu ( \theta )  } &= &  \frac{\partial \nu }{ \partial \nu(\theta )} ( 1 + \ln \nu )
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	-\frac{\delta [ ( 1 - \nu ) \ln ( 1 - \nu ) + \nu \ln\nu ]  }{\delta \nu ( \theta ) } & = & \frac{\delta \nu }{ \delta \nu(\theta )} \ln \left ( \frac{ 1 - \nu }{\nu } \right )  		
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\frac{ \delta\mathcal{S}_{YY}}{\delta \nu ( \theta ) } [ \nu \rho_s ] & = &  \left \langle  \ln \left ( \frac{ 1 - \nu }{\nu } \right )\rho_s ,  \frac{\delta \nu }{ \delta \nu(\theta )}\right \rangle   - \left \langle \left (1 - \nu  \right ) \ln\left (1 - \nu \right ) + \nu \ln  \nu   , \frac{ \delta \rho_s}{\delta \nu ( \theta )}  \right \rangle  
+\end{eqnarray*}
+
+On rappelle que 
+
+\begin{eqnarray*}
+	\mathcal{A}[ \nu \rho_s ] & = &  - \mathcal{S}_{YY}[ \nu \rho_s ] + \left \langle f , \nu \rho_s \right \rangle 	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\frac{ \delta \mathcal{A}}{\delta \nu ( \theta)} [ \nu \rho_s ] & = &  \left \langle  \left ( f - \ln \left ( \frac{ 1 - \nu }{\nu } \right ) \right )\rho_s , \frac{\delta \nu }{ \delta \nu(\theta )}  \right \rangle   + \left \langle \left (1 - \nu  \right ) \ln\left (1 - \nu \right ) + \nu \left (  \ln  \nu   + f  \right )  , \frac{ \delta \rho_s}{\delta \nu ( \theta )}  \right \rangle  	
+\end{eqnarray*}
+
+et on a vu que
+
+\begin{eqnarray*}
+	f & = & \ln \left ( \frac{ 1 - \nu^c}{ \nu^c }\right )  - \frac{ \Delta}{2\pi}\star \ln ( 1 - \nu^c  )  	
+\end{eqnarray*}
+
+De plus 
+
+\begin{eqnarray*}
+	\frac{ \delta \ln \left ( \frac{ 1 - \nu }{ \nu } \right ) }{ \delta \nu ( \theta' ) } & = & - \frac{\delta \nu }{ \delta \nu(\theta )} \left \{  \frac{ 1}{ 1 - \nu} + \frac{1}{\nu} \right \} \\
+	& = & - \frac{\delta \nu }{ \delta \nu(\theta )} \left \{   \frac{ 1}{ (1 - \nu)\nu } \right  \} 	
+\end{eqnarray*}
+
+Donc 
+\begin{aff}
+\begin{eqnarray*}
+	\frac{ \delta^2 \mathcal{A}}{\delta \nu ( \theta')\delta \nu ( \theta)} [ \nu \rho_s ] & = &  \left \langle  \frac{\rho_s}{ (1 - \nu)\nu } , \frac{\delta \nu }{ \delta \nu(\theta' )}\frac{\delta \nu }{ \delta \nu(\theta )}  \right \rangle \\
+	& &   +  \left \langle  \left ( f - \ln \left ( \frac{ 1 - \nu }{\nu } \right ) \right ) , \left ( \frac{\delta \nu }{ \delta \nu(\theta' )}\frac{\delta \rho_s }{ \delta \nu(\theta )}  + \frac{\delta \nu }{ \delta \nu(\theta )}\frac{\delta \rho_s }{ \delta \nu(\theta' )}\right )   \right \rangle \\
+	& & + \left \langle \left (1 - \nu  \right ) \ln\left (1 - \nu \right ) + \nu \left (  \ln \nu  + f  \right )  , \frac{ \delta^2 \rho_s}{\delta \nu ( \theta' )\delta \nu ( \theta )}  \right \rangle 	
+\end{eqnarray*}
+\end{aff}
+
+
+
+On rappelle aussi que 
+
+\begin{eqnarray*}
+	2 \pi \rho_s & = & 1 + \Delta \star ( \nu \cdot \rho_s ) ~= ~ 1^{dr} 	
+\end{eqnarray*}
+
+Soit 
+
+\begin{eqnarray*}
+	\mathcal{L}[\rho_s] & = & \frac{1}{2\pi} 	
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	\mathcal{L}	 & \colon  & f \mapsto  f - \frac{\Delta}{2 \pi }\star ( \nu \cdot f )	
+\end{eqnarray*}
+
+De plus
+
+\begin{eqnarray*}
+	\frac{\delta \rho_s}{\delta \nu(\theta)} - \frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \rho_s \right ) - \frac{\Delta}{2 \pi }  \star \left ( \nu \cdot \frac{\delta \rho_s}{\delta \nu(\theta)} \right ) & = & 	0 \\
+	\frac{\delta^\delta  \rho_s}{\delta \nu(\theta')\delta \nu(\theta)} - \frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta')}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta)} + \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta')} \right ) - \frac{\Delta}{2 \pi }  \star \left ( \nu \cdot \frac{\delta^2 \rho_s}{\delta \nu(\theta')\delta \nu(\theta)} \right ) & = & 	0
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\mathcal{L}\left (\frac{\delta \rho_s}{\delta \nu(\theta)}  \right ) & = &  \frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \rho_s \right )	\\
+	\mathcal{L}\left (\frac{\delta^\delta  \rho_s}{\delta \nu(\theta')\delta \nu(\theta)}  \right ) & = &  \frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta')}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta)} + \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta')} \right )
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\frac{\delta \rho_s}{\delta \nu(\theta)}  & = &  \mathcal{L}^{-1}\left (\frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \rho_s \right ) \right )	\\
+	\frac{\delta^\delta  \rho_s}{\delta \nu(\theta')\delta \nu(\theta)}  & = &  \mathcal{L}^{-1}\left (\frac{\Delta}{2 \pi }  \star \left ( \frac{\delta \nu }{\delta \nu(\theta')}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta)} + \frac{\delta \nu }{\delta \nu(\theta)}  \cdot \frac{\delta \rho_s }{\delta \nu(\theta')} \right ) \right ) 
+\end{eqnarray*}
+
+
+{\em Cherchons  $\mathcal{L}^{-1}$ }\\
+
+
+
+Notons 
+\begin{eqnarray*}
+	\mathcal{L} ( f ) & = & g 	
+\end{eqnarray*}
+
+
+
+On rappelle que les transformée de Fourier . Soit $f \in \mathcal{L}^1 ( \mathbb{K}) $ :
+
+\begin{eqnarray*}
+	\hat{f} \doteq \mathcal{F} [ x \mapsto f(x) ] \colon \kappa  \mapsto \alpha \int e^{ \mp i \gamma \kappa x } f(x) d x, \quad f \equiv \mathcal{F}^{-1} [ \kappa \mapsto \hat{f}(\kappa) ] \colon x \mapsto \beta \int e^{\pm i \gamma \kappa x } \hat{f}(\kappa) d \kappa, \quad \gamma = 2 \pi \alpha \beta 
+\end{eqnarray*}
+
+Avec cette définition 
+
+\begin{eqnarray*}
+	\mathcal{F} [f \cdot g  ] & = & \beta \mathcal{F} [f] \star \mathcal{F} [g]\\
+	\mathcal{F}^{-1} [f \cdot g  ] & = & \alpha \mathcal{F}^{-1} [f] \star \mathcal{F}^{-1} [g]	\\
+	\mathcal{F} [f \star g  ] & = & \alpha^{-1} 	\mathcal{F} [f] \cdot \mathcal{F} [g]\\
+	\mathcal{F}^{-1} [f \star g  ] & = & \beta^{-1} 	\mathcal{F}^{-1} [f] \cdot \mathcal{F}^{-1} [g]
+\end{eqnarray*}
+
+Soit 
+
+\begin{eqnarray*}
+	\mathcal{F} [\mathcal{L} ( f )] & \doteq & \hat{f} - \frac{\beta}{\alpha} \frac{\hat{\Delta}}{2 \pi} \cdot ( \hat{\nu} \star \hat{f} ) ~= ~ \hat{g} 	
+\end{eqnarray*}
+
+On note le noyau 
+
+\begin{eqnarray*}
+	K ( \kappa , \varrho ) & \equiv  & \hat{\Delta}(\kappa) \hat{\nu} ( \kappa - \varrho ) 		
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	\mathcal{F} [\mathcal{L} ( f )](\kappa)  & \doteq & \int d \varrho \left [ \delta( \kappa - \varrho ) - \frac{\beta}{\alpha} \frac{K( \kappa , \varrho)}{ 2 \pi } \right ] \hat{f}(\varrho)  ~= ~ \hat{g}(\kappa) 	
+\end{eqnarray*}
+
+on note  
+\begin{eqnarray*}
+	\hat{L} ( \kappa , \varrho )  & = & \delta( \kappa - \varrho ) - \frac{\beta}{\alpha} \frac{K( \kappa , \varrho)}{ 2 \pi }	
+\end{eqnarray*}
+
+soit 
+
+\begin{eqnarray*}
+	\operator{L}   & = & \operator{1} - \frac{\beta}{\alpha} \frac{\operator{K}}{ 2 \pi }	
+\end{eqnarray*}
+
+Supposons que la norme de $\frac{\beta}{\alpha} \frac{\operator{K}}{ 2 \pi } \ll 1  $ alors 
+
+\begin{eqnarray*}
+	\operator{L}^{-1}   & = &  \left ( \operator{1} - \frac{\beta}{\alpha} \frac{\operator{K}}{ 2 \pi }	 \right )^{-1} \\
+	& = & \sum_{n =0 }^{\infty} \left ( \frac{\beta}{\alpha} \frac{\operator{K}}{ 2 \pi } \right )^{n} 	
+\end{eqnarray*}
+
+Ainsi 
+
+\begin{eqnarray*}
+	\hat{f}(\varrho) & = & \int d \kappa \sum_{n =0 }^{\infty} \left ( \frac{\beta}{\alpha} \frac{K ( \kappa , \varrho ) }{ 2 \pi } \right )^{n} \hat{g} ( \kappa ) 	
+\end{eqnarray*}
+
+Soit 
+\begin{eqnarray*}
+	f(y) & = & \int d \kappa\hat{g}( \kappa ) \sum_{n =0 }^{\infty} \left ( \frac{\beta}{\alpha} \frac{1 }{ 2 \pi } \right )^{n} \mathcal{F}^{-1} [ \varrho \mapsto (K ( \kappa , \varrho ))^n](y)\\
+	& = & \int d \kappa\hat{g}( \kappa ) \sum_{n =0 }^{\infty} \left ( \frac{\beta}{\alpha} \frac{1 }{ 2 \pi } \right )^{n} \alpha^{n-1} \underbrace{\mathcal{F}^{-1} [ \varrho \mapsto (K ( \kappa , \varrho ))]\star \cdots \star \mathcal{F}^{-1} [ \varrho \mapsto (K ( \kappa , \varrho ))]}_{n \times}  (y)  	
+\end{eqnarray*}
+
+Or 
+\begin{eqnarray*}
+	\mathcal{F}^{-1} [ \varrho \mapsto \hat{\nu} ( \kappa - \varrho ) ] = e^{\pm i \gamma \kappa y } \nu ( - y) 	
+\end{eqnarray*}
+
+et
+
+\begin{eqnarray*}
+	\hat{\Delta}(\kappa) & = & \alpha \int \frac{ 2 c } { c^2 + \theta^2 } e^{\mp i \gamma \kappa \theta } d \theta  \\
+	& = & 2 \alpha \int \frac{1}{1 + u^2 } e^{ \mp i \gamma c \kappa u } 	
+\end{eqnarray*}
+
+
+
+or 
+
+\begin{eqnarray*}
+	\int \frac{ e^{ -i  k u }}{ u^2 + a^2 } du & = & \frac{ \pi }{ a } e^{- a \vert k \vert } 	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\hat{\Delta}(\kappa) & = & 2 \alpha \pi e^{- \vert \gamma c \kappa \vert } 		
+\end{eqnarray*}
+
+
+ 
+
+Donc 
+
+\begin{eqnarray*}
+	\mathcal{F}^{-1} [ \varrho \mapsto K ( \kappa , \varrho ) ] =  2 \pi \alpha e^{- \vert \gamma c \kappa \vert }  e^{\pm i \gamma \kappa y } \nu ( - y) 	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	f(y) & = & \int d \kappa\hat{g}( \kappa ) \sum_{n =0 }^{\infty} \beta^{n}\alpha^{n-1} e^{- n\vert \gamma c \kappa \vert }  \underbrace{[ x \mapsto e^{\pm i \gamma \kappa x } \nu ( - x)]\star \cdots \star [ x \mapsto e^{\pm i \gamma \kappa x } \nu ( - x)]}_{n \times} (y)  	
+\end{eqnarray*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

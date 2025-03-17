@@ -1,0 +1,85 @@
+	Dans la sous-sous-section précédente, nous avons expliqué comment les observables physiques, telles que les valeurs d'attente des charges et des courants, deviennent des fonctionnelles de la distribution de rapidité extensive $\Pi(\theta)$ dans la limite thermodynamique. Cependant, nous n'avons pas expliqué comment construire des distributions de rapidité physiquement significatives (sauf pour l'état fondamental de l'hamiltonien de Lieb-Liniger, pour lequel $\nu(\theta)$) est une fonction rectangulaire, voir la sous-section (??)). {\em Par exemple, quelle est la distribution de rapidité correspondant à un état d'équilibre thermique à une température non nulle ?}\\
+	
+	La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Tout d'abord, nous observons qu'il existe de nombreuses choix différents de séquences d'états propres $(\{\theta_a\}_{ a \in \llbracket 1 , N \rrbracket} )_{ N \in \mathbb{Z}}$ qui conduisent à la même distribution de rapidité thermodynamique (??). La description du système en termes de distribution de rapidité extensive $\Pi( \theta ) $ est seulement une description grossière : on devrait considérer la distribution de rapidité $\Pi ( \theta ) $ comme caractérisant un macro-état du système, correspondant à un très grand nombre de micro-états possibles $\vert \{ \theta_a \} \rangle $. {\em Pour faire de la thermodynamique, il faut estimer le nombre de ces micro-états.}\\
+	
+	Pour estimer ce nombre, on se concentre sur une petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $\Pi(\theta) \delta \theta$ rapidités. 
+	
+	\begin{figure}[H]
+		\centering 
+		\begin{tikzpicture}
+			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/Occupation_code}	
+			\begin{scope}[transform canvas={scale=0.6}]
+			\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/Figures/Occupation_theta_code}	
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5 , draw = none ] (-13.5 , -1) rectangle (13 , 10) ; 
+				
+			
+		\end{tikzpicture}	
+		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+	\end{figure}
+	
+	
+	
+Les équations de Bethe (??) relient ces rapidités aux moments de fermions pa dans une cellule de moment $[p, p+\delta p]$, où $\delta \Pi/\delta \theta$ est d'environ $2\pi \Pi_s(\theta)$, voir l'équation (??). Il est important de noter que les moments de fermions $p_a$ sont soumis au principe d'exclusion de Pauli. Le nombre de micro-états est alors évalué en comptant le nombre de configurations de moments de fermions mutuellement distincts, équivalent à $\Pi (\theta)\delta \theta$, qui peuvent être placées dans la boîte $[p, p + \delta p]$. Comme l'espacement minimal entre deux moments est de $2\pi /L$, la réponse est :
+	
+	\begin{eqnarray}
+		\# \mbox{conf.}(\theta) & \approx  & \frac{[ \Pi_s ( \theta ) \delta \theta ] ! }{ [ \Pi ( \theta ) \delta \theta ] ! [( \Pi_s ( \theta ) - \Pi ( \theta ) )  \delta \theta ] ! } , 	
+	\end{eqnarray}
+	
+	or avec la formule de Sterling :  
+	\begin{eqnarray}
+		n! & \underset{n \to \infty}{\sim} n^n e^{-n} \sqrt{2\pi n}.,
+	\end{eqnarray}
+	
+	composé du fonction logarithmique, il vient cette équivalence : 
+	\begin{eqnarray}
+		\ln n! & \underset{n \to \infty}{\rightarrow} & n \ln n \underbrace{- n + \ln \sqrt{2 \pi n }}_{o \left ( n \ln n \right ) } ,\\
+		&  \underset{n \to \infty}{\sim} & n \ln n  
+	\end{eqnarray}
+	
+	$\# \mbox{conf.}$ est jamais null donc on peut écrire que : 
+\begin{eqnarray}
+    \ln \# \mbox{conf.}(\theta) & \underset{\underset{\Pi (\theta )\leq  \Pi_s (\theta )}{\Pi \delta \theta  \to \infty}}{\sim}   & [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi) ] (\theta )\delta \theta .
+\end{eqnarray}
+
+Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. En prenant le logarithme et en remplaçant la somme par une intégrale sur $d \theta$, nous obtenons l'entropie de Yang-Yang :
+\begin{eqnarray}
+    \ln \# \mbox{microstates.} & = & \sum_{a\vert tranche} \ln \# \mbox{conf.}(\theta_a), \\
+    & \approx &   \mathcal{S}_{YY} [ \Pi ] , 	
+\end{eqnarray}
+
+\begin{eqnarray}
+    \mathcal{S}_{YY}[\Pi] & \doteq & \sum_{a\vert tranche} \, [ \Pi_s\ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi ) ] (\theta_a) \delta \theta .
+\end{eqnarray}
+	
+	Les variation de $f$ sont négligeables sur $\delta \theta $ alors  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
+	
+	
+	\begin{eqnarray}
+		\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  \# \mbox{microstates.}e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+	\end{eqnarray}
+	
+	Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+	\begin{eqnarray}
+		\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\Pi]},
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi} \# \mbox{microstates.}  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } },\\
+		& = & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ \mathcal{S}_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }\\
+		& = &  \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} P_{\{\Pi\}}
+	\end{eqnarray}
+	
+	avec la probabilité de la configuration $\{ \Pi \}$  : 
+	
+	\begin{eqnarray}
+		P_{\{\Pi\}} & = & \frac{e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta }}{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+	\end{eqnarray}
+	
+	Il est tentant de définir une action  et une fonction de partition.
+
+	
+	

@@ -1,0 +1,216 @@
+On garde pour l'action la notion avec le produit scalaire $\langle \cdot , \cdot \rangle$ 
+\begin{eqnarray*}
+	\mathcal{A}[g] & = & -\mathcal{S}_{YY}[g] + \langle f , g \rangle  
+\end{eqnarray*}
+
+pour justement de de suite la définir. De sorte à simplifier les notations et généralister au cas discré avec des $\sum$ et continue avec des $\int$ en faisant tendre $\delta \theta $ vers $0$ à savoir dans le cas continue 
+
+\begin{eqnarray*}
+	\mathcal{S}_{YY}[\Pi] & = & \int d\theta_s \, \left \{ \Pi_s  \ln\Pi_s - \Pi  \ln\Pi - ( \Pi_s - \Pi ) \ln ( \Pi_s - \Pi)   \right \}(\theta_s).  		
+\end{eqnarray*}
+
+Définir la dérivée fonctionnelle de $\mathcal{A}$ par rapport de sa variable $g$, $\frac{\delta \mathcal{A}}{\delta g}$ ,  est possible s'il y a la différentiabilité au sens de Fréchet de $\mathcal{A}$ en $g$. Pour tous fonction $h$ 
+
+\begin{eqnarray*}
+	\frac{\delta \mathcal{A}}{\delta g}[h] & \doteq & D_h \mathcal{A}(g)	~~(= d\mathcal{A}_{g}(h) ) 
+\end{eqnarray*}
+
+où $D_h \mathcal{A}$ est la dérivée directionnelle de $\mathcal{A}$ dans la direction $h$.
+
+\begin{eqnarray*}
+	D_h \mathcal{A}(g) & = & \lim_{\underset{ \varepsilon \neq 0}{\varepsilon \to 0 }} \frac{ \mathcal{A} ( g + \varepsilon h ) - \mathcal{A} ( g) }{\varepsilon}	
+\end{eqnarray*}
+
+cette dérivée étant bien définie au point $a$ car $\mathcal{A}$ est supposé différentiable en $g$.
+
+
+La dérivée directionnelle de $\mathcal{A}$  dans la direction $h$ s'écrie aussi 
+
+\begin{eqnarray*}
+	 D_h \mathcal{A}(g) &= &\sum_{a \vert tranche } h(\theta_a)\frac{\partial \mathcal{A}}{\partial g(\theta_a)}(g) 	
+\end{eqnarray*}
+
+
+La dérivé premier de l'action s'écrit :
+
+\begin{eqnarray*}
+	\frac{\delta \mathcal{A}}{\delta g(\theta) }[g] & = & -\frac{\delta \mathcal{S}_{YY}}{\delta g(\theta) }[g] + \left \langle f , \frac{\delta g }{\delta g (\theta) } \right \rangle,  
+\end{eqnarray*}
+
+de plus le dérivé de l'entropie s'écrit
+
+\begin{eqnarray}
+	\frac{ \delta S_{YY} }{ \delta \Pi(\theta)  } [\Pi ] & = & \left \langle \ln \left ( \frac{ \Pi_s}{\Pi} -1 \right ) , \frac{\delta \Pi }{\delta \Pi (\theta) } \right \rangle - 	\left \langle \ln \left ( 1 - \frac{\Pi}{\Pi_s} \right ) , \frac{\delta \Pi_s }{\delta \Pi (\theta) } \right \rangle \label{eq.entropie2}	
+\end{eqnarray}
+
+De plus 
+
+\begin{eqnarray*}
+	2\pi \Pi_s &= & L + \Delta \star \Pi , 	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray}
+	\frac{\delta \Pi_s}{\delta \Pi (\theta) } & = & \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi (\theta) } \label{eq.Pis_prime}
+\end{eqnarray}
+
+et en remarquant que si $s$ est pair alors
+
+\begin{eqnarray*}
+	\langle f , s \star g \rangle & = & \langle s \star f  ,  g  \rangle	
+\end{eqnarray*}
+
+il viens que 
+
+\begin{eqnarray}
+	\frac{ \delta S_{YY} }{ \delta \Pi(\theta)  } [\Pi ] & = & \left \langle \ln \left ( \frac{ \Pi_s}{\Pi} -1 \right )  - \frac{\Delta}{2\pi} \star  \ln \left ( 1 - \frac{\Pi}{\Pi_s} \right ) , \frac{\delta \Pi }{\delta \Pi (\theta) } \right \rangle, \label{eq.entropie3} 	
+\end{eqnarray}
+
+soit
+
+\begin{eqnarray}
+	\frac{\delta \mathcal{A}}{\delta \Pi(\theta) }[\Pi] & = & \left \langle f - \ln \left ( \frac{ \Pi_s}{\Pi} -1 \right )  + \frac{\Delta}{2\pi} \star  \ln \left ( 1 - \frac{\Pi}{\Pi_s} \right ) , \frac{\delta \Pi }{\delta \Pi (\theta) } \right \rangle, \label{eq.action2} 
+\end{eqnarray} 
+
+or au point col $\Pi^c$, pour tout $\delta \Pi$ , 
+
+\begin{eqnarray*}
+	\frac{ \delta \mathcal{A}}{\delta \Pi^c}(\delta \Pi) & = & 0,
+\end{eqnarray*}
+
+soit 
+
+\begin{eqnarray*}
+	\forall \theta \in ~tranche & \colon &  \frac{\delta \mathcal{A}}{\delta \Pi(\theta) }[\Pi^c] = 0	
+\end{eqnarray*}
+
+
+ soit 
+\begin{aff}
+\begin{eqnarray*}
+	f =  \ln \left ( \frac{ \Pi_s^c}{\Pi^c} -1 \right )  - \frac{\Delta}{2\pi} \star  \ln \left ( 1 - \frac{\Pi^c}{\Pi_s^c} \right )		
+\end{eqnarray*}
+\end{aff}
+
+Continuons vers la dérivé seconde de l'action avec 
+
+\begin{eqnarray*}
+	\frac{\delta \ln \left ( \displaystyle \frac{ \Pi_s}{\Pi} -1 \right )}{\delta \Pi(\theta')} & = &  \frac{\displaystyle  \left ( \Pi \frac{\delta \Pi_s }{\delta \Pi (\theta') } - \Pi_s \frac{\delta \Pi }{\delta \Pi (\theta') } \right ) }{ \Pi ( \Pi_s - \Pi ) } \\
+	\frac{\delta \ln \left ( \displaystyle  1- \frac{\Pi}{\Pi_s} \right )}{\delta \Pi(\theta')} & = &  \frac{\displaystyle  \left ( \Pi \frac{\delta \Pi_s }{\delta \Pi (\theta') } - \Pi_s \frac{\delta \Pi }{\delta \Pi (\theta') } \right ) }{ \Pi_s ( \Pi_s - \Pi ) } 			
+\end{eqnarray*}
+
+on peut remarquer que 
+
+\begin{eqnarray*}
+	\frac{\delta^2 \mathcal{A}}{\delta \Pi(\theta') \delta \Pi(\theta) }[\Pi] & = & - \frac{\delta^2 \mathcal{S}_{YY}}{\delta \Pi(\theta') \delta \Pi(\theta) }[\Pi]	
+\end{eqnarray*}
+
+On peut continuer avec (\ref{eq.entropie2}) , (\ref{eq.entropie3})  ou (\ref{eq.action2}), par symetrie je part de (\ref{eq.entropie2})
+
+\begin{eqnarray*}
+	\frac{\delta^2 \mathcal{A}}{\delta \Pi(\theta') \delta \Pi(\theta) }[\Pi] & = & \left \langle \frac{1}{\Pi_s - \Pi }  , \left ( (\Pi/\Pi_s)^{-1} \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)   } - \frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)} - \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)} + (\Pi/\Pi_s)\frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)} \right) \right \rangle	,\\
+	& = & +\left \langle \frac{ (\Pi/\Pi_s)^{-1}}{\Pi_s - \Pi }  , \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)}  \right \rangle\\
+	& & - \left \langle \frac{ 1}{\Pi_s - \Pi }  , \frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)}  + \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)} \right \rangle\\
+	& & +\left \langle \frac{ \Pi/\Pi_s}{\Pi_s - \Pi }  , \frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)}  \right \rangle
+\end{eqnarray*}
+
+
+
+
+
+\footnote{
+
+et en partant de  (\ref{eq.entropie3})  ou (\ref{eq.action2}) et en remarquant que que si $s$ est une fonction pair 
+
+\begin{eqnarray*}
+	\langle s \star (f \cdot h )  ,  g  \rangle & = & \langle f , h \cdot (s \star g)  \rangle  ,	
+\end{eqnarray*}
+
+on reviens au meme resultat
+
+\begin{eqnarray*}
+	\frac{\delta^2 \mathcal{A}}{\delta \Pi(\theta') \delta \Pi(\theta) }[\Pi] & = &  \left \langle 	\frac{1}{\Pi_s - \Pi }  \left ( (\Pi/\Pi_s)^{-1} \frac{\delta \Pi }{\delta \Pi (\theta') } - \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta')  }  \right )  - \frac{\Delta}{2\pi} \star  \left (  \frac{1}{\Pi_s - \Pi } \cdot \left (1 - (\Pi/\Pi_s)\frac{\Delta}{2\pi} \star   \right )  \frac{\delta \Pi }{\delta \Pi (\theta')}  \right )  ,  \frac{\delta \Pi }{\delta \Pi (\theta) }  \right \rangle,\\
+	& = & \left \langle \frac{1}{\Pi_s - \Pi }  , \left ( (\Pi/\Pi_s)^{-1} \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)   } - \frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)} - \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)} + (\Pi/\Pi_s)\frac{\delta \Pi_s }{\delta \Pi (\theta') } \frac{\delta \Pi_s }{\delta \Pi (\theta)} \right) \right \rangle
+\end{eqnarray*}
+
+ce qui me rassure dans mes calcules .
+
+
+
+
+
+
+
+
+
+\begin{NB}
+et de plus 
+
+\begin{eqnarray*}
+	\frac{\delta g }{\delta g (\theta) } & = & \delta_\theta ~\equiv~ \delta ( \cdot - \theta ) ,
+\end{eqnarray*}
+
+où $\delta$ est la fonction / distribution de Dirac. Mais plus l'instant pour rester général on garde ${\delta g }/{\delta g (\theta) }$.	
+\end{NB}
+
+}
+
+
+en se rappelant de  (\ref{eq.Pis_prime})
+
+\begin{aff}
+\begin{eqnarray*}
+	\frac{\delta^2 \mathcal{A}}{\delta \Pi(\theta') \delta \Pi(\theta) }[\Pi] & = & +\left \langle \frac{ (\Pi/\Pi_s)^{-1}}{\Pi_s - \Pi }  , \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)}  \right \rangle\\
+	& & - \left \langle \frac{ 1}{\Pi_s - \Pi }  , \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta') } \right )  \frac{\delta \Pi }{\delta \Pi (\theta)}   +  \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta) } \right )\frac{\delta \Pi }{\delta \Pi (\theta') } \right \rangle\\
+	& & +\left \langle \frac{ \Pi/\Pi_s}{\Pi_s - \Pi }  , \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta') } \right ) \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta) } \right )  \right \rangle
+\end{eqnarray*}
+\end{aff}
+
+
+Jusque là on avais pas besoin de le définir. {\em Mais c'est quoi $\displaystyle \frac{\delta \Pi }{\delta \Pi (\theta)}$ ?}
+
+\begin{eqnarray*}
+	\frac{\delta \Pi }{\delta \Pi (\theta)} & = & \delta_\theta  ~\equiv~ \delta ( ~\cdot ~ - \theta ) 	
+\end{eqnarray*}
+
+où ici $\delta$ est une fonction de Dirac et  non distribution de Dirac c'est à dire 
+
+\begin{eqnarray*}
+	\delta (x) & = & \left \{ \begin{array}{rcl} 1 & \mbox{si} & x =0 \\ 0 & \mbox{sinon}\end{array} \right .	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)} & = & 	\delta_{\theta'}\delta_\theta ~=~ \delta_\theta \delta ( \theta' - \theta ) ,\\
+	\frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta) } & = & \frac{\Delta_\theta}{2\pi} \delta \theta  ~ = ~	\frac{\Delta}{2\pi} ( ~\cdot ~- \theta )  \delta \theta 
+\end{eqnarray*}
+
+Donc 
+
+\begin{aff}
+\begin{eqnarray*}
+	\left \langle \frac{ (\Pi/\Pi_s)^{-1}}{\Pi_s - \Pi }  , \frac{\delta \Pi }{\delta \Pi (\theta') } \frac{\delta \Pi }{\delta \Pi (\theta)}  \right \rangle & = & \left ( \frac{ (\Pi/\Pi_s)^{-1}}{\Pi_s - \Pi }    \right )(\theta) \delta ( \theta' - \theta ) \delta \theta \\
+	\left \langle \frac{ 1}{\Pi_s - \Pi }  , \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta') } \right )  \frac{\delta \Pi }{\delta \Pi (\theta)}   +  \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta) } \right )\frac{\delta \Pi }{\delta \Pi (\theta') } \right \rangle & = &  \left [ \left ( \frac{1}{\Pi_s -\Pi} \right ) (\theta)  + \left ( \frac{ 1}{\Pi_s -\Pi} \right ) (\theta')\right ]\frac{\Delta ( \theta' - \theta ) }{2\pi}  \delta \theta' \delta \theta\\
+	\left \langle \frac{ \Pi/\Pi_s}{\Pi_s - \Pi }  , \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta') } \right ) \left( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi }{\delta \Pi (\theta) } \right )  \right \rangle & = & \left \langle \frac{ \Pi/\Pi_s}{\Pi_s - \Pi }  , \frac{\Delta_{\theta'}}{2\pi}  \frac{\Delta_\theta}{2\pi}   \right \rangle \delta \theta' \delta \theta
+\end{eqnarray*}
+\end{aff}
+
+avec le produis scalaire sur $\mathbb{R}^{\# tranche}$ :
+
+\begin{eqnarray*}
+	\langle f ,g \rangle & = & \sum_{a \vert tranche} f(\theta_a) g(\theta_a) \delta \theta_a 	
+\end{eqnarray*}
+
+et sur $\mathcal{L}(\mathbb{R} ,\mathbb{R})$ :
+
+\begin{eqnarray*}
+	\langle f ,g \rangle & = & \int_{\theta \in ~ tranche} f(\theta) g(\theta) \delta \theta_a 	
+\end{eqnarray*}
+
+
+ 
+
+
+

@@ -1,0 +1,68 @@
+[
+    {
+        "file1-1": "../These_Memoire/These_Memoire.pdf",
+        "page1-1": 1,
+        "file2-1": "../These_Memoire/These_Memoire.pdf",
+        "page2-1": 11
+    },
+    {
+        "file1-2": "../GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf",
+        "page1-2": 11,
+        "file2-2": "../GHD_in_1D_Bose_Gas_Isab_Jer/Fluctuation_Pi.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/These Predecesseur/Thèse___Mémoire-2_pdf.pdf",
+        "page1-3": 21,
+        "file2-3": "../docaranger/These Predecesseur/2014IOTA0005.pdf",
+        "page2-3": 49
+    },
+    {
+        "file1-4": "../docaranger/hydrodynamique/2108.02509v2.pdf",
+        "page1-4": 7,
+        "file2-4": "../GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf",
+        "page2-4": 10
+    },
+    {
+        "file1-5": "../docaranger/hydrodynamique/The theory of generalised hydrodynamics for the one-dimensional Bose gas.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/hydrodynamique/Bulletin de l'AAPPS.pdf",
+        "page2-5": 3
+    },
+    {
+        "file1-6": "../docaranger/Gase 1D/lieb1963.pdf",
+        "page1-6": 5,
+        "file2-6": "../docaranger/Gase 1D/1502.03291v2.pdf",
+        "page2-6": 4
+    },
+    {
+        "file1-7": "../docaranger/article/yang1969.pdf",
+        "page1-7": 2,
+        "file2-7": "../docaranger/article/yang1969.pdf",
+        "page2-7": 3
+    },
+    {
+        "file1-8": "../docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf",
+        "page1-8": 7,
+        "file2-8": "../docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf",
+        "page2-8": 30
+    },
+    {
+        "file1-9": "../docaranger/Gase 1D/0808.2491v1.pdf",
+        "page1-9": 5,
+        "file2-9": "../docaranger/Gase 1D/6V-model.pdf",
+        "page2-9": 4
+    },
+    {
+        "file1-10": "../docaranger/Gase 1D/1606.02950v2.pdf",
+        "page1-10": 6,
+        "file2-10": "../docaranger/Gase 1D/1810.07170v2.pdf",
+        "page2-10": 2
+    },
+    {
+        "file1-11": "../docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf",
+        "page1-11": 1,
+        "file2-11": "",
+        "page2-11": ""
+    }
+]

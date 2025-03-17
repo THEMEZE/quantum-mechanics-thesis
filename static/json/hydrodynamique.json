@@ -2,7 +2,13 @@
     {
         "file1-1": "../docaranger/hydrodynamique/2108.02509v2.pdf",
         "page1-1": 1,
-        "file2-1": "",
-        "page2-1": ""
+        "file2-1": "../docaranger/hydrodynamique/The theory of generalised hydrodynamics for the one-dimensional Bose gas.pdf",
+        "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/hydrodynamique/The theory of generalised hydrodynamics for the one-dimensional Bose gas.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/hydrodynamique/Bulletin de l'AAPPS.pdf",
+        "page2-2": 1
     }
 ]

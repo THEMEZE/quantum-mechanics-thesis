@@ -1,0 +1,48 @@
+la fonction de partition 
+
+\begin{eqnarray*}
+	\mathcal{Z} & = & \int \mathcal{D}\Pi e^{\mathcal{S}_{YY}[\Pi]-\int f(\theta)\Pi(\theta)d\theta }.
+\end{eqnarray*}
+
+avec la distribution de rapidité non-locale  $\Pi(\theta)$ (homogène à l'inverse d'une vitesse) et avec la fonctionnelle entropie 
+
+\begin{eqnarray*}
+	\mathcal{S}_{YY}(\Pi) & = & \int d\theta \left \{ \Pi_s \ln \Pi_s - \Pi \ln \Pi - ( \Pi_s - \Pi ) \ln (\Pi_s - \Pi) \right\}(\theta). 	
+\end{eqnarray*}
+
+On note la fonctionnelle action 
+
+\begin{eqnarray*}
+	\mathcal{A}(\Pi) & \doteq & -\mathcal{S}_{YY}(\Pi) + \int f(\theta)\Pi(\theta)d\theta	
+\end{eqnarray*}
+
+de classe $\mathcal{C}^2$ et admet un distribution critique $\Pi^c$ tel que sa différentielle en ce point critique soit nulle $d\mathcal{A}_{\Pi^c} =0$, de sorte que d'après la formule de Taylor-Youg 
+
+\begin{eqnarray*}
+	\mathcal{A}(\Pi^c +  \delta\Pi) & \underset{ \delta \Pi \to 0 }{=} & 	\mathcal{A}(\Pi^c ) + \mathcal{Q}(\delta\Pi)/2 + o(\Vert \delta \Pi \Vert^2) 	
+\end{eqnarray*}
+
+où $\mathcal{Q}$ est la forme quadratique définie positive.
+
+\begin{figure}[H]
+	\centering 
+	\begin{tikzpicture}
+		\begin{scope}[transform canvas={scale=0.6}]
+		\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/Figures/Fonc_A_code}	
+			
+		\end{scope}
+			
+		\draw[color = red , scale = 0.5 , draw = none ] (-2 , -1) rectangle (5, 6) ; 
+				
+			
+	\end{tikzpicture}	
+	\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+\end{figure}
+ 
+
+
+
+
+
+
+

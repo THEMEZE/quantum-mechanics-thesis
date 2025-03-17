@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domain Wall Dynamics for a 1D Bose gas</title>
-    <link rel="shortcut icon" href="./img/icon.png" />
+    <!-- <link rel="shortcut icon" href="./img/icon.png" /> -->
+    <link rel="shortcut icon" href="../img/katy.jpeg" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 </head>
 
@@ -60,6 +61,11 @@
         box-sizing: border-box;
         /* S'assure que la bordure et le padding sont inclus dans les dimensions */
         justify-content: center;
+        cursor: context-menu;
+    }
+
+    input {
+        cursor: auto;
     }
 
     input::placeholder,
@@ -67,6 +73,12 @@
     button::placeholder {
         color: var(--text-color);
         /* Placeholder avec une couleur semi-transparente */
+        cursor: pointer;
+    }
+
+    .plus,
+    .moins {
+        cursor: pointer;
     }
 
 
@@ -113,10 +125,12 @@
         background-color: var(--background-color)0;
         background: transparent;
         color: var(--text-color);
+        cursor: context-menu;
     }
 
     .class_jsonSelect .changeButton {
         grid-area: d;
+        cursor: pointer;
     }
 
     .class_jsonSelect .loading {
@@ -176,7 +190,7 @@
 
     .affichage-pdf {
         border: 2px solid var(--primary-color);
-        border-radius: 1px;
+        border-radius: 10px;
         padding: 0px;
         margin-top: 20px;
         /* min-height: 150px; */
@@ -286,11 +300,13 @@ width: 100%; /* Largeur du conteneur */
     .affichage-pdf .id_file1 .load-npage-file-1 .load-file-1,
     .affichage-pdf .id_file2 .load-npage-file-2 .load-file-2 {
         grid-area: load;
+        cursor: pointer;
     }
 
     .affichage-pdf .id_file1 .load-npage-file-1 .npage-file-1,
     .affichage-pdf .id_file2 .load-npage-file-2 .npage-file-2 {
         grid-area: npage;
+        cursor: pointer;
     }
 
     .affichage-pdf .canvas-1 {
@@ -339,10 +355,13 @@ border-radius: 10px; */
     }
 
     .affichage-pdf .prev-page-1,
-    .affichage-pdf .prev-page-2 {
+    .affichage-pdf .prev-page-2,
+    .affichage-pdf .next-page-1,
+    .affichage-pdf .next-page-2 {
         /* display: grid;           
 align-items: start;        
 justify-items: start;  */
+        cursor: pointer;
     }
 
 
@@ -401,7 +420,7 @@ justify-items: start;  */
         <label for="jsonSelect" class="text_jsonSelect">Sélectionnez un fichier JSON :</label>
         <select class="jsonSelect" id="jsonSelect"> <!-- On retire onchange et on utilise le bouton -->
             <option value="">-- Ne rien charger --</option> <!-- Option par défaut -->
-            <option value="../static/json/article Wall.json" selected>-- Article Wall --</option>
+            <option value="../static/json/Manuscrit These Memoire.json" selected>-- Manuscrit These Memoire --</option>
             <!-- Option par défaut -->
         </select>
 
@@ -440,7 +459,7 @@ justify-items: start;  */
 
         (function () {
             let pdfPairCount = 0; // Pour suivre le nombre de paires de PDF
-            const maxPairs = 10; // Limite maximale de paires de PDF
+            const maxPairs = 30; // Limite maximale de paires de PDF
             const pdfContainer = document.getElementById('pdf-container');
             const addPdfButton = document.getElementById('add-pdf-pair');
             const removePdfButton = document.getElementById('remove-pdf-pair');
@@ -453,16 +472,18 @@ justify-items: start;  */
 
                 // Liste des fichiers JSON disponibles
                 const jsonFiles = [
+                    'Manuscrit These Memoire.json',
                     'article Wall.json',
                     'Gase 1D.json',
                     'Integrabilite.json',
                     'pdf_list.json',
                     'hydrodynamique.json',
+                    'GHD Diffisifs.json',
                     'Wall.json',
                     'Seminaire.json',
                     'Cominication ordi.json',
                     'InverseScatering.json',
-                    'data.json',
+                    'Fluctuation Pi.json',
                     'These Predecesseur.json',
                     'article.json',
                     'Dipolaire.json',
@@ -580,6 +601,7 @@ justify-items: start;  */
                 "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/main.pdf",
                 "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/main_trad.pdf",
                 "../GHD_in_1D_Bose_Gas_Isab_Jer/GHD_in_Bos_gas_theo_exp.pdf",
+                "../GHD_in_1D_Bose_Gas_Isab_Jer/Fluctuation_Pi.pdf",
                 "../docaranger/Rapiditie/2312.15344v2.pdf",
                 "../docaranger/Wall/2309.15846v3.pdf",
                 "../docaranger/Wall/1510.03686v1.pdf",
@@ -601,6 +623,7 @@ justify-items: start;  */
                 "../docaranger/InverseScatering/SupportdeCours_pdf.pdf",
                 "../docaranger/InverseScatering/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf",
                 "../docaranger/InverseScatering/C_Sulem_One.pdf",
+                "../docaranger/InverseScatering/Mallick_2024_J._Stat._Mech._2024_074001.pdf",
                 "../docaranger/Phonon/GPEtoKPZ_pdf.pdf",
                 "../docaranger/Phonon/Offre-9603_pdf.pdf",
                 "../docaranger/Phonon/main_pdf.pdf",
@@ -609,6 +632,10 @@ justify-items: start;  */
                 "../docaranger/Phonon/2206.00112v2.pdf",
                 "../docaranger/Gase 1D/1810.07170v2.pdf",
                 "../docaranger/Gase 1D/lieb1963.pdf",
+                "../docaranger/Gase 1D/0808.2491v1.pdf",
+                "../docaranger/Gase 1D/6V-model.pdf",
+                "../docaranger/Gase 1D/1502.03291v2.pdf",
+                "../docaranger/Gase 1D/1606.02950v2.pd",
                 "../docaranger/Integrabilite/arXiv_0912.3350v3 [math-ph] 28 Sep 2010.pdf",
                 "../docaranger/Integrabilite/2109.14280v2.pdf",
                 "./docaranger/Cominication ordi/box_expansion_julia - Jupyter Notebook.pdf",
@@ -617,6 +644,7 @@ justify-items: start;  */
                 "../docaranger/article/1901_00446.pdf",
                 "../docaranger/article/lieb1963.pdf",
                 "../docaranger/article/1112.0013.pdf",
+                "../docaranger/article/yang1969.pdf",
                 "../docaranger/These Predecesseur/VA2bis_JACQMIN_Thibault_22112012_soutenance_-_annexe.pdf",
                 "../docaranger/These Predecesseur/VA2_JACQMIN_Thibault_22112012.pdf",
                 "../docaranger/These Predecesseur/Thèse___Mémoire-2_pdf.pdf",
@@ -625,6 +653,8 @@ justify-items: start;  */
                 "../docaranger/These Predecesseur/Thèse_Mémoire_pdf.pdf",
                 "../docaranger/These Predecesseur/69553_JOHNSON_2016_archivage.pdf",
                 "../docaranger/hydrodynamique/2108.02509v2.pdf",
+                "../docaranger/hydrodynamique/The theory of generalised hydrodynamics for the one-dimensional Bose gas.pdf",
+                "../docaranger/hydrodynamique/Bulletin de l'AAPPS.pdf",
                 "../docaranger/Dipolaire/9902072v1.pdf",
                 "../docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf",
                 "../docaranger/Dipolaire/1211.2673v2.pdf",
@@ -639,6 +669,13 @@ justify-items: start;  */
                 "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Donnees_24-04-2024.pdf",
                 "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Donnees_bord_essenctielle.pdf",
                 "../Domain_Wall_Dynamics_for_a_1D_Bose_ga/Figures/Shema.pdf",
+                "../These_Memoire/These_Memoire.pdf",
+                "../docaranger/GHD Diffisifs/Charge diffusion in the one-dimensional Hubbard model.pdf",
+                "../docaranger/GHD Diffisifs/sirker2009.pdf",
+                "../docaranger/GHD Diffisifs/ljubotina2017.pdf",
+                "../docaranger/GHD Diffisifs/denardis2018.pdf",
+                "../docaranger/GHD Diffisifs/SciPostPhys_6_4_049.pdf",
+                "../docaranger/GHD Diffisifs/bastianello2020.pdf"
                 // Ajoutez d'autres fichiers ici...
             ];
 

@@ -1,0 +1,167 @@
+	
+	\begin{aff}
+		Et remarque/question $  \frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i } = \left (\frac{ \Delta}{2 \pi} \star  1 \right ) \frac{\delta \rho }{ \delta \rho_i } $ et $\left (\frac{ \Delta}{2 \pi} \star  1 \right ) = 1 $. Si cest bien vrais alors 
+	
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho}\right )\frac{\delta \rho }{ \delta \rho_i } \right \}( \theta )	.	
+		\end{eqnarray}	
+	\end{aff}
+
+	
+
+	
+	
+
+	
+	Ainsi soit la distribution $\rho^\ast$ qui minimise $\left [ (   f ,  \cdot  )  - S_{YY}  \right ]$ avec $(   f ,  \cdot  )[g] =  \int  f(\theta) g(\theta )  d\theta$
+	 
+	
+	\begin{eqnarray}
+		0 = \frac{\delta}{\delta \rho} \left [ (   f ,  \cdot  )  - S_{YY}  \right ][\rho^\ast ] & = & 	\int  d\theta\left \{ f - \ln \left ( \frac{ \rho_s}{ \rho^\ast } - 1 \right ) + \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho^\ast }{ \rho_s}\right )  \right \} (\theta )
+	\end{eqnarray}
+	
+	
+%	\begin{eqnarray}
+%		\frac{\delta}{\delta \rho} \left [ \int  f(\theta) \rho(\theta )  d\theta - S_{YY} [\rho] \right ] & = & 	\int  d\theta\left \{ f - \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) + \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right \} (\theta )
+%	\end{eqnarray}
+	
+	donc 
+	
+	\begin{eqnarray} 
+		\frac{\delta}{\delta \rho}	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}}\rangle_{GGE} = 0 & \Leftarrow & f = \ln \left ( \frac{ \rho_s}{ \rho^\ast } - 1 \right ) - \frac{1}{2 \pi} \Delta \star \ln \left ( 1 - \frac{ \rho^\ast }{ \rho_s}\right )		
+	\end{eqnarray}
+	
+%	Mais est-ce la seule solution ? 
+ 
+	
+	{\color{red} $\cdots$}\\
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &\int  d\theta\left \{ \frac{\frac{\rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j}}{\rho^2}}{\frac{\rho_s}{\rho} -1}\frac{\delta \rho}{\delta \rho_i}  - \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} \right .\\
+		& & +\left .  \frac{\frac{\rho_s \frac{\delta \rho}{\delta \rho_j}- \rho\frac{\delta \rho_s}{\delta \rho_j}}{\rho_s^2}}{1 - \frac{\rho}{\rho_s}}\frac{\delta \rho_s}{\delta \rho_i}  - \ln \left (1- \frac{ \rho}{ \rho_s}  \right )\frac{\delta^2 \rho_s}{\delta \rho_j\delta \rho_i}\right \} ( \theta ) 
+	\end{eqnarray}
+	
+	et $\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} =0 $ et $\frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} = \frac{\Delta}{2\pi} \star \frac{\delta^2 \rho}{\delta \rho_j\delta \rho_i} = 0 $.Donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &\int  d\theta\left \{ \frac{\rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j}}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  + \frac{\rho_s \frac{\delta \rho}{\delta \rho_j}- \rho\frac{\delta \rho_s}{\delta \rho_j}}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right \}(\theta) \\	
+		& = & 	\int  d\theta\left \{ \left ( \rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j} \right ) \left ( \frac{1}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  - \frac{1}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right )  \right \}(\theta),\\
+		& = & \int  d\theta\left \{  \frac{\rho_s}{(\rho^2  - \rho_s\rho)} \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right . \\
+		&  &  +  \left . \frac{\rho }{(\rho_s\rho -\rho^2) } \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j}   \right ) \frac{\delta \rho}{\delta \rho_i}+ \frac{\rho_s }{( \rho_s^2 - \rho \rho_s) }\frac{\delta \rho}{\delta \rho_j} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right . \\
+		& & + \left .  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right \}(\theta),
+	\end{eqnarray}
+	
+	or 
+	\begin{eqnarray}
+		\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right ) & = & \left (  \frac{\Delta}{2\pi} \star 1  \right )	\frac{\delta \rho}{\delta \rho_i} 
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\frac{\rho }{(\rho_s\rho -\rho^2) } + \frac{\rho_s }{( \rho_s^2 - \rho \rho_s) } & = & 	\frac{1}{(\rho_s -\rho) } + 	\frac{1}{( \rho_s - \rho ) } = \frac{2}{( \rho_s - \rho ) }
+	\end{eqnarray}
+	
+	donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [  \frac{\rho_s}{(\rho^2  - \rho_s\rho)}  +  \frac{2}{( \rho_s - \rho ) } \left (  \frac{\Delta}{2\pi} \star 1    \right )  +  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star 1 \right )^2  \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+	
+	et 
+	
+	\begin{eqnarray}
+		\left ( \frac{\Delta}{2\pi} \star 1 \right ) (\theta ) & = & \frac{1}{2\pi} \int d \theta' \, \frac{2}{c} \frac{ 1 }{1 +\left (  \frac{ \theta - \theta'}{c}  \right )^2 } =1 
+	\end{eqnarray}
+
+	et 
+	
+	\begin{eqnarray}
+		\frac{\rho_s}{(\rho^2  - \rho_s\rho)}  + 	\frac{\rho }{\rho\rho_s - \rho_s^2 } & = & \left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s }\right ) 	\frac{1 }{\rho - \rho_s }
+	\end{eqnarray}
+	
+	donc
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [  \left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right ) \frac{1 }{\rho - \rho_s  } \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray} 
+	
+	et 
+	
+	\begin{eqnarray}
+		\left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right )  & = & 	\left ( \frac{\rho_s^2 + \rho^2  - 2\rho_s \rho }{\rho_s \rho} \right ) =  \left ( \frac{ (\rho - \rho_s )^2  }{\rho_s \rho} \right ),\\
+		\left ( \frac{\rho_s}{\rho} +  \frac{\rho}{\rho_s } - 2 \right ) \frac{1 }{\rho - \rho_s   } & = &  \frac{ \rho - \rho_s}{\rho_s\rho} = \frac{1}{\rho_s} - \frac{1}{\rho}  		
+	\end{eqnarray}
+	
+	donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [ \frac{1}{\rho_s} - \frac{1}{\rho} \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+
+	
+	
+
+
+
+	
+	On note $\rho = \rho^\ast + \delta \rho$ tel que $ \delta \rho = o ( \rho^\ast ) $ .
+	
+	\begin{eqnarray}
+		\left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho ] & = &  \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] + 	\frac{\delta}{\delta \rho } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] \delta \rho  + 	\frac{\delta^2 }{\delta \rho_i \delta \rho_j  } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] \delta \rho_i \delta \rho_j + o (...) 
+	\end{eqnarray}
+	
+	or $\frac{\delta}{\delta \rho } \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ] = 0$ et $\frac{\delta^2 ( f , . ) }{\delta \rho_i \delta \rho_j  } = 0 $ donc 
+	
+	\begin{eqnarray}
+		\left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho ] & = &  \left [ S_{YY}  - (   f ,  \cdot  )  \right ] [\rho^\ast  ]  + 	\frac{\delta^2 S_{YY} }{\delta \rho_i \delta \rho_j  }   [\rho^\ast  ] \delta \rho_i \delta \rho_j + o (...) 
+	\end{eqnarray} 
+	
+	\begin{aff}[Si je peut écrire que :
+		]
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right )\frac{\delta \rho_s }{ \delta \rho_i } \right \} ( \theta ) ,\\	
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = & 	\int  d\theta\left \{ \left ( \rho \frac{\delta \rho_s}{\delta \rho_j}- \rho_s\frac{\delta \rho}{\delta \rho_j} \right ) \left ( \frac{1}{\rho_s\rho -\rho^2 }\frac{\delta \rho}{\delta \rho_i}  - \frac{1}{\rho_s^2 - \rho\rho_s}\frac{\delta \rho_s}{\delta \rho_i} \right )  \right \}(\theta).
+		\end{eqnarray}
+		
+		Si 
+		\begin{eqnarray}
+			\frac{\delta \rho_s}{\delta \rho_i}   & = &\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) 	
+		\end{eqnarray}
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right )\frac{\delta \rho }{ \delta \rho_i } -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \rho }{ \delta \rho_i }  \right)\right \} ( \theta ) ,\\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = & \int  d\theta\left \{  \frac{\rho_s}{(\rho^2  - \rho_s\rho)} \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right . \\
+		&  &  +  \left . \frac{1}{(\rho_s -\rho) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j}   \right ) \frac{\delta \rho}{\delta \rho_i}+ \frac{\delta \rho}{\delta \rho_j} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right ] \right . \\
+		& & + \left .  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_j} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \rho}{\delta \rho_i} \right )  \right \}(\theta),
+	\end{eqnarray}
+	
+	Si
+	
+		\begin{eqnarray}
+			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) =  \left  ( \frac{\Delta}{2\pi} \star  1 \right )	\frac{\delta \rho}{\delta \rho_i} 
+		\end{eqnarray}
+		
+		Alors 
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int  d\theta \left \{  \left [ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) -  \left ( \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star   1  \right) \right ]  \frac{\delta \rho }{ \delta \rho_i }\right \} ( \theta ) ,\\
+			& = & \int  d\theta \left \{  \left [ \ln \left ( \frac{ \rho_s}{ \rho} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star   \ln \left ( 1 - \frac{ \rho}{ \rho_s}\right )  \right) \right ]  \frac{\delta \rho }{ \delta \rho_i }\right \} ( \theta ), \\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ]  & = &  \int  d\theta\left \{  \left [  \frac{\rho_s}{(\rho^2  - \rho_s\rho)}  +  \frac{2}{( \rho_s - \rho ) } \left (  \frac{\Delta}{2\pi} \star 1    \right )  +  \frac{\rho }{\rho\rho_s - \rho_s^2 }\left (  \frac{\Delta}{2\pi} \star 1 \right )^2  \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),
+	\end{eqnarray}
+	
+	Si 
+		
+		\begin{eqnarray}
+			\frac{\delta \rho_s}{\delta \rho_i}  = \left  ( \frac{\Delta}{2\pi} \star \frac{\delta \rho}{\delta \rho_i}  \right ) =  \left  ( \frac{\Delta}{2\pi} \star  1 \right )	\frac{\delta \rho}{\delta \rho_i}  = \frac{\delta \rho}{\delta \rho_i} 	
+		\end{eqnarray}
+		
+		
+		Alors 
+		
+		\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \rho_i } [\rho ]  & = & \int d \theta \left \{ \ln \left ( \frac{ \rho_s}{ \rho}\right )\frac{\delta \rho }{ \delta \rho_i } \right \}( \theta ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \rho_j\delta \rho_i } [\rho ] & = & 	\int  d\theta\left \{  \left [ \frac{1}{\rho_s} - \frac{1}{\rho} \right ]   \frac{(\delta \rho)^2}{\delta \rho_j \delta \rho_i} \right \}(\theta),	
+		\end{eqnarray}	
+	\end{aff}

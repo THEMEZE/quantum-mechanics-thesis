@@ -1,0 +1,151 @@
+\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s}{ \Pi  } - 1 \right )\frac{\delta \Pi  }{ \delta \Pi(\theta_b)} -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s }\right ) \right )\frac{\delta \Pi_s  }{ \delta \Pi(\theta_b) } \right \} (\theta_a) ,\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & 	\sum_{a \vert tranche}   \delta \theta \left \{ \left ( \Pi  \frac{\delta \Pi_s  }{\delta \Pi ( \theta_c) }- \Pi_s  \frac{\delta \Pi  }{\delta \Pi ( \theta_c ) } \right ) \right.   \\
+			&&   \left. \left ( \frac{1}{\Pi_s\Pi  -\Pi^2  }\frac{\delta \Pi }{\delta \Pi(\theta_b) }- \frac{1}{\Pi_s^2  - \Pi \Pi_s }\frac{\delta \Pi_s }{\delta \Pi(\theta_b) } \right )  \right \}(\theta_a).
+		\end{eqnarray}
+		
+	Or 
+	\begin{eqnarray}
+		2\pi \Pi_s  & = &  L + ( \Delta \star \Pi ) \delta \theta, 		
+	\end{eqnarray}
+	
+	avec le produit de convolution discret $( f \star g )(x) = \sum_{x'\vert tranche } f( x - x') g(x') $, donc 
+	\begin{eqnarray}
+			\frac{\delta \Pi_s }{\delta \Pi( \theta_b)}   & = &\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta_b) }  \right )	
+		\end{eqnarray}
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right )\frac{\delta \Pi }{ \delta \Pi (\theta_b) } -  \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right ) \right ) \left ( \frac{ \Delta}{2 \pi} \star \frac{\delta \Pi }{ \delta \Pi(\theta_b) }  \right) \right \} ( \theta_	a ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{1}{(\Pi  - \Pi_s)\Pi/\Pi_s} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
+		&  &  -  \left . \frac{1 }{(\Pi -\Pi_s) } \left [ \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)}   \right )   \delta \theta \frac{\delta \Pi}{\delta \Pi(\theta_b)}+ \frac{\delta \Pi}{\delta \Pi(\theta_c)} \left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )  \delta \theta  \right ] \right . \\
+		& & + \left .  \frac{\Pi/\Pi_s }{\Pi - \Pi_s }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_b)} \right )   (\delta \theta)^2 \right \}(\theta_a),	
+	\end{eqnarray}
+	
+%	or 
+%	
+%		\begin{eqnarray}
+%			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta_b) }  \right ) & = & 	\left  ( \frac{\Delta}{2\pi} \star  1  \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)}
+%		\end{eqnarray}
+		
+		En remarquant que $\Delta$ est symetrique il vient que : 
+	\begin{eqnarray}
+		\sum_{a\vert tranche}   \,  \left \{ g  \cdot  	\left  ( \frac{\Delta}{2\pi} \star  \frac{\delta \Pi}{\delta \Pi(\theta_b)} \right ) \right \}( \theta_a) & = & \sum_{a\vert tranche}   \,  \left \{ g  \cdot  \sum_{c\vert tranche}    	
+		 \frac{\Delta ( \cdot - \theta_c)}{2\pi}  \frac{\delta \Pi (\theta_c) }{\delta \Pi(\theta_b)}\right \}( \theta_a),\\
+		 & = & \sum_{c\vert tranche}   \,  \left \{  \sum_{a\vert tranche}      	
+		  \left ( \frac{\Delta ( \theta_a - \cdot )}{2\pi}  g ( \theta_a) \right ) \frac{\delta \Pi (\cdot) }{\delta \Pi(\theta_b)}\right \}( \theta_c),\\
+		  & = & \sum_{c\vert tranche}  \,  \left \{  \sum_{a\vert tranche}      	
+		  \left ( \frac{\Delta ( \cdot - \theta_a)}{2\pi}  g ( \theta_a) \right ) \frac{\delta \Pi (\cdot) }{\delta \Pi(\theta_b)}\right \}( \theta_c),\\
+		  & = & \sum_{a\vert tranche}   \,  \left \{        	
+		  \left ( \frac{\Delta}{2\pi}   \star g \right ) \frac{\delta \Pi  }{\delta \Pi(\theta_b)}\right \}( \theta_a),\\
+	\end{eqnarray}	
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \left [ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right )  \right)\right ]\frac{\delta \Pi }{ \delta \Pi (\theta_b) } \right \} ( \theta_	a ),\\
+			{\color{lightgray} \frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]}  &  \color{lightgray} = & {\color{lightgray} \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right .} \\
+		&  & \color{lightgray}  +  \left . \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1 }{(\Pi_s -\Pi) }  \frac{\delta \Pi}{\delta \Pi(\theta_b)}  \right )   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_c)} \delta \theta+  \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1}{( \Pi_s -  \Pi) } \frac{\delta \Pi}{\delta \Pi(\theta_c)} \right) \right )\frac{\delta \Pi}{\delta \Pi(\theta_b)} \delta \theta  \right . \\
+		& & \color{lightgray} + \left .  \left (  \frac{\Delta}{2\pi} \star \left ( \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta}{2\pi} \star\frac{\delta \Pi}{\delta \Pi(\theta_c)} \right )\right ) \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)} (\delta \theta)^2  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+	Avec 
+	
+	\begin{eqnarray}
+			\frac{\delta \Pi }{\delta \Pi(\theta') } & = & \sum_{i\vert \Pi(\theta_i) = \Pi(\theta')}  \delta ( \cdot  - \theta_i ) \,  \\
+			\left  ( \frac{\Delta}{2\pi} \star \frac{\delta \Pi}{\delta \Pi(\theta') }  \right ) & = & 	\sum_{i \vert \Pi(\theta_i) = \Pi(\theta')}\frac{\Delta ( \cdot - \theta_i )}{2\pi}
+	\end{eqnarray}
+	
+	Si on note $\mathscr{E}^{'}$
+	
+	\begin{eqnarray}
+		\frac{\delta \Pi }{\delta \Pi(\theta') } \frac{\delta \Pi }{\delta \Pi(\theta'') } & = & \sum_{\theta_i \in  \mathscr{E}^{'}} \sum_{\theta_j \in  \mathscr{E}_{''}}   \delta ( \cdot  - \theta_i )	\delta ( \cdot  - \theta_j )	\\
+		& = & 	\sum_{\theta_i \in  \mathscr{E}^{'}} \sum_{\theta_j \in  \mathscr{E}^{''}}   \delta ( \cdot  - \theta_i )	\delta ( \exists \theta_j \in \mathscr{E}^{''} , \theta_j = \theta_i )
+	\end{eqnarray}
+	
+	Or si on fixe $  \theta_i \in \mathscr{E}^{'} $
+	
+	\begin{eqnarray}
+		 \exists \theta_j \in \mathscr{E}^{''} , \theta_j = \theta_i & \Leftrightarrow & \exists j \in \mbox{tranches} , \Pi(\theta'') = \Pi(\theta_j ) =  \Pi(\theta_i  ) = \Pi(\theta' ),\\
+		 & \Leftrightarrow & \Pi(\theta'') =
+		\Pi(\theta' ),\\
+		& \Leftrightarrow & \mathscr{E}^{''} = \mathscr{E}^{'}
+	\end{eqnarray}
+	Donc 
+	
+	\begin{eqnarray}
+		\frac{\delta \Pi }{\delta \Pi(\theta') } \frac{\delta \Pi }{\delta \Pi(\theta'') } & = & \sum_{\theta_i \in  \mathscr{E}^{'}}   \delta ( \cdot  - \theta_i )	\delta (  \Pi(\theta')  - \Pi(\theta'') )
+	\end{eqnarray}
+	
+	
+	
+	\begin{eqnarray}
+			\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{a\vert tranche}   \delta \theta \left \{ \left [ \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right )  \right)  \right ]\sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}  \delta ( \cdot  - \theta_i )  \right \} ( \theta_	a ),\\
+			\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{1}{(\Pi  - \Pi_s)\Pi/\Pi_s} \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}   \delta ( \cdot  - \theta_i )	\delta (  \Pi(\theta_b)  - \Pi(\theta_c) ) \right . \\
+			&  &  -   \frac{\delta \theta }{(\Pi -\Pi_s) } \left [ \left (  \sum_{i \vert \Pi(\theta_i) = \Pi(\theta_c)}\frac{\Delta ( \cdot - \theta_i )}{2\pi}   \right )   \sum_{j\vert \Pi(\theta_j) = \Pi(\theta_b)}  \delta ( \cdot  - \theta_j ) \right. \\
+			& &  \quad + \left . \left (  \sum_{i \vert \Pi(\theta_i) = \Pi(\theta_b)}\frac{\Delta ( \cdot - \theta_i )}{2\pi} \right )\sum_{j\vert \Pi(\theta_j) = \Pi(\theta_c)}  \delta ( \cdot  - \theta_j )    \right ] \\
+		& & + \left . (\delta \theta)^2  \frac{\Pi/\Pi_s }{\Pi - \Pi_s }\left ( \sum_{i \vert \Pi(\theta_i) = \Pi(\theta_c)}\frac{\Delta ( \cdot - \theta_i )}{2\pi}\right )\left (  \sum_{j \vert \Pi(\theta_j) = \Pi(\theta_b)}\frac{\Delta ( \cdot - \theta_j )}{2\pi} \right )    \right \}(\theta_a),	\\
+			\color{lightgray}\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & \color{lightgray}= & \color{lightgray}\sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}   \delta ( \cdot  - \theta_i )	\delta (  \Pi(\theta_b)  - \Pi(\theta_c) ) \right . \\
+		&  &  \color{lightgray}+   \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1 }{(\Pi_s -\Pi) }  \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}  \delta ( \cdot  - \theta_i )   \right )   \right ) \sum_{j\vert \Pi(\theta_j) = \Pi(\theta_c)}  \delta ( \cdot  - \theta_j )  \delta \theta \\
+		& & \color{lightgray}+   \left (  \frac{\Delta}{2\pi} \star \left ( \frac{1 }{(\Pi_s -\Pi) }  \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_c)}  \delta ( \cdot  - \theta_i )   \right )   \right ) \sum_{j\vert \Pi(\theta_j) = \Pi(\theta_b)}  \delta ( \cdot  - \theta_j )  \delta \theta \\
+		& & \color{lightgray}+ \left .  \left (  \frac{\Delta}{2\pi} \star \left ( \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \sum_{i \vert \Pi(\theta_i) = \Pi(\theta_c)}\frac{\Delta ( \cdot - \theta_i )}{2\pi}\right )\right ) \right ) \sum_{j\vert \Pi(\theta_j) = \Pi(\theta_b)}  \delta ( \cdot  - \theta_j ) (\delta \theta)^2  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+	Et 
+	
+	\begin{eqnarray}
+		\sum_{\theta_a \in \mbox{tranches}} f ( \theta_a ) \sum_{\theta_i \in \mathscr{E}'} \delta ( \theta_a - \theta_i )  & = &  \sum_{\theta_i \in \mathscr{E}'} \sum_{\theta_a \in \mbox{tranches}} f ( \theta_a ) \delta ( \theta_a - \theta_i ) =   \sum_{\theta_i \in \mathscr{E}'} f ( \theta_i ) ,\\
+		\sum_{\theta_a \in \mbox{tranches}} f ( \theta_a ) \sum_{\theta_i \in \mathscr{E}'} g( \theta_a - \theta_i ) \sum_{\theta_j \in \mathscr{E}''} \delta ( \theta_a - \theta_j ) & = & \sum_{\theta_i \in \mathscr{E}'} \sum_{\theta_j \in \mathscr{E}''} f(\theta_j) g ( \theta_j - \theta_i ) ,\\
+		\sum_{\theta_a \in \mbox{tranches}} f ( \theta_a ) \sum_{\theta_i \in \mathscr{E}'} \delta( \theta_a - \theta_i ) \sum_{\theta_j \in \mathscr{E}''} \delta ( \theta_a - \theta_j ) & = & \sum_{\theta_i \in \mathscr{E}'} \sum_{\theta_j \in \mathscr{E}''} f(\theta_j) \delta ( \theta_j - \theta_i ) = \sum_{\theta_i \in \mathscr{E}'}  f(\theta_j) \delta ( \Pi(\theta') - \Pi(\theta'') ) 
+	\end{eqnarray}
+	
+	Donc 
+	
+	\begin{eqnarray}
+		\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)} [\Pi ]  & = & \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}   \delta \theta \left \{  \ln \left ( \frac{ \Pi_s }{ \Pi} - 1 \right ) -  \left ( \frac{ \Delta}{2 \pi} \star \ln \left ( 1 - \frac{ \Pi}{ \Pi_s}\right )  \right)  \right \} ( \theta_	i ),\\
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \delta \theta \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)}   \left \{  \frac{1}{(\Pi  - \Pi_s)\Pi/\Pi_s}\delta (  \Pi(\theta_b)  - \Pi(\theta_c) ) \right \}(\theta_i) \\
+		&  &  -  (\delta \theta)^2  \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_b)} \left \{   \frac{1}{(\Pi -\Pi_s) }    \sum_{j \vert \Pi(\theta_j) = \Pi(\theta_c)}\frac{\Delta ( \cdot - \theta_j )}{2\pi}     \right\}(\theta_i) \\
+		&  &  -  (\delta \theta)^2  \sum_{i\vert \Pi(\theta_i) = \Pi(\theta_c)} \left \{   \frac{1}{(\Pi -\Pi_s) }    \sum_{j \vert \Pi(\theta_j) = \Pi(\theta_b)}\frac{\Delta ( \cdot - \theta_j )}{2\pi}     \right\}(\theta_i) \\
+		& & +  (\delta \theta)^3  \sum_{a \vert tranche} \left \{\frac{\Pi/\Pi_s }{\Pi - \Pi_s } \sum_{i \vert \Pi(\theta_i) = \Pi(\theta_c)}\frac{\Delta ( \cdot - \theta_i )}{2\pi}  \sum_{j \vert \Pi(\theta_j) = \Pi(\theta_b)}\frac{\Delta ( \cdot - \theta_j )}{2\pi}     \right \}(\theta_a)		
+	\end{eqnarray}
+	
+	{\color{lightgray}
+	
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = & \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)} \frac{(\delta \Pi)^2}{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } \right . \\
+		&  & +  \left . \frac{\Pi }{(\Pi_s\Pi -\Pi^2) } \left ( \frac{\Delta ( \cdot - \theta_c )}{2\pi}   \right ) \frac{\delta \Pi}{\delta \Pi(\theta_b)} \delta \theta+ \frac{\Pi_s }{( \Pi_s^2 - \Pi_s \Pi) } \left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right ) \frac{\delta \Pi}{\delta \Pi(\theta_c)} \delta \theta \right . \\
+		& &  + \left .  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )( \delta \theta)^2  \right \}(\theta_a),	
+	\end{eqnarray}
+	
+	
+		
+
+
+		
+	%Or $2\pi \Pi_s(\theta_a)  = L + \sum_{c \vert tranche } \Delta( \theta_a  - \theta_c ) \Pi(\theta_c)  $ donc $ 2 \pi \frac{\delta \Pi_s(\theta_a)  }{ \delta \Pi(\theta_b) }  = \sum_{c \vert tranche } \Delta ( \theta_a - \theta_c )   \frac{\delta \Pi(\theta_c)  }{ \delta \Pi(\theta_b) }$ et de plus $\frac{\delta \Pi(\theta_a)  }{ \delta \Pi(\theta_b) } = \delta ( a - b ) $ donc  $ 2 \pi \frac{\delta \Pi_s(\theta_a)  }{ \delta \Pi(\theta_b) }  = \Delta ( \theta_a - \theta_b )   $ et 
+%	\begin{eqnarray}
+%		\frac{ \delta S_{YY} }{ \delta \Pi(\theta_b)  } [\Pi ]  & = &   \ln \left ( \frac{ \Pi_s(\theta_b) }{ \Pi (\theta_b) } - 1 \right )  \delta \theta  -  \sum_{a\vert tranche}  \left \{  \frac{ \Delta( \theta_a - \theta_b )}{2\pi} \left ( \ln \left ( 1 - \frac{ \Pi(\theta_a)}{ \Pi_s(\theta_a) }\right ) \right ) \right \}  \delta \theta  	
+%	\end{eqnarray}
+%	
+	%Je vais noter le produit de convolution discret $( f \star g )(x) = \sum_{x'\vert tranche } f( x - x') g(x') $ 
+	
+	%En remarquant que $\Delta$ est symetrique il vient que : 
+	
+	\begin{eqnarray}
+		\frac{ \delta S_{YY} }{ \delta \Pi(\theta_a)  } [\Pi ]  & = &   \left \{ \ln \left ( \frac{ \Pi_s }{ \Pi  } - 1 \right )   -  \frac{ \Delta}{2\pi}  \star \left ( \ln \left ( 1 - \frac{ \Pi}{ \Pi_s }\right ) \right ) \delta \theta \right \} (\theta_a) \delta \theta , \\
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = &   \left (  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)}    \right )(\theta_b) \delta( \theta_b - \theta_c)  \delta \theta  \\
+		&  &   +   \frac{ \Delta ( \theta_b - \theta_c)}{ 2\pi}  \frac{1 }{(\Pi_s(\theta_b) -\Pi(\theta_b)) } (\delta \theta)^2 +  \frac{\Delta ( \theta_c - \theta_b )}{2\pi}\frac{1 }{( \Pi_s(\theta_c)  -   \Pi(\theta_c) ) }(\delta \theta)^2  \\
+		& &  + \sum_{a \vert tranche}   \delta \theta \left \{  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )( \delta \theta)^2  \right \}(\theta_a) ,	 	
+	\end{eqnarray}
+	
+	
+
+		
+	 Or $\Delta$ symetrique 
+		
+	\begin{eqnarray}
+		\frac{ \delta^2 S_{YY} }{ \delta \Pi(\theta_c) \delta \Pi(\theta_b)  } [\Pi ]  & = &   \left (  \frac{\Pi_s}{(\Pi^2  - \Pi_s\Pi)}    \right )(\theta_b) \delta( \theta_b - \theta_c)  \delta \theta  \\
+		&  &  +   \frac{ \Delta ( \theta_b - \theta_c)}{ 2\pi} \left (  \frac{1 }{(\Pi_s(\theta_b) -\Pi(\theta_b)) }  +  \frac{1 }{( \Pi_s(\theta_c)  -   \Pi(\theta_c) ) } \right )(\delta \theta)^2  \\
+		& & + \sum_{a \vert tranche}   \left \{  \frac{\Pi }{\Pi_s\Pi - \Pi_s^2 }\left (  \frac{\Delta ( \cdot - \theta_c )}{2\pi} \right )\left (  \frac{\Delta ( \cdot - \theta_b )}{2\pi} \right )  \right \}(\theta_a)( \delta \theta)^3 ,		
+	\end{eqnarray}
+	
+	}
+	
+36

@@ -1,0 +1,48 @@
+\begin{figure}[H]
+	\centering 
+	\begin{tikzpicture}
+
+		\begin{scope}[transform canvas={scale=0.6}]
+			\input{Figures/Occupation_microetat_code}
+				
+		\end{scope}
+			
+		\draw[color = red , scale = 0.5 , draw = none  ] (-13.5 , -0.1) rectangle (13 , 5) ; 
+							
+	\end{tikzpicture}	
+	\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+\end{figure}
+
+
+
+On écrit l'observable énergie et nombre :
+	\begin{eqnarray}
+		\operator{\mathcal{N}} & = & \sum_{ \{\theta_a\} }   \left ( \sum_{a = 1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\\
+		\operator{\mathcal{E}} & = & \sum_{\{ \theta_a\}}  \left ( \sum_{a = 1}^N  \varepsilon ( \theta_a ) \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,		
+	\end{eqnarray}
+	
+	avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{ \{\theta_a \} }  \doteq  \langle \{ \theta_a \}\vert  \operator{\mathcal{N}} \vert\{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}  \doteq  \langle \{ \theta_a \}\vert  \operator{ \mathcal{E}}  \vert\{ \theta_a\}\rangle $.
+
+	
+	La probabilité que le système soit dans configuration $\{ \theta_a \}$  est 
+	\begin{eqnarray}
+		P_{\{\theta_a \}} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
+	\end{eqnarray}
+	
+	avec la fonction de partition $Z_{thermal} = \sum_{\{ \theta_a\}}e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )} = \sum_{\{ \theta_a\}} e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
+	
+	\begin{eqnarray}
+		\langle \operator{\mathcal{N}} \rangle  = \left .\frac{1}{\beta} \frac{ \partial \ln Z}{\partial \mu } \right )_T,  & & \Delta^2_{\operator{\mathcal{N}}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z}{{\partial \mu}^2 } \right )_T =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu } \right )_T\\
+		\langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}}  \rangle  = -\left . \frac{ \partial \ln Z}{\partial \beta } \right )_\mu,  & & \Delta^2_{\operator{\mathcal{E}} - \mu\operator{\mathcal{N}}} = \left .  \frac{ \partial^2 \ln Z}{{\partial \beta}^2 } \right )_\mu =  -\left .  \frac{ \partial \langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}} \rangle}{\partial \beta } \right )_\mu	\\
+		\langle \operator{\mathcal{E}} \rangle  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\ln Z,  & & \Delta^2_{\operator{\mathcal{E}} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]^2\ln Z=  \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\langle \operator{\mathcal{E}} \rangle	
+	\end{eqnarray}
+
+	
+	
+	La matrice densité thermique est :
+	\begin{eqnarray}
+		\operator{\rho}_{thermal} & = & \frac{e^{- \beta \operator{H}}}{Z_{thermal}}, \\
+		e^{-\beta \operator{H}} & = & 	\sum_{\{\theta_a \}} e^{- \beta \sum_{a=1}^N ( \varepsilon(\theta_a)- \mu ) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	\end{eqnarray}
+
+	

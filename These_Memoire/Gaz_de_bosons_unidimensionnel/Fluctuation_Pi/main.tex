@@ -1,0 +1,118 @@
+Dans ce chapitre, nous nous intéressons aux fluctuations de la distribution de rapidité \( \delta \Pi \) autour d'une distribution de référence \( \Pi^c \), qui maximise la contribution à la fonction de partition des états, exprimée comme une fonctionnelle de la distribution \( \Pi \) :  
+
+\begin{eqnarray*}
+	\mathcal{Z} & = & \sum_\Pi \exp \left( -\mathcal{A}(\Pi) \right).
+\end{eqnarray*}  
+
+Dans la section {\em \bf Entropie de Yang-Yang} (\ref{??}), l'action \( \mathcal{A}(\Pi) \) s'écrit sous la forme :  
+
+\begin{eqnarray*}
+	\mathcal{A}(\Pi) & \doteq & - \mathcal{S}_{YY}(\Pi) + \int f(\theta) \Pi (\theta) \, d\theta,		
+\end{eqnarray*}  
+
+où \( \mathcal{S}_{YY} \) est la fonctionnelle d'entropie de Yang-Yang, définie dans (\ref{??}), et \( f \) est la fonction paramétrant les charges, introduite dans (\ref{??}).  
+
+Dans cette même section {\em \bf Entropie de Yang-Yang} (\ref{??}), nous avons établi un lien entre \( f \) et \( \Pi^c \).\\
+  
+
+Nous poursuivons à présent avec cette définition de l'action de classe $\mathcal{C}^2$ et admetant une distribution critique $\Pi^c$ tel que sa différentielle en ce point critique soit nulle $d\mathcal{A}_{\Pi^c} = 0 $ (\ref{??}) de sorte que d'aprés la formule de Taylor-Youg %afin de déterminer les fluctuations autour de \( \Pi^c \). Pour cela, nous réécrivons l'action sous la forme :  
+
+\begin{eqnarray*}  
+	\mathcal{A}(\Pi^c + \delta \Pi) & \underset{ \delta \Pi \to 0 }{=} & \mathcal{A}(\Pi^c)  + \frac{1}{2} \left. \frac{\delta^2 \mathcal{A}}{\delta \Pi^2} \right|_{\Pi^c} (\delta \Pi)^2 + \mathcal{O}((\delta \Pi)^3),  
+\end{eqnarray*}  
+
+une expression quadratique pour l'action à l'ordre dominant en \( \delta \Pi \) avec $\left. \frac{\delta^2 \mathcal{A}}{\delta \Pi^2} \right|_{\Pi^c}$ la forme quadratique définie positive (Fig (\ref{fig.fluctu.A})).
+
+\begin{figure}[H]
+	\centering 
+	\begin{tikzpicture}
+		\begin{scope}[shift={(0,0)}]
+			\begin{scope}[transform canvas={scale=0.6}]
+				\input{Figures/Fonc_A_code}	
+			
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+		\end{scope}
+		
+		\begin{scope}[shift={(19,-1)}]
+			\begin{scope}[transform canvas={scale=0.6}]
+				\input{Figures/Occupation_theta_code}	
+			
+			\end{scope}
+			\begin{scope}[scale=1]
+				\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+			\end{scope}	
+		\end{scope}
+
+		
+				
+			
+	\end{tikzpicture}	
+	\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+	\label{fig.fluctu.A}
+\end{figure}
+
+
+On discrétise l'axe des rapidités en  petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $\Pi(\theta) \delta \theta$ rapidités. 
+	
+
+
+
+Avec ces petites tranches, la forme quadratique s’écrit :
+
+\begin{eqnarray*}
+    \left. \frac{\delta^2 \mathcal{A}}{\delta \Pi^2} \right|_{\Pi^c}(\delta \Pi ) &=&  \sum_{a,b \mid \text{tranche}}  
+    \delta \Pi(\theta_a)  \frac{\partial^2 \mathcal{A}}{\partial \delta \Pi(\theta_a) \partial \delta \Pi(\theta_b) } (\Pi^c)  \delta \Pi(\theta_b).
+\end{eqnarray*}
+Les fluctuations s’écrivent donc :
+
+\begin{eqnarray*}
+    \langle \delta \Pi ( \theta) \delta \Pi ( \theta') \rangle &=&  
+    \frac{ \int d\delta \Pi \, \delta \Pi(\theta) \delta \Pi ( \theta') 
+    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
+    \delta \Pi(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \Pi(\theta_a) \partial \delta \Pi(\theta_b) } (\Pi^c)  \delta \Pi(\theta_b) \right) }
+    { \int d\delta \Pi  
+    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
+    \delta \Pi(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \Pi(\theta_a) \partial \delta \Pi(\theta_b) } (\Pi^c)  \delta \Pi(\theta_b) \right) } \\
+    &=& \left( \mathbf{A}^{-1} \right)_{\theta , \theta'}
+\end{eqnarray*}
+
+La {\em matrice hessienne} $\mathbf{A}_{\theta , \theta'} \equiv \frac{\partial^2 \mathcal{A}}{\partial \delta \Pi(\theta) \partial \delta \Pi(\theta') }(\Pi^c)$, au point critique $\Pi^c$, s'écrit
+
+\begin{eqnarray*}
+	\operator{A} & = & \operator{A}^{(0)} + \delta \theta \operator{V}
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	A^{(0)}_{\theta , \theta'}  & = &  \left ( \frac{ ( \Pi^c/\Pi^c_s)^{-1}}{\Pi^c_s - \Pi^c} \right )(\theta) \delta \theta   \delta_{\theta,\theta '}	,\\
+	V_{\theta , \theta'}  &= & \left \{ - \left [ \left ( \frac{1}{\Pi^c_s - \Pi^c } \right ) ( \theta)  + \left ( \frac{1}{\Pi^c_s - \Pi^c } \right ) ( \theta' )\right ] \frac{ \Delta( \theta'- \theta )}{ 2 \pi } + \int d\theta'' \left (   \frac{ \Pi^c/\Pi^c_s}{\Pi^c_s - \Pi^c} \right )(\theta'') \frac{\Delta(\theta''- \theta)}{2 \pi}\frac{\Delta(\theta''- \theta')}{2 \pi}   \right \} \delta \theta	
+\end{eqnarray*}
+
+\begin{aff}
+Donc une a l'ordre un en $\delta \theta (\operator{A}^{(0)})^{-1} \operator{V}$ 
+
+\begin{eqnarray*}
+	\langle \delta \Pi ( \theta) \delta \Pi ( \theta') \rangle & = &  ( (\Pi^c_s - \Pi^c)\Pi^c/\Pi^c_s ) ( \theta ) \delta_{\theta, \theta'}/\delta \theta + \mathscr{F}(\theta , \theta' ) ,	
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	\mathscr{F}(\theta , \theta' ) & = & \left [ (\Pi^c_s - \Pi^c )( \theta)  +  (\Pi^c_s - \Pi^c ) ( \theta' )\right ] \frac{\Pi^c}{\Pi^c_s}(\theta)\frac{\Pi^c}{\Pi^c_s}(\theta') \frac{ \Delta( \theta'- \theta )}{ 2 \pi }\\
+	&&  - \left [ (\Pi^c_s - \Pi^c )( \theta)   (\Pi^c_s - \Pi^c ) ( \theta' )\right ] \frac{\Pi^c}{\Pi^c_s}(\theta)\frac{\Pi^c}{\Pi^c_s}(\theta')\int d\theta'' \left (   \frac{ \Pi^c/\Pi^c_s}{\Pi^c_s - \Pi^c} \right )(\theta'') \frac{\Delta(\theta''- \theta)}{2 \pi}\frac{\Delta(\theta''- \theta')}{2 \pi}  	
+\end{eqnarray*}
+\end{aff}
+
+
+
+ 
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+%Pour simplifier les notations et généraliser, on note le vecteur $\vect{x} \equiv \Pi^d$ et le tensseur symétrie et définie positif $\mathbf{A} \equiv\left \{ \mathcal{A}^{(2)}\right \}[\vect{x}]$, pour calculer la contribution dominante du col $\vect{x}^c$, nous changeons de variable :
+
+%\begin{eqnarray}
+	%\vect{x} & =& \vect{x}^c + \vect{y}	
+%\end{eqnarray}
+
+
+Nous rappelons que l'action $\mathcal{A}$ se réécrit  
+
+\begin{eqnarray}
+	\mathcal{A}[g]  & = & \mathcal{A}[g^c]    + \frac{1}{2}  (h , A(h)) + o (\Vert h \Vert^2 ) ,
+\end{eqnarray}
+
+%\begin{eqnarray}\mathcal{A}[\Pi^d]  & = & \mathcal{A}[\overline{\Pi}^d]    + \frac{1}{2}  \vect{\delta \Pi^d}^t \left \{ A^{(2)}_{\{\overline{\Pi}^d\}}\right \}_{a, b } \vect{\delta \Pi^d} + o (\Vert \vect{\delta \Pi^d} \Vert^2 ) , \end{eqnarray}
+
+%avec, pour simplifier les notations,  on note  $g \equiv \Pi^d$ , $\left \{ A^{(2)}_{\{g\}}\right \} = \left \{ \mathcal{A}^{(2)}\right \}[g]$ et $\vect{\delta g} \equiv \vect{\delta \Pi^d}$ un vecteur et $\mathbf{A} \equiv\left \{ \mathcal{A}^{(2)}\right \}[g]$ une matrice symétrique définie positif alors 
+
+%\begin{eqnarray}\sum_{a , b \vert tranche } \left \{ \mathcal{A}^{(2)}\right \}_{a, b } [\overline{\Pi}^d] \delta \Pi^d(\theta_a)\delta  \Pi^d(\theta_b) ~\equiv~	\vect{\delta \Pi^d}^t \left \{ A^{(2)}_{\{\overline{\Pi}^d\}}\right \}_{a, b } \vect{\delta \Pi^d} ~\equiv~ \vect{\delta g }^t \mathbf{A} \vect{\delta g }.\end{eqnarray}
+
+et la fonction de partition se réécrit 
+
+\begin{eqnarray}
+	\mathcal{Z}(g) & \doteq & \int \mathcal{D}g \,  e^{-\mathcal{A}(g)} \\
+	& = &  e^{-\mathcal{A}(g^c)} \int \mathcal{D}h\,  e^{-\frac{1}{2}(h,A(h))}(1 + o (1)).
+\end{eqnarray}
+
+%\begin{eqnarray}
+	%\mathcal{Z}(g) & \doteq & \int \mathcal{D}g \,  e^{-\mathcal{A}(g)} \\
+	%& = &  e^{-\mathcal{A}(\vect{x}^c)} \int \mathcal{D}\vect{y}\,  e^{-\frac{1}{2}\vect{y}^t\mathbf{A}\vect{y}}(1 + o (1)).
+%\end{eqnarray}
+
+
+Imaginons que $\operator{A} \in \mathcal{M}_{\#tranche,\#tranche}(\mathbb{R})$ et $\vect{g} \in  \mathcal{M}_{\#tranche,1}(\mathbb{R})$. On introduit une autre fonction de partition 
+
+%\begin{eqnarray}\mathcal{Z}(\vect{x}) &  = &  e^{-\mathcal{A}(\vect{x}^c)} \int \mathcal{D}\vect{y} e^{-\frac{1}{2}\vect{y}^t\mathbf{A}\vect{y}}\\& = &  e^{-\mathcal{A}(\vect{x}^c)} \int_{\mathbb{R}^n} \underbrace{dy_1 \cdots dy_n}_{n} 	e^{-\vect{y}^t\mathbf{A} \vect{y}} \\& = & e^{-\mathcal{A}(\vect{x}^c)} Z(\mathbf{A} , 0 ),  \end{eqnarray}
+
+\begin{eqnarray}
+	Z(\operator{A} , \vect{J})	 & = & \int_{\mathbb{R}^{\#tranche}} \underbrace{dh_1 \cdots dh_{\#tranche}}_{\#tranche} 	e^{-\vect{h}^t\operator{A} \vect{h} + \vect{J}^t \vect{h} } \\
+	& = & \frac{ \exp\left ( \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J} \right)}{\sqrt{\det \left ( \displaystyle \frac{\operator{A}}{2\pi}\right ) }}, 
+\end{eqnarray}
+
+{\color{magenta}
+
+
+Nous souhaitons prouver que :
+
+\[
+Z(\operator{A} , \vect{J}) = \int_{\mathbb{R}^{\#tranche}} e^{-\vect{h}^t \operator{A} \vect{h} + \vect{J}^t \vect{h}} \, dh_1 \cdots dh_{\#tranche}
+\]
+et montrer que cela donne :
+
+\[
+Z(\operator{A} , \vect{J}) = \frac{\exp\left( \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J} \right)}{\sqrt{\det \left( \frac{\operator{A}}{2\pi} \right)}}.
+\]
+
+\textbf{Étape 1 : Reconnaître la forme de l'intégrale}
+
+L'intégrande est de la forme d'une distribution gaussienne multivariée. Pour le rendre plus explicite, réécrivons le terme quadratique dans l'exposant sous forme matricielle :
+
+\[
+-\vect{h}^t \operator{A} \vect{h} + \vect{J}^t \vect{h} = -\frac{1}{2} \vect{h}^t \operator{A} \vect{h} + \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J} - \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J},
+\]
+
+ce qui simplifie l'intégrale en :
+
+\[
+Z(\operator{A}, \vect{J}) = \int_{\mathbb{R}^n} e^{-\frac{1}{2} \vect{h}^t \operator{A} \vect{h} + \vect{J}^t \vect{h}} \, d\vect{h}.
+\]
+
+\textbf{Étape 2 : Compléter le carré}
+
+Pour continuer avec l'intégration, nous devons compléter le carré dans l'exposant. Considérons la forme quadratique dans l'exposant :
+
+\[
+-\frac{1}{2} \vect{h}^t \operator{A} \vect{h} + \vect{J}^t \vect{h}.
+\]
+
+Nous complétons le carré en ajoutant et en soustrayant le terme qui rend l'exposant un carré parfait :
+
+\[
+-\frac{1}{2} \left( \vect{h}^t \operator{A} \vect{h} - 2 \vect{J}^t \vect{h} \right) = -\frac{1}{2} \left( \vect{h} - \operator{A}^{-1} \vect{J} \right)^t \operator{A} \left( \vect{h} - \operator{A}^{-1} \vect{J} \right) + \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J}.
+\]
+
+Ainsi, l'intégrale devient :
+
+\[
+Z(\operator{A}, \vect{J}) = \int_{\mathbb{R}^n} e^{-\frac{1}{2} \left( \vect{h} - \operator{A}^{-1} \vect{J} \right)^t \operator{A} \left( \vect{h} - \operator{A}^{-1} \vect{J} \right)} e^{\frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J}} d\vect{h}.
+\]
+
+\textbf{Étape 3 : Changement de variables}
+
+Maintenant, effectuons un changement de variables \( \vect{h} \to \vect{h} + \operator{A}^{-1} \vect{J} \), de sorte que l'intégrande simplifie à :
+
+\[
+Z(\operator{A}, \vect{J}) = e^{\frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J}} \int_{\mathbb{R}^n} e^{-\frac{1}{2} \vect{h}^t \operator{A} \vect{h}} d\vect{h}.
+\]
+
+\textbf{Étape 4 : Calcul de l'intégrale gaussienne}
+
+L'intégrale restante est une intégrale gaussienne standard. On sait que pour toute matrice \( \operator{A} \) définie positive :
+
+\[
+\int_{\mathbb{R}^n} e^{-\frac{1}{2} \vect{h}^t \operator{A} \vect{h}} d\vect{h} = \frac{(2\pi)^{n/2}}{\sqrt{\det(\operator{A})}}.
+\]
+
+Ainsi, nous avons :
+
+\[
+Z(\operator{A}, \vect{J}) = e^{\frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J}} \cdot \frac{(2\pi)^{n/2}}{\sqrt{\det(\operator{A})}}.
+\]
+
+\textbf{Étape 5 : Expression finale}
+
+Nous exprimons maintenant le résultat final comme suit :
+
+\[
+Z(\operator{A}, \vect{J}) = \frac{\exp\left( \frac{1}{2} \vect{J}^t \operator{A}^{-1} \vect{J} \right)}{\sqrt{\det \left( \frac{\operator{A}}{2\pi} \right)}}.
+\]
+
+Cela termine la démonstration.
+
+
+
+}
+
+en gardant en tête que 
+\begin{eqnarray}
+	Z(\operator{A} , \vect{J})	 &\underset{ \#tranche \to \infty}{\longrightarrow} & \int \mathcal{D}h \, e^{-\frac{1}{2}h^\ast\operator{A}h + \vect{J}^t h}.	
+\end{eqnarray}
+ 
+
+De plus en notant $\vect{J} = ( j_1 , \cdots , j_a , \cdots , j_{\#tranche} ) $ on remarque que  
+
+\begin{eqnarray}
+	\int_{\mathbb{R}^n} dh_1 \cdots dh_{\#tranche} \,  h_a h_b \,  	e^{-\vect{h}^t\operator{A} \vect{h} + \vect{J}^t \vect{h} } & = &  \frac{ d^2 	Z(\operator{A} , \vect{J})	}{d j_a d j_b }\\
+	 & = & ( \operator{A}^{-1} )_{a,b}  Z(\operator{A} , \vect{J}).	
+\end{eqnarray}
+
+\begin{aff}
+Avec avec $\vect{J} = 0 $, on retrouve d'une part que si on discrétise les vecteur, fonction de partition s'écrit  
+
+\begin{eqnarray}
+	\mathcal{Z}(g) & \sim &  (2 \pi)^{\#tranche/2}  \det ( \operator{A} )^{-1/2}e^{-\mathcal{A}(g^c)}, 		
+\end{eqnarray}
+
+et d'autre part que les fluctuations s'écrivent 
+
+\begin{eqnarray}
+	\langle h_a , h_b \rangle & = & 	( \mathbf{A}^{-1} )_{a,b}
+\end{eqnarray}
+\end{aff}
+
+On fait comme si c'était la même chose que 
+
+\begin{eqnarray}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle h_a h_b  \rangle_{GGE} & =  & \frac{ \int  \mathcal{D}g\,  \langle h_a h_b\rangle_{[g]} e^{- \mathcal{A}(g)}    }{\int  \mathcal{D}g\,  e^{- \mathcal{A}(g)}}
+\end{eqnarray}
+
+
+En revenant à $\operator{A} \equiv\left \{ \mathcal{A}^{(2)}\right [\Pi^c] \}$, on se motive a calculer la dériver seconde de l'action $\mathcal{A}$
+
+
+
+
+
+
+
+
+
+

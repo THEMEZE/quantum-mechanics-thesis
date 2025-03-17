@@ -1,6 +1,6 @@
 % !TEX encoding = IsoLatin                     
 %cette premiÃère ligne permet au compilateur (souvent, dÃépend du compilateur) \LaTeX de reconnaitre l'encodage de votre fichier. 
-\documentclass[12pt,titlepage,twoside]{book}       %pour un livre
+\documentclass[8pt,titlepage,twoside]{book}       %pour un livre
 %\documentclass{report}
 %\documentclass[a3, 10pt,twoside]{article}          %pour un article
 %\documentclass[twocolumn,amsfonts,showpacs,superscriptaddress,nofootinbib,aps,nolongbibliography]{revtex4-2}
@@ -21,8 +21,10 @@
 \usepackage{amscd}
 \usepackage{dsfont}
 \usepackage{float} 
-\usepackage[Glenn]{fncychap} % Rejne Glenn\chapter
+\usepackage[Rejne]{fncychap} % Rejne Glenn\chapter
 %\usetikzlibrary{circuits.ee.IEC}
+\usepackage{minitoc}  % Charge le package
+\dominitoc  % Active l'affichage des mini-sommaires
 \usepackage{lipsum} % pour générer du texte aléatoire
 
 %\usepackage[tikz]{bclogo}
@@ -271,6 +273,40 @@ decorations.pathreplacing}
 	\newtheorem{Consequence}[Theo]{Conséquence}
 	\newtheorem{Rap}[Theo]{Rappel}
 	\newtheorem*{Merci}{Remerciements}
+	
+\usepackage{mdframed}
+
+\mdfdefinestyle{propstyle}{%
+linecolor=black,linewidth=2pt,%
+hidealllines=true,
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+backgroundcolor=gray!10!white,
+roundcorner=5pt,
+innertopmargin=\topskip,
+}
+
+%\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+\mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
+\mdtheorem[style=propstyle]{TheoPrinc}{Th\'eor\`eme}[chapter]
+
+% Définition d'un style personnalisé pour les Affirmations
+\mdfdefinestyle{affirmestyle}{%
+    linecolor=gray, % Couleur de la bordure
+    linewidth=1pt, % Épaisseur de la bordure
+    backgroundcolor=gray!10, % Couleur de fond (gris clair)
+    roundcorner=5pt, % Coins arrondis
+    innertopmargin=0pt, % Marge intérieure au-dessus du cadre
+    innerbottommargin=10pt, % Marge intérieure en-dessous du cadre
+    innerleftmargin=10pt, % Marge intérieure à gauche
+    innerrightmargin=10pt, % Marge intérieure à droite
+    skipabove=10pt, % Espace au-dessus du cadre
+    skipbelow=10pt % Espace en-dessous du cadre
+}
+
+% Définition de l'environnement Affirmation
+\theoremstyle{definition} % Style de théorème pour les affirmations
+\newmdtheoremenv[style=affirmestyle]{aff}{Point clé n$^{\circ}$} % Environnement Affirmation avec le style personnalisé
 	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

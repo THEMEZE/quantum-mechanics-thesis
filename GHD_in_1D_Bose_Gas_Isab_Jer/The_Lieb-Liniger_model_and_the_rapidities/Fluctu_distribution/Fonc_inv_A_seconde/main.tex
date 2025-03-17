@@ -1,0 +1,389 @@
+On utilise la théorie de perturbation sur 
+
+\begin{eqnarray*}
+	\operator{A} & = & \operator{A}^{(0)} + \delta \theta \operator{V}
+\end{eqnarray*}
+
+avec $A^{(0)}_{\theta , \theta'} = \left ( \frac{ ( \Pi^c/\Pi^c_s)^{-1}}{\Pi^c_s - \Pi^c} \right )(\theta) \delta \theta   \delta_{\theta,\theta '}$ et $V_{\theta , \theta'} = \left \{ - \left [ \left ( \frac{1}{\Pi^c_s - \Pi^c } \right ) ( \theta)  + \left ( \frac{1}{\Pi^c_s - \Pi^c } \right ) ( \theta' )\right ] \frac{ \Delta( \theta'- \theta )}{ 2 \pi } + \left \langle  \frac{ \Pi^c/\Pi^c_s}{\Pi^c_s - \Pi^c} , \frac{\Delta_\theta}{2 \pi}\frac{\Delta_{\theta'}}{2 \pi} \right \rangle  \right \} \delta \theta $.\\
+
+
+{\bf On peut aussi utiliser la formule de Neuman} si $\vert \delta \theta \vert \Vert  (\operator{A}^{(0)})^{-1} \operator{V} \Vert < 1 $,
+
+\begin{eqnarray*}
+	(\operator{A}^{(0)} + \delta \theta \operator{V})^{-1} = \sum_{k=0}^\infty (-\delta \theta)^k ((\operator{A}^{(0)})^{-1} \operator{V})^k(\operator{A}^{(0)})^{-1}
+\end{eqnarray*}
+
+
+\footnote{
+Hypothèse de départ : 
+
+Soit $A$ une matrice inversible et $\operator{H}$ une perturbation telle que \( \| A^{-1} H \| < 1 \).  
+Cette condition garantit la convergence de la série géométrique matricielle. Nous cherchons à exprimer l’inverse de \( A + H \) en termes de \( A^{-1} \) et \( H \).
+
+---
+
+Étapes de la démonstration
+
+Étape 1 : Formulation du problème
+
+On commence avec l'identité matricielle fondamentale :
+
+\[
+(A + H)(A + H)^{-1} = I,
+\]
+
+où \( I \) est la matrice identité. Multiplions par \( A^{-1} \) à gauche :
+
+\[
+A^{-1}(A + H)(A + H)^{-1} = A^{-1}.
+\]
+
+En développant le produit matriciel :
+
+\[
+(I + A^{-1} H)(A + H)^{-1} = A^{-1}.
+\]
+
+Posons \( B = (A + H)^{-1} \). Cela donne :
+
+\[
+(I + A^{-1} H)B = A^{-1}.
+\]
+
+---
+
+Étape 2 : Résolution de l’équation
+
+Réorganisons pour isoler \( B \) :
+
+\[
+B = (I + A^{-1} H)^{-1} A^{-1}.
+\]
+
+Développons \( (I + A^{-1} H)^{-1} \). Si \( \| A^{-1} H \| < 1 \), nous pouvons appliquer la formule de la série géométrique matricielle :
+
+\[
+(I + A^{-1} H)^{-1} = \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k.
+\]
+
+Substituons cette expression dans \( B \) :
+
+\[
+B = \left( \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k \right) A^{-1}.
+\]
+
+En réorganisant :
+
+\[
+(A + H)^{-1} = \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k A^{-1}.
+\]
+
+---
+
+Conditions de validité
+
+La série converge si \( \| A^{-1} H \| < 1 \), c’est-à-dire que \( H \) est suffisamment "petite" par rapport à \( A \).  
+Cette condition garantit que \( (I + A^{-1} H)^{-1} \) est bien définie et que la série géométrique converge.
+}
+
+or 
+
+\begin{eqnarray*}
+	\left ( (\operator{A}^{(0)})^{-1} \operator{V}	(\operator{A}^{(0)})^{-1} \right)	_{\theta,\theta'} & = & (E_\theta^{(0)})^{-1} \delta_{\theta, \ell}  V^{\ell \kappa} (E_\kappa^{(0)})^{-1} \delta_{\kappa, \theta'} \\
+	& = & (E_\theta^{(0)})^{-1} \delta_{\theta, \ell} {V^{\ell }}_{\theta'} (E_{\theta'}^{(0)})^{-1}\\
+	& = & (E_\theta^{(0)})^{-1}  V_{\theta , \theta'} (E_{\theta'}^{(0)})^{-1}
+\end{eqnarray*}
+
+\begin{aff}
+Donc une a l'ordre un en $\delta \theta (\operator{A}^{(0)})^{-1} \operator{V}$ 
+
+\begin{eqnarray*}
+	(\operator{A}^{-1})_{\theta,\theta'} & = &  ( (\Pi^c_s - \Pi^c)\Pi^c/\Pi^c_s ) ( \theta ) \delta_{\theta, \theta'}/\delta \theta + \mathscr{F}(\theta , \theta' ) ,	
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	\mathscr{F}(\theta , \theta' ) & = & \left [ (\Pi^c_s - \Pi^c )( \theta)  +  (\Pi^c_s - \Pi^c ) ( \theta' )\right ] \frac{\Pi^c}{\Pi^c_s}(\theta)\frac{\Pi^c}{\Pi^c_s}(\theta') \frac{ \Delta( \theta'- \theta )}{ 2 \pi }\\
+	&&  - \left [ (\Pi^c_s - \Pi^c )( \theta)   (\Pi^c_s - \Pi^c ) ( \theta' )\right ] \frac{\Pi^c}{\Pi^c_s}(\theta)\frac{\Pi^c}{\Pi^c_s}(\theta')\left \langle  \frac{ \Pi^c/\Pi^c_s}{\Pi^c_s - \Pi^c} , \frac{\Delta_\theta}{2 \pi}\frac{\Delta_{\theta'}}{2 \pi} \right \rangle 	
+\end{eqnarray*}
+\end{aff}
+
+
+{\bf Ou utiliser la théorie de pertubation},\\
+
+
+$\operator{A}$  est symétrique donc diagonalisable. Elle est diagonalisable dans une base de vecteur propre orthonormé $\vert \varphi_\theta \rangle $ associé à la valeur propre $E_\theta$ soit 
+
+\begin{eqnarray*}
+	(\operator{A}^{(0)} + \delta \theta \operator{V} \vert \varphi_\theta \rangle & = & 	E_\theta \vert \varphi_\theta \rangle	
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	\vert \varphi_\theta \rangle  & = & \vert \varphi_\theta^{(0)} \rangle  + \delta \theta  \vert \varphi_\theta^{(1)}	\rangle  + 	(\delta \theta)^2 \vert \varphi_\theta^{(2)}	\rangle  + \cdots \\
+	E_\theta & = & E_\theta^{(0)}   + \delta \theta E_\theta^{(1)}  + 	(\delta \theta)^2 E_\theta^{(2)} + \cdots 	
+\end{eqnarray*}
+
+tel que 
+
+\begin{eqnarray*}
+	\operator{A}^{(0)} \vert \varphi_\theta^{(0)} \rangle & = & E_\theta^{(0)}	 \vert \varphi_\theta^{(0)} \rangle 	
+\end{eqnarray*}
+
+Soit un Dl en $\delta \theta $ 
+
+\begin{eqnarray*}
+	\vert \varphi_\theta \rangle & = & \vert \varphi_\theta^{(0)} \rangle + \delta \theta \sum_{\theta' \neq \theta } \vert \varphi_{\theta'}^{(0)} \rangle   \frac{ V_{\theta', \theta}}{ E_\theta^{(0)} - E_{\theta'}^{(0)} } \\
+	E_\theta & = & E_\theta^{(0)} + \delta \theta V_{\theta , \theta} + (\delta \theta)^2 \sum_{\theta' \neq \theta } \frac{ V_{\theta', \theta}^2}{ E_\theta^{(0)} - E_{\theta'}^{(0)} }
+\end{eqnarray*}
+
+On note $\operator{P}$ la matrace de passage de la base $\vert \varphi_\theta^{(0)} \rangle $ à $\vert \varphi_\theta \rangle $
+
+
+\begin{eqnarray*}
+	\operator{A} & = & {~}^t\operator{P}\operator{D}\operator{P}	\\
+	\vert \varphi_\theta \rangle & = & 	\operator{P}\vert \varphi_\theta^{(0)} \rangle
+\end{eqnarray*}
+
+avec $\operator{D}$ diagonale avec $E_\theta$ dans la diagonale et 
+
+\begin{eqnarray*}
+	\operator{P} & = & 	\operator{1}	 + \delta \theta \operator{P}^{(1)}
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	 \operator{P}^{(1)}_{\theta,\theta'} & = & \left \{ \begin{array}{rll} \frac{ V_{\theta,\theta'}}{ E_{\theta'}^{(0)} - E_{\theta}^{(0)} } & \mbox{si} & \theta \neq \theta' \\ 0 & \mbox{sinon}    \end{array}\right.	.	
+\end{eqnarray*}
+
+et dans la base $\vert \varphi_\theta^{(0)} \rangle $
+
+\begin{eqnarray*}
+	\operator{A}^{-1} & = & {~}^t\operator{P}\operator{D}^{-1} \operator{P}	
+\end{eqnarray*}
+
+avec 
+
+\begin{eqnarray*}
+	A^{-1}_{\theta,\theta'} & = & \sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) \sum_\kappa 	E_\ell^{-1} \delta_{\ell,\kappa} (\delta_{\kappa,\theta'} +  \delta \theta P^{(1)}_{\kappa , \theta'} )\\
+	& = &   \sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) ( E_\ell^{-1} (\delta_{\ell,\theta'} + \delta \theta P^{(1)}_{\ell , \theta'})) \\
+	& = & E_\theta^{-1} \delta_{\theta, \theta'} + \delta \theta P_{\theta,\theta'}^{(1)} ( E_\theta^{-1} - E_{\theta'}^{-1}  ) + (\delta \theta)^2 \sum_\ell P_{\theta,\ell}^{(1)}P_{\ell,\theta'}^{(1)}  E_{\ell}^{-1}  
+\end{eqnarray*}
+
+car $\operator{P}^{(1)}$ est antisymétrique ie $P_{\theta,\theta'}^{(1)} = -P_{\theta',\theta}^{(1)}$. Et avec 
+
+\begin{eqnarray*}
+	E_\theta^{-1} & = & \frac{1}{E_\theta^{(0)}} \frac{1}{ 1 + \delta \theta \frac{V_{\theta,\theta}}{ E_\theta^{(0)}}  + (\delta  \theta)^2 \sum_{\theta' \neq \theta} \frac{ V_{\theta',\theta}^2}{E_\theta^{(0)} ( E_\theta^{(0)} - E_{\theta'}^{(0)})	}	}\\
+	& \underset{\delta \theta \to 0 }{=} & \frac{1}{E_\theta^{(0)}} - \delta \theta \frac{V_{\theta,\theta}}{ (E_\theta^{(0)})^2} + ( \delta \theta )^2  \left ( \frac{V_{\theta,\theta}^2}{ (E_\theta^{(0)})^3} - \sum_{\theta' \neq \theta} \frac{ V_{\theta',\theta}^2}{(E_\theta^{(0)})^2 ( E_\theta^{(0)} - E_{\theta'}^{(0)})	}\right) + o ( \Vert \delta \theta\Vert^3 ) 
+\end{eqnarray*}
+
+donc 
+
+\begin{eqnarray*}
+	E_\theta^{-1} - E_{\theta'}^{-1}	 & \underset{\delta \theta \to 0 }{=} &	 \underbrace{\frac{1}{E_\theta^{(0)}} - \frac{1}{E_{\theta'}^{(0)}}}_{\frac{E_{\theta'}^{(0)}-E_{\theta}^{(0)}}{E_{\theta}^{(0)}E_{\theta'}^{(0)}}} + \delta \theta \left ( \frac{V_{\theta',\theta'}}{ (E_{\theta'}^{(0)})^2} - \frac{V_{\theta,\theta}}{ (E_\theta^{(0)})^2}\right ) \\
+	& & + \underbrace{(\delta \theta )^2 \left ( \frac{V_{\theta,\theta}^2}{ (E_\theta^{(0)})^3} - \frac{V_{\theta',\theta'}^2}{ (E_{\theta'}^{(0)})^3} + \sum_{\ell \neq \theta'} \frac{ V_{\ell,\theta'}^2}{(E_{\theta'}^{(0)})^2 ( E_{\theta'}^{(0)} - E_{\ell}^{(0)})	} - \sum_{\ell \neq \theta} \frac{ V_{\ell,\theta}^2}{(E_\theta^{(0)})^2 ( E_\theta^{(0)} - E_{\ell}^{(0)})	}\right ) + o ( \Vert \delta \theta \Vert^3 ) }_{ o ( \Vert \delta \theta \Vert^2 )}
+\end{eqnarray*}
+
+et 
+
+\begin{eqnarray*}
+	\sum_\ell P_{\theta,\ell}^{(1)}P_{\ell,\theta'}^{(1)}  E_{\ell}^{-1} & \underset{\delta \theta \to 0 }{=} &	 \sum_{\ell \notin \{ \theta , \theta' \} } 	\frac{ V_{\theta,\ell}^2}{E_\ell^{(0)} - 	E_{\theta}^{(0)}} 	\frac{ V_{\ell,\theta'}^2}{E_{\theta'}^{(0)} - 	E_\ell^{(0)}} \frac{1}{E_\ell^{(0)}}  + o (\Vert \delta \theta \Vert ) 
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	(A^{-1})_{\theta, \theta'} & = & \frac{1}{E_\theta^{(0)}}\delta_{\theta,\theta'} + \delta \theta \left ( \frac{\overbrace{V_{\theta,\theta'}}^{0 ~si ~\theta = \theta'}}{E_\theta^{(0)}E_{\theta'}^{(0)}}\delta_{\theta \neq \theta'} - \frac{V_{\theta,\theta}}{(E_{\theta}^{(0)})^2} \delta_{\theta, \theta'}\right )\\
+	&& \underbrace{(\delta \theta)^2 \left ( \frac{V_{\theta,\theta}^2}{ (E_\theta^{(0)})^3} \delta_{\theta,\theta'} - \sum_{\ell \neq \theta} \frac{ V_{\ell,\theta}^2}{(E_\theta^{(0)})^2 ( E_\theta^{(0)} - E_{\ell}^{(0)})	} +  \frac{V_{\theta,\theta'}}{E_{\theta'}^{(0)}-E_{\theta}^{(0)}} \left ( \frac{V_{\theta',\theta'}}{(E_{\theta'}^{(0)})^2}-\frac{V_{\theta,\theta}}{(E_{\theta}^{(0)})^2}\right) \delta_{\theta \neq \theta'}  - \sum_{\ell \notin \{ \theta , \theta' \} } 	\frac{ V_{\theta,\ell}^2}{E_\ell^{(0)} - 	E_{\theta}^{(0)}} 	\frac{ V_{\ell,\theta'}^2}{E_{\theta'}^{(0)} - 	E_\ell^{(0)}} \frac{1}{E_\ell^{(0)}}\right )  + o ( \Vert \delta \theta \Vert^3 ) }_{o ( \Vert \delta \theta \Vert^2}
+\end{eqnarray*}\\
+
+
+{\bf Ou revenire à la définition des fluctation } 
+
+La lettre $E$ désigne un $\mathbb{K}$-e.v de dimension finie $n\in \mathbb{N}^\ast$. Soit $F$ un s.e.v de $E$ tel que
+
+\begin{eqnarray*}
+	E  & = & F \oplus F^\perp.	
+\end{eqnarray*}
+
+Soient $x \in E$ et $x_{\vert F }$ et   la restriction de $x$ à $F$.\\
+Soient $u \in \mathcal{L}(E)$ et les restrictions  $u_{\vert F } \in \mathcal{L}(F)$ de $u$ à $F$ , $u_{\vert F^\perp } \in \mathcal{L}(F^\perp)$ de $u$ à $F^\perp$ , $u_{\vert F,F^\perp } \in \mathcal{L}(F,F^\perp)$ et $u_{\vert F^\perp, F } \in \mathcal{L}(F^\perp,F)$.\\
+Soit $f$ une application de $E$ à valeur dans $\mathbb{K}$ et $f_{\vert F}$ sa restriction à $F$. \\
+
+On veux calculer la moyenne de $f_{\vert F}$
+
+\begin{eqnarray*}
+	\langle f_{\vert F } \rangle  & = & \frac{\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right ) }{\int d x \, \exp \left ( - \frac{1}{2} ( x , u (x)) \right )}
+\end{eqnarray*}
+
+Je veux calculer les produit scalaire $\left ( x , u (x) \right )$ selon les différentes restriction. 
+
+Pour visualiser les calcules plus facilement on note $\operator{U}$ la représentation matritielle de $u$ dans une basse orthogonale. Et bien que l'écriture soit faux mais pratique, on écrit 
+
+\begin{eqnarray*}
+	\left ( x , u (x) \right ) & = &  \left ( \begin{array}{cc} x_{\vert F } &  x_{\vert F^\perp }  \end{array} \right) \left ( \begin{array}{cc} \operator{U}_{\vert F} & \operator{U}_{\vert F , F^\perp}  \\ \operator{U}_{\vert F^\perp } & \operator{U}_{\vert F^\perp , F^\perp} \end{array} \right ) \left (  \begin{array}{c} x_{\vert F} \\  x_{\vert F^\perp} \end{array} \right ) ,
+\end{eqnarray*}
+
+Soit 
+
+\begin{eqnarray*}
+	\left ( x , u (x) \right ) & = & \left ( x_{\vert F } , u_{\vert F } \left (x_{\vert F } \right ) \right ) + \left ( x_{\vert F } , u_{\vert F , F^\perp  } \left (x_{\vert F^\perp } \right ) \right )  + \left ( x_{\vert F^\perp } , u_{\vert F^\perp , F  } \left (x_{\vert F } \right ) \right )  + \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) 		
+\end{eqnarray*}
+
+De plus $u$ est auto-adjoint donc 
+
+\begin{eqnarray*}
+	\left ( x_{\vert F^\perp } , u_{\vert F^\perp , F  } \left (x_{\vert F } \right ) \right ) & = & \left ( x_{\vert F } , u_{\vert F , F^\perp  } \left (x_{\vert F^\perp } \right ) \right ) \\
+	& = & \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right )
+\end{eqnarray*}
+
+Soit 
+
+\begin{eqnarray*}
+	\left ( x , u (x) \right ) & = & \left ( x_{\vert F } , u_{\vert F } \left (x_{\vert F } \right ) \right ) +  2 \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right )   + \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right )		
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right )  & = & \int d x_{\vert F} \,  f(x_{\vert F}) \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , u_{\vert F } \left (x_{\vert F } \right ) \right ) \right ) \\
+	&& \times \int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right )		
+\end{eqnarray*}
+
+or pour $u$ par forcement auto-adjoint
+
+\begin{eqnarray*}
+	\int dx \,  \exp \left ( -\frac{1}{2} (x , u(x)) + (b , x)  \right ) & = & \frac{\exp \left( \frac{1}{2}(b , u^{-1}(b)) \right) }{\sqrt{ \det \left( \frac{u}{2\pi} \right) }}	
+\end{eqnarray*}
+
+donc 
+
+\begin{eqnarray*}
+	\int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right ) & = & 	\frac{\exp \left( \frac{1}{2}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ) , u_{\vert F^\perp}^{-1}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ))) \right) }{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}	\\
+	& = & 	\frac{\exp \left( \frac{1}{2} \left( x_{\vert F} , \left( u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right) \left( x_{\vert F} \right) \right) \right)}{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}
+\end{eqnarray*}
+
+donc 
+
+\begin{eqnarray*}
+	\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right )  & = & \int d x_{\vert F} \,  f(x_{\vert F}) \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right ) \\	
+\end{eqnarray*}
+
+Ce qui nous rassure car 
+
+\begin{eqnarray*}
+	\frac{1}{\sqrt{ \det \left( \frac{u}{2\pi} \right) }} & = & \int d x \ \exp \left ( - \frac{1}{2} ( x , u (x)) \right )\\	
+	& = & \int d x_{\vert F} \ \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , u_{\vert F } \left (x_{\vert F } \right ) \right ) \right ) \\
+	&& \times \int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right )	\\
+	& = & 	\int d x_{\vert F} \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )/\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }\\
+	& = & \frac{1}{\sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)\det \left( \frac{u_{\vert F^\perp}}{2\pi} \right)}} 
+\end{eqnarray*}
+
+et d'aprés les complement et déterminent de Schur on a 
+
+\begin{eqnarray*}
+	\det (u ) & = & \det \left(u_{\vert F^\perp} \right) \det \left(u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right)	
+\end{eqnarray*}
+
+Donc ça me rassure.\\
+
+Donc
+
+\begin{eqnarray*}
+	\langle f_{\vert F } \rangle  & = & \frac{\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right ) }{\int d x_{\vert F}   \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )},\\
+	& = & \sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)}\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )
+\end{eqnarray*}
+
+or pour $(x_i , x_j)\in F^2$ 	
+
+\begin{eqnarray*}
+	\int d x  \, x_i x_j \exp \left ( - \frac{1}{2} ( x , u(x)) \right ) & = &  \frac{( e_i , u^{-1}(e_j))}{\sqrt{\det \left (\frac{u}{2\pi}\right ) }} 	
+\end{eqnarray*}
+
+Donc 
+
+\begin{eqnarray*}
+	\langle x_i x_j \rangle  & = & \left ( e_i , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right )^{-1} \left (e_j\right ) \right ) 
+\end{eqnarray*}
+
+Pour $i = j$ on prend $F_i = \mathbf{Vect} ( e_i) $ soit 
+
+\begin{eqnarray*}
+	\langle x_i^2 \rangle  & = & \left ( e_i , \left ( u_{\vert F_i }- u_{\vert F_i, F_i^\perp} \circ u_{\vert F_i^\perp}^{-1} \circ u_{\vert F_i^\perp, F_i} \right )^{-1} \left (e_i\right ) \right ) 
+\end{eqnarray*}
+
+Pour $i \neq j$ on prend $F_{ij} = \mathbf{Vect} ( e_i , e_j) $ soit 
+
+\begin{eqnarray*}
+	\langle x_i x_j \rangle  & = & \left ( e_i , \left ( u_{\vert F_{ij} }- u_{\vert F_{ij}, F_{ij}^\perp} \circ u_{\vert F_{ij}^\perp}^{-1} \circ u_{\vert F_{ij}^\perp, F_{ij}} \right )^{-1} \left (e_j\right ) \right ) 
+\end{eqnarray*}
+
+
+ 
+
+
+
+
+
+
+%\begin{eqnarray*}
+	%\langle \delta \Pi(\theta) \delta \Pi(\theta') \rangle & = & \frac{ \displaystyle \int \prod_{a \vert tranche} d \delta \Pi(\theta_a) \, \delta \Pi(\theta) \delta \Pi(\theta')\, e^{-\frac{1}{2}  \underset{a \vert tranche}{\sum}  \delta \Pi(\theta_a) \operator{A}_{\theta_a, \theta_a} \delta \Pi(\theta_a) - \underset{{\underset{a<b}{a ,b \vert tranche} }}{\sum}  \delta \Pi(\theta_a) \operator{A}_{\theta_a, \theta_b} \delta \Pi(\theta_b) } }{  \displaystyle  \int  \prod_{a \vert tranche} d \delta \Pi(\theta_a)  \, e^{ -\frac{1}{2}  \underset{a \vert tranche}{\sum} \delta \Pi(\theta_a) \operator{A}_{\theta_a, \theta_a} \delta \Pi(\theta_a) - \underset{{\underset{a<b}{a ,b \vert tranche} }}{\sum}   \delta \Pi(\theta_a) \operator{A}_{\theta_a, \theta_b} \delta \Pi(\theta_b) }}	
+%\end{eqnarray*}
+
+%et si on note $F_a$ la restriction de $\mathbb{R}^{\# tranche}$ à la $a$ eme composante et $F_a^\perp$ tel que $\mathbb{R}^{\# tranche} = F_a \oplus F_a^\perp$ donc 
+
+%\begin{eqnarray*}
+	%\left( \delta \Pi , \operator{A}(\delta \Pi ) \right)  & =& \left( \delta \Pi_{F_a} + \delta \Pi_{F_a^\perp }  , \operator{A}(\delta \Pi_{F_a} + \delta \Pi_{F_a^\perp } ) \right) \\
+	%& = & 	\left(\delta \Pi_{F_a}, \operator{A}(\delta \Pi_{F_a}) \right) + \left(\delta \Pi_{F_a}, \operator{A}(\delta \Pi_{F_a^\perp}) \right) + \left(\delta \Pi_{F_a^\perp}, \operator{A}(\delta \Pi_{F_a}) \right) + \left(\delta \Pi_{F_a^\perp }, \operator{A}(\delta \Pi_{F_a^\perp}) \right)
+%\end{eqnarray*}
+
+%et $\operator{A}$ est symétrique donc $(\delta \Pi_{F_a^\perp}, \operator{A}(\delta \Pi_{F_a}) ) = ( \operator{A}(\delta \Pi_{F_a}) , \delta \Pi_{F_a^\perp}) = ( \delta \Pi_{F_a} , \operator{A}(\delta \Pi_{F_a^\perp}) )$
+
+%donc 
+
+%\begin{eqnarray*}
+	%\left( \delta \Pi , \operator{A}(\delta \Pi ) \right )  & = & 	\left (\delta \Pi_{\vert F_a}, \operator{A}(\delta \Pi_{\vert F_a}) \right ) + 2\left (\delta \Pi_{\vert F_a}, \operator{A}(\delta \Pi_{\vert F_a^\perp}) \right) + \left (\delta \Pi_{\vert F_a^\perp }, \operator{A}(\delta \Pi_{\vert F_a^\perp})  \right )
+%\end{eqnarray*}
+
+
+%or 
+
+%\begin{eqnarray*}
+	%\int d \delta \Pi \, \exp \left ( - \frac{1}{2} (\delta \Pi ,  \operator{A}(\delta \Pi))  +  ( B ,  \delta \Pi )  \right )  & = & \frac{ \exp \left ( \frac{1}{2}  \left ( B , \operator{A}^{-1}(B) \right ) \right ) }{ \sqrt{ \det \left( \frac{\operator{A}}{2\pi} \right )} }	
+%\end{eqnarray*}
+
+%donc 
+
+%\begin{eqnarray*}
+	%\int d \delta \Pi_{ \vert F_a^\perp  }  \, \exp \left ( - \frac{1}{2}  \left ( \delta \Pi_{ \vert F_a^\perp  } , \operator{A}( \delta \Pi_{ \vert F_a^\perp  } ) \right ) + \left ( - \operator{A}\left ( \delta \Pi_{\vert F_a} \right ) ,  \delta \Pi_{\vert F_a^\perp }\right )   \right )  & = & \frac{ \exp \left ( \frac{1}{2}  \left (\operator{A}\left ( \delta \Pi_{\vert F_a} \right ) , \operator{A}^{-1}(\operator{A}\left ( \delta \Pi_{\vert F_a} \right )) \right ) \right ) }{ \sqrt{ \det \left( \frac{\operator{A}_{\vert F_a^\perp }}{2\pi} \right )} }	\\
+	%& = & \frac{ \exp \left (\left ( \delta \Pi_{\vert F_a}  ,\operator{A}\left ( \delta \Pi_{\vert F_a} \right ) \right )  \right )}{ \sqrt{ \det \left( \frac{\operator{A}_{\vert F_a^\perp }}{2\pi} \right )} } 		
+%\end{eqnarray*}
+
+
+
+
+%donc 
+
+%\begin{eqnarray*}
+	%\langle (\delta \Pi(\theta))^2 \rangle & = & \frac{\displaystyle \int d \delta \Pi(\theta) \, (\delta \Pi(\theta) )^2 \exp \left ( -\frac{1}{2}\delta \Pi(\theta) \operator{A}_{\theta, \theta} \delta \Pi(\theta) \right ) }{\displaystyle \int d \delta \Pi(\theta) \,  \exp \left ( -\frac{1}{2}\delta \Pi(\theta) \operator{A}_{\theta, \theta} \delta \Pi(\theta) \right ) }\\
+	%& = &  \frac{\displaystyle \int d \delta \Pi(\theta) \, (\delta \Pi(\theta) )^2 \exp \left ( -\frac{1}{2}\delta \Pi(\theta) \operator{A}_{\theta, \theta} \delta \Pi(\theta) \right ) }{\displaystyle \int d \delta \Pi(\theta) \,  \exp \left ( -\frac{1}{2}\delta \Pi(\theta) \operator{A}_{\theta, \theta} \delta \Pi(\theta) \right ) }	
+%\end{eqnarray*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

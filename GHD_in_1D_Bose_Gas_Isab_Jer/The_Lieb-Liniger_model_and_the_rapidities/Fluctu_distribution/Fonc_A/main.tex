@@ -1,0 +1,199 @@
+Soit  $\{\theta_a \}$ l'ensemble de rapidité où $a$ est l'indice des tranches. La probalilité de cette configuration $\{ \Pi^c(\theta_a) \}$ est : 
+	
+	\begin{eqnarray}
+		P_{\{ \Pi^d(\theta_a)\} } & = & \frac{ \displaystyle e^{ - \mathcal{A}[\Pi^c]  }}{\mathcal{Z}[\Pi^c]} 	
+	\end{eqnarray}
+	
+	avec l'action 
+	\begin{aff}
+	\begin{eqnarray}
+		\mathcal{A}[g] & = &  -\mathcal{S}_{YY}[g] + \langle f , g \rangle ,	
+	\end{eqnarray}	
+	\end{aff}
+
+	
+	qui est une fonctionnelle, et la fonction de partition $\mathcal{Z}[g] = \sum_g e^{-\mathcal{A}[g]}$ .
+	Maintenant pour simplifier on note le produit scalaire sur l'espace des fonctions de $\mathbb{R}$ dans $\mathbb{R}$ , $\langle f , g \rangle = \sum_{a\vert tranche} f(\theta_a) g ( \theta_a) \delta \theta $.\\
+	
+On suppose que $\mathcal{A}$ est {\em différentiable} en tout point dans un ouvert $U$ dans l'espace des fonction d'argument réelle et à valeur réelle. Alors 
+
+\begin{eqnarray*}
+	\mathcal{A}[g + h]  & \underset{ h \to 0 }{=} \mathcal{A}[g] + d\mathcal{A}_g(h) + o(\Vert h \Vert ) 		
+\end{eqnarray*}
+
+avec $g \mapsto d\mathcal{A}_g$ l'{\em application différentielle} de $\mathcal{A}$.\\
+
+Si de plus $\mathcal{A} \colon U \subset \mathbb{R}^{\# tranche} \to \mathbb{R}$, alors pour $g \in U $ , $\displaystyle \frac{ \partial \mathcal{A}}{ \partial x_a}(g)$ exite pour tous $a$ indice des tranches, et on a   
+	
+\begin{eqnarray*}
+	d\mathcal{A}_g & = & \sum_{a\vert tranche} \frac{ \partial \mathcal{A}}{ \partial x_a}(g) d x_a ,		
+\end{eqnarray*}
+
+où $(d x_a )$ est la base duale dans $(\mathbb{R}^{\# tranche})^\ast$ de la base canonique de $\mathbb{R}^{\# tranche}$.\\
+
+De plus si $\mathcal{A}$ est de classe $\mathcal{C}^k$ alors on applique la {\em formule de Taylor-Youg} ,
+
+\begin{eqnarray*}
+	\mathcal{A}[g + h]  & \underset{ h \to 0 }{=} & \mathcal{A}[g] +  \left[ \sum_{a\vert tranche} h_a \frac{ \partial \mathcal{A}}{ \partial x_a}(g) \right ] +  \frac{1}{2!} \left[ \sum_{a\vert tranche} h_a \frac{ \partial \mathcal{A}}{ \partial x_a}(g) \right ]^{[2]} +  \underbrace{\sum_{j = 3}^k \frac{1}{j!} \left[ \sum_{a\vert tranche} h_a \frac{ \partial \mathcal{A}}{ \partial x_a}(g) \right ]^{[j]}   + o(\Vert h \Vert^k )}_{o(\Vert h \Vert^2)} , 		
+\end{eqnarray*}
+
+avec pour $n \in \llbracket 1 , k \rrbracket$
+
+\begin{eqnarray*}
+	\left [ \sum_{a = 1}^{\# tranche} h_a \frac{ \partial \mathcal{A}}{ \partial x_a}(g) \right ]^{[n]} & = & \sum_{a_1 + \cdots + a_{\# tranche} = n } \frac{ n!}{a_1 ! \cdots a_{\# tranche} !} h_1^{a_1} \cdots h_{\# tranche}^{a_{\# tranche}} \frac{\partial^n  \mathcal{A}}{ \partial x_1^{a_1} \cdots \partial x_{\# tranche}^{a_{\# tranche}}} (g) 
+\end{eqnarray*}
+
+\begin{aff}
+On se restrint à $\mathcal{A}$ est de classe $\mathcal{C}^2$ et on admet qu'il existe $g \in U $ tel que $d\mathcal{A}_g = 0$, de sorte que d'après la formule de Taylor-Youg 
+
+\begin{eqnarray*}
+	\mathcal{A}[g + h]  & \underset{ h \to 0 }{=} & \mathcal{A}[g]  +  \mathcal{Q}(h)/2  +  o(\Vert h \Vert^2) , 		
+\end{eqnarray*}
+
+où $\mathcal{Q}$ est la forme quadratique 
+
+\begin{eqnarray*}
+	 \mathcal{Q}(h) & = & \left[ \sum_{a\vert tranche} h_a \frac{ \partial \mathcal{A}}{ \partial x_a}(g) \right ]^{[2]} ~=~ \sum_{a,b\vert tranche} h_a  \frac{\partial^2 \mathcal{A}}{\partial x_a \partial x_b}(g) h_b~=~\sum_{a\vert tranche} h_a^2 \frac{\partial^2 \mathcal{A}}{{\partial x_a}^2} (g) + 2 \sum_{\underset{a<b}{a,b\vert tranche}} h_a h_b \frac{\partial^2 \mathcal{A}}{\partial x_a \partial x_b} (g)	
+\end{eqnarray*}
+\end{aff}
+
+Alors 
+
+\begin{enumerate}
+	\item si $\mathcal{A}$ admet un minimum (resp. un maximum) relatif en $g$, $ \mathcal{Q}$ est une forme quadratique positive (resp. négative).
+	\item si $ \mathcal{Q}$ est une forme quadratique définie positive (resp. définie négative), $\mathcal{A}$ admet une minimum (resp. un maximum) relatif en $g$.
+\end{enumerate}
+
+\begin{Rema}
+\begin{itemize}
+	\item Si la forme quadratique $ \mathcal{Q}$ est seulement supposée positive (et non pas définie positive), on n'est pas assuré d'avoir un minimum relatif en $g$. Par exemple, pour la fonction $\mathcal{A} \colon \mathbb{R} \to \mathbb{R} ~x \mapsto x^3 $ en $g=0$, $\mathcal{Q} = 0 $ est positive (elle est nulle) et pourtant, $\mathcal{A}$ n'admet pas d'extemum en $0$.
+	\item Dire que la forme quadratique $ \mathcal{Q}$ est positive (resp. définie positive), c'est dire que la matrice symétrique $\operator{A} = \left \{ \mathcal{A}^{(2)} (g)\right \}_{a,b}$ avec  $\left \{ \mathcal{A}^{(2)} (g)\right \}_{a,b} = \left (\frac{\partial^2 \mathcal{A}}{\partial x_a \partial x_b}(g) \right )_{a,b}$ est positive (resp. définie positive), ou encore que les valeurs propres de $\operator{A}$ sont $\geq 0$ (resp. $>0$). La matrice $\mathbf{A}$ est appelée {\em matrice hessienne} de $\operator{A}$ au point critique $g$.\\
+\end{itemize}
+\end{Rema}
+
+On fait l'hypothèse que la configuration $\{ \Pi^c(\theta_a) \}$ du col domine tous les configurations. On note %$\Pi = \Pi^c + \delta \Pi $
+
+\begin{eqnarray*}
+	\Pi  & =  &\Pi^c + \delta \Pi,
+\end{eqnarray*}
+
+tel que $\mathcal{A}$  admet un minimum en $\Pi^c$ et $\mathcal{Q}$ est définie positif.
+
+
+
+
+
+
+
+%dans son voisinage (ie $\forall \{ \Pi^d(\theta_a)\} \in \mathcal{V}(\{ \overline{\Pi}^d(\theta_a)\})  \colon P_{\{ \Pi^d(\theta_a)\} } \leq P_{\{ \overline{\Pi}^d(\theta_a)\} }$) ce qui implique que  
+	%\begin{eqnarray*}
+		% \frac{\partial \mathcal{A}}{\partial \Pi^d(\theta_a) } [\overline{\Pi}^d]	 = 0 & \& & \forall (\{ \Pi^d(\theta_a)\},\{ \Pi^d(\theta_b)\})  \in \mathcal{V}^2(\{ \overline{\Pi}^d(\theta_a)\})  \colon  \frac{\partial^2 \mathcal{A}}{\partial \Pi^d(\theta_a) \partial \Pi^d(\theta_b) } [\overline{\Pi^d}] \leq  0  
+	%\end{eqnarray*}
+	
+	\begin{figure}[H]
+		\centering 
+		\begin{tikzpicture}
+			\begin{scope}[transform canvas={scale=0.6}]
+			\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/Figures/Fonc_A_discr_code}	
+			
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5 , draw = none ] (-2 , -1) rectangle (5, 6) ; 
+				
+			
+		\end{tikzpicture}	
+		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+	\end{figure}
+	
+	%On note $\Pi^d = \overline{\Pi}^d + \delta \Pi^d $, donc le debellopement limité de $\mathcal{A}$ autour de $\overline{\Pi}^d$ est :
+	%\begin{eqnarray}
+		%\mathcal{A}[\Pi^d]  &  =  &  \sum_{ k = 0 }^\infty \frac{1}{k!} \sum_{i_1 , \cdots , i_k } \left \{ \mathcal{A}^{(k)}\right \}_{ i_1 , \cdots ,  i_k  } [ \overline{\Pi}^d ] \delta \Pi^d(\theta_{i_1}) \cdots   \delta \Pi^d(\theta_{i_k}) 	\\
+		%& = & \mathcal{A}[\overline{\Pi}^d]  + \frac{1}{1!} \sum_{a \vert tranche } \left \{ \mathcal{A}^{(1)}\right \}_{a} [\overline{\Pi}^d] \delta \Pi^d(\theta_a)  + \frac{1}{2!} \sum_{a , b \vert tranche } \left \{ \mathcal{A}^{(2)}\right \}_{a, b } [\overline{\Pi}^d] \delta \Pi^d(\theta_a)\delta  \Pi^d(\theta_b) + R[\overline{\Pi}^d], 
+	%\end{eqnarray}
+	
+	%avec $ \left \{ \mathcal{A}^{(k)}\right \}_{ i_1 , \cdots ,  i_k  }  = \frac{\partial^k \mathcal{A} }{ \partial \Pi^d ( \theta_{i_1} ) \cdots \partial \Pi^d ( \theta_{i_k} )  } $ et $R[\overline{\Pi}^d] = \sum_{ k = 3 }^\infty \frac{1}{k!} \sum_{i_1 , \cdots , i_k } \left \{ \mathcal{A}^{(k)}\right \}_{ i_1 , \cdots ,  i_k  } [ \overline{\Pi}^d ] \delta \Pi^d(\theta_{i_1}) \cdots   \delta \Pi^d(\theta_{i_k})$.
+	
+	%On se restrins au second ordre soit $e^{R[\overline{\Pi}^d]} \sim 1 $ soit 
+	
+On simplifie les notation avec 
+
+Pour simplifier les notations et généraliser, on note les fonction $g \equiv \Pi$. pour calculer la contribution dominante du col $g^c$, nous changeons de variable :
+
+
+\begin{eqnarray*}
+	g & = & g^c + h 	
+\end{eqnarray*}
+
+avec les fonction   $g^c \equiv \Pi^c$ et $h \equiv \delta \Pi$. Et les vecteurs dans $\mathbb{R}^{\# tranche}$
+
+\begin{eqnarray*}
+	\vect{g} & = & \vect{g}^c + \vect{h} 	
+\end{eqnarray*}
+
+avec les fonction $\vect{g} \equiv (\Pi(\theta_1), \cdots , \Pi(\theta_a) , \cdots \Pi(\theta_{\# tranche} )) $ ,  $\vect{g}^c \equiv (\Pi^c(\theta_1), \cdots , \Pi^c(\theta_a) , \cdots \Pi^c(\theta_{\# tranche} ))$ et $\vect{h} \equiv  (\delta\Pi(\theta_1), \cdots , \delta\Pi(\theta_a) , \cdots \delta\Pi(\theta_{\# tranche} ))$.\\
+	
+On definie la {\em matrice hessienne} de $\mathcal{A}$ au point critique
+
+\begin{eqnarray*}
+	\operator{A}  & = & \left \{ \mathcal{A}^{(2)} (g^c)\right \}_{a,b}
+\end{eqnarray*} 
+
+ avec  $\left \{ \mathcal{A}^{(2)} (g)\right \}_{a,b} = \left (\frac{\partial^2 \mathcal{A}}{\partial x_a \partial x_b}(g^c) \right )_{a,b}$.
+
+	
+\begin{eqnarray}
+	P_{\{ \Pi(\theta_a) \}} & 	\sim & B e^{\displaystyle -\frac{1}{2} \vect{h}^t \operator{A} \vect{h}}, 
+\end{eqnarray}
+	
+avec $ B = e^{-\mathcal{A}[ \Pi^c]}/Z $.
+	
+	On avoue ici loi normale multidimensionelle
+	\footnote{
+	{\em \bf Loi normale multidimensionnelle} \\
+	\begin{itemize}
+		\item $x \in \mathbb{R}^N$ : fonction caractéristique : $\phi_{\mu , \Sigma} = \exp \left ( i x^T \mu - \frac{1}2 x^T \Sigma x  \right ) $.
+		\item cas non-dégénéré où $Sigma$ est définie positive : $f_{ \mu , \Sigma } (x) = \frac{1}{(2 \pi)^{N/2} \det ( \Sigma ) ^{1/2}} \exp \left ( - \frac{1}{2} ( x - \mu )^T \Sigma^{-1} ( x - \mu ) \right ) $
+		\item théorème centrale limite fait apparaitre un variable U de Gauss centré réduite 
+			$$
+			\begin{array}{cccc}
+				& \mathbb{E} (U) = 0, & \mathbb{E} (U^2) = 1 & p_U(u) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} u^2 } \\
+				\mbox{ si $X = \sigma U + \mu $}, & \mathbb{E} (X) = \mu, & \mathbb{E} ((X-\mu)^2) = \sigma^2 & p_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}  }
+			\end{array}
+			$$
+		\item loi unitaire à plusieurs variable 
+			$$
+			\begin{array}{ccc}
+				 \mathbb{E} (U) = 0, & \mathbb{E} (UU^T) = id  & p_U(u) = \frac{1}{(2 \pi)^{N/2} } e^{-\frac{1}{2} u u^T } \\
+			\end{array}
+			$$
+		\item loi générale à plusieurs variables
+			$$
+			\begin{array}{cccc}
+				 X = a U + \mu & \mathbb{E} (X) = a \mathbb{E}(U) + \mu = \mu , & \mathbb{E} ((X-\mu)(X-\mu)^T) = \mathbb{E} (aUU^T a^T) = a a^T = \Sigma & p_X(x) = \frac{1}{(2 \pi)^{N/2}  \vert \Sigma\vert^2 } e^{-\frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu) } \\
+			\end{array}
+			$$
+	\end{itemize}
+	
+	}
+	%:
+	
+	%\begin{eqnarray}
+		%P_{\{\Pi^d(\theta_a)\} } & \sim & 	\frac{1}{(2 \pi)^{N/2} \det ( \Sigma ) ^{1/2}} \exp \left ( - \frac{1}{2} ( x - \mu )^T \Sigma^{-1} ( x - \mu ) \right )	,
+	%\end{eqnarray}
+	%avec $( x - \mu ) = (\delta \pi^d ( \theta_1) , \underset{tranche}{ \cdots} )$ , $Z \sim (2 \pi)^{N/2}  \det ( \Sigma )^{1/2} e^{-\mathcal{A}[\overline{\Pi}^d]}$ et la matrice écartype :
+avec la fonction de partition 
+
+\begin{eqnarray}
+	Z &\sim  &(2 \pi)^{\# tranche/2}  \det ( \Sigma )^{1/2} e^{-\mathcal{A}[\Pi^c]}		
+\end{eqnarray}
+
+\begin{aff}
+avec la matrice écartype 
+
+\begin{eqnarray}
+	\Sigma & =& \operator{A}^{-1} 	
+\end{eqnarray}	
+\end{aff}
+
+	
+	{\em Pourquoi une loi normal ? Notament pourquoi $Z \sim (2 \pi)^{\# tranche/2}  \det (\operator{A} )^{-1/2} e^{-\mathcal{A}[\Pi^c]}$ ?} On se pence plus sur la fonction de partition .

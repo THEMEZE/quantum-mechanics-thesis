@@ -1,5 +1,0 @@
-\babel@toc {french}{}\relax 
-\contentsline {part}{I\hspace {1em}Théorie}{3}{part.1}%
-\contentsline {chapter}{\numberline {1}Éléments Théoriques}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}L’Ansatz de Bethe par coordonnées}{5}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Gaz de boson unidimentionel}{5}{subsection.1.1.1}%
