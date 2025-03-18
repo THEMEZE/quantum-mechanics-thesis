@@ -203,8 +203,9 @@
   %if (at least=\year-\month-\day) {}else [nodes={strike out,draw}]
   if (at most=\year-\month-\day+7)
     [green!50!black]
-  if (between=\year-\month-\day+8 and \year-\month-\day+10)
+  if (between=\year-\month-\day+1 and \year-\month-\day+3)
     [red]
+  if (weekend)            [red!50,nodes={draw=none}]
   if (Sunday)
     [gray,nodes={draw=none}]
    if (equals=\year-\month-\day) {\draw[red] (0,0) circle (8pt);}
@@ -220,10 +221,11 @@
 \begin{tikzpicture}[mindmap,concept color=blue!80,
   every annotation/.style={fill=red!20}]
   
-  	\clip(-1,0) rectangle (22,30)  ;
-	\draw[line width=0.8ex , color = red , fill = none ] 
-					(-1,0) rectangle (22,30)  
-					;
+  	% Clipping area (zone où le dessin est limité)
+    %\clip (-1,0) rectangle (22,30);
+    
+    % Dessiner un rectangle avec une bordure rouge, sans remplissage
+    \draw[line width=0.8ex, color=red, fill=none] (-1,0) rectangle (22,30);
   
   	%\node[scale=1] at (0,0) {\MindMapLocal} ;
 	\begin{scope}[scale=1.1, shift={(13.5cm,12cm)}]\MindMapLocal	\end{scope}
