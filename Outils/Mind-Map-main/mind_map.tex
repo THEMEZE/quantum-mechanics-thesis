@@ -1,5 +1,9 @@
-\documentclass{article}
-\usepackage{tikz}
+\documentclass[tikz, border=10pt]{standalone} %{article}
+\usepackage{tikz}          % Charge le package TikZ
+\usepackage{xcolor}        % Gestion avancée des couleurs
+\usepackage{amsmath}       % Gestion des formules mathématiques
+\usetikzlibrary{arrows.meta} % Pour gérer les flèches avec des formes spécifiées comme "triangle"
+\usetikzlibrary {decorations.pathmorphing}
 \usepackage[francais]{babel}
 \usepackage[paperwidth=25cm,paperheight=29cm,left=0cm,top=0cm,bottom=0cm,right=0cm]{geometry}
 
@@ -54,7 +58,7 @@
    			child [concept color=blue!30] { node {Different dynamiques}
         		child { node {Gross Pitaesky}}
         		child { node {Bogoliubov} 
-        			child {node {Phonon}}
+        			%child {node {Phonon}}
         		}
         		child { node {GHD}}
         		child { node {KPZ}}
@@ -85,18 +89,138 @@
 	\end{tikzpicture}
 }
 
+\def\MindMapLocal{
+	\begin{tikzpicture}[
+			mindmap,concept color=blue!80,
+  			every annotation/.style={fill=red!20},
+			yshift=2cm,mindmap,
+			every node/.style={concept, circular drop shadow={shadow scale=1.1, shadow xshift=.8ex, shadow yshift=-.3ex,
+				fill=black, path fading={circle with fuzzy edge 20 percent}, every shadow},
+				% execute at begin node=\hskip0pt
+				},
+			root concept/.append style={concept color=magenta, fill=white, line width=1ex, text=magenta, font=\Huge\scshape, minimum size=5cm},
+			text=white,
+			bethe/.style={concept color=red,faded/.style={concept color=red!50}, minimum size=4cm},
+			IS/.style={concept color=blue,faded/.style={concept color=blue!50}, minimum size=4cm},
+			QGHD/.style={concept color=orange,faded/.style={concept color=orange!50}, minimum size=4cm},
+			bogo/.style={concept color=green!50!black,faded/.style={concept color=green!50!black!50}, minimum size=4cm},			
+			grow cyclic,
+			level 1/.append style={level distance=6cm,sibling angle=90,font=\Large\scshape},
+			level 2/.append style={level distance=4.5cm,sibling angle=45,font=\normalsize}
+			]
+		\node[font=\bfseries, root concept, xshift=-4.3cm] (root) {Th\'ese } % root
+			child [bethe,sibling angle=-135] { node[yshift=-2cm, xshift=1cm] (BA){\makebox[0pt]{{Bethe Antzats}}}
+    			child [minimum size=2.5cm] { node {{XXZ}}}
+    			child [minimum size=2.8cm] { node {{Géométrie}}}
+  				}
+  			child [IS] { node[yshift=-0.5cm, xshift=-1cm] (IS) {\makebox[0pt]{{Invers scatering }}}
+    			child [minimum size=2.5cm] { node (IS_test) {\makebox[0pt]{test}}}
+  				}
+			child [QGHD] { node[yshift=+3cm, xshift=-1cm] {\makebox[0pt]{{Quantum GHD}}}
+				child [minimum size=2.5cm] { node (rh_ost) {\makebox[0pt]{test}}}
+  				}
+			child [bogo] { node[yshift=+1cm, xshift=+0.5cm] (bogo) {\makebox[0pt]{{Bogoliubov}}}
+				child [minimum size=2cm] { node (re_exe) {{test}}}
+  				}
+  			;
+		\node [annotation,right] at (root.east)
+  {The root concept is, in general, the most important concept.};
+			;
+		\begin{pgfonlayer}{main}
+			\draw [concept connection]  (BA) edge (IS);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	
+}
+
+\def\CalendiarBar{
+	\begin{tikzpicture}[scale=1,transform shape, every day/.style={anchor=mid}]
+		\calendar [day list downward,font=\small,
+			month text=\% mt\ \%y0,
+			month yshift=1.5em,
+			month label left vertical,
+			name=cal,
+				at={(-0.5\textwidth -2cm,0.5\textheight-2cm)},
+				%dates=2025-03-01 to 2025-04-last,
+				dates=\year-\month-\day+-25 to \year-\month-\day+25,
+		]
+		%if (weekend)[gray!25]
+		%if (day of month=1) {
+		%	\node at (-2cm,1.5em) [anchor=base west] {\Large\tikzmonthtext};
+		%	}
+		if (at most=\year-\month-\day-1) [nodes={strike out,draw}]
+		if (weekend)            [red!50,nodes={draw=none}]
+		if (between=2024-08-25 and 2024-09-11)            [red!50,nodes={draw=none}]
+		if (equals=\year-\month-\day) {\draw[orange] (0,0) circle (8pt);}
+ 	 	;
+
+	\end{tikzpicture}
+	
+}
+\def\Calendiar{
+
+\begin{tikzpicture}[every day/.style={anchor=mid}]
+  \calendar
+  [
+    dates=\year-\month-\day+-25 to \year-\month-\day+25,
+    week list,inner sep=2pt,month label above centered,
+    month text=\textit{\%mt \%y0}
+  ]
+  if (at least=\year-\month-\day) {}
+    else [nodes={strike out,draw}]
+  if (at most=\year-\month-\day+7)
+    [green!50!black]
+  if (between=\year-\month-\day+8 and \year-\month-\day+10)
+    [red]
+  if (Sunday)
+    [gray,nodes={draw=none}]
+   if (equals=\year-\month-\day) {\draw[red] (0,0) circle (8pt);}
+  ;
+\end{tikzpicture}
+}
+
+\def\BackgroundColors{
+	%\begin{pgfonlayer}{background}
+	\begin{scope}[on background layer , opacity = 0.0]
+		\clip[xshift=-6cm, yshift=2cm] (-.5\textwidth,-.5\textheight) rectangle ++(\textwidth,\textheight);
+		\colorlet{upperleft}{green!50!black!25}
+		\colorlet{upperright}{orange!25}
+		\colorlet{lowerleft}{red!25}
+		\colorlet{lowerright}{blue!25}
+		% The large rectangles:
+		\fill [upperleft] (root) rectangle ++(-20,20);
+		\fill [upperright] (root) rectangle ++(20,20);
+		\fill [lowerleft] (root) rectangle ++(-20,-20);
+		\fill [lowerright] (root) rectangle ++(20,-20);
+		% The shadings:
+		\shade [left color=upperleft,right color=upperright]
+    	([xshift=-1cm]root) rectangle ++(2,20);
+  		\shade [left color=lowerleft,right color=lowerright]
+    	([xshift=-1cm]root) rectangle ++(2,-20);
+  		\shade [top color=upperleft,bottom color=lowerleft]
+    	([yshift=-1cm]root) rectangle ++(-20,2);
+  		\shade [top color=upperright,bottom color=lowerright]
+    	([yshift=-1cm]root) rectangle ++(20,2);
+	\end{scope}
+	%\end{pgfonlayer}
+}
+
 %transform canvas={scale=0.6},
 
-\begin{tikzpicture}
+\begin{tikzpicture}[mindmap,concept color=blue!80,
+  every annotation/.style={fill=red!20}]
 
-	\node[transform canvas={scale=0.6}] at (10,-10) {
-		\MindMapDetail
-	} ;
+	\node[scale=1] at (0,0) {\CalendiarBar} ;
 	
-	\drawgrid{-10}{10}{-10}{10};	
+	\node[scale=1] at (10,40) {\Calendiar} ;
 
+	%\node[scale=1] at (0,0) {\MindMapLocal} ;
+
+	%\node[transform canvas={scale=0.2}] at (10,0) {\MindMapDetail} ;
 	
-
+	%\begin{scope}\BackgroundColors\end{scope}
+	
+	\drawgrid{0}{10}{10}{40};	
 	
 \end{tikzpicture}
 
