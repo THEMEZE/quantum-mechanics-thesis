@@ -16,6 +16,7 @@
 \pgfsetlayers{background,main,foreground}
 
 \begin{document}
+\usetikzlibrary {shapes.misc}
 
 \newcommand{\drawgrid}[4]{
 
@@ -136,13 +137,13 @@
 \def\CalendiarBar{
 	\begin{tikzpicture}[scale=1,transform shape, every day/.style={anchor=mid}]
 		\calendar [day list downward,font=\small,
+			name=cal,
+			at={(-0.5\textwidth -2cm,0.5\textheight-2cm)},
+			%dates=2025-03-01 to 2025-04-last,
+			dates=\year-\month-\day+-25 to \year-\month-\day+25,				
 			month text=\% mt\ \%y0,
 			month yshift=1.5em,
-			month label left vertical,
-			name=cal,
-				at={(-0.5\textwidth -2cm,0.5\textheight-2cm)},
-				%dates=2025-03-01 to 2025-04-last,
-				dates=\year-\month-\day+-25 to \year-\month-\day+25,
+			month label left vertical,					
 		]
 		%if (weekend)[gray!25]
 		%if (day of month=1) {
@@ -150,8 +151,9 @@
 		%	}
 		if (at most=\year-\month-\day-1) [nodes={strike out,draw}]
 		if (weekend)            [red!50,nodes={draw=none}]
-		if (between=2024-08-25 and 2024-09-11)            [red!50,nodes={draw=none}]
+		if (between=2025-03-25 and 2026-09-11)            [red!50,nodes={draw=none}]
 		if (equals=\year-\month-\day) {\draw[orange] (0,0) circle (8pt);}
+		if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt); \node[chamfered rectangle, white, fill=red, double=red, draw, very thick]{\bf STOP!};}
  	 	;
 
 	\end{tikzpicture}
@@ -162,7 +164,8 @@
 \begin{tikzpicture}[every day/.style={anchor=mid}]
   \calendar
   [
-    dates=\year-\month-\day+-25 to \year-\month-\day+25,
+    %dates=\year-\month-\day+-25 to \year-\month-\day+25,
+    dates=2025-03-01 to 2025-07-last,
     week list,inner sep=2pt,month label above centered,
     month text=\textit{\%mt \%y0}
   ]
@@ -175,6 +178,7 @@
   if (Sunday)
     [gray,nodes={draw=none}]
    if (equals=\year-\month-\day) {\draw[red] (0,0) circle (8pt);}
+   if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt); \node[chamfered rectangle, white, fill=red, double=red, draw, very thick]{\bf STOP!};}
   ;
 \end{tikzpicture}
 }
@@ -210,17 +214,21 @@
 \begin{tikzpicture}[mindmap,concept color=blue!80,
   every annotation/.style={fill=red!20}]
 
-	\node[scale=1] at (0,0) {\CalendiarBar} ;
+	\node[anchor=south,scale=1] at (0,0) {\CalendiarBar} ;
 	
-	\node[scale=1] at (10,40) {\Calendiar} ;
+	\node[anchor=south, scale=1] at (20,0) {\Calendiar} ;
 
-	%\node[scale=1] at (0,0) {\MindMapLocal} ;
+	\node[scale=1] at (0,0) {\MindMapLocal} ;
 
 	%\node[transform canvas={scale=0.2}] at (10,0) {\MindMapDetail} ;
 	
-	%\begin{scope}\BackgroundColors\end{scope}
+	\begin{scope}[]\BackgroundColors\end{scope}
 	
-	\drawgrid{0}{10}{10}{40};	
+	\drawgrid{-1}{20}{0}{30};	
+	
+	\draw[line width=0.8ex , color = red , fill = none ] 
+					(-1,0) rectangle (30,30)  
+					;
 	
 \end{tikzpicture}
 
