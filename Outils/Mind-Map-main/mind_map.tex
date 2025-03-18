@@ -50,7 +50,7 @@
 
 
 \def\MindMapDetail{
-	\begin{tikzpicture}[ grow cyclic, text width=2cm, align=flush center, every node/.style=concept, concept color=orange!40,
+	\begin{scope}[ grow cyclic, text width=2cm, align=flush center, every node/.style=concept, concept color=orange!40,
 		level 1/.style={level distance=7cm,sibling angle=90},
 		level 2/.style={level distance=4cm,sibling angle=45},
 		level 3/.style={level distance=3cm,sibling angle=5}
@@ -87,11 +87,37 @@
     		};
 
 		
-	\end{tikzpicture}
+	\end{scope}
+}
+
+\def\BackgroundColors{
+	%\begin{pgfonlayer}{background}
+	\begin{scope}[on background layer , opacity = 0.0]
+		\clip[xshift=-6cm, yshift=2cm] (-.5\textwidth,-.5\textheight) rectangle ++(\textwidth,\textheight);
+		\colorlet{upperleft}{green!50!black!25}
+		\colorlet{upperright}{orange!25}
+		\colorlet{lowerleft}{red!25}
+		\colorlet{lowerright}{blue!25}
+		% The large rectangles:
+		\fill [upperleft] (root) rectangle ++(-20,20);
+		\fill [upperright] (root) rectangle ++(20,20);
+		\fill [lowerleft] (root) rectangle ++(-20,-20);
+		\fill [lowerright] (root) rectangle ++(20,-20);
+		% The shadings:
+		\shade [left color=upperleft,right color=upperright]
+    	([xshift=-1cm]root) rectangle ++(2,20);
+  		\shade [left color=lowerleft,right color=lowerright]
+    	([xshift=-1cm]root) rectangle ++(2,-20);
+  		\shade [top color=upperleft,bottom color=lowerleft]
+    	([yshift=-1cm]root) rectangle ++(-20,2);
+  		\shade [top color=upperright,bottom color=lowerright]
+    	([yshift=-1cm]root) rectangle ++(20,2);
+	\end{scope}
+	%\end{pgfonlayer}
 }
 
 \def\MindMapLocal{
-	\begin{tikzpicture}[
+	\begin{scope}[
 			mindmap,concept color=blue!80,
   			every annotation/.style={fill=red!20},
 			yshift=2cm,mindmap,
@@ -130,7 +156,12 @@
 		\begin{pgfonlayer}{main}
 			\draw [concept connection]  (BA) edge (IS);
 		\end{pgfonlayer}
-	\end{tikzpicture}
+		
+		
+		
+	\end{scope}
+	
+	\BackgroundColors 
 	
 }
 
@@ -169,8 +200,7 @@
     week list,inner sep=2pt,month label above centered,
     month text=\textit{\%mt \%y0}
   ]
-  if (at least=\year-\month-\day) {}
-    else [nodes={strike out,draw}]
+  %if (at least=\year-\month-\day) {}else [nodes={strike out,draw}]
   if (at most=\year-\month-\day+7)
     [green!50!black]
   if (between=\year-\month-\day+8 and \year-\month-\day+10)
@@ -178,57 +208,46 @@
   if (Sunday)
     [gray,nodes={draw=none}]
    if (equals=\year-\month-\day) {\draw[red] (0,0) circle (8pt);}
-   if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt); \node[chamfered rectangle, white, fill=red, double=red, draw, very thick]{\bf STOP!};}
+   if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt) node[ below ,chamfered rectangle, white, fill=red, double=red, draw, very thick , opacity = 0.2]{\bf STOP!};}
   ;
 \end{tikzpicture}
 }
 
-\def\BackgroundColors{
-	%\begin{pgfonlayer}{background}
-	\begin{scope}[on background layer , opacity = 0.0]
-		\clip[xshift=-6cm, yshift=2cm] (-.5\textwidth,-.5\textheight) rectangle ++(\textwidth,\textheight);
-		\colorlet{upperleft}{green!50!black!25}
-		\colorlet{upperright}{orange!25}
-		\colorlet{lowerleft}{red!25}
-		\colorlet{lowerright}{blue!25}
-		% The large rectangles:
-		\fill [upperleft] (root) rectangle ++(-20,20);
-		\fill [upperright] (root) rectangle ++(20,20);
-		\fill [lowerleft] (root) rectangle ++(-20,-20);
-		\fill [lowerright] (root) rectangle ++(20,-20);
-		% The shadings:
-		\shade [left color=upperleft,right color=upperright]
-    	([xshift=-1cm]root) rectangle ++(2,20);
-  		\shade [left color=lowerleft,right color=lowerright]
-    	([xshift=-1cm]root) rectangle ++(2,-20);
-  		\shade [top color=upperleft,bottom color=lowerleft]
-    	([yshift=-1cm]root) rectangle ++(-20,2);
-  		\shade [top color=upperright,bottom color=lowerright]
-    	([yshift=-1cm]root) rectangle ++(20,2);
-	\end{scope}
-	%\end{pgfonlayer}
-}
+
 
 %transform canvas={scale=0.6},
 
 \begin{tikzpicture}[mindmap,concept color=blue!80,
   every annotation/.style={fill=red!20}]
+  
+  	\clip(-1,0) rectangle (22,30)  ;
+	\draw[line width=0.8ex , color = red , fill = none ] 
+					(-1,0) rectangle (22,30)  
+					;
+  
+  	%\node[scale=1] at (0,0) {\MindMapLocal} ;
+	\begin{scope}[scale=1.1, shift={(13.5cm,12cm)}]\MindMapLocal	\end{scope}
+  
+  	%\node[transform canvas={scale=0.3}] at (20,15) {\tikz \MindMapDetail ;} ;
+  	%\begin{scope}[shift={(20cm,15cm)},transform canvas={scale=0.3}]\MindMapDetail\end{scope}
 
 	\node[anchor=south,scale=1] at (0,0) {\CalendiarBar} ;
-	
-	\node[anchor=south, scale=1] at (20,0) {\Calendiar} ;
+	%\begin{scope}[anchor=north,shift={(0cm,0cm)}]\CalendiarBar	\end{scope}
 
-	\node[scale=1] at (0,0) {\MindMapLocal} ;
+	
+	\node[anchor=south east, scale=1] at (19,0) {\Calendiar} ;
+	%\begin{scope}[anchor=south,shift={(20cm,0cm)}]\Calendiar	\end{scope}
 
-	%\node[transform canvas={scale=0.2}] at (10,0) {\MindMapDetail} ;
 	
-	\begin{scope}[]\BackgroundColors\end{scope}
+
 	
-	\drawgrid{-1}{20}{0}{30};	
 	
-	\draw[line width=0.8ex , color = red , fill = none ] 
-					(-1,0) rectangle (30,30)  
-					;
+	%\begin{scope}[shift={(10,0)}]\BackgroundColors\end{scope}
+	
+	%\drawgrid{-1}{20}{0}{30};	
+	
+	
+	
 	
 \end{tikzpicture}
 
