@@ -21,5 +21,63 @@ et le moment \( k(p) \) égal à :
 
 (voir (3.7)). Il s'agit d'une excitation topologique (nous devons changer les conditions aux frontières en antipériodiques). La valeur \( \lambda_p \) doit être en dehors de la sphère de Fermi, \( |\lambda_p| > q \), \( \text{Im} \, \lambda_p = 0 \). On peut également construire une autre excitation topologique (trou élémentaire) avec une énergie égale à \( -e(h) \) et un moment égal à :
 
+où \( -q < \lambda < g \). Cela montre que les états excités dans le secteur neutre construits ci-dessus sont constitués de deux excitations élémentaires (comparer les formules (4.19) et (4.20) avec (4.16)). Pour construire ces excitations topologiques, il faut changer les conditions aux frontières pour qu'elles soient antipériodiques lors de l'introduction d'une excitation.
+
+Cette excitation topologique a une nature fermionique. Pour les bosons implacables, cela est explicitement montré dans l'Appendice 1. Ainsi, nous allons introduire une autre particule dans l'état fondamental et changer les conditions aux frontières.
+Dans l'état excité, il y a \( N + 1 \) particules avec des moments \( \tilde{\lambda}_j; j = 1, \dots, N + 1 \). Les équations de Bethe correspondantes sont :
+
+L'état excité est caractérisé par l'ensemble de \( N + 1 \) nombres \( \{ n_j, j = 1, \dots, N + 1 \} \); les \( N \) premiers nombres correspondent à l'état fondamental (2.26). Notons \( \lambda_{N+1} \) par \( \lambda_p \). Il est commode d'introduire une fonction de décalage \( F \) similaire à celle de (4.4) :
+
+Dans la limite thermodynamique, la fonction de décalage satisfait l'équation intégrale suivante :
+
+où \( |\lambda_p | > q \). La fonction \( F(\mu|\lambda) \) est définie pour \( |\mu| < q \); cependant, à l'aide de l'équation (4.25), \( F \) peut être prolongée analytiquement sur tout l'axe réel.
+
+Avec l'aide de la fonction de décalage, nous pouvons calculer les quantités observables dans la limite thermodynamique (énergie, moment et matrice de diffusion). La fonction de décalage décrit le nuage de particules virtuelles qui entoure la particule \( p \) ou, en d'autres termes, la polarisation du vide due à la particule nue \( p \). Des calculs similaires à ceux du début de cette section montrent que l'énergie d'une particule est \( \varepsilon(\lambda_p) \) (voir (4.9)) et que le moment est donné par (4.19).
+
+Une excitation de "trou" peut être traitée de manière similaire. Le nombre de particules dans cette excitation est égal à \( N - 1 \) et la charge observable est égale à \( -1 \). La fonction d'onde \( X_N \) doit à nouveau être antiperiodique. Cet état est caractérisé par l'ensemble de nombres entiers \( \{n_j\} \) obtenu en éliminant un nombre de l'ensemble du vide. La fonction de décalage satisfait l'équation
+
+où \( | \lambda_h | < q \) est le moment de la particule nue du trou. Avec l'aide de cette fonction, l'énergie et le moment peuvent être obtenus :
+
+
+Cette fonction peut être remplacée par \( -k_h(\lambda_h) \) trouvé dans (4.19).
+Les excitations arbitraires sont construites à partir de plusieurs particules et trous.
+L'énergie et le moment de telles excitations sont simplement la somme des contributions des excitations élémentaires individuelles. Ainsi, l'énergie et le moment sont donnés par :
+
+
+La matrice de diffusion à plusieurs corps est simplement le produit des matrices de diffusion à deux corps. D'abord, la matrice de diffusion pour deux particules sera évaluée. L'ajout de deux particules (\( \lambda_2 > \lambda_1 > q \)) au vide déplace les valeurs des moments des particules du vide : \( \lambda_j \rightarrow \tilde{\tilde{\lambda}}_j \) (pour \( j = 1, \ldots, N \)). La fonction de décalage
+
+est égale à la somme des fonctions de décalage à une particule données par (4.25) :
+
+Maintenant, considérons la matrice de diffusion de deux particules possédant des moments \( \lambda_1 \) et \( \lambda_2 \) avec \( \lambda_2 > \lambda_1 > q \), comme ci-dessus. Dans ce cas, la matrice de diffusion est simplement un facteur numérique de module unitaire ; ainsi, elle peut être écrite comme
+
+
+Le phase \( \delta \) est réelle et est donnée par
+
+
+où \( \varphi_2 \) est la phase complète que la deuxième particule acquiert lorsqu'elle traverse l'ensemble de la boîte dans le cas où la première particule est absente :
+
+La phase \( \varphi_{21} \) est la phase complète que la deuxième particule acquiert lorsqu'elle traverse l'ensemble de la boîte en présence de la première :
+
+En utilisant les équations (4.34) et (4.35), la phase de diffusion est donnée par
+
+En changeant la somme en une intégrale dans la limite thermodynamique et en utilisant (4.31), on obtient
+
+et à partir de (4.25)
+
+Ainsi, la phase de diffusion satisfait l'équation intégrale suivante :
+
+Nous avons démontré que les excitations physiques au-dessus de la mer de Dirac sont obtenues à partir des excitations "nues" au-dessus du vide de Fock \( |0\rangle \) (qui sont décrites par les fonctions d'onde de Bethe) à travers les équations de "dressing". Ces équations linéaires intégrales de dressing sont des équations universelles. Pour le voir, il suffit de comparer les équations de dressing pour l'énergie (4.9), la phase de diffusion (4.39) et la densité (3.7). Les équations de dressing sont également très utiles pour l'étude des fonctions de corrélation et des corrections de taille finie, comme nous le verrons dans les sections suivantes.
+
+La diffusion de deux trous ayant des momenta nues \( \lambda_1 \) et \( \lambda_2 \), avec \( -q \leq \lambda_{1, 2} \leq q \), est également égale à \( \exp\left(i \varphi(\lambda_2, \lambda_1)\right) \) où \( \varphi \) est défini par (4.39). La matrice de diffusion de la particule \( \lambda_p \) avec le trou \( \lambda_h \) est égale à
+
+
+La matrice de diffusion de plusieurs particules est égale au produit des matrices de diffusion à deux particules.
+
+Il convient également de mentionner que les structures d'excitation d'autres modèles (antiferromagnétique XXZ de Heisenberg et modèle de sine-Gordon) sont très similaires. L'énergie, le moment et la matrice de diffusion sont évalués de la même manière.
+
+
+
+
+
 
 
