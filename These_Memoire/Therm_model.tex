@@ -53,6 +53,39 @@ Ainsi, la somme dans (5.12) peut être remplacée par une intégrale fonctionnel
 Cependant, il faut se rappeler qu'un grand nombre de configurations microscopiques ((5.8) et (5.9)) correspond à des variables macroscopiques données.  
 On obtient ainsi la représentation intégrale fonctionnelle de la fonction de partition \( Z_N \) :
 
+Le nombre fixe de particules \( N \) dans l'ensemble canonique entraîne l'apparition de la \( \delta \)-fonction dans (5.14).  
+En utilisant la représentation
+
+Lorsque \( L \to \infty \), la méthode de la descente la plus raide peut être utilisée pour calculer l'intégrale fonctionnelle (5.16).  
+La variation de l'exposant dans (5.16), en utilisant (5.7), est
+
+où nous avons utilisé la notation suivante, qui s'avère pratique :
+
+Ainsi, la méthode de descente la plus raide conduit aux équations suivantes :
+
+On peut démontrer que la valeur de $h$ au point stationnaire est réelle ;  
+la matrice des secondes dérivées de l'exposant dans (5.16) a le signe correct (Appendice 2).  
+Ces affirmations justifient l'applicabilité de la méthode de descente la plus raide.  
+Ainsi, nous calculons la fonction de partition et l'énergie libre (5.1) :
+
+Par définition, la pression est la dérivée de l'énergie libre par rapport  
+au volume à température fixe :
+
+Le calcul direct montre que l'identité thermodynamique fondamentale est vérifiée :
+
+Ainsi, \( S \) (équation (5.10)) est l'entropie. Listons maintenant les équations qui déterminent l'état d'équilibre thermodynamique :
+
+
+La densité \( D > 0 \), la température \( T > 0 \) et la constante de couplage \( c > 0 \) sont ici des paramètres libres. Ces équations définissent la dépendance de la pression en fonction de la densité et de la température. L'état d'équilibre n'est en aucun cas un état purement quantique : il n'est pas décrit par une seule fonction propre de l'Hamiltonien (comme pour \( T = 0 \)), mais par un mélange de fonctions propres. 
+
+Le nombre d'états propres présents dans l'état d'équilibre thermique est \( \exp S \) (voir (5.9), (5.10)), où \( S \) est l'entropie. Ainsi, \( \exp S \) ensembles \( \{n_j\} \) dans (2.13) correspondent à une densité \( P_p(\lambda) \) et \( P_h(\lambda) \) données.
+
+Considérons maintenant un des états propres présents dans l'état d'équilibre thermique et notons-le \( |ST\rangle \). L'équation (5.25) pour \( \epsilon(\lambda) \) joue un rôle fondamental. Elle a été obtenue dans \cite{YangYang1969} et sera appelée l'équation de Yang-Yang. Elle sera étudiée en détail dans la section suivante. La fonction \( \epsilon(\lambda) \) possède une interprétation physique claire : elle représente l'énergie des excitations élémentaires au-dessus de l'état d'équilibre, ce qui sera démontré explicitement dans la section 8.
+
+Cependant, on peut comprendre cela sans trop de calculs. Considérons le rapport \( \eta(\lambda) \) du nombre de vacants occupés au nombre total de vacants, donné par (5.18) :
+
+
+
 
 
 
