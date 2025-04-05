@@ -2,7 +2,19 @@
     {
         "file1-1": "../docaranger/Bethe Ansatz/these-Belliard-V2.pdf",
         "page1-1": 1,
-        "file2-1": "",
-        "page2-1": ""
+        "file2-1": "../docaranger/Bethe Ansatz/0808.2491v1.pdf",
+        "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/Bethe Ansatz/1601.00434v2.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/Bethe Ansatz/1606.02950v2.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/Bethe Ansatz/1606.02951v3.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/Bethe Ansatz/0511694v2.pdf",
+        "page2-3": 1
     }
 ]

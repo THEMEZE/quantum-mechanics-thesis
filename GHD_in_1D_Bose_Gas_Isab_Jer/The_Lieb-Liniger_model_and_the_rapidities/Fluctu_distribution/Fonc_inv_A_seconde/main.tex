@@ -15,12 +15,12 @@ avec $A^{(0)}_{\theta , \theta'} = \left ( \frac{ ( \Pi^c/\Pi^c_s)^{-1}}{\Pi^c_s
 
 
 \footnote{
+
+{\color{magenta}
 Hypothèse de départ : 
 
-Soit $A$ une matrice inversible et $\operator{H}$ une perturbation telle que \( \| A^{-1} H \| < 1 \).  
+Soit $A$ une matrice inversible et $H$ une perturbation telle que \( \| A^{-1} H \| < 1 \).  
 Cette condition garantit la convergence de la série géométrique matricielle. Nous cherchons à exprimer l’inverse de \( A + H \) en termes de \( A^{-1} \) et \( H \).
-
----
 
 Étapes de la démonstration
 
@@ -28,27 +28,29 @@ Cette condition garantit la convergence de la série géométrique matricielle. 
 
 On commence avec l'identité matricielle fondamentale :
 
-\[
-(A + H)(A + H)^{-1} = I,
-\]
+\begin{eqnarray*}
+	(A + H)(A + H)^{-1}  &= & I	
+\end{eqnarray*}
+,
+
 
 où \( I \) est la matrice identité. Multiplions par \( A^{-1} \) à gauche :
 
-\[
-A^{-1}(A + H)(A + H)^{-1} = A^{-1}.
-\]
+\begin{eqnarray*}
+A^{-1}(A + H)(A + H)^{-1} & = & A^{-1}.
+\end{eqnarray*}
 
 En développant le produit matriciel :
 
-\[
-(I + A^{-1} H)(A + H)^{-1} = A^{-1}.
-\]
+\begin{eqnarray*}
+	(I + A^{-1} H)(A + H)^{-1} &=& A^{-1}.
+\end{eqnarray*}
 
 Posons \( B = (A + H)^{-1} \). Cela donne :
 
-\[
-(I + A^{-1} H)B = A^{-1}.
-\]
+\begin{eqnarray*}
+	(I + A^{-1} H)B &= &A^{-1}.
+\end{eqnarray*}
 
 ---
 
@@ -56,34 +58,33 @@ Posons \( B = (A + H)^{-1} \). Cela donne :
 
 Réorganisons pour isoler \( B \) :
 
-\[
-B = (I + A^{-1} H)^{-1} A^{-1}.
-\]
+\begin{eqnarray*}
+	B &=& (I + A^{-1} H)^{-1} A^{-1}.
+\end{eqnarray*}
 
 Développons \( (I + A^{-1} H)^{-1} \). Si \( \| A^{-1} H \| < 1 \), nous pouvons appliquer la formule de la série géométrique matricielle :
 
-\[
-(I + A^{-1} H)^{-1} = \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k.
-\]
+\begin{eqnarray*}
+	(I + A^{-1} H)^{-1}& = &\sum_{k=0}^\infty (-1)^k (A^{-1} H)^k.
+\end{eqnarray*}
 
 Substituons cette expression dans \( B \) :
 
-\[
-B = \left( \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k \right) A^{-1}.
-\]
+\begin{eqnarray*}
+	B &= &\left( \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k \right) A^{-1}.
+\end{eqnarray*}
 
 En réorganisant :
 
-\[
-(A + H)^{-1} = \sum_{k=0}^\infty (-1)^k (A^{-1} H)^k A^{-1}.
-\]
+\begin{eqnarray*}
+	(A H)^{-1} &= &\sum_{k=0}^\infty (-1)^k (A^{-1} H)^k A^{-1}.
+\end{eqnarray*}
 
----
 
 Conditions de validité
 
 La série converge si \( \| A^{-1} H \| < 1 \), c’est-à-dire que \( H \) est suffisamment "petite" par rapport à \( A \).  
-Cette condition garantit que \( (I + A^{-1} H)^{-1} \) est bien définie et que la série géométrique converge.
+Cette condition garantit que \( (I + A^{-1} H)^{-1} \) est bien définie et que la série géométrique converge.}
 }
 
 or 
@@ -156,7 +157,7 @@ avec $\operator{D}$ diagonale avec $E_\theta$ dans la diagonale et
 avec 
 
 \begin{eqnarray*}
-	 \operator{P}^{(1)}_{\theta,\theta'} & = & \left \{ \begin{array}{rll} \frac{ V_{\theta,\theta'}}{ E_{\theta'}^{(0)} - E_{\theta}^{(0)} } & \mbox{si} & \theta \neq \theta' \\ 0 & \mbox{sinon}    \end{array}\right.	.	
+	 {(\operator{P}^{(1)})^{\theta}}_{\theta'} & = & \left \{ \begin{array}{rll} \frac{ V_{\theta,\theta'}}{ E_{\theta}^{(0)} - E_{\theta'}^{(0)} } & \mbox{si} & \theta \neq \theta' \\ 0 & \mbox{sinon}    \end{array}\right.	.	
 \end{eqnarray*}
 
 et dans la base $\vert \varphi_\theta^{(0)} \rangle $
@@ -168,9 +169,9 @@ et dans la base $\vert \varphi_\theta^{(0)} \rangle $
 avec 
 
 \begin{eqnarray*}
-	A^{-1}_{\theta,\theta'} & = & \sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) \sum_\kappa 	E_\ell^{-1} \delta_{\ell,\kappa} (\delta_{\kappa,\theta'} +  \delta \theta P^{(1)}_{\kappa , \theta'} )\\
-	& = &   \sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) ( E_\ell^{-1} (\delta_{\ell,\theta'} + \delta \theta P^{(1)}_{\ell , \theta'})) \\
-	& = & E_\theta^{-1} \delta_{\theta, \theta'} + \delta \theta P_{\theta,\theta'}^{(1)} ( E_\theta^{-1} - E_{\theta'}^{-1}  ) + (\delta \theta)^2 \sum_\ell P_{\theta,\ell}^{(1)}P_{\ell,\theta'}^{(1)}  E_{\ell}^{-1}  
+	{(\operator{A}^{-1})^{\theta}}_{\theta'} & = & \left ({\operator{\delta}^{\theta}}_\ell +  \delta \theta {(\operator{P}^{(1)})_\ell}^\theta  \right )  \left ( 	(E^{-1})^\ell {\operator{\delta}^\ell}_\kappa \left ({\operator{\delta}^\kappa}_{\theta'} +  \delta \theta {(\operator{P}^{(1)})^\kappa}_{\theta'} \right ) \right )\\%\sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) \sum_\kappa 	E_\ell^{-1} \delta_{\ell,\kappa} (\delta_{\kappa,\theta'} +  \delta \theta P^{(1)}_{\kappa , \theta'} )
+	& = &   \left ({\operator{\delta}^{\theta}}_\ell +  \delta \theta {(\operator{P}^{(1)})_\ell}^\theta  \right )  \left ( 	(E^{-1})^\ell  \left ({\operator{\delta}^\ell}_{\theta'} +  \delta \theta {(\operator{P}^{(1)})^\ell}_{\theta'} \right ) \right ) \\ %\sum_\ell (\delta_{\theta,\ell} +  \delta \theta P^{(1)}_{\ell , \theta} ) ( E_\ell^{-1} (\delta_{\ell,\theta'} + \delta \theta P^{(1)}_{\ell , \theta'}))
+	& = & (E^{-1})^\theta  {\operator{\delta}^\theta}_{\theta'} - \delta \theta {(\operator{P}^{(1)})^\theta}_{\theta'} (  E_{\theta'}^{-1} - E_\theta^{-1}   ) - (\delta \theta)^2 {(\operator{P}^{(1)})^\theta}_{\ell}{(\operator{P}^{(1)})^\ell}_{\theta'}  E_{\ell}^{-1} %E_\theta^{-1} \delta_{\theta, \theta'} + \delta \theta P_{\theta,\theta'}^{(1)} ( E_\theta^{-1} - E_{\theta'}^{-1}  ) + (\delta \theta)^2 \sum_\ell P_{\theta,\ell}^{(1)}P_{\ell,\theta'}^{(1)}  E_{\ell}^{-1}  
 \end{eqnarray*}
 
 car $\operator{P}^{(1)}$ est antisymétrique ie $P_{\theta,\theta'}^{(1)} = -P_{\theta',\theta}^{(1)}$. Et avec 
@@ -196,7 +197,7 @@ et
 Donc 
 
 \begin{eqnarray*}
-	(A^{-1})_{\theta, \theta'} & = & \frac{1}{E_\theta^{(0)}}\delta_{\theta,\theta'} + \delta \theta \left ( \frac{\overbrace{V_{\theta,\theta'}}^{0 ~si ~\theta = \theta'}}{E_\theta^{(0)}E_{\theta'}^{(0)}}\delta_{\theta \neq \theta'} - \frac{V_{\theta,\theta}}{(E_{\theta}^{(0)})^2} \delta_{\theta, \theta'}\right )\\
+	(A^{-1})_{\theta, \theta'} & = & \frac{1}{E_\theta^{(0)}}\delta_{\theta,\theta'} - \delta \theta \left ( \frac{\overbrace{V_{\theta,\theta'}}^{0 ~si ~\theta = \theta'}}{E_\theta^{(0)}E_{\theta'}^{(0)}}\delta_{\theta \neq \theta'} + \frac{V_{\theta,\theta}}{(E_{\theta}^{(0)})^2} \delta_{\theta, \theta'}\right )\\
 	&& \underbrace{(\delta \theta)^2 \left ( \frac{V_{\theta,\theta}^2}{ (E_\theta^{(0)})^3} \delta_{\theta,\theta'} - \sum_{\ell \neq \theta} \frac{ V_{\ell,\theta}^2}{(E_\theta^{(0)})^2 ( E_\theta^{(0)} - E_{\ell}^{(0)})	} +  \frac{V_{\theta,\theta'}}{E_{\theta'}^{(0)}-E_{\theta}^{(0)}} \left ( \frac{V_{\theta',\theta'}}{(E_{\theta'}^{(0)})^2}-\frac{V_{\theta,\theta}}{(E_{\theta}^{(0)})^2}\right) \delta_{\theta \neq \theta'}  - \sum_{\ell \notin \{ \theta , \theta' \} } 	\frac{ V_{\theta,\ell}^2}{E_\ell^{(0)} - 	E_{\theta}^{(0)}} 	\frac{ V_{\ell,\theta'}^2}{E_{\theta'}^{(0)} - 	E_\ell^{(0)}} \frac{1}{E_\ell^{(0)}}\right )  + o ( \Vert \delta \theta \Vert^3 ) }_{o ( \Vert \delta \theta \Vert^2}
 \end{eqnarray*}\\
 
@@ -224,7 +225,7 @@ Je veux calculer les produit scalaire $\left ( x , u (x) \right )$ selon les dif
 Pour visualiser les calcules plus facilement on note $\operator{U}$ la représentation matritielle de $u$ dans une basse orthogonale. Et bien que l'écriture soit faux mais pratique, on écrit 
 
 \begin{eqnarray*}
-	\left ( x , u (x) \right ) & = &  \left ( \begin{array}{cc} x_{\vert F } &  x_{\vert F^\perp }  \end{array} \right) \left ( \begin{array}{cc} \operator{U}_{\vert F} & \operator{U}_{\vert F , F^\perp}  \\ \operator{U}_{\vert F^\perp } & \operator{U}_{\vert F^\perp , F^\perp} \end{array} \right ) \left (  \begin{array}{c} x_{\vert F} \\  x_{\vert F^\perp} \end{array} \right ) ,
+	\left ( x , u (x) \right ) & = &  \left ( \begin{array}{cc} x_{\vert F } &  x_{\vert F^\perp }  \end{array} \right) \left ( \begin{array}{cc} \operator{U}_{\vert F} & \operator{U}_{\vert F , F^\perp}  \\ \operator{U}_{\vert F^\perp , F } & \operator{U}_{\vert F^\perp} \end{array} \right ) \left (  \begin{array}{c} x_{\vert F} \\  x_{\vert F^\perp} \end{array} \right ) ,
 \end{eqnarray*}
 
 Soit 
@@ -262,14 +263,14 @@ or pour $u$ par forcement auto-adjoint
 donc 
 
 \begin{eqnarray*}
-	\int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right ) & = & 	\frac{\exp \left( \frac{1}{2}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ) , u_{\vert F^\perp}^{-1}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ))) \right) }{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}	\\
-	& = & 	\frac{\exp \left( \frac{1}{2} \left( x_{\vert F} , \left( u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right) \left( x_{\vert F} \right) \right) \right)}{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}
+	\int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right ) & = & 	\frac{\exp \left( \frac{1}{2}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ) , \left (u_{\vert F^\perp}\right )^{-1}(u_{\vert F^\perp , F   }\left (x_{\vert F } \right ))) \right) }{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}	\\
+	& = & 	\frac{\exp \left( \frac{1}{2} \left( x_{\vert F} , \left( u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right) \left( x_{\vert F} \right) \right) \right)}{\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }}
 \end{eqnarray*}
 
 donc 
 
 \begin{eqnarray*}
-	\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right )  & = & \int d x_{\vert F} \,  f(x_{\vert F}) \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right ) \\	
+	\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right )  & = & \int d x_{\vert F} \,  f(x_{\vert F}) \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )/\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) } \\	
 \end{eqnarray*}
 
 Ce qui nous rassure car 
@@ -278,14 +279,14 @@ Ce qui nous rassure car
 	\frac{1}{\sqrt{ \det \left( \frac{u}{2\pi} \right) }} & = & \int d x \ \exp \left ( - \frac{1}{2} ( x , u (x)) \right )\\	
 	& = & \int d x_{\vert F} \ \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , u_{\vert F } \left (x_{\vert F } \right ) \right ) \right ) \\
 	&& \times \int d x_{\vert F^\perp}\exp \left ( - \frac{1}{2} \left ( x_{\vert F^\perp } , u_{\vert F^\perp } \left (x_{\vert F^\perp } \right ) \right ) - \left ( u_{\vert F^\perp , F   }\left (x_{\vert F } \right )  ,  x_{\vert F^\perp }  \right ) \right )	\\
-	& = & 	\int d x_{\vert F} \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )/\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }\\
-	& = & \frac{1}{\sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)\det \left( \frac{u_{\vert F^\perp}}{2\pi} \right)}} 
+	& = & 	\int d x_{\vert F} \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )/\sqrt{ \det \left( \frac{u_{\vert F^\perp}}{2\pi} \right) }\\
+	& = & \frac{1}{\sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)\det \left( \frac{u_{\vert F^\perp}}{2\pi} \right)}} 
 \end{eqnarray*}
 
 et d'aprés les complement et déterminent de Schur on a 
 
 \begin{eqnarray*}
-	\det (u ) & = & \det \left(u_{\vert F^\perp} \right) \det \left(u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right)	
+	\det (u ) & = & \det \left(u_{\vert F^\perp} \right) \det \left(u_{\vert F }- u_{\vert F, F^\perp} \circ\left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right)	
 \end{eqnarray*}
 
 Donc ça me rassure.\\
@@ -293,11 +294,32 @@ Donc ça me rassure.\\
 Donc
 
 \begin{eqnarray*}
-	\langle f_{\vert F } \rangle  & = & \frac{\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right ) }{\int d x_{\vert F}   \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )},\\
-	& = & \sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)}\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )
+	\langle f_{\vert F } \rangle  & = & \frac{\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right ) }{\int d x_{\vert F}   \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )},\\
+	& = & \sqrt{ \det \left( \frac{u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F}}{2\pi} \right)}\int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ \left (u_{\vert F^\perp}\right )^{-1} \circ u_{\vert F^\perp, F} \right ) \left (x_{\vert F } \right ) \right ) \right )
 \end{eqnarray*}
 
-or pour $(x_i , x_j)\in F^2$ 	
+\begin{aff}
+	On peut noter que 
+
+\begin{eqnarray*}
+	\left ( \left (u^{-1} \right )_{\vert F} \right )^{-1}  & = & 	u_{\vert F }- u_{\vert F, F^\perp} \circ (u_{\vert F^\perp})^{-1} \circ u_{\vert F^\perp, F}	
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	\det (u )\det \left( \left (u^{-1} \right )_{\vert F^\perp}  \right) & = & \det \left(u_{\vert F} \right) 	\\
+	\det (u )\det \left( \left (u^{-1} \right )_{\vert F}  \right) & = & \det \left(u_{\vert F^\perp} \right)	
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	\langle f_{\vert F } \rangle  & = & \frac{\int d x \, f_{\vert F}(x) \exp \left ( - \frac{1}{2} ( x , u (x)) \right ) }{\int d x \, \exp \left ( - \frac{1}{2} ( x , u (x)) \right )}\\
+	& = & \int d x_{\vert F}  \, f(x_{\vert F}) \, \exp \left ( - \frac{1}{2} \left ( x_{\vert F } , \left ( \left ( \left (u^{-1} \right )_{\vert F} \right )^{-1}  \right ) \left (x_{\vert F } \right ) \right ) \right )/\sqrt{ \det \left( 2\pi \left ( u^{-1} \right )_{\vert F} \right)}
+\end{eqnarray*}
+
+	
+\end{aff}
+
+
+or pour $(x_i , x_j)\in F^2$ et $u$ inversible 	
 
 \begin{eqnarray*}
 	\int d x  \, x_i x_j \exp \left ( - \frac{1}{2} ( x , u(x)) \right ) & = &  \frac{( e_i , u^{-1}(e_j))}{\sqrt{\det \left (\frac{u}{2\pi}\right ) }} 	
@@ -306,8 +328,56 @@ or pour $(x_i , x_j)\in F^2$
 Donc 
 
 \begin{eqnarray*}
-	\langle x_i x_j \rangle  & = & \left ( e_i , \left ( u_{\vert F }- u_{\vert F, F^\perp} \circ u_{\vert F^\perp}^{-1} \circ u_{\vert F^\perp, F} \right )^{-1} \left (e_j\right ) \right ) 
+	\langle x_i x_j \rangle  & = & \Big ( e_i ,\overbrace{\left ( u_{\vert F }- u_{\vert F, F^\perp} \circ (u_{\vert F^\perp})^{-1} \circ u_{\vert F^\perp, F} \right )^{-1}}^{\left (u^{-1} \right )_{\vert F}}  \left (e_j\right ) \Big )
 \end{eqnarray*}
+
+
+\begin{aff}
+	
+
+
+Or $u_{\vert F }$ est inversible donc on peut écrire que 
+
+\begin{eqnarray*}
+	   \overbrace{\left ( u_{\vert F }- u_{\vert F, F^\perp} \circ (u_{\vert F^\perp})^{-1} \circ u_{\vert F^\perp, F} \right )^{-1}}^{\left (u^{-1} \right )_{\vert F}} & = & 	 \left (u_{\vert F }\right )^{-1}  + \\
+	   &   + & \left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp }\circ \overbrace{ \left ( u_{\vert F^\perp } - u_{\vert F^\perp , F } \circ  \left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp  } \right )^{-1} }^{ \left (u^{-1} \right )_{\vert F^\perp } }	 \circ u_{\vert F^\perp , F } \circ  \left (u_{\vert F }\right )^{-1}
+\end{eqnarray*}
+
+Donc pour $(x_i , x_j)\in F^2$ et $u$ inversible 
+
+\begin{eqnarray*}
+	\langle x_i x_j \rangle  & = & \left ( e_i ,\left (u^{-1} \right )_{\vert F}  \left (e_j\right ) \right ),\\
+	& = &  \left ( e_i ,\left ( \left (u_{\vert F }\right )^{-1} +  \left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp }\circ  \left (u^{-1} \right )_{\vert F^\perp } 	 \circ u_{\vert F^\perp , F } \circ  \left (u_{\vert F }\right )^{-1}\right ) \left (e_j\right ) \right  ).	
+\end{eqnarray*}
+
+
+
+
+
+
+\end{aff}
+
+\begin{aff}
+\begin{eqnarray*}
+	\left (u^{-1} \right )_{\vert F} & = & 	 \left (u_{\vert F }\right )^{-1}  +  \left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp }\circ  \left ( u_{\vert F^\perp } \right)^{-1} \circ u_{\vert F^\perp , F } \circ  \left (u_{\vert F }\right )^{-1} + \\
+	& + & \left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp }\circ \left (u_{\vert F^\perp }\right )^{-1} \circ u_{\vert F ^\perp, F }\circ \left (u^{-1} \right )_{\vert F} \circ u_{\vert F, F ^\perp } \circ \left (u_{\vert F^\perp }\right )^{-1} \circ  u_{\vert F ^\perp, F } \circ \left (u_{\vert F }\right )^{-1}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	p_1 & = & 	\left (u_{\vert F }\right )^{-1} \circ u_{\vert F , F^\perp } , \\
+	p_2 & = & \left (u_{\vert F^\perp }\right )^{-1} \circ u_{\vert F ^\perp, F }
+\end{eqnarray*}
+
+\begin{eqnarray*}
+	\left (u^{-1} \right )_{\vert F}  & = & \sum_{i = 0 }^\infty (p_	1 \circ p_2)^i \circ \left ( \left (u_{\vert F }\right )^{-1} + p_1 \circ \left ( u_{\vert F^\perp } \right)^{-1}  \circ p_i^\ast \right ) \circ	((p_	1 \circ p_2)^\ast )^i + \\
+	&+ & \underset{i \to \infty}{\lim}  (p_	1 \circ p_2)^i \left (u^{-1} \right )_{\vert F} ((p_	1 \circ p_2)^\ast )^i
+\end{eqnarray*}
+
+
+	
+\end{aff}
+
+
 
 Pour $i = j$ on prend $F_i = \mathbf{Vect} ( e_i) $ soit 
 
