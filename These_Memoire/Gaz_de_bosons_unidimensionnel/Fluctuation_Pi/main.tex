@@ -216,6 +216,7 @@ Cette matrice encode la structure des fluctuations du système dans l’espace d
 
 \subsection{Fluctuation du nombre d'atomes et de l'énergie}
 
+{\color{blue} 
 Maintenant il est interressent de tester notre expression des fluctuation.\\
 Dans la section {??} nous avons vus que la variance d'un observable $\operator{\mathcal{O}}_i$ s'écrit :
 
@@ -243,9 +244,41 @@ Et écrit à l'aide des fluctuation de $\rho$
 On veux comparer $\Delta_{\operator{\mathcal{N}}}^2$ à $\tilde{\Delta}_{\operator{\mathcal{N}}}^2$ et $\Delta_{\operator{\mathcal{E}}-\mu \operator{\mathcal{N}}}^2$ à $\tilde{\Delta}_{\operator{\mathcal{E}}-\mu \operator{\mathcal{N}}}^2 $. Pour ce faire, nous avons d'abord résolu numériquement l'équation {??} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \),  ce qui nous a permis d'obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \). Si on fixe le couple $T$ et $\mu$. On peux donc deterniner les moyenne 
 
 \begin{eqnarray*}
-	\langle \operator{\mathcal{N}} \rangle & = & L \int \, \rho(\theta) d \theta ,		
+	\langle \operator{\mathcal{N}} \rangle & = & L \int \, \rho(\theta) d \theta ,\\
+	\langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}}\rangle & = & L \int \, \left (\frac{1}2 m \theta^2 - \mu  \right ) \rho(\theta) d\theta . 		
 \end{eqnarray*}
 
+}
+
+Il est maintenant intéressant de tester notre expression des fluctuations. 
+Dans la section {??}, nous avons vu que la variance d'un observable \( \operator{\mathcal{O}}_i \) s'écrit :
+
+\begin{eqnarray*}
+    \Delta_{\operator{\mathcal{O}}_i}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}}.
+\end{eqnarray*}
+
+où \( \langle \operator{\mathcal{O}}_i \rangle \) est la moyenne de \( \operator{\mathcal{O}}_i \) et \( \beta_i \) est la variable conjuguée de \( \langle \operator{\mathcal{O}}_i \rangle \). Si l'on considère les observables comme le nombre d'atomes \( \operator{\mathcal{N}} \) et l'énergie \( \operator{\mathcal{E}} \), alors leur variance s'écrit :
+
+\begin{eqnarray*}
+    \Delta_{\operator{\mathcal{N}}}^2 &=& \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \\
+    \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.
+\end{eqnarray*}
+
+avec \( \beta = (k_B T)^{-1} \), la température \( T \) et le potentiel chimique \( \mu \).
+
+Les fluctuations de \( \rho \) s'écrivent donc :
+
+\begin{eqnarray*}
+    \tilde{\Delta}_{\operator{\mathcal{N}}}^2 &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
+    \tilde{\Delta}_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 &=& L^2 \int d\theta_a \int d\theta_b \, \left( - \mu + \frac{1}{2} m \theta_a^2 \right) \left( - \mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle.
+\end{eqnarray*}
+
+Nous souhaitons comparer \( \Delta_{\operator{\mathcal{N}}}^2 \) à \( \tilde{\Delta}_{\operator{\mathcal{N}}}^2 \) et \( \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \) à \( \tilde{\Delta}_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \). Pour ce faire, nous avons d'abord résolu numériquement l'équation {??} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d'obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \). En fixant le couple \( T \) et \( \mu \), nous pouvons alors déterminer les moyennes :
+
+\begin{eqnarray*}
+    \langle \operator{\mathcal{N}} \rangle &=& L \int \, \rho(\theta) \, d\theta, \\
+    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \, \left( \frac{1}{2} m \theta^2 - \mu \right) \rho(\theta) \, d\theta.
+\end{eqnarray*}
 
 
 \includegraphics[width=1\textwidth]{Figures/test}
