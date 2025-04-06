@@ -96,54 +96,52 @@ où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) dé
 \end{figure}
 
 {\color{blue}
-On discrétise l'axe des rapidités en  petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $L\rho(\theta) \delta \theta$ rapidités. 
+%On discrétise l'axe des rapidités en  petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $L\rho(\theta) \delta \theta$ rapidités. 
 	
 
 
 
-Avec ces petites tranches, la forme quadratique s’écrit :
+%Avec ces petites tranches, la forme quadratique s’écrit :
 
-\begin{eqnarray*}
-    \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho ) &=&  \sum_{a,b \mid \text{tranche}}  
-    \delta \rho(\theta_a)  \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b).
-\end{eqnarray*}
-Les fluctuations s’écrivent donc :
+%\begin{eqnarray*}
+%    \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho ) &=&  \sum_{a,b \mid \text{tranche}}  
+%    \delta \rho(\theta_a)  \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b).
+%\end{eqnarray*}
+%Les fluctuations s’écrivent donc :
 
-\begin{eqnarray*}
-    \langle \delta \rho ( \theta) \delta \rho ( \theta') \rangle &=&  
-    \frac{ \int d\delta \rho \, \delta \rho(\theta) \delta \rho ( \theta') 
-    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
-    \delta \rho(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b) \right) }
-    { \int d\delta \Pi  
-    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
-    \delta \rho(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b) \right) } \\
-    &=& \left( \mathbf{A}^{-1} \right)_{\theta , \theta'}
-\end{eqnarray*}
+%\begin{eqnarray*}
+%    \langle \delta \rho ( \theta) \delta \rho ( \theta') \rangle &=&  
+%    \frac{ \int d\delta \rho \, \delta \rho(\theta) \delta \rho ( \theta') 
+%    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
+%    \delta \rho(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b) \right) }
+%    { \int d\delta \Pi  
+%    \exp \left( - \frac{1}{2} \sum_{a,b \mid \text{tranche}}  
+%    \delta \rho(\theta_a) \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \partial \delta \rho(\theta_b) } (\rho^c)  \delta \rho(\theta_b) \right) } \\
+%    &=& \left( \mathbf{A}^{-1} \right)_{\theta , \theta'}
+%\end{eqnarray*}
 
 
-\begin{aff}
+%\begin{aff}
 
-\begin{eqnarray*}
-	\langle \delta \rho ( \theta) \delta \rho ( \theta') \rangle &=& 	\left( \mathbf{A}^{-1} \right)_{\theta , \theta'}
-\end{eqnarray*}
+%\begin{eqnarray*}\langle \delta \rho ( \theta) \delta \rho ( \theta') \rangle &=& 	\left( \mathbf{A}^{-1} \right)_{\theta , \theta'}\end{eqnarray*}
 
 	
 %avec la  {\em matrice hessienne} $\mathbf{A}_{\theta , \theta'} \equiv \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta) \partial \delta \rho(\theta') }(\rho^c)$, au point critique/ qui maximise la probabilité  $\rho^c=\rho^c_s \nu^c $, s'écrit
 
-avec la  matrice $\mathbf{A}_{\theta , \theta'} \equiv \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta) \partial \delta \rho(\theta') }(\rho^c)$, qui maximise la probabilité  $\rho^c=\rho^c_s \nu^c $, s'écrit
+%avec la  matrice $\mathbf{A}_{\theta , \theta'} \equiv \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta) \partial \delta \rho(\theta') }(\rho^c)$, qui maximise la probabilité  $\rho^c=\rho^c_s \nu^c $, s'écrit
 
-\begin{eqnarray*}
-	\operator{A} & = & \operator{A}^{(0)} + \delta \theta \operator{V}
-\end{eqnarray*}
+%\begin{eqnarray*}
+%	\operator{A} & = & \operator{A}^{(0)} + \delta \theta \operator{V}
+%\end{eqnarray*}
 
-avec 
+%avec 
 
-\begin{eqnarray*}
-	A^{(0)}_{\theta , \theta'}  & = &  L\delta \theta \left ( \frac{ 1}{\rho^c_s ( 1  - \nu^c ) \nu^c } \right )(\theta)    \delta({\theta - \theta '})	,\\
-	V_{\theta , \theta'}  &= & L \delta \theta \left \{ - \left [ \left ( \frac{1}{\rho^c_s( 1 - \nu^c) } \right ) ( \theta)  +  \left ( \frac{1}{\rho^c_s( 1 - \nu^c) } \right ) ( \theta' )\right ] \frac{ \Delta( \theta'- \theta )}{ 2 \pi } + \int d\theta''  \left ( \frac{\nu^c}{\rho^c_s( 1 - \nu^c) } \right )(\theta'') \frac{\Delta(\theta''- \theta)}{2 \pi}\frac{\Delta(\theta''- \theta')}{2 \pi}   \right \} 	
-\end{eqnarray*}
+%\begin{eqnarray*}
+%	A^{(0)}_{\theta , \theta'}  & = &  L\delta \theta \left ( \frac{ 1}{\rho^c_s ( 1  - \nu^c ) \nu^c } \right )(\theta)    \delta({\theta - \theta '})	,\\
+%	V_{\theta , \theta'}  &= & L \delta \theta \left \{ - \left [ \left ( \frac{1}{\rho^c_s( 1 - \nu^c) } \right ) ( \theta)  +  \left ( \frac{1}{\rho^c_s( 1 - \nu^c) } \right ) ( \theta' )\right ] \frac{ \Delta( \theta'- \theta )}{ 2 \pi } + \int d\theta''  \left ( \frac{\nu^c}{\rho^c_s( 1 - \nu^c) } \right )(\theta'') \frac{\Delta(\theta''- \theta)}{2 \pi}\frac{\Delta(\theta''- \theta')}{2 \pi}   \right \} 	
+%\end{eqnarray*}
 
-\end{aff}
+%\end{aff}
 
 }
 
@@ -153,7 +151,7 @@ Dans les systèmes intégrables à grand nombre de particules, la description hy
 
 Pour ce faire, on discrétise l’axe des rapidités en petites cellules \( [\theta, \theta + \delta\theta] \), chacune contenant un nombre moyen de quasi-particules donné par \( L \rho(\theta) \, \delta\theta \), où \( L \) désigne la taille du système. 
 
-Dans cette discrétisation, le développement quadratique de l’action \( \mathcal{A}[\rho] \) autour du profil stationnaire \( \rho^c \) s’écrit :
+Dans cette discrétisation, le développement quadratique de l’action \( \mathcal{A}[\rho] \) autour du profil stationnaire \( \rho^c \) s’écrit comme un produis scalaire:
 
 \begin{equation*}
     \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho ) =  
@@ -169,14 +167,14 @@ Cette structure quadratique mène naturellement à une intégrale fonctionnelle 
     =  
     \frac{ \int \mathcal{D} \delta \rho \, \delta \rho(\theta) \, \delta \rho(\theta') 
     \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
-    \mathbf{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) }
+    \operator{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) }
     { \int \mathcal{D} \delta \rho \, 
     \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
-    \mathbf{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) } 
-    = \left( \mathbf{A}^{-1} \right)_{\theta, \theta'},
+    \operator{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) } 
+    = \left( \operator{A}^{-1} \right)_{\theta, \theta'},
 \end{equation*}
 
-où \( \mathbf{A} \) est la matrice hessienne de l’action évaluée au point stationnaire \( \rho^c \), c’est-à-dire :
+où \( \operator{A} \) est la matrice hessienne de l’action évaluée au point stationnaire \( \rho^c \), c’est-à-dire :
 
 \begin{equation*}
     \mathbf{A}_{\theta, \theta'} = \left. 
