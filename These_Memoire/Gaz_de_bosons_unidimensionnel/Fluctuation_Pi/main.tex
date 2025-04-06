@@ -57,9 +57,9 @@ L’hypothèse selon laquelle, après relaxation, le système est décrit par un
 
 Afin de caractériser ces fluctuations, nous développons l’action \( \mathcal{A}(\rho) \) au voisinage de \( \rho^c \). Par construction, \( \rho^c \) étant un point stationnaire, la différentielle première de \( \mathcal{A} \) en ce point est nulle : \( d\mathcal{A}_{\rho^c} = 0 \) (cf. équation~(\ref{??})). En appliquant le développement de Taylor-Young à l’ordre deux en \( \delta \rho \), nous obtenons :
 \begin{eqnarray*}
-	\mathcal{A}(\rho^c + \delta \rho) & \underset{ \delta \rho \to 0 }{=} & \mathcal{A}(\rho^c)  + \frac{1}{2} \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} (\delta \rho, \delta \rho) + \mathcal{O}((\delta \rho)^3),
+	\mathcal{A}(\rho^c + \delta \rho) & \underset{ \delta \rho \to 0 }{=} & \mathcal{A}(\rho^c)  + \frac{1}{2} \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} (\delta \rho) + \mathcal{O}((\delta \rho)^3),
 \end{eqnarray*}
-où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) désigne la forme bilinéaire symétrique (a priori définie positive) associée à la hessienne de l’action, illustrée en Fig.~(\ref{fig.fluctu.A}). Cette approximation quadratique constitue la base du traitement gaussien des fluctuations autour de l’état typique, permettant d’accéder aux corrélations et à la structure fine de l’ensemble statistique effectif.
+où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) désigne la forme linéaire symétrique (a priori définie positive) associée à la hessienne de l’action, illustrée en Fig.~(\ref{fig.fluctu.A}). Cette approximation quadratique constitue la base du traitement gaussien des fluctuations autour de l’état typique, permettant d’accéder aux corrélations et à la structure fine de l’ensemble statistique effectif.
 
 
 
@@ -95,7 +95,7 @@ où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) dé
 	\label{fig.fluctu.A}
 \end{figure}
 
-{\color{\blue}
+{\color{blue}
 On discrétise l'axe des rapidités en  petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $L\rho(\theta) \delta \theta$ rapidités. 
 	
 
@@ -146,6 +146,74 @@ avec
 \end{aff}
 
 }
+
+\section{Fluctuations autour du profil stationnaire}
+
+Dans les systèmes intégrables à grand nombre de particules, la description hydrodynamique est régie par la densité de rapidité \( \rho(\theta) \), qui encode la répartition des quasi-particules sur l’axe des rapidités \( \theta \). À l'équilibre, le profil stationnaire \( \rho^c(\theta) \) maximise la probabilité d’observer une configuration donnée. On s’intéresse ici aux fluctuations autour de ce profil stationnaire, et plus précisément aux corrélations à deux points des fluctuations \( \delta \rho(\theta) = \rho(\theta) - \rho^c(\theta) \).
+
+Pour ce faire, on discrétise l’axe des rapidités en petites cellules \( [\theta, \theta + \delta\theta] \), chacune contenant un nombre moyen de quasi-particules donné par \( L \rho(\theta) \, \delta\theta \), où \( L \) désigne la taille du système. 
+
+Dans cette discrétisation, le développement quadratique de l’action \( \mathcal{A}[\rho] \) autour du profil stationnaire \( \rho^c \) s’écrit :
+
+\begin{equation*}
+    \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho ) =  
+    \sum_{a,b} \delta \rho(\theta_a)  
+    \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \, \partial \delta \rho(\theta_b)} \Big|_{\rho^c} 
+    \delta \rho(\theta_b).
+\end{equation*}
+
+Cette structure quadratique mène naturellement à une intégrale fonctionnelle gaussienne pour la probabilité des fluctuations. Les corrélations à deux points des fluctuations s’expriment alors comme :
+
+\begin{equation*}
+    \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle 
+    =  
+    \frac{ \int \mathcal{D} \delta \rho \, \delta \rho(\theta) \, \delta \rho(\theta') 
+    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
+    \mathbf{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) }
+    { \int \mathcal{D} \delta \rho \, 
+    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
+    \mathbf{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) } 
+    = \left( \mathbf{A}^{-1} \right)_{\theta, \theta'},
+\end{equation*}
+
+où \( \mathbf{A} \) est la matrice hessienne de l’action évaluée au point stationnaire \( \rho^c \), c’est-à-dire :
+
+\begin{equation*}
+    \mathbf{A}_{\theta, \theta'} = \left. 
+    \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta) \, \partial \delta \rho(\theta')} 
+    \right|_{\rho^c}.
+\end{equation*}
+
+Dans le cas considéré, le profil stationnaire s’écrit sous la forme \( \rho^c = \rho^c_s \, \nu^c \), avec \( \nu^c \) la fonction d’occupation des quasi-particules et \( \rho^c_s \) la densité d’états disponibles. La matrice \( \mathbf{A} \) se décompose alors en deux contributions :
+
+\begin{equation*}
+    \mathbf{A} = \mathbf{A}^{(0)} + \delta\theta \, \mathbf{V},
+\end{equation*}
+
+avec :
+
+\begin{equation*}
+    A^{(0)}_{\theta, \theta'} = 
+    L \, \delta\theta \left( \frac{1}{\rho^c_s(\theta) (1 - \nu^c(\theta)) \nu^c(\theta)} \right) 
+    \delta(\theta - \theta'), 
+\end{equation*}
+
+et
+
+\begin{equation*}
+    V_{\theta, \theta'} = L \, \delta\theta \left\{ 
+    - \left[ 
+    \left( \frac{1}{\rho^c_s(1 - \nu^c)} \right)(\theta) 
+    + \left( \frac{1}{\rho^c_s(1 - \nu^c)} \right)(\theta') 
+    \right] \frac{\Delta(\theta' - \theta)}{2\pi} \right. 
+    + \left. \int d\theta'' 
+    \left( \frac{\nu^c}{\rho^c_s (1 - \nu^c)} \right)(\theta'') 
+    \frac{\Delta(\theta'' - \theta)}{2\pi} 
+    \frac{\Delta(\theta'' - \theta')}{2\pi} \right\}.
+\end{equation*}
+
+Cette matrice encode la structure des fluctuations thermiques du système dans l’espace des configurations de rapidité.
+
 
 
 \subsection{Fluctuation du nombre d'atomes et de l'énergie}
