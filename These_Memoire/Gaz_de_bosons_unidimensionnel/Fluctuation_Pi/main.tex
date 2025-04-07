@@ -250,7 +250,8 @@ Cette matrice encode la structure des fluctuations du système dans l’espace d
 
 }
 
-Il est maintenant intéressant de tester notre expression des fluctuations. 
+Il est maintenant intéressant de tester notre expression des fluctuations.
+ 
 Dans la section {??}, nous avons vu que la variance d'un observable \( \operator{\mathcal{O}}_i \) s'écrit :
 
 \begin{eqnarray*}
@@ -266,7 +267,7 @@ où \( \langle \operator{\mathcal{O}}_i \rangle \) est la moyenne de \( \operato
 
 avec \( \beta = (k_B T)^{-1} \), la température \( T \) et le potentiel chimique \( \mu \).
 
-Les fluctuations de \( \rho \) s'écrivent donc :
+À l'aide des fluctuation des la distribution de rapiditée les fluctuations des des observables  s'écrivent :
 
 \begin{eqnarray*}
     \left \langle  \left ( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}}  \rangle  \right )^2 \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
@@ -281,6 +282,8 @@ Nous souhaitons comparer \( \Delta_{\operator{\mathcal{N}}}^2 \) à \( \tilde{\D
 \end{eqnarray*}
 
 et donc calculer $\frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T,$ et $- \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.$
+
+On veux comparer les deux calcule de simulation. On commence par fixer une $\gamma = 
 
 \begin{figure}[H]
 	\centering 
