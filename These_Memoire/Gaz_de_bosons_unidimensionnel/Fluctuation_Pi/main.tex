@@ -252,7 +252,14 @@ Cette matrice encode la structure des fluctuations du système dans l’espace d
 
 Il est maintenant intéressant de tester notre expression des fluctuations.
 
-avec les flc
+Les fluctuations des observables nombre d'atomes $\operator{\mathcal{N}}$ et énergie $\operator{\mathcal{E}}$ peuvent s'écrire à l'aide de des fluctuation de $\rho$  :
+
+\begin{eqnarray*}
+    \left \langle  \left ( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}}  \rangle  \right )^2 \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
+    \left \langle  \left (  (\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  ) -  \langle\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  \rangle  \right )^2  \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \left( - \mu + \frac{1}{2} m \theta_a^2 \right) \left( - \mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
+\end{eqnarray*}
+
+où $m$ est la masse des atomes et $\mu$ est le potentielle chimique
  
 Dans la section {??}, nous avons vu que la variance d'un observable \( \operator{\mathcal{O}}_i \) s'écrit :
 
@@ -271,10 +278,7 @@ avec \( \beta = (k_B T)^{-1} \), la température \( T \) et le potentiel chimiqu
 
 À l'aide des fluctuation des la distribution de rapiditée les fluctuations des des observables  s'écrivent :
 
-\begin{eqnarray*}
-    \left \langle  \left ( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}}  \rangle  \right )^2 \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
-    \left \langle  \left (  (\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  ) -  \langle\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  \rangle  \right )^2  \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \left( - \mu + \frac{1}{2} m \theta_a^2 \right) \left( - \mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle.
-\end{eqnarray*}
+
 
 Nous souhaitons comparer \( \Delta_{\operator{\mathcal{N}}}^2 \) à \( \tilde{\Delta}_{\operator{\mathcal{N}}}^2 \) et \( \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \) à \( \tilde{\Delta}_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \). Pour ce faire, nous avons d'abord résolu numériquement l'équation {??} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d'obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \). En fixant le couple \( T \) et \( \mu \), nous pouvons alors déterminer les moyennes :
 
