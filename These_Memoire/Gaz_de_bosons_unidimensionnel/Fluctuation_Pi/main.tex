@@ -280,19 +280,7 @@ Les fluctuation \( \left \langle  \left ( \operator{\mathcal{N}} - \langle \oper
 
 Nous souhaitons faire une comparaisont numérique . Pour ce faire, nous avons d'abord résolu numériquement l'équation {??} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d'obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \). \\
 
-J'ai calculer les fluctuation de $\rho$, à densité spatial $n = 10 \mu m^{-1}$  fixées et pour different température $T$ , allant de $5.7 ~K $ à $53,5~ nK$. J'ai représenter en blue ces points sur un Diagramme de phase du modèle de LL. En abscises on a le logarythmes en base 10 du facteur de LL $\gamma$, qui je rappelle $\gamma = \frac{m g}{\hbar^2 n } $ et en ordonné le logarythme en base 10 de $t = \frac{\hbar^2  }{ \beta m g^2} $ (voir Fig \ref{fig:diag}) . Ce ce diagrammme se trouve aussi une point rouge pour 
-
-
-En fixant le couple \( T \) et \( \mu \), nous pouvons alors déterminer les moyennes :
-
-\begin{eqnarray*}
-    \langle \operator{\mathcal{N}} \rangle &=& L \int \, \rho(\theta) \, d\theta, \\
-    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \, \left( - \mu + \frac{1}{2} m \theta^2  \right) \rho(\theta) \, d\theta,
-\end{eqnarray*}
-
-et donc calculer $\frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T,$ et $- \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.$
-
-On veux comparer les deux calcule de simulation. On commence par fixer la densité spatial de particule $n$ et on fais fais fluctuer la temperature $T$ et on calcule les fluctuation de densité de rapidité (voir Fig \ref{fig:diag_fig}) 
+J'ai calculer les fluctuation de $\rho$, à densité spatial $n = 10 \mu m^{-1}$  fixées et pour different température $T$ , allant de $5.7 ~K $ à $53,5~ nK$. Le potentiel chimique est ici ine fonction de $T$ et de $n$. J'ai représenter en blue ces points sur un Diagramme de phase du modèle de LL. En abscises on a le logarythmes en base 10 du facteur de LL $\gamma$, qui je rappelle $\gamma = \frac{m g}{\hbar^2 n } $ et en ordonné le logarythme en base 10 de $t = \frac{\hbar^2  }{ \beta m g^2} $ (voir Fig \ref{fig:diag}) . Ce ce diagrammme se trouve aussi une point rouge pour $T = 60 ~nK$ et $\mu = 27~ nK$. J'ai representer les flctuations coresponds sur une graph 2D en niveau de couleur (voir Fig \ref{fig.fluctu.A}).
 
 \begin{figure}[H]
 	\centering
@@ -312,6 +300,20 @@ On veux comparer les deux calcule de simulation. On commence par fixer la densit
 }
 	\label{fig:diag_fig}
 \end{figure}
+
+
+Maintenant on fait la meme cho
+
+\begin{eqnarray*}
+    \langle \operator{\mathcal{N}} \rangle &=& L \int \, \rho(\theta) \, d\theta, \\
+    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \, \left( - \mu + \frac{1}{2} m \theta^2  \right) \rho(\theta) \, d\theta,
+\end{eqnarray*}
+
+et donc calculer $\frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T,$ et $- \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.$
+
+On veux comparer les deux calcule de simulation. On commence par fixer la densité spatial de particule $n$ et on fais fais fluctuer la temperature $T$ et on calcule les fluctuation de densité de rapidité (voir Fig \ref{fig:diag_fig}) 
+
+
 
 Et on peux 
 
