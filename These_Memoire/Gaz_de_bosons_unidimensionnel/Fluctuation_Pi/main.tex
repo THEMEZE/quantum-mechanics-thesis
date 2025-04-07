@@ -256,18 +256,18 @@ Les fluctuations des observables nombre d'atomes $\operator{\mathcal{N}}$ et én
 
 \begin{eqnarray*}
     \left \langle  \left ( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}}  \rangle  \right )^2 \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
-    \left \langle  \left (  (\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  ) -  \langle\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  \rangle  \right )^2  \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \left( - \mu + \frac{1}{2} m \theta_a^2 \right) \left( - \mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
+    \left \langle  \left (  \operator{\mathcal{E}} - \mu \operator{\mathcal{N}}   -  \langle\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}  \rangle  \right )^2  \right \rangle  &=& L^2 \int d\theta_a \int d\theta_b \, \left( - \mu + \frac{1}{2} m \theta_a^2 \right) \left( - \mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
 \end{eqnarray*}
 
-où $m$ est la masse des atomes et $\mu$ est le potentielle chimique
+où \( \langle \operator{\mathcal{O}}_i \rangle \) est la moyenne de l'oservable  \( \operator{\mathcal{O}}_i \) ,  $m$ est la masse des atomes et $\mu$ est le potentielle chimique.\\
  
-Dans la section {??}, nous avons vu que la variance d'un observable \( \operator{\mathcal{O}}_i \) s'écrit :
+Dans la section {??}, nous avons vu que la variance d'un observable \( \operator{\mathcal{O}}_i \) autrement dit les fluctuation de \( \operator{\mathcal{O}}_i \) s'écrit :
 
 \begin{eqnarray*}
     \Delta_{\operator{\mathcal{O}}_i}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}}.
 \end{eqnarray*}
 
-où \( \langle \operator{\mathcal{O}}_i \rangle \) est la moyenne de \( \operator{\mathcal{O}}_i \) et \( \beta_i \) est la variable conjuguée de \( \langle \operator{\mathcal{O}}_i \rangle \). Si l'on considère les observables comme le nombre d'atomes \( \operator{\mathcal{N}} \) et l'énergie \( \operator{\mathcal{E}} \), alors leur variance s'écrit :
+ et \( \beta_i \) est la variable conjuguée de \( \langle \operator{\mathcal{O}}_i \rangle \). Si l'on considère les observables comme le nombre d'atomes \( \operator{\mathcal{N}} \) et l'énergie \( \operator{\mathcal{E}} \), alors leur variance s'écrit :
 
 \begin{eqnarray*}
     \Delta_{\operator{\mathcal{N}}}^2 &=& \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \\
