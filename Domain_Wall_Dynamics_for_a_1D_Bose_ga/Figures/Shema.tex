@@ -328,9 +328,15 @@ table [meta=z] {./data/donnees1.dat};
         				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
         			;				
 				\end{scope}
+				
+				\draw 
+					(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
+    				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{+} )$ } ( 4.5  , 4 )	
+    				
+    			;
 		
 				\Axesdensity[$x ~ (\mu m) $]{$n ~({\mu m}^{-1})$}
-		
+				\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 
 			};
@@ -343,15 +349,23 @@ table [meta=z] {./data/donnees1.dat};
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
 					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
-					\draw[opacity = 0.3 , dashed , line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
+					
 
     				\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = none] plot coordinates {(-10,0)  (10 , 0 )};
-    				\draw[line width=1.8ex , color = \colorFour] 
+    				\draw[opacity = 0.3 , dashed , line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
+    				
+    				\draw[line width=1.8ex , color = \colorFour]     	
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
     					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
     					;				
-				\end{scope}		
-				\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x < 0 ) $}		
+				\end{scope}	
+				
+				\draw 
+					(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
+    				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{+} )$ } ( 4.5  , 4 )	
+    				
+    			;	
+				\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x < 0 ) $}	
 			\end{tikzpicture}
 
 			};
@@ -468,14 +482,16 @@ table [meta=z] {./data/donnees1.dat};
     				
     				\draw[line width=1.8ex , color = \colorFour] 
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
-    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )
-    					(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 0^{-})$ } ( 4.5  , 5 )	
-    					(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 18 ms )$ } ( 4.5  , 4 )		
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )		
     					;			
 				\end{scope}
 				\draw
     				(2, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (2, -0.2);		
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (2, -0.2)
+        				
+        			(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 0^{-})$ } ( 4.5  , 5 )	
+    				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 18 ~ms )$ } ( 4.5  , 4 )	
+        		;		
 				\Axesdistribution[$\theta ~ (\mu m/ms)$]{$\nu ( x(s) ) $}
 				
 				%\drawgrid{0}{10}{-10}{10}	
