@@ -319,7 +319,7 @@ table [meta=z] {./data/donnees1.dat};
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-9,-8) rectangle (8.5,8);
- 
+ 					\draw[opacity = 0.3 , line width=1.8ex , dashed , color = \colorFour , fill = none ] (-10 , 0 ) -- (-10 , 5 ) -- (10 , 5 ) -- ( 10, 0 )  ;
         			\filldraw[line width=1.8ex , color = \colorFour , fill = none ] 
 						(-10 , 0 ) --  ( 0 , 0 ) -- ( 0 , 5 ) --(10 , 5 ) -- ( 10 , 0 )   
 					;
@@ -343,6 +343,8 @@ table [meta=z] {./data/donnees1.dat};
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
 					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
+					\draw[opacity = 0.3 , dashed , line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
+
     				\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = none] plot coordinates {(-10,0)  (10 , 0 )};
     				\draw[line width=1.8ex , color = \colorFour] 
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
