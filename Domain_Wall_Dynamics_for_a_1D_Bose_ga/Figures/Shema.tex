@@ -319,10 +319,12 @@ table [meta=z] {./data/donnees1.dat};
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-9,-8) rectangle (8.5,8);
- 					\draw[opacity = 0.3 , line width=1.8ex , dashed , color = \colorFour , fill = none ] (-10 , 0 ) -- (-10 , 5 ) -- (10 , 5 ) -- ( 10, 0 )  ;
+ 					
         			\filldraw[line width=1.8ex , color = \colorFour , fill = none ] 
 						(-10 , 0 ) --  ( 0 , 0 ) -- ( 0 , 5 ) --(10 , 5 ) -- ( 10 , 0 )   
 					;
+					\draw[opacity = 0.3 , line width=1.8ex , dashed , color = \colorFour , fill = none ] (-10 , 0 ) -- (-10 , 5 ) -- (10 , 5 ) -- ( 10, 0 )  ;
+					
 					\draw[line width=1.8ex , color = \colorFour] 
         				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
         				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
@@ -330,13 +332,13 @@ table [meta=z] {./data/donnees1.dat};
 				\end{scope}
 				
 				\draw 
-					(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
-    				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{+} )$ } ( 4.5  , 4 )	
+					(-8,4) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $n( t = 0^{-})$ } ( -7.5  , 4 )	
+    				(-8,3) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $n( t = 0^{+} )$ } ( -7.5  , 3 )	
     				
     			;
 		
 				\Axesdensity[$x ~ (\mu m) $]{$n ~({\mu m}^{-1})$}
-				\drawgrid{-10}{10}{-10}{10}
+				%\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 
 			};
@@ -567,6 +569,12 @@ table [meta=z] {./data/donnees1.dat};
 
 					%\drawgrid{0}{10}{0}{10}
 				\end{scope}
+				
+				\draw 
+					(-8,4) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $n( \tau = 0^{-})$ } ( -7.5  , 4 )	
+    				(-8,3) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $n( \tau = 0^{+} )$ } ( -7.5  , 3 )	
+    				
+    			;
 		
 				\Axesdensity[$x~(\mu m)$]{$n ~ ({\mu m}^{-1})$}
 				
