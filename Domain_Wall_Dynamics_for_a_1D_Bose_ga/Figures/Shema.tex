@@ -511,7 +511,7 @@ table [meta=z] {./data/donnees1.dat};
 		
 				\end{scope}
 				\begin{scope}[shift={(2,-0.3)}]
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](8.5,-9) rectangle (13,10);
 					%\draw[red]  (9,-9) rectangle (13,10);	
 					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_coupure_2_0.pdf}}; 
 				\end{scope}
@@ -575,7 +575,7 @@ table [meta=z] {./data/donnees1.dat};
 					
 					%\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;
     						
-    				\draw[opacity = 1 , line width=1.8ex , dashed , color = \colorSix , fill = none ] plot[] file {data/rho_coupure_2_30.table};	
+    				\draw[opacity = 1 , line width=1.8ex , dashed , color = \colorFour , fill = none ] plot[] file {data/rho_coupure_2_30.table};	
     				
     				\draw[line width=1.8ex , color = \colorFour] 
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $107$ } ( 0.3  , 5 )	
@@ -615,7 +615,7 @@ table [meta=z] {./data/donnees1.dat};
 
 				\end{scope}
 				\begin{scope}[shift={(2,-0.3)}]
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](8.5,-9) rectangle (13,10);
 					%\draw[red]  (9,-9) rectangle (13,10);	
 					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_coupure_2_0.pdf}}; 
 				\end{scope}
@@ -670,7 +670,11 @@ table [meta=z] {./data/donnees1.dat};
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
         			(-9,-8) rectangle (8.5,8);
 
-					\draw[opacity = 1 , line width=1.8ex , color = \colorFive , fill = none ] plot[smooth] file {data/Pi_coupure_2_30.table};				
+					\draw[opacity = 1 , line width=1.8ex , color = \colorFive , fill = none ] plot[smooth] file {data/Pi_coupure_2_30.table};	
+					\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $107$ } ( 0.3  , 5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;			
 				\end{scope}
 				%\draw(1.3, 0.2) edge[line width=1.8ex, color=\colorOne] node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.3, -0.2);			
 				\Axesdistribution[$\theta ~ ( \mu m / m s )$]{$\Pi~(m s/\mu s)  $}
