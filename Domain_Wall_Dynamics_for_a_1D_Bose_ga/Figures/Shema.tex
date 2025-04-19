@@ -437,8 +437,13 @@ table [meta=z] {./data/donnees1.dat};
         						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 2 )
         					(1 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1 , 2.5 )
         					(-0.2 , 2 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.5  , 2 )
-        					; 
+        					;
+        					
 					\end{tikzpicture}};
+				\draw[opacity = 0.5 , dashed , line width=1.8ex , color = \colorTwo , fill = none] 
+					plot[smooth] file {data/bord_0_sur_18.table}
+					(-7,7) edge []node [pos=1.1, right ]{\huge $bord$ } ( -6.5  , 7 )	 
+				;
 				%\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 			};
