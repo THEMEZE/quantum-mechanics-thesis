@@ -519,7 +519,7 @@ table [meta=z] {./data/donnees1.dat};
 %axe temporel 
 \node at (0, -47) [circle ]{
 	\begin{tikzpicture}[transform canvas={scale=1} ]
-		\Axetemps[Deformation : $t = 18 ~ms$]
+		\Axetemps[Déformation : $t = 18 ~ms$]
 	\end{tikzpicture}
 	};
 
@@ -676,12 +676,12 @@ table [meta=z] {./data/donnees1.dat};
 					\begin{tikzpicture}[transform canvas={scale=1}] 
 						\Axesphase[$x/\tau ~ ( \mu m / m s )$]{$\theta ~ ( \mu m / m s ) $}
 						\draw
-    						(3.5, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/\tau$} (3.5, -0.2)
+    						(1.9, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/\tau$} (1.9, -0.2)
         					(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo] 
         						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.3 )
-        					(3.5 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5 , 2 )
-        					(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (6  , 1.3 )
+        					(1.9 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1.9 , 2 )
+        					(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  , 1.3 )
         					; 
 					\end{tikzpicture}};
 					\draw[opacity = 0.5 , dotted , line width=0.5ex , color = \colorTwo , fill = none] 
@@ -692,7 +692,7 @@ table [meta=z] {./data/donnees1.dat};
 						plot[smooth] file {data/bord_2_30.table}
 						(-7,6) edge []node [pos=1.1, right ]{\huge $bord~droite$ } ( -6.5  , 6 )	 
 					;
-				\drawgrid{-10}{10}{-10}{10}
+				%\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 			};
 	
