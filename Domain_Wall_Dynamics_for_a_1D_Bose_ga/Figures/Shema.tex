@@ -560,6 +560,14 @@ table [meta=z] {./data/donnees1.dat};
         					(-0.2 , 1.4 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.4 )
         					; 
 					\end{tikzpicture}};
+					\draw[opacity = 0.5 , dotted , line width=0.5ex , color = \colorTwo , fill = none] 
+					plot[smooth] file {data/bord_1_0.table}
+					(-7,7) edge []node [pos=1.1, right ]{\huge $bord~gauche$ } ( -6.5  , 7 )	 
+					;
+					\draw[opacity = 0.5 , dashed , line width=0.5ex , color = \colorTwo , fill = none] 
+					plot[smooth] file {data/bord_2_0.table}
+					(-7,6) edge []node [pos=1.1, right ]{\huge $bord~droite$ } ( -6.5  , 6 )	 
+					;
 				\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 			};
