@@ -309,6 +309,9 @@ table [meta=z] {./data/donnees1.dat};
 					\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_coupure_1_0_only.pdf}};
 		
 				\end{scope}
+				
+				\draw[opacity = 0.3 , dashed , line width=1.8ex , color = \colorTwo , fill = none] plot[smooth] file {data/bord_0_0.table} ;
+				
 				\node at (0,0) [circle, ] {\begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x ~ (\mu m)$]{$\theta ~ (\mu m / {ms}) $} \end{tikzpicture}};
 
 			\end{tikzpicture}
