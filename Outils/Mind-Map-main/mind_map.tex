@@ -180,11 +180,119 @@
 		%if (day of month=1) {
 		%	\node at (-2cm,1.5em) [anchor=base west] {\Large\tikzmonthtext};
 		%	}
-		if (at most=\year-\month-\day-1) [nodes={strike out,draw}]
 		if (weekend)            [red!50,nodes={draw=none}]
-		if (between=2025-03-25 and 2026-09-11)            [red!50,nodes={draw=none}]
+		%if (between=2025-03-25 and 2026-09-11)            [red!50,nodes={draw=none}]
 		if (equals=\year-\month-\day) {\draw[orange] (0,0) circle (8pt);}
 		if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt); \node[chamfered rectangle, white, fill=red, double=red, draw, very thick]{\bf STOP!};}
+		if (equals=2025-04-10) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[right, 	
+   					shift={(1cm,0)},
+   					chamfered rectangle, 
+   					white, 
+   					fill=orange, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf Fluctu};
+   				}
+   		if (equals=2025-04-15) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[right, 	
+   					shift={(1cm,0)},
+   					chamfered rectangle, 
+   					white, 
+   					fill=orange, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf Analyse};
+   				}
+   		if (equals=2025-04-21) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[right, 	
+   					shift={(1cm,0)},
+   					chamfered rectangle, 
+   					white, 
+   					fill=orange, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf Dipolaire};
+   				}
+   		if (equals=2025-04-28) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[right, 	
+   					shift={(1cm,0)},
+   					chamfered rectangle, 
+   					white, 
+   					fill=orange, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf Description exp};
+   				}
+   		if (equals=2025-05-05) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[right, 	
+   					shift={(1cm,0)},
+   					chamfered rectangle, 
+   					white, 
+   					fill=orange, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf LL - TBA - GHD };
+   				}
+		if (equals=2025-06-30) {
+   			\draw[red] (0,0) circle (8pt) 
+   				node[ 	
+   					below ,
+   					chamfered rectangle, 
+   					white, 
+   					fill=red, 
+   					double=red, 
+   					draw, 
+   					very thick , 
+   					opacity = 0.8 ,
+   					inner sep=1pt,        % réduit l'espace autour du texte
+       				minimum width=0.5cm,  % largeur du rectangle
+       				minimum height=0.5cm, % hauteur du rectangle
+       				font=\tiny\bfseries, 
+   					scale=1 
+   					]{\bf STOP!};
+   				}
+   		if (at most=\year-\month-\day-1) [nodes={strike out,draw}]
  	 	;
 
 	\end{tikzpicture}
@@ -209,7 +317,108 @@
   if (Sunday)
     [gray,nodes={draw=none}]
    if (equals=\year-\month-\day) {\draw[red] (0,0) circle (8pt);}
-   if (equals=2025-06-19) {\draw[red] (0,0) circle (8pt) node[ below ,chamfered rectangle, white, fill=red, double=red, draw, very thick , opacity = 0.2]{\bf STOP!};}
+   if (equals=2025-04-10) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[right, 	
+   				shift={(1cm,0)},
+   				chamfered rectangle, 
+   				white, 
+   				fill=orange, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf Fluctu};}
+   		if (equals=2025-04-15) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[right, 	
+   				shift={(1cm,0)},
+   				chamfered rectangle, 
+   				white, 
+   				fill=orange, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf Analyse};}
+   		if (equals=2025-04-21) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[right, 	
+   				shift={(1cm,0)},
+   				chamfered rectangle, 
+   				white, 
+   				fill=orange, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf Dipolaire};}
+   		if (equals=2025-04-28) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[right, 	
+   				shift={(1cm,0)},
+   				chamfered rectangle, 
+   				white, 
+   				fill=orange, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf Description exp};}
+   		if (equals=2025-05-05) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[right, 	
+   				shift={(1cm,0)},
+   				chamfered rectangle, 
+   				white, 
+   				fill=orange, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf LL - TBA - GHD };}
+   if (equals=2025-06-30) {
+   		\draw[red] (0,0) circle (8pt) 
+   			node[ 	
+   				below ,
+   				chamfered rectangle, 
+   				white, 
+   				fill=red, 
+   				double=red, 
+   				draw, 
+   				very thick , 
+   				opacity = 0.2 ,
+   				inner sep=1pt,        % réduit l'espace autour du texte
+       			minimum width=0.5cm,  % largeur du rectangle
+       			minimum height=0.5cm, % hauteur du rectangle
+       			font=\tiny\bfseries, 
+   				scale=1 
+   				]{\bf STOP!};}
   ;
 \end{tikzpicture}
 }

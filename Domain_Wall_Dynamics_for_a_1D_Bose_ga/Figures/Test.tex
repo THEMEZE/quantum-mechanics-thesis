@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+	%title={Données expérimentales $f(x,y)$},
+    colormap/viridis,
+    %colorbar,
+    enlargelimits=false,
+    axis on top,
+    xtick=\empty,
+    ytick=\empty,
+    xlabel={},
+    ylabel={},
+    axis lines=none
+]
+
+\addplot [
+    matrix plot,
+    point meta=explicit,
+    mesh/rows=5, % à adapter au nombre de lignes
+    shader=interp,
+]
+table [meta=z] {./data/donnees1.dat};
+\end{axis}
+\end{tikzpicture}
+\end{document}

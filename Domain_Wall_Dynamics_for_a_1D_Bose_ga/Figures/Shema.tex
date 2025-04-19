@@ -4,6 +4,10 @@
 \usepackage{amsmath}       % Gestion des formules mathématiques
 \usetikzlibrary{arrows.meta} % Pour gérer les flèches avec des formes spécifiées comme "triangle"
 \usetikzlibrary {decorations.pathmorphing}
+\usepackage{pgfplots}
+%\pgfplotsset{compat=1.18}
+%\usepgfplotslibrary{external}
+%\tikzexternalize
 
 
 % Définition de la fonction pour générer la grille
@@ -41,13 +45,13 @@
 \newcommand{\Axex}[1][$x$]{ % "x" est la valeur par défaut de #1
     \draw
         (-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=colorOne] 
-        node[pos=1.01, below]{ \huge #1 } (10, 0)
+        node[shift = {(0,1)} , pos=1.01, below]{ \huge #1 } (10, 0)
         ;
 }
 
 \newcommand{\Axetheta}[1][$\theta$]{
 	\draw
-		(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorOne ]node [pos=1.01, above ]{\huge #1 } ( 10  , 0 )
+		(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorOne ]node [pos=1.01,right]{\huge #1 } ( 10  , 0 )
 	;
 }
 
@@ -132,9 +136,35 @@
 
 
 
+%% different test d'insitut 
 
+% a la main
 \pgfdeclareverticalshading{Insitut}{20cm}
  {color(0)=(\colorFour); color(2cm)=(\colorFive); color(4cm)=(\colorSix);color(10cm)=(\colorSix);  color(12cm)=(\colorFive);  color(14cm)=(\colorFour)}
+ % avec donné
+\newcommand{\Insitutmap}[0]{
+ \begin{axis}[
+	%title={Données expérimentales $f(x,y)$},
+    colormap/viridis,
+    %colorbar,
+    enlargelimits=false,
+    axis on top,
+    xtick=\empty,
+    ytick=\empty,
+    xlabel={},
+    ylabel={},
+    axis lines=none
+]
+
+\addplot [
+    matrix plot,
+    point meta=explicit,
+    mesh/rows=5, % à adapter au nombre de lignes
+    shader=interp,
+]
+table [meta=z] {./data/donnees1.dat};
+\end{axis}
+}
 
 
 
@@ -144,7 +174,7 @@
 %\Axes 
 
 %% Pour voir plus precisement 
-\clip (-21 , -85) rectangle (55 , 21) ;\draw[color = red ] (-20 , -84) rectangle (54 , 20) ;
+\clip (-21 , -85) rectangle (58 , 21) ;\draw[color = red ] (-20 , -84) rectangle (58 , 20) ;
 %\clip (-20 , -15) rectangle (20 , 20) ; \draw[color = red ] (-20 , -14) rectangle (20 , 18) ; % voire Insitut
 %\clip (10 , -15) rectangle (55 , 20) ; \draw[color = red ] (10 , -15) rectangle (55 , 20) ; % voire coupure 1 0ms  
 %\clip (53 , -15) rectangle (95 , 20) ; \draw[color = red ] (53 , -15) rectangle (95 , 20) ; % voire coupure 1 18ms 
@@ -192,15 +222,29 @@
 		% diagrale de phase 
 		\node at (0,0) [circle, ] {
 			\begin{tikzpicture}[transform canvas={scale=1}] 
+				
+				%\node at (0,0) [circle, ]{\includegraphics[width=2\textwidth]{data/insitut.pdf}};
+
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
-    				\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-     				\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
-					\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+    				%\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8,-8) rectangle (8,8); 
+     				%\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
+					%\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+					%\node at (0,0) [circle, ] {\begin{tikzpicture} \Insitutmap \end{tikzpicture} };
+					\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_insitut_only.pdf}}; %width=1.8\textwidth
+					%\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/insitut.pdf}}; 
 		
 				\end{scope}
-				\node at (0,0) [circle] { \begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x$]{$\theta$} \end{tikzpicture}};
+				
+				\begin{scope}[shift={(2,-0.3)}]
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					%\draw[red]  (9,-9) rectangle (13,10);	
+					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_insitut.pdf}}; 
+				\end{scope}
+
+				%\node at (0,0) [circle, ]{\includegraphics[width = 1.8\textwidth , trim=0cm 0.cm 0cm 0.cm, clip ]{data/complete_graph_insitut.pdf}}; 
+				
+				\node at (0,0) [circle] { \begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x ~ (\mu m) $]{$\theta ~ (\mu m / {ms}) $} \end{tikzpicture}};
 
 			\end{tikzpicture}
 			};
@@ -210,13 +254,16 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-        			\draw[line width=1.8ex , color = \colorFour , fill = \colorThree ] 
-					(-10 , 0 ) -- (-10 , 5 ) -- (10 , 5 ) -- ( 10, 0 )  
-					;				
+        			(-9,-8) rectangle (8.5,8); 
+        			\draw[line width=1.8ex , color = \colorFour , fill = none ] (-10 , 0 ) -- (-10 , 5 ) -- (10 , 5 ) -- ( 10, 0 )  ;
+        			\draw[line width=1.8ex , color = \colorFour] 
+        				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
+        				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;	
+								
 				\end{scope}
 		
-				\Axesdensity[$x$]{$n$}
+				\Axesdensity[$x ~ (\mu m) $]{$n ~({\mu m}^{-1})$}
 		
 			\end{tikzpicture}
 
@@ -227,15 +274,18 @@
 		\node at (-13,0) [circle, rotate = 90 ] {
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
-					\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (10,5) and (0,0) .. (10,0);				
+					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
+    				\draw[line width=1.8ex , color = \colorFour , fill = none ] plot[smooth] file {data/insitut.table};
+    				\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;	
+    						
 				\end{scope}		
-				\Axesdistribution[$\theta$]{$\nu$}	
+				\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu$}	
 			\end{tikzpicture}
 
 			};
@@ -252,14 +302,14 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
-    				\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-     				\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
-     				\clip (0,-8) rectangle (10,8) ;
-					\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+    				%\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8,-8) rectangle (8,8); 
+     				%\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
+     				%\clip (0,-8) rectangle (10,8) ;
+					%\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+					\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_coupure_1_0_only.pdf}};
 		
 				\end{scope}
-				\node at (0,0) [circle, ] {\begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x$]{$\theta$} \end{tikzpicture}};
+				\node at (0,0) [circle, ] {\begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x ~ (\mu m)$]{$\theta ~ (\mu m / {ms}) $} \end{tikzpicture}};
 
 			\end{tikzpicture}
 			};
@@ -268,15 +318,18 @@
 		\node at (0,13) [circle, ] {
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-9,-8) rectangle (8.5,8);
  
-        			\filldraw[line width=1.8ex , color = \colorFour , fill = \colorThree ] 
+        			\filldraw[line width=1.8ex , color = \colorFour , fill = none ] 
 						(-10 , 0 ) --  ( 0 , 0 ) -- ( 0 , 5 ) --(10 , 5 ) -- ( 10 , 0 )   
-					;				
+					;
+					\draw[line width=1.8ex , color = \colorFour] 
+        				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
+        				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;				
 				\end{scope}
 		
-				\Axesdensity[x]{n}
+				\Axesdensity[$x ~ (\mu m) $]{$n ~({\mu m}^{-1})$}
 		
 			\end{tikzpicture}
 
@@ -286,29 +339,41 @@
 		\node at (-13,0) [circle,   rotate = 90 , xscale = 1   ] {
 			\begin{tikzpicture}[transform canvas={scale=1} ] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
 
-					\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0)  (10 , 0 )};				
+					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
+					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
+    				\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = none] plot coordinates {(-10,0)  (10 , 0 )};
+    				\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;				
 				\end{scope}		
-				\Axesdistribution[$\theta$]{$\nu ( x < 0 ) $}		
+				\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x < 0 ) $}		
 			\end{tikzpicture}
 
 			};
 	
 		% distribution x > 0 
-		\node at (13,0) [circle,   rotate = 90 , xscale = -1   ] {
+		\node at (13,0) [circle,   rotate = 90 , yscale = 1   ] {
 			\begin{tikzpicture}[transform canvas={scale=1} ] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
-					\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (10,5) and (0,0) .. (10,0);				
-				\end{scope}		
-				\Axesdistribution[$\theta$]{$\nu ( x > 0 ) $}		
+					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
+    				\draw[line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut_minus.table};
+    				\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, -5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , -5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, above left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;			
+				\end{scope}	
+				
+				\draw
+					(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorOne ]node [pos=1.01,right]{\huge $\theta ~ (\mu m / {ms}) $ } ( 10  , 0 )
+					(0, 1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorOne ]node [pos=1.01,left  ]{\huge $\nu ( x > 0 ) $ } ( 0  , -6 )
+				;	
+				%\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x > 0 ) $}		
 			\end{tikzpicture}
 
 			};
@@ -326,24 +391,28 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
-    				\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-     				\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
-     				\clip[smooth] plot coordinates {(-5,-10) (-2,-2.75) (2,2.75) (5,10) (10,10) 
-     				 (10 , -10 )} ;
-					\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+    				%\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8,-8) rectangle (8,8); 
+     				%\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
+     				%\clip[smooth] plot coordinates {(-5,-10) (-2,-2.75) (2,2.75) (5,10) (10,10) (10 , -10 )} ;
+					%\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+					\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_coupure_1_18_only.pdf}};
 		
+				\end{scope}
+				\begin{scope}[shift={(2,-0.3)}]
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					%\draw[red]  (9,-9) rectangle (13,10);	
+					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_coupure_1_18.pdf}}; 
 				\end{scope}
 				\node at (0,0) [circle, ] {
 					\begin{tikzpicture}[transform canvas={scale=1}] 
-						\Axesphase[$x$]{$\theta$}
+						\Axesphase[$x/t ~ (\mu m / ms) $]{$\theta ~ (\mu m / {ms}) $}
 						\draw
     						(1, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)$} (1, -0.2)
-        					(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.3 )
-        					(1 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1 , 2 )
-        					(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.5  , 1.3 )
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/t$} (1, -0.2)
+        					(0.2 , 2 ) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 2 )
+        					(1 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1 , 2.5 )
+        					(-0.2 , 2 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.5  , 2 )
         					; 
 					\end{tikzpicture}};
 				%\drawgrid{-10}{10}{-10}{10}
@@ -354,20 +423,21 @@
 		\node at (0,13) [circle, ] {
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-9,-8) rectangle (8.3,8);
  
         			%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree ] plot coordinates {(-10,0) (-3,0.4) (2.,4.5) (10,5) 
      				 %(10 , 0 )};
-     				 \filldraw[smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0) -- (-2,0) 
-    						.. controls (-1,0) and (2,5) .. (3,5) 
-    						-- (10,5) -- (10,0);
+     				 %\filldraw[smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0) -- (-2,0) .. controls (-1,0) and (2,5) .. (3,5) -- (10,5) -- (10,0);
+     				 \draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
+     				 \draw[line width=1.8ex , color = \colorFour] 
+        				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
+        				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;	
 
 
 				\end{scope}
 		
-				\Axesdensity[$x/t$]{$n$}
+				\Axesdensity[$x/t ~ (\mu m / ms)$]{$n ~ ({\mu m}^{-1})$}
 				
 
         				
@@ -381,23 +451,26 @@
 		\node at (-13,0) [circle,   rotate = 90 , xscale = 1   ] {
 			\begin{tikzpicture}[transform canvas={scale=1} ] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
 					
-					\filldraw[ opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (10,5) and (0,0) .. (10,0);
+					%\filldraw[ opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);
+    				\draw[opacity = 0.3 , line width=1.8ex , dashed ,  color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
 					
-					\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;				
+					%\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;
+    						
+    				\draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/coupure_1_sur_18.table};	
+    				
+    				\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;			
 				\end{scope}
 				\draw
-    				(1.3, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        				node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.3, -0.2);		
-				\Axesdistribution[$\theta$]{$\nu ( x(s) ) $}
+    				(2, 0.2) edge[line width=1.8ex, color=\colorOne] 
+        				node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (2, -0.2);		
+				\Axesdistribution[$\theta ~ (\mu m/ms)$]{$\nu ( x(s) ) $}
 				
 				%\drawgrid{0}{10}{-10}{10}	
 			\end{tikzpicture}
@@ -427,25 +500,29 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
-    				\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-     				\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
-     				\clip[smooth] plot coordinates {(-5,-10) (-2,-2.75) (2,2.75) (5,10) (10,10) 
-     				 (10 , -10 )} ;
-     				 \clip (0.75,-10) rectangle (1.25 , 10 ) ;
-					\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+    				%\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8,-8) rectangle (8,8); 
+     				%\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
+     				%\clip[smooth] plot coordinates {(-5,-10) (-2,-2.75) (2,2.75) (5,10) (10,10)  (10 , -10 )} ;
+     				 %\clip (0.75,-10) rectangle (1.25 , 10 ) ;
+					%\node at (0,0) [circle, ] {\pgfuseshading{Insitut}};
+					\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_coupure_2_0_only.pdf}};
 		
+				\end{scope}
+				\begin{scope}[shift={(2,-0.3)}]
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					%\draw[red]  (9,-9) rectangle (13,10);	
+					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_coupure_2_0.pdf}}; 
 				\end{scope}
 				\node at (0,0) [circle, ] {
 					\begin{tikzpicture}[transform canvas={scale=1}] 
-						\Axesphase[$x$]{$\theta$}
+						\Axesphase[$x~(\mu m)$]{$\theta~(\mu m/ms)$}
 						\draw
-    						(1, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)$} (1, -0.2)
-        					(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.3 )
-        					(1 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1 , 2 )
-        					(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.5  , 1.3 )
+    						(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)$} (0.45, -0.2)
+        					(0.2 , 1.4 ) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.4 )
+        					(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 2 )
+        					(-0.2 , 1.4 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.4 )
         					; 
 					\end{tikzpicture}};
 				%\drawgrid{-10}{10}{-10}{10}
@@ -457,26 +534,22 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+        			(-9,-8) rectangle (8.3,8);
  
-        			%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree ] plot coordinates {(-10,0) (-3,0.4) (2.,4.5) (10,5) 
-     				 %(10 , 0 )};
-     				 \filldraw[opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0) -- (-2,0) 
-    						.. controls (-1,0) and (2,5) .. (3,5) 
-    						-- (10,5) -- (10,0);
-    				\filldraw[smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0) -- (0.75,0) -- (0.75 , 2.8)   
-    						.. controls (0.75,2.9) and (1.24,3.5) .. (1.25,3.5) 
-    						-- (1.25,0) -- (10,0);
+        			\draw[opacity = 0.3 , line width=1.8ex , dashed ,  color = \colorFour , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
+        			\draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/density_coupure_2_0.table};
+     				 \draw[line width=1.8ex , color = \colorFour] 
+        				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
+        				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;
 
 					%\drawgrid{0}{10}{0}{10}
 				\end{scope}
 		
-				\Axesdensity[$x$]{$n$}
+				\Axesdensity[$x~(\mu m)$]{$n ~ ({\mu m}^{-1})$}
 				
 				\draw[yshift = - 12]
-					(0.5 , 0 )edge[line width=0.8ex, color=\colorOne , >-<, > = stealth,] node [pos = 0.5 , below]{\huge $\ell$}  ( 1.5 , 0) 	
+					(0.1 , 0 )edge[line width=0.8ex, color=\colorOne , >-<, > = stealth,] node [pos = 0.5 , below]{\huge $\ell$}  ( 0.9 , 0) 	
 				;
 				
 
@@ -491,25 +564,29 @@
 		\node at (-13,0) [circle,   rotate = 90 , xscale = 1   ] {
 			\begin{tikzpicture}[transform canvas={scale=1} ] 
 				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
 
 					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
 					
-					\filldraw[ opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (10,5) and (0,0) .. (10,0);
+					%\filldraw[ opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);
+    				\draw[opacity = 1 , line width=1.8ex ,  color = \colorFive , fill = none ] plot[smooth] file {data/Pi_coupure_2_30.table};
 					
-					\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;				
+					%\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;
+    						
+    				\draw[opacity = 1 , line width=1.8ex , dashed , color = \colorSix , fill = none ] plot[] file {data/rho_coupure_2_30.table};	
+    				
+    				\draw[line width=1.8ex , color = \colorFour] 
+    					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorOne ]node [pos=-0.01, left  ]{\huge $107$ } ( 0.3  , 5 )	
+    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+    					;			
 				\end{scope}
 				\draw
-    				(1.3, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        				node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.3, -0.2);			
-				\Axesdistribution[$x$]{$\nu ( x(s) ) $}
+    				(1.4, 0.2) edge[line width=1.8ex, color=\colorOne] 
+        				node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.4, -0.2);		
+				\Axesdistribution[$\theta ~ (\mu m/ms)$]{$~(m s/\mu s)  $}
 				
 				%\drawgrid{0}{10}{-10}{10}	
+
 			\end{tikzpicture}
 
 			};
@@ -528,26 +605,31 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
-    				\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8); 
-     				\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
-     				\clip (-30,-10) -- (-30 , 1.) -- (-8 , 1 ) .. controls (0,1) and (0,1) .. ( 8 , 1.5 ) -- (30 , 1.5 ) -- (30 , -10 ) ;
-     				\node at (0,0) [circle, draw] {\pgfuseshading{Insitut}};
+    				%\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8,-8) rectangle (8,8); 
+     				%\node at (0,0) [circle  ] {\begin{tikzpicture}[transform canvas={scale=1}] \Background \end{tikzpicture}};
+     				%\clip (-30,-10) -- (-30 , 1.) -- (-8 , 1 ) .. controls (0,1) and (0,1) .. ( 8 , 1.5 ) -- (30 , 1.5 ) -- (30 , -10 ) ;
+     				%\node at (0,0) [circle, draw] {\pgfuseshading{Insitut}};
+     				\node at (-0.95,-0.3) [circle, ]{\includegraphics[height = 1.6\textwidth]{data/graph_coupure_2_30_only.pdf}};
 
+				\end{scope}
+				\begin{scope}[shift={(2,-0.3)}]
+					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](9,-9) rectangle (13,10);
+					%\draw[red]  (9,-9) rectangle (13,10);	
+					\node at (0,0) [circle, ]{\includegraphics[height = 1.6\textwidth ]{data/complete_graph_coupure_2_0.pdf}}; 
 				\end{scope}
 				\node at (0,0) [circle, ] {
 					\begin{tikzpicture}[transform canvas={scale=1}] 
-						\Axesphase[$x$]{$\theta$}
+						\Axesphase[$x/\tau ~ ( \mu m / m s )$]{$\theta ~ ( \mu m / m s ) $}
 						\draw
-    						(5, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)$} (5, -0.2)
+    						(3.5, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/\tau$} (3.5, -0.2)
         					(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo] 
         						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.3 )
-        					(5 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (5 , 2 )
+        					(3.5 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5 , 2 )
         					(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (6  , 1.3 )
         					; 
 					\end{tikzpicture}};
-				%\drawgrid{-10}{10}{-10}{10}
+				\drawgrid{-10}{10}{-10}{10}
 			\end{tikzpicture}
 			};
 	
@@ -556,18 +638,19 @@
 			\begin{tikzpicture}[transform canvas={scale=1}] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+        			(-9,-8) rectangle (8.5,8);
  
-        			%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree ] plot coordinates {(-10,0) (-3,0.4) (2.,4.5) (10,5) 
-     				 %(10 , 0 )};
-     				 \filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-5,5) .. (0,5) 
-    						.. controls (1.3,5) and (1,0) .. (2,0) --  ( 10 , 0 ) ;
+        			\draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/density_coupure_2_30.table};
+     				 \draw[line width=1.8ex , color = \colorFour] 
+        				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, left  ]{\huge $107$ } ( 0.3  , 5 )	
+        				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorOne ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;
+
 
 					%\drawgrid{0}{10}{0}{10}
 				\end{scope}
 		
-				\Axesdensity[$x/\tau$]{$n*\tau/\ell$}
+				\Axesdensity[$x/\tau ~ ( \mu m / ms ) $]{$n*\tau ~( m s / \mu m )$}
 				
 				
 
@@ -583,22 +666,12 @@
 			\begin{tikzpicture}[transform canvas={scale=1} ] 
 				\begin{scope}
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
-        			(-8,-8) rectangle (8,8);
+        			(-9,-8) rectangle (8.5,8);
 
-					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
-					
-					\filldraw[ opacity = 0.5 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (10,5) and (0,0) .. (10,0);
-					
-					\filldraw[  opacity = 1 , smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] 
-    						(-10,0)  .. controls (0,0) and (-10,5) .. (0,5) 
-    						.. controls (1.3,5) and (1.3,5) .. (1.3,4.9) -- (1.3 , 0 )-- ( 10 , 0 ) ;				
+					\draw[opacity = 1 , line width=1.8ex , color = \colorFive , fill = none ] plot[smooth] file {data/Pi_coupure_2_30.table};				
 				\end{scope}
-				\draw
-    				(1.3, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        				node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.3, -0.2);			
-				\Axesdistribution[$x$]{$\nu ( x(s) ) $}
+				%\draw(1.3, 0.2) edge[line width=1.8ex, color=\colorOne] node[pos=1.1, below]{ \color{\colorOne}\huge $\theta(s)$} (1.3, -0.2);			
+				\Axesdistribution[$\theta ~ ( \mu m / m s )$]{$\Pi~(m s/\mu s)  $}
 				
 				%\drawgrid{0}{10}{-10}{10}	
 			\end{tikzpicture}
@@ -618,7 +691,7 @@
 
 
 % gaduation tout 
-\drawgrid{-20}{54}{-84}{20}
+%\drawgrid{-20}{58}{-84}{20}
 
 
 \end{tikzpicture}

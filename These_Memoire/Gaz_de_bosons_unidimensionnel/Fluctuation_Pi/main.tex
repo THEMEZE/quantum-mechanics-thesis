@@ -1,3 +1,289 @@
+\minitoc
+
+\section{Fluctuations autour de l’état typique}
+
+La fonction de partition des états s’exprime comme une fonctionnelle de la distribution de rapidité \( \rho \) :
+\begin{eqnarray}
+	\Xi & = & \sum_\rho \exp\left( -\mathcal{A}(\rho) \right).
+\end{eqnarray}
+
+Dans la section \textit{\textbf{Entropie de Yang-Yang}}~(\ref{??}), nous avons montré que l’action \( \mathcal{A}(\rho) \) s’écrit sous la forme :
+\begin{eqnarray}
+	\mathcal{A}(\rho) & \doteq & - L \mathcal{S}_{YY}(\rho) + L \int f(\theta)\, \rho(\theta) \, d\theta, \label{eq:action}
+\end{eqnarray}
+où \( L \) désigne la taille du système ,  \( \mathcal{S}_{YY} \) désigne la fonctionnelle d'entropie de Yang-Yang, définie en~(\ref{??}), et \( f \) la fonction génératrice associée aux charges conservées, introduite en~(\ref{??}).
+
+Dans cette même section, nous avons également montré que la distribution \( \rho^c \) maximisant la contribution à la fonction de partition correspond à un point stationnaire de l'action, et est entièrement déterminée par la fonction \( f \). Cette distribution \( \rho^c \) définit ainsi l’état macroscopique typique du système au sein de l’ensemble statistique considéré.
+
+L’hypothèse selon laquelle, après relaxation, le système est décrit par un ensemble généralisé de Gibbs (GGE) constitue un fondement majeur de notre compréhension des dynamiques hors équilibre dans les systèmes intégrables. Cette hypothèse a des implications théoriques profondes et mérite d’être testée expérimentalement. Toutefois, la seule connaissance de la distribution de rapidité moyenne \( \rho^c \) ne permet pas de confirmer l'adéquation du GGE. En effet, plusieurs ensembles statistiques peuvent mener à une même valeur moyenne de \( \rho \). Pour lever cette ambiguïté, il est nécessaire d’étudier les fluctuations autour de la distribution typique, notées \( \delta \rho \), définies par \( \rho = \rho^c + \delta \rho \).
+
+Afin de caractériser ces fluctuations, nous développons l’action \( \mathcal{A}(\rho) \) au voisinage de \( \rho^c \). Par construction, \( \rho^c \) étant un point stationnaire, la différentielle première de \( \mathcal{A} \) en ce point est nulle : \( d\mathcal{A}_{\rho^c} = 0 \) (cf. équation~(\ref{??})). En appliquant un développement de Taylor-Young à l’ordre deux en \( \delta \rho \), on obtient :
+\begin{eqnarray}
+	\mathcal{A}(\rho^c + \delta \rho) & \underset{ \delta \rho \to 0 }{=} & \mathcal{A}(\rho^c) + \frac{1}{2} \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c} (\delta \rho) + \mathcal{O}((\delta \rho)^3),
+\end{eqnarray}
+où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) désigne la forme bilinéaire symétrique (a priori définie positive) associée à la hessienne de l’action. Celle-ci s’écrit également à partir de la dérivée fonctionnelle seconde de l’entropie de Yang-Yang au point \( \rho^c \) (via l’équation~\eqref{eq:action}) :
+\begin{eqnarray*}
+	\left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} &=& -L \left. \frac{\delta^2 \mathcal{S}_{YY}}{{\delta \rho}^2} \right|_{\rho^c}.
+\end{eqnarray*}
+
+La dérivée seconde \( \left. \frac{\delta^2 \mathcal{S}_{YY}}{\delta \rho^2} \right|_{\rho^c} \) étant strictement négative, on conclut que \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) est bien définie positive. La taille \( L \) étant grande devant les autres échelles du problème , ainsi,l’action croît fortement dès que la configuration \( \rho \) s’éloigne de \( \rho^c \) (voir Fig.~\ref{fig:grap.A}).
+
+Cette approximation quadratique constitue la base du traitement gaussien des fluctuations autour de l’état typique, permettant d’accéder aux corrélations et à la structure fine de l’ensemble statistique effectif.
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\begin{tikzpicture}
+			\begin{scope}[shift={(2,0)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+					\input{Figures/Fonc_A_code}	
+			
+				\end{scope}
+			
+				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+			\end{scope}
+					
+		\end{tikzpicture}
+		\caption{}
+		\label{fig:grap.A}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.65\textwidth}
+		\begin{tikzpicture}
+
+			\begin{scope}[shift={(-11,2.7)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+					\input{Figures/Occupation_theta_code}	
+			
+				\end{scope}
+				\begin{scope}[scale=1]
+					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+				\end{scope}	
+			\end{scope}
+			
+		\end{tikzpicture}
+		\caption{}
+		\label{fig.fluctu.A}
+	\end{subfigure}
+	\caption{}
+	\label{fig:diag_fig}
+\end{figure}
+
+
+%\begin{figure}[H]
+%	\centering 
+%	\begin{tikzpicture}
+%		\begin{scope}[shift={(0,0)}]
+%			\begin{scope}[transform canvas={scale=0.6}]
+%				\input{Figures/Fonc_A_code}	
+			
+%			\end{scope}
+			
+%			\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+%		\end{scope}
+		
+%		\begin{scope}[shift={(19,-1)}]
+%			\begin{scope}[transform canvas={scale=0.6}]
+%				\input{Figures/Occupation_theta_code}	
+			
+%			\end{scope}
+%			\begin{scope}[scale=1]
+%				\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+%			\end{scope}	
+%		\end{scope}
+
+		
+			
+%	\end{tikzpicture}	
+%	\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+%	\label{fig.fluctu.A}
+%\end{figure}
+
+
+
+\section{Fluctuations autour du profil stationnaire}
+
+%Dans les systèmes intégrables à grand nombre de particules, la description hydrodynamique est régie par la densité de rapidité \( \rho(\theta) \), qui encode la répartition des quasi-particules sur l’axe des rapidités \( \theta \). À l'équilibre, le profil stationnaire \( \rho^c(\theta) \) maximise la probabilité d’observer une configuration donnée. On s’intéresse ici aux fluctuations autour de ce profil stationnaire, et plus précisément aux corrélations à deux points des fluctuations \( \delta \rho(\theta) = \rho(\theta) - \rho^c(\theta) \).
+
+%Pour ce faire, 
+On discrétise l’axe des rapidités en petites cellules \( [\theta, \theta + \delta\theta] \), chacune contenant un nombre moyen de quasi-particules donné par \( L \rho(\theta) \, \delta\theta \).%, où \( L \) désigne la taille du système. 
+
+Dans cette discrétisation, le développement quadratique de l’action \( \mathcal{A}[\rho] \) autour du profil stationnaire \( \rho^c \) s’écrit comme un produis scalaire:
+
+\begin{eqnarray*}
+    \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho )  &= &  
+    \sum_{a,b} \delta \rho(\theta_a)  
+    \frac{\partial^2 \mathcal{A}}{\partial (\delta \rho(\theta_a)) \, \partial (\delta \rho(\theta_b))} \Big|_{\rho^c} 
+    \delta \rho(\theta_b).
+\end{eqnarray*}
+
+Cette structure quadratique mène naturellement à une intégrale fonctionnelle gaussienne pour la probabilité des fluctuations. Les corrélations à deux points des fluctuations s’expriment alors comme :
+
+\begin{eqnarray*}
+    \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle 
+    & = &   
+    \frac{  \displaystyle \int \mathcal{D}(\delta \rho) \, \delta \rho(\theta) \, \delta \rho(\theta') 
+    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
+    \operatormat{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) }
+    { \displaystyle \int \mathcal{D}(\delta \rho) \, 
+    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
+    \operatormat{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) } 
+    = \left( \operatormat{A}^{-1} \right)_{\theta, \theta'},
+\end{eqnarray*}
+
+où \( \operatormat{A} \) est la matrice hessienne de l’action évaluée au point stationnaire \( \rho^c \), c’est-à-dire :
+
+\begin{eqnarray*}
+    \operatormat{A}_{\theta, \theta'} & = & \left. 
+    \frac{\partial^2 \mathcal{A}}{\partial(\delta \rho(\theta)) \, \partial (\delta \rho(\theta'))}\right|_{\rho^c} = - L  \left. 
+    \frac{\partial^2 \mathcal{S}_{YY}}{\partial(\delta \rho(\theta)) \, \partial (\delta \rho(\theta'))}\right|_{\rho^c}
+    .
+\end{eqnarray*}
+
+Dans le cas considéré, le profil stationnaire s’écrit sous la forme \( \rho^c = \rho^c_s \, \nu^c \), avec \( \nu^c \) la fonction d’occupation des quasi-particules et \( \rho^c_s \) la densité d’états disponibles. La matrice \( \operatormat{A} \) se décompose alors en deux contributions :
+
+\begin{eqnarray*}
+    \operatormat{A} & = & \operatormat{D} + \delta\theta \, \operatormat{V},
+\end{eqnarray*}
+
+avec une partie diagonale:
+
+\begin{eqnarray*}
+    D_{\theta, \theta'} & = &
+    L \, \delta\theta \left( \frac{1}{\rho^c_s(\theta) \nu^c(\theta)(1 - \nu^c(\theta)) } \right) 
+    \delta_{\theta,\theta'}, 
+\end{eqnarray*}
+
+et 
+
+\begin{eqnarray*}
+    V_{\theta, \theta'}  &=& L \, \delta\theta \left\{ 
+    - \left( 
+     \frac{1}{\rho^c_s(\theta)(1 - \nu^c(\theta))} 
+    +  \frac{1}{\rho^c_s(\theta')(1 - \nu^c(\theta'))}
+    \right) \frac{\Delta(\theta' - \theta)}{2\pi}  
+    +  \sum_{\theta''} \delta\theta 
+    \frac{\nu^c(\theta'') }{\rho^c_s(\theta'')  (1 - \nu^c(\theta'') )} 
+    \frac{\Delta(\theta'' - \theta)}{2\pi} 
+    \frac{\Delta(\theta'' - \theta')}{2\pi} \right\}.
+\end{eqnarray*}
+
+Pour obtenir une expression explicite de la matrice $\operatormat{A}^{-1}$, il est tentant d'utiliser une approche basée sur la théorie des perturbations, ce qui revient à appliquer la formule de Neumann. Toutefois, cette méthode n'est pas applicable ici car $\left\| \delta\theta \, \operatormat{D}^{-1} \operatormat{V} \right\| > 1$.
+De plus, même en faisant tendre $\delta\theta \to 0$, cette norme reste constante. Cela est dû à une dégénérescence des valeurs propres de la matrice $\operatormat{A}^{-1}$ lorsque $\delta\theta$ devient petit.
+
+Une écriture possible de l'inverse de la matrice $\operatormat{A}^{-1}$ est donnée par :
+
+\begin{eqnarray*}
+    \operatormat{A}^{-1} &= &\operatormat{D}^{-1} - \delta\theta \,  \operatormat{D}^{-1}\operatormat{V} \operatormat{A}^{-1},
+\end{eqnarray*}
+
+où le premier terme est singulier (irrégulier) et le second régulier.\\
+
+En faisant tendre la tailles des cellules vers 0 , \( \delta \theta \to 0 \), 
+\begin{eqnarray*}
+	\sum_{\theta_a} \delta \theta & \underset{\delta \theta \to 0 }{\rightarrow} & \int d\theta ,	
+\end{eqnarray*}
+les fluctuations s'écrivent alors sous la forme :
+
+
+\begin{eqnarray*}
+	\langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle  &= & \frac{\rho^c_s(\theta) \nu^c(\theta)(1 - \nu^c(\theta))}{L \, \delta\theta} \delta ( \theta - \theta')		\\
+	& + & L \, \rho^c_s(\theta) \nu^c(\theta)(1 - \nu^c(\theta)) \left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho^c_s(\theta) (1 - \nu^c(\theta))} +  \frac{1}{\rho^c_s (1 - \nu^c)}\right )  \, \langle \delta \rho \, \delta \rho(\theta') \rangle  \right. \right .\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu^c}{\rho_s^c ( 1 - \nu )}  \, \left ( \frac{\Delta}{2\pi} \star \langle \delta \rho \, \delta \rho(\theta') \rangle   \right )  \right ] \right \} (\theta),
+\end{eqnarray*}
+
+où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
+
+%avec une permière partie irrégulière et une seconde partide régulière .
+
+
+
+%Cette matrice encode la structure des fluctuations du système dans l’espace des configurations de rapidité.
+
+
+
+\section{Fluctuation du nombre d'atomes et de l'énergie}
+
+
+
+
+Il est maintenant pertinent de tester notre expression des fluctuations.
+
+Les fluctuations des observables "nombre d’atomes" \( \operator{\mathcal{N}} \) et "énergie" \( \operator{\mathcal{E}} \) peuvent être exprimées à l’aide des fluctuations de \( \rho \) :
+
+\begin{eqnarray*}
+    \left \langle  \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
+    \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \left( -\mu + \frac{1}{2} m \theta_a^2 \right) \left( -\mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
+\end{eqnarray*}
+
+où \( \langle \operator{\mathcal{O}}_i \rangle \) désigne la moyenne de l’observable \( \operator{\mathcal{O}}_i \), \( m \) la masse des atomes et \( \mu \) le potentiel chimique.\\
+
+Dans la section \{??\}, nous avons vu que la variance d’une observable \( \operator{\mathcal{O}}_i \), autrement dit ses fluctuations, peut également s’exprimer comme une dérivée thermodynamique de sa moyenne :
+
+\begin{eqnarray*}
+    \Delta_{\operator{\mathcal{O}}_i}^2 = - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}},
+\end{eqnarray*}
+
+où \( \beta_i \) est la variable conjuguée à \( \langle \operator{\mathcal{O}}_i \rangle \). En particulier, les fluctuations du nombre d’atomes et de l’énergie peuvent s’écrire :
+
+\begin{eqnarray*}
+    \Delta_{\operator{\mathcal{N}}}^2 &=& \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \\
+    \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu,
+\end{eqnarray*}
+
+avec \( \beta = (k_B T)^{-1} \), \( T \) étant la température.
+
+Les quantités \( \left \langle \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{N}}}^2 \) sont analytiquement équivalentes, de même que \( \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \).
+
+Nous souhaitons maintenant effectuer une comparaison numérique entre ces deux approches. Pour ce faire, nous avons d'abord résolu numériquement l’équation \{??\} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d’obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \).
+
+Nous avons ensuite calculé les fluctuations de \( \rho \) pour une densité spatiale fixée à \( n = 10~\mu \mathrm{m}^{-1} \), et pour différentes températures \( T \) allant de \( 5.7~\mathrm{K} \) à \( 53.5~\mathrm{nK} \). Le potentiel chimique \( \mu \) est ici une fonction de \( T \) et de \( n \). Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger. En abscisse, nous avons le logarithme décimal du paramètre d’interaction de Lieb-Liniger \( \gamma = \frac{m g}{\hbar^2 n} \), et en ordonnée le logarithme décimal de \( t = \frac{\hbar^2}{\beta m g^2} \) (voir Fig.~\ref{fig:diag}).
+
+Ce même diagramme contient également un point rouge correspondant à \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A}).
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{Figures/diagram.png}
+		\caption{}
+		\label{fig:diag}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{Figures/fluctu.png}
+		\caption{Fluctuations mesurées}
+		\label{fig.fluctu.A}
+	\end{subfigure}
+	\caption{(a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). (b) Représentation en niveaux de couleur des fluctuations \( \delta \rho \) pour \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \) (point rouge dans (a)).}
+	\label{fig:diag_fig}
+\end{figure}
+
+Nous calculons ensuite les moyennes des observables :
+
+\begin{eqnarray*}
+    \langle \operator{\mathcal{N}} \rangle &=& L \int \rho(\theta) \, d\theta, \\
+    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \left( - \mu + \frac{1}{2} m \theta^2 \right) \rho(\theta) \, d\theta,
+\end{eqnarray*}
+
+pour chaque point du diagramme (Fig.~\ref{fig:diag}). En faisant varier leur variable conjuguée, nous accédons alors aux fluctuations $\Delta_{\operator{\mathcal{N}}}^2 $ et $\Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2$.
+
+%\[
+%\Delta_{\operator{\mathcal{N}}}^2 = \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \quad
+%\Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 = - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.
+%\]
+
+Les résultats obtenus à l’aide de cette méthode thermodynamique sont comparés à ceux issus du calcul direct des fluctuations de \( \rho \). Ces comparaisons sont représentées sur la Fig.~\ref{fig.fluctu.A_com}, et montrent une excellente concordance entre les deux approches.
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Figures/fluctuations_plot_log_gamma=-1.342.png}	
+	%\includegraphics[width=1\textwidth]{Figures/fluctuations_relativ_plot_log_gamma=-1.342.png}	
+	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.}
+	\label{fig.fluctu.A_com}
+\end{figure}
+
 {\color{blue} 
 %Dans ce chapitre, nous nous intéressons aux fluctuations de la distribution de rapidité \( \delta \rho \) autour d'une distribution de référence \( \rho^c \), qui maximise la contribution à la fonction de partition des états, exprimée comme une fonctionnelle de la distribution \( \rho \) : 
 
@@ -11,24 +297,10 @@
 
 %où \( \mathcal{S}_{YY} \) est la fonctionnelle d'entropie de Yang-Yang, définie dans (\ref{??}), et \( f \) est la fonction paramétrant les charges, introduite dans (\ref{??}).  
 }
-
-La fonction de partition des états s’exprime comme une fonctionnelle de la distribution de rapidité \( \rho \) :
-\begin{eqnarray*}
-	\Xi & = & \sum_\rho \exp\left( -\mathcal{A}(\rho) \right).
-\end{eqnarray*}
-
-Dans la section \textit{\textbf{Entropie de Yang-Yang}} (\ref{??}), nous avons montré que l’action \( \mathcal{A}(\rho) \) s’écrit sous la forme :
-\begin{eqnarray*}
-	\mathcal{A}(\rho) & \doteq & - L\mathcal{S}_{YY}(\rho) + L \int f(\theta)\, \rho(\theta) \, d\theta,
-\end{eqnarray*}
-où \( \mathcal{S}_{YY} \) désigne la fonctionnelle d'entropie de Yang-Yang, définie en (\ref{??}), et \( f \) la fonction génératrice associée aux charges conservées, introduite en (\ref{??}).
-
 {\color{blue} 
 %Dans cette même section {\em \bf Entropie de Yang-Yang} (\ref{??}), nous avons établi un lien entre \( f \) et distribution de référence \( \rho^c \), qui maximise la contribution à la fonction de partition des états .\\
 
 }
-
-Dans cette même section, nous avons également mis en évidence que la distribution \( \rho^c \) qui maximise la contribution à la fonction de partition correspond à un point stationnaire de l'action, et est entièrement déterminée par la fonction \( f \). Cette distribution \( \rho^c \) définit ainsi l’état macroscopique typique du système au sein de l’ensemble statistique considéré.
 
 {\color{blue} 
 
@@ -48,52 +320,6 @@ Dans cette même section, nous avons également mis en évidence que la distribu
 %une expression quadratique pour l'action à l'ordre dominant en \( \delta \Pi \) avec $\left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c}$ la forme quadratique définie positive (Fig (\ref{fig.fluctu.A})).
 
 }
-
-
-
-
-
-L’hypothèse selon laquelle, après relaxation, le système est décrit par un ensemble généralisé de Gibbs (GGE) constitue un fondement majeur de notre compréhension des dynamiques hors équilibre dans les systèmes intégrables. Cette hypothèse a des implications théoriques profondes et mérite d’être testée expérimentalement. Toutefois, la seule connaissance de la distribution de rapidité moyenne \( \rho^c \) ne permet pas de confirmer l'adéquation du GGE. En effet, plusieurs ensembles statistiques peuvent mener à une même valeur moyenne de \( \rho \). Pour lever cette ambiguïté, il est nécessaire d’étudier les fluctuations autour de la distribution typique, notées \( \delta \rho \), définies par \( \rho = \rho^c + \delta \rho \).
-
-Afin de caractériser ces fluctuations, nous développons l’action \( \mathcal{A}(\rho) \) au voisinage de \( \rho^c \). Par construction, \( \rho^c \) étant un point stationnaire, la différentielle première de \( \mathcal{A} \) en ce point est nulle : \( d\mathcal{A}_{\rho^c} = 0 \) (cf. équation~(\ref{??})). En appliquant le développement de Taylor-Young à l’ordre deux en \( \delta \rho \), nous obtenons :
-\begin{eqnarray*}
-	\mathcal{A}(\rho^c + \delta \rho) & \underset{ \delta \rho \to 0 }{=} & \mathcal{A}(\rho^c)  + \frac{1}{2} \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} (\delta \rho) + \mathcal{O}((\delta \rho)^3),
-\end{eqnarray*}
-où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) désigne la forme linéaire symétrique (a priori définie positive) associée à la hessienne de l’action, illustrée en Fig.~(\ref{fig.fluctu.A}). Cette approximation quadratique constitue la base du traitement gaussien des fluctuations autour de l’état typique, permettant d’accéder aux corrélations et à la structure fine de l’ensemble statistique effectif.
-
-
-
-
-
-\begin{figure}[H]
-	\centering 
-	\begin{tikzpicture}
-		\begin{scope}[shift={(0,0)}]
-			\begin{scope}[transform canvas={scale=0.6}]
-				\input{Figures/Fonc_A_code}	
-			
-			\end{scope}
-			
-			\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
-		\end{scope}
-		
-		\begin{scope}[shift={(19,-1)}]
-			\begin{scope}[transform canvas={scale=0.6}]
-				\input{Figures/Occupation_theta_code}	
-			
-			\end{scope}
-			\begin{scope}[scale=1]
-				\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
-			\end{scope}	
-		\end{scope}
-
-		
-				
-			
-	\end{tikzpicture}	
-	\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
-	\label{fig.fluctu.A}
-\end{figure}
 
 {\color{blue}
 %On discrétise l'axe des rapidités en  petite cellule de rapidité $[\theta, \theta+\delta\theta]$, qui contient $L\rho(\theta) \delta \theta$ rapidités. 
@@ -145,76 +371,6 @@ où \( \left. \frac{\delta^2 \mathcal{A}}{\delta \rho^2} \right|_{\rho^c} \) dé
 
 }
 
-\section{Fluctuations autour du profil stationnaire}
-
-Dans les systèmes intégrables à grand nombre de particules, la description hydrodynamique est régie par la densité de rapidité \( \rho(\theta) \), qui encode la répartition des quasi-particules sur l’axe des rapidités \( \theta \). À l'équilibre, le profil stationnaire \( \rho^c(\theta) \) maximise la probabilité d’observer une configuration donnée. On s’intéresse ici aux fluctuations autour de ce profil stationnaire, et plus précisément aux corrélations à deux points des fluctuations \( \delta \rho(\theta) = \rho(\theta) - \rho^c(\theta) \).
-
-Pour ce faire, on discrétise l’axe des rapidités en petites cellules \( [\theta, \theta + \delta\theta] \), chacune contenant un nombre moyen de quasi-particules donné par \( L \rho(\theta) \, \delta\theta \), où \( L \) désigne la taille du système. 
-
-Dans cette discrétisation, le développement quadratique de l’action \( \mathcal{A}[\rho] \) autour du profil stationnaire \( \rho^c \) s’écrit comme un produis scalaire:
-
-\begin{equation*}
-    \left. \frac{\delta^2 \mathcal{A}}{{\delta \rho}^2} \right|_{\rho^c}(\delta \rho ) =  
-    \sum_{a,b} \delta \rho(\theta_a)  
-    \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta_a) \, \partial \delta \rho(\theta_b)} \Big|_{\rho^c} 
-    \delta \rho(\theta_b).
-\end{equation*}
-
-Cette structure quadratique mène naturellement à une intégrale fonctionnelle gaussienne pour la probabilité des fluctuations. Les corrélations à deux points des fluctuations s’expriment alors comme :
-
-\begin{equation*}
-    \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle 
-    =  
-    \frac{ \int \mathcal{D} \delta \rho \, \delta \rho(\theta) \, \delta \rho(\theta') 
-    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
-    \operator{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) }
-    { \int \mathcal{D} \delta \rho \, 
-    \exp\left( -\frac{1}{2} \sum_{a,b} \delta \rho(\theta_a) \, 
-    \operator{A}_{\theta_a, \theta_b} \, \delta \rho(\theta_b) \right) } 
-    = \left( \operator{A}^{-1} \right)_{\theta, \theta'},
-\end{equation*}
-
-où \( \operator{A} \) est la matrice hessienne de l’action évaluée au point stationnaire \( \rho^c \), c’est-à-dire :
-
-\begin{equation*}
-    \mathbf{A}_{\theta, \theta'} = \left. 
-    \frac{\partial^2 \mathcal{A}}{\partial \delta \rho(\theta) \, \partial \delta \rho(\theta')} 
-    \right|_{\rho^c}.
-\end{equation*}
-
-Dans le cas considéré, le profil stationnaire s’écrit sous la forme \( \rho^c = \rho^c_s \, \nu^c \), avec \( \nu^c \) la fonction d’occupation des quasi-particules et \( \rho^c_s \) la densité d’états disponibles. La matrice \( \mathbf{A} \) se décompose alors en deux contributions :
-
-\begin{equation*}
-    \mathbf{A} = \mathbf{A}^{(0)} + \delta\theta \, \mathbf{V},
-\end{equation*}
-
-avec :
-
-\begin{equation*}
-    A^{(0)}_{\theta, \theta'} = 
-    L \, \delta\theta \left( \frac{1}{\rho^c_s(\theta) (1 - \nu^c(\theta)) \nu^c(\theta)} \right) 
-    \delta(\theta - \theta'), 
-\end{equation*}
-
-et
-
-\begin{equation*}
-    V_{\theta, \theta'} = L \, \delta\theta \left\{ 
-    - \left[ 
-    \left( \frac{1}{\rho^c_s(1 - \nu^c)} \right)(\theta) 
-    + \left( \frac{1}{\rho^c_s(1 - \nu^c)} \right)(\theta') 
-    \right] \frac{\Delta(\theta' - \theta)}{2\pi} \right. 
-    + \left. \int d\theta'' 
-    \left( \frac{\nu^c}{\rho^c_s (1 - \nu^c)} \right)(\theta'') 
-    \frac{\Delta(\theta'' - \theta)}{2\pi} 
-    \frac{\Delta(\theta'' - \theta')}{2\pi} \right\}.
-\end{equation*}
-
-Cette matrice encode la structure des fluctuations du système dans l’espace des configurations de rapidité.
-
-
-
-\subsection{Fluctuation du nombre d'atomes et de l'énergie}
 
 {\color{blue} 
 %Maintenant il est interressent de tester notre expression des fluctuation.\\
@@ -352,88 +508,51 @@ Cette matrice encode la structure des fluctuations du système dans l’espace d
 }
 
 
-Il est maintenant pertinent de tester notre expression des fluctuations.
+%\subsection{Approximation des fluctuation de $\rho$}
 
-Les fluctuations des observables "nombre d’atomes" \( \operator{\mathcal{N}} \) et "énergie" \( \operator{\mathcal{E}} \) peuvent être exprimées à l’aide des fluctuations de \( \rho \) :
+%On est confient sur notre formule des fluctuation de $rho$. Mais là pour l'instant on a une formule analytique pour l'inverce des fluctuation. On aimerais avoir une formule analytique pour les fluctuation. On vas cherche une approxiamation. En voyant la forme de $\operator{A}$  l'inverce des fluctuaution (ref ??) il est tantant de d'aplique une théorie des perturtion. D'apres Neuman : 
+%\begin{eqnarray*}
+%	\operator{A}^{-1} & = & \sum_{k = 0 } (- \delta \theta )^{k} \left ( \left (  \operator{A}^{(0)} \right ) ^{-1}	 \operator{V} \right )^k  \operator{A}^{(0)} 
+%\end{eqnarray*}
+%avec $ \left \Vert  \delta \theta  \left (  \operator{A}^{(0)} \right ) ^{-1}	 \operator{V} \right  \Vert  < 1 $. Pour satisfère ce critais on peut se dire d'ajuster $\delta \theta$, puis que l'on veux de faire tendre $\delta \theta$ vers 0. Mais $\delta \theta  \left (  \operator{A}^{(0)} \right ) ^{-1}	 \operator{V}$ est indépendant de $\delta \theta$ et sa norme est superieur de 1 . On on ne peut pas utiliser de thèorie des pertubation.\\
 
-\begin{eqnarray*}
-    \left \langle  \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
-    \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \left( -\mu + \frac{1}{2} m \theta_a^2 \right) \left( -\mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
-\end{eqnarray*}
+%Une autre idée est d'écrire 
 
-où \( \langle \operator{\mathcal{O}}_i \rangle \) désigne la moyenne de l’observable \( \operator{\mathcal{O}}_i \), \( m \) la masse des atomes et \( \mu \) le potentiel chimique.\\
+%\begin{eqnarray*}
+%	\langle \delta \rho(\theta) 	 \delta \rho(\theta') \rangle & = & \operator{B}_{\theta , \theta'} 
+%\end{eqnarray*}
 
-Dans la section \{??\}, nous avons vu que la variance d’une observable \( \operator{\mathcal{O}}_i \), autrement dit ses fluctuations, peut également s’exprimer comme une dérivée thermodynamique de sa moyenne :
+%avec $\operator{B}$ une matrice $2 \times 2$.\\
 
-\begin{eqnarray*}
-    \Delta_{\operator{\mathcal{O}}_i}^2 = - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}},
-\end{eqnarray*}
+%Si on note $E$ l'espace où se trouve les $\delta \rho (\theta)$ , et $F$ est sous espace de $F$ tel que $E= F \oplus F^\perp $ de sorte que l'on peut écrire la matrice $\operator{A}$ par bloc 
+%\begin{eqnarray*}
+%	\operator{A} & = & \left (  \begin{array}{cc}\operator{A}_{ \vert F } & \operator{A}_{ \vert F , F^\perp } \\ \operator{A}_{ \vert F^\perp  , F } & \operator{A}_{ \vert F^\perp  } \end{array}\right ) 	
+%\end{eqnarray*}
 
-où \( \beta_i \) est la variable conjuguée à \( \langle \operator{\mathcal{O}}_i \rangle \). En particulier, les fluctuations du nombre d’atomes et de l’énergie peuvent s’écrire :
+%De plus $\operator{A}$ est inversible et symétrique donc d'apres le complement de Schur 
 
-\begin{eqnarray*}
-    \Delta_{\operator{\mathcal{N}}}^2 &=& \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \\
-    \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu,
-\end{eqnarray*}
+%\begin{eqnarray*}
+%	\left (\operator{A}^{-1} \right )_{\vert F} & =& \left ( \operator{A}_{\vert F } - \operator{A}_{\vert F , F^\perp  } \left ( \operator{A}_{\vert F^\perp } \right )^{-1} \operator{A}_{\vert F^\perp , F  }\right )^{-1} 	,\\
+%	& = & 	\left ( \operator{A}_{\vert F }\right )^{-1} + \left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}^{-1} \right )_{\vert F^\perp}  \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1}. 
+%\end{eqnarray*}
 
-avec \( \beta = (k_B T)^{-1} \), \( T \) étant la température.
+%Quite a échanger $F$ et $F^\perp$, on peut écrire de la meme manière $\left (\operator{A}^{-1} \right )_{\vert F^\perp}$ et réinjecter , $\left (\operator{A}^{-1} \right )_{\vert F}$ est un point fixe tel que  
 
-Les quantités \( \left \langle \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{N}}}^2 \) sont analytiquement équivalentes, de même que \( \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \).
+%\begin{eqnarray*}
+%	\left (\operator{A}^{-1} \right )_{\vert F} & = & 	\left ( \operator{A}_{\vert F }\right )^{-1} + \left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}_{\vert F^\perp} \right )^{-1}  \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1} + \\
+%	& +  & 	\left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}_{\vert F^\perp} \right )^{-1}\operator{A}_{\vert F^\perp , F } \left (\operator{A}^{-1} \right )_{\vert F} \operator{A}_{\vert F , F^\perp }  \left (\operator{A}_{\vert F^\perp} \right )^{-1} \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1}.
+%\end{eqnarray*}
 
-Nous souhaitons maintenant effectuer une comparaison numérique entre ces deux approches. Pour ce faire, nous avons d'abord résolu numériquement l’équation \{??\} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d’obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \).
+%Et si on réinjecte de maniere iterative il vien que 
 
-Nous avons ensuite calculé les fluctuations de \( \rho \) pour une densité spatiale fixée à \( n = 10~\mu \mathrm{m}^{-1} \), et pour différentes températures \( T \) allant de \( 5.7~\mathrm{K} \) à \( 53.5~\mathrm{nK} \). Le potentiel chimique \( \mu \) est ici une fonction de \( T \) et de \( n \). Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger. En abscisse, nous avons le logarithme décimal du paramètre d’interaction de Lieb-Liniger \( \gamma = \frac{m g}{\hbar^2 n} \), et en ordonnée le logarithme décimal de \( t = \frac{\hbar^2}{\beta m g^2} \) (voir Fig.~\ref{fig:diag}).
+%\begin{eqnarray*}
+%	\left (\operator{A}^{-1} \right )_{\vert F} & = & \sum_{k = 1 }^\infty \left [  \left ( \left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}_{\vert F^\perp} \right )^{-1}\operator{A}_{\vert F^\perp , F } \right )^k  \right .\\
+%	&& \left . \times \left \{  \left ( \operator{A}_{\vert F }\right )^{-1} + \left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}_{\vert F^\perp} \right )^{-1}  \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1} \right \} \left (  \operator{A}_{\vert F , F^\perp }  \left (\operator{A}_{\vert F^\perp} \right )^{-1} \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1} \right )^{k} \right ]  + \\
+%	 & + & \underset{ k \to \infty }{\lim} \left ( \left ( \operator{A}_{\vert F }\right )^{-1} \operator{A}_{\vert F , F^\perp }\left (\operator{A}_{\vert F^\perp} \right )^{-1}\operator{A}_{\vert F^\perp , F } \right )^k \left (\operator{A}^{-1} \right )_{\vert F}  \left (  \operator{A}_{\vert F , F^\perp }  \left (\operator{A}_{\vert F^\perp} \right )^{-1} \operator{A}_{\vert F^\perp , F } \left ( \operator{A}_{\vert F }\right )^{-1} \right )^{k}	 
+%\end{eqnarray*}
 
-Ce même diagramme contient également un point rouge correspondant à \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A}).
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{Figures/diagram.png}
-		\caption{}
-		\label{fig:diag}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{Figures/fluctu.png}
-		\caption{Fluctuations mesurées}
-		\label{fig.fluctu.A}
-	\end{subfigure}
-	\caption{(a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). (b) Représentation en niveaux de couleur des fluctuations \( \delta \rho \) pour \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \) (point rouge dans (a)).}
-	\label{fig:diag_fig}
-\end{figure}
 
-Nous calculons ensuite les moyennes des observables :
-
-\begin{eqnarray*}
-    \langle \operator{\mathcal{N}} \rangle &=& L \int \rho(\theta) \, d\theta, \\
-    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \left( - \mu + \frac{1}{2} m \theta^2 \right) \rho(\theta) \, d\theta,
-\end{eqnarray*}
-
-pour chaque point du diagramme (Fig.~\ref{fig:diag}). En faisant varier leur variable conjuguée, nous accédons alors aux fluctuations :
-
-\[
-\Delta_{\operator{\mathcal{N}}}^2 = \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \quad
-\Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 = - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu.
-\]
-
-Les résultats obtenus à l’aide de cette méthode thermodynamique sont comparés à ceux issus du calcul direct des fluctuations de \( \rho \). Ces comparaisons sont représentées sur la Fig.~\ref{fig.fluctu.A_com}, et montrent une excellente concordance entre les deux approches.
-
-\begin{figure}[H]
-	\centering 
-	\includegraphics[width=1\textwidth]{Figures/fluctuations_plot_log_gamma=-1.342.png}	
-	\includegraphics[width=1\textwidth]{Figures/fluctuations_relativ_plot_log_gamma=-1.342.png}	
-	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.}
-	\label{fig.fluctu.A_com}
-\end{figure}
-
-\subsection{Approximation des fluctuation de $\rho$}
-
-On est confient sur notre formule des fluctuation de $rho$. Mais là pour l'instant on a une formule analytique pour l'inverce des fluctuation. On aimerais avoir une formule analytique pour les fluctuation. On vas cherche une approxiamation. En voyant la forme de $\operator{A}$  l'inverce des fluctuaution (ref ??) il est tantant de d'aplique une théorie des perturtion. D'apres Neuman : 
-\begin{eqnarray*}
-	\operator{A}^{-1} & = & \sum_{k = 0 } (- \delta \theta )^{k} \left ( \left (  \operator{A}^{(0)} \right ) ^{-1}	 \operator{V} \right )^k  \operator{A}^{(0)} 
-\end{eqnarray*}
-avec $ \left \Vert  \delta \theta  \left (  \operator{A}^{(0)} \right ) ^{-1}	 \operator{V} \right  \Vert  < 1 $ ...
 
 
 
