@@ -369,6 +369,27 @@ table [meta=z] {./data/donnees1.dat};
 	\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x < 0 ) $}
 }
 
+% distribution x > 0
+\newcommand{\CoupureUnZeroDistributionPlus}[0]{
+	\begin{scope}
+		\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
+
+		%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
+		%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
+    	\draw[line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut_minus.table};
+    	\draw[line width=1.8ex , color = \colorFour] 
+    		(-0.3, -5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , -5 )	
+    		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, above left ]{\huge $0$ } ( 0.3  , 0 )	
+    	;			
+	\end{scope}	
+				
+	\draw
+		(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,right]{\huge $\theta ~ (\mu m / {ms}) $ } ( 10  , 0 )
+		(0, 1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\huge $\nu ( x > 0 ) $ } ( 0  , -6 )
+	;	
+	%\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x > 0 ) $}
+}
+
 
 
 \begin{tikzpicture}
@@ -399,54 +420,7 @@ table [meta=z] {./data/donnees1.dat};
 % coupuur 1 O ms	
 \node at (0,-35) [rectangle ]{
 	\begin{tikzpicture}[transform canvas={scale=1}] 
-		
-		% diagrale de phase 
-		\node at (0,0) [circle, ] {
-			\begin{tikzpicture}[transform canvas={scale=1}] 
-				
-			\end{tikzpicture}
-			};
-	
-		% density 
-		\node at (0,13) [circle, ] {
-			\begin{tikzpicture}[transform canvas={scale=1}] 
-				
-			\end{tikzpicture}
-
-			};
-		
-		% distribution x < 0 
-		\node at (-13,0) [circle,   rotate = 90 , xscale = 1   ] {
-			\begin{tikzpicture}[transform canvas={scale=1} ] 
-					
-			\end{tikzpicture}
-
-			};
-	
-		% distribution x > 0 
-		\node at (13,0) [circle,   rotate = 90 , yscale = 1   ] {
-			\begin{tikzpicture}[transform canvas={scale=1} ] 
-				\begin{scope}
-					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}](-8.8,-8) rectangle (8.8,8);
-
-					%\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = \colorThree] plot coordinates {(-10,0) (-5,0.5) (-4,4) (4,4) (5,0.5) (10 , 0 )};
-					%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
-    				\draw[line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut_minus.table};
-    				\draw[line width=1.8ex , color = \colorFour] 
-    					(-0.3, -5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , -5 )	
-    					(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, above left ]{\huge $0$ } ( 0.3  , 0 )	
-    					;			
-				\end{scope}	
-				
-				\draw
-					(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,right]{\huge $\theta ~ (\mu m / {ms}) $ } ( 10  , 0 )
-					(0, 1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\huge $\nu ( x > 0 ) $ } ( 0  , -6 )
-				;	
-				%\Axesdistribution[$\theta ~ (\mu m / {ms}) $]{$\nu ( x > 0 ) $}		
-			\end{tikzpicture}
-
-			};
-
+		\DiagramDensityDistribution{\CoupureUnZeroDiagram}{\CoupureUnZeroDensity}{\CoupureUnZeroDistributionMinus}{\CoupureUnZeroDistributionPlus}
 	\end{tikzpicture}
 };
 
