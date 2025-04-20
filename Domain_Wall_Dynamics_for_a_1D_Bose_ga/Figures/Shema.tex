@@ -360,7 +360,7 @@ table [meta=z] {./data/donnees1.dat};
 					
 
     				\filldraw[smooth , line width=1.8ex , color = \colorFour , fill = none] plot coordinates {(-10,0)  (10 , 0 )};
-    				\draw[opacity = 0.3 , dashed , line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
+    				\draw[opacity = 0.6 , dashed , line width=1.8ex , color = \colorThree , fill = none] plot[smooth] file {data/insitut.table};
     				
     				\draw[line width=1.8ex , color = \colorFour]     	
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
@@ -369,7 +369,7 @@ table [meta=z] {./data/donnees1.dat};
 				\end{scope}	
 				
 				\draw 
-					(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
+					(4,5) edge [thick,line width=1.8ex,opacity = 0.6 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
     				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{+} )$ } ( 4.5  , 4 )	
     				
     			;	
@@ -491,7 +491,7 @@ table [meta=z] {./data/donnees1.dat};
     						
     				\draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/coupure_1_sur_18.table};	
     				
-    				\draw[opacity = 0.3 , line width=1.8ex , dashed ,  color = \colorFour , fill = none] plot[smooth] file {data/insitut.table};
+    				\draw[opacity = 0.6 , line width=1.8ex , dashed ,  color = \colorThree , fill = none] plot[smooth] file {data/insitut.table};
     				
     				\draw[line width=1.8ex , color = \colorFour] 
     					(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
@@ -502,7 +502,7 @@ table [meta=z] {./data/donnees1.dat};
     				(2, 0.2) edge[line width=1.8ex, color=\colorOne] 
         				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (2, -0.2)
         				
-        			(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 0^{-})$ } ( 4.5  , 5 )	
+        			(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 0^{-})$ } ( 4.5  , 5 )	
     				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 18 ~ms )$ } ( 4.5  , 4 )	
         		;		
 				\Axesdistribution[$\theta ~ (\mu m/ms)$]{$\nu ( x(s) ) $}
@@ -583,8 +583,9 @@ table [meta=z] {./data/donnees1.dat};
 					\clip[decorate, decoration={random steps, segment length=3pt, amplitude=1pt}]
         			(-9,-8) rectangle (8.3,8);
  
-        			\draw[opacity = 0.3 , line width=1.8ex , dashed ,  color = \colorFour , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
+        			
         			\draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/density_coupure_2_0.table};
+        			\draw[opacity = 0.6 , line width=1.8ex , dashed ,  color = \colorThree , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
      				 \draw[line width=1.8ex , color = \colorFour] 
         				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
         				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
@@ -594,7 +595,7 @@ table [meta=z] {./data/donnees1.dat};
 				\end{scope}
 				
 				\draw 
-					(-8,4) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $n( \tau = 0^{-})$ } ( -7.5  , 4 )	
+					(-8,4) edge [thick,line width=1.8ex,opacity = 0.6 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $n( \tau = 0^{-})$ } ( -7.5  , 4 )	
     				(-8,3) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $n( \tau = 0^{+} )$ } ( -7.5  , 3 )	
     				
     			;
