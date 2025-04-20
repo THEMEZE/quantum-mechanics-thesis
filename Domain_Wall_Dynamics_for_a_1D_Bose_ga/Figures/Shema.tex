@@ -168,24 +168,9 @@ table [meta=z] {./data/donnees1.dat};
 
 
 
-\begin{tikzpicture}
-
-% Placement de l'axe défini dans un cercle avec une échelle globale
-%\Axes 
-
-%% Pour voir plus precisement 
-\clip (-21 , -85) rectangle (58 , 21) ;\draw[color = red ] (-20 , -84) rectangle (58 , 20) ;
-%\clip (-20 , -15) rectangle (20 , 20) ; \draw[color = red ] (-20 , -14) rectangle (20 , 18) ; % voire Insitut
-%\clip (10 , -15) rectangle (55 , 20) ; \draw[color = red ] (10 , -15) rectangle (55 , 20) ; % voire coupure 1 0ms  
-%\clip (53 , -15) rectangle (95 , 20) ; \draw[color = red ] (53 , -15) rectangle (95 , 20) ; % voire coupure 1 18ms 
-%\clip (53 , -55) rectangle (95 , 20) ; \draw[color = red ] (53 , -55) rectangle (95 , 20) ; % voire coupure 1 18ms 
-
-
-
-% palette de couleur 
-\node at (40,6) [rectangle , rotate = -90] { 
-	\begin{tikzpicture}
-	
+%Palette 
+\newcommand{\Palettes}[0]{
+%\begin{tikzpicture}	
 	\node at (0,0) [rectangle, ] {
 		\begin{tikzpicture}
 			\Palette[\colorOne]
@@ -210,20 +195,13 @@ table [meta=z] {./data/donnees1.dat};
 		\begin{tikzpicture}
 			\Palette[\colorSix]
 		\end{tikzpicture}} ;
-	
-	\end{tikzpicture}
-	}; 
-	
+%\end{tikzpicture}
+}
 
-% Insitut 	
-\node at (21,0) [rectangle ]{
-	\begin{tikzpicture}[transform canvas={scale=1}] 
-		
-		% diagrale de phase 
-		\node at (0,0) [circle, ] {
-			\begin{tikzpicture}[transform canvas={scale=1}] 
-				
-				%\node at (0,0) [circle, ]{\includegraphics[width=2\textwidth]{data/insitut.pdf}};
+% Insitut
+%% diagramme de phase 
+\newcommand{\InsitutDiagram}[0]{
+%\node at (0,0) [circle, ]{\includegraphics[width=2\textwidth]{data/insitut.pdf}};
 
 				\begin{scope}
 	 				% Appliquer un rectangle décoré et clipper la zone
@@ -245,7 +223,36 @@ table [meta=z] {./data/donnees1.dat};
 				%\node at (0,0) [circle, ]{\includegraphics[width = 1.8\textwidth , trim=0cm 0.cm 0cm 0.cm, clip ]{data/complete_graph_insitut.pdf}}; 
 				
 				\node at (0,0) [circle] { \begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x ~ (\mu m) $]{$\theta ~ (\mu m / {ms}) $} \end{tikzpicture}};
+}
 
+
+
+\begin{tikzpicture}
+
+% Placement de l'axe défini dans un cercle avec une échelle globale
+%\Axes 
+
+%% Pour voir plus precisement 
+\clip (-21 , -85) rectangle (58 , 21) ;\draw[color = red ] (-20 , -84) rectangle (58 , 20) ;
+%\clip (-20 , -15) rectangle (20 , 20) ; \draw[color = red ] (-20 , -14) rectangle (20 , 18) ; % voire Insitut
+%\clip (10 , -15) rectangle (55 , 20) ; \draw[color = red ] (10 , -15) rectangle (55 , 20) ; % voire coupure 1 0ms  
+%\clip (53 , -15) rectangle (95 , 20) ; \draw[color = red ] (53 , -15) rectangle (95 , 20) ; % voire coupure 1 18ms 
+%\clip (53 , -55) rectangle (95 , 20) ; \draw[color = red ] (53 , -55) rectangle (95 , 20) ; % voire coupure 1 18ms 
+
+
+
+% palette de couleur 
+\node at (40,6) [rectangle , rotate = -90] { \tikz \Palettes  ;}; 
+	
+
+% Insitut 	
+\node at (21,0) [rectangle ]{
+	\begin{tikzpicture}[transform canvas={scale=1}] 
+		
+		% diagrale de phase 
+		\node at (0,0) [circle, ] {
+			\begin{tikzpicture}[transform canvas={scale=1}] 
+				\InsitutDiagram	
 			\end{tikzpicture}
 			};
 	
@@ -431,13 +438,13 @@ table [meta=z] {./data/donnees1.dat};
 					\begin{tikzpicture}[transform canvas={scale=1}] 
 						\Axesphase[$x/t ~ (\mu m / ms) $]{$\theta ~ (\mu m / {ms}) $}
 						\draw
-    						(1, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/t$} (1, -0.2)
-        					(0.2 , 2 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 2 )
-        					(1 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1 , 2.5 )
-        					(-0.2 , 2 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.5  , 2 )
-        					;
+    						(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x(s)/t$} (0.45, -0.2)
+        					(0.2 , 1.45 ) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.45 )
+        					(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 2.0 )
+        					(-0.2 , 1.45 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.45 )
+        				;
         					
 					\end{tikzpicture}};
 				\draw[opacity = 0.5 , dashed , line width=1.8ex , color = \colorTwo , fill = none] 
@@ -461,6 +468,12 @@ table [meta=z] {./data/donnees1.dat};
      				 \draw[line width=1.8ex , color = \colorFour] 
         				(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
         				(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
+        			;
+        			
+        			\draw
+    					(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x(s)/t$} (0.45, -0.2)
+        				(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 4.0 )
         			;	
 
 
@@ -499,8 +512,8 @@ table [meta=z] {./data/donnees1.dat};
     					;			
 				\end{scope}
 				\draw
-    				(2, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (2, -0.2)
+    				(1.45, 0.2) edge[line width=1.8ex, color=\colorThree] 
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (1.45, -0.2)
         				
         			(4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 0^{-})$ } ( 4.5  , 5 )	
     				(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x(s); t = 18 ~ms )$ } ( 4.5  , 4 )	
@@ -602,9 +615,14 @@ table [meta=z] {./data/donnees1.dat};
 		
 				\Axesdensity[$x~(\mu m)$]{$n ~ ({\mu m}^{-1})$}
 				
-				\draw[yshift = - 12]
+				\draw[yshift = -0.5 cm]
 					(0.1 , 0 )edge[line width=0.8ex, color=\colorThree , >-<, > = stealth,] node [pos = 0.5 , below]{\huge $\ell$}  ( 0.9 , 0) 	
 				;
+				\draw
+    				(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
+        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x(s)/t$} (0.45, -0.2)
+        			(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 4.0 )
+        		;
 				
 
         				
