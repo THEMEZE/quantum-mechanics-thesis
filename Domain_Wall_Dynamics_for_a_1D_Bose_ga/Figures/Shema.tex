@@ -774,6 +774,20 @@ table [meta=z] {./data/donnees1.dat};
     \InsitutDiagram
 \end{tikzpicture}
 
+\begin{tikzpicture}
+    \InsitutDensity
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \InsitutDistribution
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=1]
+    \DiagramDensityDistribution{\InsitutDiagram}{\InsitutDensity}{\InsitutDistribution}{\Vide}
+    \drawgrid{-10}{10}{-10}{10}
+    \draw[color = red ] (-10 , -10) rectangle (10 , 10) ;
+\end{tikzpicture}
+
 
 %\tikz \InsitutDiagram ; 
 
