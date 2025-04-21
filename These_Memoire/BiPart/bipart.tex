@@ -1,3 +1,21 @@
+\def\relativepath{BiPart/} % ← chemin relatif depuis le main
+
+\graphicspath{{\relativepath Figures/}} % pour les images
+\makeatletter
+\def\inputfile#1{\input{\relativepath#1}} % pour les sous-fichiers
+\makeatother
+
+\makeatletter
+\let\oldinput\input
+\def\input#1{\oldinput{\relativepath#1}}
+\makeatother
+
+% Utilisation :
+%\inputfile{texte.tex}
+%\includegraphics[width=\textwidth]{image1.png}
+
+
+
 %\chapter{Quench bipartite dans un gaz de Bose unidimensionnel}
 
 \section*{Introduction}
@@ -8,7 +26,7 @@ Nous préparons d’abord un gaz homogène. Ensuite, nous supprimons brutalement
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{Figures/fluctu.png}
+	\includegraphics[width=\textwidth , page = 3 ]{Shema.pdf}
 	\caption{}
 	\label{fig:grap.A}
 \end{figure}
@@ -20,7 +38,7 @@ Nous préparons d’abord un gaz homogène. Ensuite, nous supprimons brutalement
 		\begin{tikzpicture}
 			\begin{scope}[shift={(2,0)}]
 				\begin{scope}[transform canvas={scale=0.6}]
-					\input{Figures/Fonc_A_code}	
+					%\input{Figures/Fonc_A_code}	
 			
 				\end{scope}
 			
@@ -37,7 +55,7 @@ Nous préparons d’abord un gaz homogène. Ensuite, nous supprimons brutalement
 
 			\begin{scope}[shift={(-11,2.7)}]
 				\begin{scope}[transform canvas={scale=0.6}]
-					\input{Figures/Occupation_theta_code}	
+					%\input{Figures/Occupation_theta_code}	
 			
 				\end{scope}
 				\begin{scope}[scale=1]
