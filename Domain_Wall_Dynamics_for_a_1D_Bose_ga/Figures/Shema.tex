@@ -770,11 +770,45 @@ table [meta=z] {./data/donnees1.dat};
   \node[draw] at (0,0) {Un rectangle avec texte};
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\node at (40,6) [rectangle , rotate = -90] { \tikz \Palettes  ;}; 	
+\end{tikzpicture}
+
+
 \begin{tikzpicture}[scale=1]
     \DiagramDensityDistribution{\InsitutDiagram}{\InsitutDensity}{\InsitutDistribution}{\Vide}
     %\drawgrid{-20}{15}{-11}{20}
     %\draw[color = none ] (-20 , -11) rectangle (15 , 20) ;
     \path (-20,-11) rectangle (15,20);
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=1]
+    % coupuur 1 O ms	
+	\node at (0,0) [rectangle ]{
+		\begin{tikzpicture}[transform canvas={scale=1}] 
+			\DiagramDensityDistribution{\CoupureUnZeroDiagram}{\CoupureUnZeroDensity}{\CoupureUnZeroDistributionMinus}{\CoupureUnZeroDistributionPlus}
+		\end{tikzpicture}
+	};
+
+
+	% coupuur 1 18 ms	
+	\node at (43,0) [rectangle ]{
+		\begin{tikzpicture}[transform canvas={scale=1}] 
+			\DiagramDensityDistribution{\CoupureUnVeffDiagram}{\CoupureUnVeffDensity}{\CoupureUnVeffDistribution}{\Vide}
+		\end{tikzpicture}
+	};
+
+	%axe temporel 
+	\node at (0, -12) [circle ]{
+		\begin{tikzpicture}[transform canvas={scale=1} ]
+			\Axetemps[Déformation : $t = 18 ~ms$]
+		\end{tikzpicture}
+	};
+	
+	\drawgrid{-20}{58}{-25}{20}
+    %\draw[color = red ] (-20 , -11) rectangle (15 , 20) ;
+    %\path (-20,-11) rectangle (15,20);
+
 \end{tikzpicture}
 
 % Saut de page après le premier bloc TikZ
