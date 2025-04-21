@@ -832,7 +832,7 @@ table [meta=z] {./data/donnees1.dat};
 	%axe temporel 
 	\node at (0, -12) [circle ]{
 		\begin{tikzpicture}[transform canvas={scale=1} ]
-			\Axetemps[Déformation : $t = 18 ~ms$]
+			\Axetemps[Expansion $\tau = 30 ~ms$]
 		\end{tikzpicture}
 	};
 	
@@ -954,41 +954,7 @@ table [meta=z] {./data/donnees1.dat};
 %%density
 \begin{tikzpicture}
 	\clip (-11 , -2) rectangle (12 , 7) ;
-    \CoupureUnZeroDensity
-    %\drawgrid{-11}{12}{-2}{7}
-    %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (12 , 7) ;
-    \path (-11 , -2) rectangle (12 , 7);
-\end{tikzpicture}
-%%distribution x<0
-\begin{tikzpicture}
-	\clip (-11 , -2) rectangle (14 , 7) ;
-    \CoupureUnZeroDistributionMinus
-    %\drawgrid{-11}{14}{-2}{7}
-    %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (14 , 7) ;
-    \path (-11 , -2) rectangle (14 , 7);
-\end{tikzpicture}
-%%distribution x>0
-\begin{tikzpicture}
-	\clip (-11 , -7) rectangle (14 , 2) ;
-    \CoupureUnZeroDistributionPlus
-    %\drawgrid{-11}{14}{-7}{2}
-    %\draw[line width=2.5ex , color = red ] (-11 , -7) rectangle (14 , 2) ;
-    \path (-11 , -7) rectangle (14 , 2);
-\end{tikzpicture}
-
-%Coupure 1 18 
-%%diagram
-\begin{tikzpicture}
-	\clip (-11 , -11) rectangle (15 , 11) ;
-    \CoupureUnVeffDiagram
-    %\drawgrid{-11}{15}{-11}{11}
-    %\draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
-    \path (-11 , -11) rectangle (15 , 11);
-\end{tikzpicture}
-%%density
-\begin{tikzpicture}
-	\clip (-11 , -2) rectangle (12 , 7) ;
-    \CoupureUnVeffDensity
+    \CoupureDeuxZeroDensity
     %\drawgrid{-11}{12}{-2}{7}
     %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (12 , 7) ;
     \path (-11 , -2) rectangle (12 , 7);
@@ -996,7 +962,33 @@ table [meta=z] {./data/donnees1.dat};
 %%distribution
 \begin{tikzpicture}
 	\clip (-11 , -2) rectangle (14 , 7) ;
-    \CoupureUnVeffDistribution
+    \CoupureDeuxZeroDistribution
+    %\drawgrid{-11}{14}{-2}{7}
+    %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (14 , 7) ;
+    \path (-11 , -2) rectangle (14 , 7);
+\end{tikzpicture}
+
+%Coupure 2 30 
+%%diagram
+\begin{tikzpicture}
+	\clip (-11 , -11) rectangle (15 , 11) ;
+    \CoupureDeuxExpDiagram
+    %\drawgrid{-11}{15}{-11}{11}
+    %\draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
+    \path (-11 , -11) rectangle (15 , 11);
+\end{tikzpicture}
+%%density
+\begin{tikzpicture}
+	\clip (-11 , -2) rectangle (12 , 7) ;
+    \CoupureDeuxExpDensity
+    %\drawgrid{-11}{12}{-2}{7}
+    %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (12 , 7) ;
+    \path (-11 , -2) rectangle (12 , 7);
+\end{tikzpicture}
+%%distribution
+\begin{tikzpicture}
+	\clip (-11 , -2) rectangle (14 , 7) ;
+    \CoupureDeuxExpDistribution
     %\drawgrid{-11}{14}{-2}{7}
     %\draw[line width=2.5ex , color = red ] (-11 , -2) rectangle (14 , 7) ;
     \path (-11 , -2) rectangle (14 , 7);
@@ -1004,7 +996,7 @@ table [meta=z] {./data/donnees1.dat};
 
 \begin{tikzpicture}
 	\clip (-6 , -2) rectangle (52 , 2) ;
-	\Axetemps[Déformation : $t = 18 ~ms$]
+	\Axetemps[Expansion $\tau = 30 ~ms$]
 	%\drawgrid{-6}{52}{-2}{2}
     %\draw[line width=2.5ex , color = red ] (-6,-2) rectangle (52,2) ;
     \path (-6,-2) rectangle (52,2);
