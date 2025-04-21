@@ -770,6 +770,12 @@ table [meta=z] {./data/donnees1.dat};
   \node[draw] at (0,0) {Un rectangle avec texte};
 \end{tikzpicture}
 
+\begin{tikzpicture}[scale=1]
+    \DiagramDensityDistribution{\InsitutDiagram}{\InsitutDensity}{\InsitutDistribution}{\Vide}
+    \drawgrid{-30}{30}{-30}{30}
+    \draw[color = red ] (-20 , -11) rectangle (14 , 20) ;
+\end{tikzpicture}
+
 % Saut de page après le premier bloc TikZ
 %\clearpage
 
@@ -786,11 +792,7 @@ table [meta=z] {./data/donnees1.dat};
     \InsitutDistribution
 \end{tikzpicture}
 
-\begin{tikzpicture}[scale=1]
-    \DiagramDensityDistribution{\InsitutDiagram}{\InsitutDensity}{\InsitutDistribution}{\Vide}
-    \drawgrid{-10}{10}{-10}{10}
-    \draw[color = red ] (-10 , -10) rectangle (10 , 10) ;
-\end{tikzpicture}
+
 
 
 %\tikz \InsitutDiagram ; 
