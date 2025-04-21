@@ -847,13 +847,16 @@ table [meta=z] {./data/donnees1.dat};
 % Un autre diagramme TikZ
 \begin{tikzpicture}
     \InsitutDiagram
-    \drawgrid{-11}{15}{-11}{11}
+    %\drawgrid{-11}{15}{-11}{11}
     \draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
-    \path (-20,-11) rectangle (15,20);
+    \path (-11 , -11) rectangle (15 , 11);
 \end{tikzpicture}
 
 \begin{tikzpicture}
     \InsitutDensity
+    \drawgrid{-11}{15}{-11}{11}
+    \draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
+    \path (-11 , -11) rectangle (15 , 11);
 \end{tikzpicture}
 
 \begin{tikzpicture}
