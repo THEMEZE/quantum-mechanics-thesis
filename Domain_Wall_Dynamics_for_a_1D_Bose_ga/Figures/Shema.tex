@@ -811,12 +811,45 @@ table [meta=z] {./data/donnees1.dat};
 
 \end{tikzpicture}
 
+\begin{tikzpicture}[scale=1]
+    % coupuur 1 O ms	
+	\node at (0,0) [rectangle ]{
+		\begin{tikzpicture}[transform canvas={scale=1}] 
+			\DiagramDensityDistribution{\CoupureDeuxZeroDiagram}{\CoupureDeuxZeroDensity}{\CoupureDeuxZeroDistribution}{\Vide}
+		\end{tikzpicture}
+	};
+
+
+	% coupuur 1 18 ms	
+	\node at (43,0) [rectangle ]{
+		\begin{tikzpicture}[transform canvas={scale=1}] 
+			\DiagramDensityDistribution{\CoupureDeuxExpDiagram}{\CoupureDeuxExpDensity}{\CoupureDeuxExpDistribution}{\Vide}
+		\end{tikzpicture}
+	};
+
+	%axe temporel 
+	\node at (0, -12) [circle ]{
+		\begin{tikzpicture}[transform canvas={scale=1} ]
+			\Axetemps[Déformation : $t = 18 ~ms$]
+		\end{tikzpicture}
+	};
+	
+	%\drawgrid{-20}{58}{-14}{20}
+    %\draw[color = red ] (-20,-14) rectangle (58,20) ;
+    \path (-20,-14) rectangle (58,20);
+
+\end{tikzpicture}
+
+
 % Saut de page après le premier bloc TikZ
 %\clearpage
 
 % Un autre diagramme TikZ
 \begin{tikzpicture}
     \InsitutDiagram
+    \drawgrid{-11}{15}{-11}{11}
+    \draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
+    \path (-20,-11) rectangle (15,20);
 \end{tikzpicture}
 
 \begin{tikzpicture}
