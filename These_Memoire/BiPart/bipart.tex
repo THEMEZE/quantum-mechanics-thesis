@@ -6,6 +6,46 @@ Dans ce chapitre, nous étudions l’évolution d’un gaz quantique unidimensio
 
 Nous préparons d’abord un gaz homogène. Ensuite, nous supprimons brutalement une moitié du nuage. Cela crée une frontière nette entre deux zones : une avec des atomes, l’autre vide. Cette configuration correspond à ce qu’on appelle un « quench bipartite ».
 
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\begin{tikzpicture}
+			\begin{scope}[shift={(2,0)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+					\input{Figures/Fonc_A_code}	
+			
+				\end{scope}
+			
+				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+			\end{scope}
+					
+		\end{tikzpicture}
+		\caption{}
+		\label{fig:grap.A}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.65\textwidth}
+		\begin{tikzpicture}
+
+			\begin{scope}[shift={(-11,2.7)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+					\input{Figures/Occupation_theta_code}	
+			
+				\end{scope}
+				\begin{scope}[scale=1]
+					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+				\end{scope}	
+			\end{scope}
+			
+		\end{tikzpicture}
+		\caption{}
+		\label{fig.fluctu.A}
+	\end{subfigure}
+	\caption{}
+	\label{fig:diag_fig}
+\end{figure}
+
+
 Le gaz évolue ensuite selon la dynamique de son Hamiltonien. Nous observons le déplacement de la frontière au cours du temps. Pour cela, nous mesurons le profil de densité atomique à différents temps d’évolution.
 
 Nous voyons que la frontière se propage de manière balistique. La largeur du profil de densité augmente de façon linéaire avec le temps. Ce comportement est prédit par la théorie de l’hydrodynamique généralisée (GHD). Cette théorie décrit comment les propriétés locales d’un système intégrable évoluent dans le temps. %Elle repose sur une distribution appelée « distribution de rapidité ». Cette fonction décrit la répartition des quasi-particules dans le système.
