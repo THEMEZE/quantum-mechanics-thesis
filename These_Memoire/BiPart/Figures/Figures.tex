@@ -143,7 +143,7 @@
 	\foreach \r in {1,...,9} {
 		\draw 
 			({-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r) 
-			edge [thick, line width=0.3ex, color=\colorThree] 
+			edge [thick, line width=0.3ex, color=\colorOne] 
 			({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r);
 	}
 }
@@ -155,8 +155,8 @@
 
     \draw[color=\colorThree]
       (-0.3, \R*#4)
-      edge [thick, line width=0.5ex, color=\colorThree]
-      node [pos=-0.5, left]{\large \labelText}
+      edge [thick, line width=0.5ex, color=\colorOne]
+      node [pos=-0.0, left]{\Large \labelText}
       (0.3, \R*#4);
 
     %\GraduationYMm{\R}{#4}
@@ -172,7 +172,7 @@
 	\foreach \r in {1,...,9} {
 		\draw 
 			( #1*#2 - #2 + 0.1*#2*\r,{-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}) 
-			edge [thick, line width=0.3ex, color=\colorThree] 
+			edge [thick, line width=0.3ex, color=\colorOne] 
 			( #1*#2 - #2 + 0.1*#2*\r,{0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)});
 	}
 }
@@ -184,8 +184,8 @@
 
     \draw[color=\colorThree]
       (\R*#4,-0.3)
-      edge [thick, line width=0.5ex, color=\colorThree]
-      node [pos=-0.0, below]{\large \labelText}
+      edge [thick, line width=0.5ex, color=\colorOne]
+      node [pos=-0.0, below]{\Large \labelText}
       (\R*#4,0.3);
 
     %\GraduationXMm{\R}{#4}
@@ -273,7 +273,7 @@
     	\let\valXmin\pgfmathresult
     	\clip[](\valXmin , 0) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
-    	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
+    	\draw[line width=1.0ex , color = \colorFour , fill = none] 	
 			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
 		;
     \end{scope}
@@ -287,9 +287,9 @@
 
 	
 	\draw
-		(\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+		(\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
         node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0)
-        (\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        (\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
         node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
 		
 	;
