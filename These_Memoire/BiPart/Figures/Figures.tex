@@ -702,17 +702,27 @@ table [meta=z] {./data/donnees1.dat};
 	% Graduation ordonné
 	\def\echelle{2}
 	
-	\newcommand{\GraduationMm}[2]{
+	\newcommand{\GraduationYMm}[2]{
 		\foreach \r in { 1 ,... , 9   } {
-			\draw ( {-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}    , #1*#2 - #2  +  0.1*#2 *\r ) edge [thick,line width=0.3ex , color = gray  ] ({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)} ,#1*#2 - #2 +  0.1*#2 *\r  );
+			\draw ( {-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}    , #1*#2 - #2  +  0.1*#2 *\r ) edge [thick,line width=0.3ex , color = \colorThree  ] ({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)} ,#1*#2 - #2 +  0.1*#2 *\r  );
 		}
 	}
-	\foreach \R  in { 1 ,... , 4  } {
-		
-		\draw[color = gray ] ( -0.3  , \R*\echelle ) edge [thick,line width=0.5ex , color = gray  ] node [pos=-0.5 , left  ]{\large \R } (0.3  , \R*\echelle  ) ;
-		\GraduationMm{\R}{\echelle}
-		
-	}
+	
+	
+	\def\listeLabels{{"un", "deux", "trois", "quatre"}}
+
+\foreach \R in {1,...,4} {
+    \pgfmathparse{\listeLabels[\R-1]} % car l'index commence à 0
+    \let\labelText\pgfmathresult
+
+    \draw[color=gray] 
+        (-0.3, \R*\echelle) 
+        edge [thick, line width=0.5ex, color=\colorThree] 
+        node [pos=-0.5, left]{\large \labelText}
+        (0.3, \R*\echelle);
+
+    \GraduationYMm{\R}{\echelle}
+}
 	
 \end{tikzpicture}
 
