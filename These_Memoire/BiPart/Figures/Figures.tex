@@ -764,10 +764,10 @@ table [meta=z] {./data/donnees1.dat};
 \newcommand{\backgrowngrid}[6]{
 
 
-	\begin{scope}[xscale = #5 , yscale = #6]
+	\begin{scope}[]
 	
 	
-    	% Paramètres : #1=xmin, #2=xmax, #3=ymin, #4=ymax
+    	% Paramètres : #1=xmin, #3=xmax, #2=ymin, #4=ymax
 
    	 	% Grille principale en cm
     	\draw[very thin, gray] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
@@ -809,7 +809,6 @@ table [meta=z] {./data/donnees1.dat};
 %\path (-11 , -3) rectangle (11 , 5);	
 \end{scope}
 
-
 % Définition de l’échelle
 \def\echelleX{50}
 \pgfmathsetmacro{\echelleXCm}{18/7}
@@ -828,10 +827,13 @@ table [meta=z] {./data/donnees1.dat};
 \end{scope}
 
 \draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
+
+
+\backgrowngrid{-11}{-3}{11}{12}{\echelleX}{\echelleY}
 	
 \end{tikzpicture}
 
-\backgrowngrid{-11}{-3}{11}{12}{\echelleX}{\echelleY}
+
 
 
 %\tikz \InsitutDiagram ; 
