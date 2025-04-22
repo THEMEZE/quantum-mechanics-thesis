@@ -763,31 +763,31 @@ table [meta=z] {./data/donnees1.dat};
 
 
 % Définition de l’échelle
-\def\echelleY{2}
+\def\echelleY{1}
 
 % Définition de la liste
-\def\listeLabelsY{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
-
-% Appel de la commande
-\begin{scope}
-\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationYCm{-2}{4}{\listeLabelsY}{\echelleY}
-\drawgrid{-11}{15}{-11}{11}
-\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
-\path (-11 , -3) rectangle (11 , 5);	
-\end{scope}
-
-
-% Définition de l’échelle
-\def\echelleX{2}
-
-% Définition de la liste
-\def\listeLabelsX{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
+\def\listeLabelsY{{-1,0,1,2,3,4,5,6,7,8,9,10,11}}
 
 % Appel de la commande
 \begin{scope}
 %\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationXCm{-2}{4}{\listeLabelsX}{\echelleX}
+\GraduationYCm{-1}{11}{\listeLabelsY}{\echelleY}
+%\drawgrid{-11}{15}{-11}{11}
+%\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
+%\path (-11 , -3) rectangle (11 , 5);	
+\end{scope}
+
+
+% Définition de l’échelle
+\def\echelleX{1}
+
+% Définition de la liste
+\def\listeLabelsX{{-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,}}
+
+% Appel de la commande
+\begin{scope}
+%\clip (-11 , -3) rectangle (11 , 5) ;
+\GraduationXCm{-9}{9}{\listeLabelsX}{\echelleX}
 %\drawgrid{-11}{15}{-11}{11}
 %\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
 %\path (-11 , -3) rectangle (11 , 5);	
