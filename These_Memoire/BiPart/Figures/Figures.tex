@@ -761,10 +761,10 @@ table [meta=z] {./data/donnees1.dat};
 }
 
 % Définition de la fonction pour générer la grille
-\newcommand{\backgrowngrid}[6]{
+\newcommand{\backgrowngrid}[8]{
 
 
-	\begin{scope}[]
+	\begin{scope}[xscale = #5 , yscale = #6 ]
 	
 	
     	% Paramètres : #1=xmin, #3=xmax, #2=ymin, #4=ymax
@@ -833,7 +833,7 @@ table [meta=z] {./data/donnees1.dat};
 \draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
 
 
-\backgrowngrid{-11}{-3}{11}{12}{\echelleX}{\echelleY}
+\backgrowngrid{-11}{-3}{11}{12}{\echelleXCm}{\echelleYCm}{\echelleX}{\echelleY}
 	
 \end{tikzpicture}
 
