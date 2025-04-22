@@ -708,21 +708,26 @@ table [meta=z] {./data/donnees1.dat};
 		}
 	}
 	
-	
-	\def\listeLabels{{"un", "deux", "trois", "quatre"}}
-
-\foreach \R in {1,...,4} {
-    \pgfmathparse{\listeLabels[\R-1]} % car l'index commence à 0
+\newcommand{\GraduationYCm}[3]{
+  \foreach \R in {#1,...,#2} {
+    \pgfmathparse{#2[\R-1]}
     \let\labelText\pgfmathresult
 
-    \draw[color=gray] 
-        (-0.3, \R*\echelle) 
-        edge [thick, line width=0.5ex, color=\colorThree] 
-        node [pos=-0.5, left]{\large \labelText}
-        (0.3, \R*\echelle);
+    \draw[color=gray]
+      (-0.3, \R*\echelle)
+      edge [thick, line width=0.5ex, color=\colorThree]
+      node [pos=-0.5, left]{\large \labelText}
+      (0.3, \R*\echelle);
 
     \GraduationYMm{\R}{\echelle}
+  }
 }
+
+	
+	
+	\def\listeLabels{{"-un","un", "deux", "trois", "quatre"}}
+
+\GraduationYCm{-1}{4}{\listeLabels}
 	
 \end{tikzpicture}
 
