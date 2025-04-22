@@ -700,13 +700,18 @@ table [meta=z] {./data/donnees1.dat};
 	;
 	
 	% Graduation ordonné
-	\def\echelle{1}
+	\def\echelle{2}
+	
+	\newcommand{\GraduationMm}[2]{
+		\foreach \r in { 1 ,... , 9   } {
+			\draw ( {-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}    , #1*#2 - #2  +  0.1*#2 *\r ) edge [thick,line width=0.3ex , color = gray  ] ({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)} ,#1*#2 - #2 +  0.1*#2 *\r  );
+		}
+	}
 	\foreach \R  in { 1 ,... , 4  } {
 		
 		\draw[color = gray ] ( -0.3  , \R*\echelle ) edge [thick,line width=0.5ex , color = gray  ] node [pos=-0.5 , left  ]{\large \R } (0.3  , \R*\echelle  ) ;
-		\foreach \r in { 1 ,... , 9   } {
-			\draw ( {-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}    , \R*\echelle - \echelle  +  0.1*\echelle *\r ) edge [thick,line width=0.3ex , color = gray  ] ({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)} ,\R*\echelle - \echelle +  0.1*\echelle *\r  );
-		}
+		\GraduationMm{\R}{\echelle}
+		
 	}
 	
 \end{tikzpicture}
