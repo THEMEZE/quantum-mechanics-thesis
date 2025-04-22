@@ -271,10 +271,11 @@
     \begin{scope}
     	\pgfmathparse{-4*\echelleXCm}  
     	\let\valXmin\pgfmathresult
-    	\clip[](\valXmin , 0) rectangle (9.2 , 11.5) ;
+    	\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
-    	\draw[line width=1.0ex , color = \colorFour , fill = none] 	
-			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+    	\draw[line width=1.0ex  , fill = none] 	
+			plot[color=\colorFour] file {data/donnee_bord_article_distribution_24-04-2024.table}
+			plot[color=\colorSix] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
 		;
     \end{scope}
     
@@ -282,9 +283,9 @@
 		\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}
 			
-		
-	\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
-
+	\begin{scope}[shift = {(0,-1)}]	
+		\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
+	\end{scope}
 	
 	\draw
 		(\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
