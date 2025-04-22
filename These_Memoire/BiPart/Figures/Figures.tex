@@ -770,9 +770,9 @@ table [meta=z] {./data/donnees1.dat};
     	% Paramètres : #1=xmin, #3=xmax, #2=ymin, #4=ymax
 
    	 	% Grille principale en cm
-    	\draw[very thin, gray] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
+    	\draw[very thin, line width=0.3ex ,  color=\colorThree] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
     
-    	\draw[very thin, gray] (#1,#2) grid[step=0.1] (#3,#4);
+    	\draw[very thin, line width=0.3ex ,  color=\colorThree] (#1,#2) grid[step=0.1] (#3,#4);
 
     	%\draw[thin, black] (#1,#2) edge[thick,line width=0.8ex,->,>=Stealth ] (#3,#2); 
     
@@ -833,7 +833,7 @@ table [meta=z] {./data/donnees1.dat};
 \draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
 
 
-\backgrowngrid{-11}{-3}{11}{12}{\echelleXCm}{\echelleYCm}{\echelleX}{\echelleY}
+\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}{\echelleX}{\echelleY}
 	
 \end{tikzpicture}
 
