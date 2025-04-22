@@ -206,9 +206,7 @@
 	
     	% Paramètres : #1=xmin, #3=xmax, #2=ymin, #4=ymax
     	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-    	\draw[fill = \colorFour , opacity = 0.4]  
-			(#1 , #2 ) rectangle ( #3 , #4 ) 
-		;
+    	%\draw[fill = \colorFour , opacity = 0.4]  (#1 , #2 ) rectangle ( #3 , #4 ) ;
 
    	 	% Grille principale en cm
     	\draw[very thin, line width=0.3ex ,  color=\colorTwo] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
@@ -255,11 +253,17 @@
 	\def\listeLabelsY{{0,10,20,30,40,50,60}}
 	\def\listeLabelsX{{-200,-150,-100,-50,0,50,100,150}}
 	
-	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
 	
-	\pgfmathparse{-4*\echelleXCm} % calcule et arrondit  
-    \let\val\pgfmathresult
-	\begin{scope}[shift = {(\val,0)}]
+	
+	\pgfmathparse{-4*\echelleXCm}  
+    \let\valXmin\pgfmathresult
+
+    
+    \draw[fill = \colorFour , opacity = 0.4]  (\valXmin , 0 ) rectangle (9.5 , 12) ;
+    
+    \backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+    
+	\begin{scope}[shift = {(\valXmin,0)}]
 		\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}
 			
@@ -271,10 +275,10 @@
 
 	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
 		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
-		(-12, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+		(\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
         node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0)
-        (\val, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\val, 12)
+        (\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
 		
 	;
 	
