@@ -722,9 +722,9 @@ table [meta=z] {./data/donnees1.dat};
       node [pos=-0.5, left]{\large \labelText}
       (0.3, \R*\echelle);
 
-    %\GraduationYMm{\R}{\echelle}
+    \GraduationYMm{\R}{\echelle}
   }
-  \GraduationYMm{#2+2}{\echelle}
+  \GraduationYMm{#2+3}{\echelle}
 }
 
 % Définition de l’échelle
@@ -734,7 +734,14 @@ table [meta=z] {./data/donnees1.dat};
 \def\listeLabels{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
 
 % Appel de la commande
+\begin{scope}
+\clip (-11 , -11) rectangle (15 , 11) ;
 \GraduationYCm{-2}{4}{\listeLabels}
+\drawgrid{-11}{15}{-11}{11}
+\draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
+\path (-11 , -11) rectangle (15 , 11);	
+\end{scope}
+
 
 	
 \end{tikzpicture}
