@@ -760,6 +760,37 @@ table [meta=z] {./data/donnees1.dat};
   \GraduationXMm{\extendedPosition}{#4}
 }
 
+% Définition de la fonction pour générer la grille
+\newcommand{\backgrowngrid}[6]{
+
+
+	\begin{scope}[]
+	
+	
+    	% Paramètres : #1=xmin, #2=xmax, #3=ymin, #4=ymax
+
+   	 	% Grille principale en cm
+    	\draw[very thin, gray] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
+    
+    	\draw[very thin, gray] (#1*#,#2) grid[step=0.1] (#3,#4);
+
+    	\draw[thin, black] (#1,#2) edge[thick,line width=0.8ex,->,>=Stealth ] (#2,#3); 
+    
+    	\foreach \x in {#1,..., #3} {
+        	\draw[shift={(\x, #2)}] (0,-0.1) edge[line width=0.8ex] node[pos = -1 , below] {\x} (0,0.1); % Lignes verticales en mm
+    	}
+
+    	\draw[thin, black] (#1,#2)edge[thick,line width=0.8ex,->,>=Stealth ] (#1,#4); 
+    
+    	\foreach \y in {#2,..., #4} {
+        	\draw[shift={(#1, \y)}] (-0.1 , 0 ) edge[line width=0.8ex] node[pos = -1 , left ] {\y} (0.1 , 0); % Lignes verticales en mm
+    	}
+    
+    \end{scope}
+
+
+}
+
 
 
 % Définition de l’échelle
