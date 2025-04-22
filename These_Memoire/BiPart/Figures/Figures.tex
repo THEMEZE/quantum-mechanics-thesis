@@ -218,7 +218,7 @@
     	\draw[fill = \colorThree , opacity = 0.1]  (\valXmin , \valYmin ) rectangle ( \valXmax , \valYmax ) ;
 
    	 	% Grille principale en cm
-    	\draw[very thin, line width=0.3ex ,  color=\colorTwo] (\valXmin , \valYmin ) grid ( \valXmax , \valYmax ); % Grille de base (#5 cm , #6 cm )
+    	\draw[very thin, line width=0.5ex ,  color=\colorTwo] (\valXmin , \valYmin ) grid ( \valXmax , \valYmax ); % Grille de base (#5 cm , #6 cm )
     
     	%\draw[very thin, line width=0.3ex ,  color=\colorTwo] (#1,#2) grid[step=0.1] (#3,#4);
 
@@ -282,7 +282,7 @@
   			rounded corners=6pt,
   			opacity = 0.2
 			] 
-  			(0,0) rectangle (10,5);
+  			(0,0) rectangle (10.7,5);
   			
     	\draw[line width=0.8ex  ,color=\colorFive ,  fill = none] 	
 			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
@@ -290,15 +290,15 @@
 		;
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
 			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table}
-			(-10.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Sélection  } (-9,8)
+			(-10.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Ajustement : T = 560~nK } (-9,9)
 		;
 		\draw[line width=1.0ex  ,color=\colorThree ,  fill = none] 	
 			plot[] file {data/GHD_bord_2_article_distribution_24-04-2024.table}
-			(-10.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Ajustement : T = 560~nK } (-9,9)
+			(-10.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf   T = 1550~nK } (-9,7)
 		;
 		\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 
 			plot[] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
-			(-10.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf T = 1550~nK } (-9,7)
+			(-10.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Sélection} (-9,8)
 		;
     \end{scope}
     
@@ -324,7 +324,7 @@
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-13}{9.5}{-1}{12}
+	%\drawgrid{-13}{9.5}{-1}{12}
 	
 \end{tikzpicture}
 
