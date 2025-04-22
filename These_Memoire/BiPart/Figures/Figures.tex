@@ -722,19 +722,19 @@ table [meta=z] {./data/donnees1.dat};
       node [pos=-0.5, left]{\large \labelText}
       (0.3, \R*\echelle);
 
-    \GraduationYMm{\R}{\echelle}
+    %\GraduationYMm{\R}{\echelle}
   }
-  \GraduationYMm{#2+1}{\echelle}
+  \GraduationYMm{#2+2}{\echelle}
 }
 
 % Définition de l’échelle
 \def\echelle{2}
 
 % Définition de la liste
-\def\listeLabels{{"-un", "zero", "un", "deux", "trois", "quatre"}}
+\def\listeLabels{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
 
 % Appel de la commande
-\GraduationYCm{-1}{4}{\listeLabels}
+\GraduationYCm{-2}{4}{\listeLabels}
 
 	
 \end{tikzpicture}
