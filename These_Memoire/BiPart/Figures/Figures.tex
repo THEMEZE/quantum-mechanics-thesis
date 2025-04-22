@@ -690,14 +690,7 @@ table [meta=z] {./data/donnees1.dat};
 \begin{document}
 
 \begin{tikzpicture}
-	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
-		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
-		(-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,0)} , pos=1.01, below]{ \huge $x~(\mu m)$ } (10, 0)
-        (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,0)} , pos=1.01, left]{ \huge $n~({\mu m}^{-1})$ } (0, 12)
-		
-	;
+	
 	
 	% Graduation ordonné
 	
@@ -801,43 +794,42 @@ table [meta=z] {./data/donnees1.dat};
 
 
 
-% Définition de l’échelle
-\def\echelleY{10}
-\pgfmathsetmacro{\echelleYCm}{11/6}
-
-% Définition de la liste
-\def\listeLabelsY{{0,10,20,30,40,50,60}}
-
-% Appel de la commande
-\begin{scope}
-%\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
-%\drawgrid{-11}{15}{-11}{11}
-%\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
-%\path (-11 , -3) rectangle (11 , 5);	
-\end{scope}
-
-% Définition de l’échelle
-\def\echelleX{50}
-\pgfmathsetmacro{\echelleXCm}{18/7}
+	% Définition de l’échelle
+	\def\echelleY{10}
+	\pgfmathsetmacro{\echelleYCm}{11/6}
 
 
-% Définition de la liste
-\def\listeLabelsX{{-200,-150,-100,-50,0,50,100,150}}
-
-% Appel de la commande
-\begin{scope}
-%\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
-%\drawgrid{-11}{15}{-11}{11}
-%\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
-%\path (-11 , -3) rectangle (11 , 5);	
-\end{scope}
-
-\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
+	% Définition de l’échelle
+	\def\echelleX{50}
+	\pgfmathsetmacro{\echelleXCm}{18/7}
 
 
-\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+	% Définition de la liste
+	% Définition de la liste
+	\def\listeLabelsY{{0,10,20,30,40,50,60}}
+	\def\listeLabelsX{{-200,-150,-100,-50,0,50,100,150}}
+	
+	\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
+
+
+	\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
+
+
+	
+
+
+	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+
+	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
+		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+		(-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(0,0)} , pos=1.01, below]{ \huge $x~(\mu m)$ } (10, 0)
+        (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(0,0)} , pos=1.01, left]{ \huge $n~({\mu m}^{-1})$ } (0, 12)
+		
+	;
+	
+	\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
 	
 \end{tikzpicture}
 
