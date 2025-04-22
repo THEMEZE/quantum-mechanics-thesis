@@ -375,17 +375,17 @@
     
     
     % Graduations     
-	\begin{scope}[shift = {(\valXmin,0)}]
+	\begin{scope}[shift = {(-13,0)}]
 		\GraduationYCm{0}{3}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}			
-	\begin{scope}[shift = {(0,-1)}]	
+	\begin{scope}[shift = {(0,-2)}]	
 		\GraduationXCm{-2}{2}{\listeLabelsX}{\echelleXCm}
 	\end{scope}
 	
 	
 	% Axxes 
-	\draw[shift = {(0,-1)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (10, 0);
-    \draw   (-10, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (-10, 12)
+	\draw[shift = {(0,-2)}](-13, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (13, 0);
+    \draw   (-13, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (-13, 12)
 		
 		
 	;
