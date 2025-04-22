@@ -763,15 +763,16 @@ table [meta=z] {./data/donnees1.dat};
 
 
 % Définition de l’échelle
-\def\echelleY{1}
+%\def\echelleY{1}
+\pgfmathsetmacro{\echelleY}{11/6}
 
 % Définition de la liste
-\def\listeLabelsY{{-1,0,1,2,3,4,5,6,7,8,9,10,11}}
+\def\listeLabelsY{{0,10,20,30,40,50,60}}
 
 % Appel de la commande
 \begin{scope}
 %\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationYCm{-1}{11}{\listeLabelsY}{\echelleY}
+\GraduationYCm{0}{6}{\listeLabelsY}{\echelleY}
 %\drawgrid{-11}{15}{-11}{11}
 %\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
 %\path (-11 , -3) rectangle (11 , 5);	
