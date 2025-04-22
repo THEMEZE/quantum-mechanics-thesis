@@ -315,8 +315,8 @@
 	
 	
 	% Axxes 
-	%\draw[shift = {(0,-1)}](\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0);
-    %\draw   (\valXmin, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
+	\draw[shift = {(0,-1)}](\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0);
+    \draw   (\valXmin, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
 		
 		
 	;
@@ -350,8 +350,8 @@
     \begin{scope}
     	\pgfmathparse{-4*\echelleXCm}  
     	\let\valXmin\pgfmathresult
-    	\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
-    	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+    	%\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
+    	%\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
   			shift={(-11cm,6cm)},
@@ -364,20 +364,12 @@
   			(0,0) rectangle (10.7,5);
   			
     	\draw[line width=0.8ex  ,color=\colorFive ,  fill = none] 	
-			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+			plot[] file {data/donnee_article_asymetrie_24-04-202.table}
 			(-10.5,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Profil de bord } (-9,10)
 		;
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
-			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table}
+			plot[] file {data/donnee_article_asymetrie_24-04-202.table}
 			(-10.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Ajustement : T = 560~nK } (-9,9)
-		;
-		\draw[line width=1.0ex  ,color=\colorThree ,  fill = none] 	
-			plot[] file {data/GHD_bord_2_article_distribution_24-04-2024.table}
-			(-10.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf   T = 1550~nK } (-9,7)
-		;
-		\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 
-			plot[] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
-			(-10.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Sélection} (-9,8)
 		;
     \end{scope}
     
