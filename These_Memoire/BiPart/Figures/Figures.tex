@@ -119,7 +119,9 @@
 
 % Définition des couleurs avec les codes HTML
 \definecolor{colorOne}{HTML}{443E46}
-\definecolor{colorTwo}{HTML}{F6DEB8}
+%\definecolor{colorTwo}{HTML}{F6DEB8}
+\definecolor{colorTwo}{HTML}{FFFFFF}
+
 \definecolor{colorThree}{HTML}{908CA4}
 \definecolor{colorFour}{HTML}{57659E}
 \definecolor{colorFive}{HTML}{C57284}
@@ -241,7 +243,7 @@
 \begin{tikzpicture}
 
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-15 , -5 ) rectangle ( 12 , 15 ) ;
+	\clip[](-14 , -1) rectangle (9.5 , 12) ;
 	
 	% Définition de l’échelle
 	\def\echelleY{10}
@@ -270,14 +272,14 @@
 	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
 		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
 		(-12, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(1,0)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9, 0)
-        (\val, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,-1)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\val, 12)
+        node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0)
+        (\val, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\val, 12)
 		
 	;
 	
-	\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-14}{9.5}{-1}{12}
+	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
+	%\drawgrid{-14}{9.5}{-1}{12}
 	
 \end{tikzpicture}
 
