@@ -250,11 +250,13 @@
 	\def\listeLabelsY{{0,10,20,30,40,50,60}}
 	\def\listeLabelsX{{-200,-150,-100,-50,0,50,100,150}}
 	
+	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+	
 	\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
 	\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
 
 
-	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+	
 
 	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
 		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
@@ -266,6 +268,7 @@
 	;
 	
 	\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
+	\drawgrid{-6}{52}{-2}{2}
 	
 \end{tikzpicture}
 
