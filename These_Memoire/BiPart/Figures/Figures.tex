@@ -250,7 +250,7 @@
 \begin{tikzpicture}
 
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-14 , -2) rectangle (9.5 , 12) ;
+	\clip[](-14 , -3) rectangle (9.5 , 12) ;
 	
 	% Définition de l’échelle
 	\def\echelleY{10}
@@ -273,14 +273,17 @@
     	\let\valXmin\pgfmathresult
     	\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
-    	\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorFive] file {data/donnee_bord_article_distribution_24-04-2024.table};
-		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorSix] file {data/GHD_bord_article_distribution_24-04-2024.table};
-		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorTwo] file {data/GHD_bord_2_article_distribution_24-04-2024.table};
-		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 
-			plot[color=\colorFour] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
+    	\draw[line width=1.0ex  ,color=\colorFive ,  fill = none] 	
+			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+			(-2,8) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
+        node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
+		;
+		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
+			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table};
+		\draw[line width=1.0ex  ,color=\colorThree ,  fill = none] 	
+			plot[] file {data/GHD_bord_2_article_distribution_24-04-2024.table};
+		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 
+			plot[] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
 		;
     \end{scope}
     
