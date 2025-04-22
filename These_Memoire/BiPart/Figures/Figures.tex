@@ -252,7 +252,9 @@
 	
 	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
 	
-	\begin{scope}[shift = {(-10,0)}]
+	\pgfmathparse{-4*\echelleXCm} % calcule et arrondit  
+    \let\val\pgfmathresult
+	\begin{scope}[shift = {(\val,0)}]
 		\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}
 			
@@ -266,8 +268,8 @@
 		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
 		(-12, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
         node[shift = {(0,0)} , pos=1.01, below]{ \huge $x~(\mu m)$ } (9, 0)
-        (-12, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,0)} , pos=1.01, left]{ \huge $n~({\mu m}^{-1})$ } (-12, 12)
+        (\val, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(0,0)} , pos=0.5, left , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\val, 12)
 		
 	;
 	
