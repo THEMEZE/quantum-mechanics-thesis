@@ -252,7 +252,10 @@
 	
 	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
 	
-	\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
+	\node at (-12,0) [rectangle ]{
+		\begin{tikzpicture}[]
+			\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
+		\end{tikzpicture}};
 	\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
 
 
@@ -260,15 +263,15 @@
 
 	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
 		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
-		(-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,0)} , pos=1.01, below]{ \huge $x~(\mu m)$ } (10, 0)
+		(-12, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
+        node[shift = {(0,0)} , pos=1.01, below]{ \huge $x~(\mu m)$ } (9, 0)
         (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
         node[shift = {(0,0)} , pos=1.01, left]{ \huge $n~({\mu m}^{-1})$ } (0, 12)
 		
 	;
 	
 	\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
-	\drawgrid{-6}{52}{-2}{2}
+	\drawgrid{-12}{52}{-2}{2}
 	
 \end{tikzpicture}
 
