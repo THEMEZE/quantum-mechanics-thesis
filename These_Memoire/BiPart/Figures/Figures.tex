@@ -728,7 +728,7 @@ table [meta=z] {./data/donnees1.dat};
   % Graduation supplémentaire à #2 + 3
   \pgfmathparse{#2 + 1}
   \edef\extendedPosition{\pgfmathresult}
-  \GraduationYMm{\extendedPosition}{\echelle}
+  \GraduationYMm{\extendedPosition}{#4}
 }
 
 \newcommand{\GraduationXMm}[2]{
@@ -748,7 +748,7 @@ table [meta=z] {./data/donnees1.dat};
     \draw[color=\colorThree]
       (\R*#4,-0.3)
       edge [thick, line width=0.5ex, color=\colorThree]
-      node [pos=-0.5, left]{\large \labelText}
+      node [pos=-0.0, below]{\large \labelText}
       (\R*#4,0.3);
 
     \GraduationXMm{\R}{#4}
@@ -757,7 +757,7 @@ table [meta=z] {./data/donnees1.dat};
   % Graduation supplémentaire à #2 + 3
   \pgfmathparse{#2 + 1}
   \edef\extendedPosition{\pgfmathresult}
-  \GraduationXMm{\extendedPosition}{\echelle}
+  \GraduationXMm{\extendedPosition}{#4}
 }
 
 
