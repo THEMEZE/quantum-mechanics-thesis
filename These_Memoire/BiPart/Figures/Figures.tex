@@ -711,18 +711,18 @@ table [meta=z] {./data/donnees1.dat};
 	}
 }
 
-\newcommand{\GraduationYCm}[3]{% #1: min, #2: max, #3: liste
+\newcommand{\GraduationYCm}[4]{% #1: min, #2: max, #3: liste
   \foreach \R in {#1,...,#2} {
     \pgfmathparse{#3[\R-(#1)]} % index dans la liste
     \let\labelText\pgfmathresult
 
-    \draw[color=gray]
-      (-0.3, \R*\echelle)
+    \draw[color=\colorThree]
+      (-0.3, \R*#4)
       edge [thick, line width=0.5ex, color=\colorThree]
       node [pos=-0.5, left]{\large \labelText}
-      (0.3, \R*\echelle);
+      (0.3, \R*#4);
 
-    \GraduationYMm{\R}{\echelle}
+    \GraduationYMm{\R}{#4}
   }
 
   % Graduation supplémentaire à #2 + 3
@@ -734,47 +734,63 @@ table [meta=z] {./data/donnees1.dat};
 \newcommand{\GraduationXMm}[2]{
 	\foreach \r in {1,...,9} {
 		\draw 
-			({-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r) 
+			( #1*#2 - #2 + 0.1*#2*\r,{-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}) 
 			edge [thick, line width=0.3ex, color=\colorThree] 
-			({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r);
+			( #1*#2 - #2 + 0.1*#2*\r,{0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)});
 	}
 }
 
-\newcommand{\GraduationYCm}[3]{% #1: min, #2: max, #3: liste
+\newcommand{\GraduationXCm}[4]{% #1: min, #2: max, #3: liste
   \foreach \R in {#1,...,#2} {
     \pgfmathparse{#3[\R-(#1)]} % index dans la liste
     \let\labelText\pgfmathresult
 
-    \draw[color=gray]
-      (-0.3, \R*\echelle)
+    \draw[color=\colorThree]
+      (\R*#4,-0.3)
       edge [thick, line width=0.5ex, color=\colorThree]
       node [pos=-0.5, left]{\large \labelText}
-      (0.3, \R*\echelle);
+      (\R*#4,0.3);
 
-    \GraduationYMm{\R}{\echelle}
+    \GraduationXMm{\R}{#4}
   }
 
   % Graduation supplémentaire à #2 + 3
   \pgfmathparse{#2 + 1}
   \edef\extendedPosition{\pgfmathresult}
-  \GraduationYMm{\extendedPosition}{\echelle}
+  \GraduationXMm{\extendedPosition}{\echelle}
 }
 
 
 
 % Définition de l’échelle
-\def\echelle{2}
+\def\echelleY{2}
 
 % Définition de la liste
-\def\listeLabels{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
+\def\listeLabelsY{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
 
 % Appel de la commande
 \begin{scope}
 \clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationYCm{-2}{4}{\listeLabels}
+\GraduationYCm{-2}{4}{\listeLabelsY}{\echelleY}
 \drawgrid{-11}{15}{-11}{11}
 \draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
 \path (-11 , -3) rectangle (11 , 5);	
+\end{scope}
+
+
+% Définition de l’échelle
+\def\echelleX{2}
+
+% Définition de la liste
+\def\listeLabelsX{{-2,"-un", "zero", "un", "deux", "trois", "quatre"}}
+
+% Appel de la commande
+\begin{scope}
+%\clip (-11 , -3) rectangle (11 , 5) ;
+\GraduationXCm{-2}{4}{\listeLabelsX}{\echelleX}
+%\drawgrid{-11}{15}{-11}{11}
+%\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
+%\path (-11 , -3) rectangle (11 , 5);	
 \end{scope}
 
 
