@@ -346,11 +346,11 @@
     
     \begin{scope}
 
-    	\clip[](-13 , -1) rectangle (13 , 11.5) ;
-    	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+    	\clip[](-10 , -2) rectangle (10, 11.5) ;
+    	\backgrowngrid{-2}{0}{2}{3}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
-  			shift={(-11cm,6cm)},
+  			shift={(2cm,7cm)},
   			line width=0.5ex,
   			draw=\colorThree,
   			fill=\colorThree!50!\colorTwo,
@@ -380,7 +380,7 @@
 	
 	
 	% Axxes 
-	\draw[shift = {(0,-2)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (10, 0);
+	\draw[shift = {(0,-2)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (11, 0);
     \draw [shift = {(-10,0)}]  (0, -2) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (0, 12)
 		
 		
