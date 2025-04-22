@@ -273,16 +273,29 @@
     	\let\valXmin\pgfmathresult
     	\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
-    	\draw[shift = {(-10 cm ,5 cm)} , line width=2.5ex , color = \colorThree , fill = \colorThree!50!\colorTwo, rounded corners =6pt, inner sep=6pt] (0 , 0) rectangle (5 , 5) ;
+    	
+    	\draw[
+  			shift={(-10cm,6cm)},
+  			line width=0.5ex,
+  			draw=\colorThree,
+  			fill=\colorThree!50!\colorTwo,
+  			rounded corners=6pt,
+  			opacity = 0.5
+			] 
+  			(0,0) rectangle (9,5);
+  			
     	\draw[line width=1.0ex  ,color=\colorFive ,  fill = none] 	
 			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
-			(-9,10) edge[] 
-        node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont Profil de bord } (-8,10)
+			(-9,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont Profil de bord } (-8,10)
 		;
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
-			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table};
+			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table}
+			(-9,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont Ajustement : $T = 560~nK$ } (-8,9)
+		;
 		\draw[line width=1.0ex  ,color=\colorThree ,  fill = none] 	
-			plot[] file {data/GHD_bord_2_article_distribution_24-04-2024.table};
+			plot[] file {data/GHD_bord_2_article_distribution_24-04-2024.table}
+			(-9,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont Ajustement : $T = 560~nK$ } (-8,8)
+		;
 		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 
 			plot[] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
 		;
