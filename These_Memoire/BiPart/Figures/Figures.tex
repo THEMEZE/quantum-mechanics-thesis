@@ -329,7 +329,7 @@
 \begin{tikzpicture}
 
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-12 , -5) rectangle (14 , 12) ;
+	\clip[](-12 , -4) rectangle (11 , 12) ;
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
@@ -357,14 +357,14 @@
   			rounded corners=6pt,
   			opacity = 0.2
 			] 
-  			(0,0) rectangle (6,3);
+  			(0,0) rectangle (7,3);
   			
-    	\draw[line width=0.8ex  ,color=\colorFive ,  fill = none] 	
-			plot[] file {data/donnee_article_asymetrie_24-04-202.table}
+    	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
+			plot[smooth] file {data/donnee_article_asymetrie_24-04-202.table}
 			(2.5,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tilde{n}(x)$ } (4,10)
 		;
-		\draw[line width=0.8ex  ,color=\colorSix ,  fill = none] 	
-			plot[] file {data/donnee_2_article_asymetrie_24-04-202.table}
+		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
+			plot[smooth] file {data/donnee_2_article_asymetrie_24-04-202.table}
 			(2.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tilde{n}(x-2x_s)$  } (4,9)
 		;
     \end{scope}
@@ -387,7 +387,7 @@
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-11}{13}{-4}{12}
+	%\drawgrid{-11}{13}{-4}{12}
 		
 \end{tikzpicture}
 
