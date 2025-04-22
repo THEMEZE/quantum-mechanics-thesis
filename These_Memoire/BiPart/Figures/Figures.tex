@@ -764,7 +764,7 @@ table [meta=z] {./data/donnees1.dat};
 \newcommand{\backgrowngrid}[6]{
 
 
-	\begin{scope}[]
+	\begin{scope}[xscale = #5 , yscale = #6]
 	
 	
     	% Paramètres : #1=xmin, #2=xmax, #3=ymin, #4=ymax
@@ -772,18 +772,18 @@ table [meta=z] {./data/donnees1.dat};
    	 	% Grille principale en cm
     	\draw[very thin, gray] (#1,#2) grid (#3,#4); % Grille de base (1 cm)
     
-    	\draw[very thin, gray] (#1*#,#2) grid[step=0.1] (#3,#4);
+    	\draw[very thin, gray] (#1,#2) grid[step=0.1] (#3,#4);
 
     	\draw[thin, black] (#1,#2) edge[thick,line width=0.8ex,->,>=Stealth ] (#2,#3); 
     
     	\foreach \x in {#1,..., #3} {
-        	\draw[shift={(\x, #2)}] (0,-0.1) edge[line width=0.8ex] node[pos = -1 , below] {\x} (0,0.1); % Lignes verticales en mm
+        	\draw[shift={(\x, #2)}] (0,-0.1) edge[line width=0.8ex] node[pos = -1 , below] {\x * #5 } (0,0.1); % Lignes verticales en mm
     	}
 
     	\draw[thin, black] (#1,#2)edge[thick,line width=0.8ex,->,>=Stealth ] (#1,#4); 
     
     	\foreach \y in {#2,..., #4} {
-        	\draw[shift={(#1, \y)}] (-0.1 , 0 ) edge[line width=0.8ex] node[pos = -1 , left ] {\y} (0.1 , 0); % Lignes verticales en mm
+        	\draw[shift={(#1, \y)}] (-0.1 , 0 ) edge[line width=0.8ex] node[pos = -1 , left ] {\y * #6} (0.1 , 0); % Lignes verticales en mm
     	}
     
     \end{scope}
@@ -794,8 +794,8 @@ table [meta=z] {./data/donnees1.dat};
 
 
 % Définition de l’échelle
-%\def\echelleY{1}
-\pgfmathsetmacro{\echelleY}{11/6}
+\def\echelleY{10}
+\pgfmathsetmacro{\echelleYCm}{11/6}
 
 % Définition de la liste
 \def\listeLabelsY{{0,10,20,30,40,50,60}}
@@ -803,7 +803,7 @@ table [meta=z] {./data/donnees1.dat};
 % Appel de la commande
 \begin{scope}
 %\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationYCm{0}{6}{\listeLabelsY}{\echelleY}
+\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}
 %\drawgrid{-11}{15}{-11}{11}
 %\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
 %\path (-11 , -3) rectangle (11 , 5);	
@@ -811,8 +811,8 @@ table [meta=z] {./data/donnees1.dat};
 
 
 % Définition de l’échelle
-%\def\echelleX{(18)/7}
-\pgfmathsetmacro{\echelleX}{18/7}
+\def\echelleX{50}
+\pgfmathsetmacro{\echelleXCm}{18/7}
 
 
 % Définition de la liste
@@ -821,7 +821,7 @@ table [meta=z] {./data/donnees1.dat};
 % Appel de la commande
 \begin{scope}
 %\clip (-11 , -3) rectangle (11 , 5) ;
-\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleX}
+\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
 %\drawgrid{-11}{15}{-11}{11}
 %\draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 5) ;
 %\path (-11 , -3) rectangle (11 , 5);	
@@ -830,6 +830,8 @@ table [meta=z] {./data/donnees1.dat};
 \draw[line width=2.5ex , color = red ] (-11 , -3) rectangle (11 , 12) ;
 	
 \end{tikzpicture}
+
+\backgrowngrid{-11}{-3}{11}{12}{\echelleX}{\echelleY}
 
 
 %\tikz \InsitutDiagram ; 
