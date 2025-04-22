@@ -275,8 +275,8 @@
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
     	\draw[line width=1.0ex  ,color=\colorFive ,  fill = none] 	
 			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
-			(-2,8) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
-        node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
+			(-2,8) edge[] 
+        node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont Profil de bord } (-1,8)
 		;
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
 			plot[] file {data/GHD_bord_article_distribution_24-04-2024.table};
@@ -309,7 +309,7 @@
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	%\drawgrid{-14}{9.5}{-1}{12}
+	\drawgrid{-14}{9.5}{-1}{12}
 	
 \end{tikzpicture}
 
