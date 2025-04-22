@@ -274,13 +274,13 @@
     	\clip[](\valXmin , -1) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
     	\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorFour] file {data/donnee_bord_article_distribution_24-04-2024.table};
+			plot[color=\colorFive] file {data/donnee_bord_article_distribution_24-04-2024.table};
 		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorFour] file {data/GHD_bord_article_distribution_24-04-2024.table};
+			plot[color=\colorSix] file {data/GHD_bord_article_distribution_24-04-2024.table};
 		\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
-			plot[color=\colorFour] file {data/GHD_bord_2_article_distribution_24-04-2024.table};
+			plot[color=\colorTwo] file {data/GHD_bord_2_article_distribution_24-04-2024.table};
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 
-			plot[color=\colorSix] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
+			plot[color=\colorFour] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
 		;
     \end{scope}
     
@@ -301,6 +301,7 @@
     \draw   
         (\valXmin, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] 
         node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (\valXmin, 12)
+		
 		
 	;
 	
