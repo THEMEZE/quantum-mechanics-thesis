@@ -342,14 +342,10 @@
 	\def\listeLabelsX{{-400,-200,0,200,400}}
 	
 	
-	
-	\pgfmathparse{-4*\echelleXCm}  
-    \let\valXmin\pgfmathresult
 
     
     \begin{scope}
-    	\pgfmathparse{-4*\echelleXCm}  
-    	\let\valXmin\pgfmathresult
+
     	\clip[](-13 , -1) rectangle (13 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
     	
