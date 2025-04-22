@@ -37,44 +37,44 @@ Nous préparons d’abord un gaz homogène (Fig \ref{fig:BiPart.insitut}). Ensui
 
 
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\begin{tikzpicture}
-			\begin{scope}[shift={(2,0)}]
-				\begin{scope}[transform canvas={scale=0.6}]
+%\begin{figure}[H]
+%	\centering
+%	\begin{subfigure}[b]{0.3\textwidth}
+%		\begin{tikzpicture}
+%			\begin{scope}[shift={(2,0)}]
+%				\begin{scope}[transform canvas={scale=0.6}]
 					%\input{Figures/Fonc_A_code}	
 			
-				\end{scope}
+%				\end{scope}
 			
-				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
-			\end{scope}
+%				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+%			\end{scope}
 					
-		\end{tikzpicture}
-		\caption{}
-		\label{fig:grap.A}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.65\textwidth}
-		\begin{tikzpicture}
+%		\end{tikzpicture}
+%		\caption{}
+%		\label{fig:grap.A}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[b]{0.65\textwidth}
+%		\begin{tikzpicture}
 
-			\begin{scope}[shift={(-11,2.7)}]
-				\begin{scope}[transform canvas={scale=0.6}]
+%			\begin{scope}[shift={(-11,2.7)}]
+%				\begin{scope}[transform canvas={scale=0.6}]
 					%\input{Figures/Occupation_theta_code}	
 			
-				\end{scope}
-				\begin{scope}[scale=1]
-					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
-				\end{scope}	
-			\end{scope}
+%				\end{scope}
+%				\begin{scope}[scale=1]
+%					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+%				\end{scope}	
+%			\end{scope}
 			
-		\end{tikzpicture}
-		\caption{}
-		\label{fig.fluctu.A}
-	\end{subfigure}
-	\caption{}
-	\label{fig:diag_fig}
-\end{figure}
+%		\end{tikzpicture}
+%		\caption{}
+%		\label{fig.fluctu.A}
+%	\end{subfigure}
+%	\caption{}
+%	\label{fig:diag_fig}
+%\end{figure}
 
 
 Le gaz évolue ensuite selon la dynamique de son Hamiltonien. Nous observons le déplacement de la frontière au cours du temps. Pour cela, nous mesurons le profil de densité atomique à différents temps d’évolution.
@@ -156,13 +156,13 @@ et une deuxième relation qui fixe la vitesse effective $v^{\rm{eff}}_{[\nu]}$ c
 	
 \end{figure}
 
-\begin{figure}[hbt]
-    \centering
+%\begin{figure}[hbt]
+%    \centering
     %\includegraphics[width=0.7\textwidth]{Figures/figure_nustar.pdf}
-    \caption{Facteur d'occupation $\nu^* (v,\theta)$ résolvant l'équation (\ref{eq:nuetoile}) pour un ratio d'occupation initial $\nu_0 (\theta)$ dans la moitié droite du système correspondant à un équilibre thermique à température $T$. La ligne verte pointillée est la courbe $\theta^*(v)$, c'est-à-dire l'ensemble des points $(v,\theta)$ tels que $v^{\rm eff}_{[\nu^* (v,\cdot)]} (\theta) = v$. [Paramètres : 
-    $\gamma_0=mg/(n_0\hbar^2)=0.005$, $k_B T \hbar^2/(mg^2) = 365$, proches des paramètres expérimentaux des jeux de données ci-dessous.]}
-    \label{fig:nu_star}
-\end{figure}
+%    \caption{Facteur d'occupation $\nu^* (v,\theta)$ résolvant l'équation (\ref{eq:nuetoile}) pour un ratio d'occupation initial $\nu_0 (\theta)$ dans la moitié droite du système correspondant à un équilibre thermique à température $T$. La ligne verte pointillée est la courbe $\theta^*(v)$, c'est-à-dire l'ensemble des points $(v,\theta)$ tels que $v^{\rm eff}_{[\nu^* (v,\cdot)]} (\theta) = v$. [Paramètres : 
+%    $\gamma_0=mg/(n_0\hbar^2)=0.005$, $k_B T \hbar^2/(mg^2) = 365$, proches des paramètres expérimentaux des jeux de données ci-dessous.]}
+%    \label{fig:nu_star}
+%\end{figure}
 
 Pour une bipartition initiale dont la discontinuité est située à $x=0$, la solution de \eqref{eq:GHD} est invariante le long des rayons de vitesse constante $x/t$~\cite{bertini_transport_2016,castro-alvaredo_emergent_2016}. En d'autres termes, l'équation \eqref{eq:GHD} implique que, pour cette classe d'états initiaux, la distribution du facteur d'occupation local et donc toutes les propriétés locales du gaz, dépendent de $x$ et $t$ uniquement à travers la quantité $v=x/t$. La solution de l'équation \eqref{eq:GHD} peut donc être écrite en utilisant le facteur d'occupation le long des rayons $\nu^*(v,\theta)$ tel que
 \begin{equation}
