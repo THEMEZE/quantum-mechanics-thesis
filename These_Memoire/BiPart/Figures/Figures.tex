@@ -700,17 +700,20 @@ table [meta=z] {./data/donnees1.dat};
 	;
 	
 	% Graduation ordonné
-	\def\echelle{2}
 	
-	\newcommand{\GraduationYMm}[2]{
-		\foreach \r in { 1 ,... , 9   } {
-			\draw ( {-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}    , #1*#2 - #2  +  0.1*#2 *\r ) edge [thick,line width=0.3ex , color = \colorThree  ] ({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)} ,#1*#2 - #2 +  0.1*#2 *\r  );
-		}
+	
+\newcommand{\GraduationYMm}[2]{
+	\foreach \r in {1,...,9} {
+		\draw 
+			({-0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r) 
+			edge [thick, line width=0.3ex, color=\colorThree] 
+			({0.25 * 0.5 * (cos(3.14*0.2*\r r)^2 + 1)}, #1*#2 - #2 + 0.1*#2*\r);
 	}
-	
-\newcommand{\GraduationYCm}[3]{
+}
+
+\newcommand{\GraduationYCm}[3]{% #1: min, #2: max, #3: liste
   \foreach \R in {#1,...,#2} {
-    \pgfmathparse{#2[\R-1]}
+    \pgfmathparse{#3[\R-(#1)]} % index dans la liste
     \let\labelText\pgfmathresult
 
     \draw[color=gray]
@@ -721,13 +724,18 @@ table [meta=z] {./data/donnees1.dat};
 
     \GraduationYMm{\R}{\echelle}
   }
+  \GraduationYMm{#2+1}{\echelle}
 }
 
-	
-	
-	\def\listeLabels{{"-un","un", "deux", "trois", "quatre"}}
+% Définition de l’échelle
+\def\echelle{2}
 
+% Définition de la liste
+\def\listeLabels{{"-un", "zero", "un", "deux", "trois", "quatre"}}
+
+% Appel de la commande
 \GraduationYCm{-1}{4}{\listeLabels}
+
 	
 \end{tikzpicture}
 
