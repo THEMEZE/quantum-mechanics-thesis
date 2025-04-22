@@ -210,12 +210,12 @@
     	\let\valXmin\pgfmathresult
     	\pgfmathparse{#2-1}  
     	\let\valYmin\pgfmathresult
-    	\pgfmathparse{#3-1}  
+    	\pgfmathparse{#3+1}  
     	\let\valXmax\pgfmathresult
-    	\pgfmathparse{#4-1}  
+    	\pgfmathparse{#4+1}  
     	\let\valYmax\pgfmathresult
     	
-    	\draw[fill = \colorFour , opacity = 0.4]  (\valXmin , \valYmin ) rectangle ( \valXmax , \valYmax ) ;
+    	\draw[fill = \colorThree , opacity = 0.1]  (\valXmin , \valYmin ) rectangle ( \valXmax , \valYmax ) ;
 
    	 	% Grille principale en cm
     	\draw[very thin, line width=0.3ex ,  color=\colorTwo] (\valXmin , \valYmin ) grid ( \valXmax , \valYmax ); % Grille de base (#5 cm , #6 cm )
@@ -250,7 +250,7 @@
 \begin{tikzpicture}
 
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-14 , -1) rectangle (9.5 , 12) ;
+	\clip[](-14 , -2) rectangle (9.5 , 12) ;
 	
 	% Définition de l’échelle
 	\def\echelleY{10}
@@ -269,10 +269,13 @@
 
     
     \begin{scope}
-    	\pgfmathparse{#1-1}  
+    	\pgfmathparse{-4*\echelleXCm}  
     	\let\valXmin\pgfmathresult
-    	\clip[](-14 , -1) rectangle (9.5 , 12) ;
+    	\clip[](\valXmin , 0) rectangle (9.2 , 11.5) ;
     	\backgrowngrid{-4}{0}{3}{6}{\echelleXCm}{\echelleYCm}
+    	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
+			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+		;
     \end{scope}
     
 	\begin{scope}[shift = {(\valXmin,0)}]
@@ -282,11 +285,8 @@
 		
 	\GraduationXCm{-4}{3}{\listeLabelsX}{\echelleXCm}
 
-
 	
-
-	\draw[line width=0.1ex , color = \colorFour , fill = none] 	
-		plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+	\draw
 		(\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
         node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (9.5, 0)
         (\valXmin, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
