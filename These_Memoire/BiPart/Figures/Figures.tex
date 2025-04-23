@@ -497,17 +497,17 @@
 			] 
   			(0,0) rectangle (8,3.5);
   			
-    	\draw[line width=0.8ex  ,color=\colorSix ,  fill = none] 	
+    	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
 			plot[smooth] file {data/Donnee_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\tau \ast n_{\mbox{\tiny GHD}}(\tau \ast \cdot - x_0)$ } (-10,9)
+			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Données } (-10,9)
 		;
-		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
+		\draw[line width=0.8ex  ,color=\colorSix,  fill = none] 	
 			plot[smooth] file {data/GHD_1_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\Pi $  } (-10,8)
+			(-11.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf T = 560 nK  } (-10,8)
 		;
-		\draw[line width=0.8ex  ,color=\colorFour, dashed , dash pattern=on 10pt off 6pt,  fill = none] 	
+		\draw[line width=0.8ex  ,color=\colorThree,  fill = none] 	
 			plot[] file {data/GHD_2_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\ell \ast \rho  $  } (-10,7)
+			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Ajustement : T = 1550 nK  } (-10,7)
 		;
     \end{scope}
     
@@ -529,7 +529,7 @@
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-10}{13}{-4}{12}
+	\drawgrid{-13}{13}{-4}{12}
 	
 \end{tikzpicture}
 
