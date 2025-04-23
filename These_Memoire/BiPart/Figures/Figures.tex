@@ -401,13 +401,13 @@
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
-	\pgfmathsetmacro{\echelleYCm}{9/3}
+	\pgfmathsetmacro{\echelleYCm}{10/6}
 	%\def\echelleX{50}
-	\pgfmathsetmacro{\echelleXCm}{16/4}
+	\pgfmathsetmacro{\echelleXCm}{10/4}
 
 	% Définition de la liste
-	\def\listeLabelsY{{0,1,2,3}}
-	\def\listeLabelsX{{-400,-200,0,200,400}}
+	\def\listeLabelsY{{0,20,40,60,80,100,120}}
+	\def\listeLabelsX{{-12.5,-7.5,-5,-2.5 , 0 , 2.5, 5}}
 	
 	
 
@@ -444,10 +444,10 @@
     
     % Graduations     
 	\begin{scope}[shift = {(-10,0)}]
-		\GraduationYCm{0}{3}{\listeLabelsY}{\echelleYCm}	
+		\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}			
 	\begin{scope}[shift = {(0,-2)}]	
-		\GraduationXCm{-2}{2}{\listeLabelsX}{\echelleXCm}
+		\GraduationXCm{-5}{2}{\listeLabelsX}{\echelleXCm}
 	\end{scope}
 	
 	
