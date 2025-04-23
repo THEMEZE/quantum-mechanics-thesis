@@ -467,7 +467,7 @@
 %Fit expension
 \begin{tikzpicture}
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	%\clip[](-15 , -3) rectangle (7 , 11.5) ;
+	\clip[](-13 , -3) rectangle (9.5 , 11.4) ;
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
@@ -489,26 +489,26 @@
     	\backgrowngrid{-6}{0}{4}{4}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
-  			shift={(-10.5cm,6.2cm)},
+  			shift={(-10.5cm,7.2cm)},
   			line width=0.5ex,
   			draw=\colorThree,
   			fill=\colorThree!50!\colorTwo,
   			rounded corners=6pt,
   			opacity = 0.2
 			] 
-  			(0,0) rectangle (8,3.5);
+  			(0,0) rectangle (8.6,3.5);
   			
     	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
 			plot[smooth] file {data/Donnee_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-10,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{15pt}{19pt}\selectfont \bf Données } (-8.5,9)
+			(-10.2,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf Données } (-8.3,10)
 		;
 		\draw[line width=0.8ex  ,color=\colorSix,  fill = none] 	
 			plot[smooth] file {data/GHD_1_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-10,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{15pt}{19pt}\selectfont \bf T = 560 nK  } (-8.5,8)
+			(-10.2,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf T = 560 nK  } (-8.3,9)
 		;
 		\draw[line width=0.8ex  ,color=\colorThree,  fill = none] 	
 			plot[] file {data/GHD_2_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-10,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{15pt}{19pt}\selectfont \bf Ajust : T = 1550 nK  } (-8.5,7)
+			(-10.2,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf Ajust : T = 1550 nK  } (-8.3,8)
 		;
     \end{scope}
     
