@@ -397,7 +397,7 @@
 %theorie 
 \begin{tikzpicture}
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-12 , -4) rectangle (11 , 12) ;
+	%\clip[](-12 , -4) rectangle (11 , 12) ;
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
@@ -407,15 +407,15 @@
 
 	% Définition de la liste
 	\def\listeLabelsY{{0,20,40,60,80,100,120}}
-	\def\listeLabelsX{{-12.5,-7.5,-5,-2.5 , 0 , 2.5, 5}}
+	\def\listeLabelsX{{-12.5,-10,-7.5,-5,-2.5 , 0 , 2.5, 5}}
 	
 	
 
     
     \begin{scope}
 
-    	\clip[](-10 , -2) rectangle (10, 11.5) ;
-    	\backgrowngrid{-2}{0}{2}{3}{\echelleXCm}{\echelleYCm}
+    	%\clip[](-10 , -2) rectangle (10, 11.5) ;
+    	\backgrowngrid{-4}{0}{2}{6}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
   			shift={(2cm,8cm)},
@@ -443,10 +443,10 @@
     
     
     % Graduations     
-	\begin{scope}[shift = {(-10,0)}]
+	\begin{scope}[shift = {(-13,0)}]
 		\GraduationYCm{0}{6}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}			
-	\begin{scope}[shift = {(0,-2)}]	
+	\begin{scope}[shift = {(0,-1)}]	
 		\GraduationXCm{-5}{2}{\listeLabelsX}{\echelleXCm}
 	\end{scope}
 	
