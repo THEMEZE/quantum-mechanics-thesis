@@ -394,6 +394,77 @@
 \end{tikzpicture}
 
 
+%theorie 
+\begin{tikzpicture}
+	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
+	\clip[](-12 , -4) rectangle (11 , 12) ;
+	
+	% Définition de l’échelle
+	%\def\echelleY{10}
+	\pgfmathsetmacro{\echelleYCm}{9/3}
+	%\def\echelleX{50}
+	\pgfmathsetmacro{\echelleXCm}{16/4}
+
+	% Définition de la liste
+	\def\listeLabelsY{{0,1,2,3}}
+	\def\listeLabelsX{{-400,-200,0,200,400}}
+	
+	
+
+    
+    \begin{scope}
+
+    	\clip[](-10 , -2) rectangle (10, 11.5) ;
+    	\backgrowngrid{-2}{0}{2}{3}{\echelleXCm}{\echelleYCm}
+    	
+    	\draw[
+  			shift={(2cm,8cm)},
+  			line width=0.5ex,
+  			draw=\colorThree,
+  			fill=\colorThree!50!\colorTwo,
+  			rounded corners=6pt,
+  			opacity = 0.2
+			] 
+  			(0,0) rectangle (7,3);
+  			
+    	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
+			plot[smooth] file {data/GHD_article_distribution_24-04-2024.table}
+			(2.5,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tilde{n}(x)$ } (4,10)
+		;
+		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
+			plot[smooth] file {data/Pi_article_distribution_24-04-2024.table}
+			(2.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tilde{n}(x-2x_s)$  } (4,9)
+		;
+		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
+			plot[smooth] file {data/Pi_article_distribution_24-04-2024.table}
+			(2.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tilde{n}(x-2x_s)$  } (4,9)
+		;
+    \end{scope}
+    
+    
+    % Graduations     
+	\begin{scope}[shift = {(-10,0)}]
+		\GraduationYCm{0}{3}{\listeLabelsY}{\echelleYCm}	
+	\end{scope}			
+	\begin{scope}[shift = {(0,-2)}]	
+		\GraduationXCm{-2}{2}{\listeLabelsX}{\echelleXCm}
+	\end{scope}
+	
+	
+	% Axxes 
+	\draw[shift = {(0,-2)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m)$ } (11, 0);
+    \draw [shift = {(-10,0)}]  (0, -2) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $n~({\mu m}^{-1})$ } (0, 12)
+		
+		
+	;
+	
+	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
+	%\drawgrid{-11}{13}{-4}{12}
+	
+\end{tikzpicture}
+
+
+
 
 
 
