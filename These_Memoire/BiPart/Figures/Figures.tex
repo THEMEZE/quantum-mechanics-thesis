@@ -287,7 +287,7 @@
   			(0,0) rectangle (10.7,5);
   			
     	\draw[line width=0.8ex  ,color=\colorFive ,  fill = none] 	
-			plot[] file {data/donnee_bord_article_distribution_24-04-2024.table}
+			plot[smooth] file {data/donnee_bord_article_distribution_24-04-2024.table}
 			(-10.5,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Profil de bord } (-9,10)
 		;
 		\draw[line width=1.0ex  ,color=\colorSix ,  fill = none] 	
@@ -299,7 +299,7 @@
 			(-10.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf   T = 1550~nK } (-9,7)
 		;
 		\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 
-			plot[] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
+			plot[smooth] file {data/donnee_selection_1_article_distribution_24-04-2024.table}
 			(-10.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{19pt}{19pt}\selectfont \bf Sélection} (-9,8)
 		;
     \end{scope}
@@ -326,6 +326,8 @@
 	
 \end{tikzpicture}
 
+
+%Assymetrie
 \begin{tikzpicture}
 
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
