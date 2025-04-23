@@ -397,7 +397,7 @@
 %theorie 
 \begin{tikzpicture}
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	\clip[](-15 , -3) rectangle (7 , 12) ;
+	\clip[](-15 , -3) rectangle (7 , 11.5) ;
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
@@ -414,7 +414,7 @@
     
     \begin{scope}
 
-    	\clip[](-13 , -1) rectangle (6.6, 11.5) ;
+    	\clip[](-13 , -1) rectangle (6.6, 11.0) ;
     	\backgrowngrid{-5}{0}{2}{6}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
@@ -429,15 +429,15 @@
   			
     	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
 			plot[smooth] file {data/GHD_article_distribution_24-04-2024.table}
-			(-11.5,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\tau \times n_{\mbox{\tiny GHD}}(\tau \times - x_0 \cdot)$ } (-10,10)
+			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\tau \ast n_{\mbox{\tiny GHD}}(\tau \ast \cdot - x_0)$ } (-10,9)
 		;
 		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
 			plot[smooth] file {data/Pi_article_distribution_24-04-2024.table}
-			(2.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\Pi(\cdot  ) $  } (4,9)
+			(-11.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\Pi $  } (-10,8)
 		;
 		\draw[line width=0.8ex  ,color=\colorOne, dashed ,  fill = none] 	
 			plot[smooth] file {data/rho_article_distribution_24-04-2024.table}
-			(2.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{25pt}{19pt}\selectfont \bf $\ell \ast \rho ( x_0 ) $  } (4,8)
+			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\ell \ast \rho  $  } (-10,7)
 		;
     \end{scope}
     
@@ -452,14 +452,14 @@
 	
 	
 	% Axxes 
-	\draw[shift = {(-3,-1)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $\mu m / m s $ } (10, 0);
-    \draw [shift = {(-13,0)}]  (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $\theta~(ms/\mu m)$ } (0, 12)
+	\draw[shift = {(-3,-1)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $\theta~(\mu m / m s) $ } (10, 0);
+    \draw [shift = {(-13,0)}]  (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $ms/\mu m$ } (0, 11.5)
 		
 		
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-16}{13}{-4}{12}
+	%\drawgrid{-16}{13}{-4}{12}
 	
 \end{tikzpicture}
 
