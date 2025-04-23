@@ -397,7 +397,7 @@
 %theorie 
 \begin{tikzpicture}
 	%\clip[scale = 0.95 , decorate, decoration={random steps, segment length=0.1 cm, amplitude=0.2cm}](#1 , #2 ) rectangle ( #3 , #4 ) ;
-	%\clip[](-12 , -4) rectangle (11 , 12) ;
+	\clip[](-12 , -4) rectangle (11 , 12) ;
 	
 	% Définition de l’échelle
 	%\def\echelleY{10}
@@ -414,8 +414,8 @@
     
     \begin{scope}
 
-    	%\clip[](-10 , -2) rectangle (10, 11.5) ;
-    	\backgrowngrid{-4}{0}{2}{6}{\echelleXCm}{\echelleYCm}
+    	\clip[](-13 , -1) rectangle (6.6, 11.5) ;
+    	\backgrowngrid{-5}{0}{2}{6}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
   			shift={(2cm,8cm)},
@@ -459,7 +459,7 @@
 	;
 	
 	%\draw[line width=2.5ex , color = red ] (-14 , -1) rectangle (9.5 , 12) ;
-	\drawgrid{-13}{13}{-4}{12}
+	\drawgrid{-16}{13}{-4}{12}
 	
 \end{tikzpicture}
 
