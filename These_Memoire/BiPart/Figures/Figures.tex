@@ -484,11 +484,11 @@
     
     \begin{scope}
 
-    	\clip[](-13 , -1) rectangle (6.6, 11.0) ;
+    	\clip[](-11.2 , -1) rectangle (9, 11.0) ;
     	\backgrowngrid{-6}{0}{4}{4}{\echelleXCm}{\echelleYCm}
     	
     	\draw[
-  			shift={(-12cm,6.2cm)},
+  			shift={(-10.5cm,6.2cm)},
   			line width=0.5ex,
   			draw=\colorThree,
   			fill=\colorThree!50!\colorTwo,
@@ -499,21 +499,21 @@
   			
     	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
 			plot[smooth] file {data/Donnee_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Données } (-10,9)
+			(-10.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Données } (-9,9)
 		;
 		\draw[line width=0.8ex  ,color=\colorSix,  fill = none] 	
 			plot[smooth] file {data/GHD_1_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf T = 560 nK  } (-10,8)
+			(-10.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf T = 560 nK  } (-9,8)
 		;
 		\draw[line width=0.8ex  ,color=\colorThree,  fill = none] 	
 			plot[] file {data/GHD_2_article_simul_expansion_1_24-04-2024-T-x0.table}
-			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Ajustement : T = 1550 nK  } (-10,7)
+			(-10.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf Ajust : T = 1550 nK  } (-9,7)
 		;
     \end{scope}
     
     
     % Graduations     
-	\begin{scope}[shift = {(-13,0)}]
+	\begin{scope}[shift = {(-11.2,0)}]
 		\GraduationYCm{0}{4}{\listeLabelsY}{\echelleYCm}	
 	\end{scope}			
 	\begin{scope}[shift = {(0,-1)}]	
@@ -522,8 +522,8 @@
 	
 	
 	% Axxes 
-	\draw[shift = {(-3,-1)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $\theta~(\mu m / m s) $ } (10, 0);
-    \draw [shift = {(-13,0)}]  (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge $ms/\mu m$ } (0, 11.5)
+	\draw[shift = {(-1.2,-1)}](-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(0,-1)} , pos=0.5, below]{ \huge $x~(\mu m) $ } (10.4, 0);
+    \draw [shift = {(-11.2,0)}]  (0, -1) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorOne] node[shift = {(-1,0)} , pos=0.5, above , rotate = 90 ]{ \huge ${\mu m}^{-1}$ } (0, 11.5)
 		
 		
 	;
