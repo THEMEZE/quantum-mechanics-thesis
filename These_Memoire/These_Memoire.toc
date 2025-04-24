@@ -1,0 +1,41 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{\numberline {1}Modèle de Lieb-Liniger et approche Bethe Ansatz}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction au gaz de bosons unidimensionnels}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Description du modèle de Lieb-Liniger}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Propriétés fondamentales et régimes asymptotiques}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Bethe Ansatz et solution exacte du modèle de Lieb-Liniger}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Problème à deux corps}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Problème à N corps}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Condition aux bords périodiques et équation de Bethe Ansatz}{4}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Relaxation des systèmes quantiques isolés et phénomènes d'équilibre}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Équilibre thermique et ensemble de Gibbs}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Thermodynamique du gaz de Lieb-Liniger à température nulle}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Excitations élémentaires à température nulle}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{6}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Entropie de Yang-Yang et principe de maximisation}{7}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Intégrabilité et charges conservées}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Dynamique hors équilibre et relaxation des systèmes isolés}{7}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Physique statistique appliquée aux systèmes intégrables}{7}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Entropie de Yang-Yang généralisée}{8}{subsection.2.2.4}%
+\contentsline {chapter}{\numberline {3}Dynamique hors-équilibre et hydrodynamique généralisée}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Hydrodynamique et régimes asymptotiques}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Hydrodynamique classique des systèmes chaotiques}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Hydrodynamique des systèmes intégrables et distribution de rapidité}{9}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Équation d’hydrodynamique généralisée (GHD)}{9}{subsection.3.1.3}%
+\contentsline {chapter}{\numberline {4}Fluctuation de $\rho $ dans le GGE }{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Fluctuations autour de l’état typique}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Fluctuations autour du profil stationnaire}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fluctuation du nombre d'atomes et de l'énergie}{13}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Protocoles experimentale}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Présentation de l’expérience}{17}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Piégeage transverses et longitudinale}{17}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Outil de sélection spatial}{17}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dispositif expérimental}{20}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Prédictions de la GHD}{20}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Sonder la distribution locale des rapidités}{22}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Detailes sur les calcules}{23}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{25}{chapter.7}%
+\contentsline {section}{\numberline {7.1}calculs}{25}{section.7.1}%
+\contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{25}{section.7.2}%
