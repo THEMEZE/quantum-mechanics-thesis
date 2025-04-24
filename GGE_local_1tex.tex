@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Formulations discrète et continue en Hydrodynamique Généralisée}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Formulation discrète via la base de Bethe}
+
+Considérons un état à $N$ particules caractérisé par un ensemble discret de quasi-moments (ou rapidités) $\{ \theta_a \}_{a=1}^{N}$, qui est un état propre d’un Hamiltonien intégrable (par exemple le gaz de Lieb-Liniger).
+
+On définit une observable extensive associée à une fonction $f(\theta)$ comme :
+\begin{equation}
+    \hat{Q}[f] = \sum_{a=1}^{N} f(\theta_a) \ket{\{\theta_a\}}\bra{\{\theta_a\}}.
+\end{equation}
+
+Cette observable est diagonale dans la base de Bethe. On peut l'exprimer comme une combinaison linéaire d'observables conservées $\hat{O}_i$ :
+\begin{equation}
+    \hat{Q}[f] = \sum_{i=1}^{\infty} \beta_i \hat{O}_i,
+\end{equation}
+où $f(\theta) = \sum_{i=1}^{\infty} \alpha_i \theta^i$ et $\beta_i$ est le multiplicateur de Lagrange associé à $\hat{O}_i$. On a alors :
+\begin{equation}
+    \sum_{i=1}^{\infty} \beta_i \langle \hat{O}_i \rangle_{\{\theta_a\}} = \sum_{a=1}^{N} f(\theta_a).
+\end{equation}
+
+\section{Formulation continue (thermodynamique)}
+
+Dans la limite thermodynamique $N, L \to \infty$ avec $N/L$ constant, on introduit une densité de particules $\rho(x,\theta)$ telle que :
+\begin{equation}
+    \int \dd \theta \, \rho(x,\theta) = n(x),
+\end{equation}
+où $n(x)$ est la densité linéique à la position $x$. On introduit également un facteur d’occupation $\nu(x,\theta)$, défini par :
+\begin{equation}
+    \nu(x,\theta) = \frac{\rho(x,\theta)}{\rho_s(x,\theta)},
+\end{equation}
+où $\rho_s$ est la densité d'états disponibles.
+
+L'évolution temporelle de $\rho(x,\theta,t)$ est alors régie par l'équation de continuité :
+\begin{equation}
+    \partial_t \rho(x,\theta,t) + \partial_x \left( v^{\text{eff}}(x,\theta,t) \rho(x,\theta,t) \right) = 0,
+\end{equation}
+où $v^{\text{eff}}$ est la vitesse effective, fonctionnelle de $\nu$.
+
+\section{Probabilités et projecteurs}
+
+La probabilité de mesurer un état $\{ \theta_a \}$ dans un état quantique $\rho$ est donnée par :
+\begin{equation}
+    \mathbb{P}(\{\theta_a\}) = \Tr \left[ \rho \cdot \ket{\{\theta_a\}}\bra{\{\theta_a\}} \right].
+\end{equation}
+
+On peut donc écrire toute observable diagonale en termes de projecteurs :
+\begin{equation}
+    \langle \hat{Q}[f] \rangle = \sum_{\{\theta_a\}} \mathbb{P}(\{\theta_a\}) \sum_a f(\theta_a).
+\end{equation}
+
+\section{Visualisation en TikZ}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3) node[above] {$\theta$};
+
+    \draw[domain=-2:2, smooth, variable=\x, red, thick] plot ({\x}, {2*exp(-\x*\x)}) node[right] {$\rho(x,\theta)$};
+
+    \draw[dashed] (-1,0) -- (-1,2.5);
+    \draw[dashed] (1,0) -- (1,2.5);
+    \node at (0.7,2.2) {$|x - x_0| < \ell/2$};
+\end{tikzpicture}
+\caption{Distribution de rapidité locale $\rho(x,\theta)$ concentrée autour de $x_0$ sur une largeur $\ell$.}
+\end{figure}
+
+\end{document}

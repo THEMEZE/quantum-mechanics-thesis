@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Hydrodynamique Généralisée à l'Échelle Locale}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Description Locale de la GHD}
+
+À chaque point de l’espace-temps $(x,t)$, le système est supposé localement en état d'équilibre général (GGE), décrit par une distribution locale de quasi-particules $\rho(x,\theta,t)$. On définit :
+
+\begin{itemize}
+    \item Densité de quasi-particules : $\rho(x,\theta,t)$,
+    \item Densité d'états disponibles : $\rho_s(x,\theta,t)$,
+    \item Facteur d'occupation : $\vartheta(x,\theta,t) = \frac{\rho(x,\theta,t)}{\rho_s(x,\theta,t)}$.
+\end{itemize}
+
+\section*{Équation de Continuité de la GHD}
+
+\begin{equation}
+\partial_t \rho(x,\theta,t) + \partial_x \left( v^{\text{eff}}(x,\theta,t)\, \rho(x,\theta,t) \right) = 0
+\end{equation}
+
+avec :
+\begin{equation}
+v^{\text{eff}}(x,\theta,t) = \frac{ (v^{\text{gr}} \rho_s)^{\text{dr}} }{ \rho_s^{\text{dr}} }
+\end{equation}
+
+et le dressing $f^{\text{dr}}$ défini par :
+\begin{equation}
+f^{\text{dr}}(\theta) = f(\theta) + \int d\alpha\, \varphi(\theta - \alpha)\, \vartheta(\alpha)\, f^{\text{dr}}(\alpha)
+\end{equation}
+
+\section*{Équation de Bethe Locale}
+
+\begin{equation}
+\rho_s(x,\theta,t) = \frac{1}{2\pi} + \int d\alpha\, \varphi(\theta - \alpha)\, \rho(x,\alpha,t)
+\end{equation}
+
+\section*{État Local par Projecteur}
+
+\begin{equation}
+\hat{\rho}(x,t) = \sum_{\{\theta_a\}} P_{x,t}[\{\theta_a\}]\, |\{\theta_a\}\rangle \langle \{\theta_a\}|
+\end{equation}
+
+avec :
+\begin{equation}
+P_{x,t}[\{\theta_a\}] = \frac{1}{Z(x,t)} \exp\left( - \sum_a \epsilon(x,\theta_a,t) \right)
+\end{equation}
+
+\section*{Potentiel Libre Local}
+
+\begin{equation}
+\mathcal{F}_{x,t}[\rho] = \sum_i \beta_i(x,t)\, \int d\theta\, o_i(\theta)\, \rho(x,\theta,t) - S_{\mathrm{YY}}[\rho(x,\theta,t)]
+\end{equation}
+
+sous la contrainte de Bethe.
+
+\section*{Illustration : Distribution Locale $\vartheta(x,\theta,t)$}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1.1]
+  \draw[->] (-0.5,0) -- (6.5,0) node[right] {$\theta$};
+  \draw[->] (0,-0.5) -- (0,3.5) node[above] {$\vartheta(x,\theta,t)$};
+
+  % Première courbe à gauche
+  \draw[red, thick, domain=0:2, smooth, variable=\x] plot (\x, {2*exp(-2*(\x - 1)^2)});
+  \node at (1.5,2.6) {\small $x_1$};
+
+  % Deuxième courbe au centre
+  \draw[blue, thick, domain=1.5:3.5, smooth, variable=\x] plot (\x, {2.5*exp(-2*(\x - 2.5)^2)});
+  \node at (2.7,3) {\small $x_2$};
+
+  % Troisième courbe à droite
+  \draw[green!60!black, thick, domain=3:5, smooth, variable=\x] plot (\x, {1.8*exp(-2*(\x - 4)^2)});
+  \node at (4.2,2.3) {\small $x_3$};
+\end{tikzpicture}
+\caption{Distribution locale de rapidité $\vartheta(x,\theta,t)$ pour différents points $x$ dans le gaz.}
+\end{figure}
+
+\end{document}
