@@ -398,7 +398,7 @@ table [meta=z] {./data/donnees1.dat};
         	;
         					
 		\end{tikzpicture}};
-	\draw[opacity = 0.5 , dashed , line width=1.8ex , color = \colorTwo , fill = none] 
+	\draw[opacity = 0.5 , dashed , dash pattern=on 6pt off 3pt, line width=1.8ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_0_sur_18.table}
 		(-7,7) edge []node [pos=1.1, right ]{\huge $bord : v^{\mbox{\tiny eff}}$ } ( -6.5  , 7 )	 
 	;
@@ -419,9 +419,9 @@ table [meta=z] {./data/donnees1.dat};
         ;
         			
         \draw
-    		(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x(s)/t$} (0.45, -0.2)
-        	(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 4.0 )
+    		(0.45, 0.2) edge[line width=1.8ex, color=\colorOne] 
+        						node[pos=1.0, below]{ \color{\colorOne}\huge $x(s)/t$} (0.45, -0.2)
+        	(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorOne , dashed ] (0.45 , 4.0 )
         ;	
 
 
@@ -536,9 +536,9 @@ table [meta=z] {./data/donnees1.dat};
 		(0.1 , 0 )edge[line width=0.8ex, color=\colorThree , >-<, > = stealth,] node [pos = 0.5 , below]{\huge $\ell$}  ( 0.9 , 0) 	
 	;
 	\draw
-    	(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x(s)$} (0.45, -0.2)
-        (0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 4.0 )
+    	(0.45, 0.2) edge[line width=1.8ex, color=\colorOne] 
+        						node[pos=1.0, below]{ \color{\colorOne}\huge $x(s)$} (0.45, -0.2)
+        (0.45 , -0.2 ) edge[line width=0.8ex, color=\colorOne , dashed ] (0.45 , 4.0 )
     ;
 				        				
 	%\drawgrid{-10}{10}{-10}{10}
@@ -603,11 +603,11 @@ table [meta=z] {./data/donnees1.dat};
         		(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  , 1.3 )
         	; 
 		\end{tikzpicture}};
-	\draw[opacity = 0.5 , dotted , line width=0.5ex , color = \colorTwo , fill = none] 
+	\draw[opacity = 0.5 , dotted ,dash pattern=on 2pt off 2pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_1_30.table}
 		(-7,6) edge []node [pos=1.1, right ]{\huge $bord~gauche$ } ( -6.5  , 6 )	 
 	;
-	\draw[opacity = 0.5 , dash dot , line width=0.5ex , color = \colorTwo , fill = none] 
+	\draw[opacity = 0.5 , dash dot , dash pattern=on 8pt off 2pt on 2pt off 2pt,line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_2_30.table}
 		(-7,5) edge []node [pos=1.1, right ]{\huge $bord~droite$ } ( -6.5  , 5 )	 
 	;
