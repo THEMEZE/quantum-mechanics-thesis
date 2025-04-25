@@ -198,7 +198,7 @@ Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_
 	\includegraphics[width=\textwidth , page = 6 ]{Shema.pdf}
 	\label{fig:BiPart.coupure2}
 	\caption{
-(a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(s; \tau = 0^+),\ \theta(s; \tau = 0^+))$, et le bord droit en tiret-point par l’ensemble des points $(x_d(s; \tau = 0^+),\ \theta(s; \tau = 0^+))$. Le bord complet est donc la concaténation de ces deux ensembles. 
+(a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(s; \tau = 0^+),\ \theta_g(s; \tau = 0^+))$, et le bord droit en tiret-point par l’ensemble des points $(x_d(s; \tau = 0^+),\ \theta_d(s; \tau = 0^+))$. Le bord complet est donc la concaténation de ces deux ensembles. 
 (b) Densité linéique spatiale $n(x)$ : en pointillés, $n(x; t = 18~\mathrm{ms})$ juste avant la sélection ; en ligne pleine, $n(x; \tau = 0^+)$, égal à $n(x; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$ et nul ailleurs. 
 (c) Distribution de rapidité après sélection, $\Pi(\theta) = \int \rho(x,\theta ; \tau)\,\mathrm{d}x$, invariante sous l’évolution unidimensionnelle, représentée en rouge. La distribution localement résolue en $x(s; \tau = 0^+)$, $\rho(x(s; \tau = 0^+), \theta ; \tau = 0^+)$, est représentée en pointillés. Cette distribution est localement conservée, i.e., $\rho(x(s; \tau), \theta(s; \tau))$ reste inchangée au cours de l’évolution unidimensionnelle, indépendamment de $\tau$. 
 (e) Distribution localement résolue $\rho(x, \theta ; \tau = 30~\mathrm{ms})$ après une évolution unidimensionnelle de $30~\mathrm{ms}$. Le bord gauche est représenté en pointillés par les points $(x_g(s; \tau = 30~\mathrm{ms}),\ \theta(s; \tau = 30~\mathrm{ms}))$, et le bord droit en tiret-point par $(x_d(s; \tau = 30~\mathrm{ms}),\ \theta(s; \tau = 30~\mathrm{ms}))$. 
@@ -272,7 +272,133 @@ Nous comparons ensuite le profil d'expansion simulé par la GHD avec les donnée
 
 Une des raisons de l'échec de nos tentatives de reproduction du profil de densité après l'expansion de la tranche réside dans la présence de queues à droite du profil expérimental — voir le profil de densité dans la Fig.~\ref{fig:simul_expansion}(b). Ces queues sont absentes des calculs GHD à l’échelle d’Euler car la fonction d’occupation dans la tranche s’annule strictement au-delà d’une certaine rapidité. L’origine de ces queues reste incertaine. Elles pourraient être dues à des effets de bord associés à la procédure de sélection de tranche, les atomes en bordure étant chauffés par le faisceau de poussée. Il est également possible qu’un effet diffusif, non pris en compte dans la GHD à l’échelle d’Euler, intervienne au début de la déformation du bord, lorsque les gradients sont importants.
 
-\section{Detailes sur les calcules}
+\section{Détails sur les calculs}
 \label{sec:calcule}
+
+On fait l'hypothèse que le système est dans un état thermique. Cela implique que la fonction $f$ qui paramétrise l'opérateur charge (cf. ??) vérifie :
+
+\begin{eqnarray*}
+	f(\theta) & = & \frac{ \varepsilon(\theta) - \mu }{T},
+\end{eqnarray*}
+
+avec $\varepsilon(\theta) = \frac{m \theta^2}{2}$. On peut réécrire cette relation en minimisant l'entropie de Yang-Yang (cf. ??) et en injectant la forme du facteur d'occupation $\nu = \rho/\rho_s = (1+e^{\beta \epsilon})^{-1}$, avec $\beta = (k_B T)^{-1}$. On obtient alors une équation de type point fixe :
+
+\begin{eqnarray*}
+	\beta \epsilon(\theta) & = & \beta \epsilon_0(\theta) -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon(\theta)} \right),
+\end{eqnarray*}
+
+avec $\epsilon_0(\theta) = \frac{m}{2} \theta^2 - \mu$. Cette équation est bien définie et converge (cf. ??). Pour s'en convaincre, on peut calculer la norme du déterminant du jacobien de l'application. Si elle est inférieure à 1, on est assuré de la convergence. 
+
+L'équation étant non linéaire, pour garantir la convergence vers la bonne solution (évitant les cycles), on itère la suite suivante :
+
+\begin{eqnarray*}
+	\beta \epsilon_{n+1}(\theta) & = & \beta \epsilon_0(\theta) -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon_n(\theta)} \right),
+\end{eqnarray*}
+
+jusqu'à ce que la distance entre deux itérations successives soit suffisamment petite : ici $\beta \Vert \epsilon_{n+1} - \epsilon_n \Vert < 10^{-12}$.
+
+Ainsi, en fixant le couple $(\mu, T)$, on obtient $\epsilon$, puis $\nu$, puis enfin $\rho_s$ via :
+
+\begin{eqnarray*}
+	2\pi \rho_s & = & \frac{m}{\hbar} \cdot 1^{\mathrm{dr}},
+\end{eqnarray*}
+
+où la fonction "habillée" $f^{\mathrm{dr}}$ est définie par :
+
+\begin{eqnarray*}
+	f^{\mathrm{dr}} & = & f + \frac{\Delta}{2\pi} \star ( \nu \ast f^{\mathrm{dr}} ),
+\end{eqnarray*}
+
+ce qui est une équation linéaire. Numériquement, on la résout sous la forme :
+
+\begin{eqnarray*}
+	\left\{ \mathrm{id} - \frac{\Delta}{2\pi} \star ( \nu \ast \cdot ) \right\} f^{\mathrm{dr}} & = & f.
+\end{eqnarray*}
+
+La densité physique est alors obtenue par $\rho = \nu \ast \rho_s$. Expérimentalement, on mesure la densité homogène $n_0 = 56~\mathrm{\mu m^{-1}}$ (voir Fig. \ref{fig:BiPart.insitut}). À température fixée, on ajuste donc le potentiel chimique $\mu$ pour satisfaire la contrainte :
+
+\begin{eqnarray*}
+	n_0 & = & \int \rho(\theta) \, d\theta.
+\end{eqnarray*}
+
+L'équation (\ref{eq:nuetoile}) implique :
+
+\begin{eqnarray*}
+	\nu(x(s;t), \theta(s;t)) & = & \nu(x(s;0), \theta(s;0)),
+\end{eqnarray*}
+
+ce qui signifie que $\nu$ est constant au cours du temps si on suit le couple $(x(s;t), \theta(s;t))$ — c’est la vision lagrangienne en hydrodynamique. La graduation fixe des axes donne la vision eulérienne. Cela implique également :
+
+\begin{eqnarray*}
+	\partial_t \left( \begin{array}{c} x(s;t) \\ \theta(s;t) \end{array} \right) & = & \left( \begin{array}{c} v^{\mathrm{eff}}_{[\nu]}(\theta(s;t)) \\ 0 \end{array} \right),
+\end{eqnarray*}
+
+d’où $\theta(s;t) = \theta(s;0) \equiv \theta(s)$. On note $\Gamma_t \doteq \{(x(s;t), \theta(s;t))\}$. À l’intérieur de ce contour, le facteur d’occupation est indépendant de $x$ (voir Fig. ??), donc il est conservé au cours du temps :
+
+\begin{eqnarray*}
+	\nu(x(s,t), \theta(s)) & = & \nu_0(\theta),
+\end{eqnarray*}
+
+ce qui est le cas dans tout le protocole. On peut ainsi calculer l’évolution du contour au cours du temps.
+
+
+\subsection{Simulation de la déformation du bord} 
+
+Dans la partie "déformation du bord" (Fig. \ref{fig:BiPart.coupure1}), initialement, l'intérieur du contour correspond à $x > 0$. Il est donc suffisant d'étudier l'évolution du bord initialement situé en $(x(s, t = 0 ) = 0 , \theta(s))$. La bijectivité du contour implique que la vitesse effective soit constante : $v_{[\nu]}^{\mbox{\tiny eff}} ( \theta  ) = v$, d'où
+
+\begin{eqnarray*}
+	\frac{x(s;t)}{t} & = &	v_{[\nu^\ast (  v(s) , \cdot )]}^{\mbox{\tiny eff}} ( \theta(s)  ) = v(s),
+\end{eqnarray*}
+
+avec la mise à l’échelle suivante :
+
+\begin{eqnarray*}
+	\nu(x(s,t),\theta(s)) & = &  \nu^\ast(v(s),\theta(s)),
+\end{eqnarray*}
+
+ce qui montre que la déformation est indépendante du temps. Ainsi, pour simuler la déformation du bord, il suffit de calculer la vitesse effective :
+
+\begin{eqnarray*}
+	v_{[\nu]}^{\mbox{\tiny eff}} ( \theta  ) & = & \frac{\mathrm{id}^{\mathrm{dr}}(\theta)}{\mathrm{1}^{\mathrm{dr}}(\theta)}.
+\end{eqnarray*}
+
+Une fois cette vitesse obtenue, on peut en déduire la position du bord après un temps $t$ de déformation :
+
+\begin{eqnarray*}
+	x(s;t) & = & v_{[\nu]}^{\mbox{\tiny eff}} ( \theta  ) \cdot t.	
+\end{eqnarray*}
+
+Connaissant le bord au temps $t$, on en déduit le facteur d’occupation (Fig. \ref{fig:BiPart.coupure1}(e)(g)), et donc la densité linéique $n(x,t)$ (Fig. \ref{fig:BiPart.coupure1}(e)(f)).
+
+Sachant que $n_0 = 56~\mathrm{\mu m}^{-1}$ et que $\mu$ dépend de $T$ et de $n_0$, on ajuste la température des simulations GHD sur les données expérimentales de la déformation du bord (Fig. \ref{fig:simul_deformation}). Cet ajustement donne $T = 560~\mathrm{nK}$.
+
+\subsection{Simulation de l’expansion}
+
+Nous effectuons une sélection du système après la déformation du bord (Fig. \ref{fig:BiPart.coupure2}(a)) et nous procédons à une expansion unidimensionnelle de cette tranche (Fig. \ref{fig:BiPart.coupure2}(e)). Contrairement au cas de la déformation du bord, le contour n’est ici pas bijectif. La vitesse effective $v^{\mathrm{eff}}_{[\nu(x(s;\tau),\cdot)]}(\theta(s))$ dépend donc du temps d’expansion $\tau$.
+
+Pour contourner cela, nous découpons le contour en deux parties : le bord gauche $(x_g(s, t), \theta_g(s))$ et le bord droit $(x_d(s, t), \theta_d(s))$, de sorte que ces deux bords soient bijectifs (Fig. \ref{fig:BiPart.coupure2}(a) et (e)). Avec cette découpe, après une expansion unidimensionnelle d’une durée $\tau$, le facteur d’occupation devient :
+
+\begin{eqnarray*}
+	\nu ( x(s;\tau), \theta ) & = & 
+	\left\{ 
+	\begin{array}{rcl}
+	\nu_0(\theta) & \mbox{si} & \theta \in [\theta_g(s), \theta_d(s)] \\
+	0 & \mbox{sinon} & 
+	\end{array} 
+	\right.
+\end{eqnarray*}
+
+Ayant la connaissance de $v^{\mathrm{eff}}_{[\nu(x(s;\tau),\cdot)]}(\theta(s))$, on peut suivre l’évolution du contour, et donc de la densité spatiale $n(x,t)$ (Fig. \ref{fig:BiPart.coupure2}(f)). 
+
+Après avoir réalisé une simulation GHD avec $T = 560~\mathrm{nK}$, valeur obtenue via l’ajustement sur la déformation du bord, on compare cette simulation aux données expérimentales après $\tau = 30~\mathrm{ms}$ d’expansion. On compare alors la courbe orange aux données en bleu dans la Fig. \ref{fig:simul_expansion}(b). 
+
+La simulation ne reproduit pas bien les données, comme attendu : certains phénomènes physiques ne sont pas pris en compte dans les simulations GHD. Cela se manifeste notamment autour de $\pm 350~\mu\mathrm{m}$. 
+
+Nous avons donc effectué un ajustement direct de $T$ sur les données après expansion (courbe grise de la Fig. \ref{fig:simul_expansion}(b)).
+
+ 
+
+
+
 
 
