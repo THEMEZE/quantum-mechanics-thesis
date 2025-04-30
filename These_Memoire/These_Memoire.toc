@@ -35,9 +35,9 @@
 \contentsline {section}{\numberline {6.1}Dispositif expérimental}{20}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Prédictions de la GHD}{21}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Sonder la distribution locale des rapidités}{22}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Detailes sur les calcules}{25}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Simulation de la deformation de bord}{26}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Simulation de l'expension}{27}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.4}Détails sur les calculs}{25}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Simulation de la déformation du bord}{26}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Simulation de l’expansion}{27}{subsection.6.4.2}%
 \contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{29}{chapter.7}%
 \contentsline {section}{\numberline {7.1}calculs}{29}{section.7.1}%
 \contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{29}{section.7.2}%
