@@ -489,7 +489,7 @@ table [meta=z] {./data/donnees1.dat};
     			(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
         						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)$} (0.45, -0.2)
         		(0.2 , 1.4 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.4 )
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g(s)$} (-0.2 , 1.4 )
         		(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 2 )
         		(-0.2 , 1.4 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.4 )
         					; 
@@ -567,7 +567,7 @@ table [meta=z] {./data/donnees1.dat};
 	\end{scope}
 	\draw
     	(1.4, 0.2) edge[line width=1.8ex, color=\colorThree] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (1.4, -0.2);		
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g(s)$} (1.4, -0.2);
 	\Axesdistribution[$\theta ~ (\mu m/ms)$]{$~(m s/\mu s)  $}
 				
 	%\drawgrid{0}{10}{-10}{10}
@@ -597,11 +597,14 @@ table [meta=z] {./data/donnees1.dat};
 			\draw
     			(1.9, 0.2) edge[line width=1.8ex, color=\colorTwo] 
         						node[pos=1.1, below]{ \color{\colorTwo}\huge $x(s)/\tau$} (1.9, -0.2)
-        		(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta(s)$} (-0.2 , 1.3 )
-        		(1.9 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1.9 , 2 )
+                (1.9 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1.9 , 2 )
+        		(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo]
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g(s)$} (-0.2 , 1.3 )
         		(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  , 1.3 )
-        	; 
+                (0.2 , 0.45 ) edge[line width=1.8ex, color=\colorTwo]
+                                node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_d(s)$} (-0.2 , 0.45 )
+                (-0.2 , 0.45 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  ,0.45 )
+        	;
 		\end{tikzpicture}};
 	\draw[opacity = 0.5 , dotted ,dash pattern=on 2pt off 2pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_1_30.table}
@@ -647,7 +650,7 @@ table [meta=z] {./data/donnees1.dat};
 	\end{scope}
 	\draw
     	(1.4, 0.2) edge[line width=1.8ex, color=\colorThree] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta(s)$} (1.4, -0.2);			
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g(s)$} (1.4, -0.2);
 	\Axesdistribution[$\theta ~ ( \mu m / m s )$]{$\Pi~(m s/\mu s)  $}
 				
 	%\drawgrid{0}{10}{-10}{10}
