@@ -237,11 +237,20 @@ decorations.pathreplacing}
 %%%%        Dimensions du texte (ÃÂ  adapter selon votre goÃÂ»t/le goÃÂ»t de l'Ãéditeur)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setlength\textwidth{19cm}          % largeur du texte
+\setlength\textwidth{20.5cm}          % largeur du texte
 \setlength\topmargin{-1cm}          % marge en haut
-\setlength\evensidemargin{-1cm}     % marge de gauche
-\setlength\textheight{24cm}         % hauteur du texte
+\setlength\evensidemargin{-2cm}     % marge de gauche
+\setlength\textheight{25cm}         % hauteur du texte
 \setlength\oddsidemargin{\evensidemargin}
+
+
+% Figures flottantes:
+% fraction maximale d'une page pouvant etre occupe par une figure:
+\renewcommand{\topfraction}{0.8}
+% fraction minimale d'une page reservee pour le texte:
+\renewcommand{\textfraction}{0.2}
+% fraction minimale d'occupation de la page par une figure pleine page:
+\renewcommand{\floatpagefraction}{0.7}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         D\'ecoupage des mots           %

@@ -34,10 +34,10 @@
 \contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{19}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Dispositif expérimental}{20}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Prédictions de la GHD}{21}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Données expérimentales}{23}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Données expérimentales}{22}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{23}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Détails sur les calculs}{26}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Simulation de la déformation du bord}{27}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.5}Détails sur les calculs}{25}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Simulation de la déformation du bord}{26}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Simulation de l’expansion}{27}{subsection.6.5.2}%
 \contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{29}{chapter.7}%
 \contentsline {section}{\numberline {7.1}calculs}{29}{section.7.1}%
