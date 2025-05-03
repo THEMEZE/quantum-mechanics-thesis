@@ -424,5 +424,187 @@
 \end{tikzpicture}
 
 
+% Arguments :
+% #1 = variable fixe (x, y ou z)
+% #2 = valeur constante de la variable fixe
+% #3 = borne min (1D)
+% #4 = borne max (1D)
+% #5 = borne min (2D)
+% #6 = borne max (2D)
+
+\newcommand{\drawgridxyzz}[6]{%
+  \begin{scope}[opacity=0.9]
+    % Grille principale (pas = 1)
+    \foreach \i in {#3,...,#4} {
+      \draw[very thin, gray] 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\i,z=#5 \fi%
+          \ifx#1y x=\i,z=#5 \fi%
+          \ifx#1z x=\i,y=#5 \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\i,z=#6 \fi%
+          \ifx#1y x=\i,z=#6 \fi%
+          \ifx#1z x=\i,y=#6 \fi);
+    }
+    \foreach \j in {#5,...,#6} {
+      \draw[very thin, gray]
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#3,z=\j \fi%
+          \ifx#1y x=#3,z=\j \fi%
+          \ifx#1z x=#3,y=\j \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#4,z=\j \fi%
+          \ifx#1y x=#4,z=\j \fi%
+          \ifx#1z x=#4,y=\j \fi);
+    }
+  \end{scope}
+}
+
+% Grille 3D dans un plan à coordonnée constante (x, y ou z)
+% #1 : variable fixe (x, y ou z)
+% #2 : valeur fixe de cette variable
+% #3 : min de la première coordonnée (variante1)
+% #4 : max de la première coordonnée (variante1)
+% #5 : min de la seconde coordonnée (variante2)
+% #6 : max de la seconde coordonnée (variante2)
+
+\newcommand{\drawgridxyz}[6]{%
+  \begin{scope}[opacity=0.5]
+  
+  \pgfmathtruncatemacro{\imax}{#4 - 1}
+    \pgfmathtruncatemacro{\jmax}{#6 - 1}
+
+    % Petite grille millimétrée (pas = 0.1)
+    \foreach \i in {#3, ..., \imax} {
+      \foreach \di in {0.1,0.2,...,0.9} {
+        \pgfmathsetmacro{\ij}{\i+\di}
+
+        \draw[very thin, gray!50] 
+          (tpp cs:#1=#2,%
+            \ifx#1x y=\ii,z=#5 \fi%
+            \ifx#1y x=\ii,z=#5 \fi%
+            \ifx#1z x=\ii,y=#5 \fi) --
+          (tpp cs:#1=#2,%
+            \ifx#1x y=\ii,z=#6 \fi%
+            \ifx#1y x=\ii,z=#6 \fi%
+            \ifx#1z x=\ii,y=#6 \fi);
+      }
+    }
+    \foreach \j in {#5, ..., \jmax} {
+       \foreach \dj in {0.1,0.2,...,0.9} {
+        \pgfmathsetmacro{\jj}{\j+\dj}
+
+        \draw[very thin, gray!50] 
+          (tpp cs:#1=#2,%
+            \ifx#1x y=#3,z=\jj \fi%
+            \ifx#1y x=#3,z=\jj \fi%
+            \ifx#1z x=#3,y=\jj \fi) --
+          (tpp cs:#1=#2,%
+            \ifx#1x y=#4,z=\jj \fi%
+            \ifx#1y x=#4,z=\jj \fi%
+            \ifx#1z x=#4,y=\jj \fi);
+      }
+    }
+
+    % Grille principale (pas = 1)
+    \foreach \i in {#3,...,#4} {
+      \draw[very thin, gray] 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\i,z=#5 \fi%
+          \ifx#1y x=\i,z=#5 \fi%
+          \ifx#1z x=\i,y=#5 \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\i,z=#6 \fi%
+          \ifx#1y x=\i,z=#6 \fi%
+          \ifx#1z x=\i,y=#6 \fi);
+    }
+    \foreach \j in {#5,...,#6} {
+      \draw[very thin, gray]
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#3,z=\j \fi%
+          \ifx#1y x=#3,z=\j \fi%
+          \ifx#1z x=#3,y=\j \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#4,z=\j \fi%
+          \ifx#1y x=#4,z=\j \fi%
+          \ifx#1z x=#4,y=\j \fi);
+    }
+
+    % Axe 1 (première coordonnée)
+    \draw[thick,->,>=Stealth] 
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#3,z=#5 \fi%
+        \ifx#1y x=#3,z=#5 \fi%
+        \ifx#1z x=#3,y=#5 \fi) --
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#4,z=#5 \fi%
+        \ifx#1y x=#4,z=#5 \fi%
+        \ifx#1z x=#4,y=#5 \fi);
+
+    % Axe 2 (deuxième coordonnée)
+    \draw[thick,->,>=Stealth] 
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#3,z=#5 \fi%
+        \ifx#1y x=#3,z=#5 \fi%
+        \ifx#1z x=#3,y=#5 \fi) --
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#3,z=#6 \fi%
+        \ifx#1y x=#3,z=#6 \fi%
+        \ifx#1z x=#3,y=#6 \fi);
+
+    % Graduation sur axe 1
+    \foreach \i in {#3,...,#4} {
+      \node[font=\tiny, anchor=north] at 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\i,z=#5 \fi%
+          \ifx#1y x=\i,z=#5 \fi%
+          \ifx#1z x=\i,y=#5 \fi) {\i};
+    }
+
+    % Graduation sur axe 2
+    \foreach \j in {#5,...,#6} {
+      \node[font=\tiny, anchor=east] at 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#3,z=\j \fi%
+          \ifx#1y x=#3,z=\j \fi%
+          \ifx#1z x=#3,y=\j \fi) {\j};
+    }
+
+  \end{scope}
+}
+
+
+\begin{tikzpicture}[
+  3d view={-45}{35.26},
+  perspective={
+    p = {(10,0,0)},
+    q = {(0,10,0)},
+    r = {(0,0,20)}},
+  scale=4,
+  vanishing point/.style={fill,circle,inner sep=2pt}]
+  
+	\drawgridxyz{z}{0}{0}{5}{0}{3}
+	%\drawgridxyz{x}{0}{0}{5}{0}{3}
+	\simpleaxes{2}{2}{2}
+
+
+  \node[vanishing point,label = right:p] (p) at (10,0,0){};
+  \node[vanishing point,label = left:q] (q) at (0,10,0){};
+  \node[vanishing point,label = above:r] (r) at (0,0,20){};
+
+  \begin{scope}[dotted]
+    \foreach \y in {0,1}{
+      \foreach \z in {0,1}{
+        \draw (tpp cs:x=0,y=\y,z=\z) -- (p.center);}}
+    \foreach \x in {0,1}{
+      \foreach \z in {0,1}{
+        \draw (tpp cs:x=\x,y=0,z=\z) -- (q.center);}}
+    \foreach \x in {0,1}{
+      \foreach \y in {0,1}{
+        \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
+  \end{scope}
+\end{tikzpicture}
+
+
 
 \end{document}
