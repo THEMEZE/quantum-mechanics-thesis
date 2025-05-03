@@ -1,0 +1,2617 @@
+\chapter{Null geodesics and images in Schwarzschild spacetime}
+\label{s:gis}
+
+\minitoc
+
+\section{Introduction} \label{s:gis:intro}
+
+Having investigated the properties of generic causal geodesics
+in Schwarzschild spacetime in Chap.~\ref{s:ges}, we focus here on null
+geodesics. The main interest of null geodesics is of course that they are
+the carriers of information from the surroundings of the black hole to some
+observer, in particular in the form of images.
+We start by studying the general property of null geodesics in
+Sec.~\ref{s:gis:null}, distinguishing the radial geodesics, from the non-radial
+ones and focussing on the $r$-motion. Then in Sec.~\ref{s:gis:planar_trajectories},
+we study of the $\ph$-motion and show that the trajectory of a given
+null geodesic in the equatorial plane is fully integrable, via elliptic integrals.
+In Sec.~\ref{s:gis:asymp} we compute the asymptotic direction taken by a
+null geodesic emitted at a given point; this prepares the discussion of
+images in Sec.~\ref{s:gis:images}.
+The study of black hole images has received a tremendous boost after the release of the first observed image by the Event Horizon Telescope\index{Event Horizon Telescope} collaboration in 2019, that of the black hole M87* \cite{EHT19a}.
+However, we differ the discussion of this image to the chapter regarding null
+geodesics around a rotating black hole (Chap.~\ref{s:gik}), since the black hole
+spin plays some role in the images and M87* is expected to be a fast rotator.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main properties of null geodesics} \label{s:gis:null}
+
+We use the same notations as in Sec.~\ref{s:ges:geod_motion} of the preceding
+chapter: $(\M, \w{g})$ is Schwarzschild spacetime, $(t,r,\th,\ph)$ are
+Schwarzschild-Droste coordinates and
+$\mathscr{P}$ is a particle, the worldline of which is a
+geodesic $\Li$. The particle $\mathscr{P}$ is characterized by its
+4-momentum $\w{p}$ and
+$E$ and $L$ stand for the conserved energy and conserved angular momentum
+along $\Li$ [cf.~Eq.~(\ref{e:ges:conserved_quantities})].
+
+
+In all this chapter, we consider that $\Li$ is a \emph{null}
+geodesic\index{null!geodesic}\index{geodesic!null --}, or equivalently that
+$\mathscr{P}$ is a \emph{massless} particle, typically a photon\index{photon}.
+As in Chap.~\ref{s:ges}, we assume that the coordinates $(\th,\ph)$ are chosen
+so that $\Li$ lies in the hyperplane $\th=\pi/2$. Let us recall that
+a geodesic of Schwarzschild spacetime lies necessarily in some hypersurface, which
+can be chosen to be the hyperplane $\th=\pi/2$ without any loss of generality
+(cf. Sec.~\ref{s:ges:fiom}).
+
+\subsection{Equations to be solved}
+
+In terms of Schwarzschild-Droste coordinates, the geodesic motion of $\mathscr{P}$ is governed by Eqs.~(\ref{e:ges:dot_t}), (\ref{e:ges:dot_ph}) and (\ref{e:ges:dot_r_square})
+with $\mu=0$ (massless particle):
+\be \label{e:ges:dot_t_null}
+   \encadre{ \frac{\D t}{\D \lambda} = E \left(1 - \frac{2m}{r} \right) ^{-1} } ,
+\ee
+\be \label{e:ges:dot_ph_null}
+   \encadre{ \frac{\D\ph}{\D\lambda} = \frac{L}{r^2}  },
+\ee
+\be \label{e:ges:dot_r_square_null}
+   \encadre{ \left( \frac{\D r}{\D \lambda} \right) ^2
+         + \frac{L^2}{r^2}
+         \left( 1 - \frac{2m}{r} \right) = E^2 }.
+\ee
+Let us recall that the variable $\lambda$ with respect to which these differential equations
+hold
+is the affine parameter associated with the 4-momentum $\w{p}$ of $\mathscr{P}$:
+$\w{p} = \D\w{x}/\D\lambda$ [Eq.~(\ref{e:ges:def_lambda})] and that
+$\lambda$ increases towards the future,
+$\w{p}$ being always future-directed (cf. Sec.~\ref{s:ges:eq_to_be_solved}).
+
+\subsection{Radial null geodesics} \label{s:gis:radial}
+
+Let us first discuss the case of radial geodesics, which are characterized by $L=0$.
+Equation (\ref{e:ges:dot_ph_null}) yields immediately $\ph=\mathrm{const}$,
+while Eq.~(\ref{e:ges:dot_r_square_null}) simplifies drastically:
+\be \label{e:ges:dot_r_null_radial}
+    \frac{\D r}{\D \lambda} = \pm E ,
+\ee
+the solution to which is immediate:
+\be \label{e:ges:r_lambda_radial_null}
+    r = \pm E\lambda + r_0 ,
+\ee
+where $r_0$ is some constant.
+Moreover, writing $\D t/\D\lambda = \D t/\D r \times \D r/\D\lambda$
+and combining Eqs.~(\ref{e:ges:dot_t_null}) and (\ref{e:ges:dot_r_null_radial}),
+we get
+\be \label{e:gis:dtdr_radial_geod}
+    \frac{\D t}{\D r} = \pm \left(1 - \frac{2m}{r} \right) ^{-1} .
+\ee
+We recognize the equation governing the radial null geodesics
+$\Li^{\rm out}_{(u,\th,\ph)}$ and $\Li^{\rm in}_{(v,\th,\ph)}$
+obtained in
+Sec.~\ref{s:sch:rad_null_geod} [Eq.~(\ref{e:sch:Dt_Dr_radial_null_geod})],
+the solution to which is given by Eq.~(\ref{e:sch:t_r_radial_null_geod}):
+\be
+   \encadre{ t = \pm r \pm 2 m \ln \left| \frac{r}{2m} - 1 \right| + \mathrm{const} }.
+\ee
+
+\begin{remark}
+Since $\lambda$ is an affine parameter and $E$ is constant,
+Eq.~(\ref{e:ges:r_lambda_radial_null})
+shows explicitly that $r$ is another affine parameter along radial null
+geodesics of Schwarzschild spacetime --- a feature that we had already
+obtained in Sec.~\ref{s:sch:rad_null_geod}.
+\end{remark}
+
+\begin{remark}
+The radial null geodesics $\Li^{{\rm out},\Hor}_{(\th,\ph)}$ discussed
+in Sec.~\ref{s:sch:radial_null_IEF} have $L=0$, but they
+are not recovered from Eq.~(\ref{e:gis:dtdr_radial_geod}), since the latter is based on Schwarzschild-Droste coordinates
+$(t,r,\th,\ph)$ and the $\Li^{{\rm out},\Hor}_{(\th,\ph)}$'s are the null geodesic generators
+of the event horizon $\Hor$, which does not lie in the Schwarzschild-Droste domain.
+\end{remark}
+
+Some radial null geodesics of Schwarzschild spacetime are plotted in
+Fig.~\ref{f:sch:rad_null_geod} in terms of the Schwarzschild-Droste coordinates
+and in Fig.~\ref{f:sch:rad_null_geod_EF} in terms of the ingoing Eddington-Finkelstein coordinates.
+
+
+
+\subsection{Generic null geodesics: effective potential}
+\label{s:gis:null_eff_pot}
+
+Having discussed the case $L=0$ in the preceding section, we focus now on the
+case $L\not= 0$ (``generic'' case). We may then
+consider along the geodesic $\Li$ the affine parameter
+\be
+   \encadre{ \tilde{\lambda} := |L| \lambda },
+\ee
+instead of $\lambda$, the latter being the affine parameter associated with the 4-momentum $\w{p}$
+via Eq.~(\ref{e:ges:def_lambda}).
+Since $L$ is a non-vanishing constant along a geodesic, the above formula
+does define a new affine parameter. The absolute value ensures that
+$\tilde{\lambda}$ is increasing towards the future, as $\lambda$, whatever
+the sign of $L$. Note that $\tilde{\lambda}$ has the same
+dimension as $L$, i.e. a squared length, given that $\lambda$ is dimensionless
+(cf. Sec.~\ref{s:ges:eq_to_be_solved}).
+In terms of $\tilde{\lambda}$,
+the differential system (\ref{e:ges:dot_t_null})-(\ref{e:ges:dot_r_square_null})
+becomes
+\be \label{e:ges:dot_t_null_b}
+   \encadre{\frac{\D t}{\D \tilde{\lambda}} = b^{-1} \left(1 - \frac{2m}{r} \right) ^{-1} },
+\ee
+\be \label{e:ges:dot_ph_null_b}
+   \encadre{ \frac{\D\ph}{\D\tilde{\lambda}} = \frac{\eps_L}{r^2} } ,
+\ee
+\be \label{e:ges:dot_r_square_null_b}
+   \encadre{ \left( \frac{\D r}{\D\tilde{\lambda}} \right) ^2
+        + U(r) = \frac{1}{b^2} },
+\ee
+where
+\be \label{e:ges:def_b}
+    \encadre{b := \frac{|L|}{E}} ,
+\ee
+\be \label{e:gis:def_epsilon_L}
+    \eps_L := \frac{L}{|L|} = \operatorname{sgn} L
+\ee
+and
+\be \label{e:ges:eff_pot_null}
+    \encadre{ U(r) := \frac{1}{r^2} \left( 1 - \frac{2m}{r} \right) }.
+\ee
+As for the timelike case (cf. Eq.~(\ref{e:ges:1d_motion_timelike})),
+we note that Eq.~(\ref{e:ges:dot_r_square_null_b})
+has the shape of the first integral of the
+1-dimensional motion of a non-relativist particle in the
+\defin{effective potential}\index{effective!potential!null geodesic}
+$U(r)$. The main difference is that $U(r)$ does not depend on $L$, contrary
+to the effective potential $V_\ell(r)$ for timelike geodesics. Actually,
+$U(r)$ is a function of $r$ and the black hole mass $m$ only.
+We thus arrive at
+\begin{prop}[characterization of null geodesics by the impact parameter]
+A null geodesic $\Li$ is entirely characterized by the constants
+$b$ and $\eps_L = \pm 1$.
+As soon as $\Li$ has some part in
+region $\M_{\rm I}$, then $E>0$ [cf. Eq.~(\ref{e:ges:E_positive_M_I})], so that
+$b$, as defined by Eq.~(\ref{e:ges:def_b}), is finite and positive. It has
+the dimension of a length and can be interpreted as the
+\defin{impact parameter}\index{impact parameter} in the case of a
+particle arising from infinity.
+\end{prop}
+\begin{proof}
+Let us consider that the massless
+particle $\mathscr{P}$ arises from a point of coordinates $\theta=\pi/2$,
+$r=r_0 \gg m$ and $\ph = \ph_0$.  Let us introduce
+Cartesian coordinates $(x,y)$ in the plane $\theta=\pi/2$:
+$x:=r\cos\ph$ and $y:=r\sin\ph$.
+Without any loss of generality, we may
+consider $|\ph_0| \ll 1$. For large values of $r$, the motion of
+$\mathscr{P}$ is then essentially along the $x$-axis, with $\ph$ remaining small:
+$y\simeq y_0$, where
+$y_0 = r_0 \sin\ph_0 \simeq r_0 \ph_0$. The quantity
+$|y_0|$ is the impact parameter.
+Since $y=r\sin\ph\simeq r\ph$, we get from $y\simeq y_0$
+the following relation
+\[
+    \ph \simeq \frac{y_0}{r} \qquad (r \gg m) .
+\]
+Deriving with respect to $t$ leads to
+\be \label{e:ges:dphdt_approx}
+    \derd{\ph}{t} \simeq - \frac{y_0}{r^2} \derd{r}{t}
+                  \simeq \frac{y_0}{r^2}  \qquad (r \gg m) ,
+\ee
+where we have used $\D r / \D t = - 1$ for $r \gg m$. This last property is easy
+to admit since
+$r\gg m$ corresponds to the flat part of spacetime; however, it can be derived
+rigorously by combining Eqs.~(\ref{e:ges:dot_t_null_b}) and
+(\ref{e:ges:dot_r_square_null_b}) to evaluate $\D r / \D t$.
+Now by combining Eqs.~(\ref{e:ges:dot_t_null_b}) and (\ref{e:ges:dot_ph_null_b}),
+we have
+\be
+    \derd{\ph}{t} = \eps_L \frac{b}{r^2} \left( 1 - \frac{2m}{r} \right) .
+\ee
+For $r\gg m$, the right-hand side reduces to $\eps_L b/r^2$, so that the comparison
+with (\ref{e:ges:dphdt_approx}) yields $\eps_L b = y_0$, i.e. $b = |y_0|$,
+which proves that $b$ is the impact
+parameter of the massless particle $\mathscr{P}$ with respect to the central
+black hole.
+\end{proof}
+
+\begin{figure}
+\centerline{\includegraphics[width=0.8\textwidth]{ges_eff_pot_null.pdf}}
+\caption[]{\label{f:gis:eff_pot_null} \footnotesize
+Effective potential $U(r)$ (rescaled by $m^2$ to make it dimensionless)
+governing the $r$-part of the
+motion along a null geodesic in
+Schwarzschild spacetime [Eq.~(\ref{e:ges:eff_pot_null})].
+The vertical dashed line marks $r=2m$, i.e. the
+location of the event horizon. The horizontal lines marked ``1'' to ``4''
+correspond to the $r$-motion of four null geodesics (cf. Sec.~\ref{s:gis:null_radial_behav} for details); their trajectories in the equatorial plane
+are depicted in Fig.~\ref{f:gis:null_geod}.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_eff_pot_null}]}}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[width=0.8\textwidth]{ges_null_geod.pdf}}
+\caption[]{\label{f:gis:null_geod} \footnotesize
+Selected null geodesics in the equatorial plane of Schwarzschild spacetime,
+plotted in terms
+of the coordinates $(x,y) := (r\cos\ph, r\sin\ph)$, with the black hole
+region $r<2m$ depicted as a grey disk.
+The green geodesic is the photon circular orbit at $r=3m$.
+The red geodesic (label ``1'') starts at $r_0=10 m$, $\ph_0=0$, with
+the impact parameter $b = 7.071 \, m$ ($b^{-2} = 0.02\, m^{-2}$).
+The brown geodesic (label ``2'') starts at $r_0=10 m$, $\ph_0=0$ with $b = 5 m$ ($b^{-2} = 0.04\, m^{-2}$).
+The orange geodesic (label ``3'') starts outward at $r_0=2.1 m$, $\ph_0=0$ with $b = 4.663 m$ ($b^{-2} = 0.046\, m^{-2}$).
+The grey geodesic (label ``4'') starts outward at $r_0=2.4 m$, $\ph_0=-\pi/2$ with $b = 5.345 m$ ($b^{-2} = 0.035\, m^{-2}$).
+The $r$-motion of these four gedeosics is depicted in
+Fig.~\ref{f:gis:eff_pot_null}. \textsl{[Figure produced with the notebook \ref{s:sam:ges_null_geod}]}}
+\end{figure}
+
+The effective potential $U(r)$ is plotted in Fig.~\ref{f:gis:eff_pot_null}.
+It has no minimum and a maximum at $r=3m$, which is
+\be \label{e:ges:U_max}
+    U_{\rm max} = \frac{1}{27m^2} .
+\ee
+This extremum is a stationary position in $r$: it corresponds thus to a circular
+orbit, usually called the
+\defin{circular photon orbit}\index{photon!orbit!circular --}\index{orbit!photon --}\index{circular!photon orbit}
+The set of all photon orbits (one per choice of equatorial plane) is often
+called the \defin{photon sphere}\index{photon!sphere}\index{sphere!photon --}.
+However, since it corresponds to a \emph{maximum} of the effective potential, the circular
+orbit at $r=3m$ is an unstable orbit. So one should not imagine that a
+Schwarzschild black hole is surrounded by any spherical shell of photons...
+
+
+\subsection{Radial behavior of null geodesics} \label{s:gis:null_radial_behav}
+
+For the sake of concreteness, in this section and the remaining ones, we
+refer to the massless particle $\mathscr{P}$ as a ``photon''. In most applications, in
+particular the astrophysical ones, $\mathscr{P}$ will indeed be a photon.
+But one shall keep in mind that all results are valid for any other massless
+particle.
+
+Since the effective potential
+$U(r)$ has no minimum, it does not offer any potential well,
+as it is clear from Fig.~\ref{f:gis:eff_pot_null}. This is in sharp contrast
+with the effective potential $V_\ell(r)$ for massive particle
+(compare Fig.~\ref{f:ges:eff_pot_bound}). Hence there are no bound orbits
+for photons\footnote{unless one counts as ``bound'' a worldline that terminates in the
+black hole region}.
+
+We can infer various types of photon worldlines from Fig.~\ref{f:gis:eff_pot_null}.
+In view of the ``first integral'' (\ref{e:ges:dot_r_square_null_b}),
+each photon worldline can be represented by a horizontal line of ordinate
+$b^{-2}$ in this figure, which must lie above the curve $U(r)$
+by the positive quantity $({\D r}/{\D\tilde{\lambda}})^2$. The region under the curve
+$U(r)$ is thus excluded.
+
+For an initially inward photon, i.e. a photon emitted with ${\D r}/{\D\tilde{\lambda}} < 0$
+from a position $r=r_{\rm em}$, there are
+two possibilities, depending on the values of $r_{\rm em}$ and
+of the impact parameter $b$:
+\begin{itemize}
+\item if $r_{\rm em} > 3 m$ and $b$ is large enough to fulfill $b^{-2} < U_{\rm max}$
+(e.g. trajectory no.~1 in Fig.~\ref{f:gis:eff_pot_null}), the photon
+``bounces'' on the potential barrier constituted by $U(r)$
+at some minimal value  $r_{\rm p}$ of $r$ --- the \defin{periastron}\index{periastron},
+which is given by  $U(r_{\rm p}) = b^{-2}$, or equivalently by
+\be \label{e:ges:r_per_null}
+  r_{\rm p}^3 - b^2\, r_{\rm p} + 2 m b^2 = 0, \quad r_{\rm p} > 3 m.
+\ee
+Equation~(\ref{e:ges:dot_r_square_null_b})
+implies then
+\be
+    \left. \frac{\D r}{\D\tilde{\lambda}} \right| _{r = r_{\rm p}} = 0 .
+\ee
+Actually, $\D r / \D\tilde{\lambda}$ changes sign at $r = r_{\rm p}$ and
+the photon subsequently moves away from the black hole for ever (cf. geodesic
+no.~1 in Fig.~\ref{f:gis:null_geod}). We may call
+such a worldline a \defin{scattering trajectory}\index{scattering}.
+\item if $r_{\rm em} < 3 m$ (e.g. trajectory
+no.~4 in Fig.~\ref{f:gis:eff_pot_null}) or $b$ is small enough to fulfill $b^{-2} > U_{\rm max}$ (e.g. trajectory
+no.~2 in Fig.~\ref{f:gis:eff_pot_null}) the photon
+is not halted by the potential barrier constituted by $U(r)$. It then reaches arbitrarily
+small values of $r$ and is eventually absorbed by the black hole ($r < 2m$)
+(cf. geodesic no.~2 in Fig.~\ref{f:gis:null_geod}).
+\end{itemize}
+
+For an initially outward photon, i.e. a photon emitted with ${\D r}/{\D\tilde{\lambda}} > 0$,
+one has necessarily $r_{\rm em}>2m$ according to the result obtained in Sec.~\ref{s:ges:eq_to_be_solved}
+and there are then two possible outcomes:
+
+\begin{itemize}
+\item if $r_{\rm em} > 3 m$ (e.g. trajectory
+no.~1 in Fig.~\ref{f:gis:eff_pot_null}) or
+$b$ is small enough to fulfill $b^{-2} > U_{\rm max}$ (e.g. trajectory
+no.~3 in Figs.~\ref{f:gis:eff_pot_null}), the photon escapes to infinity
+(cf. geodesic no.~3 in Fig.~\ref{f:gis:null_geod});
+\item if $2m < r_{\rm em} < 3 m$ and $b^{-2} < U_{\rm max}$ (e.g. trajectory
+no.~4 in Fig.~\ref{f:gis:eff_pot_null}), the photon ``bounces'' on the left
+side of the potential barrier, reaching a maximal value $r_{\rm a}$ of $r$
+--- the \defin{apoastron}\index{apoastron},
+which is given by  $U(r_{\rm a}) = b^{-2}$, or equivalently by
+\be \label{e:ges:r_apo_null}
+   r_{\rm a}^3 - b^2\, r_{\rm a} + 2 m b^2 = 0, \quad r_{\rm a} < 3 m.
+\ee
+The photon moves subsequently towards the black hole and
+is absorbed by it (cf. geodesic no.~4 in Fig.~\ref{f:gis:null_geod}).
+\end{itemize}
+
+The critical value of the impact parameter $b$ separating the cases discussed
+above is determined by $b_{\rm c}^{-2} = U_{\rm max}$.
+Given the value (\ref{e:ges:U_max}) of $U_{\rm max}$, we get
+\be \label{e:ges:b_crit}
+    \encadre{b_{\rm c} = 3\sqrt{3} \, m \simeq 5.196152\, m }.
+\ee
+
+The above discussion leads us to
+\begin{prop}[Behaviour of $r$ along a null geodesics]
+Along any null geodesic of Schwarzschild spacetime, the areal coordinate $r$
+either is a monotonic function or has a single turning point. In the latter case,
+if the turning point corresponds to a minimum of $r$ (a \emph{periastron}, which can occur
+only for $r>3m$), the null geodesic escapes to infinity, while if the turning
+point corresponds to a maximum of $r$ (an \emph{apoastron}, which can occur only for $2m<r<3m$), the
+null geodesic terminates at the central singularity ($r=0$).
+\end{prop}
+Note that for $r<2m$, i.e. in the black hole region, $r$
+is always a monotonic function, since it has been demonstrated in
+Sec.~\ref{s:ges:eq_to_be_solved} that $r(\lambda)$ is strictly
+decreasing. The impossibility of a turning point for $r<2m$ can also be
+graphically inferred from Fig.~\ref{f:gis:eff_pot_null}, which shows
+that the effective potential $U(r)$ is negative for $r<2m$,
+preventing the turning point condition $U(r) = b^{-2}$ to hold.
+
+
+For $b > b_{\rm c}$, the explicit expression of the periastron radius
+$r_{\rm p}$ (or the apoastron radius $r_{\rm a}$)
+is obtained by solving the cubic equation (\ref{e:ges:r_per_null})
+(or (\ref{e:ges:r_apo_null}), which is the same cubic equation, except for
+the range of the solution). Fortunately Eq.~(\ref{e:ges:r_per_null})
+is a depressed\footnote{A \emph{depressed} cubic equation is a polynomial equation
+of the type $x^3 + p x + q = 0$.} cubic equation, which makes
+it simpler to solve. For $b > b_{\rm c}$, its discriminant $-(4 p^3 + 27 q^2)$
+is positive, which
+implies that it admits three distinct real roots. Two of them are positive
+and are precisely $r_{\rm p}$ and $r_{\rm a}$. The third root is negative,
+since the product of the roots is $-2mb^2 < 0$; it has therefore no
+physical significance. The roots of the generic depressed cubic
+equation $x^3 + p x + q = 0$ can be expressed via Viète's formulas\index{Viète!formulas}:
+\be \label{e:gis:Viete}
+    x_k = 2 \sqrt{-\frac{p}{3}} \cos \left[ \frac{1}{3}\,  \arccos\left(
+        \frac{3 q}{2 p} \sqrt{-\frac{3}{p}} \right) + \frac{2 k\pi}{3} \right],
+        \qquad k \in \{0, 1, 2\} .
+\ee
+In the present case, $p= - b^2$, $q = 2 m b^2$
+and $r_{\rm p}$ (resp. $r_{\rm a}$) corresponds to $k=0$
+(resp. $k=2$), so that we obtain
+\be \label{e:ges:sol_r_per}
+  \encadre{  r_{\rm p} = \frac{2 b}{\sqrt{3}} \cos\left[\frac{\pi}{3}
+        - \frac{1}{3} \, \arccos\left(\frac{b_{\rm c}}{b}\right) \right] }.
+\ee
+\be \label{e:ges:sol_r_apo}
+   \encadre{ r_{\rm a} = \frac{2 b}{\sqrt{3}} \cos\left[\frac{5\pi}{3}
+        - \frac{1}{3} \, \arccos\left(\frac{b_{\rm c}}{b}\right) \right] }.
+\ee
+As a check, we note that for $b\gg b_{\rm c}$, Eq.~(\ref{e:ges:sol_r_per})
+yields $r_{\rm p} \simeq 2b/\sqrt{3} \cos\left(\pi/3 -1/3 \times \pi/2 \right)
+\simeq 2b/\sqrt{3} \cos(\pi/6) \simeq b$, as expected. Indeed, $b\gg b_{\rm c}$
+implies $b \gg m$, so that the photon stays far from the black hole, a regime
+in which the impact parameter coincides with the distance of closest approach:
+$b \simeq r_{\rm p}$.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.4\textwidth]{ges_null_per_apo.pdf}}
+\caption[]{\label{f:gis:null_per_apo} \footnotesize
+Radial coordinate of the periastron, $r_{\rm p}$, and of the apoastron,
+$r_{\rm a}$, along null geodesics with $b > b_{\rm c} \simeq 5.196\, m$.
+Note that a given null geodesic has either a periastron or an apoastron, but not
+both. \textsl{[Figure produced with the notebook \ref{s:sam:ges_null_periastron}]}
+}
+\end{figure}
+
+The variation of $r_{\rm p}$ and $r_{\rm a}$ with $b$ is plotted
+in Fig.~\ref{f:gis:null_per_apo}. Note that $r_{\rm p} = r_{\rm a} = 3 m$
+(the photon orbit) at the limit $b = b_{\rm c}$.
+\begin{remark}
+It is clear on Fig.~\ref{f:gis:null_per_apo} that, for the same value of $b$,
+$r_{\rm a} \leq r_{\rm p}$, which may seem contradictory with the apoastron
+corresponding to the largest distance from the center and the periastron to
+the distance of closest approach.
+However, one shall keep in mind that the apoastron and the periastron always refer to different null
+geodesics: geodesics with an apoastron lie below the photon sphere ($r=3m$), while those
+with a periastron are always outside it. A null geodesic can of course cross
+the photon sphere (examples are geodesics 2 and 3 on Figs.~\ref{f:gis:eff_pot_null}
+and \ref{f:gis:null_geod}), but then it has neither an apoastron nor a periastron.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Trajectories of null geodesics in the equatorial plane} \label{s:gis:planar_trajectories}
+
+In all this section, we assume $L\not = 0$, i.e. we consider non-radial
+null geodesics, the radial case having been discussed in Sec.~\ref{s:gis:radial}.
+
+Let us first recall the generic property of causal geodesics in Schwarzschild
+spacetime established in Sec.~\ref{s:ges:eq_to_be_solved} : for $L\not=0$,
+the azimuthal angle coordinate $\ph$ has no turning point: it is either always increasing
+towards the future
+($L>0$) or always decreasing towards the future ($L<0$).
+\begin{remark}
+We recover the above property from Eq.~(\ref{e:ges:dot_ph_null_b}):
+$\D\ph/\D\tilde{\lambda} = \eps_L/r^2$, given that
+$\eps_L = \operatorname{sgn} L$ and $\tilde{\lambda}$ increases towards
+the future.
+\end{remark}
+
+\subsection{Differential equation and fundamental cubic polynomial}
+\label{s:gis:cubic_poly}
+
+The equation governing the $(r,\ph)$-part of a null geodesic, named
+\emph{trajectory in the orbital plane} in Sec.~\ref{s:ges:trajectories},
+is the generic differential equation (\ref{e:ges:DuDph_trajectories})
+with $\mu$ (the particle's mass) set to zero and the ratio $E^2/L^2$ replaced
+by $1/b^2$ [cf. Eq.~(\ref{e:ges:def_b})]:
+\be \label{e:gis:du_dphi_null}
+   \encadre{ \left( \frac{\D u}{\D \ph} \right)^2 = P_b(u)  }
+\ee
+where $u := m/r$ [Eq.~(\ref{e:ges:def_u})] and $P_b(u)$ stands for the cubic
+polynomial
+\be \label{e:ges:def_Pb_u}
+      \encadre{  P_b(u) := 2 u^3 - u^2 + \frac{m^2}{b^2} } .
+\ee
+\begin{remark}
+Of course, Eq.~(\ref{e:gis:du_dphi_null}) can be recovered by combining
+Eqs.~(\ref{e:ges:dot_ph_null_b}), (\ref{e:ges:dot_r_square_null_b})
+and (\ref{e:ges:eff_pot_null}).
+\end{remark}
+
+The graph of the polynomial $P_b$ is shown in Fig.~\ref{f:gis:polynomial_b_u}
+for selected values of $b$. Note that along a null geodesic, one must
+have $u>0$ and
+$P_b(u) \geq 0$. The first condition follows from the very definition of
+$u$ as $m/r$, while the second one is a direct consequence of
+Eq.~(\ref{e:gis:du_dphi_null}).
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{ges_polynomial_b_u.pdf}}
+\caption[]{\label{f:gis:polynomial_b_u} \footnotesize
+Graph of the cubic polynomial $P_b(u) = 2 u^3 - u^2 + {m^2}/{b^2}$ [Eq.~(\ref{e:ges:def_Pb_u})].
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_periastron}]}
+}
+\end{figure}
+
+By Eq.~(\ref{e:gis:du_dphi_null}), the zeros of the polynomial $P_b$
+correspond to points at which $\D u /\D\ph = 0$. They are thus stationary points
+for $u$, and hence for $r$. This can only occur at the circular photon
+orbit $r = \mathrm{const} = 3 m$ (then $b=b_{\rm c}$)
+or at the periastron or apoastron discussed
+in Sec.~\ref{s:gis:null_radial_behav} (then $b > b_{\rm c}$).
+The zeros of $P_b$ are governed by its
+discriminant, which is
+\be
+    \Delta = 4 \frac{m^4}{b^4} \left( \frac{b^2}{m^2} - 27 \right) .
+\ee
+One may distinguish three cases:
+\begin{itemize}
+\item $\Delta>0$ $\iff$ $b > \sqrt{27} m = b_{\rm c}$: $P_b$ has three distinct
+real zeros (cf. the green and cyan curves
+in Fig.~\ref{f:gis:polynomial_b_u}); one of them, $u_{\rm n}$ say, is
+negative, and hence unphysical (since $u:=m/r >0$),
+while the two other ones are positive, being nothing but
+\be \label{e:ges:def_u_per_apo}
+    u_{\rm p} = \frac{m}{r_{\rm p}} \qquad\mbox{and}\qquad
+    u_{\rm a} = \frac{m}{r_{\rm a}} ,
+\ee
+where $r_{\rm p}$ and $r_{\rm a}$ are the periastron and apoastron radii given by
+Eqs.~(\ref{e:ges:sol_r_per})-(\ref{e:ges:sol_r_apo}).
+\item $\Delta=0$ $\iff$ $b = b_{\rm c}$: $P_b$
+has a double zero: $u_{\rm a} = u_{\rm p} =1/3$ and a negative zero:
+$u_{\rm n}=-1/6$ (cf. red curve
+in Fig.~\ref{f:gis:polynomial_b_u}); only the first
+one is physical and correspond to $r=3m$.
+\item $\Delta<0$ $\iff$ $b < b_{\rm c}$:
+$P_b$ has one real negative zero, $u_{\rm n}$, and two complex zeros
+(cf. blue and magenta curves in Fig.~\ref{f:gis:polynomial_b_u}),
+so that $P_b(u)$ never vanishes
+for physical values of $u$, which are real positive.
+\end{itemize}
+
+Since they will be required in what follows, let us
+find explicit expressions for the real zeros of the polynomial $P_b$.
+The equation $P_b(u) = 0$ can be brought to a depressed form (no square term)
+by the change of variable $u = x + 1/6$. We get
+\be \label{e:gis:zeros_Pb_eq_in_x}
+    x^3 - \frac{1}{12} x + \frac{m^2}{2b^2} - \frac{1}{108} = 0 .
+\ee
+We shall discuss separately the cases $b>b_{\rm c}$ and $b<b_{\rm c}$.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_u_per_apo_neg.pdf}}
+\caption[]{\label{f:gis:u_per_apo_neg} \footnotesize
+Real zeros $u_{\rm n}$, $u_{\rm p}$ and $u_{\rm a}$ of the cubic polynomial
+$P_b(u) =  2 u^3 - u^2 + {m^2}/{b^2}$ as functions of $b$. The vertical
+dashed line marks the critical value
+$b = b_{\rm c} \simeq 5.196\, m$.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_periastron}]}
+}
+\end{figure}
+
+
+\subsubsection{Zeros of $P_b$ for $b\geq b_{\rm c}$}
+
+For $b>b_{\rm c}$, we can express the solutions of Eq.~(\ref{e:gis:zeros_Pb_eq_in_x})
+via Viète's formulas \eqref{e:gis:Viete}
+with $p = -1/12$ and $q = m^2/(2b^2) - 1/108$.
+We then get the zeros of $P_b$ as
+\[
+    u_k = \frac{1}{3} \cos \left[ \frac{1}{3}
+        \arccos \left( 1 - 2 \frac{b_{\rm c}^2}{b^2} \right) + \frac{2 k \pi}{3} \right]
+        + \frac{1}{6},
+        \qquad k \in \{0, 1, 2\} .
+\]
+Using the identity $\arccos(1 - 2 x^2) = 2\arcsin x$ and noticing
+that $u_1 < 0$, which implies $u_1 = u_{\rm n}$, and $u_ 0 \geq u_2$, which
+implies $u_0 = u_{\rm a}$ and $u_2 = u_{\rm p}$,
+we arrive at
+\begin{subequations}
+\label{e:gis:zeros_Pbu}
+\begin{align}
+  &  \encadre{u_{\rm n} = \frac{1}{3}\cos\left[ \frac{2}{3} \arcsin\left(
+   \frac{b_{\rm c}}{b}\right) + \frac{2\pi}{3}\right] + \frac{1}{6} } \qquad (b \geq b_{\rm c}) \label{e:gis:u_n_b_gt_bc}\\[1ex]
+ & \encadre{ u_{\rm p} = \frac{1}{3}\cos\left[ \frac{2}{3} \arcsin\left(
+   \frac{b_{\rm c}}{b}\right) + \frac{4\pi}{3}\right] + \frac{1}{6} }
+            \qquad (b \geq b_{\rm c}) \label{e:gis:u_per_b}  \\[1ex]
+ & \encadre{ u_{\rm a} = \frac{1}{3}\cos\left[ \frac{2}{3} \arcsin\left(
+   \frac{b_{\rm c}}{b}\right) \right] + \frac{1}{6} }  \qquad (b \geq b_{\rm c}) .
+   \label{e:gis:u_apo_b}
+\end{align}
+\end{subequations}
+These zeros are plotted in terms of $b$ on Fig.~\ref{f:gis:u_per_apo_neg}.
+Note the ordering
+\be \label{e:gis:order_u_zeros}
+    -\frac{1}{6} \leq u_{\rm n} < 0 < u_{\rm p} \leq \frac{1}{3}
+    \leq u_{\rm a} < \frac{1}{2} ,
+\ee
+with the inequalities $\leq$ being saturated for $b = b_{\rm c}$.
+Note also that
+\be \label{e:gis:lim_b_inf_u_zeros}
+    \lim_{b\to +\infty} u_{\rm n} = 0,\qquad
+    \lim_{b\to +\infty} u_{\rm p} = 0,\qquad\mbox{and}\qquad
+    \lim_{b\to +\infty} u_{\rm a} = \frac{1}{2} .
+\ee
+
+It is easy to express two of the zeros in terms of the third one. For instance,
+let us pick $u_{\rm p}$. From $P_b(u_{\rm p}) = 0$, we have immediately
+$b^2/m^2 = - 2 u_{\rm p}^3 + u_{\rm p}^2$. If we substitute this expression
+for $b^2/m^2$ into $P_b(u)$, we get
+\bea
+    P_b(u) = 0 & \iff &  2 u^3 - u^2 - 2 u_{\rm p}^3 + u_{\rm p}^2 = 0  \nonumber \\
+    & \iff & (u - u_{\rm p})\left[ 2 (u^2 + u_{\rm p} u + u_{\rm p}^2)
+    - (u + u_{\rm p}) \right] = 0  \nonumber \\
+    & \iff & (u - u_{\rm p})\left[ 2 u^2 + (2 u_{\rm p} - 1) u
+      + u_{\rm p} (2 u_{\rm p} - 1) \right] = 0 . \nonumber
+\eea
+The two zeros different from $u_{\rm p}$ of this equation, namely
+$u_{\rm n}$ and $u_{\rm a}$, must then obey
+\[
+    2 u^2 + (2 u_{\rm p} - 1) u
+      + u_{\rm p} (2 u_{\rm p} - 1)  = 0 .
+\]
+Solving this quadratic equation leads to the sought expressions:
+\begin{subequations}
+\label{e:gis:una_up}
+\begin{align}
+u_{\rm n} & = \frac{1}{4} \left( 1 - 2 u_{\rm p}
+    - \sqrt{(1 - 2 u_{\rm p} ) (1 + 6 u_{\rm p} )} \right) \\
+u_{\rm a} & = \frac{1}{4} \left( 1 - 2 u_{\rm p}
+    + \sqrt{(1 - 2 u_{\rm p} ) (1 + 6 u_{\rm p} )} \right) .
+\end{align}
+\end{subequations}
+
+
+\subsubsection{Real zero of $P_b$ for $b<b_{\rm c}$}
+
+As mentioned above, for $b<b_{\rm c}$, $P_b$ has only one real zero, $u_{\rm n}$,
+which is negative. Its value is obtained by means of
+\emph{Viète's substitution}\index{Viète!substitution},
+which consists in setting $x = w + 1/(36 w)$ in Eq.~(\ref{e:gis:zeros_Pb_eq_in_x}),
+thereby turning it into a quadratic equation for $w^3$. Solving the latter yields
+\be \label{e:gis:u_n_b_lt_bc}
+   \encadre{ u_{\rm n} = \frac{1}{6} \left[ 1
+    - \left( \frac{b_{\rm c}}{b} - \sqrt{ \frac{b_{\rm c}^2}{b^2} - 1 } \right) ^{2/3}
+    - \left( \frac{b_{\rm c}}{b} - \sqrt{ \frac{b_{\rm c}^2}{b^2} - 1 } \right) ^{- 2/3}
+    \right] } \qquad (b < b_{\rm c}).
+\ee
+$u_{\rm n}$ is plotted as a function of $b$ in the left part of
+Fig.~\ref{f:gis:u_per_apo_neg}. Note that
+\be \label{e:gis:range_un_b_lt_bc}
+    u_{\rm n} < - \frac{1}{6}, \qquad
+    \lim_{b\to b_{\rm c}^-} u_{\rm n} = - \frac{1}{6}
+     \qquad\mbox{and}\qquad \lim_{b\to 0} u_{\rm n} = - \infty .
+\ee
+The last limit results from the expansion of Eq.~(\ref{e:gis:u_n_b_lt_bc}),
+which yields
+$u_{\rm n} \sim - (2b_{\rm c}/b)^{2/3} / 6$ when $b\to 0$.
+Observe also from Fig.~\ref{f:gis:u_per_apo_neg} the smooth transition
+with the value of $u_{\rm n}$ for $b\geq b_{\rm c}$, which is given by
+Eq.~(\ref{e:gis:u_n_b_gt_bc}).
+
+\begin{hist}
+As mentioned in the historical note on p.~\pageref{h:ges:geod},
+the equations of geodesic motion in Schwarzschild metric have been first derived
+by Karl Schwarzschild\index[pers]{Schwarzschild, K.} in January 1916 \cite{Schwa1916} and
+Johannes Droste\index[pers]{Droste, J.} in May 1916 \cite{Drost1917}, but these two
+authors focussed on the \emph{timelike} case (orbit of a massive particle or a ``planet'').
+It seems that the first explicit writing of the equations governing
+\emph{null} geodesics is due to Ludwig Flamm\index[pers]{Flamm, L.} in September
+1916 \cite{Flamm1916}. In particular, Flamm derived\footnote{The link
+between Flamm's notations and ours is $\alpha=2m$, $R=r$, $x=u/m$ and $\Delta=b$.}
+Eqs.~(\ref{e:ges:dot_t_null}),
+(\ref{e:ges:dot_ph_null}) and a combination of Eqs.~(\ref{e:ges:dot_t_null}) and (\ref{e:ges:dot_r_square_null}). He also derived
+Eq.~(\ref{e:gis:du_dphi_null}) governing the trajectories in the equatorial plane,
+as well as Eq.~(\ref{e:ges:r_per_null}) giving the periastron.
+Regarding the solutions of these equations, he got only approximate ones, to
+the second order in $m/b$ and recover Einstein's famous result for the
+deflection of light by the Sun.
+For details about early studies of null geodesics in Schwarzschild spacetime,
+see Ref.~\cite{Eisen87}.
+\end{hist}
+
+\subsection{Critical null geodesics} \label{s:gis:crit_geod}
+
+For $b=b_{\rm c} = 3\sqrt{3}\, m$, the differential equation (\ref{e:gis:du_dphi_null})
+can be integrated by means of elementary functions. Indeed, one has then
+$P_b(u) = (u - 1/3)^2 (2u + 1/3)$ and Eq.~(\ref{e:gis:du_dphi_null})
+is equivalent to
+\be \label{e:ges:dphi_du_null_bcrit}
+    \frac{\D\ph}{\D u} = \pm \frac{1}{\left|u - \frac{1}{3}\right|
+        \sqrt{2u+\frac{1}{3}}} .
+\ee
+This equation can be easily integrated by noticing that
+\be \label{e:ges:primitive_crit_geod}
+    \frac{1}{(1-x)\sqrt{x}} = \begin{cases}
+       \displaystyle 2 \frac{\D}{\D x} \left( \artanh \sqrt{x} \right) \quad \mbox{for}\ x\in(0,1)\\[2ex]
+       \displaystyle 2 \frac{\D}{\D x} \left( \arcoth \sqrt{x} \right) \quad \mbox{for}\ x\in(1,+\infty) .
+    \end{cases}
+\ee
+We thus perform the change of variable $x=2u + 1/3$ and treat separately
+two cases : $u<1/3 \iff x\in (1/3,1)$ and $u>1/3 \iff x\in (1,+\infty)$.
+We call geodesics in the first case
+\defin{external critical null geodesics}\index{external!critical null geodesic}\index{critical!null geodesic!external --},
+since $u<1/3\iff r > 3 m$, and those in the second case
+\defin{internal critical null geodesics}\index{internal!critical null geodesic}\index{critical!null geodesic!internal --},
+since $u>1/3 \iff r < 3m$. Note that the qualifiers \emph{external} and \emph{internal}  refer
+to the photon sphere $r=3 m$ discussed in Sec.~\ref{s:gis:null_eff_pot}, and
+\emph{not} to the black hole region ($r<2m$).
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{ges_null_r_phi_bcrit.pdf}}
+\caption[]{\label{f:gis:null_r_phi_bcrit} \footnotesize
+$r$ as a function of $\ph$ along a null geodesic with an impact parameter
+equal to the critical one:
+$b = b_{\rm c} = 3\sqrt{3} \, m$; the blue curve is for a critical
+null geodesic with $r>3m$
+[Eq.~(\ref{e:ges:null_r_phi_tanh})], while the red one
+regards $r<3m$ [Eq.~(\ref{e:ges:null_r_phi_coth})].
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_critical_geod}]}
+}
+\end{figure}
+
+\subsubsection{External critical null geodesics} \label{s:gis:extern_crit_geod}
+
+For $u<1/3$, $x\in(1/3, 1)$, so that the first line of Eq.\eqref{e:ges:primitive_crit_geod}
+is relevant and Eq.~\eqref{e:ges:dphi_du_null_bcrit} is integrated to
+\be \label{e:ges:ph_u_crit_null_geod}
+    \ph = \pm 2 \artanh \sqrt{2u + \frac{1}{3}} + \ph_0 ,
+\ee
+where $\ph_0$ is some integration constant. This relation is easily inverted
+to
+\be \label{e:ges:u_ph_crit_null_geod}
+    u = \frac{1}{2}  \tanh^2 \left(\frac{\ph - \ph_0}{2} \right) - \frac{1}{6} .
+\ee
+Moving back to $r = m/u$, we obtain the equation of the external critical
+null geodesic in polar form:
+\be \label{e:ges:null_r_phi_tanh}
+   \encadre{ r = \frac{2m}{\tanh^2 \left(\frac{\ph - \ph_0}{2} \right) - \frac{1}{3}} }.
+\ee
+The constant $\ph_0$ can be related to the asymptotic value $\ph_\infty$ of $\ph$
+when $r\to +\infty$ by setting $u=0$ in Eq.~(\ref{e:ges:u_ph_crit_null_geod});
+we get, using the identity $\artanh x = 1/2\ln[(1+x)/(1-x)]$,
+\be \label{e:ges:null_ph_0_ph_inf}
+    \ph_0 = \ph_\infty \pm \ph_*,\quad\mbox{with}\quad
+    \ph_* := \ln\left(\frac{\sqrt{3} + 1}{\sqrt{3} - 1}\right)
+    \simeq 1.316958.
+\ee
+
+The function $r(\ph)$, as given by Eq.~(\ref{e:ges:null_r_phi_tanh}), is
+depicted on Fig.~\ref{f:gis:null_r_phi_bcrit} (blue curve).
+The region $\ph_0-\ph_* < \ph < \ph_0 + \ph_*$ is excluded, since
+Eq.~(\ref{e:ges:null_r_phi_tanh}) would yield $r<0$. For $\ph > \ph_0 + \ph_*$,
+$r(\ph)$ is a decaying
+function, which corresponds to the
+plus sign in Eq.~(\ref{e:ges:ph_u_crit_null_geod}) and to the minus sign in
+Eq.~(\ref{e:ges:null_ph_0_ph_inf}): $\ph_0 = \ph_\infty - \ph_*$.
+Figure~\ref{f:gis:null_b_crit_from_inf_L_pos} shows such a null geodesic with
+$\ph_\infty=0$, which implies $\ph_0 = - \ph_*$ and $\ph>0$.
+When $\ph\to +\infty$, the geodesic rolls up indefinitely onto the photon
+orbit discussed in Sec.~\ref{s:gis:null_eff_pot}; this
+behavior corresponds to the horizontal asymptote at $r=3m$ in
+the right part of Fig.~\ref{f:gis:null_r_phi_bcrit}.
+Note that the geodesic approaches very fast the photon orbit, only a single
+path round to it being graphically visible in Fig.~\ref{f:gis:null_b_crit_from_inf_L_pos}.
+This is because the asymptotic expansion of relation~\eqref{e:ges:null_r_phi_tanh} is
+$r\sim 3m(1+ 6\mathrm{e}^{-\ph})$ when $\ph\to+\infty$.
+
+It is worth stressing that Fig.~\ref{f:gis:null_b_crit_from_inf_L_pos} describes both (i) the trace
+in the $(x,y)$-plane of a
+geodesic with $L>0$ (so that $\ph$ increases towards the future, cf. Eq.~(\ref{e:ges:dot_ph_null})) arising from $r\to + \infty$
+and spiralling inwards to the photon orbit
+and (ii) the trace of a geodesic with $L<0$ (so that $\ph$ decays towards the future)
+arising from $r=r_{\rm em} > 3 m$, $\ph=\ph_{\rm em}>0$,
+spiralling outwards and escaping to $r\to +\infty$ as $\ph\to 0$. Had we restored the
+$t$ dimension perpendicular to the $(x,y)$-plane in a 3d plot, these two geodesics would have
+clearly appeared distinct.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{ges_null_b_crit_from_inf_L_pos.pdf}}
+\caption[]{\label{f:gis:null_b_crit_from_inf_L_pos} \footnotesize
+Trace in the equatorial plane spanned by the coordinates $x:=r\cos\ph$, $y:=r\sin\ph$
+of an external critical null geodesic ($b = 3\sqrt{3} \, m \simeq 5.196 m$ and
+$r>3m$) with $\ph_\infty=0$.
+It obeys Eq.~(\ref{e:ges:null_r_phi_tanh}) with $\ph_0 = -\ph_*$ and $\ph\in(0,+\infty)$
+(right branch of the blue curve in Fig.~\ref{f:gis:null_r_phi_bcrit}).
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_critical_geod}]}
+}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{ges_null_b_crit_from_inf_L_neg.pdf}}
+\caption[]{\label{f:gis:null_b_crit_from_inf_L_neg} \footnotesize
+Same as Fig.~\ref{f:gis:null_b_crit_from_inf_L_pos}, but for $\ph_0 = \ph_*$
+and $\ph\in(-\infty,0)$ (left branch of the blue curve in Fig.~\ref{f:gis:null_r_phi_bcrit}).
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_critical_geod}]}
+}
+\end{figure}
+
+On the contrary, for $\ph < \ph_0 - \ph_*$,
+$r(\ph)$ is an increasing
+function, as it is clear on the left part of the blue curve in Fig.~\ref{f:gis:null_r_phi_bcrit}.
+This corresponds to the
+minus sign in Eq.~(\ref{e:ges:ph_u_crit_null_geod}) and to the plus sign in
+Eq.~(\ref{e:ges:null_ph_0_ph_inf}): $\ph_0 = \ph_\infty + \ph_*$.
+A null geodesic of this type is depicted in Fig.~\ref{f:gis:null_b_crit_from_inf_L_neg}.
+It has $\ph_\infty = 0$, so that $\ph_0 = \ph_*$ and $\ph < 0$.
+As for Fig.~\ref{f:gis:null_b_crit_from_inf_L_pos}, the curve depicted in
+Fig.~\ref{f:gis:null_b_crit_from_inf_L_neg} can be interpreted as the trace
+in the $(x,y)$-plane of two distinct
+geodesics: one with $L<0$ arising from $r\to + \infty$
+and spiralling inwards to the photon orbit when $\ph\to -\infty$
+and another one with $L>0$
+arising from $r=r_{\rm em} > 3 m$, $\ph=\ph_{\rm em}<0$,
+spiralling outwards and escaping to $r\to +\infty$ as $\ph\to 0$.
+
+\begin{figure}
+\centerline{
+\includegraphics[width=0.35\textwidth]{ges_null_b_crit_intern_1.pdf}\qquad
+\includegraphics[width=0.35\textwidth]{ges_null_b_crit_intern_2.pdf}
+}
+\caption[]{\label{f:gis:null_b_crit_intern} \footnotesize
+Trace in the equatorial plane of two internal critical null geodesics ($b = 3\sqrt{3} \, m \simeq 5.196 m$ and
+$r<3m$). They both obey Eq.~\eqref{e:ges:null_r_phi_coth} with $\ph_0 = 0$.
+The left panel corresponds to $\ph\in (-\infty, 0)$ (left part of the red curve
+in Fig.~\ref{f:gis:null_r_phi_bcrit}), while the right one is
+for $\ph\in (0, +\infty)$ (right part of the red curve
+in Fig.~\ref{f:gis:null_r_phi_bcrit}).
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_critical_geod}]}
+}
+\end{figure}
+
+
+\subsubsection{Internal critical null geodesics}
+
+Let us now consider the ``internal'' case: $r< 3m \iff u>1/3$.
+This implies $x\in (1,+\infty)$ in Eq.~\eqref{e:ges:primitive_crit_geod},
+so that Eq.~\eqref{e:ges:dphi_du_null_bcrit} is integrated to
+\be \label{e:ges:null_r_phi_coth}
+    \encadre{ r = \frac{2m}{\coth^2 \left(\frac{\ph - \ph_0}{2} \right) - \frac{1}{3}} }.
+\ee
+Again, $\ph_0$ is an integration constant. But this time, it cannot be determined by the
+value of $\ph$ when $r\to +\infty$ since we are in the case $r<3m$.
+The function $r(\ph)$ given by Eq.~\eqref{e:ges:null_r_phi_coth} is plotted as the red
+curve in Fig.~\ref{f:gis:null_r_phi_bcrit}. Contrary to external critical null geodesics, there
+is no exclusion interval for $\ph$. However, $\ph$ cannot range from $-\infty$
+to $+\infty$ along a given geodesic. Indeed, for $\ph=\ph_0$, one gets
+$r=0$, which corresponds to the curvature singularity of the Schwarzschild black hole.
+This is necessarily a termination point for any geodesic. The maximum
+range of $\ph$ along an internal critical null geodesic is therefore
+either $(-\infty,\ph_0)$ or $(\ph_0,+\infty)$.
+
+An internal critical null geodesic with $\ph_0=0$ and $\ph\in(-\infty,0)$
+is depicted in the left panel of Fig.~\ref{f:gis:null_b_crit_intern}.
+For $\ph\to -\infty$, it rolls up indefinitely onto the photon
+orbit ($r=3m$) from below. Again the approach to the photon orbit is exponentially
+fast, the asymptotic expansion of relation \eqref{e:ges:null_r_phi_coth} being
+$r\sim 3m (1 - 6 \mathrm{e}^\ph)$ when $\ph\to -\infty$.
+The curve plotted in Fig.~\ref{f:gis:null_b_crit_intern} actually represents the trace in the equatorial plane of two
+distinct geodesics: (i) a geodesic with $L>0$ arising
+from $r=r_{\rm em} < 3 m$, $\ph=\ph_{\rm em}<0$ and inspiralling to the
+central singularity as $\ph\to 0$ and (ii) a geodesic with $L<0$ arising from
+$r = r_{\rm em} \in (2m,  3 m)$, $\ph=\ph_{\rm em}<0$ and spiralling outward
+to the photon orbit as $\ph\to -\infty$. Note that for (ii), the
+emission point must fulfill $r_{\rm em} > 2m$, i.e. must lie outside the black
+hole region. Indeed, as shown in Sec.~\ref{s:ges:eq_to_be_solved}, along
+any geodesic, $r$ must decrease towards the future in the black hole region.
+Hence no null geodesic can be spiralling outwards there.
+
+\begin{remark}
+Actually, an outward spiralling critical null geodesic can emerge from
+the region $r<2m$ when the latter corresponds to the \emph{white hole} region
+in the extended Schwarzschild spacetime that will be discussed in Chap.~\ref{s:max}.
+This explains why nothing in Eq.~(\ref{e:ges:null_r_phi_coth}) and
+Fig.~\ref{f:gis:null_b_crit_intern} seems to prevent
+this behavior.
+\end{remark}
+
+The right panel of Fig.~\ref{f:gis:null_b_crit_intern} corresponds to an
+internal critical null geodesic with $\ph_0=0$ and $\ph\in(0, \infty)$.
+For $\ph\to +\infty$, it rolls up indefinitely onto the photon
+orbit ($r=3m$) from below. Again, the plotted curve describes two cases:
+(i) a geodesic with $L<0$ arising
+from $r=r_{\rm em} < 3 m$, $\ph=\ph_{\rm em}>0$ and inspiralling to the
+central singularity as $\ph\to 0$ and (ii) a geodesic with $L>0$ arising from
+$r = r_{\rm em} \in (2m,  3 m)$, $\ph=\ph_{\rm em}>0$ and spiralling outward
+to the photon orbit as $\ph\to +\infty$.
+
+\begin{hist}
+The photon circular orbit at $r=3m$ has been exhibited by David Hilbert\index[pers]{Hilbert, D.}
+in December 1916 \cite{Hilbe1917a,Hilbe1917b}. Hilbert also discussed the
+critical null geodesics and their spirals
+around the photon orbit, interpreting the latter as a Poincaré limit cycle
+of the dynamical system governed by Eq.~(\ref{e:gis:du_dphi_null}).
+Hilbert pointed out that ingoing null geodesics with an impact parameter
+$b > b_{\rm c}$ are deflected (possibly looping
+around the photon orbit if $b$ is close to $b_{\rm c}$) and escape to infinity,
+while those with $b < b_{\rm c}$ cross the photon orbit and terminate on ``the circle
+$r=2m$''. Hilbert claimed that null geodesics stop there, because
+their (coordinate!) velocity vanishes\footnote{The coordinate velocity for
+ingoing radial null geodesics is given by Eq.~(\ref{e:gis:dtdr_radial_geod}):
+$dr/dt = - 1 + 2m/r$, which clearly vanishes at $r=2m$.}. We recover here the interpretation
+of the $r=2m$ (coordinate) singularity as an impenetrable sphere advanced by Droste while discussing
+timelike geodesics (cf. the historical note on p.~\pageref{h:ges:geod}). The distinction
+between coordinate effects and physical ones was definitely not clear in the early
+days of general relativity, even for great minds like Hilbert!
+The same analysis and conclusions are found in the general relativity treatise
+by Max von Laue\index[pers]{von Laue, M.} published in 1921 \cite{Laue1921}.
+\end{hist}
+
+\subsection{Null geodesics with $b > b_{\rm c}$ and $r> 3m$} \label{s:gis:geod_b_gt_bc_out}
+
+For $b \not= b_{\rm c}$, the differential equation~\eqref{e:gis:du_dphi_null} cannot be integrated
+in terms of elementary functions. As we are going to see, it is integrable
+though in terms of standard
+functions of mathematical physics, namely elliptic integrals of the first kind.
+As a first step, we rewrite Eq.~(\ref{e:gis:du_dphi_null}) as
+\be \label{e:ges:dphi_du_null}
+   \frac{\D\ph}{\D u} = \eps_L \eps_{\rm in} \frac{1}{\sqrt{P_b(u)}}  ,
+\ee
+where $\eps_L = \pm 1$ is the sign of the conserved angular momentum $L$
+[cf. Eq.~(\ref{e:gis:def_epsilon_L})] and $\eps_{\rm in} = \pm 1$ is
+defined by
+\be
+    \eps_{\rm in} := \operatorname{sgn} \left( \frac{\D u}{\D\tlamb} \right) ,
+\ee
+i.e. $\eps_{\rm in} = +1$ if $u$ increases towards the future along $\Li$, or equivalently
+if $r$ decreases towards the future along $\Li$ (\emph{inward} motion, hence the index ``in''),
+and $\eps_{\rm in} = -1$ otherwise.
+Let us recall that by vertue of the equation of motion (\ref{e:ges:dot_ph_null_b}),
+$\epsilon_L$ gives the sign of $\D\ph/\D\tlamb$, so that the sign of
+$\D\ph/\D u = \D\ph/\D\tlamb \times (\D u/\D\tlamb)^{-1}$ is $\eps_L \eps_{\rm in}$,
+which justifies the factor $\eps_L \eps_{\rm in}$ in front of the positive
+quantity $1/\sqrt{P_b(u)}$ in the right-hand side of Eq.~(\ref{e:ges:dphi_du_null}).
+
+In this section, we consider null geodesics with $b>b_{\rm c}$ and outside
+the photon sphere, i.e. geodesics similar to that labelled 1 in
+Figs.~\ref{f:gis:eff_pot_null} and \ref{f:gis:null_geod}.
+Each of these geodesics has a periastron, at $u = u_{\rm p}$, and obeys $u\to 0$
+($r\to +\infty$) for both $\tlamb\to -\infty$ and
+$\tlamb\to +\infty$. The general solution to the differential equation
+(\ref{e:ges:dphi_du_null}) can be written as
+\be \label{e:gis:ph_intPb_b_gt_bc}
+    \ph = \ph_{\rm p} + \eps_L \eps_{\rm in}
+        \int_{u_{\rm p}}^u \frac{\D\bar{u}}{\sqrt{P_b(\bar{u})}} ,
+\ee
+where $\ph_{\rm p}$ is the value of $\ph$ at the periastron.
+We shall rewrite it as
+\be \label{e:gis:ph_Phi_b_u}
+    \encadre{ \ph = \ph_{\rm p} - \eps_L \eps_{\rm in} \Phi_b(u) },
+\ee
+where we have introduced the function
+\be \label{e:gis:def_Phib_b_gt_bc}
+   \encadre{  \Phi_b(u) := \int_u^{u_{\rm p}} \frac{\D\bar{u}}{\sqrt{P_b(\bar{u})}}
+      = \int_u^{u_{\rm p}} \frac{\D\bar{u}}{\sqrt{2 \bar{u}^3 - \bar{u}^2 + (m/b)^2}} }
+      \quad (b> b_{\rm c}) .
+\ee
+Since $u_{\rm p}$ is the function of $b$ given by Eq.~\eqref{e:gis:u_per_b},
+the above relation defines uniquely a function of $u$ and $b$, which we consider
+as a function of $u$ parameterized by $b$. Note that, since $u\leq u_{\rm p}$
+(by definition of the periastron), one has $\Phi_b(u) \geq 0$.
+To evaluate $\Phi_b(u)$, we rewrite it in terms of the three zeros
+$(u_{\rm n}, u_{\rm p}, u_{\rm a})$ of $P_b$:
+\be \label{e:gis:Phi_b_int_Pb_zeros}
+  \Phi_b(u) = \int_u^{u_{\rm p}} \frac{\D\bar{u}}{
+  \sqrt{2(\bar{u} - u_{\rm n})(u_{\rm p} - \bar{u})(u_{\rm a} - \bar{u})}} .
+\ee
+Let us perform the change of variable\footnote{It should be clear that the
+variable $t$ introduced here has nothing to do with the Schwarzschild-Droste
+coordinate $t$.}
+\[
+    t := \frac{\bar{u} - u_{\rm n}}{u_{\rm p} - u_{\rm n}}
+    \quad\iff\quad
+    \bar{u} = (u_{\rm p} - u_{\rm n}) t + u_{\rm n} .
+\]
+We get
+\be
+     \Phi_b(u) = \frac{1}{\sqrt{2(u_{\rm a} - u_{\rm n})}}
+     \int_{\frac{u - u_{\rm n}}{u_{\rm p} - u_{\rm n}}}^1
+     \frac{\D t}{\sqrt{t(1-t)(1 - k^2 t)}} ,
+\ee
+where $k$ is the following constant:
+\be \label{e:gis:def_k_modulus}
+   \encadre{ k := \sqrt{\frac{u_{\rm p} - u_{\rm n}}{u_{\rm a} - u_{\rm n}}}
+    = \frac{\sqrt{2}}{
+       \sqrt{\sqrt{3}\cot\left(\frac{2}{3}\arcsin\left(\frac{b_{\rm c}}{b}\right)\right) + 1}}}
+       \qquad (b > b_{\rm c}) ,
+\ee
+the second equality following from the expressions \eqref{e:gis:zeros_Pbu}
+of $u_{\rm n}$, $u_{\rm p}$ and $u_{\rm a}$ in terms of $b$.
+
+
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_elliptic_mod.pdf}}
+\caption[]{\label{f:gis:elliptic_mod} \footnotesize
+Modulus $k$ of the elliptic integrals $F$ and $K$ that are involved
+in expression (\ref{e:gis:Phib_elliptic_int}) for $\Phi_b(u)$.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_periastron}]}
+}
+\end{figure}
+
+We can simplify further the integral via a second change of variable:
+\[
+    t = \sin^2 \vartheta \iff \vartheta = \arcsin\sqrt{t} .
+\]
+Note that $0<u\leq u_{\rm p}$ implies $0 < t \leq 1$, so that $0<\vartheta\leq \pi/2$.
+Since $\D t = 2\sin\vartheta\cos\vartheta \, \D\vartheta = 2\sqrt{t(1-t)}\, \D\vartheta$,
+we arrive immediately at
+\be \label{e:gis:Phib_prov}
+    \Phi_b(u) =  \frac{\sqrt{2}}{\sqrt{u_{\rm a} - u_{\rm n}}} \int_{\phi_b(u)}^{\pi/2}
+    \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}}  ,
+\ee
+where\footnote{Do no confuse the letter $\phi$ with the symbol used
+for the coordinate $\ph$.}
+\be \label{e:gis:phi_u_b}
+   \encadre{ \phi_b(u) := \arcsin\sqrt{\frac{u - u_{\rm n}}{u_{\rm p} - u_{\rm n}}} }
+     \qquad (b > b_{\rm c}) .
+\ee
+By splitting the integral according to $\int_\phi^{\pi/2} = \int_0^{\pi/2} - \int_0^\phi$,
+we rewrite (\ref{e:gis:Phib_prov}) as
+\be \label{e:gis:Phib_elliptic_int}
+    \encadre{ \Phi_b(u) = \frac{\sqrt{2}}{\sqrt{u_{\rm a} - u_{\rm n}}}
+    \left[ K(k) - F\left( \phi_b(u) ,\; k\right) \right] } \qquad (b > b_{\rm c}) ,
+\ee
+where $F(\phi, k)$ is the
+\defin{incomplete elliptic integral of the first kind}\index{incomplete!elliptic integral}\index{elliptic!integral!incomplete --} \cite{ByrdF71,GradsRGTJ115,AbramS72}:
+\be \label{e:gis:def_incompl_elliptic_int}
+    \encadre{ F(\phi, k) := \int_0^\phi \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}} }
+\ee
+and $K(k)$ is the \defin{complete elliptic integral of the first kind}\index{complete!elliptic integral}\index{elliptic!integral!complete --}:
+\be \label{e:gis:def_K_complete}
+    \encadre{
+    K(k) := \int_0^{\frac{\pi}{2}} \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}} = F\left(\frac{\pi}{2}, k\right) }.
+\ee
+The notation $F(\phi, k)$ is the most common one
+in the literature \cite{ByrdF71,GradsRGTJ115}, but one may encounter as well
+$F(\phi|m)$ for $F(\phi, k)$ with $m=k^2$ \cite{AbramS72}.
+The parameter $k$ is called the \defin{modulus}\index{modulus!of an elliptic integral} of
+the elliptic integral. From its expression \eqref{e:gis:def_k_modulus}, we
+see that $k$ is a function of $b$. It is plotted in Fig.~\ref{f:gis:elliptic_mod}.
+Given the ordering (\ref{e:gis:order_u_zeros}) and the limits (\ref{e:gis:lim_b_inf_u_zeros}),
+we deduce from expression (\ref{e:gis:def_k_modulus}) that
+\be
+    0 < k < 1,
+\ee
+with
+\be \label{e:gis:k_limits_b_gt_bc}
+    \lim_{b\to b_{\rm c}^+} k = 1 \qquad\mbox{and}\qquad
+    \lim_{b\to +\infty} k = 0 .
+\ee
+Given the range $(0, u_{\rm p})$ of $u$, we deduce from expression~(\ref{e:gis:phi_u_b})
+that
+\be
+    0 <  \arcsin \sqrt{\frac{u_{\rm n}}{u_{\rm n} - u_{\rm p}}}
+     < \phi_b(u) \leq \frac{\pi}{2} ,
+\ee
+with $\phi_b(u_{\rm p}) = \pi/2$.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_Phib_b_gt_bc.pdf}}
+\caption[]{\label{f:gis:Phib_b_gt_bc} \footnotesize
+Function $\Phi_b(u)$ defined by Eq.~(\ref{e:gis:def_Phib_b_gt_bc}) and
+evaluated via the elliptic integral expression (\ref{e:gis:phi_u_b})-(\ref{e:gis:Phib_elliptic_int}),
+for selected values of $b > b_{\rm c}$. For each value of $b$, the range of
+$u$ is $(0, u_{\rm p}]$, with the inverse periastron radius $u_{\rm p} = u_{\rm p}(b)$
+given by Eq.~(\ref{e:gis:u_per_b}).
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_elliptic_int}]}
+}
+\end{figure}
+
+The function $\Phi_b(u)$ is plotted in Fig.~\ref{f:gis:Phib_b_gt_bc} for
+various values of $b$. Note that, by construction [cf. Eq.~(\ref{e:gis:def_Phib_b_gt_bc})],
+$\Phi_b(u) \geq 0$ and $\Phi_b(u) = 0 \iff u = u_{\rm p}$. Note also that the closer
+$b$ is from $b_{\rm c} \simeq 5.1961452$, the larger the amplitude of $\Phi_b(u)$. This
+point will be discussed further in Secs.~\ref{s:gis:deflect_winding}
+and \ref{s:gis:asymp}.
+
+\begin{remark}
+One can express $\Phi_b(u)$ in terms of a single elliptic integral
+thanks to the following property of incomplete elliptic
+integrals of the first kind\footnote{See e.g. Eq.~(117.01) of
+Ref.~\cite{ByrdF71} with $k' = \sqrt{1-k^2}$
+or Eq.~(17.4.13) of Ref.~\cite{AbramS72} with $\sin\alpha = k$.}:
+\be \label{e:gis:add_elliptic_int}
+   \tan\psi \tan\phi = \frac{1}{\sqrt{1 - k^2}}\ \Longrightarrow \
+   F(\psi, k) = K(k) - F(\phi, k) .
+\ee
+Then by setting
+\be \label{e:gis:psi_u_b}
+  \psi_b(u) := \arcsin\left( \frac{1}{k} \sqrt{\frac{u_{\rm p} - u}{u_{\rm a} - u}}\right) ,
+\ee
+we can rewrite Eq.~(\ref{e:gis:Phib_elliptic_int}) as
+\be \label{e:gis:Phib_elliptic_int_psi}
+     \Phi_b(u) = \frac{\sqrt{2}}{\sqrt{u_{\rm a} - u_{\rm n}}}
+    \, F\left( \psi_b(u) ,\; k\right)  .
+\ee
+We prefer however the form (\ref{e:gis:Phib_elliptic_int}) of $\Phi_b(u)$
+because (i) expression (\ref{e:gis:phi_u_b}) for $\phi_b(u)$ is simpler than
+expression (\ref{e:gis:psi_u_b}) for $\psi_b(u)$ and (ii) the form (\ref{e:gis:Phib_elliptic_int}) is better adapted to the study of the limit
+$b\to b_{\rm c}$, to be discussed in Sec.~\ref{s:gis:asympt_b_gt_bc}.
+\end{remark}
+
+\begin{remark} \label{r:gis:Jacobi_elliptic_sine}
+The trajectory of a null geodesic in the plane $\th=\pi/2$ as given by
+Eqs.~(\ref{e:gis:ph_Phi_b_u}) and (\ref{e:gis:Phib_elliptic_int})
+is of the form $\ph = \ph(r)$
+on each of the two arcs with respect to the periastron. One can invert
+this relation to express the trajectory in the polar form $r = r(\ph)$. This
+is performed thanks to the inverse of the incomplete elliptic integral $F(\phi,k)$,
+which is the \defin{Jacobi elliptic sine}\index{Jacobi!elliptic sine}\index{elliptic!sine}
+$\operatorname{sn}(x,k)$, defined by $\sin\phi = \operatorname{sn}(F(\phi,k), k)$. We deduce then
+from Eqs.~(\ref{e:gis:psi_u_b})-(\ref{e:gis:Phib_elliptic_int_psi}) that
+\be
+    \frac{u_{\rm p} - u}{u_{\rm a} - u} = k^2 \operatorname{sn}\left(
+    \frac{\sqrt{u_{\rm a} - u_{\rm n}}}{\sqrt{2}} \Phi_b(u),\; k \right) .
+\ee
+We refer the reader to Refs.~\cite{CadezK05,Munoz14} for more details.
+\end{remark}
+
+\subsection{Null geodesics with $b > b_{\rm c}$ and $r< 3m$} \label{s:gis:geod_b_gt_bc_in}
+
+Let us consider now null geodesics still with $b  > b_{\rm c}$ but located
+below the photon sphere, i.e. geodesics similar to that labelled 4 in
+Figs.~\ref{f:gis:eff_pot_null} and \ref{f:gis:null_geod}. Each of these
+geodesics has an apoastron, at $u = u_{\rm a}$, where
+$u_{\rm a}$ is the function of $b$ given
+by Eq.~(\ref{e:gis:u_apo_b}). In other words,  i.e. one has
+$u \geq u_{\rm a}$ along the geodesic.
+
+The treatment is similar to that of Sec.~\ref{s:gis:geod_b_gt_bc_out}, but
+with $u_{\rm a}$ playing the role of $u_{\rm p}$.
+
+To be detailed later...
+
+
+\subsection{Null geodesics with $b < b_{\rm c}$}
+
+A null geodesic $\Li$ with an impact parameter $b < b_{\rm c}$ has neither
+a periastron nor an apoastron, since $P_b$ has no zero in the physical range
+$(0, +\infty)$ of $u$ in that
+case (cf. Sec.~\ref{s:gis:cubic_poly} and Fig.~\ref{f:gis:polynomial_b_u}).
+The only real zero of $P_b$ is $u_{\rm n}<0$, which is the function of $b$
+given by Eq.~(\ref{e:gis:u_n_b_lt_bc}).
+Examples of such geodesics are those labelled 2 and 3
+in Figs.~\ref{f:gis:eff_pot_null} and \ref{f:gis:null_geod}.
+Having no periastron or apoastron implies that $r$, and hence $u$, is a
+monotonic function along $\Li$.
+We shall then distinguish two cases:
+\begin{itemize}
+\item $\Li$ is \defin{ingoing}\index{ingoing!null geodesic}: $r$ decreases all along $\Li$, from $+\infty$ to $0$ as $\tlamb$
+varies from $-\infty$ to some value $\tlamb_0$ where $\Li$ hits the curvature
+singularity at $r=0$:
+\be
+    \lim_{\tlamb\to -\infty} r = + \infty
+    \ \mbox{and}\
+    \lim_{\tlamb\to \tlamb_0} r = 0
+    \quad \iff\quad
+    \lim_{\tlamb\to -\infty} u = 0
+    \ \mbox{and}\
+    \lim_{\tlamb\to \tlamb_0} u = +\infty.
+\ee
+\item $\Li$ is \defin{outgoing}\index{outgoing!null geodesic}: $r$ increases all along $\Li$; as shown in Sec.~\ref{s:ges:eq_to_be_solved}, this cannot happen in the region $r<2m$ (the black
+hole interior). Hence, we must have $r$ varying from $2m$ to $+\infty$,
+with $\tlamb$ ranging from some finite value, $\tlamb_1$ say, to $+\infty$:
+\be
+    \lim_{\tlamb\to \tlamb_1} r = 2m
+    \ \mbox{and}\
+    \lim_{\tlamb\to +\infty} r = +\infty
+    \quad \iff\quad
+    \lim_{\tlamb\to \tlamb_1} u = \frac{1}{2}
+    \ \mbox{and}\
+    \lim_{\tlamb\to +\infty} u = 0.
+\ee
+\end{itemize}
+That the range of $\tlamb$ for outgoing geodesics is $(\lambda_1, +\infty)$
+and not the whole real line can be understood by considering the limit
+$b\to 0$. We are then in the case of radial null geodesics, for which it has
+been proved that $r$ is an affine parameter (cf. Secs.~\ref{s:sch:rad_null_geod}
+and \ref{s:gis:radial}).
+Since this particular affine parameter obviously takes a finite value at $r=2m$,
+any other affine parameter must take a finite value as well.
+Actually, we shall see in Chap.~\ref{s:max} (cf. Sec.~\ref{s:sch:max_extens_constr})
+that this $r=2m$ limit in the
+past of outgoing null geodesics does not correspond to the black hole horizon
+but to the event horizon of a white hole, which is a located in a part of
+the spacetime that is not covered by the Schwarzschild-Droste coordinates
+considered here.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_u0_us_b.pdf}}
+\caption[]{\label{f:gis:u0_us_b} \footnotesize
+Parameters $u_0$ and $u_*$, defined by Eq.~(\ref{e:gis:def_u0_us}), as functions
+of $b$. The horizontal dashed line marks $u=1/3$.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_paramaters_b_lt_bc}]}
+}
+\end{figure}
+
+
+Since $P_b(u_{\rm n}) = 0$, we have $m^2/b^2 = - 2 u_{\rm n}^3 + u_{\rm n}^2$,
+so that we may write
+\[
+    P_b(u) = 2 (u^3 - u_{\rm n}^3) - (u^2 - u_{\rm n}^2)
+        = (u - u_{\rm n}) \left[ 2(u^2 + u u_{\rm n} + u_{\rm n}^2)
+            - (u + u_{\rm n}) \right] .
+\]
+After a slight rearrangement of the term in square brackets, we arrive at
+\be \label{e:gis:Pb_factor_b_lt_bc}
+    P_b(u) = 2 (u - u_{\rm n}) \left[
+        (u - u_0)^2 + (u_* - u_{\rm n})^2 - (u_0 - u_{\rm n})^2 \right] ,
+\ee
+with
+\be \label{e:gis:def_u0_us}
+   \encadre{ u_0 := \frac{1}{4} - \frac{u_{\rm n}}{2} } \qquad\mbox{and}\qquad
+   \encadre{ u_* := \sqrt{u_{\rm n}(3 u_{\rm n} - 1)} + u_{\rm n} }.
+\ee
+Note that $u_0$ and $u_*$ are functions
+of $b$, via the expression (\ref{e:gis:u_n_b_lt_bc}) of $u_{\rm n}$.
+They are plotted in Fig.~\ref{f:gis:u0_us_b}. It is clear from this figure
+that $u_* > u_0$; consequently the term inside the square brackets in
+Eq.~(\ref{e:gis:Pb_factor_b_lt_bc}) is always positive, in agreement with
+$u_{\rm n}$ being the only real
+zero of $P_b$ for $b < b_{\rm c}$.
+Furthermore, according to the limits (\ref{e:gis:range_un_b_lt_bc}), we have
+\be \label{e:gis:lim_us}
+    \lim_{b\to 0} u_* = +\infty \qquad\mbox{and}\qquad
+    \lim_{b\to b_{\rm c}^-} u_* = \frac{1}{3} .
+\ee
+
+The general solution to the differential equation
+(\ref{e:ges:dphi_du_null}) can be written as
+\be \label{e:gis:ph_phs_Phib}
+   \encadre{ \ph = \ph_* -  \eps_L \eps_{\rm in} \Phi_b(u) },
+\ee
+where
+\be \label{e:gis:def_Phib_b_lt_bc}
+   \encadre{ \Phi_b(u) := \int_u^{u_*} \frac{\D\bar{u}}{\sqrt{P_b(\bar{u})}}
+    = \int_u^{u_*} \frac{\D\bar{u}}{\sqrt{2 \bar{u}^3 - \bar{u}^2 + (m/b)^2}} }
+     \quad (b<b_{\rm c})
+\ee
+and $\ph_*$ is the value of $\ph$ at $u=u_*$. Since
+\[
+    \lim_{b\to b_{\rm c}^-} u_* = \frac{1}{3} = \lim_{b\to b_{\rm c}^+} u_{\rm p},
+\]
+there is a kind of continuity of (\ref{e:gis:def_Phib_b_lt_bc})
+with the definition (\ref{e:gis:def_Phib_b_gt_bc}) of $\Phi_b(u)$ for
+$b>b_{\rm c}$, despite the fact that $\Phi_b(u)$ is not defined
+for $b=b_{\rm c}$ (more precisely, as we shall see later,
+$\lim_{b\to b_{\rm c}^-} \Phi_b(u) = + \infty$ for $u<u_*$ and
+$\lim_{b\to b_{\rm c}^+} \Phi_b(u) = + \infty$ for $u<u_{\rm p}$).
+
+To evaluate $\Phi_b(u)$, we shall use expression (\ref{e:gis:Pb_factor_b_lt_bc})
+for $P_b(u)$:
+\[
+    \Phi_b(u) = \frac{1}{\sqrt{2}} \int_u^{u_*}
+    \frac{\D\bar{u}}{\sqrt{ (\bar{u} - u_{\rm n}) \left[
+        (\bar{u} - u_0)^2 + (u_* - u_{\rm n})^2 - (u_0 - u_{\rm n})^2  \right]}} .
+\]
+Performing the change of variable
+\be
+    t := \frac{u_* - \bar{u}}{u_* + \bar{u} - 2 u_{\rm n}}
+    \quad\iff\quad
+    \bar{u} = (u_* - u_{\rm n}) \frac{1-t}{1+t} + u_{\rm n}
+\ee
+yields
+\be \label{e:gis:Phib_t_b_lt_bc}
+    \Phi_b(u) =  \int_0^{\frac{u_* - u}{u_* + u - 2 u_{\rm n}}}
+    \frac{\D t}{\sqrt{1-t^2}\sqrt{ (u_* - u_{\rm n}) (1+t^2) - (u_0 - u_{\rm n}) (1-t^2) }} .
+\ee
+Given the range $(0, +\infty)$ for $u$, the range of $t$ is
+\[
+    -1 < t \leq \frac{u_*}{u_* - 2 u_{\rm n}} < 1 .
+\]
+To proceed, we shall distinguish the cases $u \leq u_*$ and $u> u_*$.
+The first case corresponds to $0 \leq t < \frac{u_*}{u_* - 2 u_{\rm n}} < 1$ and we
+perform the change of variable $t = \cos\vartheta$ with $\vartheta\in(0, \pi/2)$ in the integral
+(\ref{e:gis:Phib_t_b_lt_bc}), yielding
+\[
+    \Phi_b(u) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}} \int_{\phi_b(u))}^{\pi/2}
+        \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}} ,
+\]
+with
+\be \label{e:gis:def_phi_u_b_lt_bc}
+   \encadre{ \phi_b(u) := \arccos\left( \frac{|u_* - u|}{u_* + u - 2 u_{\rm n}} \right) }
+   \qquad (b < b_{\rm c}).
+\ee
+and\footnote{To get expression (\ref{e:gis:def_k_b_lt_bc}), we have used
+Eq.~(\ref{e:gis:def_u0_us}) to get rid of $u_0$.}
+\be \label{e:gis:def_k_b_lt_bc}
+   \encadre{ k := \sqrt{\frac{u_* - 5u_{\rm n}/2 + 1/4}{2(u_* - u_{\rm n})}} } \qquad
+    (b < b_{\rm c}) .
+\ee
+The absolute value in the right-hand side of Eq.~(\ref{e:gis:def_phi_u_b_lt_bc}) is not necessary
+in the present case since $u \geq u_*$. We keep it because the same
+expression will be used below for the case $u > u_*$.
+To let appear the incomplete elliptic integral of the first
+kind (\ref{e:gis:def_incompl_elliptic_int}), let us rewrite the above
+expression as
+\[
+   \Phi_b(u) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}}
+   \left[ \int_{0}^{\pi/2}
+        \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}}
+        - \int_{0}^{\phi_b(u)}
+        \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}} \right] .
+\]
+In view of respectively (\ref{e:gis:def_K_complete}) and (\ref{e:gis:def_incompl_elliptic_int}),
+the first integral is $K(k)$, while the second one is
+$F(\phi_b(u), k)$.
+We have thus
+\be \label{e:gis:Phib_u_lt_us}
+    \encadre{ \Phi_b(u) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}}
+    \left[ K(k) - F \left( \phi_b(u),\, k \right) \right]}
+    \qquad (u \leq u_*,\ b < b_{\rm c}) .
+\ee
+As for the case $b>b_{\rm c}$, the modulus $k$ of the elliptic integrals $K$
+and $F$ is a function of $b$ only, which
+is given by combining Eqs.~(\ref{e:gis:def_k_b_lt_bc}), (\ref{e:gis:def_u0_us})
+and (\ref{e:gis:u_n_b_lt_bc}). It is plotted in Fig.~\ref{f:gis:k_b_lt_bc}.
+Note that its range is pretty limited:
+\be
+    \underbrace{\frac{1}{2} \sqrt{2 + \sqrt{3}}}_{\simeq 0.96592}
+    < k < 1.
+\ee
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_k_b_lt_bc.pdf}}
+\caption[]{\label{f:gis:k_b_lt_bc} \footnotesize
+Modulus $k$ of the elliptic integrals $F$ and $K$ that are involved
+in expressions (\ref{e:gis:Phib_u_lt_us}) and (\ref{e:gis:Phib_u_gt_us})
+for $\Phi_b(u)$.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_paramaters_b_lt_bc}]}
+}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_Phib_b_lt_bc.pdf}}
+\caption[]{\label{f:gis:Phib_b_lt_bc} \footnotesize
+Function $\Phi_b(u)$ defined by Eq.~(\ref{e:gis:def_Phib_b_lt_bc}) and
+evaluated via the elliptic integral expressions (\ref{e:gis:Phib_u_lt_us})
+and (\ref{e:gis:Phib_u_gt_us}),
+for selected values of $b < b_{\rm c}$.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_paramaters_b_lt_bc}]}
+}
+\end{figure}
+
+Let us now turn to the case $u>u_*$. It implies $-1 < t < 0$, so that
+we perform the change of variable $t = -\cos\vartheta$ in order to keep
+$\vartheta\in(0,\pi/2)$. We obtain then
+\[
+    \Phi_b(u) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}} \int_{\pi/2}^{\phi_b(u)}
+        \frac{\D\vartheta}{\sqrt{1 - k^2 \sin^2\vartheta}} ,
+\]
+where $\phi_b(u)$ and $k$ are given by Eqs.~(\ref{e:gis:def_phi_u_b_lt_bc})
+and (\ref{e:gis:def_k_b_lt_bc}). We conclude that
+\be \label{e:gis:Phib_u_gt_us}
+    \encadre{ \Phi_b(u) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}}
+    \left[ F \left( \phi_b(u),\, k \right) - K(k) \right]}
+    \qquad (u > u_*,\ b < b_{\rm c}) .
+\ee
+
+The function $\Phi_b$ evaluated via Eqs.~(\ref{e:gis:Phib_u_lt_us})
+and (\ref{e:gis:Phib_u_gt_us}) is plotted in Fig.~\ref{f:gis:Phib_b_lt_bc} for
+various values of $b$. Note that, by construction [cf. Eq.~(\ref{e:gis:def_Phib_b_lt_bc})],
+$\Phi_b(u) = 0 \iff u = u_*$. Note also that, as in the case $b > b_{\rm c}$
+(Sec.~\ref{s:gis:geod_b_gt_bc_out}), the closer
+$b$ is from $b_{\rm c} \simeq 5.1961452$, the larger the amplitude of $\Phi_b(u)$.
+
+
+\subsection{Deflection angle and winding number} \label{s:gis:deflect_winding}
+
+Let us consider a null geodesic $\Li$  with $b>b_{\rm c}$ arising from $r\to +\infty$,
+i.e. belonging to the family studied in Sec.~\ref{s:gis:geod_b_gt_bc_out}.
+$\Li$ reaches some periastron and departs to $r\to +\infty$.
+The total change of $\ph$ along the geodesic history is
+\be \label{e:gis:def_Delta_ph}
+    \Delta \ph = \ph_\infty - \ph_{-\infty} ,
+\ee
+with $\ph_\infty := \lim_{\tlamb\to +\infty} \ph$ and
+$\ph_{-\infty} := \lim_{\tlamb\to -\infty} \ph$.
+Given that $\lim_{\tlamb\to \pm\infty} u = 0$,
+Eq.~(\ref{e:gis:ph_Phi_b_u}) with respectively
+$\eps_{\rm in} = +1$ and $\eps_{\rm in} = -1$ leads to
+\be \label{e:gis:ph_inf_ph_p}
+    \ph_{-\infty} = \ph_{\rm p} - \eps_L \Phi_b(0) \qquad\mbox{and}\qquad
+    \ph_{\infty} = \ph_{\rm p} + \eps_L \Phi_b(0) .
+\ee
+Hence
+\be \label{e:gis:Dph_Phi_b_0}
+    \Delta\ph = 2 \eps_L \Phi_b(0) .
+\ee
+
+Note that one can have $|\Delta\ph| > 2\pi$; in such a case, the null geodesic
+is winding around the black hole before leaving to infinity. We therefore introduce
+the \defin{winding number}\index{winding!number!of null geodesic} $n\in\mathbb{Z}$ by
+\be \label{e:gis:def_Dph_bar}
+    \Delta\ph =: \overline{\Delta\ph} + 2\pi n \quad
+    \mbox{with} \quad
+    \begin{cases}
+    \overline{\Delta\ph} \in [0, 2\pi) &\  \mbox{if}\ L > 0 \\
+    \overline{\Delta\ph} \in (-2\pi, 0] &\  \mbox{if}\ L < 0 .
+    \end{cases}
+\ee
+Note that $n\geq 0$ for $L > 0$ and $n\leq 0$ for $L<0$.
+We then define the \defin{deflection angle}\index{deflection!angle}
+$\Theta$ by
+\be \label{e:gis:def_deflection_angle}
+    \Theta := \overline{\Delta\ph} - \eps_L \pi .
+\ee
+Let us recall that $\eps_L = \pm 1$ is the sign of the
+conserved angular momentum $L$ [cf. Eq.~(\ref{e:gis:def_epsilon_L})].
+The $-\eps_L \pi$ term in the above equation is chosen so
+that $\Theta = 0$ in flat spacetime (no deflection of light).
+By construction, the range of $\Theta$ is
+\be
+    -\pi \leq \Theta \leq \pi .
+\ee
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.48\textwidth]{ges_null_b_12_000000.pdf} &
+\includegraphics[width=0.48\textwidth]{ges_null_b_8_000000.pdf} \\
+\includegraphics[width=0.48\textwidth]{ges_null_b_6_000000.pdf} &
+\includegraphics[width=0.48\textwidth]{ges_null_b_5_355000.pdf}
+\end{tabular}
+\caption[]{\label{f:gis:null_b1} \footnotesize
+Null geodesics in the plane $\th=\pi/2$ of Schwarzschild spacetime,
+plotted in terms of the coordinates $(x,y) := (r\cos\ph, r\sin\ph)$.
+All geodesics arise from $x\gg m$ with trajectories initially parallel to the $x$-axis;
+they differ by the value of the impact parameter $b$.
+The grey disk marks the black hole
+region $r<2m$, while the dashed green circle indicates the photon orbit
+at $r=3m$.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_geod}]}
+}
+\end{figure}
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.48\textwidth]{ges_null_b_5_230000.pdf} &
+\includegraphics[width=0.48\textwidth]{ges_null_b_5_202500.pdf} \\
+\includegraphics[width=0.48\textwidth]{ges_null_b_5_196430.pdf} &
+\includegraphics[width=0.48\textwidth]{ges_null_b_5_196155.pdf}
+\end{tabular}
+\caption[]{\label{f:gis:null_b2} \footnotesize
+Same as Fig.~\ref{f:gis:null_b1} but for values of $b$ closer to
+$b_{\rm c} \simeq 5.196152\, m$.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_geod}]}
+}
+\end{figure}
+
+The above concepts are illustrated in Figs.~\ref{f:gis:null_b1}-\ref{f:gis:null_b2},
+which show the trajectories
+of null geodesics arising from infinity along the
+direction $\ph=0$ (i.e. having $\ph_{-\infty}=0$), for various values of the
+impact parameter $b$ decaying from $b=12 m$ to $b_{\rm c}$.
+They have been computed by means of the geodesic integrator
+of \textsf{SageMath} (cf. Appendix~\ref{s:sam}), instead of making use
+of the elliptic-integral expression (\ref{e:gis:Phib_elliptic_int}).
+All these geodesics have $L>0$ and hence $\eps_L = +1$.
+For $b=12 m$ (upper left panel of Fig.~\ref{f:gis:null_b1}),
+the geodesic suffers only some moderate bending: the deflection angle is
+$\Theta\simeq \pi/6$ and the winding number is $n=0$.
+We recover here the standard
+\defin{deflection of light}\index{deflection!of light} by massive bodies in
+general relativity.
+For $b=8 m$ and $6 m$, the bending is more pronounced,
+exceeding $\Theta = \pi/2$ for $b=6 m$, still with $n=0$. For $b=5.355\, m$ (lower right panel of Fig.~\ref{f:gis:null_b1}), the deflection angle is $\Theta\simeq\pi$, i.e. the photon goes back in the direction
+from which it was coming.
+
+When the impact parameter becomes even closer to the critical value
+$b_{\rm c}\simeq 5.196152\, m$ [Eq.~(\ref{e:ges:b_crit})],
+the null geodesic starts to wind around the black hole before escaping
+to infinity (Fig.~\ref{f:gis:null_b2}).
+For $b=5.230\, m$ (upper left panel of Fig.~\ref{f:gis:null_b2}), the winding
+number is
+$n=1$ and the deflection angle is $\Theta\simeq -\pi/2$.
+For $b=5.2025\, m$ (upper right panel of Fig.~\ref{f:gis:null_b2}), one has
+$n=1$ and $\Theta=0$. For $b=5.19643\, m$ (lower left panel
+of Fig.~\ref{f:gis:null_b2}), one has
+$n=1$ and $\Theta\simeq \pi$ and for $b=5.196155\, m$ (lower right panel of Fig.~\ref{f:gis:null_b2}), one has $n=2$ and
+$\Theta\simeq \pi/2$.
+Note that the winding is taking place
+almost at the photon circular orbit ($r=3m$). That after a few turns the null geodesic
+departs to infinity corroborates the fact that the photon orbit is unstable
+(cf. Sec.~\ref{s:gis:null_eff_pot}).
+
+We can understand the winding phenomenon
+around the photon circular orbit for $b$ close to $b_{\rm c}$
+without investigating the properties of elliptic integrals.
+Indeed, by combining Eqs.~(\ref{e:gis:Dph_Phi_b_0}) and (\ref{e:gis:Phi_b_int_Pb_zeros}),
+we get
+\be \label{e:ges:Dph_u_per_apo}
+    \Delta\ph = \eps_L \sqrt{2} \int_0^{u_{\rm p}}
+    \frac{\D u}{\sqrt{(u_{\rm p} - u )(u_{\rm a} - u)(u - u_{\rm n})}} .
+\ee
+Given the ordering (\ref{e:gis:order_u_zeros}), each of the
+three factors under the square root is positive on the integration range
+$(0,u_{\rm p})$. For $b\not=b_{\rm c}$, one has $u_{\rm a}\not=u_{\rm p}$
+(cf. Fig.~\ref{f:gis:u_per_apo_neg})
+and
+the only diverging term in the integrand of (\ref{e:ges:Dph_u_per_apo})
+is $1/\sqrt{u_{\rm p} - u}$, which
+diverges at the integral boundary $u=u_{\rm p}$. However, the integral
+\[
+    \int_0^{u_{\rm p}}
+    \frac{\D u}{\sqrt{u_{\rm p} - u}}
+\]
+is finite, being equal to $2\sqrt{u_{\rm p}}$, so that $\Delta\ph$ remains
+finite. When $b\to b_{\rm c}$,
+$u_{\rm a} \to u_{\rm p}$ and the integral (\ref{e:ges:Dph_u_per_apo})
+has a behavior similar to
+\[
+     \int_0^{u_{\rm p}}
+    \frac{\D u}{\sqrt{(u_{\rm p} - u)^2}} = \int_0^{u_{\rm p}}
+    \frac{\D u}{u_{\rm p} - u} .
+\]
+Since the latter is a diverging integral, we conclude that
+\be \label{e:ges:Dph_infinite}
+    \encadre{ \Delta\ph\to \pm\infty\quad\mbox{when}\quad b\to b_{\rm c} }.
+\ee
+We recover the behavior observed for $b=b_{\rm c}$ in
+Sec.~\ref{s:gis:extern_crit_geod}: for
+an external critical null geodesic,
+$\Delta\ph$ is infinite, the geodesic spiralling indefinitely around the
+photon orbit (cf. Fig.~\ref{f:gis:null_b_crit_from_inf_L_pos}).
+We shall refine (\ref{e:ges:Dph_infinite}) in Sec.~\ref{s:gis:asympt_b_gt_bc}
+[Eq.~(\ref{e:gis:Dph_ln_b_bc})].
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Asymptotic direction from some emission point} \label{s:gis:asymp}
+
+To discuss images in Sec.~\ref{s:gis:images},
+we shall need the change in $\ph$ between some
+arbitrary point on a null geodesic (the ``emission'' point)
+and a point far away from the black hole (the ``reception'' point).
+The total change $\Delta\ph$ along all the geodesic history
+considered in Sec.~\ref{s:gis:deflect_winding} is then a special case: that for which the emission point is
+infinitely far from the black hole.
+
+\subsection{Asymptotic direction for $b > b_{\rm c}$} \label{s:gis:asympt_b_gt_bc}
+
+Let us consider a null geodesic $\Li$ with $b>b_{\rm c}$ and an event
+of (finite) affine parameter $\tlamb = \tlamb_{\rm em}$ on $\Li$, which we
+shall call the \emph{emission point}. We are interested in null geodesics
+which reach the asymptotic flat region $r\to+\infty$ for $\tlamb\to+\infty$.
+This implies that the emission point is located outside the photon sphere, i.e.
+obeys
+\be \label{e:gis:rem_gt_3m}
+    r_{\rm em} := r(\tlamb_{\rm em}) > 3 m.
+\ee
+Indeed, we have seen in
+Sec.~\ref{s:gis:geod_b_gt_bc_in} that null geodesics with $b > b_{\rm c}$
+and emitted under the photon sphere never cross the later (this is also
+obvious from the effective potential profile, as plotted in Fig.~\ref{f:gis:eff_pot_null},
+cf. trajectory no.~4).
+Our aim is to relate the value $\ph_\infty$ of $\ph$ for $\tlamb\to +\infty$
+(the asymptotic direction) to its value $\ph_{\rm em}$ at $\tlamb = \tlamb_{\rm em}$.
+
+If the emission point is past $\Li$'s periastron, i.e. if
+$\tlamb_{\rm em} > \tlamb_{\rm p}$, $\ph_{\rm em}$ is related to $\ph_{\rm p}$
+by Eq.~(\ref{e:gis:ph_Phi_b_u}) with $\eps_{\rm in} = -1$:
+\be
+    \ph_{\rm em} = \ph_{\rm p} + \eps_L \Phi_b(u_{\rm em}) ,
+\ee
+where $u_{\rm em}:=m/r_{\rm em}$.
+On the other side, the asymptotic value $\ph_\infty$ is related to $\ph_{\rm p}$
+by Eq.~(\ref{e:gis:ph_inf_ph_p}). By combining these two relations
+to eliminate $\ph_{\rm p}$, we get
+\be
+    \ph_\infty = \ph_{\rm em} + \eps_L \left[ \Phi_b(0) - \Phi_b(u_{\rm em}) \right] .
+\ee
+Substituting expression (\ref{e:gis:Phib_elliptic_int}) for $\Phi_b$ yields
+\be \label{e:gis:ph_inf_em_past_per}
+   \encadre{ \ph_\infty = \ph_{\rm em} + \eps_L \frac{\sqrt{2}}{\sqrt{u_{\rm a} - u_{\rm n}}}
+    \left[ F\left(\phi_b(u_{\rm em}), k\right)
+           - F\left(\phi_b(0), k \right) \right] } \qquad
+           {(b > b_{\rm c})\atop(\tlamb_{\rm em} > \tlamb_{\rm p})} ,
+\ee
+where, according to Eq.~(\ref{e:gis:phi_u_b}),
+\be \label{e:gis:phi_em_0_b_gt_bc}
+   \phi_b(u_{\rm em}) = \arcsin\sqrt{\frac{u_{\rm em} - u_{\rm n}}{u_{\rm p} - u_{\rm n}}}
+   \qquad\mbox{and}\qquad
+   \phi_b(0) = \arcsin \sqrt{\frac{|u_{\rm n}|}{u_{\rm p} - u_{\rm n}}} .
+\ee
+
+If the emission point is located prior
+to the periastron, i.e. if $\tlamb_{\rm em} < \tlamb_{\rm p}$,
+$\ph_{\rm em}$ is related to $\ph_{\rm p}$
+by Eq.~(\ref{e:gis:ph_Phi_b_u}) with $\eps_{\rm in} = +1$:
+\be
+    \ph_{\rm em} = \ph_{\rm p} - \eps_L \Phi_b(u_{\rm em})
+\ee
+and we get, by combining with Eq.~(\ref{e:gis:ph_inf_ph_p}),
+\be
+    \ph_\infty = \ph_{\rm em} + \eps_L \left[ \Phi_b(0) + \Phi_b(u_{\rm em}) \right] .
+\ee
+Equation~(\ref{e:gis:Phib_elliptic_int}) then yields
+\be \label{e:gis:ph_inf_em_prior_per}
+   \encadre{ \ph_\infty = \ph_{\rm em} + \eps_L \frac{\sqrt{2}}{\sqrt{u_{\rm a} - u_{\rm n}}}
+    \left[ 2 K(k) - F\left(\phi_b(u_{\rm em}), k\right)
+           - F\left(\phi_b(0), k \right) \right] } \qquad
+           {(b > b_{\rm c})\atop (\tlamb_{\rm em} < \tlamb_{\rm p})} .
+\ee
+$\ph_\infty - \ph_{\rm em}$ is plotted as a function of $b$ in Fig.~\ref{f:gis:phi_inf_em_b}
+for various values of $r_{\rm em} = m / u_{\rm em}$, with the dashed curves
+corresponding to the case $\tlamb_{\rm em} > \tlamb_{\rm p}$.
+We notice that for $b \gg m$ (cf. the red curve near $b = 12 m$), one has
+either $\ph_\infty - \ph_{\rm em} \simeq 0$ (dashed red curve: $\tlamb_{\rm em} > \tlamb_{\rm p}$)
+or $\ph_\infty - \ph_{\rm em} \simeq \pi$ (solid red curve: $\tlamb_{\rm em} < \tlamb_{\rm p}$):
+null geodesics with large impact parameters suffer almost no deflection,
+as expected. Another striking feature of Fig.~\ref{f:gis:phi_inf_em_b}
+is the divergence of $\ph_\infty - \ph_{\rm em}$ when $b$ tends to $b_{\rm c}$.
+Let us examine this in details.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_phi_inf_em_b.pdf}}
+\caption[]{\label{f:gis:phi_inf_em_b} \footnotesize
+Total change $\ph_\infty - \ph_{\rm em}$ in $\ph$ from the
+emission point at $(r,\ph) = (r_{\rm em}, \ph_{\rm em})$
+as a function of the impact parameter $b$ of the null geodesic, assuming $\eps_L = +1$.
+The dashed curves correspond to trajectories with $b > b_{\rm c}$ that do not pass
+through the periastron. For each value of $r_{\rm em} > 3m$, the maximum of
+$b$ is given by $r_{\rm p}(b) = r_{\rm em}$, i.e. by
+$b^2 = r_{\rm em}^3/(r_{\rm em} - 2 m)$ [cf. Eq.~(\ref{e:ges:r_per_null})
+and Fig.~\ref{f:gis:null_per_apo}].
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_elliptic_int}]}
+}
+\end{figure}
+
+\subsubsection{Limit $b \to b_{\rm c}^+$}
+
+From Eqs.~(\ref{e:gis:zeros_Pbu}), we have the following
+limits:
+\be \label{e:gis:lim_u_n_p_a}
+\lim_{b\to b_{\rm c}^+} u_{\rm n} = -\frac{1}{6} \qquad\mbox{and}\qquad
+\lim_{b\to b_{\rm c}^+} u_{\rm p} = \lim_{b\to b_{\rm c}^+} u_{\rm a} = \frac{1}{3} .
+\ee
+It follows then from expressions~(\ref{e:gis:phi_em_0_b_gt_bc}) that
+\be \label{e:gis:lim_phi_em_0_b_gt_bc}
+    \lim_{b\to b_{\rm c}^+} \phi_b(u_{\rm em}) = \arcsin \sqrt{2 u_{\rm em} + \frac{1}{3}}
+    \qquad\mbox{and}\qquad
+   \lim_{b\to b_{\rm c}^+} \phi_b(0) = \arcsin \left(\frac{1}{\sqrt{3}}\right) .
+\ee
+Besides, $\lim_{b\to b_{\rm c}^+} k = 1$ [cf. Eq.~(\ref{e:gis:k_limits_b_gt_bc})]
+and, for any $\phi\in{}[0,\pi/2)$, the definition
+(\ref{e:gis:def_incompl_elliptic_int}) of $F$ leads to
+\be \label{e:gis:F_k_one}
+    F(\phi, 1) = \int_0^\phi \frac{\D\vartheta}{\sqrt{1 - \sin^2\vartheta}}
+        = \int_0^\phi \frac{\D\vartheta}{\cos\vartheta}
+        = \ln\left( \frac{1 + \sin\phi}{\cos\phi} \right) .
+\ee
+The limits (\ref{e:gis:lim_phi_em_0_b_gt_bc}) result then
+in
+\be \label{e:gis:lim_F_b_gt_bc}
+     \lim_{b\to b_{\rm c}^+} F\left(\phi_b(u_{\rm em}), k\right) =
+     \ln \left(
+     \frac{\sqrt{3} + \sqrt{6 u_{\rm em} + 1 }}{\sqrt{2(1 - 3 u_{\rm em})}} \right)
+     \quad\mbox{and}\quad
+     \lim_{b\to b_{\rm c}^+} F\left(\phi_b(0), k\right) =
+     \ln \left(\frac{\sqrt{3} + 1}{\sqrt{2}} \right) .
+\ee
+For $\tlamb_{\rm em} > \tlamb_{\rm p}$, inserting these formulas into
+(\ref{e:gis:ph_inf_em_past_per}) leads to
+\be \label{e:gis:ph_inf_ph_em_lim_post_per}
+    \encadre{ \ph_\infty \underset{b\to b_{\rm c}^+}{\sim} \ph_{\rm em}
+    + \eps_L \ln \left(
+    \frac{2 + 3 u_{\rm em} + \sqrt{3(6 u_{\rm em} + 1)}}{(2+\sqrt{3})(1 - 3 u_{\rm em})}
+    \right) }
+    \qquad (\tlamb_{\rm em} > \tlamb_{\rm p}) .
+\ee
+Note that the constraint (\ref{e:gis:rem_gt_3m}) is equivalent to
+$1 - 3 u_{\rm em} > 0$, so that the above formula is well posed.
+
+For the case $\tlamb_{\rm em} < \tlamb_{\rm p}$, $\ph_\infty$ is given
+by Eq.~(\ref{e:gis:ph_inf_em_prior_per}) and
+we need to determine the behavior of $K(k)$ to conclude.
+Actually, when $k\to 1$, $K(k)$ is diverging with the following behavior\footnote{See e.g. Eq.~(112.1) of Ref.~\cite{ByrdF71} with
+$k' = \sqrt{1-k^2}$ or Eq.~(17.3.26) of
+Ref.~\cite{AbramS72} with $m = k^2$ and $m_1 = 1 - k^2$.}:
+\be \label{e:gis:limk1_K}
+    \lim_{k\to 1} \left[ K(k) - \ln\left(\frac{4}{\sqrt{1-k^2}}\right) \right] = 0 .
+\ee
+To relate $\sqrt{1 - k^2}$ to $b - b_{\rm c}$, let us introduce the small parameter
+$\veps >0$ such that
+\be \label{e:ges:u_per_eps}
+    u_{\rm p} =: \frac{1}{3} - \veps.
+\ee
+The relation $P_b(u_{\rm p}) = 0$, once expanded to second
+order in $\veps^2$, leads to the following relation between $b - b_{\rm c}$
+and $\veps$:
+\be \label{e:ges:b_bc_eps}
+    \frac{b-b_{\rm c}}{m} = \frac{81\sqrt{3}}{2} \veps^2 + O(\veps^3).
+\ee
+Besides, from the expressions (\ref{e:gis:una_up}) of $u_{\rm n}$ and
+$u_{\rm a}$ in terms of $u_{\rm p}$, we get, still to the second order in $\veps$,
+\[
+    u_{\rm n} = - \frac{1}{6} + 2 \veps^2 + O(\veps^3)
+    \qquad\mbox{and}\qquad
+    u_{\rm a} = \frac{1}{3} + \veps - 2 \veps^2
+     + O(\veps^3) .
+\]
+Substituting these values in the expression (\ref{e:gis:def_k_modulus})
+of the modulus $k$ and expanding to the first order in $\veps$ leads to
+\[
+    k = 1 - 2 \veps + O(\veps^2),
+\]
+from which
+\[
+    \sqrt{1 - k^2} \underset{\veps\to 0}{\sim} \sqrt{1 - (1 - 4\veps)}
+            \underset{\veps\to 0}{\sim}  2 \sqrt{\veps} .
+\]
+The property (\ref{e:gis:limk1_K}) then leads to
+\[
+    2 K(k) \underset{\veps\to 0}{\sim} 2 \ln\left(\frac{2}{\sqrt{\veps}}\right)
+       \underset{\veps\to 0}{\sim} \ln\left(\frac{4}{\veps}\right)  .
+\]
+Using this result, as well as (\ref{e:gis:lim_F_b_gt_bc}), in
+Eq.~(\ref{e:gis:ph_inf_em_prior_per}) yields
+\begin{align}
+  \ph_\infty & \underset{b\to b_{\rm c}^+}{\sim} \ph_{\rm em}
+   + \eps_L \times 2 \left[ \ln\left(\frac{4}{\veps}\right)
+   - \ln \left(
+     \frac{\sqrt{3} + \sqrt{6 u_{\rm em} + 1 }}{\sqrt{2(1 - 3 u_{\rm em})}} \right)
+   - \ln \left(\frac{\sqrt{3} + 1}{\sqrt{2}} \right) \right] \nonumber \\
+   & \underset{b\to b_{\rm c}^+}{\sim} \ph_{\rm em}
+   + \eps_L \ln\left(\frac{16}{\veps^2}
+   \frac{2(1 - 3 u_{\rm em})}{(\sqrt{3} + \sqrt{6 u_{\rm em} + 1 })^2}
+   \frac{2}{(\sqrt{3} + 1)^2} \right) . \nonumber
+\end{align}
+Note that we have used the limits (\ref{e:gis:lim_u_n_p_a})
+to evaluate the prefactor in Eq.~(\ref{e:gis:ph_inf_em_prior_per})
+as $\sqrt{2/(u_{\rm a} - u_{\rm n})} \sim \sqrt{2/(1/3 - (-1/6))} = 2$.
+Expressing $\veps^2$ in terms of $b - b_{\rm c}$ via Eq.~(\ref{e:ges:b_bc_eps})
+leads to the final formula:
+\be \label{e:gis:ph_inf_ph_em_lim_b_gt_bc}
+   \encadre{  \ph_\infty  \underset{b\to b_{\rm c}^+}{\sim} \ph_{\rm em}
+   + \eps_L \ln \left(
+   \frac{648(2\sqrt{3} - 3) (1 - 3 u_{\rm em})}{2 + 3 u_{\rm em}
+   + \sqrt{3(1 + 6 u_{\rm em})}} \times \frac{m}{b - b_{\rm c}} \right)
+   } \qquad (\tlamb_{\rm em} < \tlamb_{\rm p}) .
+\ee
+The prefactor of $m/(b - b_{\rm c})$ in the logarithm is
+plotted as a function of $r_{\rm em} = m/u_{\rm em}$ in Fig.~\ref{f:gis:A_rem} below.
+
+The value of the total change $\Delta\ph$ along the complete geodesic history
+[cf. Eq.~(\ref{e:gis:def_Delta_ph})]
+is obtained by taking the limit $u_{\rm em}\to 0$ (i.e. $r_{\rm em} \to +\infty$)
+in this formula. We get
+\be \label{e:gis:Dph_ln_b_bc}
+   \encadre{ \Delta\ph \underset{b\to b_{\rm c}^+}{\sim}
+    \eps_L \ln\left( \frac{648(7\sqrt{3} - 12) m}{b-b_{\rm c}} \right) } .
+\ee
+We recover the result (\ref{e:ges:Dph_infinite}): $\Delta\ph$ is diverging
+when $b\to b_{\rm c}^+$. Moreover, Eq.~(\ref{e:gis:Dph_ln_b_bc}) specifies
+this divergence as logarithmic in $b - b_{\rm c}$. More generally,
+Eq.~(\ref{e:gis:ph_inf_ph_em_lim_b_gt_bc}) shows that $\ph_\infty - \ph_{\rm em}$
+diverges logarithmically in $b - b_{\rm c}$ when $b\to b_{\rm c}^+$, whatever the position
+of the emission point.
+
+Let us express $\Delta\ph$ is terms of the deflection angle $\Theta$ and
+the winding number $n$ through Eqs.~(\ref{e:gis:def_Dph_bar}) and
+(\ref{e:gis:def_deflection_angle}):
+\be
+    \Delta\ph = \Theta - \eps_L \pi + 2\pi n .
+\ee
+We can then deduce from (\ref{e:gis:Dph_ln_b_bc}) that
+\be \label{e:ges:b_bc_exp_Theta}
+   \encadre{ b - b_{\rm c} \underset{b\to b_{\rm c}^+}{\sim}
+    \underbrace{648(7\sqrt{3} - 12)\mathrm{e}^{-\pi}}_{\simeq 3.482284} m \, \mathrm{e}^{-\eps_L \Theta - 2\pi |n|}  }.
+\ee
+In the above writing, we have used the fact that the sign of $n$ is the same
+as that of $L$, so that $\eps_L n = |n|$.
+\begin{remark}
+A check of Eq.~(\ref{e:gis:Dph_ln_b_bc}) is obtained by comparing it with
+Eq.~(268) in Chap.~3 of Ref.~\cite{Chand83}, where $\delta D = b-b_{\rm c}$ and
+$\Theta$ is the same as ours, or with Eq.~(7.4.54) of Ref.~\cite{FroloZ11},
+where $\Delta\ell = (b - b_{\rm c})/(2 m)$.
+\end{remark}
+
+\begin{hist} \label{h:gis:Darwin_formula}
+Equation~(\ref{e:ges:b_bc_exp_Theta}) has been first derived by
+Charles Galton Darwin\index[pers]{Darwin, C.G.} -- the grandson of the famous naturalist Charles Robert Darwin -- in 1959 \cite{Darwi59} (cf. Eqs.~(31) and (32) of Ref.~\cite{Darwi59}, where $\mu = \Theta$).
+\end{hist}
+
+
+\subsection{Asymptotic direction for $b < b_{\rm c}$}
+
+When the impact parameter $b$ is lower than the critical value,
+the null geodesic $\Li$ has no periastrion and $\ph_{\rm em}$ and $\ph_\infty$
+are given by Eq.~(\ref{e:gis:ph_phs_Phib}) with $\eps_{\rm in} = -1$
+(outgoing motion):
+\be
+    \ph_{\rm em} = \ph_* +  \eps_L \Phi_b(u_{\rm em})
+    \qquad\mbox{and}\qquad
+    \ph_\infty = \ph_* +  \eps_L \Phi_b(0) .
+\ee
+We have then
+\be \label{e:gis:ph_inf_b_lt_bc_prov}
+    \ph_\infty = \ph_{\rm em} + \eps_L \left[  \Phi_b(0) - \Phi_b(u_{\rm em}) \right] .
+\ee
+$\Phi_b(0)$ is given by Eq.~(\ref{e:gis:Phib_u_lt_us}):
+\be \label{e:gis:Phib_0_b_lt_bc}
+   \Phi_b(0) =  \frac{1}{\sqrt{2(u_* - u_{\rm n})}}
+    \left[ K(k) - F \left( \phi_b(0),\, k \right) \right] .
+\ee
+If $u_{\rm em} < u_*$, $\Phi_b(u_{\rm em})$ is given by Eq.~(\ref{e:gis:Phib_u_lt_us})
+as well, so that Eq.~(\ref{e:gis:ph_inf_b_lt_bc_prov}) becomes
+\be \label{e:gis:ph_inf_u_em_lt_us}
+    \encadre{ \ph_\infty = \ph_{\rm em} + \frac{\eps_L}{\sqrt{2(u_* - u_{\rm n})}}
+    \left[ F \left( \phi_b(u_{\rm em}),\, k \right)  - F \left( \phi_b(0),\, k \right) \right]
+    } \qquad {(b < b_{\rm c})\atop (u_{\rm em} < u_*)} ,
+\ee
+with $\phi_b(u_{\rm em})$ and $\phi_b(0)$ given by Eq.~(\ref{e:gis:def_phi_u_b_lt_bc}):
+\be \label{e:gis:phi_em_0_b_lt_bc}
+   \phi_b(u_{\rm em}) = \arccos\left( \frac{|u_* - u_{\rm em}|}{u_* + u_{\rm em} - 2 u_{\rm n}} \right)
+   \qquad\mbox{and}\qquad
+   \phi_b(0) = \arccos\left( \frac{u_*}{u_* - 2 u_{\rm n}} \right) .
+\ee
+
+If $u_{\rm em} > u_*$, then $\Phi_b(u_{\rm em})$ is given by Eq.~(\ref{e:gis:Phib_u_gt_us}).
+Combining with Eq.~(\ref{e:gis:Phib_0_b_lt_bc}), we can then write
+Eq.~(\ref{e:gis:ph_inf_b_lt_bc_prov}) as
+\be \label{e:gis:ph_inf_u_em_gt_us}
+    \encadre{ \ph_\infty = \ph_{\rm em} + \frac{\eps_L}{\sqrt{2(u_* - u_{\rm n})}}
+    \left[ 2K(k) - F \left( \phi_b(u_{\rm em}),\, k \right)  - F \left( \phi_b(0),\, k \right) \right]
+    } \qquad {(b < b_{\rm c})\atop (u_{\rm em} > u_*)} ,
+\ee
+where $\phi_b(u_{\rm em})$ is still given by Eq.~(\ref{e:gis:phi_em_0_b_lt_bc}).
+$\ph_\infty - \ph_{\rm em}$ is plotted as a function of $b$ in Fig.~\ref{f:gis:phi_inf_em_b}
+for various values of $r_{\rm em} = m / u_{\rm em}$. For $r_{\rm em} \gg m$
+(cf. the red curve $r_{\rm em} = 100 \, m$ for $b< b_{\rm c}$), we note that
+$\ph_\infty - \ph_{\rm em} \simeq 0$, as expected. As for the case $b > b_{\rm c}$,
+we also note that $\ph_\infty - \ph_{\rm em}$ is diverging when $b$ tends
+to $b_{\rm c}$. Let us quantify this diverging behavior:
+
+
+\subsubsection{Limit $b \to b_{\rm c}^-$}
+
+When $b \to b_{\rm c}^-$, we have the following limits
+[cf. Eqs.~(\ref{e:gis:range_un_b_lt_bc}) and (\ref{e:gis:lim_us})]:
+\[
+ \lim_{b\to b_{\rm c}^-} u_{\rm n} = - \frac{1}{6}
+ \qquad\mbox{and}\qquad
+ \lim_{b\to b_{\rm c}^-} u_* = \frac{1}{3} .
+\]
+Consequently, Eq.~(\ref{e:gis:phi_em_0_b_lt_bc}) yields
+\be \label{e:gis:lim_phi_em_0_b_lt_bc}
+   \lim_{b\to b_{\rm c}^-} \phi_b(u_{\rm em}) =
+    \arccos\left( \frac{|1 - 3 u_{\rm em}|}{2 + 3 u_{\rm em}} \right)
+   \quad\mbox{and}\quad
+   \lim_{b\to b_{\rm c}^-} \phi_b(0) = \arccos\left( \frac{1}{2} \right) = \frac{\pi}{3}.
+\ee
+Moreover, from expression (\ref{e:gis:def_k_b_lt_bc}) for $k$ and the above
+limits for $u_*$ and $u_{\rm n}$, we have (see also Fig.~\ref{f:gis:k_b_lt_bc})
+\[
+    \lim_{b\to b_{\rm c}^-} k = 1 .
+\]
+Given the values (\ref{e:gis:lim_phi_em_0_b_lt_bc}) and expression
+(\ref{e:gis:F_k_one}) for the elliptic integral $F$ when $k=1$, we get
+\begin{subequations}
+\label{e:gis:lim_F_em_0_b_lt_bc}
+\begin{align}
+    & \lim_{b\to b_{\rm c}^-} F \left( \phi_b(u_{\rm em}),\, k \right)  =
+    \ln \left(
+      \frac{2 + 3 u_{\rm em} + \sqrt{3(1+6 u_{\rm em})}}{|1 - 3 u_{\rm em}|}
+      \right) \\
+    & \lim_{b\to b_{\rm c}^-} F \left( \phi_b(0),\, k \right)  = \ln(2 + \sqrt{3}) .
+\end{align}
+\end{subequations}
+When $u_{\rm em} < u_*$, inserting these formulas into
+Eq.~(\ref{e:gis:ph_inf_u_em_lt_us}) leads to
+\be \label{e:gis:ph_inf_lim_b_lt_bc_u_lt_us}
+    \encadre{ \ph_\infty \underset{b\to b_{\rm c}^-}{\sim} \ph_{\rm em}
+    + \eps_L \ln \left(
+    \frac{2 + 3 u_{\rm em} + \sqrt{3(6 u_{\rm em} + 1)}}{(2+\sqrt{3})(1 - 3 u_{\rm em})}
+    \right) }
+    \qquad \left(u_{\rm em} < \frac{1}{3} \right) .
+\ee
+We have written $u_{\rm em} < 1/3$ because $u_*\to 1/3$ when
+$b\to b_{\rm c}^-$. For this reason, we also get rid of the absolute value
+around $1 - 3  u_{\rm em}$.
+Note that the value of $\ph_\infty$ given by Eq.~(\ref{e:gis:ph_inf_lim_b_lt_bc_u_lt_us})
+is identical to that given by Eq.~(\ref{e:gis:ph_inf_ph_em_lim_post_per}),
+which was obtained for $b\to b_{\rm c}^+$ and an emission point beyond the
+periastron. This is not surprising if one invokes the continuity around $b=b_{\rm c}$ of
+null geodesics as regards their part beyond the periastron for $b > b_{\rm c}$
+and outside $r = 3 m$ for $b < b_{\rm c}$. Indeed, the geodesics with $b \to b_{\rm c}^+$
+differ significantly from those with $b \to b_{\rm c}^-$ only on
+parts including the periastron. This continuity appears clearly on Fig.~\ref{f:gis:phi_inf_em_b}:
+the curves with $b<b_{\rm c}$ and $r_{\rm em} > 3 m$ have a continuous prolongation
+with the dashed curves, which are the curves with $b>b_{\rm c}$ without any periastrion
+on the path from the emission point to infinity.
+
+For $u_{\rm em} > u_*$, we shall use formula (\ref{e:gis:ph_inf_u_em_gt_us}), with
+$K(k)$ having the diverging behavior (\ref{e:gis:limk1_K})
+since $\lim_{b\to b_{\rm c}^-} k = 1$. To express $K(k)$ in terms of
+$|b - b_{\rm c}|$, let us introduce the small parameter $\veps > 0$ such that
+\be \label{e:gis:u_n_eps}
+    u_{\rm n} = - \frac{1}{6} - \veps.
+\ee
+The relation $P_b(u_{\rm n}) = 0$, once expanded to first order in $\veps$,
+leads then to the following relation between $b_{\rm c} - b$ and $\veps$:
+\be \label{e:gis:bc_b_veps}
+    \frac{b_{\rm c} - b}{m} = \frac{81\sqrt{3}}{4} \veps.
+\ee
+Besides, by expanding formula (\ref{e:gis:def_u0_us}) at first order in $\veps$,
+we get
+\[
+    u_* = \frac{1}{3} + \veps + O(\veps^2) .
+\]
+Substituting this value, as well as (\ref{e:gis:u_n_eps}), into expression
+(\ref{e:gis:def_k_b_lt_bc}) for $k$ yields
+\[
+    k = 1 - \frac{\veps}{4} + O(\veps^2) ,
+\]
+so that
+\[
+    \sqrt{1 - k^2} \underset{\veps\to 0}{\sim} \sqrt{1 - \left(1 - \frac{\veps}{2}\right)}
+     \underset{\veps\to 0}{\sim} \sqrt{\frac{\veps}{2}}
+\]
+The property (\ref{e:gis:limk1_K}) then leads to
+\[
+    2 K(k) \underset{\veps\to 0}{\sim} 2 \ln\left(\frac{4\sqrt{2}}{\sqrt{\veps}}\right)
+       \underset{\veps\to 0}{\sim} \ln\left(\frac{32}{\veps}\right)  .
+\]
+Substituting this expression for $K(k)$, as well as Eq.~(\ref{e:gis:lim_F_em_0_b_lt_bc})
+for $F \left( \phi_b(u_{\rm em}),\, k \right)$ and $F \left( \phi_b(0),\, k \right)$,
+into Eq.~(\ref{e:gis:ph_inf_u_em_gt_us}) results in
+\begin{align}
+\ph_\infty & \underset{b\to b_{\rm c}^-}{\sim} \ph_{\rm em}
+    + \frac{\eps_L}{\sqrt{2\left(\frac{1}{3} + \frac{1}{6}\right)}} \left[
+  \ln\left(\frac{32}{\veps}\right)
+    -  \ln \left(
+      \frac{2 + 3 u_{\rm em} + \sqrt{3(1+6 u_{\rm em})}}{3 u_{\rm em} - 1}
+      \right)
+    - \ln(2 + \sqrt{3}) \right] \nonumber \\
+ & \underset{b\to b_{\rm c}^-}{\sim} \ph_{\rm em}
+ + \eps_L \ln \left( \frac{32}{\veps}
+ \frac{(2 - \sqrt{3})(3 u_{\rm em} - 1)}{2 + 3 u_{\rm em} + \sqrt{3(1 + 6 u_{\rm em})}}
+ \right) . \nonumber
+\end{align}
+Finally, using (\ref{e:gis:bc_b_veps}) to let appear $b_{\rm c} - b$
+instead of $\veps$, we get
+\be \label{e:gis:ph_inf_lim_b_lt_bc_u_gt_us}
+ \encadre{ \ph_\infty  \underset{b\to b_{\rm c}^-}{\sim} \ph_{\rm em}
+   + \eps_L \ln \left(
+   \frac{648(2\sqrt{3} - 3)(3 u_{\rm em} - 1)}{2 + 3 u_{\rm em} + \sqrt{3(1 + 6 u_{\rm em})}}
+   \times\frac{m}{b_{\rm c} - b} \right)
+ } \qquad \left(u_{\rm em} > \frac{1}{3} \right) .
+\ee
+Hence we recover a logarithmic divergence of $\ph_\infty - \ph_{\rm em}$
+when $b$ tends to $b_{\rm c}$ by lower values.
+
+\begin{remark} \label{r:gis:prefactor_b_bc}
+The prefactor of $m/(b_{\rm c} - b)$ in
+formula (\ref{e:gis:ph_inf_lim_b_lt_bc_u_gt_us}) is exactly the
+opposite of the prefactor of $m/(b - b_{\rm c})$ in formula (\ref{e:gis:ph_inf_ph_em_lim_b_gt_bc}).
+It is plotted as a function of $r_{\rm em} = m/u_{\rm em}$ in Fig.~\ref{f:gis:A_rem} below.
+\end{remark}
+
+The upper bound on $u_{\rm em}$ is $1/2$, for this corresponds to a source
+just outside the black hole event horizon at $r=2m$. Let us evaluate
+$\ph_\infty$ in this limit; setting $u_{\rm em}\to 1/2$ in Eq.~(\ref{e:gis:ph_inf_lim_b_lt_bc_u_gt_us}) results in, after simplification,
+\be  \label{e:gis:ph_inf_lim_b_lt_bc_uem_1_2}
+   \ph_\infty  \underset{b\to b_{\rm c}^-}{\sim} \ph_{\rm em}
+    + \eps_L  \ln\left( \frac{648(26\sqrt{3} - 45) m}{b_{\rm c} - b} \right)
+    \qquad \left( u_{\rm em} \to \frac{1}{2} \right) .
+\ee
+
+\begin{remark}
+As a check, Eq.~(\ref{e:gis:ph_inf_lim_b_lt_bc_uem_1_2}) agrees with
+Eq.~(4) in Ref.~\cite{GrallHW19}.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Images} \label{s:gis:images}
+
+Being the worldlines of photons, null geodesics are the key ingredient
+in determining images as seen by some observer of emitting material around
+a black hole. Computing such images is of great interest, especially after
+the first image of a black hole vicinity obtained by
+the Event Horizon Telescope team in 2019 \cite{EHT19a,Cardo19}.
+As stated in Sec.~\ref{s:gis:intro}, we shall differ the discussion of
+that image to the chapter dealing with rotating black holes
+(Sec.~\ref{s:gik:M87_image}).
+
+\begin{figure}
+\centerline{\includegraphics[width=0.8\textwidth]{gis_obs_angle.pdf}}
+\caption[]{\label{f:gis:obs_angle} \footnotesize
+Link between the observation angle $\hat{b}$ and the impact parameter $b$
+for an asymptotic observer $\Obs$ located at $r_{\Obs} \gg m$.}
+\end{figure}
+
+
+\subsection{The asymptotic observer} \label{s:gis:asympt_obs}
+
+Let us consider some ``far-away'' static observer, i.e.
+an observer $\Obs$ located at $r = r_{\Obs} \gg m$. Without
+any loss of generality, we may assume that $\Obs$ is located at $\th=\pi/2$ and $\ph=0$
+(cf. Fig.~\ref{f:gis:obs_angle}).
+Furthermore, we suppose that $\Obs$ is
+equipped with an optical device (telescope\index{telescope}) pointing in the direction from $\Obs$ to the black hole, which
+is the $x$-axis in terms of the coordinates $(x,y):=(r\cos\ph,r\sin\ph)$.
+Images are formed by null geodesics reaching $\Obs$'s screen with a angle
+$\hat{b}$ with respect to the telescope axis (in $\Obs$'s frame) within the
+telescope aperture\index{telescope!aperture}. The angle $\hat{b}$ is actually
+related to the geodesic impact parameter $b$ by
+$\sin\hat{b} = b / r_{\Obs}$ (cf. Fig.~\ref{f:gis:obs_angle}), which,
+for large $r_{\Obs}$, can be rewritten as
+\be \label{e:gis:hat_b}
+    \hat{b} = \frac{b}{r_{\Obs}} .
+\ee
+A second parameter characterizing any incoming null geodesic is a polar
+angle $\alpha\in{[0, 2\pi)}$ so that $(\hat{b},\alpha)$ are spherical
+coordinates on $\Obs$'s celestial sphere, the North pole ($\hat{b}=0$) of which
+coinciding with the direction to the black hole. The image on $\Obs$'s screen\index{screen}
+at the telescope output may be then parameterized by polar coordinates $(\hat{b}, \alpha)$, with $\hat{b}$ representing the distance to the screen's center.
+Other projections from the celestial sphere to the planar screen may be considered
+but this is rather unimportant here, given the small field of view of the telescope.
+In what follows, we shall use directly $b$, instead of $\hat{b}$, as
+the radial coordinate in the screen plane. According to Eq.~(\ref{e:gis:hat_b}),
+this amounts to drop the constant
+scale factor $1/r_{\Obs}$.
+
+Moreover, we shall consider the asymptotic observer limit: $r_{\Obs}\to\infty$.
+In that limit, null geodesics that reach $\Obs$ must have
+\be \label{e:gis:ph_inf_0_mod_2pi}
+\ph_\infty = 0 \mod 2 \pi .
+\ee
+
+\begin{figure}
+\centerline{\includegraphics[width=0.9\textwidth]{ges_mult_images.pdf}}
+\caption[]{\label{f:gis:mult_images} \footnotesize
+Null geodesics in Schwarzschild spacetime with $\ph_\infty=0$ and various values of the impact parameter $b$.
+The green ones have $b$ ranging from $0$ to $12 m$, by steps of
+$0.8 m$, while the olive ones have $b$ close to $b_{\rm c}$,
+namely $b/m\in\{5.0, 5.2, 5.4\}$. $S$ is a luminous point source
+and three of its images for an observer at $y=0$ and $x\to + \infty$ are obtained by
+following the drawn null geodesics through $S$.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_images}]}
+}
+\end{figure}
+
+\subsection{Images of a point source} \label{s:gis:images_point}
+
+
+\subsubsection{Qualitative analysis from a concrete example}
+
+To understand the formation of images on $\Obs$'s screen, a bunch of null
+geodesics with $\ph_\infty=0$ is drawn in Fig.~\ref{f:gis:mult_images}.
+$\Obs$ is located in the far right of this figure and
+all the drawn geodesics eventually hit $\Obs$'s screen. Let us consider a luminous point source
+$S$. From the drawing of Fig.~\ref{f:gis:mult_images},
+three null geodesics of the $\ph_\infty=0$ family goes through $S$. They give rise to
+three distinct images of $S$ on $\Obs$'s screen, which are represented by the
+open circles labelled 1 to 3 in the right part of the figure. These three
+geodesics can be distinguished by their deflection angle $\Theta$
+and their winding number $n$ (cf. Sec.~\ref{s:gis:deflect_winding}).
+The geodesic giving image 1 is the less deflected one: it has $\Theta \simeq - \pi/4$
+and $n=0$, while that
+of image 2 has $\Theta\simeq 2\pi/3$ and $n=0$.
+The geodesic giving image 3 is much more deflected
+it makes a full turn around
+the black hole before reaching $\Obs$; it's winding number is $n=-1$ and
+it has $\Theta\simeq -\pi/6$.
+We note that the more deflected the geodesic,
+the closer the image with respect to the circle $b = b_{\rm c}$ on $\Obs$'s
+screen.
+
+For the sake of clarity, only three images of the source $S$ have been
+depicted in Fig.~\ref{f:gis:mult_images}, but we are going to see
+that there is actually an infinite
+number of them: two per value of $|n|$ (the number of turns around the black hole)
+--- one with $L>0$ and one with $L<0$.
+
+\begin{remark}
+In Fig.~\ref{f:gis:mult_images}, the source $S$ is rather close to the
+black hole but it is worth to stress that
+the multiple character of the images of a given
+source is not due to the proximity between the source and the black hole.
+Multiple images are formed for any source, even very far ones.
+For instance, the source can lie \emph{behind} the
+observer, i.e. one can have $x_S > x_{\Obs}$. This is clear if we consider
+the lower-right panel of Fig.~\ref{f:gis:null_b1} (case $b=5.355\, m$):
+a source with $x_S > x_{\Obs} \gg m$ and $y=5.355\, m$ gives an image on
+$\Obs$'s screen at $b=5.355\, m$.
+\end{remark}
+
+
+\begin{figure}
+\centerline{\includegraphics[width=0.6\textwidth]{gis_static_obs.pdf}}
+\caption[]{\label{f:gis:static_obs} \footnotesize
+Part $(\w{e}_{(r)}, \w{e}_{(\ph)})$ of the vector frame of the emitter $\Obs_{\rm em}$
+and emission angle $\eta$. The coordinates $(x,y)$ are defined in terms
+of the Schwarzschild-Droste coordinates by $x=r\cos\ph$ and $y=r\sin\ph$.
+$\w{P}$ is the photon momentum as measured by $\Obs_{\rm em}$.}
+\end{figure}
+
+\subsubsection{Link between the emission angle and the impact parameter}
+
+In the above discussion, we have parameterized the null geodesics arriving
+on the observer's screen by the impact parameter $b$. Let us relate the latter
+to the emission angle in the source frame. To this aim, we consider that
+the point source $S$, as depicted in Fig.~\ref{f:gis:mult_images}, is actually
+the trace in the plane of the figure of the worldline of a static observer equipped
+with a source of light, who we shall call the \emph{emitter} and denote
+by $\Obs_{\rm em}$. Furthermore, we suppose that the rest frame of $\Obs_{\rm em}$
+is an orthonormal tetrad
+$\left(\w{u}_{\rm em}, \w{e}_{(r)}, \w{e}_{(\th)}, \w{e}_{(\ph)}\right)$ such
+that the first spacelike vector, $\w{e}_{(r)}$, is always pointing towards the
+black hole (cf. Fig.~\ref{f:gis:static_obs}).
+Note that the first vector of the tetrad is necessarily the
+4-velocity $\w{u}_{\rm em}$ of $\Obs_{\rm em}$. More precisely, we set
+\begin{subequations}
+\label{e:gis:bo_Obs_em}
+\begin{align}
+& \w{u}_{\rm em} = \left( 1 - \frac{2m}{r_{\rm em}} \right)^{-1/2} \wpar_t \\
+& \w{e}_{(r)} = - \left( 1 - \frac{2m}{r_{\rm em}} \right)^{1/2} \wpar_r \\
+& \w{e}_{(\th)} = - r_{\rm em}^{-1} \wpar_\th \\
+& \w{e}_{(\ph)} = - r_{\rm em}^{-1} \wpar_\ph ,
+\end{align}
+\end{subequations}
+where $(\wpar_t, \wpar_r, \wpar_\th, \wpar_\ph)$ is the natural basis associated
+with Schwarzschild-Droste coordinates and $r_{\rm em}$ is the (constant) $r$-coordinate of
+$\Obs_{\rm em}$, and hence of $\Obs_{\rm em}$.
+It is immediate that $\left(\w{u}_{\rm em}, \w{e}_{(r)}, \w{e}_{(\th)}, \w{e}_{(\ph)}\right)$
+is an orthonormal tetrad with respect to the Schwarzschild metric
+(\ref{e:sch:Schwarz_metric_SD}). Moreover,
+having a 4-velocity $\w{u}_{\rm em}$ collinear to the Killing vector $\wpar_t$
+makes the observer $\Obs_{\rm em}$ static [cf. Eq.~(\ref{e:ges:u_Obs_xi})].
+
+The generic 4-momentum $\w{p}$ of a photon evolving in the equatorial
+plane $\th=\pi/2$ is given by Eqs.~(\ref{e:ges:comp_4_momentum}) and
+(\ref{e:ges:dot_t_null})-(\ref{e:ges:dot_r_square_null}):
+\be \label{e:gis:4mom_photon}
+   \encadre{ \w{p} = E \left[ \left( 1 - \frac{2m}{r} \right)^{-1} \wpar_t
+        \pm  \sqrt{ 1 - b^2 U(r) } \, \wpar_r
+        + \eps_L  \frac{b}{r^2} \, \wpar_\ph \right] },
+\ee
+where we have used Eq.~(\ref{e:ges:eff_pot_null}) to let appear $U(r)$
+and Eqs.~(\ref{e:ges:def_b})-(\ref{e:gis:def_epsilon_L}) to express\footnote{
+Note that formula (\ref{e:gis:4mom_photon}) assumes $E\neq 0$, otherwise $b := |L|/E$ would
+be ill-defined. As discussed in Sec.~\ref{s:gis:null_eff_pot}, the property $E\neq 0$,
+and even $E>0$, holds as soon as the photon travels in the black hole's exterior.}
+$L$ in terms of $E$ and $b$.
+Taking the value of $\w{p}$ at the emission point $S$ and using (\ref{e:gis:bo_Obs_em})
+to express $\wpar_t$, $\wpar_r$ and $\wpar_\ph$ in terms of
+$\Obs_{\rm em}$'s orthonormal tetrad, we get
+\be \label{e:gis:p_eps_u_em_n}
+    \w{p} = \veps_{\rm em} \left( \w{u}_{\rm em} + \w{n} \right) ,
+\ee
+where
+\be
+    \veps_{\rm em} := - \w{u}_{\rm em} \cdot \w{p} =
+        E \left( 1 - \frac{2m}{r_{\rm em}} \right)^{-1/2}
+\ee
+is the energy of the photon as measured by $\Obs_{\rm em}$ (cf. Sec.~\ref{s:fra:measure})
+and
+\be \label{e:gis:n_b_U_rS}
+    \w{n} := \pm \sqrt{1 - b^2 U(r_{\rm em})} \, \w{e}_{(r)}
+    - \eps_L b \sqrt{U(r_{\rm em})}\, \w{e}_{(\ph)}
+\ee
+is a unit spacelike vector orthogonal to $\w{u}_{\rm em}$:
+$\w{n}\cdot\w{n} = 1$ and $\w{u}_{\rm em}\cdot\w{n} = 0$.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_b_eta.pdf}}
+\caption[]{\label{f:gis:b_eta} \footnotesize
+Impact parameter $b$ of null geodesics (multiplied by $\eps_L=\pm 1$)
+as a function of the emission angle $\eta$ in the
+emitter's rest frame, for various values of the $r$-coordinate $r_{\rm em}$ of the
+static emitter. Dashed curves correspond to values of $r_{\rm em}$ lower than $3 m$.
+The two horizontal grey lines marks $b = b_{\rm c} \simeq 5.196\, m$.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_emission}]}
+}
+\end{figure}
+
+In view of (\ref{e:gis:p_eps_u_em_n}) and $\w{u}_{\rm em}\cdot\w{n} = 0$,
+the linear momentum of the photon as measured by $\Obs_{\rm em}$ is
+$\w{P} = \veps_{\rm em} \w{n}$ [cf. Eq.~(\ref{e:fra:p_E_P}) and Fig.~\ref{f:gis:static_obs}].
+We conclude that the unit vector $\w{n}$ gives the direction of emission
+of the photon in $\Obs_{\rm em}$'s rest frame. Let us then define the \defin{emission
+angle}\index{emission!angle} $\eta$ by
+\be
+    \w{n} = \cos\eta\, \w{e}_{(r)} + \sin\eta \, \w{e}_{(\ph)} .
+\ee
+Equation~(\ref{e:gis:n_b_U_rS}) yields immediately
+\be \label{e:gis:cos_sin_eta_b}
+ \cos\eta = \pm \sqrt{1 - b^2 U(r_{\rm em})} \qquad\mbox{and}\qquad
+ \sin\eta = - \eps_L b \sqrt{U(r_{\rm em})} ,
+\ee
+from which we can express the impact parameter $b$ and
+in terms of the emission angle $\eta$:
+\be \label{e:gis:b_eta}
+    \encadre{ b = -\eps_L \frac{\sin\eta}{\sqrt{U(r_{\rm em})}} }.
+\ee
+\begin{remark}
+Equation~(\ref{e:gis:cos_sin_eta_b}) is well posed because
+$U(r)\geq 0$ for $r>2m$ [cf. Eq.~(\ref{e:ges:eff_pot_null})]
+and the equation
+of motion (\ref{e:ges:dot_r_square_null_b}) implies $b^{-2} - U(r_{\rm em}) \geq 0$,
+from which we get $0 \leq b^2 U(r_{\rm em}) \leq 1$.
+\end{remark}
+
+The variation of $b$ in terms of $\eta$ and $r_{\rm em}$, as given by formula (\ref{e:gis:b_eta}),
+is depicted in Fig.~\ref{f:gis:b_eta}. We notice that the smallest range of $b$
+is $[0, b_{\rm c})$ and is reached for $r_{\rm em} = 3m$, which is not surprising
+in view of (\ref{e:gis:b_eta}) since the maximum of $U$ precisely occurs at $r=3m$
+(cf. Fig.~\ref{f:gis:eff_pot_null}).
+
+\subsubsection{Infinite sequence of images}
+
+It appears clearly from Fig.~\ref{f:gis:b_eta}
+that, whatever the location $r_{\rm em}$ of the emitter, including locations
+inside the photon sphere ($r_{\rm em} < 3 m$), there always exist four
+emission angles $\eta$ giving birth to impact parameters $b$ in the vicinity
+of the critical value $b_{\rm c}$. These four angles can be gathered in two
+pairs of angles of opposite directions: $(\eta_1, \eta_1+\pi)$ and
+$(\eta_2, \eta_2+\pi)$. In each pair, only a single emission direction is prior to the
+periastron for null geodesics with $b > b_{\rm c}$ and only a single emission
+direction is outgoing and reaches infinity for $b < b_{\rm c}$. In other words,
+on the four values of $\eta$, only two of them define geodesics that may reach
+the asymptotic observer $\Obs$.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.7\textwidth]{gis_A_rem.pdf}}
+\caption[]{\label{f:gis:A_rem} \footnotesize
+Function $A(r_{\rm em})$ defined by Eq.~(\ref{e:gis:def_A_rem}).
+The dashed line marks the horizontal asymptote $A = 648(7\sqrt{3} - 12) \simeq 80.58246$.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_emission}]}
+}
+\end{figure}
+
+
+Let $\ph_{\rm em}\in {[0, 2\pi)}$ be the $\ph$ coordinate of the emitter $\Obs_{\rm em}$.
+A null geodesic emitted by $\Obs_{\rm em}$ reaches the asymptotic observer $\Obs$, who is located at $\ph=0$, iff $\ph_\infty = 0 \mod 2\pi$ [Eq.~(\ref{e:gis:ph_inf_0_mod_2pi})],
+i.e. iff
+\be \label{e:gis:ph_inf_2pi_n}
+    \ph_\infty = 2\pi\eps_L n, \qquad n\in\mathbb{N} .
+\ee
+The above formula takes into account the fact that the sign of $\ph_\infty$
+is that of $L$, hence the factor $\eps_L$ and $n\geq 0$.
+From Fig.~\ref{f:gis:phi_inf_em_b}, we see that values $n \geq 1$ can be
+reached iff either (i) $r_{\rm em} > 3m$, $b$ is close to $b_{\rm c}$ from above and $\tlamb_{\rm em} < \tlamb_{\rm p}$ or (ii) $r_{\rm em} < 3m$ and $b$ is close to
+$b_{\rm c}$ from below.
+In the first case, we may use the approximate formula
+(\ref{e:gis:ph_inf_ph_em_lim_b_gt_bc}) with $u_{\rm em} = m/r_{\rm em}$, while in the second
+case formula (\ref{e:gis:ph_inf_lim_b_lt_bc_u_gt_us}) is relevant.
+Inserting (\ref{e:gis:ph_inf_2pi_n}) in either of these formulas, we get
+\be \label{e:gis:2pin_Aem}
+     2\pi\eps_L n = \ph_{\rm em}
+   + \eps_L \ln \left( A(r_{\rm em})  \frac{m}{b - b_{\rm c}} \right) ,
+\ee
+with (cf. Remark~\ref{r:gis:prefactor_b_bc}, page~\pageref{r:gis:prefactor_b_bc})
+\be \label{e:gis:def_A_rem}
+   \encadre{ A(r_{\rm em})  :=
+    \frac{648(2\sqrt{3} - 3)(r_{\rm em} - 3 m)}{2 r_{\rm em} + 3 m
+    + \sqrt{3r_{\rm em}(r_{\rm em} + 6 m)}} } .
+\ee
+Note that $A(r_{\rm em})  > 0$ for $r_{\rm em} > 3 m$ and
+$A(r_{\rm em})  < 0$ for $r_{\rm em} < 3 m$. Taking into account
+that $b - b_{\rm c} > 0$ for case (i) and $b - b_{\rm c} < 0$ for case (ii),
+we check that
+the argument of the logarithm in Eq.~(\ref{e:gis:2pin_Aem}) is always
+positive.
+Equation~(\ref{e:gis:2pin_Aem}) can be solved for $b$:
+\[
+    b = b_{\rm c} + m A(r_{\rm em})  \mathrm{e}^{\eps_L \ph_{\rm em} - 2\pi n},
+\]
+which we may write $b = b_n^+$ or $b_n^-$, denoting the solution with $\eps_L=+1$ by $b_n^+$
+and that with $\eps_L=-1$ by $b_n^-$:
+\begin{subequations}
+\label{e:gis:bn_sequence}
+\begin{align}
+& \encadre{b_n^+ = b_{\rm c} + m A(r_{\rm em})\, \mathrm{e}^{\ph_{\rm em} - 2\pi n}},\quad
+n\in \mathbb{N}^* \\
+& \encadre{b_n^- := b_{\rm c} + m A(r_{\rm em})\,  \mathrm{e}^{- \ph_{\rm em} - 2\pi n}},\quad
+n\in \mathbb{N}^* .
+\end{align}
+\end{subequations}
+The function $A(r_{\rm em})$ is plotted in Fig.~\ref{f:gis:A_rem}.
+It varies monotonically between
+\[
+\lim_{r_{\rm em}\to 2m} A(r_{\rm em}) = \underbrace{- 648(26\sqrt{3} - 45)}_{\simeq -21.59201}
+\quad\mbox{and}\quad
+\lim_{r_{\rm em}\to +\infty} A(r_{\rm em}) = \underbrace{648(7\sqrt{3} - 12)}_{\simeq 80.58246}.
+\]
+One shall recall that formulas (\ref{e:gis:bn_sequence}) have been derived
+under the assumption $|b - b_{\rm c}| \ll m$. Given the amplitude of $A(r_{\rm em})$
+shown in Fig.~\ref{f:gis:A_rem} and the value $\mathrm{e}^{-2\pi} \simeq 1.9\times 10^{-3}$,
+this is valid for any $n\geq 1$, except maybe for $b_n^+$ with $n=1$ and $\ph_{\rm em}$
+large (i.e. close to $2\pi$).
+
+Via Eq.~(\ref{e:gis:b_eta}), the two sequences (\ref{e:gis:bn_sequence}) of the impact parameter $b$
+correspond to two sequences of the emission angle $\eta$:
+\begin{subequations}
+\begin{align}
+&\sin\eta_n^+ := - \sqrt{U(r_{\rm em})}
+\left( b_{\rm c} + m A(r_{\rm em})  \mathrm{e}^{\ph_{\rm em} - 2\pi n} \right), \quad
+n\in \mathbb{N}^* \\
+&\sin\eta_n^- := \sqrt{U(r_{\rm em})}
+\left( b_{\rm c} + m A(r_{\rm em})  \mathrm{e}^{-\ph_{\rm em} - 2\pi n} \right),
+\quad n\in \mathbb{N}^*.
+\end{align}
+\end{subequations}
+Note that $0 \leq b_{\rm c} \sqrt{U(r_{\rm em})} \leq 1$ and
+$b_{\rm c} \sqrt{U(r_{\rm em})} = 1 \iff r_{\rm em} = 3m$.
+As discussed above (cf. Fig.~\ref{f:gis:b_eta}), for $r_{\rm em} \not= 3m$,
+there are always some solutions for $\eta_n^+$ and $\eta_n^-$ for $n$
+sufficiently large (in practice, $n\geq 1$). We therefore conclude:
+\begin{prop}[images of a point source]
+Any static point source $S$ give birth to two infinite sequences of images
+on the screen of the asymptotic observer $\Obs$, at the effective distances
+from the screen's center
+$(b_n^+)_{n\in\mathbb{N}^*}$ and $(b_n^-)_{n\in\mathbb{N}^*}$, as
+given by Eq.~(\ref{e:gis:bn_sequence}).
+If $S$, $\Obs$ and the black hole are not aligned, i.e. if
+$\ph_{\rm em} \not\in\{0, \pi\}$,
+all the images of $S$ are aligned on $\Obs$'s screen: they
+all lie in the plane defined by $S$, $\Obs$ and the black hole (plane of
+Fig.~\ref{f:gis:mult_images}). If $S$ is located outside the photon sphere
+($r_{\rm em} > 3m$), all images lie outside the circle $b=b_{\rm c}$ on $\Obs$'s screen,
+while if $S$ is located inside the photon sphere ($r_{\rm em} < 3m$),
+all images lie inside that circle. In both cases,
+the images of the sequence $(b_n^+)_{n\in\mathbb{N}^*}$ (positive $L$)
+are located on the opposite side of those of the sequence
+$(b_n^-)_{n\in\mathbb{N}^*}$ (negative $L$). The higher $n$, the closer
+the images $b_n^+$ and $b_n^-$ to the circle $b=b_{\rm c}$. Actually,
+according to the laws (\ref{e:gis:bn_sequence}),
+each sequence converge exponentially fast to that circle. From $n$ to $n+1$,
+the distance to the circle is reduced by a factor
+$\mathrm{e}^{- 2\pi}\simeq 1.9\times 10^{-3}$.
+\end{prop}
+
+\begin{remark}
+The alignment of the images is a direct consequence of the spherical
+symmetry of Schwarzschild spacetime.
+\end{remark}
+
+\begin{remark}
+The reader may be puzzled by the compatibility between an infinite number
+of images from a single source and the conservation of energy. There is
+actually no issue here because one can show that the images are
+fainter as $n$ increases. So in practice, only a few images would be visible.
+\end{remark}
+
+\begin{figure}
+\centerline{\includegraphics[width=0.9\textwidth]{ges_images_aligned.pdf}}
+\caption[]{\label{f:gis:images_aligned} \footnotesize
+Same as Fig.~\ref{f:gis:mult_images} but underlining four null geodesics
+from a point source $A$ located on the $x$-axis, i.e.
+aligned with the black hole and the observer on the far right.
+\textsl{[Figure produced with the notebook \ref{s:sam:ges_null_images}]}
+}
+\end{figure}
+
+
+\subsection{Aligned source and Einstein rings}
+
+In the special case where the source is located on the $x$-axis, the images form
+a series of concentric circles accumulating from above on the circle
+$b = b_{\rm c}$. This is illustrated by the source $A$ in
+Fig.~\ref{f:gis:images_aligned}. Four geodesics through the source are drawn,
+given birth to four images that
+are symmetric with respect to the $x$-axis, labelled 1, 3 and 2, 4 respectively.
+Since in this case the plane of the figure is not privileged (one cannot speak
+about the plane defined by $A$, $\Obs$ and the black hole, since they are aligned);
+we deduce by rotation about the $x$-axis that $A$ generates images all along
+circles centered on the origin in $\Obs$'s screen. Images 1 and 2 in Fig.~\ref{f:gis:images_aligned}
+lie actually on the same circle, as well as images 3 and 4.
+As for the non-aligned case, Fig.~\ref{f:gis:images_aligned} shows only a limited number of
+images, but there is actually an infinite number of such images: the full image
+of $A$ on $\Obs$'s screen is composed by a infinite sequence $(\mathscr{C}_n)_{n\in\mathbb{N}}$
+of concentric circles
+that accumulate exponentially fast onto the circle of radius $b = b_{\rm c}$.
+Each circle $\mathscr{C}_n$ has a radius $b_n$ that is given
+by Eq.~(\ref{e:gis:bn_sequence}) with $\ph_{\rm em} = 0$ or $\pi$ (case of
+Fig.~\ref{f:gis:images_aligned}), so that $b_n^+ = b_n^- =: b_n$ (case $\ph_{\rm em} = 0$)
+or $b_n^+ = b_{n-1}^- =: b_n$ (case $\ph_{\rm em} = \pi$).
+The outermost circle, $\mathscr{C}_0$, is called the
+\defin{Einstein ring of}\index{Einstein!ring}\index{ring!Einstein --} $A$.
+It is the only significant ring in astronomical images involving \emph{gravitational
+lensing}\index{gravitational!lensing} by a massive foreground source (not necessarily
+a black hole), which are in the context $|x_A|\gg m$ and $b\gg m$.
+We may call $\mathscr{C}_n$ the $\bm{n^{\rm th}}$\defin{~Einstein ring of} $A$.
+For $n\geq 1$, $\mathscr{C}_n$ is also called a \defin{relativistic Einstein ring of}
+$A$. Indeed, these rings exist only in the case of a very relativistic central object, so that
+photons can wind around it. On the contrary $\mathscr{C}_0$ exists even for non-relativistic
+objects. In particular, in astronomical observations of Einstein rings performed up
+to now, the central deflecting object is a galaxy or a galaxy cluster,
+both being highly non-relativistic (very low compactness).
+
+\begin{hist} \label{h:gis:seq_images_Darwin}
+The infinite sequence of images of a point source located at $r>3m$, with accumulation just outside the circle $b=b_{\rm c}$, has been predicted in 1959 by
+Charles Galton Darwin\index[pers]{Darwin, C.G.} \cite{Darwi59}
+(cf. historical note on p.~\pageref{h:gis:Darwin_formula}). Darwin has
+also derived the sequence of relativistic Einstein rings for aligned sources.
+\end{hist}
+
+
+\subsection{Black hole shadow} \label{s:gis:shadow}
+
+Let us determine the image on observer $\Obs$'s screen
+when all the sources of light are very far, both
+from the black hole and from $\Obs$. We may think of many stars
+shining on the celestial sphere. To simplify the problem, we shall assume
+that the black hole and the observer are surrounded by a distant
+sphere $\mathscr{S}$ that is uniformly bright. In such a setting,
+all values of $b > b_{\rm c}$ on $\Obs$'s screen, whatever the polar angle $\alpha$,
+correspond to a null geodesic that originates from the shining sphere $\mathscr{S}$, while
+this is not possible for $b \leq b_{\rm c}$.
+This is clear on Fig.~\ref{f:gis:mult_images}: when traced backward from the right
+($\Obs$ position), (i) null geodesics with $b > b_{\rm c}$ eventually end
+up far away from the black hole, i.e. necessarily on $\mathscr{S}$, (ii) null geodesics
+with $b < b_{\rm c}$ end up infinitely close to the black hole horizon
+and (iii) null geodesics with $b = b_{\rm c}$ roll up indefinitely around
+the photon sphere (cf. Figs.~\ref{f:gis:null_b_crit_from_inf_L_pos} and
+\ref{f:gis:null_b_crit_from_inf_L_neg}).
+
+The same conclusion can be reached
+by considering the effective potential diagram in Fig.~\ref{f:gis:eff_pot_null}.
+For concreteness, imagine that $\Obs$ is located at $r=15 m$ and that
+the shining sphere $\mathscr{S}$ has a coordinate radius $r=20 m$.
+These values allow us to put $\Obs$ and $\mathscr{S}$
+in Fig.~\ref{f:gis:eff_pot_null} according
+to our settings ($\mathscr{S}$ is encompassing both $\Obs$ and the black
+hole), but one shall keep in mind that both $\Obs$ and $\mathscr{S}$
+are assumed to lie at much larger values of $r$ (fulfilling $r\gg m$).
+Only two kinds of geodesic
+trajectories in Fig.~\ref{f:gis:eff_pot_null} diagram can reach $r = 15m$ ($\Obs$'s screen) with increasing values
+of $r$ (the direction of observation): those of type 1 and those of type 3.
+The latter ones originate necessarily from a region between the black hole
+horizon and $\Obs$'s location, i.e. a region that does not intersect $\mathscr{S}$.
+On the contrary, all the geodesics of type 1 must have had $r = 20 m$
+in their past history, i.e. we may consider that they all have been emitted
+by $\mathscr{S}$ inwards and have bounced on the potential barrier before
+reaching $\Obs$'s screen in their outward motion.
+
+\begin{figure}
+\centerline{\includegraphics[width=0.6\textwidth]{gis_shadow.pdf}}
+\caption[]{\label{f:gis:shadow} \footnotesize
+Shadow of a Schwarzschild black hole. The dashed grey circle delimitates the
+dark disk that would appear on the screen of an observer looking at
+a black sphere of radius $r=2m$ in Minkowski spacetime. The ratio between
+the radii of the two disks is $b_{\rm c} / 2m = 3\sqrt{3}/2 \simeq 2.60$.}
+\end{figure}
+
+
+Both reasonings, that based on Fig.~\ref{f:gis:mult_images} and that
+based on Fig.~\ref{f:gis:eff_pot_null}, led us to conclude that
+\begin{prop}[shadow of a Schwarzschild black hole]
+For a distant observer, the image of a uniformly bright sphere $\mathscr{S}$ surrounding
+the black hole and the observer is a bright area fulfilling
+the observer's screen, except for a central black disk of radius $b=b_{\rm c}$
+(cf. Fig.~\ref{f:gis:shadow}).
+This disk is called the
+\defin{black hole shadow}\index{black!hole!shadow}\index{shadow!black hole --}.
+\end{prop}
+
+\begin{hist} \label{h:gis:bh_shadow}
+In his 1921 treatise \cite{Laue1921}, Max von Laue\index[pers]{von Laue, M.}
+noted that an emitting sphere of radius $r_0$ such that $2m < r_0 < 3m$ will
+appear as having a radius of $3\sqrt{3} m$ $(=b_{\rm c})$ to a distant observer,
+independently of the value of $r_0$.
+Maybe the first mention of a shadow lies in the article by
+Charles Galton Darwin\index[pers]{Darwin, C.G.} in 1959 \cite{Darwi59}. Actually,
+Darwin imagined that the source of the Schwarzschild metric is a massive
+point particle, called by him the ``sun'', and wrote
+\emph{``suppose that there is a roughly uniform star-field all round the sky, and
+consider what will be seen and mapped from the telescope... To the area inside
+this circle} (the circle $b=b_{\rm c}$) \emph{only the sun itself can contribute light. The most obvious assumption is
+that its rays would emerge in straight lines, so that there would be a brilliant point of
+light surrounded by blackness''}. In the full black hole context, the first
+computation of the shadow has been presented by James M.~Bardeen\index[pers]{Bardeen, J.M.}
+at the famous 1972 Les Houches Summer School \cite{Barde73a}; the shadow is called the \emph{apparent shape of the black hole}
+by Bardeen and the computation has been performed for the Kerr black hole,
+which generalizes the Schwarzschild black hole to the rotating case (cf. Chap.~\ref{s:ker}); this
+Kerr black hole shadow will be discussed in details in Sec.~\ref{s:gik:shadow}.
+\end{hist}
+
+To go further, see the review article~\cite{CunhaH18}.
+
+\subsection{Image of an accretion disk} \label{s:gis:image_disk}
+
+A realistic ``source of light'' in the vicinity of a black hole is an
+accretion disk\index{accretion!disk} \cite{AbramF13,King23}. Actually most of astronomical
+observations of black holes in the electromagnetic domain are measurements
+about an accretion disk, either a spectrum or an image, like the image
+of M87* released in 2019 by the Event Horizon Telescope collaboration
+\cite{EHT19a}. The matter (mostly hydrogen) constituting the accretion disk
+arises either from a companion star (stellar-mass black hole in a binary
+system, like Cyg X-1, cf. Table~\ref{t:ges:time_free_fall})
+or from gas clouds in a galactic center (supermassive black holes, like
+Sgr~A* and M87*, cf. Table~\ref{t:ges:time_free_fall}).
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.42\textwidth]{gis_disk_0.png} &
+\includegraphics[width=0.42\textwidth]{gis_disk_pi6.png} \\[1ex]
+\includegraphics[width=0.42\textwidth]{gis_disk_pi3.png} &
+\includegraphics[width=0.42\textwidth]{gis_disk_1_5.png}
+\end{tabular}
+\end{center}
+\caption[]{\label{f:gis:disk_images} \footnotesize
+Image of an accretion disk around a Schwarzschild black hole, as seen
+by a distant observer, with various inclination angles:
+$\iota=0$ (upper left), $\iota=\pi/6$ (upper right), $\iota=\pi/3$ (lower left)
+and $\iota=3/2$ (lower right).
+\textsl{[Figure produced by \textsf{Gyoto} with the input
+files given in Sec.~\ref{s:gyo:Schwarz}]}
+}
+\end{figure}
+
+Figure~\ref{f:gis:disk_images} shows various views of an accretion disk
+around a Schwarzschild black hole as seen by a distant observer.
+The accretion disk is a model
+developed by Novikov \& Thorne \cite{NovikT73} and Page \& Thorne \cite{PageT74},
+lying in some plane around the black hole.
+It is geometrically thin but optically thick.
+The inner radius of the disk
+is the innermost stable circular orbit\index{stable!circular orbit} (ISCO)\index{ISCO}
+at $r=6m$ (cf. Sec.~\ref{s:ges:circular_orbits}). The images shown in
+Fig.~\ref{f:gis:disk_images} have been computed by the open-source ray-tracing code
+\textsf{Gyoto}\index{Gyoto} \cite{VincePGP11} (cf. Appendix~\ref{s:gyo}).
+This code integrates the null geodesic equations backward, starting from the observer's
+screen. For Fig.~\ref{f:gis:disk_images}, the observer is located at $r=1000\, m$
+and at various inclination angles $\iota$ with respect to the accretion disk,
+ranging from $\iota=0$ (disk seen face-on) to
+$\iota=3/2$ (disk seen almost edge-on).
+The colors in Fig.~\ref{f:gis:disk_images} encode the flux at a fixed wavelength.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{gis_disk_image.pdf} \\
+\includegraphics[width=0.6\textwidth]{gis_disk_image_detail.pdf}
+\end{center}
+\caption[]{\label{f:gis:disk_face_on} \footnotesize
+Formation of the primary (orange), secondary (brown) and tertiary (red)
+images of an accretion disk when viewed face-on. The figure plane
+is orthogonal to the disk plane, the intersection between the two planes being
+the $y$-axis, so that disk is depicted by the thick segments located at $\ph=\pi/2$
+and $\ph=3\pi/2$.
+As in Fig.~\ref{f:gis:disk_images}, the inner boundary of the disk is
+$r_{\rm in} = 6\, m$ (the ISCO), but the outer boundary has been truncated at
+$r_{\rm out} = 9\, m$ for pedagogical purposes.
+The observer is located at $x\gg m$ and $y=0$.
+The dashed green circle is the photon orbit at $r=3\, m$.
+The lower panel shows the geodesics emerging from the inner and outer edges
+of the upper part of the disk.
+\textsl{[Figure produced with the notebook \ref{s:sam:gis_disk_image}]}
+}
+\end{figure}
+
+Let us first discuss the face-on view (upper-left panel of Fig.~\ref{f:gis:disk_images}).
+To interpret it, some null geodesics generating it have been depicted
+in Fig.~\ref{f:gis:disk_face_on}. One may distinguish three images of the accretion disk:
+\begin{itemize}
+\item the \emph{primary image}, which is formed by the outermost bright part; it is
+generated by null geodesics that suffers a small deflection from the disk to
+the observer; more precisely, they are arising from the side of the disk facing
+the observer and have
+$\Delta\ph = \pm \pi/2$ in their trajectory plane (cf. orange curves in
+Fig.~\ref{f:gis:disk_face_on}); the inner boundary of the
+primary image is the image of the ISCO under these geodesics; it is located
+at $b = 6.932\, m$ on the observer's screen;
+\item the \emph{secondary image}, which is the bright yellow ring separated
+from the inner boundary of the primary image by the thick black annulus; this
+image is generated by null geodesics that perform half a turn around the
+photon sphere before reaching the observer;  more precisely,
+they are arising from the side of the disk \emph{opposite} to
+the observer and have
+$\Delta\ph = \pm 3\pi/2$ in their trajectory plane (cf. brown curves in
+Fig.~\ref{f:gis:disk_face_on}); the inner boundary of the secondary image
+is located at $b = 5.479\, m$ on the observer's screen;
+\item the \emph{tertiary image}, which is the thin faint innermost ring;
+this image is generated by null geodesics that perform a full turn around
+the photon sphere before reaching the observer; more precisely,
+they are arising from the side of the disk facing
+the observer and have
+$\Delta\ph = \pm 5\pi/2$ in their trajectory plane (cf. red curves in
+Fig.~\ref{f:gis:disk_face_on}); the inner boundary of the tertiary image
+is located at $b = 5.208\, m$ on the observer's screen.
+\end{itemize}
+As discussed in Sec.~\ref{s:gis:images_point}, there are actually an infinite
+number of images of the accretion disk but they are more and more faint and
+only three of them are visible in Fig.~\ref{f:gis:disk_images}. Moreover
+these images are formed by exponentially thinner rings and accumulate near the circle $b = b_{\rm c}$. In Figs.~\ref{f:gis:disk_images} and \ref{f:gis:disk_face_on}, the tertiary image corresponds
+to $n=2$ for $\epsilon_L = 1$ and $n=1$ for $\epsilon_L = -1$
+in Eq.~(\ref{e:gis:ph_inf_2pi_n}) \footnote{This asymmetry of $n$ with respect to
+$\epsilon_L$ is
+due to the convention $\ph_{\rm em}\in{[0,2\pi)}$;
+had we chosen $\ph_{\rm em}\in{(-\pi, \pi]}$, it would not be present.}, so that Eqs.~(\ref{e:gis:bn_sequence})
+with $\ph_{\rm em} = \pi/2$ ($b = b_1^-$) and $\ph_{\rm em} = 3\pi/2$ ($b = b_2^+$)
+yield $(b - b_{\rm c})/b_{\rm c} = A(r_{\rm em}) \mathrm{e}^{-5\pi/2}/(3\sqrt{3})$. With $r_{\rm em} = 6 m$,
+we have $A(r_{\rm em}) \simeq 30.3$, so that $(b - b_{\rm c})/b_{\rm c} \simeq 0.0013$
+for the tertiary image. This we may conclude that,  up to a relative accuracy of $10^{-3}$,
+the interior of the tertiary image
+corresponds to the black hole shadow as defined in Sec.~\ref{s:gis:shadow},
+
+For a nonzero inclination angle, the images shown in Fig.~\ref{f:gis:disk_images}
+exhibit some asymmetry between the left and the right. This is due to the
+rotation of the disk at relativistic speed, which generates a strong Doppler
+boost, making the left part of the disk, which moves towards the observer,
+much brighter than the right part, which recedes from the observer.
+Note that for the three views with $\iota\not=0$, the primary, secondary and
+tertiary images are still present but are no longer circular rings.
+Note that the almost edge-on view is drastically different from what would
+get in flat (Minkowski) spacetime, since for the latter the accretion disk
+would appear as a very thin ellipsoidal shape elongated along the
+horizontal axis.
+
+\begin{hist} \label{h:gis:bh_images}
+The first computation of the image of an accretion disk around a Schwarzschild black hole
+has been performed by
+Jean-Pierre Luminet\index[pers]{Luminet, J.-P.} in 1979 \cite{Lumin79}, (see Ref.~\cite{Lumin19} for
+an historical account). The accretion disk was the same Page-Thorne model
+as that considered here and Luminet obtained an image pretty close
+to that of the last quadrant of Fig~\ref{f:gis:disk_images}, the difference
+lying in the inclination angle: $\iota = 80^\circ \simeq 1.40 {\rm\; rad}$
+versus $\iota = 1.50 {\rm\; rad}$ in Fig~\ref{f:gis:disk_images}.
+In 1991, Jean-Alain Marck\index[pers]{Marck, J.-A.} computed the first movie of an observer plunging
+into a Schwarzschild black endowed with an accretion disk \cite{Marck91,Marck96}.
+In 2007, Alain Riazuelo\index[pers]{Riazuelo, A.} computed very precise images of a
+Schwarzschild black hole in front of a realistic stellar field \cite{Riazu08,Riazu19},
+which illustrate magnificently the multiple character of images of stars (Sec.~\ref{s:gis:images_point})
+and the concept of black hole shadow (Sec.~\ref{s:gis:shadow})
+(cf. Appendix~\ref{s:web}).
+\end{hist}
+
+% Synge \cite{Synge66}
+
+
+

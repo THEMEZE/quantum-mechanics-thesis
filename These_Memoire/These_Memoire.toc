@@ -43,3 +43,4 @@
 \contentsline {section}{\numberline {7.1}calculs}{29}{section.7.1}%
 \contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{29}{section.7.2}%
 \contentsline {chapter}{Index}{31}{section*.17}%
+\contentsline {chapter}{Index of person names}{33}{section*.18}%

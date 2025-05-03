@@ -20,28 +20,12 @@
 
 \section*{Introduction}
 
+\input{BiPart/sections/intro}
+
+
 %Dans ce chapitre, nous étudions l’évolution d’un gaz quantique unidimensionnel après une rupture de symétrie initiale. Nous utilisons un gaz de bosons ultra-froids, confiné dans une géométrie unidimensionnelle. Ce gaz est décrit par le modèle intégrable de Lieb-Liniger. Les interactions entre atomes sont faibles et répulsives.
 
 %Nous préparons d’abord un gaz homogène (Fig \ref{fig:BiPart.insitut}). Ensuite, nous supprimons brutalement une moitié du nuage. Cela crée une frontière nette entre deux zones : une avec des atomes , l’autre vide (Dans notre protocole la partie sans des atomes se trouve en $x<0$ et avec atomes en $x>0$) (Fig \ref{fig:BiPart.coupure1} (a),(b),(c),(d)). Cette configuration correspond à ce qu’on appelle un « quench bipartite ».
-
-Parmi les systèmes à N corps, les modèles intégrables occupent une place particulière, notamment dans le contexte des dynamiques hors d’équilibre et de la thermalisation généralisée. Contrairement aux systèmes génériques, ces modèles présentent une infinité de constantes du mouvement, empêchant la thermalisation au sens habituel. Cela conduit à l’émergence d’une thermalisation généralisée, décrite non par l’ensemble canonique, mais par une ensemble à entropie maximale sous contraintes — souvent formalisé par l’\index{Ensemble Thermodynamique Général (GGE)}.
-
-Dans ce chapitre, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel suite à une rupture initiale de symétrie. Le système étudié est un gaz de bosons ultra-froids confiné dans une géométrie unidimensionnelle, dont la dynamique est décrite par le modèle intégrable de Lieb-Liniger. Les interactions interatomiques sont faibles et de nature répulsive, ce qui permet d’explorer un régime faiblement corrélé tout en conservant des effets quantiques collectifs non triviaux.\\
-
-La préparation initiale consiste en un gaz homogène à profil de densité uniforme (Fig.~\ref{fig:BiPart.insitut}). Une opération de coupe abrupte est ensuite réalisée, supprimant spatialement la moitié gauche du nuage atomique. Il en résulte une condition initiale présentant une discontinuité marquée : la région $x<0$ est vide, tandis que des atomes occupent la région $x>0$ (Fig.~\ref{fig:BiPart.coupure1} (a)-(d)). Cette configuration correspond à un quench bipartite, c’est-à-dire une mise hors équilibre induite par une discontinuité initiale dans la densité.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.5\textwidth , page = 4 ]{Shema.pdf}	
-	%\caption{a) Facteur d'occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à l'équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité spatiale linéique $n_0 = 56~\mu\mathrm{m}^{-1}$, soit une potentielle chimique $\mu = 65~\mathrm{nK}$.  
-%(b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta)\, d\theta \equiv n_0 = 56~\mu\mathrm{m}^{-1}$.  
-%(c) Facteur d'occupation initial $\nu_0(\theta)$ correspondant au cas présenté en a).}
-	\caption{a) Facteur d’occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à un état d’équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité linéique homogène $n_0 = 56~\mu\mathrm{m}^{-1}$. Ces paramètres correspondent à une potentielle chimique $\mu = 65~\mathrm{nK}$.
-b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta), d\theta$, constante et égale à $n_0 = 56~\mu\mathrm{m}^{-1}$.
-c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution thermique illustrée en a).}
-	\label{fig:BiPart.insitut}
-\end{figure}
-
 
 
 %\begin{figure}[H]
@@ -88,21 +72,82 @@ c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution therm
 
 %Nous voyons que la frontière se propage de manière balistique. La largeur du profil de densité augmente de façon linéaire avec le temps. Ce comportement est prédit par la théorie de l’hydrodynamique généralisée (GHD). Cette théorie décrit comment les propriétés locales d’un système intégrable évoluent dans le temps (Fig \ref{fig:BiPart.coupure1} (e),(f),(g)). %Elle repose sur une distribution appelée « distribution de rapidité ». Cette fonction décrit la répartition des quasi-particules dans le système.
 
-Après la préparation initiale, le gaz évolue selon la dynamique unitaire régie par son Hamiltonien. Pour suivre cette évolution, nous mesurons le profil de densité atomique à différents temps, ce qui permet de visualiser la propagation de la discontinuité initiale.
-
-Nous observons que la frontière entre les régions occupée et vide se propage de manière balistique : la largeur du profil de densité croît linéairement avec le temps. Ce comportement est en accord avec les prédictions de la théorie de l’hydrodynamique généralisée (GHD), qui fournit une description efficace de l’évolution spatio-temporelle des observables locales dans les systèmes intégrables (Fig.~\ref{fig:BiPart.coupure1} (e)-(g)).\\
-
 %Dans notre cas, GHD prévoit un profil de densité particulier si le gaz initial est à température nulle. Les données expérimentales sont proches de cette prédiction, mais avec de légers écarts. Ces écarts peuvent venir de la température non nulle du gaz ou d’autres imperfections expérimentales.
 
 %Nous montrons que le profil de densité contient beaucoup d’informations. En théorie, on peut retrouver la distribution de rapidité initiale à partir du profil de frontière. Cela permettrait d’avoir une méthode d’analyse très puissante, comme une sorte de « thermomètre généralisé ». %Cependant, cette méthode est sensible au bruit dans les données, surtout dans les parties du profil où la densité est très faible. Pour contourner cela, nous utilisons un modèle simple avec trois paramètres pour approximer la distribution de rapidité. Ce modèle donne de bons résultats et reste plus robuste.
 
 %Enfin, nous utilisons une nouvelle méthode expérimentale pour mesurer la distribution de rapidité localement (Part {??}) , à l’intérieur du profil. Nous observons une asymétrie, comme prévu par la théorie. D’un côté, la distribution est lisse et large ; de l’autre, elle est plus abrupte, comme pour un état fondamental. Cette observation confirme le comportement prédictif de la GHD, bien que la résolution spatiale limite la finesse des détails que nous pouvons observer.
 
-Dans notre configuration, la théorie de l’hydrodynamique généralisée (GHD) prédit un profil de densité caractéristique dans le cas d’un gaz initial à température nulle. Les mesures expérimentales obtenues sont globalement en accord avec cette prédiction, bien qu’on observe de légers écarts. Ces déviations peuvent être attribuées à une température initiale non nulle, ainsi qu’à d’éventuelles imperfections expérimentales.
 
-Nous montrons que le profil de densité contient une richesse d’information sur l’état initial du système. En particulier, la théorie suggère qu’il est, en principe, possible de reconstruire la distribution de rapidité initiale à partir du profil mesuré au niveau de la frontière. Cela ouvre la voie à une méthode d’analyse puissante, que l’on peut interpréter comme une forme de thermomètre généralisé dans le cadre de la GHD.\\
+%Parmi les systèmes à N corps, les modèles intégrables occupent une place particulière, notamment dans le contexte des dynamiques hors d’équilibre et de la thermalisation généralisée. Contrairement aux systèmes génériques, ces modèles présentent une infinité de constantes du mouvement, empêchant la thermalisation au sens habituel. Cela conduit à l’émergence d’une thermalisation généralisée, décrite non par l’ensemble canonique, mais par une ensemble à entropie maximale sous contraintes — souvent formalisé par l’Ensemble de Gibbs Général (GGE) \index{Ensemble Thermodynamique Général (GGE)}\index[pers]{Ensemble Thermodynamique Général (GGE), Ensemble de Gibbs Général (GGE)}.
 
-Enfin, nous mettons en œuvre une nouvelle méthode expérimentale permettant de mesurer localement la distribution de rapidité au sein du profil de densité (voir Partie {??}). Nous observons une asymétrie marquée dans la forme de cette distribution : d’un côté, elle est large et lisse, tandis que de l’autre, elle présente une coupure abrupte, caractéristique d’un état proche du fondamental. Cette observation est en accord avec les prédictions théoriques de la GHD, bien que la résolution spatiale de notre dispositif limite la précision des détails accessibles.
+%Un exemple pédagogique pour appréhender cette dynamique non triviale est fourni par l’expérience du pendule de Newton : des chocs élastiques entre sphères de masses égales illustrent parfaitement l’absence de thermalisation, l'énergie cinétique se propageant de manière cohérente entre les particules. Cette dynamique régulière, bien que classique, annonce les comportements typiques des systèmes intégrables quantiques où les excitations se déplacent sans diffusion.
+
+%Dans ce cadre, le problème de Riemann en hydrodynamique — c’est-à-dire l'évolution d’un système à partir de deux états homogènes initiaux juxtaposés — fournit un test fondamental de compréhension des équations d’évolution des systèmes intégrables. Longtemps restée partiellement ouverte, la résolution complète de ce problème dans les modèles intégrables quantiques a été obtenue grâce à la formulation de la Théorie Hydrodynamique Généralisée (GHD).
+
+%La GHD a été introduite dans [60] pour des théories des champs intégrables (comme le modèle de Sinh-Gordon ou le modèle de Lieb-Liniger décrivant un gaz de bosons 1D en interaction), et dans [59] pour les chaînes quantiques, notamment la chaîne XXZ anisotrope de Heisenberg. Ces travaux ont permis de résoudre analytiquement le problème de Riemann dans des systèmes quantiques fortement corrélés.
+
+%Depuis, des solutions analytiques ont été obtenues pour des cas spécifiques. En particulier, une solution exacte du problème de Riemann pour la chaîne XXZ a été trouvée pour un état initial particulier [179]. Par ailleurs, une solution plus générale a été obtenue pour un gaz 1D de sphères dures, mettant en lumière l’efficacité de la GHD à capturer les phénomènes de propagation balistique et de relaxation généralisée dans un cadre quantique.
+
+%%%%%
+
+
+%Dans ce chapitre, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel de bosons faiblement interactifs, préparé dans un état initial présentant une rupture abrupte de symétrie. Le système est décrit par le modèle intégrable de Lieb-Liniger, et sa dynamique unitaire est analysée dans le cadre de l’hydrodynamique généralisée (GHD), un formalisme théorique développé récemment pour capturer l’évolution spatio-temporelle des observables locales dans les systèmes quantiques intégrables.
+
+%Le protocole expérimental consiste en un "quench bipartite" : le gaz initial, homogène et à densité constante, est brutalement tronqué, de sorte que la moitié gauche du système ($x<0$) est vidée, tandis que la moitié droite ($x>0$) reste occupée (Fig.~\ref{fig:BiPart.coupure1}). Cette configuration induit une discontinuité initiale dans le facteur d’occupation $\nu(x,\theta)$, menant à une situation analogue au problème de Riemann dans les systèmes à un nombre infini de lois de conservation. Ce type de dynamique, souvent qualifié de domain wall dynamics, a été étudié en détail dans la thèse de Léa Dubois \cite{DuboisThese}, où une première analyse expérimentale de ce protocole a été réalisée.
+
+%Dans ce travail, nous approfondissons cette étude en mettant l’accent sur la modélisation théorique fine à l’aide des outils de la GHD. Plus précisément, nous montrons que la propagation balistique observée de la discontinuité est bien décrite par la solution GHD du problème de Riemann, à température nulle comme finie. Nous analysons quantitativement les profils de densité mesurés expérimentalement et discutons en détail les écarts observés avec les prédictions théoriques idéales, en lien avec les effets thermiques et les imperfections instrumentales.
+
+%Un point central de notre étude consiste à exploiter les solutions GHD pour reconstruire la distribution de rapidités initiale à partir du profil de densité mesuré dans la région de transition. Cette approche, que l’on peut interpréter comme une forme de thermométrie généralisée, constitue une méthode puissante pour sonder les états locaux du gaz. Nous mettons également en œuvre une nouvelle méthode expérimentale permettant de mesurer localement le facteur d’occupation $\nu(x,\theta)$ dans la région de déformation, mettant en évidence une forte asymétrie entre les deux côtés de la discontinuité, signature de la nature hors équilibre du système.
+
+
+%%%%
+%Dans ce chapitre, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel suite à une rupture initiale de symétrie. Le système étudié est un gaz de bosons ultra-froids confiné dans une géométrie unidimensionnelle, dont la dynamique est décrite par le modèle intégrable de Lieb-Liniger. Les interactions interatomiques sont faibles et de nature répulsive, ce qui permet d’explorer un régime faiblement corrélé tout en conservant des effets quantiques collectifs non triviaux.\\
+
+%La préparation initiale consiste en un gaz homogène à profil de densité uniforme (Fig.~\ref{fig:BiPart.insitut}). Une opération de coupe abrupte est ensuite réalisée, supprimant spatialement la moitié gauche du nuage atomique. Il en résulte une condition initiale présentant une discontinuité marquée : la région $x<0$ est vide, tandis que des atomes occupent la région $x>0$ (Fig.~\ref{fig:BiPart.coupure1} (a)-(d)). Cette configuration correspond à un quench bipartite, c’est-à-dire une mise hors équilibre induite par une discontinuité initiale dans la densité.
+
+
+%Après la préparation initiale, le gaz évolue selon la dynamique unitaire régie par son Hamiltonien. Pour suivre cette évolution, nous mesurons le profil de densité atomique à différents temps, ce qui permet de visualiser la propagation de la discontinuité initiale.
+
+%Nous observons que la frontière entre les régions occupée et vide se propage de manière balistique : la largeur du profil de densité croît linéairement avec le temps. Ce comportement est en accord avec les prédictions de la théorie de l’hydrodynamique généralisée (GHD), qui fournit une description efficace de l’évolution spatio-temporelle des observables locales dans les systèmes intégrables (Fig.~\ref{fig:BiPart.coupure1} (e)-(g)).\\
+
+
+
+%Dans notre configuration, la théorie de l’hydrodynamique généralisée (GHD) prédit un profil de densité caractéristique dans le cas d’un gaz initial à température nulle. Les mesures expérimentales obtenues sont globalement en accord avec cette prédiction, bien qu’on observe de légers écarts. Ces déviations peuvent être attribuées à une température initiale non nulle, ainsi qu’à d’éventuelles imperfections expérimentales.
+
+%Nous montrons que le profil de densité contient une richesse d’information sur l’état initial du système. En particulier, la théorie suggère qu’il est, en principe, possible de reconstruire la distribution de rapidité initiale à partir du profil mesuré au niveau de la frontière. Cela ouvre la voie à une méthode d’analyse puissante, que l’on peut interpréter comme une forme de thermomètre généralisé dans le cadre de la GHD.\\
+
+%Enfin, nous mettons en œuvre une nouvelle méthode expérimentale permettant de mesurer localement la distribution de rapidité au sein du profil de densité (voir Partie {??}). Nous observons une asymétrie marquée dans la forme de cette distribution : d’un côté, elle est large et lisse, tandis que de l’autre, elle présente une coupure abrupte, caractéristique d’un état proche du fondamental. Cette observation est en accord avec les prédictions théoriques de la GHD, bien que la résolution spatiale de notre dispositif limite la précision des détails accessibles.
+
+Parmi les systèmes à N corps, les modèles intégrables occupent une place particulière, notamment dans le contexte des dynamiques hors d’équilibre et de la thermalisation généralisée. Contrairement aux systèmes génériques, ces modèles présentent une infinité de constantes du mouvement, empêchant la thermalisation au sens usuel. Cette contrainte conduit à l’émergence d’une thermalisation généralisée, décrite non par l’ensemble canonique, mais par un ensemble à entropie maximale sous contraintes, souvent formalisé par l’Ensemble de Gibbs Général (GGE) \index{Ensemble Thermodynamique Général (GGE)}\index[pers]{Ensemble Thermodynamique Général (GGE), Ensemble de Gibbs Général (GGE)}.
+
+Un exemple classique pour illustrer la dynamique non diffusante typique des systèmes intégrables est celui du pendule de Newton, où des chocs élastiques entre sphères de masses égales propagent l’énergie cinétique sans dissipation. Bien que ce système soit classique, il incarne le comportement régulier que l’on retrouve dans les systèmes intégrables quantiques, où les excitations se déplacent sans diffusion.
+
+Dans ce cadre, le problème de Riemann en hydrodynamique — c’est-à-dire l’évolution d’un système à partir de deux états homogènes juxtaposés — constitue un test fondamental de compréhension des équations d’évolution dans les systèmes intégrables. Sa résolution complète, longtemps restée partiellement ouverte, a été rendue possible par l’avènement de la Théorie Hydrodynamique Généralisée (GHD). Introduite dans le contexte des théories des champs intégrables (modèle de Sinh-Gordon, modèle de Lieb-Liniger) [60] et des chaînes quantiques (chaîne XXZ de Heisenberg) [59], la GHD a permis une avancée analytique majeure pour la description des dynamiques hors équilibre dans ces systèmes.
+
+Depuis, plusieurs solutions analytiques du problème de Riemann ont été obtenues. En particulier, une solution exacte pour un état initial particulier dans la chaîne XXZ [179], ainsi qu’une solution plus générale pour un gaz 1D de sphères dures, ont confirmé l’efficacité de la GHD pour décrire les processus de propagation balistique et de relaxation généralisée.
+
+Dans ce contexte, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel de bosons faiblement interactifs, confinés dans une géométrie 1D. Le système est décrit par le modèle intégrable de Lieb-Liniger, avec des interactions faibles et répulsives permettant l’émergence d’effets quantiques collectifs tout en restant dans un régime faiblement corrélé.
+
+La préparation initiale consiste à créer un gaz homogène à profil de densité constant (Fig.\ref{fig:BiPart.insitut}), à température contrôlée. Une opération de coupe abrupte est ensuite réalisée : la moitié gauche du système ($x<0$) est vidée, tandis que la moitié droite ($x>0$) reste occupée (Fig.\ref{fig:BiPart.coupure1}). Ce protocole, dit quench bipartite, engendre une discontinuité initiale dans la densité atomique, analogue au problème de Riemann pour un système doté d’un nombre infini de lois de conservation. Ce type de dynamique, qualifiée de domain wall dynamics, a été étudié dans la thèse de Léa Dubois \cite{DuboisThese}, qui a permis une première analyse expérimentale de ce protocole.
+
+Nous poursuivons et approfondissons cette étude, en analysant la dynamique unitaire du gaz à l’aide des outils de la GHD. Nous montrons que la propagation balistique de la discontinuité observée expérimentalement est bien capturée par la solution GHD du problème de Riemann, à température nulle comme finie. Le profil de densité mesuré à différents temps révèle une frontière qui se propage de manière linéaire, en bon accord avec les prédictions de la GHD (Fig.~\ref{fig:BiPart.coupure1} (e)-(g)). Des écarts résiduels sont néanmoins observés, que nous attribuons à des effets thermiques et à des imperfections instrumentales.
+
+Un aspect central de notre approche repose sur l’exploitation des solutions GHD pour reconstruire la distribution initiale de rapidités à partir des profils de densité mesurés dans la région de transition. Cette démarche constitue une forme de thermométrie généralisée et fournit un outil puissant pour sonder les états locaux du gaz.
+
+Enfin, nous développons une méthode expérimentale inédite permettant de mesurer localement le facteur d’occupation $\nu(x, \theta)$ dans la région de déformation. Nous observons une forte asymétrie de cette distribution : large et lisse du côté initialement occupé, coupée et abrupte du côté initialement vide, révélant ainsi la nature fondamentalement hors équilibre du système. Cette observation est en bon accord avec les prédictions théoriques de la GHD, même si la résolution spatiale limite la finesse des détails observables.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth , page = 4 ]{Shema.pdf}	
+	%\caption{a) Facteur d'occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à l'équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité spatiale linéique $n_0 = 56~\mu\mathrm{m}^{-1}$, soit une potentielle chimique $\mu = 65~\mathrm{nK}$.  
+%(b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta)\, d\theta \equiv n_0 = 56~\mu\mathrm{m}^{-1}$.  
+%(c) Facteur d'occupation initial $\nu_0(\theta)$ correspondant au cas présenté en a).}
+	\caption{a) Facteur d’occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à un état d’équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité linéique homogène $n_0 = 56~\mu\mathrm{m}^{-1}$. Ces paramètres correspondent à une potentielle chimique $\mu = 65~\mathrm{nK}$.
+b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta), d\theta$, constante et égale à $n_0 = 56~\mu\mathrm{m}^{-1}$.
+c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution thermique illustrée en a).}
+	\label{fig:BiPart.insitut}
+\end{figure}
 
 
 \section{Dispositif expérimental}

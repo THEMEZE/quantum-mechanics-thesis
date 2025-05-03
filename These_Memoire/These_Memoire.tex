@@ -27,7 +27,7 @@
 \dominitoc  % Active l'affichage des mini-sommaires
 \usepackage{lipsum} % pour générer du texte aléatoire
 %\usepackage{makeidx}
-\usepackage{imakeidx}
+
 
 %\usepackage[tikz]{bclogo}
 \usepackage{mathrsfs}%lagrangien
@@ -93,6 +93,10 @@ decorations.pathreplacing}
 
 %\usepackage{pgfplots}
 %\pgfplotsset{compat=1.17}
+
+
+
+
 
 
 
@@ -434,6 +438,44 @@ innertopmargin=\topskip,
 %\renewcommand{\cfttoctitle}{\hspace{-2em}} 
 % Nastaveni obsahu
 % Nastaveni obsahu
+
+\usepackage{imakeidx}
+\usepackage{fancyhdr}
+
+%\usepackage{makeidx}
+\makeindex[intoc=true]
+\makeindex[name=pers, title=Index of person names, intoc=true]
+
+\usepackage{xcolor}
+\definecolor{linkcolor}{RGB}{0,0,180}
+\PassOptionsToPackage{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    citecolor=linkcolor,
+    urlcolor=linkcolor
+}{hyperref}
+\usepackage{hyperref}
+
+% Reglages:
+%
+\hypersetup{pdftitle={Étude de la dynamique hors équilibre de boson unidimentionnel },
+  pdfsubject={Quantum},
+  pdfauthor={Guillaume THEMEZE <guillaume.themeze@gmail.fr>},
+  pdfkeywords={LaTeX},
+  colorlinks=true
+}
+\pagestyle{fancyplain}
+\addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{}
+\rhead[]{\fancyplain{}{\bfseries\thepage}}
+\chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
+\cfoot{}
+%
+
+
 
 
 
