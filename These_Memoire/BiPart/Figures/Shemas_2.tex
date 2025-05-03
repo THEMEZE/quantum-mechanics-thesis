@@ -4,16 +4,18 @@
 \usepackage{xcolor}        % Gestion avancée des couleurs
 \usepackage{amsmath}       % Gestion des formules mathématiques
 \usetikzlibrary{arrows.meta} % Pour gérer les flèches avec des formes spécifiées comme "triangle"
-\usetikzlibrary {decorations.pathmorphing}
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
+%\pgfplotsset{compat=1.18}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{5pt}
 %\usepgfplotslibrary{external}
 %\tikzexternalize
 
+\usetikzlibrary{3d,calc}
 \usetikzlibrary{perspective}
+
 
 %% Automatiser cela : une solution plus élégante  nouvelle page, tu peux utiliser la commande \newpage juste avant chaque \begin{tikzpicture}
 %\let\oldtikzpicture\tikzpicture
@@ -130,6 +132,153 @@
 	\node at (40,6) [rectangle , rotate = -90] { \tikz \Palettes  ;}; 	
 \end{tikzpicture}
 
+\begin{tikzpicture}
+  \node[draw] at (0,0) {Setting the view};
+\end{tikzpicture}
+
+\begin{tikzpicture}[3d view]
+  \draw[->] (-1,0,0) -- (1,0,0) node[pos=1.1]{x};
+  \draw[->] (0,-1,0) -- (0,1,0) node[pos=1.1]{y};
+  \draw[->] (0,0,-1) -- (0,0,1) node[pos=1.1]{z};
+\end{tikzpicture}
+
+\begin{tikzpicture}[isometric view]
+  \draw[->] (-1,0,0) -- (1,0,0) node[pos=1.1]{x};
+  \draw[->] (0,-1,0) -- (0,1,0) node[pos=1.1]{y};
+  \draw[->] (0,0,-1) -- (0,0,1) node[pos=1.1]{z};
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+  \node[draw] at (0,0) {Defining the perspective};
+\end{tikzpicture}
+
+\newcommand\simplecuboid[3]{%
+  \fill[gray!80!white] (tpp cs:x=0,y=0,z=#3)
+    -- (tpp cs:x=0,y=#2,z=#3)
+    -- (tpp cs:x=#1,y=#2,z=#3)
+    -- (tpp cs:x=#1,y=0,z=#3) -- cycle;
+  \fill[gray]  (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=0,z=#3)
+    -- (tpp cs:x=0,y=#2,z=#3)
+    -- (tpp cs:x=0,y=#2,z=0) -- cycle;
+  \fill[gray!50!white] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=0,z=#3)
+    -- (tpp cs:x=#1,y=0,z=#3)
+    -- (tpp cs:x=#1,y=0,z=0) -- cycle;}
+\newcommand{\simpleaxes}[3]{%
+  \draw[->] (-0.5,0,0) -- (#1,0,0) node[pos=1.1]{x};
+  \draw[->] (0,-0.5,0) -- (0,#2,0) node[pos=1.1]{y};
+  \draw[->] (0,0,-0.5) -- (0,0,#3) node[pos=1.1]{z};}
+
+\begin{tikzpicture}[3d view]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[3d view,perspective]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view,
+  perspective={
+    p = {(5,0,0)}}]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view,
+  perspective={
+    p = {(5,1,0)}}]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view,
+  perspective={
+    p = {(5,1,1)}}]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view,
+  perspective={
+    q = {(0,5,0)}}]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view,
+  perspective={
+    r = {(0,0,5)}}]
+  \simplecuboid{2}{2}{2}
+  \simpleaxes{2}{2}{2}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node[draw] at (0,0) {Lacunes};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node[draw] at (0,0) {Examples};
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  isometric view,
+  perspective={
+    p = {(8,0,0)},
+    q = {(0,8,0)},
+    r = {(0,0,-8)}}]
+
+  \simplecuboid{2}{2}{2}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  isometric view,
+  perspective={
+    p = {(4,0,0)},
+    q = {(0,4,0)}}]
+
+    \node[fill=red,circle,inner sep=1.5pt,label=above:p] at (4,0,0){};
+
+    \foreach \i in {0,...,100}{
+      \filldraw[fill = gray] (tpp cs:x=\i,y=0,z=0)
+        -- (tpp cs:x=\i+0.5,y=0,z=0)
+        -- (tpp cs:x=\i+0.5,y=2,z=0)
+        -- (tpp cs:x=\i,y=2,z=0)
+        -- cycle;}
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  scale=0.7,
+  3d view,
+  perspective={
+    p = {(20,0,0)},
+    q = {(0,20,0)}}]
+
+  \filldraw[fill=brown] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=4,z=0)
+    -- (tpp cs:x=0,y=4,z=2)
+    -- (tpp cs:x=0,y=2,z=4)
+    -- (tpp cs:x=0,y=0,z=2) -- cycle;
+  \filldraw[fill=red!70!black] (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=2,z=4)
+    -- (tpp cs:x=0,y=2,z=4) -- cycle;
+  \filldraw[fill=brown!80!white] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=0) -- cycle;
+\end{tikzpicture}
+
+
 \begin{tikzpicture}[
   3d view,
   perspective={
@@ -159,6 +308,7 @@
 \end{tikzpicture}
 
 
+
 \begin{tikzpicture}
 	\clip (-11 , -11) rectangle (15 , 11) ;
     %\InsitutDiagram
@@ -166,6 +316,113 @@
     %\draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
     \path (-11 , -11) rectangle (15 , 11);
 \end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view={20}{35.26},
+  perspective={
+    p = {(2,0,0)},
+    q = {(0,2,0)},
+    r = {(0,0,2)}},
+  scale=4,
+  vanishing point/.style={fill,circle,inner sep=2pt}]
+  
+  % Initialisation des points de fuite (doit être dans le tikzpicture)
+  \coordinate (Pp) at (2,0,0);
+  \coordinate (Pq) at (0,2,0);
+  \coordinate (Pr) at (0,0,2);
+
+  \simplecuboid{3}{1}{2}
+  
+  \filldraw[fill=brown] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=4,z=0)
+    -- (tpp cs:x=0,y=4,z=2)
+    -- (tpp cs:x=0,y=2,z=4)
+    -- (tpp cs:x=0,y=0,z=2) -- cycle;
+  \filldraw[fill=red!70!black] (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=2,z=4)
+    -- (tpp cs:x=0,y=2,z=4) -- cycle;
+  \filldraw[fill=brown!80!white] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=0) -- cycle;
+    
+  \simpleaxes{2}{2}{2}
+
+  \node[vanishing point,label = right:p] (p) at (Pp){};
+  \node[vanishing point,label = left:q] (q) at (Pq){};
+  \node[vanishing point,label = above:r] (r) at (Pr){};
+
+  \begin{scope}[dotted]
+    \foreach \y in {0,1}{
+      \foreach \z in {0,2}{
+        \draw (tpp cs:x=0,y=\y,z=\z) -- (p.center);}}
+    \foreach \x in {0,3}{
+      \foreach \z in {0,2}{
+        \draw (tpp cs:x=\x,y=0,z=\z) -- (q.center);}}
+    \foreach \x in {0,3}{
+      \foreach \y in {0,1}{
+        \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
+  \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\clip (-11 , -11) rectangle (15 , 11) ;
+    %\InsitutDiagram
+    %\drawgrid{-11}{15}{-11}{11}
+    %\draw[line width=2.5ex , color = red ] (-11 , -11) rectangle (15 , 11) ;
+    \path (-11 , -11) rectangle (15 , 11);
+\end{tikzpicture}
+
+\begin{tikzpicture}[
+  3d view={-45}{35.26},
+  perspective={
+    p = {(10,0,0)},
+    q = {(0,10,0)},
+    r = {(0,0,20)}},
+  scale=4,
+  vanishing point/.style={fill,circle,inner sep=2pt}]
+  
+  % Initialisation des points de fuite (doit être dans le tikzpicture)
+  \coordinate (Pp) at (10,0,0);
+  \coordinate (Pq) at (0,10,0);
+  \coordinate (Pr) at (0,0,20);
+
+  \simplecuboid{3}{1}{2}
+  
+  \filldraw[ shift={(0,0)} , fill=brown ,line width=1ex,rounded corners = 1.5ex, color=blue,] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=4,z=0)
+    -- (tpp cs:x=0,y=4,z=2)
+    -- (tpp cs:x=0,y=2,z=4)
+    -- (tpp cs:x=0,y=0,z=2) -- cycle;
+  \filldraw[fill=red!70!black] (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=2,z=4)
+    -- (tpp cs:x=0,y=2,z=4) -- cycle;
+  \filldraw[fill=brown!80!white] (tpp cs:x=0,y=0,z=0)
+    -- (tpp cs:x=0,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=2)
+    -- (tpp cs:x=5,y=0,z=0) -- cycle;
+    
+  \simpleaxes{2}{2}{2}
+
+  \node[vanishing point,label = right:p] (p) at (Pp){};
+  \node[vanishing point,label = left:q] (q) at (Pq){};
+  \node[vanishing point,label = above:r] (r) at (Pr){};
+
+  \begin{scope}[dotted]
+    \foreach \y in {0,1}{
+      \foreach \z in {0,2}{
+        \draw (tpp cs:x=0,y=\y,z=\z) -- (p.center);}}
+    \foreach \x in {0,3}{
+      \foreach \z in {0,2}{
+        \draw (tpp cs:x=\x,y=0,z=\z) -- (q.center);}}
+    \foreach \x in {0,3}{
+      \foreach \y in {0,1}{
+        \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
+  \end{scope}
+\end{tikzpicture}
+
 
 
 \end{document}
