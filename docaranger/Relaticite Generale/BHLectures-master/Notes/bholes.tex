@@ -1,0 +1,345 @@
+%
+%  Lectures "Geometry and physics of black holes"
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+%\usepackage[ttscale=.8]{libertine}
+\usepackage{libertine} % Linux Libertine font
+\usepackage{zi4} % Inconsolata font for monospace (tt), not LibertineMono
+%\usepackage{libertinust1math} % math with Libertine font
+%\usepackage[libertine]{newtxmath} % a variant for math with Libertine in the text
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb} % symboles AMS (-> \mathbb)
+\usepackage{amsthm}  % theorem-like environments
+\usepackage[nottoc]{tocbibind} % bibliographie et index dans la table des matières
+                               % l'option 'nottoc' spécifiant de ne pas inclure la
+                               % TOC elle-même dans la TOC
+\usepackage{imakeidx} % generation de l'index
+\usepackage{fancyhdr}
+\usepackage{minitoc}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{bm} % bold math
+\SetSymbolFont{largesymbols}{bold}{OMX}{txex}{b}{n}  % to have bold large parentheses
+
+\usepackage{mathrsfs} % -> \mathscr
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed} % -> grey boxes
+\usepackage{cases} % numbered cases equations
+\usepackage{microtype}
+
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Reglages:
+%
+\hypersetup{pdftitle={Geometry and physics of black holes},
+  pdfsubject={black holes},
+  pdfauthor={Eric Gourgoulhon <eric.gourgoulhon@obspm.fr>},
+  pdfkeywords={LaTeX},
+  colorlinks=true
+}
+\pagestyle{fancyplain}
+\addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{}
+\rhead[]{\fancyplain{}{\bfseries\thepage}}
+\chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
+\cfoot{}
+%
+\setcounter{minitocdepth}{1}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\arraystretch}{1.4}
+%
+% Hauteur du texte:
+\setlength{\topmargin}{-1.8cm}  % marge haut = 2.56cm + \topmargin
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0.5cm}
+\setlength{\textheight}{22.5cm} % hauteur corps texte = \textheight
+%\setlength{\footheight}{2cm}
+%
+% Largeur du texte:
+\setlength{\textwidth}{16cm}
+\setlength{\oddsidemargin}{0.cm}
+\setlength{\evensidemargin}{0.cm}
+\setlength{\marginparsep}{0.cm}
+%
+% Figures flottantes:
+% fraction maximale d'une page pouvant etre occupe par une figure:
+\renewcommand{\topfraction}{0.8}
+% fraction minimale d'une page reservee pour le texte:
+\renewcommand{\textfraction}{0.2}
+% fraction minimale d'occupation de la page par une figure pleine page:
+\renewcommand{\floatpagefraction}{0.7}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb{S}}
+\newcommand{\Hor}{\mathscr{H}}
+\newcommand{\Sp}{\mathscr{S}}
+\newcommand{\Obs}{\mathscr{O}}
+\newcommand{\Li}{\mathscr{L}}
+\newcommand{\scri}{\mathscr{I}}
+\newcommand{\ring}{\mathscr{R}}
+\newcommand{\E}{\mathscr{E}}
+\renewcommand{\th}{\theta}
+\newcommand{\ph}{\varphi}
+\newcommand{\tph}{{\tilde\varphi}}
+\newcommand{\ti}{{\tilde t}}
+\newcommand{\tlamb}{{\tilde\lambda}}
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\Dd}{\mathrm{d}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\w}[1]{\bm{#1}}
+\newcommand{\wpar}{\w{\partial}}
+\newcommand{\wnab}{\w{\nabla}}
+\newcommand{\vw}[1]{\overrightarrow{\w{#1}}}
+\newcommand{\vp}[1]{\overrightarrow{#1}}
+\newcommand{\vvw}[1]{\stackrel{\twoheadrightarrow}{\w{#1}}}
+\newcommand{\uu}[1]{\underline{\w{#1}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\weps}{\w{\eps}}
+\newcommand{\wepsS}{{}^{\Sp}\!\!\weps}
+\newcommand{\epsS}{{}^{\Sp}\!\!\eps}
+\newcommand{\el}{\ell}
+\newcommand{\wl}{\w{\el}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\encadre}[1]{\fbox{$\displaystyle #1$}}
+\newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\derd}[2]{\frac{\D #1}{\D #2}}
+\newcommand{\dderd}[2]{\frac{\D^2 #1}{\D {#2}^2}}
+\newcommand{\dert}[2]{{\partial #1}/{\partial #2}}
+\newcommand{\Liesymbol}{\mathcal{L}}
+\newcommand{\Lie}[1]{\w{\Liesymbol}_{\w{#1}}\,}
+\newcommand{\Liec}[1]{{\Liesymbol}_{\w{#1}}\,}
+\newcommand{\equalH}{\stackrel{\Hor}{=}}
+\newcommand{\equalS}{\stackrel{\Sp}{=}}
+\newcommand{\DS}{{}^\Sp\!\!\w{D}}
+\newcommand{\DSc}{{}^\Sp\!\!D}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\qand}{\qquad\mbox{and}\qquad}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\lld}{\textbf{(}}
+\newcommand{\rld}{\textbf{)}}
+\newcommand{\Lld}{\bm{\big(}}
+\newcommand{\Rld}{\bm{\big)}}
+
+\renewcommand{\labelitemii}{$\circ$} % to avoid --
+
+\newcommand{\vcentertab}[1]{\begin{tabular}{l} {#1} \end{tabular}}
+
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\arctantwo}{arctan2}
+
+% slash integral
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\dashint{\Xint-}
+
+\newcommand{\defin}[1]{\textbf{\itshape #1}}
+
+\newcounter{remarkCounter}[section]
+\newenvironment{remark}%
+{\refstepcounter{remarkCounter}
+\par\medskip\noindent\small\textbf{Remark \theremarkCounter:}}%
+{\par\medskip}
+
+\newcounter{exampleCounter}[chapter]
+\newenvironment{example}[1][]%
+{\refstepcounter{exampleCounter}
+\par\medskip\noindent\small\textbf{Example \theexampleCounter\ifthenelse{\equal{#1}{}}{: }{ (#1):}}}%
+{\par\medskip}
+
+\newenvironment{hist}[1][]%
+%{\par\medskip\noindent\small\textbf{Historical note:}}%
+{\par\medskip\noindent\small\textbf{Historical note \ifthenelse{\equal{#1}{}}{: }{ (#1):}}}%
+{\par\medskip}
+
+\newmdenv[backgroundcolor=gray!10!white,roundcorner=5pt,hidealllines=true]{greybox}
+
+
+%\theoremstyle{definition} % upright text in theorems
+
+\mdfdefinestyle{propstyle}{%
+linecolor=black,linewidth=2pt,%
+hidealllines=true,
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+backgroundcolor=gray!10!white,
+roundcorner=5pt,
+innertopmargin=\topskip,
+}
+
+\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+\mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
+
+\mdfdefinestyle{notationstyle}{%
+hidealllines=true,
+backgroundcolor=gray!10!white,
+roundcorner=5pt
+}
+
+\newenvironment{notation}%
+{\par\smallskip\noindent\textbf{Notation:}}%
+{\par\smallskip}
+
+\surroundwithmdframed[style=notationstyle]{notation}
+
+%\newmdenv[style=notationstyle]{notation}%
+%{\par\medskip\noindent\textbf{Notation:}}
+
+
+%\newenvironment{remark}[1][]%
+%{\begin{description} \item[\emph{Remark #1:}]\it}%
+%{\end{description}}
+
+%\theoremstyle{remark}
+%\newtheorem{remark}{Remark}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\includeonly{intro,cadre,ref}
+
+\begin{document}
+
+\begin{titlepage}
+\
+\vspace{4cm}
+\begin{center}
+{\Huge\textbf{Geometry and physics of black holes}}\\[2ex]
+{\Huge\emph{Lecture notes}}\\[3ex]
+{\large IAP, Paris, March-April 2016} \\[1ex]
+{\large CP3, UCL, Louvain-la-Neuve, November 2016}\\[1ex]
+{\large DIAS-TH, BLTP, Dubna, May 2017}\\[1ex]
+{\large Les Houches, July 2018}\\[1ex]
+{\large CSGC, IITM, Chennai, January 2022}\\[1ex]
+{\large ENS, Paris, May-June 2023}\\[1ex]
+{\large AEI, Potsdam, December 2023}\\[1ex]
+{\large IHP, Paris, March 2024}\\[1ex]
+{\large ENS, Paris, April-June 2025}\\[8ex]
+Éric Gourgoulhon\\
+Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes\\
+CNRS, Observatoire de Paris - PSL, Sorbonne Université\\
+\href{mailto:eric.gourgoulhon@obspm.fr}{\texttt{eric.gourgoulhon@obspm.fr}}\\[8ex]
+\url{https://relativite.obspm.fr/blackholes}\\[8ex]
+{\Huge --- DRAFT ---}\\[2ex]
+{version of 28 April 2025}\\[2ex]
+\emph{\Large Corrections and comments are welcome}
+\end{center}
+\end{titlepage}
+
+
+\dominitoc
+
+\newpage
+
+\include{pre}  % Preface
+
+\setcounter{tocdepth}{1}  % 1 = only chapters and sections in TOC
+\tableofcontents
+
+\part{Foundations}
+
+\include{fra}  % General framework
+
+\include{def}  % The concept of black hole 1: Horizons as null hypersurfaces
+
+\include{neh}  % The concept of black hole 2: Non-expanding horizons
+
+\include{glo}  % The concept of black hole 3: The global view
+
+\include{sta}  % Stationary black holes
+
+\part{Schwarzschild black hole} \label{P:sch}
+
+\include{sch}  % Schwarzschild black hole
+
+\include{ges}  % Geodesics in Schwarzschild spacetime: generic and timelike cases
+
+\include{gis}  % Null geodesics and images in Schwarzschild spacetime
+
+\include{max}  % Maximal extension of Schwarzschild spacetime
+
+\part{Kerr black hole} \label{P:ker}
+
+\include{ker}  % Kerr black hole
+
+\include{gek}  % Geodesics in Kerr spacetime: generic and timelike cases
+
+\include{gik}  % Null geodesics and images in Kerr spacetime
+
+\include{exk}  % Extremal Kerr black hole
+
+\part{Dynamical black holes}
+
+\include{lem}  % Black hole formation 1: dust collapse
+
+\include{vai}  % Black hole formation 2: Vaidya collapse
+
+\include{evo}  % Evolution and thermodynamics of black holes
+
+\include{tha}  % Black hole thermodynamics beyond general relativity
+
+\include{loc}  % The quasi-local approach: trapping horizons
+
+%\chapter{Black holes and gravitational waves}
+
+%\chapter{Higher-dimensional solutions and black holes in alternative theories} \label{s:hid}
+
+\appendix
+
+\part{Appendices}
+
+\include{bas}  % Basic differential geometry
+
+\include{geo}  % Geodesics
+
+\include{ksm}  % Kerr-Schild metrics
+
+\include{sam}  % SageMath computations
+
+\include{gyo}  % Gyoto computations
+
+\include{web}  % On the Web
+
+\include{ref}
+
+\cleardoublepage
+\phantomsection % to have correct hyperlink to index in TOC
+
+%\indexprologue{Only names of persons who are explicitly mentioned in the text, mostly
+%in historical notes, are listed here.}
+%\printindex[pers]
+
+\cleardoublepage
+\phantomsection % to have correct hyperlink to index in TOC
+
+\printindex
+
+\end{document}

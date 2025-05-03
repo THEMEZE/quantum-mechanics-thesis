@@ -1,0 +1,26 @@
+[
+    {
+        "file1-1": "../docaranger/Agregation_Physique/Moteurs/Cours/puissance.pdf",
+        "page1-1": 1,
+        "file2-1": "../docaranger/Agregation_Physique/Moteurs/Cours/presentation_2024.pdf",
+        "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/Agregation_Physique/Electronique/Cours/electronique.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/Agregation_Physique/Electronique/Cours/presentation_1.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/Agregation_Physique/Electronique/Cours/presentation_2.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/Agregation_Physique/Electronique/Cours/presentation_3.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/Agregation_Physique/Electronique/Cours/presentation_4.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/Agregation_Physique/Electronique/Cours/presentation_4.pdf",
+        "page2-4": 1
+    }
+]
