@@ -20,18 +20,26 @@
 
 \section*{Introduction}
 
-Dans ce chapitre, nous étudions l’évolution d’un gaz quantique unidimensionnel après une rupture de symétrie initiale. Nous utilisons un gaz de bosons ultra-froids, confiné dans une géométrie unidimensionnelle. Ce gaz est bien décrit par le modèle intégrable de Lieb-Liniger. Les interactions entre atomes sont courtes et répulsives.
+%Dans ce chapitre, nous étudions l’évolution d’un gaz quantique unidimensionnel après une rupture de symétrie initiale. Nous utilisons un gaz de bosons ultra-froids, confiné dans une géométrie unidimensionnelle. Ce gaz est décrit par le modèle intégrable de Lieb-Liniger. Les interactions entre atomes sont faibles et répulsives.
 
-Nous préparons d’abord un gaz homogène (Fig \ref{fig:BiPart.insitut}). Ensuite, nous supprimons brutalement une moitié du nuage. Cela crée une frontière nette entre deux zones : une avec des atomes, l’autre vide (Fig \ref{fig:BiPart.coupure1} (a),(b),(c),(d)). Cette configuration correspond à ce qu’on appelle un « quench bipartite ».
+%Nous préparons d’abord un gaz homogène (Fig \ref{fig:BiPart.insitut}). Ensuite, nous supprimons brutalement une moitié du nuage. Cela crée une frontière nette entre deux zones : une avec des atomes , l’autre vide (Dans notre protocole la partie sans des atomes se trouve en $x<0$ et avec atomes en $x>0$) (Fig \ref{fig:BiPart.coupure1} (a),(b),(c),(d)). Cette configuration correspond à ce qu’on appelle un « quench bipartite ».
 
-\begin{figure}[H]
+Parmi les systèmes à N corps, les modèles intégrables occupent une place particulière, notamment dans le contexte des dynamiques hors d’équilibre et de la thermalisation généralisée. Contrairement aux systèmes génériques, ces modèles présentent une infinité de constantes du mouvement, empêchant la thermalisation au sens habituel. Cela conduit à l’émergence d’une thermalisation généralisée, décrite non par l’ensemble canonique, mais par une ensemble à entropie maximale sous contraintes — souvent formalisé par l’\index{Ensemble Thermodynamique Général (GGE)}.
+
+Dans ce chapitre, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel suite à une rupture initiale de symétrie. Le système étudié est un gaz de bosons ultra-froids confiné dans une géométrie unidimensionnelle, dont la dynamique est décrite par le modèle intégrable de Lieb-Liniger. Les interactions interatomiques sont faibles et de nature répulsive, ce qui permet d’explorer un régime faiblement corrélé tout en conservant des effets quantiques collectifs non triviaux.\\
+
+La préparation initiale consiste en un gaz homogène à profil de densité uniforme (Fig.~\ref{fig:BiPart.insitut}). Une opération de coupe abrupte est ensuite réalisée, supprimant spatialement la moitié gauche du nuage atomique. Il en résulte une condition initiale présentant une discontinuité marquée : la région $x<0$ est vide, tandis que des atomes occupent la région $x>0$ (Fig.~\ref{fig:BiPart.coupure1} (a)-(d)). Cette configuration correspond à un quench bipartite, c’est-à-dire une mise hors équilibre induite par une discontinuité initiale dans la densité.
+
+\begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth , page = 4 ]{Shema.pdf}
+	\includegraphics[width=0.5\textwidth , page = 4 ]{Shema.pdf}	
+	%\caption{a) Facteur d'occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à l'équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité spatiale linéique $n_0 = 56~\mu\mathrm{m}^{-1}$, soit une potentielle chimique $\mu = 65~\mathrm{nK}$.  
+%(b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta)\, d\theta \equiv n_0 = 56~\mu\mathrm{m}^{-1}$.  
+%(c) Facteur d'occupation initial $\nu_0(\theta)$ correspondant au cas présenté en a).}
+	\caption{a) Facteur d’occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à un état d’équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité linéique homogène $n_0 = 56~\mu\mathrm{m}^{-1}$. Ces paramètres correspondent à une potentielle chimique $\mu = 65~\mathrm{nK}$.
+b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta), d\theta$, constante et égale à $n_0 = 56~\mu\mathrm{m}^{-1}$.
+c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution thermique illustrée en a).}
 	\label{fig:BiPart.insitut}
-	\caption{a) Facteur d'occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à l'équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité spatiale linéique $n_0 = 56~\mu\mathrm{m}^{-1}$, soit une potentielle chimique $\mu = 65~\mathrm{nK}$.  
-(b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta)\, d\theta \equiv n_0 = 56~\mu\mathrm{m}^{-1}$.  
-(c) Facteur d'occupation initial $\nu_0(\theta)$ correspondant au cas présenté en a).}
-	
 \end{figure}
 
 
@@ -76,45 +84,78 @@ Nous préparons d’abord un gaz homogène (Fig \ref{fig:BiPart.insitut}). Ensui
 %\end{figure}
 
 
-Le gaz évolue ensuite selon la dynamique de son Hamiltonien. Nous observons le déplacement de la frontière au cours du temps. Pour cela, nous mesurons le profil de densité atomique à différents temps d’évolution.
+%Le gaz évolue ensuite selon la dynamique de son Hamiltonien. Nous observons le déplacement de la frontière au cours du temps. Pour cela, nous mesurons le profil de densité atomique à différents temps d’évolution.
 
-Nous voyons que la frontière se propage de manière balistique. La largeur du profil de densité augmente de façon linéaire avec le temps. Ce comportement est prédit par la théorie de l’hydrodynamique généralisée (GHD). Cette théorie décrit comment les propriétés locales d’un système intégrable évoluent dans le temps (Fig \ref{fig:BiPart.coupure1} (e),(f),(g)). %Elle repose sur une distribution appelée « distribution de rapidité ». Cette fonction décrit la répartition des quasi-particules dans le système.
+%Nous voyons que la frontière se propage de manière balistique. La largeur du profil de densité augmente de façon linéaire avec le temps. Ce comportement est prédit par la théorie de l’hydrodynamique généralisée (GHD). Cette théorie décrit comment les propriétés locales d’un système intégrable évoluent dans le temps (Fig \ref{fig:BiPart.coupure1} (e),(f),(g)). %Elle repose sur une distribution appelée « distribution de rapidité ». Cette fonction décrit la répartition des quasi-particules dans le système.
 
-Dans notre cas, GHD prévoit un profil de densité particulier si le gaz initial est à température nulle. Les données expérimentales sont proches de cette prédiction, mais avec de légers écarts. Ces écarts peuvent venir de la température non nulle du gaz ou d’autres imperfections expérimentales.
+Après la préparation initiale, le gaz évolue selon la dynamique unitaire régie par son Hamiltonien. Pour suivre cette évolution, nous mesurons le profil de densité atomique à différents temps, ce qui permet de visualiser la propagation de la discontinuité initiale.
 
-Nous montrons que le profil de densité contient beaucoup d’informations. En théorie, on peut retrouver la distribution de rapidité initiale à partir du profil de frontière. Cela permettrait d’avoir une méthode d’analyse très puissante, comme une sorte de « thermomètre généralisé ». %Cependant, cette méthode est sensible au bruit dans les données, surtout dans les parties du profil où la densité est très faible. Pour contourner cela, nous utilisons un modèle simple avec trois paramètres pour approximer la distribution de rapidité. Ce modèle donne de bons résultats et reste plus robuste.
+Nous observons que la frontière entre les régions occupée et vide se propage de manière balistique : la largeur du profil de densité croît linéairement avec le temps. Ce comportement est en accord avec les prédictions de la théorie de l’hydrodynamique généralisée (GHD), qui fournit une description efficace de l’évolution spatio-temporelle des observables locales dans les systèmes intégrables (Fig.~\ref{fig:BiPart.coupure1} (e)-(g)).\\
 
-Enfin, nous utilisons une nouvelle méthode expérimentale pour mesurer la distribution de rapidité localement (Part {??}) , à l’intérieur du profil. Nous observons une asymétrie, comme prévu par la théorie. D’un côté, la distribution est lisse et large ; de l’autre, elle est plus abrupte, comme pour un état fondamental. Cette observation confirme le comportement prédictif de la GHD, bien que la résolution spatiale limite la finesse des détails que nous pouvons observer.
+%Dans notre cas, GHD prévoit un profil de densité particulier si le gaz initial est à température nulle. Les données expérimentales sont proches de cette prédiction, mais avec de légers écarts. Ces écarts peuvent venir de la température non nulle du gaz ou d’autres imperfections expérimentales.
+
+%Nous montrons que le profil de densité contient beaucoup d’informations. En théorie, on peut retrouver la distribution de rapidité initiale à partir du profil de frontière. Cela permettrait d’avoir une méthode d’analyse très puissante, comme une sorte de « thermomètre généralisé ». %Cependant, cette méthode est sensible au bruit dans les données, surtout dans les parties du profil où la densité est très faible. Pour contourner cela, nous utilisons un modèle simple avec trois paramètres pour approximer la distribution de rapidité. Ce modèle donne de bons résultats et reste plus robuste.
+
+%Enfin, nous utilisons une nouvelle méthode expérimentale pour mesurer la distribution de rapidité localement (Part {??}) , à l’intérieur du profil. Nous observons une asymétrie, comme prévu par la théorie. D’un côté, la distribution est lisse et large ; de l’autre, elle est plus abrupte, comme pour un état fondamental. Cette observation confirme le comportement prédictif de la GHD, bien que la résolution spatiale limite la finesse des détails que nous pouvons observer.
+
+Dans notre configuration, la théorie de l’hydrodynamique généralisée (GHD) prédit un profil de densité caractéristique dans le cas d’un gaz initial à température nulle. Les mesures expérimentales obtenues sont globalement en accord avec cette prédiction, bien qu’on observe de légers écarts. Ces déviations peuvent être attribuées à une température initiale non nulle, ainsi qu’à d’éventuelles imperfections expérimentales.
+
+Nous montrons que le profil de densité contient une richesse d’information sur l’état initial du système. En particulier, la théorie suggère qu’il est, en principe, possible de reconstruire la distribution de rapidité initiale à partir du profil mesuré au niveau de la frontière. Cela ouvre la voie à une méthode d’analyse puissante, que l’on peut interpréter comme une forme de thermomètre généralisé dans le cadre de la GHD.\\
+
+Enfin, nous mettons en œuvre une nouvelle méthode expérimentale permettant de mesurer localement la distribution de rapidité au sein du profil de densité (voir Partie {??}). Nous observons une asymétrie marquée dans la forme de cette distribution : d’un côté, elle est large et lisse, tandis que de l’autre, elle présente une coupure abrupte, caractéristique d’un état proche du fondamental. Cette observation est en accord avec les prédictions théoriques de la GHD, bien que la résolution spatiale de notre dispositif limite la précision des détails accessibles.
 
 
 \section{Dispositif expérimental}
 
-Nous utilisons une puce atomique pour produire un gaz ultra-froid d’atomes de rubidium 87. (cf {??}) Les atomes sont dans l’état étiré $|F=2, m_F=2\rangle$. Un champ magnétique longitudinal uniforme de $B_0 = 3,36 ~\mathrm{G}$ est appliqué.
+%Nous utilisons une puce atomique pour produire un gaz ultra-froid d’atomes de rubidium 87. (cf {??}) Les atomes sont dans l’état étiré $|F=2, m_F=2\rangle$. Un champ magnétique longitudinal uniforme de $B_0 = 3,36 ~\mathrm{G}$ est appliqué.
 
 %Le piégeage transverse est assuré par trois microfils parallèles déposés sur la puce. Ces fils portent des courants alternatifs modulés à $400$ MHz. Cette configuration supprime les défauts dus à la rugosité des fils. Elle permet aussi de contrôler indépendamment les confinements longitudinal et transverse~\cite{PhysRevLett.98.263201}.
 
 %Les atomes sont piégés à $7\,\mu$m de la surface de la puce et à $15\,\mu$m des fils. Cela donne un confinement transverse fort. Ce potentiel transverse est bien décrit par un piège harmonique. Sa fréquence est $\omega_\perp/2\pi = 2{,}56$ kHz pour les données présentées ici.
 
-Par évaporation radiofréquence, nous refroidissons le gaz jusqu'à une température de $T = 100~\mathrm{nK}$. Le potentiel chimique est $\mu/k_B = 45~\mathrm{nK}$. Ainsi, on a $\mu/(\hbar\omega_\perp) = 0,4$ et $k_B T/(\hbar\omega_\perp) = 0,8$. Le gaz entre alors dans le régime unidimensionnel.
+Nous produisons un gaz ultra-froid d’atomes bosoniques de $^{87}$Rb dans l’état $|F=2,m_F=2\rangle$ à l’aide d’une puce atomique. En plus d’un champ magnétique longitudinal homogène $B_0 = 3{,}36$G, le confinement transverse est assuré par trois microfils parallèles déposés sur la puce (représentés en bleu sur la Fig.\ref{fig:setup}(a)) parcourus par des courants alternatifs modulés à $400$MHz. Cette configuration permet d’éliminer les effets de rugosité des fils et d’ajuster indépendamment les confinements longitudinal et transverse \cite{PhysRevLett.98.263201}. Les atomes sont piégés à $7\mu$m de la surface de la puce et à $15~\mu$m des fils, ce qui permet un confinement transverse intense. Le potentiel transverse est bien décrit par un potentiel harmonique de fréquence $\omega_{\perp}/2\pi = 2{,}56$~kHz dans les données présentées ici.
 
-Le couplage effectif en 1D est donné par $g = 2 a_{3D} \hbar \omega_\perp$~(??), avec $a_{3D} = 5.3~\mathrm{nm}$, la longueur de diffusion en 3D pour le rubidium 87~(cf {??}).Le paramètre sans dimension de Lieb est $\gamma = mg / (\hbar^2 n_0)$, avec $n_0$ la densité linéaire. Il varie entre $0,004$ et $0,007$. La température vérifie $T \ll n_0^{3/2} \sqrt{\hbar^2 g / m}/k_B$, ce qui place le gaz dans le régime de quasi-condensat~(cf {??}).
+%Par évaporation radiofréquence, nous refroidissons le gaz jusqu'à une température de $T = 100~\mathrm{nK}$. Le potentiel chimique est $\mu/k_B = 45~\mathrm{nK}$. Ainsi, on a $\mu/(\hbar\omega_\perp) = 0,4$ et $k_B T/(\hbar\omega_\perp) = 0,8$. Le gaz entre alors dans le régime unidimensionnel.
 
-Le piégeage longitudinal est assuré par quatre fils supplémentaires. Ces fils sont placés de part et d’autre des trois microfils transverses (voir Fig.~??(a)). Ils sont éloignés du centre de la puce. Le potentiel longitudinal est alors bien approché par une série de polynômes : $V(x) = \sum_i a_i x^i$.Nous ajustons les courants dans ces fils pour annuler les termes linéaire, quadratique et cubique ($a_1$, $a_2$, $a_3$). Le terme dominant est alors le terme quartique : $V(x) = a_4 x^4$.Ce type de piège crée une densité atomique quasi homogène sur une grande longueur. C’est important pour notre étude, car le protocole de coupure bipartite suppose un système semi-infini.Un exemple de profil de densité dans un tel potentiel est donné en gris sur la Fig.~\ref{fig:setup}(b). La densité linéaire $n_0$ reste constante à $10\%$ près sur une longueur d’environ $250\,\mu$m.
+Un refroidissement évaporatif par radiofréquence nous permet d’obtenir un nuage atomique à une température d’environ $T = 100$~nK, pour un potentiel chimique $\mu / k_B = 45$~nK. Avec ces paramètres, on obtient les rapports $\mu / (\hbar \omega_{\perp}) = 0{,}4$ et $k_B T / (\hbar \omega_{\perp}) = 0{,}8$, ce qui place le gaz dans le régime unidimensionnel. Le couplage effectif en 1D pour des atomes dans l’état fondamental transverse est donné par $g = 2 a_{3D} \hbar \omega_{\perp}$ \cite{PhysRevLett.81.938}, où $a_{3D} = 5{,}3$nm est la longueur de diffusion tridimensionnelle du $^{87}$Rb\cite{PhysRevLett.89.283202}. Des détails supplémentaires sur l’expérience sont disponibles dans \cite{duboistel-04749900}.
 
-Pour créer la coupure initiale, nous utilisons une méthode de sélection spatiale~(Part {??}). %Nous éclaireons le bord gauche du nuage avec un faisceau quasi résonant. Ce faisceau est proche de la transition $F=2 \rightarrow F'=3$ de la raie D2. Il est perpendiculaire à l’axe longitudinal $x$.Les atomes exposés à ce faisceau subissent une pression de radiation. Une exposition de $30\,\mu$s (environ 15 cycles d’absorption/réémission) suffit pour qu’ils quittent le piège. Le faisceau est façonné à l’aide d’un dispositif à micro-miroirs (DMD) pour ne viser qu’un bord du gaz.
+%Le couplage effectif en 1D est donné par $g = 2 a_{3D} \hbar \omega_\perp$~(??), avec $a_{3D} = 5.3~\mathrm{nm}$, la longueur de diffusion en 3D pour le rubidium 87~(cf {??}).Le paramètre sans dimension de Lieb est $\gamma = mg / (\hbar^2 n_0)$, avec $n_0$ la densité linéaire. Il varie entre $0,004$ et $0,007$. La température vérifie $T \ll n_0^{3/2} \sqrt{\hbar^2 g / m}/k_B$, ce qui place le gaz dans le régime de quasi-condensat~(cf {??}).
 
-Cette méthode crée une frontière nette entre une région vide et un gaz homogène. Cette netteté est surtout limitée par la résolution de l’image, de l’ordre du micromètre. L’effet de réabsorption des photons diffusés peut aussi réduire la netteté. Pour l’atténuer, on détune le faisceau de $15 ~\mathrm{MHz}$ par rapport à la transition D2.
+%Le piégeage longitudinal est assuré par quatre fils supplémentaires. Ces fils sont placés de part et d’autre des trois microfils transverses (voir Fig.~??(a)). Ils sont éloignés du centre de la puce. Le potentiel longitudinal est alors bien approché par une série de polynômes : $V(x) = \sum_i a_i x^i$.Nous ajustons les courants dans ces fils pour annuler les termes linéaire, quadratique et cubique ($a_1$, $a_2$, $a_3$). Le terme dominant est alors le terme quartique : $V(x) = a_4 x^4$.Ce type de piège crée une densité atomique quasi homogène sur une grande longueur. C’est important pour notre étude, car le protocole de coupure bipartite suppose un système semi-infini.Un exemple de profil de densité dans un tel potentiel est donné en gris sur la Fig.~\ref{fig:setup}(b). La densité linéaire $n_0$ reste constante à $10\%$ près sur une longueur d’environ $250\,\mu$m.
 
-Le profil de densité après cette sélection est montré en jaune dans la Fig.~\ref{fig:setup}. Le gaz est alors homogène à $10\%$ près sur environ $200\,\mu$m.
+%Pour créer la coupure initiale, nous utilisons une méthode de sélection spatiale~(Part {??}). %Nous éclaireons le bord gauche du nuage avec un faisceau quasi résonant. Ce faisceau est proche de la transition $F=2 \rightarrow F'=3$ de la raie D2. Il est perpendiculaire à l’axe longitudinal $x$.Les atomes exposés à ce faisceau subissent une pression de radiation. Une exposition de $30\,\mu$s (environ 15 cycles d’absorption/réémission) suffit pour qu’ils quittent le piège. Le faisceau est façonné à l’aide d’un dispositif à micro-miroirs (DMD) pour ne viser qu’un bord du gaz.
 
-Après cette préparation, nous relâchons le confinement longitudinal tout en maintenant le piège transverse. La frontière initiale s’élargit avec le temps. Nous suivons cette dynamique en enregistrant les profils de densité $n(x;t)$ à différents temps d’évolution.
+%Cette méthode crée une frontière nette entre une région vide et un gaz homogène. Cette netteté est surtout limitée par la résolution de l’image, de l’ordre du micromètre. L’effet de réabsorption des photons diffusés peut aussi réduire la netteté. Pour l’atténuer, on détune le faisceau de $15 ~\mathrm{MHz}$ par rapport à la transition D2.
+
+%Le profil de densité après cette sélection est montré en jaune dans la Fig.~\ref{fig:setup}. Le gaz est alors homogène à $10\%$ près sur environ $250\,\mu$m.
+
+%Après cette préparation, nous relâchons le confinement longitudinal tout en maintenant le piège transverse. La frontière initiale s’élargit avec le temps. Nous suivons cette dynamique en enregistrant les profils de densité $n(x;t)$ à différents temps d’évolution.
+
+
+
+
+
+Le paramètre sans dimension de Lieb $\gamma = m g / (\hbar^2 n_0)$, avec $n_0$ la densité linéique, se situe dans l’intervalle $[0{,}4,0{,}7] \times 10^{-2}$, tandis que la température satisfait l’inégalité $T \ll n_0^{3/2} \sqrt{\hbar^2 g / m} / k_B$. Ainsi, les gaz obtenus se trouvent profondément dans le régime de quasicondensat \cite{PhysRevLett.91.040403}.
+
+Le piégeage longitudinal est assuré par des courants continus circulant dans quatre fils placés de part et d’autre des trois microfils de confinement transverse, comme illustré sur la Fig.\ref{fig:setup}(a). Étant donné que ces fils sont situés loin du centre du nuage atomique, le potentiel longitudinal peut être développé en série polynomiale : $V(x) = \sum_i a_i x^i$. Les quatre premiers coefficients $a_i$ peuvent être ajustés en modulant les courants dans ces fils. Il est ainsi possible d’annuler les termes linéaire, quadratique et cubique ($a_1 = a_2 = a_3 = 0$), de sorte que le terme dominant du potentiel soit quartique : $V(x) = a_4 x^4$. Une telle forme de potentiel permet d’obtenir une densité atomique quasi homogène sur une région relativement étendue, condition essentielle à l’étude de dynamiques hors équilibre telles que le protocole de coupure bipartite, qui suppose un système semi-infini. Un exemple de profil de densité linéique obtenu dans ce potentiel quartique est représenté en gris sur la Fig.\ref{fig:setup}(b). La densité linéique $n_0$ y reste constante à $10\%$ près sur une distance d’environ $250~\mu$m.
+
+Pour réaliser expérimentalement une bipartition initiale nette, nous utilisons la méthode de sélection spatiale introduite dans \cite{PhysRevLett.133.113402}. Une partie du nuage, initialement dans un état stationnaire global dans le piège quartique, est illuminée à son extrémité gauche par un faisceau lumineux quasi résonant avec la transition $F=2 \rightarrow F'=3$ de la raie D2, se propageant perpendiculairement à l’axe $x$. Les atomes exposés subissent une pression de radiation : après $30~\mu$s d’illumination, correspondant à environ 15 cycles absorption/réémission, ces atomes acquièrent une énergie suffisante pour quitter le piège. Le faisceau est façonné spatialement à l’aide d’un dispositif à micromiroirs numériques (DMD) afin de ne cibler qu’un bord du gaz. Ce protocole produit une frontière nette entre une région vide et un gaz quasi homogène, rendue possible par l’utilisation du piège quartique. La résolution de cette coupure est limitée principalement par la résolution du système d’imagerie (quelques microns). L’éventuelle réabsorption des photons diffusés par les atomes non illuminés est réduite en désaccordant le faisceau pousseur de $15$MHz par rapport à la transition D2. Un exemple de profil de densité après application de ce protocole est illustré en jaune sur la Fig.\ref{fig:setup}(b).
+
+Une fois la coupure réalisée, le confinement longitudinal est supprimé tout en maintenant le confinement transverse. La frontière initialement abrupte s’élargit au cours du temps. Cette dynamique est étudiée par imagerie, en enregistrant les profils de densité longitudinale $n(x,t)$ pour différentes durées d’évolution $t$.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.90\linewidth]{Atom_chip.png}
+\caption{(a) Schéma de la puce atomique. Les $3$ fils bleus assurent le confinement transverse, les $4$ autres fils (gris) génèrent le potentiel longitudinal. Le nuage atomique, représenté par une ellipse rouge, est piégé à $12~\mu$m au-dessus des fils. (b) Profils de densité linéique extraits par imagerie par absorption. En gris : gaz piégé dans un potentiel quartique. En jaune : après application du faisceau pousseur pendant $30~\mu$s, suivi d’un temps de vol de $1$~ms.}
+\label{fig:setup}
+\end{figure}
 
 \section{Prédictions de la GHD}\label{sec.GHDpredictions}
 \label{sec:ghd}
 
 Le dispositif expérimental décrit ci-dessus peut être analysé théoriquement comme suit. Au cours de l'évolution temporelle, la frontière nette initiale du nuage devient plus lisse et les dérivées temporelles des quantités locales diminuent. Après un certain temps, après un lissage, on s'attend à ce que le gaz puisse être décrit localement par des états stationnaires.
 
-Les états stationnaires du modèle de Lieb-Liniger sont complètement caractérisés par leur distribution de rapidité $\rho(\theta)$. Alternativement, ces états peuvent être caractérisés par une fonction $\nu(\theta)$ appelée "facteur d'occupation".% qui prend des valeurs entre 0 et 1, et qui est liée à la distribution de rapidité $\rho(\theta)$ par
+Les états stationnaires du modèle de Lieb-Liniger sont complètement caractérisés par leur distribution de rapidité $\rho(\theta)$. Alternativement, ces états peuvent être caractérisés par le facteur d'occupation $\nu(\theta)$.% qui prend des valeurs entre 0 et 1, et qui est liée à la distribution de rapidité $\rho(\theta)$ par
 %\begin{equation}
 %\nu(\theta) = \frac{\rho(\theta)}{\rho_s(\theta)} \mbox{, \qquad où \qquad } \rho_s(\theta) =
 %\frac{m}{2\pi \hbar} + \int \frac{d\theta'}{2\pi} \Delta(\theta-\theta') \rho(\theta') ,
@@ -140,10 +181,9 @@ et une deuxième relation qui fixe la vitesse effective $v^{\rm{eff}}_{[\nu]}$ c
 %\end{equation}
 %\end{subequations}
 %Plus précisément, l'équation~(\ref{eq:GHD}a) est la forme à l'échelle d'Euler de la GHD, une équation sans diffusion valable aux grandes échelles. Des corrections diffuses, qui apparaissent sous forme d'un terme de type Navier-Stokes~\cite{de2018hydrodynamic,de2019diffusion,bastianello2020thermalization,de2022correlation}, ou même des corrections dispersives~\cite{de2023hydrodynamic}, ont également été étudiées théoriquement. Cependant, ces effets sont secondaires et n'ont pas été observés expérimentalement jusqu'à présent. Nous verrons plus bas que nos données expérimentales respectent le collage d'échelle attendu à l'échelle d'Euler (Fig.~\ref{fig:euler}), de sorte que ces effets semblent négligeables dans notre situation, du moins pour l'analyse des profils de frontière. Cela est également compatible avec une étude théorique récente dans le régime de faible interaction, qui a conclu que les effets diffusiques devraient être très faibles~\cite{moller2024identifying}. Par conséquent, dans cet article, nous ignorons la possibilité d'effets diffusiques secondaires (ainsi que tous les effets d'ordre supérieur) dans notre modélisation et nous nous en tenons à l'équation de GHD à l'échelle d'Euler ci-dessus.
-\begin{figure}[H]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth , page = 5 ]{Shema.pdf}
-	\label{fig:BiPart.coupure1}
 	\caption{
 (a) À l'instant $t = 0^+$, immédiatement après le « quench bipartite » en $x = 0$, le facteur d'occupation est donné par $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$ pour $x > 0$ et est nul pour $x < 0$. Le bord initial représenté en tirets par l'ensemble des points $(x(s; t = 0^+) = 0,\ \theta(s; t = 0^+))$.
 (b) Densité spatiale linéique $n(x)$ : en pointillés, $n(x; t = 0^-) = \int \rho(x, \theta; t = 0^-) \, \mathrm{d}\theta = n_0 = 56~\mu\mathrm{m}^{-1}$ juste avant le quench ; en ligne pleine, $n(x; t = 0^+) = n_0$ pour $x > 0$ et $0$ pour $x < 0$.
@@ -153,6 +193,7 @@ et une deuxième relation qui fixe la vitesse effective $v^{\rm{eff}}_{[\nu]}$ c
 (f) Densité spatiale réduite $n^\ast(x/t; t)$.
 (g) Pour les atomes à droite de la coupure : en pointillés, $\nu^\ast(x(s;t)/t, \theta) = \nu_0(\theta)$ ; en ligne pleine, $\nu^\ast(x(s;t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta(s;t)$ et nul pour $\theta > \theta(s;t)$. Le raisonnement est similaire pour les atomes à gauche de la coupure.
 }
+	\label{fig:BiPart.coupure1}
 	
 \end{figure}
 
@@ -185,10 +226,29 @@ Cette équation peut être résolue numériquement pour toute distribution initi
 %\paragraph{Solution pour un système initialement dans l'état fondamental.}
 %Pour illustrer le formalisme ci-dessus, explorons ses implications pour le cas spécial où la moitié droite du système est initialement dans l'état fondamental. Dans ce cas, le facteur d'occupation initial $\nu_0 (\theta)$ est une mer de Fermi : $\nu_0(\theta) = 1$ pour $|\theta| < \Delta\theta_0$, et $\nu_0(\theta) = 0$ sinon. Le rayon de Fermi $\Delta\theta_0$ dépend de la densité linéaire du gaz dans cette région, qui est constante. La distribution du facteur d'occupation se découpe ainsi en deux régions : pour $|\theta| > \Delta\theta_0$, $\nu_0(\theta) = 0$, et pour $|\theta| < \Delta\theta_0$, $\nu_0(\theta) = 1$. Au temps $t=0$, nous avons donc une discontinuité dans la distribution du facteur d'occupation à $\theta=\pm \Delta\theta_0$.
 
+\section{Données expérimentales}\label{sec.ed}
+
+L’état initial est préparé selon le protocole décrit en section~\ref{sub_pisih}. Le confinement longitudinal est ensuite supprimé, tandis que le confinement transverse est maintenu, afin d'étudier la dynamique le long de l’axe longitudinal.
+
+Les profils de densité en bord obtenus pour des temps d’évolution compris entre $\tau = 10$~ms et $\tau = 18$ms sont présentés en Fig.\ref{fig:euler}(a), en fonction de la variable réduite $v = x/\tau$. L’excellent recouvrement des différents profils indique que l’échelle d’Euler est atteinte dans cet intervalle temporel. Au-delà de $\tau = 18$~ms, la dynamique longitudinale ne peut plus être explorée expérimentalement, en raison de la taille finie du gaz initial, préparé dans une configuration semi-homogène.
+
+Pour des temps d’évolution plus courts, les profils de bord mesurés présentent une forme plus lissée que celle prédite par les équations de GHD à l’échelle d’Euler. Cette différence peut s’expliquer soit par une invalidité de l’approximation d’Euler dans ce régime transitoire, en lien avec de fortes variations de densité, soit par le fait que la coupure initiale à $t = 0$ n’est pas parfaitement abrupte, ce qui confère au bord initial une largeur finie.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\linewidth]{DWD_GPE_vs_exp_V2.pdf}
+\caption{(a) Profils de densité aux bords obtenus pour différents temps d’évolution $\tau$, représentés en fonction de $x/\tau$ ; (b) Comparaison du profil de bord mesuré avec la prédiction à température nulle issue de la GHD dans le régime quasi-condensat, donnée par l’équation~\eqref{eq:GPE}. Cette dernière constitue une excellente approximation pour la valeur du paramètre d’interaction correspondant aux données, soit $\gamma = 4{,}6 \times 10^{-3}$ (voir Fig.\ref{fig:boundary_profiles_theory}). Le profil de bord présenté en (b) est obtenu après un temps d’expansion de 10ms et provient d’un jeu de données différent de celui de la figure (a).}
+\label{fig:euler}
+\end{figure}
+
+La figure~\ref{fig:euler}(b) présente une comparaison entre le profil de bord mesuré $n(v)$ et la prédiction théorique fondée sur un état initial à température nulle, supposé être l’état fondamental. Pour la valeur du paramètre de Lieb $\gamma = 4{,}6 \times 10^{-3}$, le profil est pratiquement indiscernable de celui obtenu dans le régime de quasi-condensat, justifiant l’utilisation de l’équation~\eqref{eq:GPE} pour la comparaison.
+
+L’accord entre la prédiction théorique et les données expérimentales est satisfaisant, en particulier dans la région de forte densité. Les écarts observés par rapport à la forme parabolique prédite peuvent être attribués à des effets liés à une entropie non nulle, qui seront analysés dans la section suivante.
+
 \section{Sonder la distribution locale des rapidités}
 \label{sec:local}
 
-Pour un état initial du gaz correspondant à un facteur d'occupation lisse $\nu(\theta)$ — par exemple un état thermique —, le facteur d'occupation $\nu^*(x/t,\theta)$ à rapport $x/t$ fixé est attendu comme étant fortement asymétrique en fonction de $\theta$, selon l'équation~\eqref{eq:nuetoile}. En effet, du côté droite, il présente une discontinuité du type saut, similaire à celle du facteur d'occupation de l’état fondamental, tandis que du côté gauche, il reste lisse. Afin de révéler ces caractéristiques particulières de l’état local du gaz, nous utilisons le protocole introduit dans la Réf.~\cite{dubois_probing_2024} pour sonder la distribution locale des rapidités, comme expliqué ci-après.
+Pour un état initial du gaz correspondant à un facteur d'occupation lisse $\nu(\theta)$ (par exemple un état thermique), le facteur d'occupation $\nu^*(x/t,\theta)$ à rapport $x/t$ fixé est attendu comme étant fortement asymétrique en fonction de $\theta$, selon l'équation~\eqref{eq:nuetoile}. En effet, du côté droite, il présente une discontinuité du type saut, similaire à celle du facteur d'occupation de l’état fondamental, tandis que du côté gauche, il reste lisse. Afin de révéler ces caractéristiques particulières de l’état local du gaz, nous utilisons le protocole introduit dans la Réf.~\cite{dubois_probing_2024} pour sonder la distribution locale des rapidités, comme expliqué ci-après.
 
 Nous laissons d’abord le gaz se dilater pendant un temps $t=18~\mathrm{ms}$, de sorte que le bord s’étale sur une large zone d’environ $350~\mathrm{\mu m}$, comme illustré en Fig.~\ref{fig:BiPart.coupure1} (e)-(f) et  Fig ~\ref{fig:simul_deformation} (a).  
 Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau de poussée~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
@@ -196,7 +256,6 @@ Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth , page = 6 ]{Shema.pdf}
-	\label{fig:BiPart.coupure2}
 	\caption{
 (a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(s; \tau = 0^+),\ \theta_g(s; \tau = 0^+))$, et le bord droit en tiret-point par l’ensemble des points $(x_d(s; \tau = 0^+),\ \theta_d(s; \tau = 0^+))$. Le bord complet est donc la concaténation de ces deux ensembles. 
 (b) Densité linéique spatiale $n(x)$ : en pointillés, $n(x; t = 18~\mathrm{ms})$ juste avant la sélection ; en ligne pleine, $n(x; \tau = 0^+)$, égal à $n(x; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$ et nul ailleurs. 
@@ -205,6 +264,7 @@ Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_
 (f) Densité spatiale réduite $n(x; \tau = 30~\mathrm{ms})$. 
 (g) Distribution de rapidité $\Pi(\theta)$ après la sélection (identique à celle de (c)).
 }
+	\label{fig:BiPart.coupure2}
 	
 \end{figure}
  
@@ -275,24 +335,24 @@ Une des raisons de l'échec de nos tentatives de reproduction du profil de densi
 \section{Détails sur les calculs}
 \label{sec:calcule}
 
-On fait l'hypothèse que le système est dans un état thermique. Cela implique que la fonction $f$ qui paramétrise l'opérateur charge (cf. ??) vérifie :
+On fait l'hypothèse que le système est dans un état thermique. Cela implique que la fonction $w$ qui paramétrise l'opérateur charge (cf. ??) vérifie :
 
 \begin{eqnarray*}
-	f(\theta) & = & \frac{ \varepsilon(\theta) - \mu }{T},
+	w(\theta) & = &  \beta(\varepsilon(\theta) - \mu),
 \end{eqnarray*}
 
-avec $\varepsilon(\theta) = \frac{m \theta^2}{2}$. On peut réécrire cette relation en minimisant l'entropie de Yang-Yang (cf. ??) et en injectant la forme du facteur d'occupation $\nu = \rho/\rho_s = (1+e^{\beta \epsilon})^{-1}$, avec $\beta = (k_B T)^{-1}$. On obtient alors une équation de type point fixe :
+avec $\beta = (k_B T)^{-1}$ et $\varepsilon(\theta) = \frac{m \theta^2}{2}$. On peut réécrire cette relation en minimisant l'entropie de Yang-Yang (cf. ??) et en injectant la forme du facteur d'occupation $\nu = \rho/\rho_s = (1+e^{\beta \epsilon})^{-1}$ . On obtient alors une équation de type point fixe :
 
 \begin{eqnarray*}
-	\beta \epsilon(\theta) & = & \beta \epsilon_0(\theta) -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon(\theta)} \right),
+	\beta \epsilon & = & \beta \epsilon_0 -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon} \right) ,
 \end{eqnarray*}
 
-avec $\epsilon_0(\theta) = \frac{m}{2} \theta^2 - \mu$. Cette équation est bien définie et converge (cf. ??). Pour s'en convaincre, on peut calculer la norme du déterminant du jacobien de l'application. Si elle est inférieure à 1, on est assuré de la convergence. 
+avec $\epsilon_0 = \varepsilon - \mu$. Cette équation est bien définie et converge (cf. ??). Pour s'en convaincre, on peut calculer la norme du déterminant du jacobien de l'application. Si elle est inférieure à 1, on est assuré de la convergence. 
 
 L'équation étant non linéaire, pour garantir la convergence vers la bonne solution (évitant les cycles), on itère la suite suivante :
 
 \begin{eqnarray*}
-	\beta \epsilon_{n+1}(\theta) & = & \beta \epsilon_0(\theta) -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon_n(\theta)} \right),
+	\beta \epsilon_{n+1} & = & \beta \epsilon_0 -   \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon_n} \right) ,
 \end{eqnarray*}
 
 jusqu'à ce que la distance entre deux itérations successives soit suffisamment petite : ici $\beta \Vert \epsilon_{n+1} - \epsilon_n \Vert < 10^{-12}$.
@@ -300,7 +360,7 @@ jusqu'à ce que la distance entre deux itérations successives soit suffisamment
 Ainsi, en fixant le couple $(\mu, T)$, on obtient $\epsilon$, puis $\nu$, puis enfin $\rho_s$ via :
 
 \begin{eqnarray*}
-	2\pi \rho_s & = & \frac{m}{\hbar} \cdot 1^{\mathrm{dr}},
+	2\pi \rho_s & = & \frac{m}{\hbar} \ast 1^{\mathrm{dr}},
 \end{eqnarray*}
 
 où la fonction "habillée" $f^{\mathrm{dr}}$ est définie par :
