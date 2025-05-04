@@ -58,6 +58,9 @@
 \def\colorFive{colorFive}
 \def\colorSix{colorSix}
 
+\definecolor{colorGold}{HTML}{FFD700}
+\def\colorGold{colorGold}
+
 
 
 
@@ -90,6 +93,10 @@
 	\node at (15,0) [rectangle, ] {
 		\begin{tikzpicture}
 			\Palette[\colorSix]
+		\end{tikzpicture}} ;
+	\node at (18,0) [rectangle, ] {
+		\begin{tikzpicture}
+			\Palette[\colorGold]
 		\end{tikzpicture}} ;
 %\end{tikzpicture}
 }
@@ -988,9 +995,9 @@
 \begin{scope}[
   3d view={0}{0},
   perspective={
-    p = {(200,0,0)},
-    q = {(0,200,0)},
-    r = {(0,0,200)}},
+    p = {(20,0,0)},
+    q = {(0,20,0)},
+    r = {(0,0,20)}},
   scale=1, 
   vanishing point/.style={fill,circle,inner sep=2pt}]
   
@@ -1003,24 +1010,24 @@
 	%\drawrectxyz{z}{3}{0}{5}{0}{5}{  thick,line width=0.8ex,->,>=Stealth , line width=1ex,rounded corners = 1.5ex, color=blue , fill = brown,}
 	
 	
-	\drawparallelepiped{-2.5}{-2.5}{-1}{5}{5}{1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=blue , fill = brown,}
+	\drawparallelepiped{-2.5}{-2.5}{-0.4}{5}{5}{0.4}{thick, line width=0.1ex,rounded corners = 0.1ex, color=\colorOne , fill = \colorGold,}
 	
 	
-	\drawparallelepiped{-2.25}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	\drawparallelepiped{-2.25}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = \colorSix,}
 	
-	\drawparallelepiped{2.25}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	\drawparallelepiped{2.25}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = \colorSix,}
 	
-	\drawparallelepiped{-1.9}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	\drawparallelepiped{-1.9}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = \colorSix,}
 	
-	\drawparallelepiped{1.9}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	\drawparallelepiped{1.9}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = \colorSix,}
 	
 	
 	
-	\drawparallelepipedcenter{0}{0}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	\drawparallelepipedcenter{0}{0}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = \colorFour,}
 	
-	\drawparallelepipedcenter{0}{0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	\drawparallelepipedcenter{0}{0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = \colorFour,}
 	
-	\drawparallelepipedcenter{0}{-0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	\drawparallelepipedcenter{0}{-0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = \colorFour,}
 	
 	
 	
