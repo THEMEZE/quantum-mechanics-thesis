@@ -470,11 +470,17 @@
 % #5 : min de la seconde coordonnée (variante2)
 % #6 : max de la seconde coordonnée (variante2)
 
-\newcommand{\drawgridxyz}[6]{%
+\newcommand{\drawgridxyzzz}[6]{%
   \begin{scope}[opacity=0.5]
   
   \pgfmathtruncatemacro{\imax}{#4 - 1}
   \pgfmathtruncatemacro{\jmax}{#6 - 1}
+   % Valeurs flottantes pour les graduations
+  \pgfmathsetmacro{\itraiminus}{#5 - 0.1}
+  \pgfmathsetmacro{\itraiplus}{#5 + 0.1}
+  \pgfmathsetmacro{\jtraiminus}{#3 - 0.1}
+  \pgfmathsetmacro{\jtraiplus}{#3 + 0.1}
+  
 
   % Petite grille millimétrée (pas = 0.1)
   \foreach \i in {#3, ..., \imax} {
@@ -559,53 +565,143 @@
  % Graduation sur axe 1 (avec petit trait)
 \foreach \i in {#3,...,#4} {
   % Petit trait de graduation
-  \draw[gray, line width=0.8ex] 
-    (tpp cs:#1=#2,%
-      \ifx#1x y=\i,z=#5 \fi%
-      \ifx#1y x=\i,z=#5 \fi%
-      \ifx#1z x=\i,y=#5 \fi) --
-    ++(
-      \ifx#1x 0pt, -2pt \fi%
-      \ifx#1y -2pt, 0pt \fi%
-      \ifx#1z -2pt, 0pt \fi);
-  \draw[gray, line width=0.8ex] 
-    (tpp cs:#1=#2,%
-      \ifx#1x y=\i,z=#5 \fi%
-      \ifx#1y x=\i,z=#5 \fi%
-      \ifx#1z x=\i,y=#5 \fi) --
-    ++(
-      \ifx#1x 0pt, +2pt \fi%
-      \ifx#1y +2pt, 0pt \fi%
-      \ifx#1z +2pt, 0pt \fi);
+  %\draw[gray, line width=0.8ex] 
+  %  (tpp cs:#1=#2,%
+  %    \ifx#1x y=\i,z=#5 \fi%
+  %    \ifx#1y x=\i,z=#5 \fi%
+  %    \ifx#1z x=\i,y=#5 \fi) --
+  %  ++(
+  %    \ifx#1x 0pt, -2pt \fi%
+  %    \ifx#1y -2pt, 0pt \fi%
+  %    \ifx#1z -2pt, 0pt \fi);
+  %\draw[gray, line width=0.8ex] 
+  %  (tpp cs:#1=#2,%
+  %    \ifx#1x y=\i,z=#5 \fi%
+  %    \ifx#1y x=\i,z=#5 \fi%
+  %    \ifx#1z x=\i,y=#5 \fi) --
+  %  ++(
+  %    \ifx#1x 0pt, +2pt \fi%
+  %    \ifx#1y +2pt, 0pt \fi%
+  %    \ifx#1z +2pt, 0pt \fi);
 
   % Texte de graduation
-  \node[font=\large, anchor=north] at 
-    (tpp cs:#1=#2,%
-      \ifx#1x y=\i,z=#5 \fi%
-      \ifx#1y x=\i,z=#5 \fi%
-      \ifx#1z x=\i,y=#5 \fi) {\i};
+ % \node[font=\large, anchor=north] at 
+ %   (tpp cs:#1=#2,%
+ %     \ifx#1x y=\i,z=#5 \fi%
+ %     \ifx#1y x=\i,z=#5 \fi%
+ %     \ifx#1z x=\i,y=#5 \fi) {\i};
       
+  %\draw[
+  %	shift={
+  %		(tpp cs:#1=#2,%
+  %    		\ifx#1x y=\i,z=#5 \fi%
+  %    		\ifx#1y x=\i,z=#5 \fi%
+  %    		\ifx#1z x=\i,y=#5 \fi)
+  %		}
+  %	] 
+  %	(tpp cs:#1=#2,%
+  %    	\ifx#1x y=\i,z=-0.1 \fi%
+  %    	\ifx#1y x=\i,z=-0.1 \fi%
+  %    	\ifx#1z x=\i,y=-0.1 \fi
+  %    ) 
+  %		edge[line width=0.8ex] node[pos = -1 , left ] {\i} 
+  %	(tpp cs:#1=#2,%
+  %    	\ifx#1x y=\i,z=0.1 \fi%
+  %    	\ifx#1y x=\i,z=0.1 \fi%
+  %    	\ifx#1z x=\i,y=0.1 \fi
+  %    ) ; % Lignes verticales en mm
+      
+   \draw[
+  	%shift={
+  	%	(tpp cs:#1=#2,%
+    %  		\ifx#1x y=\i,z=#5 \fi%
+    %  		\ifx#1y x=\i,z=#5 \fi%
+    %  		\ifx#1z x=\i,y=#5 \fi)
+  	%	}
+  	]
+      (tpp cs:#1=#2,%
+        \ifx#1x y=\i,z=\itraiminus \fi%
+        \ifx#1y x=\i,z=\itraiminus \fi%
+        \ifx#1z x=\i,y=\itraiminus \fi) edge[line width=0.8ex] node[pos = -0 , left ] {\i}
+      (tpp cs:#1=#2,%
+        \ifx#1x y=\i,z=\itraiplus \fi%
+        \ifx#1y x=\i,z=\itraiplus \fi%
+        \ifx#1z x=\i,y=\itraiplus \fi);
+}
+
+
+  % Graduation axe 2
+  \foreach \j in {#5,...,#6} {
+  	 % Petit trait de graduation
   \draw[
-  	shift={
-  		(tpp cs:#1=#2,%
-      		\ifx#1x y=\i,z=#5 \fi%
-      		\ifx#1y x=\i,z=#5 \fi%
-      		\ifx#1z x=\i,y=#5 \fi)
-  		}
-  	] 
-  	(tpp cs:#1=#2,%
-      	\ifx#1x y=\i,z=-0.1 \fi%
-      	\ifx#1y x=\i,z=-0.1 \fi%
-      	\ifx#1z x=\i,y=-0.1 \fi
-      ) 
-  		edge[line width=0.8ex] node[pos = -1 , left ] {\i} 
-  	(tpp cs:#1=#2,%
-      	\ifx#1x y=\i,z=0.1 \fi%
-      	\ifx#1y x=\i,z=0.1 \fi%
-      	\ifx#1z x=\i,y=0.1 \fi
-      ) ; % Lignes verticales en mm
-      
-     \draw[very thin, gray] 
+  	%shift={
+  	%	(tpp cs:#1=#2,%
+    %  		\ifx#1x y=\i,z=#5 \fi%
+    %  		\ifx#1y x=\i,z=#5 \fi%
+    %  		\ifx#1z x=\i,y=#5 \fi)
+  	%	}
+  	]
+      (tpp cs:#1=#2,%
+        \ifx#1x z=\j,y=\jtraiminus \fi%
+        \ifx#1y z=\j,x=\jtraiminus \fi%
+        \ifx#1z y=\j,x=\jtraiminus \fi) edge[line width=0.8ex] node[pos = -0 , left ] {\j}
+      (tpp cs:#1=#2,%
+        \ifx#1x z=\j,y=\jtraiplus \fi%
+        \ifx#1y z=\j,x=\jtraiplus \fi%
+        \ifx#1z y=\j,x=\jtraiplus \fi);
+}
+
+  \end{scope}
+}
+
+\newcommand{\drawgridxyz}[6]{%
+  \begin{scope}[opacity=0.5]
+  
+  \pgfmathtruncatemacro{\imax}{#4 - 1}
+  \pgfmathtruncatemacro{\jmax}{#6 - 1}
+   % Valeurs flottantes pour les graduations
+  \pgfmathsetmacro{\itraiminus}{#5 - 0.1}
+  \pgfmathsetmacro{\itraiplus}{#5 + 0.1}
+  \pgfmathsetmacro{\jtraiminus}{#3 - 0.1}
+  \pgfmathsetmacro{\jtraiplus}{#3 + 0.1}
+  
+
+  % Petite grille millimétrée (pas = 0.1)
+  \foreach \i in {#3, ..., \imax} {
+    \foreach \di in {0.1,0.2,...,0.9} {
+      \pgfmathsetmacro{\iiTemp}{\i+\di}
+      \edef\ii{\iiTemp}
+      \draw[very thin, gray!50] 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\ii,z=#5 \fi%
+          \ifx#1y x=\ii,z=#5 \fi%
+          \ifx#1z x=\ii,y=#5 \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=\ii,z=#6 \fi%
+          \ifx#1y x=\ii,z=#6 \fi%
+          \ifx#1z x=\ii,y=#6 \fi);
+    }
+  }
+
+  \foreach \j in {#5, ..., \jmax} {
+    \foreach \dj in {0.1,0.2,...,0.9} {
+      \pgfmathsetmacro{\jjTemp}{\j+\dj}
+      \edef\jj{\jjTemp}
+      \draw[very thin, gray!50] 
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#3,z=\jj \fi%
+          \ifx#1y x=#3,z=\jj \fi%
+          \ifx#1z x=#3,y=\jj \fi) --
+        (tpp cs:#1=#2,%
+          \ifx#1x y=#4,z=\jj \fi%
+          \ifx#1y x=#4,z=\jj \fi%
+          \ifx#1z x=#4,y=\jj \fi);
+    }
+  }
+
+  % Grille principale (pas = 1)
+  \foreach \i in {#3,...,#4} {
+    \draw[very thin, gray] 
       (tpp cs:#1=#2,%
         \ifx#1x y=\i,z=#5 \fi%
         \ifx#1y x=\i,z=#5 \fi%
@@ -614,40 +710,75 @@
         \ifx#1x y=\i,z=#6 \fi%
         \ifx#1y x=\i,z=#6 \fi%
         \ifx#1z x=\i,y=#6 \fi);
+  }
+
+  \foreach \j in {#5,...,#6} {
+    \draw[very thin, gray]
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#3,z=\j \fi%
+        \ifx#1y x=#3,z=\j \fi%
+        \ifx#1z x=#3,y=\j \fi) --
+      (tpp cs:#1=#2,%
+        \ifx#1x y=#4,z=\j \fi%
+        \ifx#1y x=#4,z=\j \fi%
+        \ifx#1z x=#4,y=\j \fi);
+  }
+
+  % Axe 1
+  \draw[thick,line width=0.8ex,->,>=Stealth ] 
+    (tpp cs:#1=#2,%
+      \ifx#1x y=#3,z=#5 \fi%
+      \ifx#1y x=#3,z=#5 \fi%
+      \ifx#1z x=#3,y=#5 \fi) --
+    (tpp cs:#1=#2,%
+      \ifx#1x y=#4,z=#5 \fi%
+      \ifx#1y x=#4,z=#5 \fi%
+      \ifx#1z x=#4,y=#5 \fi);
+
+  % Axe 2
+  \draw[thick,line width=0.8ex,->,>=Stealth ] 
+    (tpp cs:#1=#2,%
+      \ifx#1x y=#3,z=#5 \fi%
+      \ifx#1y x=#3,z=#5 \fi%
+      \ifx#1z x=#3,y=#5 \fi) --
+    (tpp cs:#1=#2,%
+      \ifx#1x y=#3,z=#6 \fi%
+      \ifx#1y x=#3,z=#6 \fi%
+      \ifx#1z x=#3,y=#6 \fi);
+
+ % Graduation sur axe 1 (avec petit trait)
+\foreach \i in {#3,...,#4} {     
+   \draw[
+  	]
+      (tpp cs:#1=#2,%
+        \ifx#1x y=\i,z=\itraiminus \fi%
+        \ifx#1y x=\i,z=\itraiminus \fi%
+        \ifx#1z x=\i,y=\itraiminus \fi) edge[line width=0.8ex] node[pos = -0.1  ] {\i}
+      (tpp cs:#1=#2,%
+        \ifx#1x y=\i,z=\itraiplus \fi%
+        \ifx#1y x=\i,z=\itraiplus \fi%
+        \ifx#1z x=\i,y=\itraiplus \fi);
 }
 
 
   % Graduation axe 2
   \foreach \j in {#5,...,#6} {
   	 % Petit trait de graduation
-  \draw[gray, line width=0.8ex] 
-    (tpp cs:#1=#2,%
-      \ifx#1x y=\j,z=#5 \fi%
-      \ifx#1y x=\j,z=#5 \fi%
-      \ifx#1z x=\j,y=#5 \fi) --
-    ++(
-      \ifx#1x 0pt, -2pt \fi%
-      \ifx#1y -2pt, 0pt \fi%
-      \ifx#1z -2pt, 0pt \fi);
-  \draw[gray, line width=0.8ex] 
-    (tpp cs:#1=#2,%
-      \ifx#1x y=\j,z=#5 \fi%
-      \ifx#1y x=\j,z=#5 \fi%
-      \ifx#1z x=\j,y=#5 \fi) --
-    ++(
-      \ifx#1x 0pt, +2pt \fi%
-      \ifx#1y +2pt, 0pt \fi%
-      \ifx#1z +2pt, 0pt \fi);
-  	% Texte de graduation
-    \node[font=\large, anchor=east] at 
+  \draw[
+  	]
       (tpp cs:#1=#2,%
-        \ifx#1x y=#3,z=\j \fi%
-        \ifx#1y x=#3,z=\j \fi%
-        \ifx#1z x=#3,y=\j \fi) {\j};
-  }
+        \ifx#1x z=\j,y=\jtraiminus \fi%
+        \ifx#1y z=\j,x=\jtraiminus \fi%
+        \ifx#1z y=\j,x=\jtraiminus \fi) edge[line width=0.8ex] node[pos = -0.1 ] {\j}
+      (tpp cs:#1=#2,%
+        \ifx#1x z=\j,y=\jtraiplus \fi%
+        \ifx#1y z=\j,x=\jtraiplus \fi%
+        \ifx#1z y=\j,x=\jtraiplus \fi);
+}
 
   \end{scope}
 }
+
 
 \begin{tikzpicture}
 %\drawgrid{-2}{2}{-2}{2}
@@ -662,11 +793,16 @@
   
   	
   
-	\drawgridxyz{z}{0}{-2}{2}{-2}{2}
-	%\drawgridxyz{x}{2}{-2}{2}{-2}{2}
+	\drawgridxyz{z}{-2}{-2.}{2.}{-2.}{2.}
+	\drawgridxyz{x}{2}{-2}{2}{-2}{2}
+	\drawgridxyz{y}{2}{-2}{2}{-2}{2}
 	%\drawgridxyz{x}{0}{0}{5}{0}{3}
 	\simpleaxes{2}{2}{2}
+	\begin{scope}[shift={
+  		(tpp cs: x = 0 , y = 0 , z = -2 )
+  		}]
 	\simplecuboid{1}{1}{1}
+	\end{scope}
 
 
   \node[vanishing point,label = right:p] (p) at (10,0,0){};
