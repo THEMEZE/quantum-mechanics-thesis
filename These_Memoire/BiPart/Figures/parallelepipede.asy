@@ -56,7 +56,7 @@ for (int i = 0; i < frames; ++i) {
   drawBox();
 
   // Export chaque image
-  string name = format("frame_%03d", i);
+  string name = format("animation/frame_%03d", i);
   shipout(name);
   erase(); // nettoie la scène pour la frame suivante
 }
