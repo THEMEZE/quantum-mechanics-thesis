@@ -26,3 +26,5 @@ bpy.context.scene.camera = cam_object
 cam_data.lens = 35  # focal length
 cam_data.type = 'PERSP'  # perspective
 
+#blender --background --python test_blender.py
+
