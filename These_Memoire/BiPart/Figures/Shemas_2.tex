@@ -96,7 +96,7 @@
 
 
 
-\begin{document}
+
 
 
 % Palettes
@@ -344,6 +344,129 @@
         \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
   \end{scope}
 \end{tikzpicture}
+
+
+% Commande : \drawboxxyz{θ}{ϕ}{scale}{xlen}{ylen}{zlen}
+\newcommand{\drawboxxyz}[6]{%
+  % Définir la vue
+  \tdplotsetmaincoords{#2}{#1}
+  \begin{tikzpicture}[tdplot_main_coords, scale=#3]
+    % Dimensions du pavé
+    \def\xlen{#4}
+    \def\ylen{#5}
+    \def\zlen{#6}
+
+    % Sommets du cube
+    \coordinate (O) at (0,0,0);
+    \coordinate (X) at (\xlen,0,0);
+    \coordinate (Y) at (0,\ylen,0);
+    \coordinate (Z) at (0,0,\zlen);
+    \coordinate (XY) at (\xlen,\ylen,0);
+    \coordinate (XZ) at (\xlen,0,\zlen);
+    \coordinate (YZ) at (0,\ylen,\zlen);
+    \coordinate (XYZ) at (\xlen,\ylen,\zlen);
+
+    % Arêtes visibles
+    \draw[thick] (O) -- (X) -- (XY) -- (Y) -- cycle;
+    \draw[thick] (O) -- (Z) -- (XZ) -- (X);
+    \draw[thick] (Y) -- (YZ) -- (Z);
+    \draw[thick] (YZ) -- (XYZ) -- (XZ);
+    \draw[thick] (XY) -- (XYZ);
+  \end{tikzpicture}
+}
+
+\drawboxxyz{60}{30}{1.2}{3}{2}{1}
+
+
+
+% Commande : \drawboxxyzrot{θ}{ϕ}{γ}{scale}{xlen}{ylen}{zlen}
+\newcommand{\drawboxxyzrot}[7]{%
+  % Vue principale (azimut et élévation)
+  \tdplotsetmaincoords{#2}{#1}
+  % Rotation locale : γ = twist
+  \tdplotsetrotatedcoords{#2}{#1}{#3}
+
+  \begin{tikzpicture}[tdplot_main_coords, scale=#4]
+    \begin{scope}[tdplot_rotated_coords]
+      % Dimensions du pavé
+      \def\xlen{#5}
+      \def\ylen{#6}
+      \def\zlen{#7}
+
+      % Sommets
+      \coordinate (O) at (0,0,0);
+      \coordinate (X) at (\xlen,0,0);
+      \coordinate (Y) at (0,\ylen,0);
+      \coordinate (Z) at (0,0,\zlen);
+      \coordinate (XY) at (\xlen,\ylen,0);
+      \coordinate (XZ) at (\xlen,0,\zlen);
+      \coordinate (YZ) at (0,\ylen,\zlen);
+      \coordinate (XYZ) at (\xlen,\ylen,\zlen);
+
+      % Arêtes visibles
+      \draw[thick] (O) -- (X) -- (XY) -- (Y) -- cycle;
+      \draw[thick] (O) -- (Z) -- (XZ) -- (X);
+      \draw[thick] (Y) -- (YZ) -- (Z);
+      \draw[thick] (YZ) -- (XYZ) -- (XZ);
+      \draw[thick] (XY) -- (XYZ);
+    \end{scope}
+  \end{tikzpicture}
+}
+
+
+% θ=60, ϕ=30, γ=45, scale=1, x=3, y=2, z=1
+\drawboxxyzrot{-45}{40}{40}{1}{1}{1}{1}
+
+% Définir une clé TikZ pour gérer la rotation autour de r
+\makeatletter
+\tikzset{
+  perspective with rotation/.style={
+    /utils/exec={
+      % Paramètres de base
+      \def\angle{#1}
+      \pgfmathsetmacro{\c}{cos(\angle)}
+      \pgfmathsetmacro{\s}{sin(\angle)}
+      % Rotation des vecteurs p et q autour de r
+      \tikzset{
+        perspective={
+          p={(\c,\s,0)},
+          q={(-\s,\c,0)},
+          r={(0,0,1)}
+        }
+      }
+    }
+  }
+}
+\makeatother
+
+\begin{tikzpicture}
+
+  \begin{scope}[
+    3d view={-40}{35},
+    perspective with rotation=30, % <--- ici l'angle de twist
+    scale=2
+  ]
+
+    % Cube
+    \draw [thick, fill=blue!10]
+      (0,0,0) -- (1,0,0) -- (1,1,0) -- (0,1,0) -- cycle;
+
+    \draw [thick, fill=green!10]
+      (0,0,0) -- (0,1,0) -- (0,1,1) -- (0,0,1) -- cycle;
+
+    \draw [thick, fill=red!10]
+      (0,0,0) -- (1,0,0) -- (1,0,1) -- (0,0,1) -- cycle;
+
+    \draw [thick]
+      (1,1,0) -- (1,1,1) -- (0,1,1) -- (0,1,0);
+
+    \draw [thick]
+      (1,1,1) -- (1,0,1) -- (0,0,1);
+
+  \end{scope}
+\end{tikzpicture}
+
+
 
 \begin{tikzpicture}
 	\clip (-11 , -11) rectangle (15 , 11) ;
@@ -627,7 +750,7 @@
   \end{scope}
 }
 
-\newcommand{\drawgridxyz}[6]{%
+\newcommand{\drawgridxyz}[7]{%
   \begin{scope}[opacity=0.5]
   
   \pgfmathtruncatemacro{\imax}{#4 - 1}
@@ -698,7 +821,7 @@
   }
 
   % Axe 1
-  \draw[thick,line width=0.8ex,->,>=Stealth ] 
+  \draw[#7 , ,->,>=Stealth ] 
     (tpp cs:#1=#2,%
       \ifx#1x y=#3,z=#5 \fi%
       \ifx#1y x=#3,z=#5 \fi%
@@ -709,7 +832,7 @@
       \ifx#1z x=#4,y=#5 \fi);
 
   % Axe 2
-  \draw[thick,line width=0.8ex,->,>=Stealth ] 
+  \draw[#7,->,>=Stealth] 
     (tpp cs:#1=#2,%
       \ifx#1x y=#3,z=#5 \fi%
       \ifx#1y x=#3,z=#5 \fi%
@@ -726,7 +849,7 @@
       (tpp cs:#1=#2,%
         \ifx#1x y=\i,z=\itraiminus \fi%
         \ifx#1y x=\i,z=\itraiminus \fi%
-        \ifx#1z x=\i,y=\itraiminus \fi) edge[line width=0.8ex] node[pos = -0.1  ] {\i}
+        \ifx#1z x=\i,y=\itraiminus \fi) edge[#7] node[pos = -0.1  ] {\i}
       (tpp cs:#1=#2,%
         \ifx#1x y=\i,z=\itraiplus \fi%
         \ifx#1y x=\i,z=\itraiplus \fi%
@@ -832,172 +955,107 @@
   \pgfmathsetmacro{\zmax}{0}
 }
 
+\newcommand{\drawparallelepipedcenter}[7]{%
+  % #1 = xc, #2 = yc, #3 = zc (centre)
+  % #4 = dx, #5 = dy, #6 = dz (dimensions)
+  % #7 = style
+
+  \pgfmathsetmacro{\xmin}{#1 - #4/2}
+  \pgfmathsetmacro{\xmax}{#1 + #4/2}
+  \pgfmathsetmacro{\ymin}{#2 - #5/2}
+  \pgfmathsetmacro{\ymax}{#2 + #5/2}
+  \pgfmathsetmacro{\zmin}{#3 - #6/2}
+  \pgfmathsetmacro{\zmax}{#3 + #6/2}
+
+  % Faces arrière
+  \drawrectxyz{x}{\xmin}{\ymin}{\ymax}{\zmin}{\zmax}{#7}  % face en x = xmin
+  \drawrectxyz{y}{\ymin}{\xmin}{\xmax}{\zmin}{\zmax}{#7}  % face en y = ymin
+  \drawrectxyz{z}{\zmin}{\xmin}{\xmax}{\ymin}{\ymax}{#7}  % face en z = zmin
+
+  % Faces avant
+  \drawrectxyz{x}{\xmax}{\ymin}{\ymax}{\zmin}{\zmax}{#7}  % face en x = xmax
+  \drawrectxyz{y}{\ymax}{\xmin}{\xmax}{\zmin}{\zmax}{#7}  % face en y = ymax
+  \drawrectxyz{z}{\zmax}{\xmin}{\xmax}{\ymin}{\ymax}{#7}  % face en z = zmax
+}
 
 
 
+
+\begin{document}
 
 \begin{tikzpicture}
-%\drawgrid{-2}{2}{-2}{2}
+
 \begin{scope}[
-  3d view={-40}{35},
+  3d view={10}{30},
   perspective={
-    p = {(10,0,0)},
-    q = {(0,10,0)},
-    r = {(0,0,20)}},
+    p = {(200,0,0)},
+    q = {(0,20,0)},
+    r = {(0,0,200)}},
   scale=1, 
   vanishing point/.style={fill,circle,inner sep=2pt}]
   
   	
   
-	\drawgridxyz{z}{-1}{-1.}{2.}{-1.}{2.}
-	\drawgridxyz{x}{2}{-1}{2}{-1}{2}
-	\drawgridxyz{y}{2}{-1}{2}{-1}{2}
+	
 	%\drawgridxyz{x}{0}{0}{5}{0}{3}
-	\simpleaxes{2}{2}{2}
-	\simplecuboid{1}{1}{1}
-	\drawrectxyz{z}{3}{0}{5}{0}{5}{  thick,line width=0.8ex,->,>=Stealth , line width=1ex,rounded corners = 1.5ex, color=blue , fill = brown,}
-	\drawparallelepiped{0}{0}{0}{2}{1}{3}{thick,fill=red!30,opacity=0.5}
+	%\simpleaxes{2}{2}{2}
+	%\simplecuboid{1}{1}{1}
+	%\drawrectxyz{z}{3}{0}{5}{0}{5}{  thick,line width=0.8ex,->,>=Stealth , line width=1ex,rounded corners = 1.5ex, color=blue , fill = brown,}
+	
+	
+	\drawparallelepiped{-2.5}{-2.5}{-1}{5}{5}{1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=blue , fill = brown,}
+	
+	
+	\drawparallelepiped{-2.25}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	
+	\drawparallelepiped{2.25}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	
+	\drawparallelepiped{-1.9}{-2.25}{0}{0.25}{4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	
+	\drawparallelepiped{1.9}{2.25}{0}{-0.25}{-4.5}{0.25}{thick, line width=0.1ex,rounded corners = 0.1ex, color=black , fill = red,}
+	
+	
+	
+	\drawparallelepipedcenter{0}{0}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	
+	\drawparallelepipedcenter{0}{0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	
+	\drawparallelepipedcenter{0}{-0.2}{0}{3}{0.1}{0.1}{thick, line width=0.1ex,rounded corners = 0.1ex, color=red , fill = blue,}
+	
+	
+	
+	
+	
+	
 
 	%\begin{scope}[shift={(tpp cs: x = 0 , y = 0 , z = -1 )}]\simplecuboid{1}{1}{1}\end{scope}
 	
-	\AxesSimples{1}{1}{1}{5}{draw = none , fill = brown, thick,line width=0.8ex,->,>=Stealth , line width=1ex,rounded corners = 1.5ex, color=blue}
+	\drawgridxyz{z}{-1}{-3.}{3.}{-3.}{3.}{line width=0.1ex }
+	\drawgridxyz{x}{3}{-3}{3}{-3}{3}{line width=0.1ex}
+	\drawgridxyz{y}{3}{-3}{3}{-3}{3}{line width=0.1ex}
+	
+	\AxesSimples{-2.5}{-2.5}{0}{2}{draw = none, thick,line width=0.5ex,->,>=Stealth , color=gray}
 
 
-  \node[vanishing point,label = right:p] (p) at (10,0,0){};
-  \node[vanishing point,label = left:q] (q) at (0,10,0){};
-  \node[vanishing point,label = above:r] (r) at (0,0,20){};
+  %\node[vanishing point,label = right:p] (p) at (10,0,0){};
+  %\node[vanishing point,label = left:q] (q) at (0,10,0){};
+  %\node[vanishing point,label = above:r] (r) at (0,0,200){};
 
-  \begin{scope}[dotted]
-    \foreach \y in {0,1}{
-      \foreach \z in {0,1}{
-        \draw (tpp cs:x=0,y=\y,z=\z) -- (p.center);}}
-    \foreach \x in {0,1}{
-      \foreach \z in {0,1}{
-        \draw (tpp cs:x=\x,y=0,z=\z) -- (q.center);}}
-    \foreach \x in {0,1}{
-      \foreach \y in {0,1}{
-        \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
-  \end{scope}
+  %\begin{scope}[dotted]
+  %  \foreach \y in {0,1}{
+  %    \foreach \z in {0,1}{
+  %      \draw (tpp cs:x=0,y=\y,z=\z) -- (p.center);}}
+  %  \foreach \x in {0,1}{
+  %    \foreach \z in {0,1}{
+  %      \draw (tpp cs:x=\x,y=0,z=\z) -- (q.center);}}
+  %  \foreach \x in {0,1}{
+  %    \foreach \y in {0,1}{
+  %      \draw (tpp cs:x=\x,y=\y,z=0) -- (r.center);}}
+  %\end{scope}
 \end{scope}
+
+%\drawgrid{-20}{20}{-20}{20}
 \end{tikzpicture}
 
-% Commande : \drawboxxyz{θ}{ϕ}{scale}{xlen}{ylen}{zlen}
-\newcommand{\drawboxxyz}[6]{%
-  % Définir la vue
-  \tdplotsetmaincoords{#2}{#1}
-  \begin{tikzpicture}[tdplot_main_coords, scale=#3]
-    % Dimensions du pavé
-    \def\xlen{#4}
-    \def\ylen{#5}
-    \def\zlen{#6}
 
-    % Sommets du cube
-    \coordinate (O) at (0,0,0);
-    \coordinate (X) at (\xlen,0,0);
-    \coordinate (Y) at (0,\ylen,0);
-    \coordinate (Z) at (0,0,\zlen);
-    \coordinate (XY) at (\xlen,\ylen,0);
-    \coordinate (XZ) at (\xlen,0,\zlen);
-    \coordinate (YZ) at (0,\ylen,\zlen);
-    \coordinate (XYZ) at (\xlen,\ylen,\zlen);
-
-    % Arêtes visibles
-    \draw[thick] (O) -- (X) -- (XY) -- (Y) -- cycle;
-    \draw[thick] (O) -- (Z) -- (XZ) -- (X);
-    \draw[thick] (Y) -- (YZ) -- (Z);
-    \draw[thick] (YZ) -- (XYZ) -- (XZ);
-    \draw[thick] (XY) -- (XYZ);
-  \end{tikzpicture}
-}
-
-\drawboxxyz{60}{30}{1.2}{3}{2}{1}
-
-
-
-% Commande : \drawboxxyzrot{θ}{ϕ}{γ}{scale}{xlen}{ylen}{zlen}
-\newcommand{\drawboxxyzrot}[7]{%
-  % Vue principale (azimut et élévation)
-  \tdplotsetmaincoords{#2}{#1}
-  % Rotation locale : γ = twist
-  \tdplotsetrotatedcoords{#2}{#1}{#3}
-
-  \begin{tikzpicture}[tdplot_main_coords, scale=#4]
-    \begin{scope}[tdplot_rotated_coords]
-      % Dimensions du pavé
-      \def\xlen{#5}
-      \def\ylen{#6}
-      \def\zlen{#7}
-
-      % Sommets
-      \coordinate (O) at (0,0,0);
-      \coordinate (X) at (\xlen,0,0);
-      \coordinate (Y) at (0,\ylen,0);
-      \coordinate (Z) at (0,0,\zlen);
-      \coordinate (XY) at (\xlen,\ylen,0);
-      \coordinate (XZ) at (\xlen,0,\zlen);
-      \coordinate (YZ) at (0,\ylen,\zlen);
-      \coordinate (XYZ) at (\xlen,\ylen,\zlen);
-
-      % Arêtes visibles
-      \draw[thick] (O) -- (X) -- (XY) -- (Y) -- cycle;
-      \draw[thick] (O) -- (Z) -- (XZ) -- (X);
-      \draw[thick] (Y) -- (YZ) -- (Z);
-      \draw[thick] (YZ) -- (XYZ) -- (XZ);
-      \draw[thick] (XY) -- (XYZ);
-    \end{scope}
-  \end{tikzpicture}
-}
-
-
-% θ=60, ϕ=30, γ=45, scale=1, x=3, y=2, z=1
-\drawboxxyzrot{-45}{40}{40}{1}{1}{1}{1}
-
-% Définir une clé TikZ pour gérer la rotation autour de r
-\makeatletter
-\tikzset{
-  perspective with rotation/.style={
-    /utils/exec={
-      % Paramètres de base
-      \def\angle{#1}
-      \pgfmathsetmacro{\c}{cos(\angle)}
-      \pgfmathsetmacro{\s}{sin(\angle)}
-      % Rotation des vecteurs p et q autour de r
-      \tikzset{
-        perspective={
-          p={(\c,\s,0)},
-          q={(-\s,\c,0)},
-          r={(0,0,1)}
-        }
-      }
-    }
-  }
-}
-\makeatother
-
-\begin{tikzpicture}
-
-  \begin{scope}[
-    3d view={-40}{35},
-    perspective with rotation=30, % <--- ici l'angle de twist
-    scale=2
-  ]
-
-    % Cube
-    \draw [thick, fill=blue!10]
-      (0,0,0) -- (1,0,0) -- (1,1,0) -- (0,1,0) -- cycle;
-
-    \draw [thick, fill=green!10]
-      (0,0,0) -- (0,1,0) -- (0,1,1) -- (0,0,1) -- cycle;
-
-    \draw [thick, fill=red!10]
-      (0,0,0) -- (1,0,0) -- (1,0,1) -- (0,0,1) -- cycle;
-
-    \draw [thick]
-      (1,1,0) -- (1,1,1) -- (0,1,1) -- (0,1,0);
-
-    \draw [thick]
-      (1,1,1) -- (1,0,1) -- (0,0,1);
-
-  \end{scope}
-\end{tikzpicture}
 \end{document}
