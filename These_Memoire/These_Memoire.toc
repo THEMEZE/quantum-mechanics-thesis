@@ -23,24 +23,33 @@
 \contentsline {subsection}{\numberline {3.1.1}Hydrodynamique classique des systèmes chaotiques}{9}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Hydrodynamique des systèmes intégrables et distribution de rapidité}{9}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Équation d’hydrodynamique généralisée (GHD)}{9}{subsection.3.1.3}%
-\contentsline {chapter}{\numberline {4}Fluctuation de $\rho $ dans le GGE }{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Fluctuations autour de l’état typique}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Fluctuations autour du profil stationnaire}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Fluctuation du nombre d'atomes et de l'énergie}{13}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Protocoles experimentale}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Présentation de l’expérience}{17}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Piégeage transverses et longitudinale}{17}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Outil de sélection spatial}{17}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Dispositif expérimental}{20}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Prédictions de la GHD}{21}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Données expérimentales}{22}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{23}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Détails sur les calculs}{25}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Simulation de la déformation du bord}{26}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Simulation de l’expansion}{27}{subsection.6.5.2}%
-\contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}calculs}{29}{section.7.1}%
-\contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{29}{section.7.2}%
-\contentsline {chapter}{Index}{31}{section*.17}%
-\contentsline {chapter}{Index of person names}{33}{section*.18}%
+\contentsline {chapter}{\numberline {4}Fluctuation de la distribution de rapidité dans des état d'équilibre}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Développement autour du point selle}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Définition de la fonction de corrélation}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fluctuations autour de la distribution moyenne et rôle de la Hessienne}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fluctuations autour de la distribution moyenne}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Fluctuation du nombre d'atomes et de l'énergie}{15}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Protocoles experimentale}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Présentation de l’expérience}{19}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Piégeage transverses et longitudinale}{19}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Outil de sélection spatial}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dispositif expérimental}{22}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Préparation et Confinement du Gaz Ultra-Froid de $^{87}$Rb}{22}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Confinement Longitudinal et Stabilisation du Piège Quartique}{23}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Sélection Spatiale et Réalisation de la Coupure Bipartite}{23}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Dynamique Après Coupure}{24}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Prédictions de la GHD}{24}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Données expérimentales}{25}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{26}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Détails sur les calculs}{29}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Facteur d’occupation et distribution de rapidité à l’équilibre thermique}{29}{subsection.6.5.1}%
+\contentsline {paragraph}{Détermination de $\mu $ à température fixée}{29}{section*.19}%
+\contentsline {subsection}{\numberline {6.5.2}Dynamique du contour dans l’espace des phases $(x, \theta )$}{30}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Simulation de la déformation du bord}{30}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Simulation de l’expansion}{31}{subsection.6.5.4}%
+\contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}calculs}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{33}{section.7.2}%
+\contentsline {chapter}{Index}{35}{section*.20}%
+\contentsline {chapter}{Index of person names}{37}{section*.21}%

@@ -110,7 +110,16 @@ Parmi les systèmes à N corps, les modèles intégrables occupent une place par
 
 Un exemple classique pour illustrer la dynamique non diffusante typique des systèmes intégrables est celui du pendule de Newton, où des chocs élastiques entre sphères de masses égales propagent l’énergie cinétique sans dissipation. Bien que ce système soit classique, il incarne le comportement régulier que l’on retrouve dans les systèmes intégrables quantiques, où les excitations se déplacent sans diffusion.
 
-Dans ce cadre, le problème de Riemann en hydrodynamique — c’est-à-dire l’évolution d’un système à partir de deux états homogènes juxtaposés — constitue un test fondamental de compréhension des équations d’évolution dans les systèmes intégrables. Sa résolution complète, longtemps restée partiellement ouverte, a été rendue possible par l’avènement de la Théorie Hydrodynamique Généralisée (GHD). Introduite dans le contexte des théories des champs intégrables (modèle de Sinh-Gordon, modèle de Lieb-Liniger) [??] et des chaînes quantiques (chaîne XXZ de Heisenberg) [??], la GHD a permis une avancée analytique majeure pour la description des dynamiques hors équilibre dans ces systèmes.
+Dans ce cadre, le problème de Riemann en hydrodynamique — c’est-à-dire l’évolution d’un système à partir de deux états homogènes juxtaposés — 
+\begin{eqnarray*}
+	\partial_t u + \partial_x f(u) & = & 0 ,
+\end{eqnarray*}
+avec initialement $u$ constante par morceau :
+\begin{eqnarray*}
+	u(t=0 , x) & = & \left \{\begin{array}{rcl} u_g & si& x<x_0 \\ u_d & si & x > x_0 \end{array} \right.	,
+\end{eqnarray*}
+
+constitue un test fondamental de compréhension des équations d’évolution dans les systèmes intégrables. Sa résolution complète, longtemps restée partiellement ouverte, a été rendue possible par l’avènement de la Théorie Hydrodynamique Généralisée (GHD). Introduite dans le contexte des théories des champs intégrables (modèle de Sinh-Gordon, modèle de Lieb-Liniger) [??] et des chaînes quantiques (chaîne XXZ de Heisenberg) [??], la GHD a permis une avancée analytique majeure pour la description des dynamiques hors équilibre dans ces systèmes.
 
 Depuis, plusieurs solutions analytiques du problème de Riemann ont été obtenues. En particulier, une solution exacte pour un état initial particulier dans la chaîne XXZ [??], ainsi qu’une solution plus générale pour un gaz 1D de sphères dures, ont confirmé l’efficacité de la GHD pour décrire les processus de propagation balistique et de relaxation généralisée.
 
