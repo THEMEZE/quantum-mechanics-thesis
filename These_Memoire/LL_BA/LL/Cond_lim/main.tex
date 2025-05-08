@@ -1,0 +1,104 @@
+Le problème de la théorie quantique des champs est donc réduit à un problème de mécanique quantique. L'Hamiltonien $\operator{\mathcal{H}}_N$ décrivant \(N\) particules bosoniques est répulsif pour \(c > 0\). En raison de la symétrie de \(\chi\) par rapport à toutes les \(z_i\), il est suffisant de considérer le domaine suivant \(T\) dans l'espace des coordonnées :
+
+\begin{eqnarray}
+	T & : & z_1 < z_2 < \cdots < z_N \label{eq.1.13}. 
+\end{eqnarray}
+
+Dans ce domaine, la fonction \(\chi_N\) est une fonction propre de l'Hamiltonien libre.
+
+\begin{eqnarray}
+	\left \{ \begin{array}{rcl} \operator{\mathcal{H}}_N^0 & = & \displaystyle - \sum_{j=1}^N \operator{\partial}_{z_j}^2 \\  \operator{\mathcal{H}}_N^0 \chi_N  & = & E_N \chi_N  \end{array} \right .	\label{eq.1.14}
+\end{eqnarray}
+
+Les conditions aux limites suivantes doivent être satisfaites :
+
+\begin{eqnarray}
+	( \operator{\partial}_{z_{j+1}}	- \operator{\partial}_{z_{j}} - c ) \chi_N &= & 0 , \quad z_{j+1} = z_j + 0 .\label{eq.1.15}
+\end{eqnarray}
+
+{\color{blue}
+
+\begin{eqnarray*}
+	\left ( \begin{array}{c} Y \\ Z \end{array} \right ) = \underbrace{\left ( \begin{array}{cc} -1 & 1  \\ 1/2  &  1/2 \end{array} \right )}_{P_{x \to X} }  \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right ), & & \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right ) = \underbrace{\left ( \begin{array}{cc} -1/2 & 1  \\ 1/2  &  1 \end{array} \right )}_{P_{X \to x} = P_{x \to X}^{-1} }  \left ( \begin{array}{c} Y \\ Z \end{array} \right ),\\
+	\operator{\partial}_{\left ( \begin{array}{c} Y \\ Z \end{array} \right )} = \underbrace{\left ( \begin{array}{cc} -1/2 & 1/2  \\ 1  &  1 \end{array} \right )}_{P_{\operator{\partial}x \to \operator{\partial}X} =  {}^t(P_{x \to X}^{-1}) } \operator{\partial}_{  \left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right )}, & & \operator{\partial}_{\left ( \begin{array}{c} z_j \\ z_{j+1} \end{array} \right )} = \underbrace{\left ( \begin{array}{cc} -1 & 1/2  \\ 1  &  1/2 \end{array} \right )}_{P_{\operator{\partial}X \to \operator{\partial}x} = P_{\operator{\partial}x \to \operator{\partial}X}^{-1} }  \operator{\partial}_{\left ( \begin{array}{c} Y \\ Z \end{array} \right )},
+\end{eqnarray*}
+
+
+}
+
+L'équation (\ref{eq.1.14}) et la condition aux limites (\ref{eq.1.15}) sont équivalentes à l'équation (\ref{eq.1.12}). En effet, le potentiel dans (\ref{eq.1.11}) est égal à zéro dans le domaine \(T\). En intégrant l'équation (1.12) sur la variable \((z_{j+1} - z_j)\) dans la petite région \(|z_{j+1} - z_j| < \epsilon\), en considérant tous les autres \(z_k\) (\(k \neq j,j+1\)) comme fixes dans \(T\), on obtient exactement la condition (\ref{eq.1.15}).
+
+Une fonction satisfaisant (\ref{eq.1.14}) et (\ref{eq.1.15}) peut être construite comme suit. Considérons la fonction propre de l'Hamiltonien (\ref{eq.1.14}) dans le domaine \(T\) donnée comme le déterminant de la matrice \(N \times N\) \(\exp\{i\lambda_j z_k \}\)
+
+\begin{eqnarray}
+	\det [ \exp\{i\lambda_j z_k \}] 
+\end{eqnarray}
+
+avec des nombres arbitraires \(\lambda_j\). Cette fonction est égale à zéro sur la frontière du domaine \(T\) en raison de son antisymétrie par rapport à \(z_k\). Il est alors facile de voir que la fonction \(\chi_N\) donnée par
+
+\begin{eqnarray}
+	\chi_N & \propto & \left [  \prod_{ 1 \leq k < j \leq N } \left ( \partial_{z_j} - \partial_{z_k} +c \right ) \right ] \det [ \exp\{i\lambda_j z_k \}] 	\label{eq.1.17}
+\end{eqnarray}
+
+satisfait les équations (\ref{eq.1.14}) et (\ref{eq.1.15}). Pour vérifier, par exemple, l'égalité
+
+\begin{eqnarray}
+	\left( \partial_{z_2} - \partial_{z_1} +c \right )	\chi_N & =& 	 0 , \quad z_{2} = z_1 + 0  \label{eq.1.18}.
+\end{eqnarray}
+
+réécrivons $\chi_N$ comme
+
+\begin{eqnarray}
+	\chi_N & =& \left( \partial_{z_2} - \partial_{z_1} + c \right ) \tilde{\chi}_N
+\end{eqnarray}
+
+où
+
+\begin{eqnarray}
+	\tilde{\chi}_N & \propto & 	\prod_{j=3 }^N \left ( \partial_{z_j} - \partial_{z_1} +c \right )	\left ( \partial_{z_j} - \partial_{z_2} +c \right ) \times \left [  \prod_{ 3 \leq k < j \leq N } \left ( \partial_{z_j} - \partial_{z_k} +c \right ) \right ] \det [ \exp\{i\lambda_j z_k \}] 	.
+\end{eqnarray}
+
+Cette fonction est antisymétrique par rapport à $z_1 \leftrightarrow z_2$,
+
+\begin{eqnarray}
+	\tilde{\chi}_N(z_1 , z_2) & =& - 	\tilde{\chi}_N(z_2 , z_1)	
+\end{eqnarray}
+
+et elle est égale à zéro lorsque $z_1 = z_2$. En revenant à l'équation (\ref{eq.1.18}),
+
+\begin{eqnarray}
+	\left [ \left ( \partial_{z_2} -  \partial_{z_1} \right )^2 - c^2   \right ] \tilde{\chi}_N & = & 0, \quad z_2 = z_1  \label{eq.1.22}	
+\end{eqnarray}
+
+nous voyons que le membre de gauche change de signe lorsque $z_1 \leftrightarrow z_2$, et donc l'égalité (\ref{eq.1.22}) est correcte. Nous pouvons de la même manière vérifier les autres conditions aux limites. Ainsi, $\chi_n$ dans (\ref{eq.1.17}) est la fonction propre souhaitée de l'Hamiltonien $\operator{\mathcal{H}}_N$ (\ref{eq.1.11}). Le déterminant dans (\ref{eq.1.17}) peut être écrit comme une somme sur toutes les permutations $\mathcal{P}$ des nombres $1, 2, \cdots, N$ :
+
+\begin{eqnarray}
+	\det [ \exp\{i\lambda_j z_k \}] & = & 	\sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} 
+\end{eqnarray}
+
+où $[\mathcal{P}]$ désigne la parité de la permutation. On obtient, dans le domaine $T$ (\ref{eq.1.13}) :
+
+\begin{eqnarray}
+	\chi_N & = &	\left \{ N! \prod_{k<j} \left [ ( \lambda_j - \lambda_k )^2 + c^2 \right ] \right \}^{-1} \notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} \prod_{k<j} \left [  \lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  -i c \right ]
+\end{eqnarray}
+
+avec la constante spécifiée. Continuons maintenant $\chi_N$ par symétrie à l'ensemble de $\mathbb{R}^N$ :
+
+\begin{eqnarray}
+	\chi_N & = &	\left \{ N! \prod_{k<j} \left [ ( \lambda_j - \lambda_k )^2 + c^2 \right ] \right \}^{-1} \notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{n = 1}^N  z_n \lambda_{ \mathcal{P}(n) } \right \} \prod_{k<j} \left [  \lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  -i c \epsilon (z_j -z_k ) \right ]
+\end{eqnarray}
+
+où $\epsilon(x)$ est la fonction signe. La méthode décrite ci-dessus a apparemment été suggérée par M. Gaudin [9].
+Une autre manière utile d'écrire $\chi_N$ est la suivante :
+
+\begin{eqnarray}
+	\chi_N & = &	\frac{(-i){\frac{N(N-1)}2}}{ \sqrt{N!}}\left \{  \prod_{1\leq k<j\leq N} \epsilon (z_j -z_k ) \right \}\notag \\
+	&&  \times \sum_{\mathcal{P}} (-1)^{[\mathcal{P}]} \exp \left \{ i \sum_{k = 1}^N  z_k \lambda_{ \mathcal{P}(k) } \right \} \notag \\
+	&& \times \exp \left \{  \frac{i}{2} \sum_{1\leq k<j\leq N} \epsilon (z_j -z_k ) \theta(\lambda_{\mathcal{P}(j)}- \lambda_{\mathcal{P}(k)}  )  \right \} \label{eq.1.26} 
+\end{eqnarray}
+où
+\begin{eqnarray*}
+	\theta ( x ) & = & i \ln \left ( \frac{ic + x }{ic - x } \right ) .
+\end{eqnarray*}

@@ -1,0 +1,209 @@
+
+Chapitre 1 : présente le modèle de Lieb-Liniger, sa solution par Bethe Ansatz, la densité de rapidité à température nulle, et les excitations élémentaires.
+
+Chapitre 2 : développe la thermodynamique du système, introduit le Thermodynamic Bethe Ansatz, les principes statistiques, le GGE, les charges conservées et l’entropie de Yang-Yang.
+
+\chapter{Modèle de Lieb-Liniger et approche Bethe Ansatz}
+
+\section*{Introduction}
+Contexte historique et physique du modèle de Lieb-Liniger. Réalisations expérimentales en 1D et rôle de l'intégrabilité. Objectifs du chapitre.
+
+\section{Le modèle de Lieb-Liniger}
+
+\subsection{Hamiltonien du modèle}
+\[
+\hat{H} = -\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2} + 2c \sum_{1 \leq i < j \leq N} \delta(x_i - x_j)
+\]
+Présentation des paramètres physiques : interaction $c > 0$, densité $n$, couplage $\gamma$. Conditions aux bords périodiques. Symétrie bosonique.
+
+\subsection{Domaines physiques}
+Limite faible interaction (quasi-condensat) et forte interaction (Tonks-Girardeau).
+
+\section{Résolution exacte par Bethe Ansatz}
+
+\subsection{Construction des états propres}
+Forme de l’onde : superposition d’ondes planes avec phases. Conditions de raccord au contact.
+
+\subsection{Équations de Bethe}
+Conditions aux bords périodiques $\Rightarrow$ quantification des moments $\{k_j\}$.
+
+\subsection{Limite thermodynamique}
+Définition des densités $\rho(\lambda)$ et $\rho^h(\lambda)$. Équation intégrale à $T=0$ :
+\[
+\rho(\lambda) + \rho^h(\lambda) = \frac{1}{2\pi} + \int_{-\infty}^{\infty} K(\lambda - \mu) \rho(\mu) \, d\mu
+\]
+
+\section{Propriétés physiques à température nulle}
+
+\subsection{Énergie du fondamental}
+Énergie par unité de longueur :
+\[
+e = \int \lambda^2 \rho(\lambda) \, d\lambda
+\]
+
+\subsection{Densité de particules et impulsion}
+Formules intégrales. Dépendance en $\gamma$.
+
+\section{Excitations élémentaires à température nulle}
+
+\subsection{Types d’excitations}
+Excitations particule-trou. Interprétation via la distribution $\rho$.
+
+\subsection{Relation énergie–impulsion}
+Spectre d’excitation (type I et II), vitesse du son $v_s$.
+
+\subsection{Structure de quasi-particules}
+Luttinger liquid. Connexions avec la théorie des perturbations.
+
+\section*{Conclusion}
+Récapitulatif : solution exacte, densité de rapidité, excitations. Préparation à l’étude thermodynamique.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Thermodynamique du gaz de Lieb-Liniger}
+
+\section*{Introduction}
+Problématique : comment définir la thermodynamique d’un système intégrable ? Objectifs du chapitre : TBA, GGE, entropie.
+
+\section{Thermodynamique à température finie : le TBA}
+
+\subsection{Idée générale}
+Motivation : accès aux propriétés thermiques. Notion de pseudo-énergie, rôle de l’entropie.
+
+\subsection{Équation de Yang–Yang}
+Définition :
+\[
+\varepsilon(\lambda) = \frac{\lambda^2 - \mu}{T} - \int K(\lambda - \mu') \log\left(1 + e^{-\varepsilon(\mu')} \right) d\mu'
+\]
+
+\subsection{Résolution et interprétation}
+Accès à $\rho(\lambda)$ à $T>0$. Calculs thermodynamiques.
+
+\section{Statistique quantique et ensemble de Gibbs généralisé (GGE)}
+
+\subsection{Échec de l'ensemble canonique}
+Intégrabilité $\Rightarrow$ non thermalisation standard.
+
+\subsection{Définition du GGE}
+\[
+\rho_{\mathrm{GGE}} = \frac{1}{Z_{\mathrm{GGE}}} \exp\left(-\sum_n \beta_n Q_n\right)
+\]
+
+\subsection{Cas du Lieb-Liniger}
+Structure des charges $Q_n$, rôle des multiplicateurs $\beta_n$.
+
+\section{Intégrabilité et charges conservées}
+
+\subsection{Définition formelle}
+Infinité de charges locales. Lien avec la matrice de transfert.
+
+\subsection{Structure hiérarchique}
+Charges de rang élevé, interprétation physique (courants, énergies...).
+
+\subsection{Rôle thermodynamique}
+Contraintes fortes sur les états accessibles, impact sur le TBA et le GGE.
+
+\section{Entropie de Yang–Yang}
+
+\subsection{Formule de l’entropie}
+\[
+s[\rho] = \int d\lambda \left[ (\rho + \rho^h)\log(\rho + \rho^h) - \rho \log \rho - \rho^h \log \rho^h \right]
+\]
+
+\subsection{Principe variationnel}
+Équilibre thermodynamique = minimisation de
+\[
+f[\rho] = e[\rho] - T s[\rho]
+\]
+
+\subsection{Applications}
+Calculs explicites et interprétations physiques.
+
+\section*{Conclusion}
+Résumé : TBA, GGE, entropie de Yang–Yang. Perspectives : dynamique hors équilibre, hydrodynamique généralisée.
+
+
+-----------------------------------
+
+\chapter{Quantification canonique du gaz de Bose unidimensionnel à interaction delta}
+
+\section{Introduction}
+Dans ce chapitre, nous présentons la quantification canonique d’un gaz de Bose en une dimension, décrit par un champ de Bose soumis à une interaction de type delta. Ce modèle est fondamental en physique théorique, notamment pour l’étude des systèmes intégrables.
+
+\section{Champs de Bose et relations de commutation}
+On introduit le champ de Bose quantique $\Psi(x,t)$ et son adjoint hermitien $\Psi^\dagger(x,t)$, qui satisfont les relations de commutation canoniques à temps égal :
+\begin{align}
+[\Psi(x), \Psi^\dagger(y)] &= \delta(x - y) \\
+[\Psi(x), \Psi(y)] &= [\Psi^\dagger(x), \Psi^\dagger(y)] = 0
+\end{align}
+Dans ce qui suit, on omettra l’argument temporel $t$ pour alléger les notations.
+
+\section{Hamiltonien du modèle}
+Le système est régi par l’Hamiltonien :
+\begin{equation}
+H = \int dx \left[ (\partial_x \Psi^\dagger)(\partial_x \Psi) + c\, \Psi^\dagger \Psi^\dagger \Psi \Psi \right]
+\end{equation}
+où $c$ est une constante de couplage.
+
+L’équation du mouvement associée est l’équation de Schrödinger non linéaire :
+\begin{equation}
+i \partial_t \Psi = -\partial_x^2 \Psi + 2c\, \Psi^\dagger \Psi \Psi
+\end{equation}
+
+\section{Le pseudovacuum}
+On considère l’état $|0\rangle$ tel que :
+\begin{equation}
+\Psi(x) |0\rangle = 0, \quad \forall x
+\end{equation}
+Le dual est défini par $\langle 0| = (|0\rangle)^\dagger$ et vérifie :
+\begin{equation}
+\langle 0| \Psi^\dagger(x) = 0, \quad \langle 0|0\rangle = 1
+\end{equation}
+Remarque : $|0\rangle$ n’est pas le vrai vide du système pour $c > 0$ (le vide est un état de type Fermi), mais sert de pseudovacuum pour construire les états excités.
+
+\section{Observables conservées}
+Trois opérateurs importants commutent avec le Hamiltonien :
+\begin{itemize}
+  \item Nombre de particules :
+  \[
+  Q = \int dx\, \Psi^\dagger(x) \Psi(x)
+  \]
+  \item Moment total :
+  \[
+  P = -\frac{i}{2} \int dx\, \left[ \Psi^\dagger \partial_x \Psi - (\partial_x \Psi^\dagger) \Psi \right]
+  \]
+  \item Hamiltonien $H$
+\end{itemize}
+Tous ces opérateurs sont hermitiens et satisfont $[H, Q] = [H, P] = 0$.
+
+\section{États propres à N particules}
+Un état propre à $N$ particules s’écrit :
+\begin{equation}
+|\psi(\lambda_1, ..., \lambda_N)\rangle = \frac{1}{\sqrt{N!}} \int d^N z\, \chi_N(z_1,...,z_N|\lambda_1,...,\lambda_N)\, \Psi^\dagger(z_1)\cdots \Psi^\dagger(z_N) |0\rangle
+\end{equation}
+où $\chi_N$ est une fonction d’onde symétrique des $z_j$, fonction propre du Hamiltonien et du moment total à $N$ corps.
+
+\section{Hamiltonien et moment à N corps}
+On définit les opérateurs :
+\begin{align}
+\mathcal{H}_N &= \sum_{j=1}^N -\partial_{z_j}^2 + 2c \sum_{1 \leq k < j \leq N} \delta(z_j - z_k) \\
+\mathcal{P}_N &= \sum_{j=1}^N -i \partial_{z_j}
+\end{align}
+et les équations aux valeurs propres :
+\begin{align}
+\mathcal{H}_N \chi_N &= E_N \chi_N \\
+\mathcal{P}_N \chi_N &= p_N \chi_N
+\end{align}
+
+\section{Action de l’opérateur moment}
+L’action de l’opérateur $P$ sur $|\psi_N\rangle$ est :
+\[
+P |\psi_N\rangle = i \int dx\, (\partial_x \Psi^\dagger) \Psi\, |\psi_N\rangle
+\]
+On utilise les relations de commutation et des intégrations par parties pour obtenir :
+\[
+P |\psi_N\rangle = \frac{1}{\sqrt{N!}} \int d^N z\, \left( \sum_{k=1}^N -i \partial_{z_k} \right) \chi_N(z_1,...,z_N)\, \Psi^\dagger(z_1)\cdots \Psi^\dagger(z_N)|0\rangle
+\]
+ce qui confirme que l’état est bien un vecteur propre de l’opérateur moment avec valeur propre $p_N = \sum_k \lambda_k$ si $\chi_N$ est une onde plane symétrisée.
+
+

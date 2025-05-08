@@ -1,0 +1,111 @@
+\subsection{Hamiltonien du modèle}
+
+Le gaz de Bose unidimensionnel est décrit par les opérateurs champs quantiques de Bose canoniques  d'annihilation \( \Psi(x,t) \) et de création \( \Psi^\dag(x,t) \), satisfaisant les relations de commutation canoniques à temps égal:% $\left[ \operator{\Psi}(x,t), \operator{\Psi}^\dagger(y,t) \right] = \delta(x - y)$ et $ \left[ \operator{\Psi}(x,t), \operator{\Psi}(y,t) \right] = \left[ \operator{\Psi}^\dag(x,t), \operator{\Psi}^\dagger(y,t) \right] = 0$ . 
+
+\begin{eqnarray}
+\left[ \operator{\Psi}(x,t), \operator{\Psi}^\dag(y,t) \right] &=& \delta(x - y), \label{eq:CCR1} \\
+\left[ \operator{\Psi}(x,t), \operator{\Psi}(y,t) \right] &=& \left[ \operator{\Psi}^\dag(x,t), \operator{\Psi}^\dag(y,t) \right] = 0. \label{eq:CCR2}
+\end{eqnarray}
+
+
+%\begin{eqnarray*}
+%    \left[ \Psi(x,t), \Psi^\dagger(y,t) \right] &=& \delta(x - y), \\
+%    \left[ \Psi(x,t), \Psi(y,t) \right] &=& \left[ \Psi^\dagger(x,t), \Psi^\dagger(y,t) \right] = 0
+%\end{eqnarray*}
+
+
+
+
+Dans ce chapitre, l’argument temporel \( t \) sera omis, puisque toutes les considérations s’appliquent à un instant fixé dans le temps.
+
+L’Hamiltonien du modèle de Lieb–Liniger s’écrit alors :
+
+\begin{eqnarray*}
+	\operator{H} & = & \int dx \left( \frac{\hbar^2}{2m} \partial_x \operator{\Psi}^\dagger \partial_x \operator{\Psi} + \frac{g}2  \operator{\Psi}^\dagger \operator{\Psi}^\dagger \operator{\Psi} \operator{\Psi} \right)	
+\end{eqnarray*}
+
+
+où \( m \) est la masse de la particule \( g > 0\) est la constante de couplage caractérisant les interactions locales répulsives.  L’équation du mouvement associée à l’Hamiltonien \eqref{eq:hamiltonien_champ} est donnée par l’équation de Schrödinger non linéaire (NS): 
+
+\begin{eqnarray*}
+	i\hbar \partial_t \operator{\Psi}  & = & -\frac{\hbar^2}{2m} \partial^2_x  \operator{\Psi}  + g 	\operator{\Psi}^\dag \operator{\Psi} \operator{\Psi}
+\end{eqnarray*}
+
+%est l’équation de Schrödinger non linéaire (NS).
+
+%Les interraction entre particules sont répulsif donc $g > 0$. 
+L’état fondamental à température nulle est une sphère de Fermi, et seul ce cas sera considéré par la suite.
+
+Le vide de Fock \( |0\rangle \) est défini par %$\Psi |0\rangle = 0$
+\begin{eqnarray}
+\operator{\Psi}(x) |0\rangle = 0, \quad \forall x. \label{eq:fock_vide}
+\end{eqnarray}
+
+%\[
+%\Psi(x) |0\rangle = 0, \quad \forall x
+%\]
+
+%Il satisfait les relations suivantes :
+
+%\[
+%\Psi^\dagger(x) |0\rangle \neq 0, \quad \langle 0 | \Psi(x) = 0
+%\]
+
+%où le symbole dag (\(\dagger\)) désigne la conjugaison hermitienne.
+
+Enfin, les opérateurs nombre de particules \( \operator{Q} \) et impulsion \( \operator{P} \) sont hermitiens et constituent des intégrales du mouvement donc commutent avec l'hamitonien $[\operator{H} , \operator{Q} ] = [\operator{H} , \operator{P}]  = 0 $ et s’écrivent :
+
+\begin{eqnarray}
+	\operator{Q}  &= & \int dx \, \operator{\Psi}^\dagger \operator{\Psi}  \label{eq:op_nombre} \\
+	\operator{P}  &=& \frac{1}{2} \int dx \, \operator{\Psi}^\dagger (-i \hbar \partial_x) \operator{\Psi	} + \text{h.c.}  \label{eq:op_impulsion}
+\end{eqnarray}
+où "h.c." désigne le conjugué hermitien.
+%Ces opérateurs sont hermitiens et constituent des intégrales du mouvement $[\operator{H} , \operator{Q} ] = [\operator{H} , \operator{P}]  = 0 $ . 
+Nous pouvons maintenant chercher les fonctions propres communes \( |\Psi_N\rangle \) des opérateurs \( \operator{H} \), \( \operator{P} \) et \( \operator{Q} \) :
+
+\begin{eqnarray*}
+	|\Psi_N ( \theta_1 , \cdots , \theta_N ) \rangle  & = &  \frac{1}{\sqrt{N!}} \int d^N x \, \varphi_N ( x_1 , \cdots , x_N \vert \theta_1 , \cdots , \theta_N ) \, \operator{\Psi}^\dag ( x_1 ) \cdots \operator{\Psi}^\dag ( x_N  ) \vert 0 \rangle \label{eq:etat_bose}		
+\end{eqnarray*}
+
+Ici, \( \varphi_N \) est une fonction symétrique de toutes les variables \( x_j \).%Les équations aux valeurs propres sont $\operator{H}|\Psi_N \rangle = E_N |\Psi_N \rangle $, $\operator{P}|\Psi_N \rangle = p_N |\Psi_N \rangle $ et $\operator{Q}|\Psi_N \rangle = N |\Psi_N \rangle $.
+
+Les équations aux valeurs propres associées s’écrivent :
+\begin{eqnarray}
+\operator{H} |\Psi_N\rangle &=& E_N |\Psi_N\rangle, \label{eq:vp_H} \\
+\operator{P} |\Psi_N\rangle &=& p_N |\Psi_N\rangle, \label{eq:vp_P} \\
+\operator{Q} |\Psi_N\rangle &=& N |\Psi_N\rangle. \label{eq:vp_Q}
+\end{eqnarray}
+
+%Il en résulte que \( \varphi_N \) est une fonction propre à la fois de l'Hamiltonien quantique  de Lieb et Liniger (LL)
+
+%\begin{eqnarray*}
+%	H_{LL} & =& \sum_{i = 1}^N \left \{  - \frac{ \hbar^2}{2m} \partial_{x_i}^2  + g  \sum_{j>i} \delta ( x_i - x_j ) \right \} \\
+%	H_{LL} \varphi_N & = & E_N \varphi_N 	
+%\end{eqnarray*}
+
+
+%et de l'opérateur de moment quantique \( P_N  = - i \hbar \sum_{i = 1}^N  \partial_{x_i} \) :
+
+En projetant \eqref{eq:vp_H} sur la base de Fock, on obtient que \( \varphi_N \) satisfait l’équation de Schrödinger à $N$ corps, dite équation de Lieb–Liniger (LL):
+\begin{eqnarray}
+\operator{H}_{\mathrm{LL}}  \varphi_N(x_1, \ldots, x_N) = E_N  \varphi_N(x_1, \ldots, x_N), \label{eq:hamiltonien_LL}
+\end{eqnarray}
+avec l’Hamiltonien quantique à $N$ particules :
+\begin{eqnarray}
+\operator{H}_{\mathrm{LL}} = \sum_{i=1}^N \left( -\frac{\hbar^2}{2m} \partial_{x_i}^2 \right) + g \sum_{i<j} \delta(x_i - x_j). \label{eq:H_LL_detail}
+\end{eqnarray}
+
+De même, l’impulsion totale de l’état est donnée par :
+\begin{eqnarray}
+\operator{P}_N = -i\hbar \sum_{j=1}^N \partial_{x_j}, \label{eq:impulsion_N}
+\end{eqnarray}
+et vérifie :
+\begin{eqnarray}
+\operator{P}_N  \varphi_N = p_N  \varphi_N. \label{eq:vp_PN}
+\end{eqnarray}
+ 
+
+
+
+
+

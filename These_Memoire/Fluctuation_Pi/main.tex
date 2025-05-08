@@ -475,44 +475,61 @@ Cette expression explicite des corrélations permet d'évaluer les fluctuations 
 
 
 
-\section{Fluctuation du nombre d'atomes et de l'énergie}
+\section{Fonction correlation du nombre d'atomes et de l'énergie}
 
 
+Il est maintenant pertinent de tester notre expression des fluctuations. On fait l'hypothèset que le système est en équilibre thermique caractérisé par la températeur $T$ et le potentiel chimoque $\mu$.
 
-
-Il est maintenant pertinent de tester notre expression des fluctuations.
-
-Les fluctuations des observables "nombre d’atomes" \( \operator{\mathcal{N}} \) et "énergie" \( \operator{\mathcal{E}} \) peuvent être exprimées à l’aide des fluctuations de \( \rho \) :
+La valeur propre $\mathcal{N}[\rho]$ (resp $\mathcal{E}[\rho]$) de opérateur nombre d'atomes $\operator{\mathcal{N}}$ (resp énergie. $\operator{\mathcal{E}}$) et assiciés aux configuration liès à la distribution de rapidité $\rho$ s'écrit (avec comme combention la masse des atomes $k_B = \hbar = m =1$)
 
 \begin{eqnarray*}
-    \left \langle  \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
-    \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \left( -\mu + \frac{1}{2} m \theta_a^2 \right) \left( -\mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
+	\mathcal{N}[\rho] & = & L \int d \theta \rho(\theta),\\
+	\mathcal{E}[\rho] & = & 	\frac{L}2 \int d \theta  \theta^2 \rho(\theta).	
 \end{eqnarray*}
 
-où \( \langle \operator{\mathcal{O}}_i \rangle \) désigne la moyenne de l’observable \( \operator{\mathcal{O}}_i \), \( m \) la masse des atomes et \( \mu \) le potentiel chimique.\\
+Les corrélation associèes s'est 
+\begin{eqnarray*}
+	C_{\operator{\mathcal{N}},\operator{\mathcal{N}}} & = &  L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
+	C_{\operator{\mathcal{E}},\operator{\mathcal{E}}} & = &  	\left(\frac{L}2\right)^2 \int d\theta_a \int d\theta_b \,  \theta_a^2 \theta_b^2 \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\	
+\end{eqnarray*}
+
+
+
+%Les fluctuations des observables "nombre d’atomes" \( \operator{\mathcal{N}} \) et "énergie" \( \operator{\mathcal{E}} \) peuvent être exprimées à l’aide des fluctuations de \( \rho \) :
+
+%\begin{eqnarray*}
+%    \left \langle  \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle, \\
+%    \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle &=& L^2 \int d\theta_a \int d\theta_b \, \left( -\mu + \frac{1}{2} m \theta_a^2 \right) \left( -\mu + \frac{1}{2} m \theta_b^2 \right) \langle \delta \rho(\theta_a) \delta \rho(\theta_b) \rangle,
+%\end{eqnarray*}
+
+%où \( \langle \operator{\mathcal{O}}_i \rangle \) désigne la moyenne de l’observable \( \operator{\mathcal{O}}_i \), \( m \) la masse des atomes et \( \mu \) le potentiel chimique.\\
 
 Dans la section \{??\}, nous avons vu que la variance d’une observable \( \operator{\mathcal{O}}_i \), autrement dit ses fluctuations, peut également s’exprimer comme une dérivée thermodynamique de sa moyenne :
 
 \begin{eqnarray*}
-    \Delta_{\operator{\mathcal{O}}_i}^2 = - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}},
+    C_{\operator{\mathcal{O}}_i,\operator{\mathcal{O}}_i} = \Delta_{\operator{\mathcal{O}}_i}^2 = - \left. \frac{\partial \langle \operator{\mathcal{O}}_i \rangle}{\partial \beta_i} \right|_{\beta_{j \neq i}},
 \end{eqnarray*}
 
 où \( \beta_i \) est la variable conjuguée à \( \langle \operator{\mathcal{O}}_i \rangle \). En particulier, les fluctuations du nombre d’atomes et de l’énergie peuvent s’écrire :
 
 \begin{eqnarray*}
     \Delta_{\operator{\mathcal{N}}}^2 &=& \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \\
-    \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 &=& - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu,
+    \Delta_{\operator{\mathcal{E}}}^2 &=& \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 + \mu \Delta_{\operator{\mathcal{N}}}^2 =   - \left. \frac{\partial \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle}{\partial \beta} \right|_\mu - \frac{\mu}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T,
 \end{eqnarray*}
 
-avec \( \beta = (k_B T)^{-1} \), \( T \) étant la température.
+avec \( \beta =T^{-1} \).
 
-Les quantités \( \left \langle \left( \operator{\mathcal{N}} - \langle \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{N}}}^2 \) sont analytiquement équivalentes, de même que \( \left \langle \left( \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} - \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle \right)^2 \right \rangle \) et \( \Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2 \).
+Les quantités \( C_{\operator{\mathcal{N}},\operator{\mathcal{N}}} \) et \( \Delta_{\operator{\mathcal{N}}}^2 \) sont analytiquement équivalentes, de même que \( C_{\operator{\mathcal{E}},\operator{\mathcal{E}}} \) et \( \Delta_{\operator{\mathcal{E}}}^2 \).
 
-Nous souhaitons maintenant effectuer une comparaison numérique entre ces deux approches. Pour ce faire, nous avons d'abord résolu numériquement l’équation \{??\} avec \( f(\theta) = \frac{\epsilon(\theta) - \mu}{T} \), ce qui nous a permis d’obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \).
+Nous souhaitons maintenant effectuer une comparaison numérique entre ces deux approches. Pour ce faire, nous avons d'abord résolu numériquement l’équation \{??\} avec \( f(\theta) = \beta \epsilon(\theta) - \beta\mu \), ce qui nous a permis d’obtenir \( \rho(\theta) \) et \( \rho_s(\theta) \) (Il y auras plus de détaille dans le chapitre ??) .
 
-Nous avons ensuite calculé les fluctuations de \( \rho \) pour une densité spatiale fixée à \( n = 10~\mu \mathrm{m}^{-1} \), et pour différentes températures \( T \) allant de \( 5.7~\mathrm{K} \) à \( 53.5~\mathrm{nK} \). Le potentiel chimique \( \mu \) est ici une fonction de \( T \) et de \( n \). Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger. En abscisse, nous avons le logarithme décimal du paramètre d’interaction de Lieb-Liniger \( \gamma = \frac{m g}{\hbar^2 n} \), et en ordonnée le logarithme décimal de \( t = \frac{\hbar^2}{\beta m g^2} \) (voir Fig.~\ref{fig:diag}).
+%Nous avons ensuite calculé les fluctuations de \( \rho \) pour une densité spatiale fixée à \( n = 10~\mu \mathrm{m}^{-1} \), et pour différentes températures \( T \) allant de \( 5.7~\mathrm{K} \) à \( 53.5~\mathrm{nK} \). Le potentiel chimique \( \mu \) est ici une fonction de \( T \) et de \( n \). Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger. En abscisse, nous avons le logarithme décimal du paramètre d’interaction de Lieb-Liniger \( \gamma = \frac{m g}{\hbar^2 n} \), et en ordonnée le logarithme décimal de \( t = \frac{\hbar^2}{\beta m g^2} \) (voir Fig.~\ref{fig:diag}).
 
-Ce même diagramme contient également un point rouge correspondant à \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A}).
+On fais les calcule des correlation pour $\gamma = g/n $ fixé à ?? et $t = 1/(\beta g^2)$ entre ?? et ??.Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger (voir Fig.~\ref{fig:diag}).
+
+%Ce même diagramme contient également un point rouge correspondant à \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A}).
+
+Ce même diagramme contient également un point rouge correspondant à \( t = ?? \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A})
 
 \begin{figure}[H]
 	\centering
@@ -531,14 +548,14 @@ Ce même diagramme contient également un point rouge correspondant à \( T = 60
 	\label{fig:diag_fig}
 \end{figure}
 
-Nous calculons ensuite les moyennes des observables :
+%Nous calculons ensuite les moyennes des observables :
 
-\begin{eqnarray*}
-    \langle \operator{\mathcal{N}} \rangle &=& L \int \rho(\theta) \, d\theta, \\
-    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \left( - \mu + \frac{1}{2} m \theta^2 \right) \rho(\theta) \, d\theta,
-\end{eqnarray*}
+%\begin{eqnarray*}
+%    \langle \operator{\mathcal{N}} \rangle &=& L \int \rho(\theta) \, d\theta, \\
+%    \langle \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} \rangle &=& L \int \left( - \mu + \frac{1}{2} m \theta^2 \right) \rho(\theta) \, d\theta,
+%\end{eqnarray*}
 
-pour chaque point du diagramme (Fig.~\ref{fig:diag}). En faisant varier leur variable conjuguée, nous accédons alors aux fluctuations $\Delta_{\operator{\mathcal{N}}}^2 $ et $\Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2$.
+%pour chaque point du diagramme (Fig.~\ref{fig:diag}). En faisant varier leur variable conjuguée, nous accédons alors aux fluctuations $\Delta_{\operator{\mathcal{N}}}^2 $ et $\Delta_{\operator{\mathcal{E}} - \mu \operator{\mathcal{N}}}^2$.
 
 %\[
 %\Delta_{\operator{\mathcal{N}}}^2 = \frac{1}{\beta} \left. \frac{\partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu} \right|_T, \quad
