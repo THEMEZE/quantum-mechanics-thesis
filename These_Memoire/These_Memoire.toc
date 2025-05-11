@@ -20,6 +20,11 @@
 \contentsline {paragraph}{Énergies quantifiées.}{6}{equation.1.19}%
 \contentsline {paragraph}{Notation adoptée et interprétation.}{6}{equation.1.20}%
 \contentsline {subsubsection}{Deux particules}{6}{equation.1.20}%
+\contentsline {paragraph}{Introduction au système à deux bosons avec interaction de contact.}{6}{equation.1.20}%
+\contentsline {paragraph}{Forme générale de l’état à deux particules dans la base de Fock}{6}{equation.1.20}%
+\contentsline {paragraph}{Définition et orthonormalisation de la base positionnelle bosonique.}{6}{equation.1.21}%
+\contentsline {paragraph}{Symétrie et normalisation de la fonction d’onde à deux particules.}{7}{equation.1.26}%
+\contentsline {paragraph}{Réécriture de l’Hamiltonien à deux particules.}{7}{equation.1.29}%
 \contentsline {paragraph}{Méthode de Bethe}{10}{equation.1.45}%
 \contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{11}{equation.1.48}%
 \contentsline {paragraph}{Conditions aux limites et équations de Bethe}{12}{equation.1.62}%

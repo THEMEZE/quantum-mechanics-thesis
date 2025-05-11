@@ -1,18 +1,20 @@
-\paragraph{}
+\paragraph{Introduction au système à deux bosons avec interaction de contact.}
 
 Nous considérons à présent le cas de deux bosons quantiques dans la même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, le terme d’interaction à contact intervient dans la dynamique.
-
-On cherche à déterminer les états propres \(\vert 2 \rangle\) de l’Hamiltonien \(\operator{H}\), satisfaisant l’équation de Schrödinger stationnaire :
+%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Forme générale de l’état à deux particules dans la base de Fock}
+On cherche à déterminer les états propres \(\vert {\theta_1, \theta_2} \rangle\), où $\theta_1$ est le quasi-moment d'une particule et $\theta_2$ celui de l'autre, associés à l'Hamiltonien \(\operator{H}\), satisfaisant l’équation de Schrödinger stationnaire :
 
 \begin{eqnarray}
-	\operator{H} \vert 2 \rangle & = & E \vert 2 \rangle.
+	\operator{H} \vert {\theta_1, \theta_2} \rangle & = & E \vert {\theta_1, \theta_2} \rangle.
 \end{eqnarray}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Définition et orthonormalisation de la base positionnelle bosonique.}
 L’état à deux particules peut être écrit dans la base positionnelle de Fock sous la forme :
 
 \begin{eqnarray}
-	\vert 2 \rangle & = & \frac{1}{\sqrt{2}}\iint dz_1dz_2 \, \vert z_1 , z_2 \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_2(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \label{chap:1:2.part}
+	\vert 2 \rangle & = & \frac{1}{\sqrt{2}}\iint dz_1dz_2 \, \vert z_1 , z_2 \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \label{chap:1:2.part}
 \end{eqnarray}
 
 où la base spatiale à deux particule bosomique $\vert z_1 , z_2 \rangle$ s'écrit pour $z_1 \neq  z_2$
@@ -35,33 +37,42 @@ et si $z_1 =  z_2 = z$
 orthonormalisée car 
 
 \begin{eqnarray}
-	\langle z , z \vert z' , z' \rangle  & = & \operator{\delta}(z -z'),
+	\langle z , z \vert z' , z' \rangle  & = & \operator{\delta}(z -z').
 \end{eqnarray}
 
-et \(\varphi_2(z_1, z_2)\) tel que 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Symétrie et normalisation de la fonction d’onde à deux particules.}
+\(\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2)\) tel que 
 
 \begin{eqnarray}
-	\varphi_2(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert  2  \rangle 
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert  2  \rangle 
 \end{eqnarray}
 
 
 est la fonction d’onde symétrique :
 
 \begin{eqnarray}
-	\varphi_2(z_1, z_2) = \varphi_2(z_2, z_1),
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \varphi_{\{\theta_1 , \theta_2\}}(z_2, z_1),
 \end{eqnarray}
 
 et normalisée selon :
 
 \begin{eqnarray}
-	\langle 2 \vert 2 \rangle ~=~ \int dz_1\, dz_2\, |\varphi_2(z_1, z_2)|^2 = 1.
+	\langle 2 \vert 2 \rangle ~=~ \int dz_1\, dz_2\, |\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2)|^2 = 1.
 \end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Réécriture de l’Hamiltonien à N particules.}
 
 L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une intégration par parties. 
 
 \begin{eqnarray}
 	\operator{H} & = & \int dx \left \{ -\left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x) + \frac{c}{2} \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right \} \label{chap:1:ham.mod.2}.
 \end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Action de l’Hamiltonien sur l’état à deux particules et Forme explicite de l’Hamiltonien effectif à deux corps}
 
 L’action de \(\operator{H}\) sur \(\vert 2 \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules. 
 Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:2.part}) 
@@ -70,7 +81,7 @@ Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fo
 %.......
 
 \begin{eqnarray}
-	\operator{H}\vert 1 \rangle &= &  \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  	\left [ \operator{\mathcal{H}}_2 \varphi_2(z_1, z_2) \right ] \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle		
+	\operator{H}\vert 1 \rangle &= &  \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  	\left [ \operator{\mathcal{H}}_2 \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \right ] \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle		
 \end{eqnarray}
 
 avec 
@@ -83,44 +94,44 @@ avec
 Après développement en utilisant les relations de commutation bosoniques et les propriétés du vide de Fock, on obtient l’équation suivante :
 
 \begin{eqnarray}
-	\operator{\mathcal{H}}_2 \varphi_2(z_1, z_2) = E \varphi_2(z_1, z_2). \label{chap:eq.twobody}
+	\operator{\mathcal{H}}_2 \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = E \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2). \label{chap:eq.twobody}
 \end{eqnarray}
 
 
-...........................
+%...........................
 
 %Il est instructif de commencer par le cas de $N = 2$ particules sur une ligne infinie. 
-
+\paragraph{Changement de variables : coordonnées du centre de masse et relatives.}
 En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$,
 
-{\color{lightgray}  
-\begin{eqnarray*}
-	\left ( \begin{array}{c} Z \\ Y \end{array} \right ) = \left ( \begin{array}{cc} 1/2 &  1/2  \\ 1 & - 1  \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ), & & \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{cc} 1 &  1/2  \\ 1 & - 1/2  \end{array} \right ) \left ( \begin{array}{c} Z \\ Y \end{array} \right )
-\end{eqnarray*}
+%{\color{lightgray}  
+%\begin{eqnarray*}
+%	\left ( \begin{array}{c} Z \\ Y \end{array} \right ) = \left ( \begin{array}{cc} 1/2 &  1/2  \\ 1 & - 1  \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ), & & \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{cc} 1 &  1/2  \\ 1 & - 1/2  \end{array} \right ) \left ( \begin{array}{c} Z \\ Y \end{array} \right )
+%\end{eqnarray*}
 
 
-\begin{Propr}
-	Soient deux application $f \colon U \subset	 \mathbb{R}^n \rightarrow \mathbb{R} \mbox{ et } \varphi \colon V \subset \mathbb{R}^m \rightarrow \mathbb{R}$ ( où $U$ et $V$ sont ouverts) telles que $\varphi(V) \subset U$. On écrit $\varphi$ sous la forme $\varphi = ( \varphi_1 , \cdots , \varphi_n )$ où $\varphi_i \colon V \rightarrow \mathbb{R} $ pour tous $i$. Soit $a \in V $ tel que $\varphi$ est différentiable en $a$ et $f$ est différentiable en $\varphi(a)$. Alors l'application $F = f \circ \varphi \colon V \rightarrow \mathbb{R}$ est différentiable en $a$ et 
-	\begin{eqnarray*}
-		\forall j \in \llbracket 1 , m \rrbracket \colon \frac{\partial F}{\partial u_j} ( a ) = \sum_{i=1}^n \frac{\partial f}{ \partial x_i} (\varphi (a) ) \cdot \frac{\partial \varphi_i}{ \partial u_j} (a) 
-	\end{eqnarray*} 
-\end{Propr}
+%\begin{Propr}
+%	Soient deux application $f \colon U \subset	 \mathbb{R}^n \rightarrow \mathbb{R} \mbox{ et } \varphi \colon V \subset \mathbb{R}^m \rightarrow \mathbb{R}$ ( où $U$ et $V$ sont ouverts) telles que $\varphi(V) \subset U$. On écrit $\varphi$ sous la forme $\varphi = ( \varphi_1 , \cdots , \varphi_n )$ où $\varphi_i \colon V \rightarrow \mathbb{R} $ pour tous $i$. Soit $a \in V $ tel que $\varphi$ est différentiable en $a$ et $f$ est différentiable en $\varphi(a)$. Alors l'application $F = f \circ \varphi \colon V \rightarrow \mathbb{R}$ est différentiable en $a$ et 
+%	\begin{eqnarray*}
+%		\forall j \in \llbracket 1 , m \rrbracket \colon \frac{\partial F}{\partial u_j} ( a ) = \sum_{i=1}^n \frac{\partial f}{ \partial x_i} (\varphi (a) ) \cdot \frac{\partial \varphi_i}{ \partial u_j} (a) 
+%	\end{eqnarray*} 
+%\end{Propr}
 
-avec la régle de la chaine  $\partial_Z = \frac{\partial z_1}{\partial Z}\partial_{z_1} + \frac{\partial z_2}{\partial Z}\partial_{z_2}, \partial_Y = \frac{\partial z_1}{\partial Y}\partial_{z_1} + \frac{\partial z_2}{\partial Y}\partial_{z_2}$.
+%avec la régle de la chaine  $\partial_Z = \frac{\partial z_1}{\partial Z}\partial_{z_1} + \frac{\partial z_2}{\partial Z}\partial_{z_2}, \partial_Y = \frac{\partial z_1}{\partial Y}\partial_{z_1} + \frac{\partial z_2}{\partial Y}\partial_{z_2}$.
 
-\begin{eqnarray*}
-	\left ( \begin{array}{c} \partial_Z \\ \partial_Y \end{array} \right ) = \left ( \begin{array}{cc} 1 & 1  \\ 1/2 &  -1/2   \end{array} \right ) \left ( \begin{array}{c} \partial_{z_1} \\ \partial_{z_2} \end{array} \right ), & & \left ( \begin{array}{c} \partial_{z_1} \\ \partial_{z_2} \end{array} \right ) = \left ( \begin{array}{cc} 1/2 &  1  \\ 1/2 & - 1  \end{array} \right ) \left ( \begin{array}{c} \partial_Z \\ \partial_Y \end{array} \right )		
-\end{eqnarray*}
+%\begin{eqnarray*}
+%	\left ( \begin{array}{c} \partial_Z \\ \partial_Y \end{array} \right ) = \left ( \begin{array}{cc} 1 & 1  \\ 1/2 &  -1/2   \end{array} \right ) \left ( \begin{array}{c} \partial_{z_1} \\ \partial_{z_2} \end{array} \right ), & & \left ( \begin{array}{c} \partial_{z_1} \\ \partial_{z_2} \end{array} \right ) = \left ( \begin{array}{cc} 1/2 &  1  \\ 1/2 & - 1  \end{array} \right ) \left ( \begin{array}{c} \partial_Z \\ \partial_Y \end{array} \right )		
+%\end{eqnarray*}
 
-\begin{eqnarray*}
-	\partial_Z^2 & = & 	\partial_{z_1}^2 + \partial_{z_2}^2 + 2 \partial_{z_1} \partial_{z_2},\\
-	4\partial_Y^2 & = & 	\partial_{z_1}^2 + \partial_{z_2}^2 - 2 \partial_{z_1} \partial_{z_2},
-\end{eqnarray*}
+%\begin{eqnarray*}
+%	\partial_Z^2 & = & 	\partial_{z_1}^2 + \partial_{z_2}^2 + 2 \partial_{z_1} \partial_{z_2},\\
+%	4\partial_Y^2 & = & 	\partial_{z_1}^2 + \partial_{z_2}^2 - 2 \partial_{z_1} \partial_{z_2},
+%\end{eqnarray*}
 
-Donc 
+%Donc 
 
 
-}
+%}
 
 \begin{eqnarray*}
 	\frac{1}{2} \operator{\partial}_Z^2 + 	2\operator{\partial}_Y^2 & = & \operator{\partial}_{z_1}^2 + \operator{\partial}_{z_2}^2
@@ -186,7 +197,7 @@ Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve qu
 
 Cette relation exprime l’impact de l’interaction delta sur le déphasage de la solution liée. On en déduit que plus le couplage $c$ est fort, plus la phase $\Phi$ tend vers $\pi$, ce qui correspond à une fonction d’onde présentant un maximum en $Y = 0$. En revanche, dans la limite d’interaction faible ($c \to 0$), la phase $\Phi$ tend vers zéro et la fonction d’onde devient nulle en $Y = 0$.
 
-En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_2 (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert 2 \rangle$ satisfait à cette condition :\\
+En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert 2 \rangle$ satisfait à cette condition :\\
 
 {\color{lightgray} 
 Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  
@@ -211,7 +222,7 @@ Donc
 Ainsi 
 }
 \begin{eqnarray}
-	\underset{ \vert z_1 - z_2 \vert  \to 0^+ }{\lim}  \left [  \operator{\partial}_{z_2}  \varphi _2( z_1 , z_2 ) - \operator{\partial}_{z_1}  \varphi_2 ( z_1 , z_2 ) - c  \varphi_2 ( z_1 , z_2 ) \right ] & = &0.  		
+	\underset{ \vert z_1 - z_2 \vert  \to 0^+ }{\lim}  \left [  \operator{\partial}_{z_2}  \varphi _2( z_1 , z_2 ) - \operator{\partial}_{z_1}  \varphi_{\{\theta_1 , \theta_2\}} ( z_1 , z_2 ) - c  \varphi_{\{\theta_1 , \theta_2\}} ( z_1 , z_2 ) \right ] & = &0.  		
 \end{eqnarray}
 
 %Les mêmes conditions s'appliquent lorsque $z_1$ est échangé avec $z_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{chap:eq.twobody}) sont
@@ -220,7 +231,7 @@ Comme la fonction d’onde est symétrique, l’échange des positions $z_1 \lef
 
 
 \begin{eqnarray}\label{eq:I-1-10}
-	\varphi_2(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
 \end{eqnarray}
 
 %correspondant aux valeurs propres $(\theta_1^2 + \theta_2^2)/2$. Pour $\theta_1 > \theta_2$, les deux termes $e^{iz_1 \theta_1 + iz_2 \theta_2 }$ et $e^{iz_1 \theta_2 + iz_2 \theta_1 }$ correspondent aux paires de particules entrantes et sortantes dans un processus de diffusion à deux corps. Le rapport de leurs amplitudes est la phase de diffusion à deux corps,
@@ -290,13 +301,13 @@ Cette équation décrit deux particules libres, sauf lorsqu'elles se rencontrent
 On peut résoudre cette équation en utilisant l’**Ansatz de Bethe**, en supposant que la fonction d’onde prend la forme d’une superposition symétrisée d’ondes planes dans les domaines \(z_1 < z_2\) et \(z_1 > z_2\) :
 
 \begin{eqnarray}
-	\varphi_2(z_1, z_2) = \begin{cases}
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \begin{cases}
 		A_{12} e^{i(k_1 z_1 + k_2 z_2)} + A_{21} e^{i(k_2 z_1 + k_1 z_2)} & \text{si } z_1 < z_2, \\
 		A_{12} e^{i(k_1 z_2 + k_2 z_1)} + A_{21} e^{i(k_2 z_2 + k_1 z_1)} & \text{si } z_1 > z_2.
 	\end{cases}
 \end{eqnarray}
 
-La continuité de \(\varphi_2\) à \(z_1 = z_2\), ainsi que le saut de sa dérivée transverse imposé par le potentiel delta, permettent de relier les coefficients \(A_{12}\) et \(A_{21}\). On obtient la condition de diffusion bosonique :
+La continuité de \(\varphi_{\{\theta_1 , \theta_2\}}\) à \(z_1 = z_2\), ainsi que le saut de sa dérivée transverse imposé par le potentiel delta, permettent de relier les coefficients \(A_{12}\) et \(A_{21}\). On obtient la condition de diffusion bosonique :
 
 \begin{eqnarray}
 	\frac{A_{21}}{A_{12}} & = & - \frac{ic(k_1 - k_2) + (k_1 - k_2)^2}{ic(k_1 - k_2) - (k_1 - k_2)^2}.
