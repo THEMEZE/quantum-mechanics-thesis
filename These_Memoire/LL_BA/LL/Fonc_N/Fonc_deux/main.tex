@@ -267,19 +267,25 @@ Ainsi
 	\underset{ \vert z_1 - z_2 \vert  \to 0^+ }{\lim}  \left [  \operator{\partial}_{z_2}  \varphi _2( z_1 , z_2 ) - \operator{\partial}_{z_1}  \varphi_2 ( z_1 , z_2 ) - c  \varphi_2 ( z_1 , z_2 ) \right ] & = &0.  		
 \end{eqnarray}
 
-Les mêmes conditions s'appliquent lorsque $x_1$ est échangé avec $x_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{chap:eq.twobody}) sont
+%Les mêmes conditions s'appliquent lorsque $z_1$ est échangé avec $z_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{chap:eq.twobody}) sont
+
+Comme la fonction d’onde est symétrique, l’échange des positions $z_1 \leftrightarrow z_2$ ne modifie pas la structure du problème. Les états propres de l’équation (\ref{chap:eq.twobody}) s’écrivent donc
+
 
 \begin{eqnarray}\label{eq:I-1-10}
 	\varphi_2(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
 \end{eqnarray}
 
-correspondant aux valeurs propres $(\theta_1^2 + \theta_2^2)/2$. Pour $\theta_1 > \theta_2$, les deux termes $e^{iz_1 \theta_1 + iz_2 \theta_2 }$ et $e^{iz_1 \theta_2 + iz_2 \theta_1 }$ correspondent aux paires de particules entrantes et sortantes dans un processus de diffusion à deux corps. Le rapport de leurs amplitudes est la phase de diffusion à deux corps,
+%correspondant aux valeurs propres $(\theta_1^2 + \theta_2^2)/2$. Pour $\theta_1 > \theta_2$, les deux termes $e^{iz_1 \theta_1 + iz_2 \theta_2 }$ et $e^{iz_1 \theta_2 + iz_2 \theta_1 }$ correspondent aux paires de particules entrantes et sortantes dans un processus de diffusion à deux corps. Le rapport de leurs amplitudes est la phase de diffusion à deux corps,
+
+et correspondent aux valeurs propres $E = (\theta_1^2 + \theta_2^2)/2$. Lorsque $\theta_1 > \theta_2$, les deux exponentielles $e^{i z_1 \theta_1 + i z_2 \theta_2}$ et $e^{i z_1 \theta_2 + i z_2 \theta_1}$ peuvent être interprétées comme les configurations entrante et sortante d’un processus de diffusion à deux corps. Le rapport entre leurs amplitudes définit la phase de diffusion :
 
 \begin{eqnarray}\label{eq:I-1-11}
-	e^{i\phi ( \theta_1 - \theta_2 ) } & \doteq & \frac{\theta_1 - \theta_2 - ic} { \theta_2 - \theta_1 - ic}. 
+	e^{i\Phi ( \theta_1 - \theta_2 ) } & \doteq & \frac{\theta_1 - \theta_2 - ic} { \theta_2 - \theta_1 - ic}. 
 \end{eqnarray}
 
-Une expression équivalente pour cette phase, souvent utilisée dans la littérature et que nous utilisons également ci-dessous, est $\phi ( \theta ) = 2 \arctan ( \theta/c) \in [ - \pi , \pi ] $.\\
+Une expression équivalente pour cette phase, souvent utilisée dans la littérature et que nous utilisons également ci-dessous, est $\Phi ( \theta ) = 2 \arctan ( \theta/c) \in [ - \pi , \pi ] $.\\
+%Une expression équivalente, fréquemment rencontrée dans la littérature et que nous adopterons par la suite, est donnée par :$\Phi ( \theta ) = 2 \arctan ( \theta/c) \in [ - \pi , \pi ] $.
 
 Il a été souligné par {\color{blue}Eisenbud (1948)} et {\color{blue}Wigner (1955)} que la phase de diffusion peut être interprétée de manière semi-classique comme un "décalage temporel". Esquissons brièvement l'argument de {\color{blue}Wigner (1955)}. Tout d'abord, notons que, pour une particule unique, une approximation simple d'un paquet d'ondes peut être obtenue en superposant deux ondes planes avec des moments $\theta$ et $\theta + \delta \theta $, respectivement,
 
