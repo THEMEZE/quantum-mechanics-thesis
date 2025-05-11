@@ -7,8 +7,115 @@ Pour un plus grand nombre de particules, les états propres de l'Hamiltonien \(\
 L’état à deux particules peut être écrit dans la base positionnelle de Fock sous la forme :
 
 \begin{eqnarray}
-	\vert \{\theta_a\} \rangle & = & \frac{1}{\sqrt{N!}}\int d^Nz \, \vert z_1 , \cite{ , z_N \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_2(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \ref{chap:1:2.part}
+	\vert \{\theta_a\} \rangle & = & \frac{1}{\sqrt{N!}}\int d^Nz \, \vert z_1 , \cdots , z_N \rangle \langle z_1 , \cdots , z_N  \vert \{\theta_a\}  \rangle ~=~\frac{1}{\sqrt{N!}} \int d^Nz \, \varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N) \operator{\Psi}^\dag(z_1) \cdots  \operator{\Psi}^\dag(z_N) \vert 0 \rangle, \ref{chap:1:N.part}
 \end{eqnarray}
+
+où la base spatiale à deux particule bosomique $\vert z_1 , \cdots ,  z_N \rangle$ s'écrit pour $z_1 < \cdots <  z_N$
+
+\begin{eqnarray}
+	\vert z_1 , \cdots ,  z_N  \rangle  & = &  \operator{\Psi}^\dag(z_1) \cdpts \operator{\Psi}^\dag(z_N) \vert 0 \rangle ,
+\end{eqnarray}
+
+orthonormalisée car car avec en utilisant les relations de commutation (\ref{chap:1:com.1})  et la définition du vide de Fock (\ref{chap:eq.vide.fock}) il vient que 
+
+\begin{eqnarray}
+	\langle z_1 , \cdots z_N \vert z_1' ,  \cdots , z_N' \rangle  & = & ???? \operator{\delta}(z_1 -z_1')\operator{\delta}(z_2 -z_2')  +   \operator{\delta}(z_1 -z_2')\operator{\delta}(z_2 -z_1'),
+\end{eqnarray}
+
+et si $z_i =  z_i+1 $
+\begin{eqnarray}
+	\vert z_1 , \cdots ,  z_N  \rangle  & = &  \frac{1}{\sqrt{2}} \operator{\Psi}^\dag(z_1) \cdots \left(\operator{\Psi}^\dag(z_i)\right)^2 \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle ,
+\end{eqnarray}
+
+orthonormalisée .
+
+
+ \(\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N)\) tel que 
+
+\begin{eqnarray}
+	\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \cdots  \operator{\Psi}(z_N)\vert  \{\theta_a\}  \rangle 
+\end{eqnarray}
+
+
+est la fonction d’onde symétrique :
+
+\begin{eqnarray}
+	\varphi_{\{\theta_a\}}(z_1, \cdots ,z_i , \cdots , z_j,  \cdots ,  z_N) = \varphi_{\{\theta_a\}}(z_1, \cdots ,z_i , \cdots , z_j,  \cdots ,  z_N),
+\end{eqnarray}
+
+et normalisée selon :
+
+\begin{eqnarray}
+	\langle {\theta_a'\} \vert {\theta_a\} \rangle ~=~ \int d^Nz\,  |\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N))|^2 = 1.
+\end{eqnarray}
+
+L’action de \(\operator{H}\) (\ref{{chap:1:ham.mod.2}) sur \(\vert {\theta_a\} \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules.
+........................
+
+\begin{eqnarray}
+	& & - \frac{1}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,	\left [\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\,  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle \label{chap:1:hal.mod.3.1}\\
+	\operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle & = & \nonumber \\
+	& & +\frac{c}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) 	\, \operator{\Psi}^\dag(x)\operator{\Psi}^\dag(x) \operator{\Psi}(x)\operator{\Psi}(x)  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle \label{chap:1:hal.mod.3.1} 
+\end{eqnarray}
+
+Les règles de commutations (\ref{eq.1.1}) impliquent que 
+
+\begin{eqnarray}
+	\left . \begin{array}{rcl}
+		[ \operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=&  \sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots \operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N)  \\
+		\left [ \operator{\partial}_x\operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(z) \right ]   & =  & 0 
+	\end{array} \right . \label{chap:1:com.2}
+\end{eqnarray}
+
+
+En utilisant ces dernier règles de comutations et la définition d'état de Fock (\ref{eq.1.4}) , la premiers partie de l'application de l'hamiltonien sur l'état $\vert \psi  \rangle$ , (\ref{chap:1:hal.mod.3.1}) de simplifie en 
+
+\begin{eqnarray}
+	 - \frac{1}{ \sqrt{N!}} \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,	\sum_{i=1}^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_i}^2 \operator{\Psi}^\dag(z_i)\right ] \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle 	
+\end{eqnarray}
+
+Et en faisant deux integration par partie selon la variable $z_i$ , cette premier partie devient
+
+\begin{eqnarray}
+	 - \frac{1}{ \sqrt{N!}} \int d^N z \, \sum_{i=1}^N \, \operator{\partial}_{z_i}^2\chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,	 \operator{\Psi}^\dag(z_1)  \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle \label{chap:1:hal.mod.3.1.1}	
+\end{eqnarray}
+
+Pour la seconde partie  , en remarquant ques Les règles de commutations (\ref{eq.1.1}) impliquent que 
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x) \operator{\Psi}(x),  \operator{\Psi}^\dag(z) ] & =& 2\operator{\Psi}(x)\operator{\delta}(x - z)\label{chap:1:com.3}  		
+\end{eqnarray}
+
+et en remplaçant $\operator{\Psi}(x)$ par $\operator{\Psi}(x)\operator{\Psi}(x)$ dans  (\ref{chap:1:com.2}) il vient que  
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=&  2\sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots  \operator{\Psi}(x)\operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N) \label{chap:1:com.4}		
+\end{eqnarray}
+
+et en injectant (\ref{chap:1:com.2}),  (\ref{chap:1:com.4}) devient 
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=& \left\{ \begin{array}{l} \displaystyle 2\sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots  \operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N) \operator{\Psi}(x) \\ + \\ \displaystyle 2\sum_{i = 0}^{N}\sum_{j = i+1}^{N} \operator{\Psi}^\dag(z_1) \cdots\operator{\delta}(x-z_i)\operator{\Psi}^\dag(z_{i+1})\cdots  \operator{\delta}(x-z_j) \cdots \operator{\Psi}^\dag(z_N) \end{array}\right. \label{chap:1:com.5}	.	
+\end{eqnarray}
+
+En utilisant la régle de comutation (\ref{chap:1:com.5}) et la définition de l'état de Fock (\ref{eq.1.4}) , la seconde partie de (\ref{chap:1:hal.mod.3.1}) devient
+
+\begin{eqnarray}
+	 \frac{1}{ \sqrt{N!}} \int d^N z \,  \,2	c \,\sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j) \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle \label{chap:1:hal.mod.3.1.2}	
+\end{eqnarray} 
+
+en utilisant (\ref{chap:1:hal.mod.3.1.1}) et (\ref{chap:1:hal.mod.3.1.2}) , (\ref{chap:1:hal.mod.3.1.1}) devient 
+
+\begin{eqnarray}
+	\operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle &= &  \frac{1}{ \sqrt{N!}} \int d^N z \,  	\left [ \operator{\mathcal{H}}_N \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \right ] \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle		
+\end{eqnarray}
+
+avec 
+
+\begin{eqnarray}
+	\operator{\mathcal{H}}_N & = &  - \sum_{i=1}^N \, \operator{\partial}_{z_i}^2 + 2	c \sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j) 		
+\end{eqnarray}
+
 
 ...........................
 \begin{eqnarray}
