@@ -6,7 +6,7 @@
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Équation du mouvement associée}{\reset@font\mtcSSSfont 4}{equation.1.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}Fonction d’onde $\chi _N$ et Hamiltonien et moment à N corps}{\reset@font\mtcSSfont 4}{subsection.1.1.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Cas d’une particule libre dans une boîte périodique : base des états propres à une particule}{\reset@font\mtcSSSfont 4}{subsection.1.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Contexte physique du système}{\reset@font\mtcPfont 4}{subsection.1.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Contexte physique du système.}{\reset@font\mtcPfont 4}{subsection.1.1.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Détermination des états propres.}{\reset@font\mtcPfont 4}{subsection.1.1.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode État à une particule dans la base de Fock.}{\reset@font\mtcPfont 5}{equation.1.7}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Orthonormalité de la base.}{\reset@font\mtcPfont 5}{equation.1.10}}
@@ -17,11 +17,11 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Résolution avec conditions périodiques.}{\reset@font\mtcPfont 6}{equation.1.16}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Énergies quantifiées.}{\reset@font\mtcPfont 6}{equation.1.19}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Notation adoptée et interprétation.}{\reset@font\mtcPfont 6}{equation.1.20}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Deux particules}{\reset@font\mtcSSSfont 6}{equation.1.21}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Méthode de Bethe}{\reset@font\mtcPfont 10}{equation.1.46}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Cas général à \(N\) particules : l'Ansatz de Bethe}{\reset@font\mtcSSSfont 11}{equation.1.49}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Conditions aux limites et équations de Bethe}{\reset@font\mtcPfont 12}{equation.1.63}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Propriétés mathématiques}{\reset@font\mtcPfont 12}{equation.1.65}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Deux particules}{\reset@font\mtcSSSfont 6}{equation.1.20}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Méthode de Bethe}{\reset@font\mtcPfont 10}{equation.1.45}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Cas général à \(N\) particules : l'Ansatz de Bethe}{\reset@font\mtcSSSfont 11}{equation.1.48}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Conditions aux limites et équations de Bethe}{\reset@font\mtcPfont 12}{equation.1.62}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Propriétés mathématiques}{\reset@font\mtcPfont 12}{equation.1.64}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.3}Vérification explicite de la condition aux limites}{\reset@font\mtcSSfont 13}{subsection.1.1.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.4}Lien avec les équations de Bethe}{\reset@font\mtcSSfont 14}{subsection.1.1.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.5}Description du modèle de Lieb-Liniger}{\reset@font\mtcSSfont 15}{subsection.1.1.5}}

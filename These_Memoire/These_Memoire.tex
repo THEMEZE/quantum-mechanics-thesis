@@ -470,13 +470,24 @@ innertopmargin=\topskip,
 \usepackage{titlesec}
 
 % Appliquer la couleur à tous les niveaux de titre
-\titleformat{\section}{\normalfont\color{linkcolor}\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\color{linkcolor}\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalfont\color{linkcolor}\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor}\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor}\itshape}{\thesubparagraph}{1em}{}
+\titleformat{\section}{\normalfont\color{linkcolor!90!black}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{linkcolor!70!black}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!black}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!black}\itshape}{\thesubparagraph}{1em}{}
 %%%%%%%%%%%%%%%%%%%%%%%
 
+%%Couleurs dans la table des matières
+
+\usepackage{tocloft}
+
+% Modifier la couleur des entrées de la TOC
+\renewcommand{\cftsecfont}{\color{linkcolor!90!black}}
+\renewcommand{\cftsubsecfont}{\color{linkcolor!70!black}}
+\renewcommand{\cftsubsubsecfont}{\color{linkcolor!50!black}}
+\renewcommand{\cftparafont}{\color{linkcolor!30!black}}
+\renewcommand{\cftsubparafont}{\color{linkcolor!10!black}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reglages:
 %
 \hypersetup{pdftitle={Étude de la dynamique hors équilibre de boson unidimentionnel },
