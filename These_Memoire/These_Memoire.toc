@@ -11,12 +11,11 @@
 \contentsline {subsubsection}{Deux particules}{6}{section*.9}%
 \contentsline {paragraph}{Méthode de Bethe}{11}{section*.11}%
 \contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{11}{section*.12}%
-\contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{11}{section*.13}%
-\contentsline {paragraph}{Conditions aux limites et équations de Bethe}{12}{section*.14}%
-\contentsline {paragraph}{Propriétés mathématiques}{12}{section*.15}%
-\contentsline {subsection}{\numberline {1.1.3}Exemple : action de $\hat {\bm {P}}$ sur l’état $\vert \psi _N\rangle $}{12}{subsection.1.1.3}%
-\contentsline {subsubsection}{Utilisation de la définition de $\hat {\bm {P}}$ intégrée par parties }{12}{section*.16}%
-\contentsline {subsubsection}{Application à l’état à N particules}{12}{section*.17}%
+\contentsline {paragraph}{Conditions aux limites et équations de Bethe}{12}{section*.13}%
+\contentsline {paragraph}{Propriétés mathématiques}{12}{section*.14}%
+\contentsline {subsection}{\numberline {1.1.3}Exemple : action de $\hat {\bm {P}}$ sur l’état $\vert \psi _N\rangle $}{13}{subsection.1.1.3}%
+\contentsline {subsubsection}{Utilisation de la définition de $\hat {\bm {P}}$ intégrée par parties }{13}{section*.15}%
+\contentsline {subsubsection}{Application à l’état à N particules}{13}{section*.16}%
 \contentsline {subsection}{\numberline {1.1.4}Aaction de $\hat {\bm {H}}$ sur l’état $\vert \psi _N\rangle $}{13}{subsection.1.1.4}%
 \contentsline {subsection}{\numberline {1.1.5}Vérification explicite de la condition aux limites}{14}{subsection.1.1.5}%
 \contentsline {subsection}{\numberline {1.1.6}Lien avec les équations de Bethe}{16}{subsection.1.1.6}%
@@ -62,12 +61,12 @@
 \contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{38}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Détails sur les calculs}{41}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Facteur d’occupation et distribution de rapidité à l’équilibre thermique}{41}{subsection.6.5.1}%
-\contentsline {paragraph}{Détermination de $\mu $ à température fixée}{41}{section*.33}%
+\contentsline {paragraph}{Détermination de $\mu $ à température fixée}{41}{section*.32}%
 \contentsline {subsection}{\numberline {6.5.2}Dynamique du contour dans l’espace des phases $(x, \theta )$}{42}{subsection.6.5.2}%
 \contentsline {subsection}{\numberline {6.5.3}Simulation de la déformation du bord}{42}{subsection.6.5.3}%
 \contentsline {subsection}{\numberline {6.5.4}Simulation de l’expansion}{43}{subsection.6.5.4}%
 \contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{45}{chapter.7}%
 \contentsline {section}{\numberline {7.1}calculs}{45}{section.7.1}%
 \contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{45}{section.7.2}%
-\contentsline {chapter}{Index}{47}{section*.34}%
-\contentsline {chapter}{Index of person names}{49}{section*.35}%
+\contentsline {chapter}{Index}{47}{section*.33}%
+\contentsline {chapter}{Index of person names}{49}{section*.34}%

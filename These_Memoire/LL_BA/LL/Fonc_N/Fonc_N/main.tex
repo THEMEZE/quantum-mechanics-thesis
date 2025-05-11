@@ -1,5 +1,23 @@
-\subsubsection{Cas général à \(N\) particules : l'Ansatz de Bethe}
+Pour un plus grand nombre de particules, les états propres de l'Hamiltonien \(\operator{H}\) (\ref{{chap:1:com.1}}) sur la ligne infinie sont des états de Bethe $\vert \{\theta_a\}\rangle \equiv \vert N \rangle $ étiquetés par un ensemble de $N$ nombres $\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket } $, appelés les rapidités. %Dans le domaine $x_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
 
+\begin{eqnarray}
+	\operator{H} \vert \{\theta_a\}\rangle & = & E \vert \{\theta_a\}\rangle 		
+\end{eqnarray}
+
+L’état à deux particules peut être écrit dans la base positionnelle de Fock sous la forme :
+
+\begin{eqnarray}
+	\vert \{\theta_a\} \rangle & = & \frac{1}{\sqrt{N!}}\int d^Nz \, \vert z_1 , \cite{ , z_N \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_2(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \ref{chap:1:2.part}
+\end{eqnarray}
+
+...........................
+\begin{eqnarray}
+	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = & \langle 0 \vert \Psi ( z_1 ) \cdots \Psi (z_N ) \vert \{ \theta_a \} \rangle \notag\\
+	& \propto & \sum_\sigma ( - 1 ) ^{ \vert \sigma \vert } \left ( \prod_{ 1 \leq a < b \leq N } ( \theta_{\sigma(b)} - \theta_{\sigma(a)} - ic ) \right ) e^{i \sum_j z_i \theta_{ \sigma(j)}}\label{eq:I-2-17},
+\end{eqnarray}
+
+et elle est étendue à d'autres domaines par symétrie $z_i \leftrightarrow z_j$ . Ici, la somme s'étend à toutes les permutations $\sigma$ des $N$ éléments (donc il y a $N!$ termes) et $(-1)^{|\sigma|}$ est la signature de la permutation. L'impulsion et l'énergie de l'état propre (\ref{eq:I-2-17}) sont :
+..............................
 Nous considérons maintenant un système composé de \(N\) bosons indistinguables dans une boîte unidimensionnelle de taille \(L\), avec des conditions aux limites périodiques. Les bosons interagissent via un potentiel de contact répulsif de constante \(c > 0\), selon l’Hamiltonien de Lieb–Liniger :
 
 \begin{eqnarray}
