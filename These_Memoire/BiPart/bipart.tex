@@ -5,10 +5,10 @@
 \def\inputfile#1{\input{\relativepath#1}} % pour les sous-fichiers
 \makeatother
 
-\makeatletter
-\let\oldinput\input
-\def\input#1{\oldinput{\relativepath#1}}
-\makeatother
+%\makeatletter
+%\let\oldinput\input
+%\def\input#1{\oldinput{\relativepath#1}}
+%\makeatother
 
 % Utilisation :
 %\inputfile{texte.tex}
@@ -18,24 +18,24 @@
 
 %\chapter{Quench bipartite dans un gaz de Bose unidimensionnel}
 
-\section*{Introduction}\input{sections/intro}
+\section*{Introduction}\inputfile{sections/intro}
 
-\section{Dispositif expérimental}\input{sections/disp_exp}
+\section{Dispositif expérimental}\inputfile{sections/disp_exp}
 
 
 
 
 \section{Prédictions de la GHD}
-\input{sections/predic_GHD}
+\inputfile{sections/predic_GHD}
 
 \section{Données expérimentales}
-\input{sections/don_exp}
+\inputfile{sections/don_exp}
 
 \section{Sonder la distribution locale des rapidités}
-\input{sections/Sonder_local}
+\inputfile{sections/Sonder_local}
 
 \section{Détails sur les calculs}
-\input{sections/calculs}
+\inputfile{sections/calculs}
 
  
 
