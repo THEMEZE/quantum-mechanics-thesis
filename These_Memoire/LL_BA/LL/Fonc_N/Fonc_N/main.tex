@@ -1,0 +1,60 @@
+\subsubsection{Cas général à \(N\) particules : l'Ansatz de Bethe}
+
+Nous considérons maintenant un système composé de \(N\) bosons indistinguables dans une boîte unidimensionnelle de taille \(L\), avec des conditions aux limites périodiques. Les bosons interagissent via un potentiel de contact répulsif de constante \(c > 0\), selon l’Hamiltonien de Lieb–Liniger :
+
+\begin{eqnarray}
+	\operator{H} & = & -\frac{1}{2} \sum_{j=1}^N \partial_{z_j}^2 + c \sum_{1 \leq j < k \leq N} \delta(z_j - z_k).
+\end{eqnarray}
+
+Nous cherchons les fonctions d’onde propres \(\varphi_N(z_1, \dots, z_N)\) symétriques sous permutation, satisfaisant l’équation de Schrödinger :
+
+\begin{eqnarray}
+	\operator{H} \varphi_N(z_1, \dots, z_N) = E \varphi_N(z_1, \dots, z_N).
+\end{eqnarray}
+
+L’**Ansatz de Bethe** consiste à écrire la solution dans chaque secteur d’ordre \(\mathcal{S}_N\) (\(z_{Q(1)} < z_{Q(2)} < \dots < z_{Q(N)}\)) comme une combinaison linéaire d’ondes planes :
+
+\begin{eqnarray}
+	\varphi_N(z_1, \dots, z_N) & = & \sum_{P \in \mathcal{S}_N} A_P \exp\left(i \sum_{j=1}^N k_{P_j} z_j \right), \qquad \text{pour } z_1 < z_2 < \dots < z_N,
+\end{eqnarray}
+
+où les \(k_j \in \mathbb{R}\) sont appelés **quasi-moments**, et les coefficients \(A_P\) sont déterminés par les conditions de raccord aux hyperplans \(z_i = z_j\).
+
+\paragraph{Conditions aux limites et équations de Bethe}
+
+En imposant la continuité de \(\varphi_N\) et la discontinuité de sa dérivée transverse à chaque hyperplan \(z_i = z_{i+1}\), on obtient un système de relations entre les coefficients \(A_P\), que l’on peut écrire comme des relations de diffusion à deux corps.
+
+L’imposition des conditions aux limites périodiques sur chaque coordonnée \(z_j \in [0, L]\) donne lieu aux **équations de Bethe** :
+
+\begin{eqnarray}
+	e^{i k_j L} & = & \prod_{\substack{\ell = 1 \\ \ell \neq j}}^N \frac{k_j - k_\ell + i c}{k_j - k_\ell - i c}, \qquad \text{pour } j = 1, \dots, N. \label{eq:bethe}
+\end{eqnarray}
+
+Ce système transcendantal couple les \(N\) quasi-moments \(k_j\). Une fois ces quantités déterminées, l’énergie propre du système est donnée par :
+
+\begin{eqnarray}
+	E & = & \frac{1}{2} \sum_{j=1}^N k_j^2.
+\end{eqnarray}
+
+\paragraph{Propriétés mathématiques}
+
+Les solutions des équations de Bethe (\ref{eq:bethe}) forment un ensemble discret de configurations \(\{k_j\}\), qui peuvent être classées par leur moment total et leur énergie. Dans la limite thermodynamique (\(N, L \to \infty\), avec \(N/L = \rho\) fixé), les \(k_j\) se condensent en une **densité de rapidité** \(\rho(k)\) solution d’une équation intégrale dite **équation de Lieb** :
+
+\begin{eqnarray}
+	\rho(k) + \frac{1}{2\pi} \int_{-Q}^{Q} \frac{2c\, \rho(k')}{c^2 + (k - k')^2} dk' = \frac{1}{2\pi},
+\end{eqnarray}
+
+où \(Q\) est le bord du support de la densité de rapidité, déterminé par la condition de normalisation :
+
+\begin{eqnarray}
+	\int_{-Q}^{Q} \rho(k)\, dk = \rho = \frac{N}{L}.
+\end{eqnarray}
+
+Cette densité de rapidité détermine toutes les grandeurs thermodynamiques du modèle intégrable de Lieb–Liniger, notamment :
+
+\begin{eqnarray}
+	E_0/N = \frac{1}{2\rho} \int_{-Q}^{Q} k^2\, \rho(k)\, dk.
+\end{eqnarray}
+
+\vspace{1em}
+Cette structure exacte fait du modèle de Lieb–Liniger un exemple paradigmatique de système intégrable en une dimension, avec des applications fondamentales en physique des gaz quantiques, hydrodynamique généralisée, et thermodynamique hors équilibre.

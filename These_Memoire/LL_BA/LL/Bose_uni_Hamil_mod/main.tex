@@ -1,0 +1,57 @@
+\subsubsection{Champs de Bose}
+
+Le gaz de Bose unidimensionnel est décrit dans le cadre de la théorie quantique des champs par un champ bosonique canonique \( \operator{\Psi}(x) \), qui agit sur l’espace de Fock des états du système. Ce champ quantique encode l’annihilation d’une particule en \( x \), et son adjoint \( \operator{\Psi}^\dag(x) \) correspond à la création d’une particule en ce point. 
+
+
+\subsubsection{Expression de l’Hamiltonien}
+Le Hamiltonien du modèle est donné par
+
+\begin{eqnarray}
+	\operator{H} & = & \int dx \, \left [ \operator{\partial}_x \operator{\Psi}^\dag (x)\operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:ham.mod}
+\end{eqnarray}
+
+\begin{eqnarray}
+	\operator{H} & = & \int dx \, \operator{\Psi}^\dag (x)\left [-\frac{1}{2}\operator{\partial}_x^2 + c  \operator{\Psi}^\dag (x) \operator{\Psi} (x) \right ] \operator{\Psi} (x) \label{chap:1:ham.mod}
+\end{eqnarray}
+
+
+où \( c \) est la constante de couplage. Dans ce chapitre, nous considérons uniquement les propriétés du système à un instant donné, de sorte que la dépendance temporelle des champs est omise pour alléger l’écriture.
+
+\subsubsection{Commutation canonique}
+Ces champs satisfont les relations de commutation canoniques à temps égal :
+\begin{eqnarray}
+	\left . \begin{array}{rcl}
+		[ \operator{\Psi}(x),  \operator{\Psi}^\dagger(y) ]  &=&  \operator{\delta}(x - y) \\
+		\left [ \operator{\Psi}(x),  \operator{\Psi}(y) \right ]   =  [ \operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(y) ]  &=&  0 
+	\end{array} \right . \label{chap:1:com.1}
+\end{eqnarray}
+Ces relations traduisent la nature bosonique des excitations du champ.
+
+\subsubsection{Équation du mouvement associée}
+
+L’équation du mouvement du champ \( \Psi(x) \) est obtenue à partir de l’équation de Heisenberg :
+
+\begin{eqnarray}
+	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ]
+\end{eqnarray}
+
+ce qui, après évaluation explicite du commutateur (\ref{chap:1:com.1}), conduit à :
+
+
+\begin{eqnarray}
+	i \operator{\partial}_t \operator{\Psi}	 & = & - \operator{\partial}_x^2 \operator{\Psi} + 2c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+\end{eqnarray}
+
+\begin{eqnarray}
+	i \operator{\partial}_t \operator{\Psi}	 & = & - \frac{1}{2}\operator{\partial}_x^2 \operator{\Psi} + 2c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+\end{eqnarray}
+
+est appelée l'équation de \index{Schrödinger non linéaire (NS)}.
+
+Pour $c > 0$, l'état fondamental à température nulle est une sphère de Fermi. Seul ce cas sera considéré par la suite.
+
+
+
+
+
+ 

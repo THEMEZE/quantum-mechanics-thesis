@@ -1,0 +1,170 @@
+Nous considérons à présent le cas de deux bosons quantiques dans la même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, le terme d’interaction à contact intervient dans la dynamique.
+
+On cherche à déterminer les états propres \(\vert 2 \rangle\) de l’Hamiltonien \(\operator{H}\), satisfaisant l’équation de Schrödinger stationnaire :
+
+\begin{eqnarray}
+	\operator{H} \vert 2 \rangle & = & E \vert 2 \rangle.
+\end{eqnarray}
+
+
+L’état à deux particules peut être écrit dans la base positionnelle de Fock sous la forme :
+
+\begin{eqnarray}
+	\vert 2 \rangle & = & \frac{1}{\sqrt{2}}\iint dz_1dz_2 \, \vert z_1 , z_2 \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_2(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \ref{chap:1:2.part}
+\end{eqnarray}
+
+où la base spatiale à deux particule bosomique $\vert z_1 , z_2 \rangle$ s'écrit pour $z_1 \neq  z_2$
+
+\begin{eqnarray}
+	\vert z_1 , z_2 \rangle  & = &  \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle ,
+\end{eqnarray}
+
+orthonormalisée car car avec en utilisant les relations de commutation (\ref{chap:1:com.1})  et la définition du vide de Fock (\ref{chap:eq.vide.fock}) il vient que 
+
+\begin{eqnarray}
+	\langle z_1 , z_2 \vert z_1' , z_2' \rangle  & = & \operator{\delta}(z_1 -z_1')\operator{\delta}(z_2 -z_2')  +   \operator{\delta}(z_1 -z_2')\operator{\delta}(z_2 -z_1'),
+\end{eqnarray}
+
+et si $z_1 =  z_2 = z$
+\begin{eqnarray}
+	\vert z , z \rangle  & = &  \frac{1}{\sqrt{2}} \left(\operator{\Psi}^\dag(z)\right)^2  \vert 0 \rangle ,
+\end{eqnarray}
+
+orthonormalisée car 
+
+\begin{eqnarray}
+	\langle z , z \vert z' , z' \rangle  & = & \operator{\delta}(z -z'),
+\end{eqnarray}
+
+et \(\varphi_2(z_1, z_2)\) tel que 
+
+\begin{eqnarray}
+	\varphi_2(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert  2  \rangle 
+\end{eqnarray}
+
+
+est la fonction d’onde symétrique :
+
+\begin{eqnarray}
+	\varphi_2(z_1, z_2) = \varphi_2(z_2, z_1),
+\end{eqnarray}
+
+et normalisée selon :
+
+\begin{eqnarray}
+	\langle 2 \vert 2 \rangle ~=~ \int dz_1\, dz_2\, |\varphi_2(z_1, z_2)|^2 = 1.
+\end{eqnarray}
+
+L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une intégration par parties. 
+
+\begin{eqnarray}
+	\operator{H} & = & \int dx \left \{ -\left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right \} \label{chap:1:ham.mod.2}.
+\end{eqnarray}
+
+L’action de \(\operator{H}\) sur \(\vert 2 \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules. 
+
+Agir avec cet opérateur sur la fonction propre (\ref{chap:1:2.part}) donne 
+%\begin{eqnarray}
+	%\operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle & = & \left \{ \begin{array}{l}- \frac{1}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,	\left [\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\,  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle \\ + \\ \frac{c}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) 	\, \operator{\Psi}^\dag(x)\operator{\Psi}^\dag(x) \operator{\Psi}(x)\operator{\Psi}(x)  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle  \end{array}\right.\label{chap:1:hal.mod.3}
+%\end{eqnarray}
+
+\begin{eqnarray}
+	& & - \frac{1}{ \sqrt{2}} \int dx \iint dz_1 dz_2 \, \varphi_2(z_1, z_2) \,	\left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\,  \operator{\Psi}^\dag(z_1)\operator{\Psi}^\dag(z_2) \vert 0 \rangle \label{chap:1:hal.mod.2.part.1}\\
+	\operator{H}\vert 2 \rangle & = & \nonumber \\
+	& & +\frac{c}{ \sqrt{2}} \int dx  \iint dz_1 dz_2 \,  \varphi_2(z_1, z_2) 	\, \operator{\Psi}^\dag(x)\operator{\Psi}^\dag(x) \operator{\Psi}(x)\operator{\Psi}(x)  \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle \label{chap:1:hal.mod.2.part.2} 
+\end{eqnarray}
+
+Les règles de commutations (\ref{chap:1:com.1}) impliquent que 
+
+\begin{eqnarray}
+	\left . \begin{array}{rcl}
+		[ \operator{\Psi}(x),  \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2)  ]  &=&  \operator{\Psi}^\dag(z_2)  \operator{\delta}(x-z_1) +  \operator{\Psi}^\dag(z_1) \operator{\delta}(x-z_2)  \\
+		\left [ \operator{\partial}_x\operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(z) \right ]   & =  & 0 
+	\end{array} \right . \label{chap:1:2.part.com.2}
+\end{eqnarray}
+
+
+En utilisant ces dernier règles de commutations et la définition d'état de Fock (\ref{chap:eq.vide.fock}) , la premiers partie de l'application de l'hamiltonien sur l'état $\vert 2  \rangle$ , (\ref{chap:1:hal.mod.2.part.1}) de simplifie en 
+
+\begin{eqnarray}
+	 - \frac{1}{ \sqrt{2}} \iint dz_1 dz_2 \, \varphi_2(z_1, z_2) \,	 \left \{ \operator{\Psi}^\dag(z_1) \left [\frac{1}{2}\operator{\partial}_{z_2}^2 \operator{\Psi}^\dag(z_2) \right ] + \operator{\Psi}^\dag(z_2) \left [\frac{1}{2}\operator{\partial}_{z_1}^2 \operator{\Psi}^\dag(z_1)  \right]  \right \}  \vert 0 \rangle 	
+\end{eqnarray}
+
+Et en faisant deux integration par partie selon la variable $z_{1,2}$ , cette premier partie devient
+
+\begin{eqnarray}
+	 - \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2  \,  \frac{1}{2} \left \{ \operator{\partial}_{z_1}^2 +  \operator{\partial}_{z_2}^2 \right\} \varphi_2(z_1, z_2) \,	 \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle \label{chap:1:hal.mod.2.part.1.1}	
+\end{eqnarray}
+
+Pour la seconde partie  , en remarquant que Les règles de commutations (\ref{chap:1:com.1}) impliquent que 
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x) \operator{\Psi}(x),  \operator{\Psi}^\dag(z) ] & =& 2\operator{\Psi}(x)\operator{\delta}(x - z)\label{chap:1:com.3}  		
+\end{eqnarray}
+
+et en remplaçant $\operator{\Psi}(x)$ par $\operator{\Psi}(x)\operator{\Psi}(x)$ dans  (\ref{chap:1:2.part.com.2}) il vient que  
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2)  ]  &=&  2 \left \{   \operator{\delta}(x-z_1)\operator{\Psi}(x)\operator{\Psi}^\dag(z_2)  + \operator{\delta}(x-z_2)\operator{\Psi}^\dag(z_1)  \operator{\Psi}(x)\right \} \label{chap:1:.2.part.com.4}		
+\end{eqnarray}
+
+et en injectant (\ref{chap:1:2.part.com.2}),  (\ref{chap:1:.2.part.com.4}) devient 
+
+\begin{eqnarray}
+	[ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\operator{\Psi}^\dag(z_2)  ]  &=& 2 \left \{\operator{\delta}(x-z_1)\operator{\delta}(x-z_2) +   \operator{\delta}(x-z_1)\operator{\Psi}^\dag(z_2)\operator{\Psi}(x)  + \operator{\delta}(x-z_2)\operator{\Psi}^\dag(z_1)  \operator{\Psi}(x)\right \} \label{chap:1:2.part.com.5}	.	
+\end{eqnarray}
+
+En utilisant la régle de commutation (\ref{chap:1:2.part.com.5}) et la définition de l'état de Fock (\ref{chap:eq.vide.fock}) , la seconde partie de (\ref{chap:1:hal.mod.2.part.2}) devient
+
+\begin{eqnarray}
+	 \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  \,2	c \, \operator{\delta}(z_1 - z_2)  \varphi_2(z_1, z_2) \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle \label{chap:1:hal.mod.2.part.2.2}	
+\end{eqnarray} 
+
+en utilisant (\ref{chap:1:hal.mod.2.part.1.1}) et (\ref{chap:1:hal.mod.2.part.2.2}) 
+
+\begin{eqnarray}
+	\operator{H}\vert 1 \rangle &= &  \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  	\left [ \operator{\mathcal{H}}_2 \varphi_2(z_1, z_2) \right ] \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle		
+\end{eqnarray}
+
+avec 
+
+\begin{eqnarray}
+	\operator{\mathcal{H}}_2 & = &  - \frac{1}{2} \operator{\partial}_{z_1}^2 - \frac{1}{2} \operator{\partial}_{z_2}^2+ 2	c  \operator{\delta}(z_1 - z_2) 		
+\end{eqnarray}
+
+
+Après développement en utilisant les relations de commutation bosoniques et les propriétés du vide de Fock, on obtient l’équation suivante :
+
+\begin{eqnarray}
+	\left[ -\frac{1}{2} (\partial_{z_1}^2 + \partial_{z_2}^2) + c\, \delta(z_1 - z_2) \right] \varphi_2(z_1, z_2) = E \varphi_2(z_1, z_2). \label{chap:eq.twobody}
+\end{eqnarray}
+
+Cette équation décrit deux particules libres, sauf lorsqu'elles se rencontrent (i.e., \(z_1 = z_2\)), où l'interaction à contact produit un potentiel delta de Dirac.
+
+\paragraph{Méthode de Bethe}
+
+On peut résoudre cette équation en utilisant l’**Ansatz de Bethe**, en supposant que la fonction d’onde prend la forme d’une superposition symétrisée d’ondes planes dans les domaines \(z_1 < z_2\) et \(z_1 > z_2\) :
+
+\begin{eqnarray}
+	\varphi_2(z_1, z_2) = \begin{cases}
+		A_{12} e^{i(k_1 z_1 + k_2 z_2)} + A_{21} e^{i(k_2 z_1 + k_1 z_2)} & \text{si } z_1 < z_2, \\
+		A_{12} e^{i(k_1 z_2 + k_2 z_1)} + A_{21} e^{i(k_2 z_2 + k_1 z_1)} & \text{si } z_1 > z_2.
+	\end{cases}
+\end{eqnarray}
+
+La continuité de \(\varphi_2\) à \(z_1 = z_2\), ainsi que le saut de sa dérivée transverse imposé par le potentiel delta, permettent de relier les coefficients \(A_{12}\) et \(A_{21}\). On obtient la condition de diffusion bosonique :
+
+\begin{eqnarray}
+	\frac{A_{21}}{A_{12}} & = & - \frac{ic(k_1 - k_2) + (k_1 - k_2)^2}{ic(k_1 - k_2) - (k_1 - k_2)^2}.
+\end{eqnarray}
+
+L’énergie totale est simplement la somme des énergies individuelles :
+
+\begin{eqnarray}
+	E = \frac{k_1^2 + k_2^2}{2},
+\end{eqnarray}
+
+et les \(k_j\) doivent satisfaire les conditions aux limites périodiques, ce qui donne un système transcendantal pour les \(k_j\) dépendant du couplage \(c\) (voir chapitre sur l'équation de Bethe pour \(N\) particules).
+
+\vspace{1em}
+Ce cas à deux particules constitue une étape fondamentale vers la compréhension complète du système à \(N\) bosons, où les structures d’interférences entre ondes multiples et les effets d’interactions deviennent de plus en plus riches.
