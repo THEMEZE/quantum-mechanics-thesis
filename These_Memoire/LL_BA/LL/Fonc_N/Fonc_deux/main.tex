@@ -146,7 +146,7 @@ Après développement en utilisant les relations de commutation bosoniques et le
 
 En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$,
 
-{\color{gray}  
+{\color{lightgray}  
 \begin{eqnarray*}
 	\left ( \begin{array}{c} Z \\ Y \end{array} \right ) = \left ( \begin{array}{cc} 1/2 &  1/2  \\ 1 & - 1  \end{array} \right ) \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ), & & \left ( \begin{array}{c} z_1 \\ z_2 \end{array} \right ) = \left ( \begin{array}{cc} 1 &  1/2  \\ 1 & - 1/2  \end{array} \right ) \left ( \begin{array}{c} Z \\ Y \end{array} \right )
 \end{eqnarray*}
@@ -212,7 +212,7 @@ En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée pr
 
 %En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
 
-{\color{gray} 
+{\color{lightgray} 
 \begin{eqnarray*}
 	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  	-\underbrace{\cancel{\frac{1}{4} \partial_Z^2\varphi(Y)}}_{0} - 	\partial_Y^2\varphi(Y) + c \delta ( Y )\varphi(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y , \\
 	\underset{ \epsilon \to 0 }{\lim}  \left [ \varphi'(\epsilon) - \varphi'(-\epsilon) \right ] - c \varphi (  0 ) & =  &  -\underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y,\\
@@ -241,7 +241,7 @@ Cette relation exprime l’impact de l’interaction delta sur le déphasage de 
 
 En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_2 (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert 2 \rangle$ satisfait à cette condition :\\
 
-{\color{gray} 
+{\color{lightgray} 
 Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  
 \begin{eqnarray*}
 	\underset{ \epsilon \to 0^+ }{\lim}	&=& \underset{ z_1 \to z_2^+ }{\lim} = \underset{ z_2 \to z_1^- }{\lim},\\
@@ -267,10 +267,10 @@ Ainsi
 	\underset{ \vert z_1 - z_2 \vert  \to 0^+ }{\lim}  \left [  \operator{\partial}_{z_2}  \varphi _2( z_1 , z_2 ) - \operator{\partial}_{z_1}  \varphi_2 ( z_1 , z_2 ) - c  \varphi_2 ( z_1 , z_2 ) \right ] & = &0.  		
 \end{eqnarray}
 
-Les mêmes conditions s'appliquent lorsque $x_1$ est échangé avec $x_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{eq:I-1-8}) sont
+Les mêmes conditions s'appliquent lorsque $x_1$ est échangé avec $x_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{chap:eq.twobody}) sont
 
 \begin{eqnarray}\label{eq:I-1-10}
-	\varphi(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
+	\varphi_2(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
 \end{eqnarray}
 
 correspondant aux valeurs propres $(\theta_1^2 + \theta_2^2)/2$. Pour $\theta_1 > \theta_2$, les deux termes $e^{iz_1 \theta_1 + iz_2 \theta_2 }$ et $e^{iz_1 \theta_2 + iz_2 \theta_1 }$ correspondent aux paires de particules entrantes et sortantes dans un processus de diffusion à deux corps. Le rapport de leurs amplitudes est la phase de diffusion à deux corps,
@@ -294,7 +294,7 @@ Il a été souligné par {\color{blue}Eisenbud (1948)} et {\color{blue}Wigner (1
   \label{}	
 \end{figure}
 
-Une telle superposition évolue dans le temps comme $e^{(iz\theta -it\varepsilon(\theta))} + e^{(iz(\theta + \delta \theta )  -it\varepsilon(\theta + \delta \theta ))}$, où $\varepsilon(\theta) = \theta ^2/2$ est l'énergie. Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $z\delta \theta  - t[\varepsilon(\theta + \delta \theta ) - \varepsilon(\theta)] = 0$, ce qui donne $z \simeq vt$ avec la vitesse de groupe $v = d\varepsilon/d\theta = \theta$. Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $(z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $(\theta_1 - \theta_2)/2$,
+Une telle superposition évolue dans le temps comme $e^{(iz\theta -it\varepsilon(\theta))} + e^{(iz(\theta + \delta \theta )  -it\varepsilon(\theta + \delta \theta ))}$, où $\varepsilon(\theta) = \theta ^2/2$ est l'énergie. Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $z\delta \theta  - t[\varepsilon(\theta + \delta \theta ) - \varepsilon(\theta)] = 0$, ce qui donne $z \simeq vt$ avec la vitesse de groupe $v = d\varepsilon/d\theta = \theta$. Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $\tilde{\theta} = (\theta_1 - \theta_2)/2$,
 
 {\color{gray}
 \begin{eqnarray*}
