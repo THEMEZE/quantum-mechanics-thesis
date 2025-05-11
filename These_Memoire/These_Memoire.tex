@@ -465,6 +465,18 @@ innertopmargin=\topskip,
 }{hyperref}
 \usepackage{hyperref}
 
+%%%%%%%%%%%%%%%%%%%%%
+\definecolor{linkcolor}{RGB}{0,0,180}
+\usepackage{titlesec}
+
+% Appliquer la couleur à tous les niveaux de titre
+\titleformat{\section}{\normalfont\color{linkcolor}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{linkcolor}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{linkcolor}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor}\itshape}{\thesubparagraph}{1em}{}
+%%%%%%%%%%%%%%%%%%%%%%%
+
 % Reglages:
 %
 \hypersetup{pdftitle={Étude de la dynamique hors équilibre de boson unidimentionnel },
@@ -484,8 +496,11 @@ innertopmargin=\topskip,
 \cfoot{}
 %
 
-
-
+%usepackage{titlesec}
+% Changer la couleur des paragraphes en rouge par exemple :
+%\titleformat{\paragraph}[runin] % ou [block] selon ce que tu veux
+%  {\normalfont\color{red}\bfseries}
+%  {\theparagraph}{1em}{}
 
 
 \input{main.tex}
