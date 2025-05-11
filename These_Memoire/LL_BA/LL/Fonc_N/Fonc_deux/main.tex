@@ -129,20 +129,22 @@ en utilisant (\ref{chap:1:hal.mod.2.part.1.1}) et (\ref{chap:1:hal.mod.2.part.2.
 avec 
 
 \begin{eqnarray}
-	\operator{\mathcal{H}}_2 & = &  - \frac{1}{2} \operator{\partial}_{z_1}^2 - \frac{1}{2} \operator{\partial}_{z_2}^2+ 2	c  \operator{\delta}(z_1 - z_2) 		
+	\operator{\mathcal{H}}_2 & = &  - \frac{1}{2} \operator{\partial}_{z_1}^2 - \frac{1}{2} \operator{\partial}_{z_2}^2+ 	c  \operator{\delta}(z_1 - z_2). \label{chap:1:hal.mod.2.part.3} 		
 \end{eqnarray}
 
 
 Après développement en utilisant les relations de commutation bosoniques et les propriétés du vide de Fock, on obtient l’équation suivante :
 
 \begin{eqnarray}
-	\left[ -\frac{1}{2} (\partial_{z_1}^2 + \partial_{z_2}^2) + c\, \delta(z_1 - z_2) \right] \varphi_2(z_1, z_2) = E \varphi_2(z_1, z_2). \label{chap:eq.twobody}
+	\operator{\mathcal{H}}_2 \varphi_2(z_1, z_2) = E \varphi_2(z_1, z_2). \label{chap:eq.twobody}
 \end{eqnarray}
 
 
 ...........................
 
-Il est instructif de commencer par le cas de $N = 2$ particules sur une ligne infinie. En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$,
+%Il est instructif de commencer par le cas de $N = 2$ particules sur une ligne infinie. 
+
+En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$,
 
 {\color{gray}  
 \begin{eqnarray*}
@@ -170,18 +172,26 @@ avec la régle de la chaine  $\partial_Z = \frac{\partial z_1}{\partial Z}\parti
 
 Donc 
 
-\begin{eqnarray*}
-	\frac{1}{2} \partial_Z^2 + 	2\partial_Y^2 & = & \partial_{z_1}^2 + \partial_{z_2}^2
-\end{eqnarray*}
+
 }
 
-l'hamiltonien (\ref{eq:I-0-6}) se divise en une somme de deux problèmes indépendants à une seule particule.
+\begin{eqnarray*}
+	\frac{1}{2} \operator{\partial}_Z^2 + 	2\operator{\partial}_Y^2 & = & \operator{\partial}_{z_1}^2 + \operator{\partial}_{z_2}^2
+\end{eqnarray*}
 
-\begin{eqnarray}\label{eq:I-1-8}
-	H = -\frac{1}2 \partial_{z_1}^2   -\frac{1}2 \partial_{z_2}^2 + c \delta ( z_1 - z_2 )  ~= ~	-\frac{1}{4} \partial_Z^2 - 	\partial_Y^2 + c \delta ( Y ) 
+l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux problèmes indépendants à une seule particule.
+
+\begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
+	\operator{\mathcal{H}}_2 & = & 	-\frac{1}{4} \operator{\partial}_Z^2 - 	\operator{\partial}_Y^2 + c \operator{\delta} ( Y ) 
 \end{eqnarray}
 
-Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse 1/2 en présence d'un potentiel delta en $Y = 0$. En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
+Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse 1/2 en présence d'un potentiel delta en $Y = 0$. 
+
+\begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
+	- 	\operator{\partial}_Y^2 \tilde{\varphi}_2(Y) + c \operator{\delta} ( Y )\tilde{\varphi}_2(Y) & = & \tilde{E}\tilde{\varphi}_2(Y) 
+\end{eqnarray}
+
+En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
 
 {\color{gray} 
 \begin{eqnarray*}
