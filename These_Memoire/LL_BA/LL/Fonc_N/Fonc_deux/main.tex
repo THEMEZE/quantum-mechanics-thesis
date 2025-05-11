@@ -3,10 +3,10 @@
 Nous considérons à présent le cas de deux bosons quantiques dans la même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, le terme d’interaction à contact intervient dans la dynamique.
 %%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Forme générale de l’état à deux particules dans la base de Fock}
-On cherche à déterminer les états propres \(\vert {\theta_1, \theta_2} \rangle\), où $\theta_1$ est le quasi-moment d'une particule et $\theta_2$ celui de l'autre, associés à l'Hamiltonien \(\operator{H}\), satisfaisant l’équation de Schrödinger stationnaire :
+On cherche à déterminer les états propres \(\vert \{\theta_1, \theta_2\} \rangle\), où $\theta_1$ est le quasi-moment d'une particule et $\theta_2$ celui de l'autre, associés à l'Hamiltonien \(\operator{H}\), satisfaisant l’équation de Schrödinger stationnaire :
 
 \begin{eqnarray}
-	\operator{H} \vert {\theta_1, \theta_2} \rangle & = & E \vert {\theta_1, \theta_2} \rangle.
+	\operator{H} \vert \{\theta_1, \theta_2\} \rangle & = & E \vert \{\theta_1, \theta_2\} \rangle.
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,7 +14,7 @@ On cherche à déterminer les états propres \(\vert {\theta_1, \theta_2} \rangl
 L’état à deux particules peut être écrit dans la base positionnelle de Fock sous la forme :
 
 \begin{eqnarray}
-	\vert {\theta_1, \theta_2} \rangle & = & \frac{1}{\sqrt{2}}\iint dz_1dz_2 \, \vert z_1 , z_2 \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \label{chap:1:2.part}
+	\vert \{\theta_1, \theta_2\} \rangle & = & \frac{1}{\sqrt{2}}\iint dz_1dz_2 \, \vert z_1 , z_2 \rangle \langle z_1 , z_2  \vert 2  \rangle ~=~\frac{1}{\sqrt{2}} \iint dz_1\,dz_2 \, \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle, \label{chap:1:2.part}
 \end{eqnarray}
 
 où la base spatiale à deux particule bosomique $\vert z_1 , z_2 \rangle$ s'écrit pour $z_1 \neq  z_2$
@@ -45,7 +45,7 @@ orthonormalisée car
 \(\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2)\) tel que 
 
 \begin{eqnarray}
-	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert  2  \rangle 
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert \{\theta_1, \theta_2\} \rangle
 \end{eqnarray}
 
 
@@ -58,7 +58,7 @@ est la fonction d’onde symétrique :
 et normalisée selon :
 
 \begin{eqnarray}
-	\langle {\theta_1', \theta_2'} \vert {\theta_1, \theta_2} \rangle ~=~ \int dz_1\, dz_2\, \varphi_{\{\theta_1 , \theta_2\}}^\ast(z_1, z_2)\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \delta_{\theta_1, \theta_1'}\delta_{\theta_2, \theta_2'}.
+	\langle \{\theta_1', \theta_2'\} \vert \{\theta_1, \theta_2\} \rangle ~=~ \int dz_1\, dz_2\, \varphi_{\{\theta_1' , \theta_2'\}}^\ast(z_1, z_2)\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \delta_{\theta_1, \theta_1'}\delta_{\theta_2, \theta_2'}.
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,14 +74,14 @@ L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une int�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Action de l’Hamiltonien sur l’état à deux particules et Forme explicite de l’Hamiltonien effectif à deux corps}
 
-L’action de \(\operator{H}\) sur \(\vert {\theta_1, \theta_2} \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules. 
+L’action de \(\operator{H}\) sur \(\vert \{\theta_1, \theta_2\} \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules. 
 Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:2.part}) 
 %..............................
 %\input{LL_BA/LL/Fonc_N/Fonc_deux/annex}
 %.......
 
 \begin{eqnarray}
-	\operator{H}\vert 1 \rangle &= &  \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  	\left [ \operator{\mathcal{H}}_2 \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \right ] \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle		
+	\operator{H}\vert \{\theta_1, \theta_2\} \rangle &= &  \frac{1}{ \sqrt{2}}  \iint dz_1 dz_2 \,  	\left [ \operator{\mathcal{H}}_2 \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) \right ] \, \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2) \vert 0 \rangle		
 \end{eqnarray}
 
 avec 
@@ -145,7 +145,7 @@ l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux pro
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{ Résolution du problème de centre de masse et de coordonnée relative.}
+\paragraph{Résolution du problème de centre de masse et de coordonnée relative.}
 Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse 1/2 en présence d'un potentiel delta en $Y = 0$. 
 
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
@@ -195,7 +195,7 @@ En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée pr
 %soit $\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 )  =  0 $ .
 
 %%%%%%%%%%%%%%%
-\paragraph{Détermination de la phase $Phi$.}
+\paragraph{Détermination de la phase $\Phi$.}
 Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve que la phase $\Phi$ satisfait la condition :
 
 \begin{equation}
@@ -206,7 +206,7 @@ Cette relation exprime l’impact de l’interaction delta sur le déphasage de 
 
 %%%%%%%%%%%%%%%%%%%%
 \paragraph{Retour aux coordonnées du laboratoire.}
-En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert {\theta_1, \theta_2} \rangle$ satisfait à cette condition :\\
+En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle$ satisfait à cette condition :\\
 
 %{\color{lightgray} 
 %Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  
