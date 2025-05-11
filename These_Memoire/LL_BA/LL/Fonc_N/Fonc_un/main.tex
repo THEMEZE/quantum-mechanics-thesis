@@ -17,17 +17,19 @@ où l’opérateur \(\operator{\Psi}^\dag(z)\) crée une particule à la positio
 	\vert z \rangle  & = & \operator{\Psi}^\dag (z)\vert 0 \rangle ,
 \end{eqnarray}
 
-est orthonormale car avec en utilisant les relations de commutation (\ref{chap:1:com.1}) et et la définition du vide de Fock (\ref{chap:eq.vide.fock}) (qui suit) , il vient que 
-
-\begin{eqnarray}
-	\langle z\vert z' \rangle  & = & \operator{\delta}(z -z') ,
-\end{eqnarray}
-
 et \(\vert 0 \rangle\) est le vide de Fock défini par :
 
 \begin{eqnarray}
 	\forall x \in \mathbb{R}, \qquad \operator{\Psi}(x) \vert 0 \rangle = 0 ,\quad  \langle 0\vert 0 \rangle = 1. \label{chap:eq.vide.fock}
 \end{eqnarray}
+
+La base $\vert z \rangle$ est orthonormale car avec en utilisant les relations de commutation (\ref{chap:1:com.1}) et et la définition du vide de Fock (\ref{chap:eq.vide.fock}) , il vient que 
+
+\begin{eqnarray}
+	\langle z\vert z' \rangle  & = & \operator{\delta}(z -z').
+\end{eqnarray}
+
+
 
 La fonction d’onde associée \(\varphi_1(z)\) est définie comme la projection :
 
@@ -45,10 +47,10 @@ L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une int�
 
 
 \begin{eqnarray}
-	\operator{H} & = & -\int dx  \left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)  \label{chap:1:ham.mod.2}.
+	\operator{H} & = & -\int dx  \left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)  \label{chap:1:ham.mod.1.part.2}.
 \end{eqnarray}
 
-Lorsque l’on agit avec l’Hamiltonien (\ref{chap:1:ham.mod.2}) sur \(\vert 1 \rangle\), et en utilisant les relations de commutation (\ref{chap:1:com.1}) et la définition du vide de Fock (\ref{chap:eq.vide.fock}), on obtient : 
+Lorsque l’on agit avec l’Hamiltonien (\ref{chap:1:ham.mod.1.part.2}) sur \(\vert 1 \rangle\), et en utilisant les relations de commutation (\ref{chap:1:com.1}) et la définition du vide de Fock (\ref{chap:eq.vide.fock}), on obtient : 
 
 \begin{eqnarray}
 	\operator{H}\vert 1 \rangle & = & \int dz \left [\operator{H}_1  \varphi_{1}(z)  \right ] \operator{\Psi}^\dag (z)	 \vert 0 \rangle,	
