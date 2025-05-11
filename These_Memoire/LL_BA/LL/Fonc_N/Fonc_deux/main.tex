@@ -191,7 +191,26 @@ Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z
 	- 	\operator{\partial}_Y^2 \tilde{\varphi}_2(Y) + c \operator{\delta} ( Y )\tilde{\varphi}_2(Y) & = & \tilde{E}\tilde{\varphi}_2(Y) 
 \end{eqnarray}
 
-En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
+Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme :
+
+
+\begin{equation}
+	\tilde{\varphi}(Y) = \sin\left( \frac{1}{2} (\tilde{\theta} |Y| + \Phi ) \right). \label{eq:ansatz.boson}
+\end{equation}
+
+En réinjectant l'équation \eqref{eq:ansatz.boson} dans l’équation \eqref{chap:1:hal.mod.2.part.5}, on obtient l’énergie propre de l’état lié $\tilde{E} = \frac{1}{2}\frac{\tilde{\theta}^2}{2}$.
+
+
+En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée première de la fonction d’onde $\tilde{\varphi}(Y)$ présente une discontinuité en ce point. En effet, le potentiel étant infini en $Y = 0$, la phase $\Phi$ du régime symétrique est déterminée en intégrant l’équation du mouvement autour de la singularité. En intégrant entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon \to 0$, on obtient la condition de saut de la dérivée :
+
+%avec $\Phi$ une phase à déterminer. %\begin{equation}
+%	E = \frac{\tilde{m} \theta^2}{2}.
+%\end{equation}
+
+%La dérivée de la fonction d’onde n’est pas continue en $Y = 0$. Le potentiel étant infini en $Y = 0$, la phase $\Phi$ est obtenue en intégrant l’équation du mouvement entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon$ vers zéro :
+
+
+%En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
 
 {\color{gray} 
 \begin{eqnarray*}
@@ -203,8 +222,12 @@ En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\
 
 }
 
+\begin{eqnarray*}
+	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\operator{\partial}_Y^2\varphi(Y) + c \operator{\delta} ( Y )\varphi(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y ,
+\end{eqnarray*}
 
-$\varphi'(0^+) - \varphi'(0^-) - c \varphi (  0 )  =  0 $ .En revenant aux coordonnées d'origine, on constate que la fonction d'onde à deux corps $\varphi (z_1, z_2) = \langle 0 \vert \Psi (z_1)\Psi (z_2) \vert \varphi \rangle$ satisfait à cette condition :\\
+
+soit $\varphi'(0^+) - \varphi'(0^-) - c \varphi (  0 )  =  0 $ .En revenant aux coordonnées d'origine, on constate que la fonction d'onde à deux corps $\varphi (z_1, z_2) = \langle 0 \vert \Psi (z_1)\Psi (z_2) \vert \varphi \rangle$ satisfait à cette condition :\\
 
 {\color{gray} 
 Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  

@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {1.1.2}Fonction d’onde $\chi _N$ et Hamiltonien et moment à N corps}{4}{subsection.1.1.2}%
 \contentsline {subsubsection}{Une particule}{4}{section*.8}%
 \contentsline {subsubsection}{Deux particules}{6}{section*.9}%
-\contentsline {paragraph}{Méthode de Bethe}{10}{section*.11}%
+\contentsline {paragraph}{Méthode de Bethe}{11}{section*.11}%
 \contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{11}{section*.12}%
 \contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{11}{section*.13}%
 \contentsline {paragraph}{Conditions aux limites et équations de Bethe}{11}{section*.14}%
