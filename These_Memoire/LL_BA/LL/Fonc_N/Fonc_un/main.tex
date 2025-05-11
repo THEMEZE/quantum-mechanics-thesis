@@ -1,15 +1,25 @@
+\paragraph{Contexte physique du système}
+
 Le système considéré est constitué d’une seule particule quantique confinée dans une boîte unidimensionnelle de taille finie \(L\), avec des conditions aux limites périodiques. Ce cadre sert de base pour l’étude ultérieure de systèmes à plusieurs corps. En absence d’interactions (i.e., \(c = 0\)), l’Hamiltonien se réduit à sa composante cinétique, et le problème devient celui d’une particule libre sur un cercle.
 
-On cherche à déterminer les états propres \(\vert \theta \rangle\) de l’Hamiltonien \(\operator{H}\), où $\theta$ est le quasi-moment , satisfaisant l’équation de Schrödinger stationnaire :
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Détermination des états propres}
+
+Nous cherchons à déterminer les états propres \(\vert \theta \rangle\) de l’Hamiltonien \(\operator{H}\), associés au quasi-moment \(\theta\), qui satisfont l’équation de Schrödinger stationnaire.
+
 
 \begin{eqnarray}
-	\operator{H} \vert 1 \rangle & = & E \vert 1 \rangle.
+	\operator{H} \vert \theta \rangle & = & E \vert \theta \rangle.
 \end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{État à une particule dans la base de Fock}
 
 L’état à une particule peut être exprimé dans la base positionnelle de Fock :
 
 \begin{eqnarray}
-	\vert 1 \rangle & = & \int dz\, \vert z \rangle \langle z \vert 1 \rangle ~= \int dz\, \varphi_1(z) \operator{\Psi}^\dag(z) \vert 0 \rangle,
+	\vert \theta \rangle & = & \int dz\, \vert z \rangle \langle z \vert \theta \rangle ~= \int dz\, \varphi_{\theta}(z) \operator{\Psi}^\dag(z) \vert 0 \rangle,
 \end{eqnarray}
 
 où l’opérateur \(\operator{\Psi}^\dag(z)\) crée une particule à la position \(z\), la base spatial
@@ -23,6 +33,9 @@ et \(\vert 0 \rangle\) est le vide de Fock défini par :
 	\forall x \in \mathbb{R}, \qquad \operator{\Psi}(x) \vert 0 \rangle = 0 ,\quad  \langle 0\vert 0 \rangle = 1. \label{chap:eq.vide.fock}
 \end{eqnarray}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Orthonormalité de la base}
+
 La base $\vert z \rangle$ est orthonormale car avec en utilisant les relations de commutation (\ref{chap:1:com.1}) et et la définition du vide de Fock (\ref{chap:eq.vide.fock}) , il vient que 
 
 \begin{eqnarray}
@@ -30,18 +43,23 @@ La base $\vert z \rangle$ est orthonormale car avec en utilisant les relations d
 \end{eqnarray}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Fonction d’onde à une particule.}
 
 La fonction d’onde associée \(\varphi_1(z)\) est définie comme la projection :
 
 \begin{eqnarray}
-	\varphi_1(z) & = & \langle 0 \vert \operator{\Psi}(z) \vert 1 \rangle,
+	\varphi_{\theta}(z) & = & \langle 0 \vert \operator{\Psi}(z) \vert 1 \rangle,
 \end{eqnarray}
 
 et normalisée selon :
 
 \begin{eqnarray}
-	\langle 1 \vert 1 \rangle ~=~ \int dz\,  |\varphi_1(z)|^2 = 1.
+	\langle \theta' \vert \theta \rangle ~=~ \int dz\,  \varphi_{\theta'}^\ast(z)\varphi_{\theta}(z) = \delta{\theta - \theta'}.
 \end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Hamiltonien dans le cas à une particule.}
 
 L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une intégration par parties. Dans le cas d'un seul boson, seul le terme cinétique contribue, car le terme d'interaction s'annule (ce dernier étant nul pour une seule particule) :
 
@@ -49,6 +67,10 @@ L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une int�
 \begin{eqnarray}
 	\operator{H} & = & -\int dx  \left [\frac{1}{2}\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)  \label{chap:1:ham.mod.1.part.2}.
 \end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Hamiltonien dans le cas à une particule et Action de l’Hamiltonien. }
 
 Lorsque l’on agit avec l’Hamiltonien (\ref{chap:1:ham.mod.1.part.2}) sur \(\vert 1 \rangle\), et en utilisant les relations de commutation (\ref{chap:1:com.1}) et la définition du vide de Fock (\ref{chap:eq.vide.fock}), on obtient : 
 
@@ -61,6 +83,10 @@ avec
 \begin{eqnarray*}
 		\operator{H}_1 & = & - \frac{1}{2} \operator{\partial}_z^2
 \end{eqnarray*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Équation de Schrödinger différentielle.}
 
 En reportant cela dans l’équation de Schrödinger, on obtient une équation différentielle linéaire :
 
@@ -88,6 +114,8 @@ En reportant cela dans l’équation de Schrödinger, on obtient une équation d
 
 %......
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Résolution avec conditions périodiques.}
 
 Il s'agit de l’équation de Schrödinger stationnaire pour une particule libre en une dimension. Dans notre cas, la particule est confinée dans une boîte unidimensionnelle de longueur $L$, avec des conditions aux limites périodiques. Ce problème est donc équivalent à celui d’une particule libre sur un cercle de périmètre $L$.
 
@@ -104,12 +132,19 @@ avec $\theta \in \frac{2\pi}{L} \mathbb{Z}$, imposé par la condition :
 	e^{i \theta(z+L)} = e^{i \theta z} \quad \Rightarrow \quad e^{i \theta L} = 1 \quad \Rightarrow \quad \theta = \frac{2\pi n}{L}, \quad n \in \mathbb{Z}.
 \end{eqnarray}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Énergies quantifiées.}
+
 L’énergie associée à une onde plane est donnée par :
 \begin{eqnarray}
 	E & = & \frac{\theta^2}{2} = \frac{2\pi^2 n^2}{L^2},
 \end{eqnarray}
 
 ce qui exprime l’énergie cinétique d’une particule libre de masse réduite $m = 1$, en fonction de son quasi-moment $\theta$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Notation adoptée et interprétation}
 
 Dans le cas à une particule, l’état propre de l’Hamiltonien s’écrit naturellement dans la base des quasi-moment comme un état \(\vert \theta \rangle\), où \(\theta\) désigne la quantité de mouvement de la particule.  
 Nous adoptons donc la notation :
@@ -119,7 +154,7 @@ Nous adoptons donc la notation :
 
 Ces solutions correspondent à des **états non liés** (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
 
-Ces états forment une base orthonormée des états à une particule dans l’espace de Fock. Ce cadre sert de point de départ pour l’analyse de systèmes à \(N\) bosons en interaction.
+%Ces états forment une base orthonormée des états à une particule dans l’espace de Fock. Ce cadre sert de point de départ pour l’analyse de systèmes à \(N\) bosons en interaction.
 
 
 %En revanche, dans d’autres contextes physiques — par exemple si un potentiel attractif est introduit — il peut exister des **états liés**, pour lesquels la fonction d’onde $\varphi_1(z)$ est **localisée** spatialement autour d’une certaine position. Ces états satisfont également une équation de Schrödinger similaire, mais avec un potentiel $V(z)$ :
