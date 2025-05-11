@@ -188,7 +188,7 @@ l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux pro
 Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse 1/2 en présence d'un potentiel delta en $Y = 0$. 
 
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
-	- 	\operator{\partial}_Y^2 \tilde{\varphi}_2(Y) + c \operator{\delta} ( Y )\tilde{\varphi}_2(Y) & = & \tilde{E}\tilde{\varphi}_2(Y) 
+	- 	\operator{\partial}_Y^2 \tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) & = & \tilde{E}\tilde{\varphi}_2(Y) 
 \end{eqnarray}
 
 Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme :
@@ -223,11 +223,23 @@ En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée pr
 }
 
 \begin{eqnarray*}
-	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\operator{\partial}_Y^2\varphi(Y) + c \operator{\delta} ( Y )\varphi(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y ,
+	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\operator{\partial}_Y^2\tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y ,\\
+	\\
+	\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 ) & = & 0 .
 \end{eqnarray*}
 
 
-soit $\varphi'(0^+) - \varphi'(0^-) - c \varphi (  0 )  =  0 $ .En revenant aux coordonnées d'origine, on constate que la fonction d'onde à deux corps $\varphi (z_1, z_2) = \langle 0 \vert \Psi (z_1)\Psi (z_2) \vert \varphi \rangle$ satisfait à cette condition :\\
+%soit $\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 )  =  0 $ .
+
+Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve que la phase $\Phi$ satisfait la condition :
+
+\begin{equation}
+	\tan\left( \frac{\Phi}{2} \right) = \frac{\tilde{\theta}}{c}.
+\end{equation}
+
+Cette relation exprime l’impact de l’interaction delta sur le déphasage de la solution liée. On en déduit que plus le couplage $c$ est fort, plus la phase $\Phi$ tend vers $\pi$, ce qui correspond à une fonction d’onde présentant un maximum en $Y = 0$. En revanche, dans la limite d’interaction faible ($c \to 0$), la phase $\Phi$ tend vers zéro et la fonction d’onde devient nulle en $Y = 0$.
+
+En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_2 (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert 2 \rangle$ satisfait à cette condition :\\
 
 {\color{gray} 
 Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  
@@ -252,7 +264,7 @@ Donc
 Ainsi 
 }
 \begin{eqnarray}
-	\underset{ z_2 \to z_1^+ }{\lim}  \left [  \partial_{z_2}  \varphi ( z_1 , z_2 ) - \partial_{z_1}  \varphi ( z_1 , z_2 ) - c  \varphi ( z_1 , z_2 ) \right ] & = &0.  		
+	\underset{ \vert z_1 - z_2 \vert  \to 0^+ }{\lim}  \left [  \operator{\partial}_{z_2}  \varphi _2( z_1 , z_2 ) - \operator{\partial}_{z_1}  \varphi_2 ( z_1 , z_2 ) - c  \varphi_2 ( z_1 , z_2 ) \right ] & = &0.  		
 \end{eqnarray}
 
 Les mêmes conditions s'appliquent lorsque $x_1$ est échangé avec $x_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{eq:I-1-8}) sont
