@@ -57,34 +57,33 @@ Par le même raisonnement la moyenne de $\operator{\mathcal{O}}_i^n$ s'écrit :
 
 On a besoins que $n=2$ pour écrire de la variance de l'observable $\operator{\mathcal{O}}_i$ 
 \begin{eqnarray}
-	\Delta_{\operator{\mathcal{O}}_i}^2 ~=~  	\left \langle \left (\operator{\mathcal{O}}_i - \langle\operator{\mathcal{O}}_i \rangle \right )^2  \right \rangle  = 	\langle\operator{\mathcal{O}}_i^2 \rangle  -  \langle\operator{\mathcal{O}}_i \rangle^2 = \left . \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2  \\
-		& = & \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z} \frac{\partial Z}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} =  \left . \frac{\partial^2 \ln Z  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}}  = - \left . 	\frac{\partial \langle\operator{\mathcal{O}}_i \rangle }{\partial \beta_i } \right )_{\beta_{j\neq i}}		
+	\Delta_{\operator{\mathcal{O}}_i}^2 &=&  	\left \langle \left (\operator{\mathcal{O}}_i - \langle\operator{\mathcal{O}}_i \rangle \right )^2  \right \rangle  = 	\langle\operator{\mathcal{O}}_i^2 \rangle  -  \langle\operator{\mathcal{O}}_i \rangle^2 = \left . \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2  \\
+		& = & \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z} \frac{\partial Z}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} =  \left . \frac{\partial^2 \ln Z  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}}  = - \left . 	\frac{\partial \langle\operator{\mathcal{O}}_i \rangle }{\partial \beta_i } \right )_{\beta_{j\neq i}}	.	
 \end{eqnarray}
 
-
-
-
-
- 
-
-
+Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta = T^{-1}$. Avec $\mu$ le potentielle chimique et $T$ la temperatures pour un équilibre thermique\\
+	
+	%avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{ \{\theta_a \} }  \doteq  \langle \{ \theta_a \}\vert  \operator{\mathcal{N}} \vert\{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}  \doteq  \langle \{ \theta_a \}\vert  \operator{ \mathcal{E}}  \vert\{ \theta_a\}\rangle $.
 
 	
-	avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{ \{\theta_a \} }  \doteq  \langle \{ \theta_a \}\vert  \operator{\mathcal{N}} \vert\{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}  \doteq  \langle \{ \theta_a \}\vert  \operator{ \mathcal{E}}  \vert\{ \theta_a\}\rangle $.
+	%La probabilité que le système soit dans configuration $\{ \theta_a \}$  est 
+	%\begin{eqnarray}
+	%	P_{\{\theta_a \}} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
+	%\end{eqnarray}
+	
+	%avec la fonction de partition $Z_{thermal} = \sum_{\{ \theta_a\}}e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )} = \sum_{\{ \theta_a\}} e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
+	
 
 	
-	La probabilité que le système soit dans configuration $\{ \theta_a \}$  est 
-	\begin{eqnarray}
-		P_{\{\theta_a \}} & = & \frac{e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )}}{Z_{thermal}} = \frac{e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}}{Z_{thermal}}	
-	\end{eqnarray}
-	
-	avec la fonction de partition $Z_{thermal} = \sum_{\{ \theta_a\}}e^{- \beta \left ( \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}   - \mu \langle \operator{\mathcal{N}} \rangle_{\{\theta_a \}} \right )} = \sum_{\{ \theta_a\}} e^{- \beta \sum_{a=1}^N  ( \varepsilon( \theta_a )   - \mu  )}$
-	
-	\begin{eqnarray}
-		\langle \operator{\mathcal{N}} \rangle  = \left .\frac{1}{\beta} \frac{ \partial \ln Z}{\partial \mu } \right )_T,  & & \Delta^2_{\operator{\mathcal{N}}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z}{{\partial \mu}^2 } \right )_T =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu } \right )_T\\
-		\langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}}  \rangle  = -\left . \frac{ \partial \ln Z}{\partial \beta } \right )_\mu,  & & \Delta^2_{\operator{\mathcal{E}} - \mu\operator{\mathcal{N}}} = \left .  \frac{ \partial^2 \ln Z}{{\partial \beta}^2 } \right )_\mu =  -\left .  \frac{ \partial \langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}} \rangle}{\partial \beta } \right )_\mu	\\
-		\langle \operator{\mathcal{E}} \rangle  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\ln Z,  & & \Delta^2_{\operator{\mathcal{E}} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]^2\ln Z=  \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\langle \operator{\mathcal{E}} \rangle	
-	\end{eqnarray}
+\begin{eqnarray}
+	\langle \operator{\mathcal{N}} \rangle  = \left .\frac{1}{\beta} \frac{ \partial \ln Z}{\partial \mu } \right )_{T,\cdots},  & & \Delta^2_{\operator{\mathcal{N}}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z}{{\partial \mu}^2 } \right )_{T,\cdots} =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu } \right )_{T,\cdots}\\
+	\langle \operator{\mathcal{H}}_N - \mu\operator{\mathcal{N}}  \rangle  = -\left . \frac{ \partial \ln Z}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{\mathcal{E}} - \mu\operator{\mathcal{N}}} = \left .  \frac{ \partial^2 \ln Z}{{\partial \beta}^2 } \right )_\mu =  -\left .  \frac{ \partial \langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}} \rangle}{\partial \beta } \right )_\mu			
+\end{eqnarray}
+
+\begin{eqnarray}
+	\langle \operator{\mathcal{E}} \rangle  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\ln Z,  & & \Delta^2_{\operator{\mathcal{E}} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]^2\ln Z=  \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\langle \operator{\mathcal{E}} \rangle		
+\end{eqnarray}
+
 
 	
 	
