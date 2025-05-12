@@ -1,0 +1,23 @@
+\begin{eqnarray*}
+	2\pi \rho_s & = & 1 + \Delta \star \rho 
+\end{eqnarray*}
+
+\subsubsection{The dressing}
+
+Dans les manipulations thermodynamiques, il s'avère que l'opération suivante est omniprésente : à une fonction $f(\theta)$, on associe sa contrepartie « habillée » $f^{dr}(\theta)$
+, définie par l'équation intégrale :
+\begin{eqnarray}
+	f^{\mathrm{dr}}(\theta) & = & f(\theta) + \int \frac{1}{2\pi} \Delta( \theta - \theta' ) \nu ( \theta' ) f^{\mathrm{dr}}(\theta') d \theta ' \\
+	& = & 	f(\theta) + \left \{ \frac{\Delta}{2\pi} \star (\nu \ast f^{\mathrm{dr}}) \right \} ( \theta ) 		
+\end{eqnarray}
+
+
+où $\Delta ( \theta - \theta' )/2\pi$ est un noyau de convolution spécifique qui dépend du problème considéré. Cette équation permet de capturer les effets de l'interaction entre les particules et de rendre compte des corrections « habillées » à la fonction initiale $f(\theta)$. En résolvant cette équation, on obtient la fonction habillée $f^{\mathrm{dr}}(\theta)$ associée à la fonction donnée $f(\theta)$. Cette opération est couramment utilisée dans les calculs thermodynamiques pour prendre en compte les interactions et les corrections aux propriétés des systèmes physiques.\\
+
+
+Bien que cela ne soit pas explicite dans la notation, $f^{\mathrm{dr}}(\theta)$ est toujours fonctionnelle de la distribution de rapidité, à travers sa dépendance vis-à-vis du rapport d'occupation de Fermi. Par exemple, avec cette définition, l'équation constitutive (\ref{eq:therm.rho_s_2}) est reformulée comme suit :
+\begin{eqnarray}
+	2\pi \rho_s ( \theta ) & = & \mathrm{1}^{\mathrm{dr}}(\theta)		
+\end{eqnarray}
+
+où $\mathrm{1}(\theta) = 1$ est la fonction constante.

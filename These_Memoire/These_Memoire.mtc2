@@ -1,20 +1,22 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Introduction Générale}{\reset@font\mtcPfont 13}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie I – Fondements et cadre théorique}{\reset@font\mtcPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 1 – Systèmes quantiques intégrables}{\reset@font\mtcSPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 2 – Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSPfont 13}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 1 – Systèmes quantiques intégrables}{\reset@font\mtcSPfont 13}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 2 – Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSPfont 13}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie II – Thermodynamique de Bethe et relaxation}{\reset@font\mtcPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 3 – Thermodynamique de Bethe (TBA)}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 4 – Relaxation vers la GGE et interprétation TBA}{\reset@font\mtcSPfont 14}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section3 – Thermodynamique de Bethe (TBA)}{\reset@font\mtcSPfont 14}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 4 – Relaxation vers la GGE et interprétation TBA}{\reset@font\mtcSPfont 14}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie III – Études spécifiques et développements mathématiques}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 5 – Analyse mathématique de la fonction de Yang-Yang}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Chapitre 6 – Études de cas et applications}{\reset@font\mtcSPfont 14}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 5 – Analyse mathématique de la fonction de Yang-Yang}{\reset@font\mtcSPfont 14}{chapter.2}}
+{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 6 – Études de cas et applications}{\reset@font\mtcSPfont 14}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Conclusion Générale}{\reset@font\mtcPfont 14}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Annexes}{\reset@font\mtcPfont 14}{chapter.2}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Bibliographie}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.0.1}Physique statistique de l’ensemble de Gibbs}{\reset@font\mtcSSfont 14}{subsection.2.0.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.0.2}Entropie de Yang-Yang et principe de maximisation}{\reset@font\mtcSSfont 15}{subsection.2.0.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Équilibre non thermique et ensemble de Gibbs généralisé}{\reset@font\mtcSfont 15}{section.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Intégrabilité et charges conservées}{\reset@font\mtcSSfont 15}{subsection.2.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Dynamique hors équilibre et relaxation des systèmes isolés}{\reset@font\mtcSSfont 15}{subsection.2.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.3}Physique statistique appliquée aux systèmes intégrables}{\reset@font\mtcSSfont 15}{subsection.2.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.4}Entropie de Yang-Yang généralisée}{\reset@font\mtcSSfont 17}{subsection.2.1.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSfont 14}{section.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode The dressing}{\reset@font\mtcSSSfont 15}{section.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Physique statistique de l’ensemble de Gibbs}{\reset@font\mtcSSfont 15}{subsection.2.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Entropie de Yang-Yang et principe de maximisation}{\reset@font\mtcSSfont 16}{subsection.2.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{\reset@font\mtcSfont 16}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Intégrabilité et charges conservées}{\reset@font\mtcSSfont 16}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Dynamique hors équilibre et relaxation des systèmes isolés}{\reset@font\mtcSSfont 16}{subsection.2.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Physique statistique appliquée aux systèmes intégrables}{\reset@font\mtcSSfont 16}{subsection.2.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Entropie de Yang-Yang généralisée}{\reset@font\mtcSSfont 17}{subsection.2.2.4}}
