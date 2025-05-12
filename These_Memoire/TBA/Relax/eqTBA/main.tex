@@ -1,0 +1,56 @@
+%Considérons un système homogène de taille $L$. Faisons l'hypothèse qu'après relaxation, le système est décrite par un ensemble généralisé de Gibbs (GGE). On a vus dans le chapire d'avant que la valeur moyenne des observables $\langle\operator{\mathcal{O}}\rangle$ dans un ensemble statistique s'écrit comme une intégrale formelle
+
+%\begin{eqnarray*}
+%	\langle \operator{\mathcal{O}} \rangle & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \mathcal{O}[\rho]}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, %\label{chap:fluctu:eq:ensemble_average}
+%\end{eqnarray*}
+
+%avec $\mathcal{O}[\rho]$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$, $\mathcal{S}_{YY}$ l'entropie de Yang-Yang et $\mathcal{W}$ l'énergie généralisé.
+Cette moyenne fonctionelle sur tous les profils de rapidité $\rho$, avec un poids $\propto e^{(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}$. Dans la limite thermodynamique $L \to \infty$ , cette intégrale est dominée par la configuration $\langle \rho \rangle$ qui maximise le poids exponentiel, c’est-à-dire la distribution de rapidité la plus probable. Ainsi, la moyenne de l’observable s’écrit à première approximation :
+
+ %est domminé par la la configuration caractérisé par la distribution de rapité le plus probable $\langle \rho \rangle$. De ce fait la moyenne  des observables $\langle\operator{\mathcal{O}}\rangle $ s'écrit 
+
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}} \rangle & \approx & \mathcal{O}[\langle \rho \rangle ]	
+	\label{chap:TBA:eq:ensemble_average:approx}
+\end{eqnarray}
+
+
+On développe de Taylor-Young à l’ordre linéaire :
+
+\begin{eqnarray*}
+	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] +  \left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \langle \rho \rangle }	(\delta \rho),
+	\label{chap:TBA:eq:action}	
+\end{eqnarray*}	
+
+
+Cette configuration vérifie donc l’{\bf équation de point selle} :
+
+\begin{eqnarray*}
+	\delta (\mathcal{S}_{YY} - \mathcal{W}) & = & 0  	
+\end{eqnarray*}
+
+sot 
+
+
+\begin{eqnarray*}
+	w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~= ~\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~=~ \ln ( \langle \nu \rangle^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \langle \nu \rangle )
+\end{eqnarray*}
+
+avec  
+
+\begin{eqnarray*}
+	\langle \rho \langle &  =  &\langle \nu \langle\langle \rho_s \langl	
+\end{eqnarray*}
+
+et 
+
+\begin{eqnarray*}
+	\langle \nu \langle & = & \frac{1}{1 + e^{\beta \epsilon}} 		
+\end{eqnarray*}
+
+
+
+
+
+
+
