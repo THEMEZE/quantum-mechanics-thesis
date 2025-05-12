@@ -7,11 +7,15 @@ On note la configuration $\{ \theta_a \}_{a\in \llbracket 1 , N \rrbracket}$ des
 
 avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les configurations.\\
 
-On introduis $\operator{\mathcal{O}}_i$ des observables dont les fonction  $\vert \{ \theta_a \} \rangle$  sont fonction propres associés au valeurs propres $\langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}}$.\\
+On introduis $\operator{\mathcal{O}}_i$ des observables dont les fonction  $\vert \{ \theta_a \} \rangle$  sont fonction propres associés au valeurs propres $\langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}} = \langle \{ \theta_a \} \vert\operator{\mathcal{O}}_i \vert \{ \theta_a \} \rangle$ :\\
+
+\begin{eqnarray}
+	\operator{\mathcal{O}}_i & = & \sum_{ \{\theta_a\} }   \langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}}  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.,		
+\end{eqnarray}
 
 On cherche à maximiser l'entropie :
 \begin{eqnarray}
-	\mathcal{S} & = & \mathrm{Tr} ( \operator{\rho} \ln \operator{\rho} ) , 	
+	\mathcal{S} & = & -\mathrm{Tr} ( \operator{\rho} \ln \operator{\rho} ) , 	
 \end{eqnarray}
 
 sous la contrainte 
@@ -32,7 +36,7 @@ avec la fonction de partition
 	Z & = & \mathrm{Tr} \left [ \exp \left ( - \sum_i \beta_i \operator{\mathcal{O}}_i \right ) \right ]. 	
 \end{eqnarray}
 
-Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'ensemble de Gibbs généralisé (GGE), oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{\mathcal{O}}_i \rangle$.
+Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'ensemble de Gibbs généralisé (GGE), oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{\mathcal{O}}_i \rangle $.
 
 On peut ainsi définie la probabilité d'etre dans l'état $\vert \{ \theta_a \} \rangle$ :
 \begin{eqnarray}
@@ -42,8 +46,21 @@ On peut ainsi définie la probabilité d'etre dans l'état $\vert \{ \theta_a \}
 Une autre manière d'écrire la moyenne de $\operator{\mathcal{O}}_i$ est 
 
 \begin{eqnarray}
-	\langle \operator{\mathcal{O}}_i \rangle &= & 		
+	\langle \operator{\mathcal{O}}_i \rangle &= & \sum_{\{ \theta_a\}} \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}} \mathbb{P} ( \{ \theta_a \} ) ~=~- \left. \frac{1}{Z} \frac{\partial Z}{\partial \beta_i} \right )_{\beta_{j \neq i }} ~=~ - 	\left . \frac{\partial  \ln Z}{\partial \beta_i} \right )_{\beta_{j \neq i }}	
 \end{eqnarray}
+
+Par le même raisonnement la moyenne de $\operator{\mathcal{O}}_i^n$ s'écrit :
+
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}}_i^n \rangle &= & \sum_{\{ \theta_a\}} \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}}^n \mathbb{P} ( \{ \theta_a \} ) ~=~ (-1)^n \left. \frac{1}{Z} \frac{\partial^n Z}{{(\partial \beta_i)}^n} \right )_{\beta_{j \neq i }} .	
+\end{eqnarray}
+
+On a besoins que $n=2$ pour écrire de la variance de l'observable $\operator{\mathcal{O}}_i$ 
+\begin{eqnarray}
+	\Delta_{\operator{\mathcal{O}}_i}^2 ~=~  	\left \langle \left (\operator{\mathcal{O}}_i - \langle\operator{\mathcal{O}}_i \rangle \right )^2  \right \rangle  = 	\langle\operator{\mathcal{O}}_i^2 \rangle  -  \langle\operator{\mathcal{O}}_i \rangle^2 = \left . \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2  \\
+		& = & \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z} \frac{\partial Z}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} =  \left . \frac{\partial^2 \ln Z  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}}  = - \left . 	\frac{\partial \langle\operator{\mathcal{O}}_i \rangle }{\partial \beta_i } \right )_{\beta_{j\neq i}}		
+\end{eqnarray}
+
 
 
 
