@@ -1,4 +1,5 @@
-On note la configuration $\{ \theta_a \}_{a\in \llbracket 1 , N \rrbracket}$ des rapidité à nombre $N$ de particule fixes. Dans le la chapitre précédant (??) on vus que l'état $\vert \{ \theta_a \} \rangle$ associé à la configuration $\{ \theta_a \}_{a\in \llbracket 1 , N \rrbracket}$ est fonction propre des observable nombre et énergie (??) . Ces observable sont diagonales dans la base des fonctions propre :
+\paragraph{États propres et observables diagonales.}
+On note la configuration ${ \theta_a }_{a\in \llbracket 1 , N \rrbracket}$ des rapidités pour un état à $N$ particules fixées. Dans le chapitre précédent (??), on a vu que l'état $\vert { \theta_a } \rangle$ associé à cette configuration est une fonction propre des observables nombre et énergie (??). Ces observables sont diagonales dans la base des états propres :
 
 \begin{eqnarray}
 	\operator{\mathcal{N}} & = & \sum_{ \{\theta_a\} }   \left ( \sum_{a = 1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\\
@@ -7,18 +8,24 @@ On note la configuration $\{ \theta_a \}_{a\in \llbracket 1 , N \rrbracket}$ des
 
 avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les configurations.\\
 
-On introduis $\operator{\mathcal{O}}_i$ des observables dont les fonction  $\vert \{ \theta_a \} \rangle$  sont fonction propres associés au valeurs propres $\langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}} = \langle \{ \theta_a \} \vert\operator{\mathcal{O}}_i \vert \{ \theta_a \} \rangle$ :\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Définition générale des observables diagonales.}
+On introduit une famille d'observables $\operator{\mathcal{O}}_i$ telles que les états $\vert { \theta_a } \rangle$ soient aussi fonctions propres de chacune de ces observables, avec pour valeurs propres $\langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}} = \langle \{ \theta_a \} \vert\operator{\mathcal{O}}_i \vert \{ \theta_a \} \rangle$ :\\
 
 \begin{eqnarray}
 	\operator{\mathcal{O}}_i & = & \sum_{ \{\theta_a\} }   \langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}}  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.,		
 \end{eqnarray}
 
-On cherche à maximiser l'entropie :
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Principe de maximisation de l'entropie.}
+On cherche à maximiser l'entropie de Shannon de l’état statistique :
 \begin{eqnarray}
 	\mathcal{S} & = & -\mathrm{Tr} ( \operator{\rho} \ln \operator{\rho} ) , 	
 \end{eqnarray}
 
-sous la contrainte 
+sous la contrainte que les moyennes des observables soient fixées :
 
 \begin{eqnarray}
 	\langle \operator{\mathcal{O}}_i \rangle & = & 	\mathrm{Tr} ( \operator{\rho} \operator{\mathcal{O}}_i ) ,
@@ -26,7 +33,9 @@ sous la contrainte
 
 où $\langle \operator{\mathcal{O}}_i \rangle$ est la moyenne de l'observable $\operator{\mathcal{O}}_i$.
 
-Pour définir la matrice densité, on introduit les multiplicateur de Lagrange $\beta_i$ pour chaque contrainte, ce qui donne  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Définition de la matrice densité et de la fonction de partition.}
+Pour résoudre ce problème, on introduit les multiplicateurs de Lagrange $\beta_i$ pour chaque contrainte. Cela conduit à une matrice densité de la forme : 
 \begin{eqnarray}
 	 \operator{\rho} &= & Z^{-1} \exp \left ( - \sum_i \beta_i \operator{\mathcal{O}}_i \right ) , 		
 \end{eqnarray}
@@ -35,15 +44,20 @@ avec la fonction de partition
 \begin{eqnarray}
 	Z & = & \mathrm{Tr} \left [ \exp \left ( - \sum_i \beta_i \operator{\mathcal{O}}_i \right ) \right ]. 	
 \end{eqnarray}
-
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \paragraph{Interprétation physique des multiplicateurs de Lagrange.}
 Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'ensemble de Gibbs généralisé (GGE), oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{\mathcal{O}}_i \rangle $.
 
-On peut ainsi définie la probabilité d'etre dans l'état $\vert \{ \theta_a \} \rangle$ :
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Distribution de probabilité sur les configurations.}
+On peut alors définir la probabilité d’occurrence d’un état $\vert { \theta_a } \rangle$ :
 \begin{eqnarray}
 	\mathbb{P} ( \{ \theta_a \} ) & = & \mathrm{Tr} \left [\operator{\rho} \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert \rangle \right ] ~=~  \langle \{ \theta_a \} \vert	\operator{\rho} \vert \{ \theta_a \} \rangle ~=~ Z^{-1} \exp \left (- \sum_i \beta_i \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}} \right ) .
 \end{eqnarray}
 
-Une autre manière d'écrire la moyenne de $\operator{\mathcal{O}}_i$ est 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Calcul des moyennes et des moments des observables.}
+On peut écrire la moyenne d’une observable comme une somme pondérée par cette probabilité, ou encore comme une dérivée de la fonction de partition :
 
 \begin{eqnarray}
 	\langle \operator{\mathcal{O}}_i \rangle &= & \sum_{\{ \theta_a\}} \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}} \mathbb{P} ( \{ \theta_a \} ) ~=~- \left. \frac{1}{Z} \frac{\partial Z}{\partial \beta_i} \right )_{\beta_{j \neq i }} ~=~ - 	\left . \frac{\partial  \ln Z}{\partial \beta_i} \right )_{\beta_{j \neq i }}	
@@ -55,13 +69,18 @@ Par le même raisonnement la moyenne de $\operator{\mathcal{O}}_i^n$ s'écrit :
 	\langle \operator{\mathcal{O}}_i^n \rangle &= & \sum_{\{ \theta_a\}} \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}}^n \mathbb{P} ( \{ \theta_a \} ) ~=~ (-1)^n \left. \frac{1}{Z} \frac{\partial^n Z}{{(\partial \beta_i)}^n} \right )_{\beta_{j \neq i }} .	
 \end{eqnarray}
 
-On a besoins que $n=2$ pour écrire de la variance de l'observable $\operator{\mathcal{O}}_i$ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Variance et fluctuations.}
+Le cas $n=2$ permet d’accéder à la variance de l’observable :
 \begin{eqnarray}
 	\Delta_{\operator{\mathcal{O}}_i}^2 &=&  	\left \langle \left (\operator{\mathcal{O}}_i - \langle\operator{\mathcal{O}}_i \rangle \right )^2  \right \rangle  = 	\langle\operator{\mathcal{O}}_i^2 \rangle  -  \langle\operator{\mathcal{O}}_i \rangle^2 = \left . \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2  \\
 		& = & \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z} \frac{\partial Z}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} =  \left . \frac{\partial^2 \ln Z  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}}  = - \left . 	\frac{\partial \langle\operator{\mathcal{O}}_i \rangle }{\partial \beta_i } \right )_{\beta_{j\neq i}}	.	
 \end{eqnarray}
 
-Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta = T^{-1}$. Avec $\mu$ le potentielle chimique et $T$ la temperatures pour un équilibre thermique\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Cas particulier de l’équilibre thermique.}
+-- Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta = T^{-1}$. Avec $\mu$ le potentielle chimique et $T$ la temperatures pour un équilibre thermique--.\\
+Dans le cas d’un équilibre thermique, on identifie certains multiplicateurs à des grandeurs thermodynamiques classiques comme l’inverse de la température  et le potentiel chimique :
 	
 	%avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{ \{\theta_a \} }  \doteq  \langle \{ \theta_a \}\vert  \operator{\mathcal{N}} \vert\{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}  \doteq  \langle \{ \theta_a \}\vert  \operator{ \mathcal{E}}  \vert\{ \theta_a\}\rangle $.
 
@@ -77,18 +96,20 @@ Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta 
 	
 \begin{eqnarray}
 	\langle \operator{\mathcal{N}} \rangle  = \left .\frac{1}{\beta} \frac{ \partial \ln Z}{\partial \mu } \right )_{T,\cdots},  & & \Delta^2_{\operator{\mathcal{N}}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z}{{\partial \mu}^2 } \right )_{T,\cdots} =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{\mathcal{N}} \rangle}{\partial \mu } \right )_{T,\cdots}\\
-	\langle \operator{\mathcal{H}}_N - \mu\operator{\mathcal{N}}  \rangle  = -\left . \frac{ \partial \ln Z}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{\mathcal{E}} - \mu\operator{\mathcal{N}}} = \left .  \frac{ \partial^2 \ln Z}{{\partial \beta}^2 } \right )_\mu =  -\left .  \frac{ \partial \langle \operator{\mathcal{E}} - \mu\operator{\mathcal{N}} \rangle}{\partial \beta } \right )_\mu			
+	\langle \operator{\mathcal{H}}_N - \mu\operator{\mathcal{N}}  \rangle  = -\left . \frac{ \partial \ln Z}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{\mathcal{H}}_N - \mu\operator{\mathcal{N}}} = \left .  \frac{ \partial^2 \ln Z}{{\partial \beta}^2 } \right )_{\mu , \cdots} =  -\left .  \frac{ \partial \langle \operator{\mathcal{H}}_N - \mu\operator{\mathcal{N}} \rangle}{\partial \beta } \right )_{\mu , \cdots}		
 \end{eqnarray}
+
+Soit pour l'énergie, 
 
 \begin{eqnarray}
-	\langle \operator{\mathcal{E}} \rangle  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\ln Z,  & & \Delta^2_{\operator{\mathcal{E}} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]^2\ln Z=  \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_T -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\langle \operator{\mathcal{E}} \rangle		
+	\langle \operator{\mathcal{H}}_N \rangle  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_\mu  \right ]\ln Z,  & & \Delta^2_{\operator{\mathcal{H}}_N } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu,\cdots}  \right ]^2\ln Z		
 \end{eqnarray}
 
 
 	
 	
-	La matrice densité thermique est :
-	\begin{eqnarray}
-		\operator{\rho}_{thermal} & = & \frac{e^{- \beta \operator{H}}}{Z_{thermal}}, \\
-		e^{-\beta \operator{H}} & = & 	\sum_{\{\theta_a \}} e^{- \beta \sum_{a=1}^N ( \varepsilon(\theta_a)- \mu ) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
-	\end{eqnarray}
+	%La matrice densité thermique est :
+	%\begin{eqnarray}
+	%	\operator{\rho}_{thermal} & = & \frac{e^{- \beta \operator{H}}}{Z_{thermal}}, \\
+	%	e^{-\beta \operator{H}} & = & 	\sum_{\{\theta_a \}} e^{- \beta \sum_{a=1}^N ( \varepsilon(\theta_a)- \mu ) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	%\end{eqnarray}

@@ -16,7 +16,13 @@
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Limite}{\reset@font\mtcSSSfont 14}{subsection.2.1.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode The dressing}{\reset@font\mtcSSSfont 15}{subsection.2.1.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Notion d’état d’équilibre généralisé (GGE)}{\reset@font\mtcSSfont 15}{subsection.2.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{\reset@font\mtcSSfont 16}{subsection.2.1.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode États propres et observables diagonales.}{\reset@font\mtcPfont 15}{subsection.2.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Définition générale des observables diagonales.}{\reset@font\mtcPfont 15}{equation.2.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Principe de maximisation de l'entropie.}{\reset@font\mtcPfont 15}{equation.2.6}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Définition de la matrice densité et de la fonction de partition.}{\reset@font\mtcPfont 16}{equation.2.8}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interprétation physique des multiplicateurs de Lagrange.}{\reset@font\mtcPfont 16}{equation.2.10}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Distribution de probabilité sur les configurations.}{\reset@font\mtcPfont 16}{equation.2.10}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{\reset@font\mtcSSfont 17}{subsection.2.1.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.4}Entropie de Yang-Yang et principe de maximisation}{\reset@font\mtcSSfont 17}{subsection.2.1.4}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{\reset@font\mtcSfont 17}{section.2.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Intégrabilité et charges conservées}{\reset@font\mtcSSfont 17}{subsection.2.2.1}}

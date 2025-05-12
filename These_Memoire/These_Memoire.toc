@@ -63,7 +63,13 @@
 \contentsline {subsubsection}{Limite}{14}{subsection.2.1.1}%
 \contentsline {subsubsection}{The dressing}{15}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Notion d’état d’équilibre généralisé (GGE)}{15}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{16}{subsection.2.1.3}%
+\contentsline {paragraph}{États propres et observables diagonales.}{15}{subsection.2.1.2}%
+\contentsline {paragraph}{Définition générale des observables diagonales.}{15}{equation.2.4}%
+\contentsline {paragraph}{Principe de maximisation de l'entropie.}{15}{equation.2.6}%
+\contentsline {paragraph}{Définition de la matrice densité et de la fonction de partition.}{16}{equation.2.8}%
+\contentsline {paragraph}{Interprétation physique des multiplicateurs de Lagrange.}{16}{equation.2.10}%
+\contentsline {paragraph}{Distribution de probabilité sur les configurations.}{16}{equation.2.10}%
+\contentsline {subsection}{\numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{17}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Entropie de Yang-Yang et principe de maximisation}{17}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{17}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Intégrabilité et charges conservées}{17}{subsection.2.2.1}%
