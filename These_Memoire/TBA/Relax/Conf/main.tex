@@ -88,32 +88,33 @@ où chaque $a$ indexe une cellule de rapidité $[\theta_a, \theta_a + \delta\the
 On obtient :
 
 \begin{eqnarray}
-    \ln \# \mbox{microstates.} & = & \sum_a^{\theta-\mbox{\tiny tranches}} \ln \# \mbox{conf.}(\theta_a), \\
+    \ln \# \mbox{micro-états.} & = & \sum_a^{\theta-\mbox{\tiny tranches}} \ln \# \mbox{conf.}(\theta_a), \\
     & \approx &   L\mathcal{S}_{YY} [ \rho ] , 	
 \end{eqnarray}
 
 avec 
 
 \begin{eqnarray}
-    \mathcal{S}}_{YY}[\rho] & \doteq & \sum_a^{\theta-\mbox{\tiny tranches}} \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta_a) \delta \theta .
+    \mathcal{S}_{YY}[\rho] & \doteq & \sum_a^{\theta-\mbox{\tiny tranches}} \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta_a) \delta \theta .
 \end{eqnarray}
 	
 Les variation de $w$ sont négligeables sur $\delta \theta $. Alors o  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
 
 \begin{eqnarray}
-	\mathcal{W}[w] & = & \sum_{a = 1}^N  w(\theta_a)	 ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
+	 \mathcal{W}[w] & = & \sum_{a = 1}^N  w(\theta_a)	 ~ \sim ~ L\mathcal{W}[w,\rho] ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
 \end{eqnarray}
 
 	
 	
-	\begin{eqnarray}
-		\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  \# \mbox{microstates.}e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
-	\end{eqnarray}
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\{\theta_a \} \vert \rho } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle \# \mbox{micro-états.} e^{- L\mathcal{W}[w,\rho]    }}{ \displaystyle \sum_{\{\theta_a \} \vert \rho }  \# \mbox{micro-états.}e^{- L\mathcal{W}[w,\rho] } } ~ \approx  ~ \frac{  \displaystyle \sum_{\{\theta_a \} \vert \rho } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[w,\rho]) }}{ \displaystyle \sum_{\{\theta_a \} \vert \rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[w,\rho]) } },
+\end{eqnarray}
+où $ \sum_{\{\theta_a \} \vert \rho }$ est une sommes sur les configuration à distr
 	
-	Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
-	\begin{eqnarray}
-		\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\Pi]},
-	\end{eqnarray}
+Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+\begin{eqnarray}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\Pi]},
+\end{eqnarray}
 	
 	et 
 	
