@@ -149,7 +149,7 @@ l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux pro
 Les états propres de l'hamiltonien du centre de masse, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse 1/2 en présence d'un potentiel delta en $Y = 0$. 
 
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
-	- 	\operator{\partial}_Y^2 \tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) & = & \tilde{E}\tilde{\varphi}_2(Y) 
+	- 	\operator{\partial}_Y^2 \tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) & = & \tilde{E}\tilde{\varphi}(Y) 
 \end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Forme symétrique de la fonction d'onde pour bosons.}
@@ -206,7 +206,12 @@ Cette relation exprime l’impact de l’interaction delta sur le déphasage de 
 
 %%%%%%%%%%%%%%%%%%%%
 \paragraph{Retour aux coordonnées du laboratoire.}
-En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on constate que la fonction d'onde à deux corps $\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle$ satisfait à cette condition :\\
+En revenant aux coordonnées d'origine (celles du laboratoire), on constate que la fonction d'onde à deux corps 
+\(
+\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle 0 \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle
+\)
+doit satisfaire une condition de raccord au point \(z_1 = z_2\), en lien avec la discontinuité de ses dérivées due à l’interaction locale. Cette équation peut être résolue en utilisant l’\textbf{Ansatz de Bethe}, en supposant que la fonction d’onde est une superposition symétrisée d’ondes planes dans les deux domaines \(z_1 < z_2\) et \(z_1 > z_2\) :
+
 
 %{\color{lightgray} 
 %Dans notre systène ne compte que le difference des position $z_1$ et $z_2$. Donc je suis convaincu que  
@@ -237,7 +242,7 @@ En revenant aux coordonnées d'origine (les coordonnées du laboratoire) , on co
 %Les mêmes conditions s'appliquent lorsque $z_1$ est échangé avec $z_2$, puisque la fonction d'onde est symétrique. Ainsi, les états propres de l'équation (\ref{chap:eq.twobody}) sont
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Condition de continuité et symétrie de la fonction d’onde et  Forme explicite de la fonction d’onde à deux corps.}
+\paragraph{Condition de continuité et symétrie de la fonction d’onde et  Forme explicite de la fonction d’onde à deux corps. {\color{red}(à revoir)}}
 Comme la fonction d’onde est symétrique, l’échange des positions $z_1 \leftrightarrow z_2$ ne modifie pas la structure du problème. Les états propres de l’équation (\ref{chap:eq.twobody}) s’écrivent donc
 
 
@@ -250,7 +255,7 @@ Comme la fonction d’onde est symétrique, l’échange des positions $z_1 \lef
 et correspondent aux valeurs propres $E = (\theta_1^2 + \theta_2^2)/2$. Lorsque $\theta_1 > \theta_2$, les deux exponentielles $e^{i z_1 \theta_1 + i z_2 \theta_2}$ et $e^{i z_1 \theta_2 + i z_2 \theta_1}$ peuvent être interprétées comme les configurations entrante et sortante d’un processus de diffusion à deux corps. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Phase de diffusion à deux corps.}
+\paragraph{Phase de diffusion à deux corps. {\color{red}(à revoir)}}
 Le rapport entre leurs amplitudes définit la phase de diffusion :
 
 \begin{eqnarray}\label{eq:I-1-11}
@@ -264,7 +269,7 @@ Une expression équivalente pour cette phase, souvent utilisée dans la littéra
 %$\Phi ( \theta ) = 2 \arctan ( \theta/c) \in [ - \pi , \pi ] $.\\
 %Une expression équivalente, fréquemment rencontrée dans la littérature et que nous adopterons par la suite, est donnée par :$\Phi ( \theta ) = 2 \arctan ( \theta/c) \in [ - \pi , \pi ] $.
 
-\paragraph{Lien entre phase de diffusion et décalage temporel : interprétation semi-classique.}
+\paragraph{Lien entre phase de diffusion et décalage temporel : interprétation semi-classique. {\color{red}(à revoir)}}
 Il a été souligné par {\color{blue}Eisenbud (1948)} et {\color{blue}Wigner (1955)} que la phase de diffusion peut être interprétée de manière semi-classique comme un "décalage temporel". Esquissons brièvement l'argument de {\color{blue}Wigner (1955)}. Tout d'abord, notons que, pour une particule unique, une approximation simple d'un paquet d'ondes peut être obtenue en superposant deux ondes planes avec des moments $\theta$ et $\theta + \delta \theta $, respectivement,
 
 \begin{eqnarray}
@@ -278,7 +283,7 @@ Il a été souligné par {\color{blue}Eisenbud (1948)} et {\color{blue}Wigner (1
   \label{}	
 \end{figure}
 
-Une telle superposition évolue dans le temps comme $e^{(iz\theta -it\varepsilon(\theta))} + e^{(iz(\theta + \delta \theta )  -it\varepsilon(\theta + \delta \theta ))}$, où $\varepsilon(\theta) = \theta ^2/2$ est l'énergie. Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $z\delta \theta  - t[\varepsilon(\theta + \delta \theta ) - \varepsilon(\theta)] = 0$, ce qui donne $z \simeq vt$ avec la vitesse de groupe $v = d\varepsilon/d\theta = \theta$. Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $\tilde{\theta} = (\theta_1 - \theta_2)/2$,
+Une telle superposition évolue dans le temps comme $e^{(iz\theta -it\varepsilon(\theta))} + e^{(iz(\theta + \delta \theta )  -it\varepsilon(\theta + \delta \theta ))}$, où $\varepsilon(\theta) = \theta ^2/2$ est l'énergie. Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $z\delta \theta  - t[\varepsilon(\theta + \delta \theta ) - \varepsilon(\theta)] = 0$, ce qui donne $z \simeq vt$ avec la vitesse de groupe $v = d\varepsilon/d\theta = \theta$. Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $ (\theta_1 - \theta_2)/2$,
 
 {\color{gray}
 \begin{eqnarray*}
@@ -298,7 +303,7 @@ Selon les équations (\ref{eq:I-1-10}) et (\ref{eq:I-1-11}), l'état sortant cor
 	& \propto & e^{i \frac{ z_1 + z_2 }{2} ( \theta_1 + \theta_2 ) }  \left ( - e^{ i \phi ( \theta_1 - \theta_2 ) }e^{i(z_1 - z_2 ) \frac{ \theta_1 - \theta_2}{2} } -e^{ i \phi ( \theta_1 - \theta_2 + 2 \delta \theta ) }e^{i(z_1 - z_2 )  \left ( \frac{ \theta_1 - \theta_2}{2} + \delta \theta \right )  }  \right ). %\tag{2}
 \end{eqnarray}
 
-En répétant l'argument précédent de la stationnarité de phase, on trouve que la coordonnée relative est à la position $z_1 - z_2 \simeq (\theta_1 - \theta_2)t - 2d\phi /d\theta$ au moment $t$. Étant donné que le centre de masse n'est pas affecté par la collision et se déplace à la vitesse de groupe $(\theta_1 + \theta_2)/2$, nous constatons que la position des deux particules semiclassiques après la collision sera
+En répétant l'argument précédent de la stationnarité de phase, on trouve que la coordonnée relative est à la position $z_1 - z_2 \simeq (\theta_1 - \theta_2)t - 2d\Phi /d\theta$ au moment $t$. Étant donné que le centre de masse n'est pas affecté par la collision et se déplace à la vitesse de groupe $\tilde{\theta} =(\theta_1 + \theta_2)/2$, nous constatons que la position des deux particules semiclassiques après la collision sera
 
 \begin{eqnarray}
 	z_1 \simeq \theta _1 t - \Delta ( \theta_2 -\theta_1 ), & &	z_2 \simeq \theta _2 t - \Delta ( \theta_2 -\theta_1 ),
@@ -307,39 +312,39 @@ En répétant l'argument précédent de la stationnarité de phase, on trouve qu
 où le déplacement de diffusion $\Delta (\theta)$ est donné par la dérivée de la phase de diffusion,
 
 \begin{eqnarray}\label{eq:I-1-16}
-	\Delta ( \theta ) & \doteq & \frac{ d \phi }{ d \theta } ( \theta )= \frac{ 2 c }{ c^2 + \theta^2}  	
+	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 c }{ c^2 + \theta^2}  	
 \end{eqnarray}
 
 Les deux particules sont retardées : leur position après la collision est la même que si elles étaient en retard respectivement de $\delta t_1 = \Delta ( \theta_2 - \theta_1 )/v_1 $ et $\delta t_2 = \Delta ( \theta_2 - \theta_1 )/v_2 $ .
 
-...........................................
+%...........................................
 
-Cette équation décrit deux particules libres, sauf lorsqu'elles se rencontrent (i.e., \(z_1 = z_2\)), où l'interaction à contact produit un potentiel delta de Dirac.
+%Cette équation décrit deux particules libres, sauf lorsqu'elles se rencontrent (i.e., \(z_1 = z_2\)), où l'interaction à contact produit un potentiel delta de Dirac.
 
-\paragraph{Méthode de Bethe}
+%\paragraph{Méthode de Bethe}
 
-On peut résoudre cette équation en utilisant l’**Ansatz de Bethe**, en supposant que la fonction d’onde prend la forme d’une superposition symétrisée d’ondes planes dans les domaines \(z_1 < z_2\) et \(z_1 > z_2\) :
+%On peut résoudre cette équation en utilisant l’**Ansatz de Bethe**, en supposant que la fonction d’onde prend la forme d’une superposition symétrisée d’ondes planes dans les domaines \(z_1 < z_2\) et \(z_1 > z_2\) :
 
-\begin{eqnarray}
-	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \begin{cases}
-		A_{12} e^{i(k_1 z_1 + k_2 z_2)} + A_{21} e^{i(k_2 z_1 + k_1 z_2)} & \text{si } z_1 < z_2, \\
-		A_{12} e^{i(k_1 z_2 + k_2 z_1)} + A_{21} e^{i(k_2 z_2 + k_1 z_1)} & \text{si } z_1 > z_2.
-	\end{cases}
-\end{eqnarray}
+%\begin{eqnarray}
+%	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \begin{cases}
+%		A_{12} e^{i(k_1 z_1 + k_2 z_2)} + A_{21} e^{i(k_2 z_1 + k_1 z_2)} & \text{si } z_1 < z_2, \\
+%		A_{12} e^{i(k_1 z_2 + k_2 z_1)} + A_{21} e^{i(k_2 z_2 + k_1 z_1)} & \text{si } z_1 > z_2.
+%	\end{cases}
+%\end{eqnarray}
 
-La continuité de \(\varphi_{\{\theta_1 , \theta_2\}}\) à \(z_1 = z_2\), ainsi que le saut de sa dérivée transverse imposé par le potentiel delta, permettent de relier les coefficients \(A_{12}\) et \(A_{21}\). On obtient la condition de diffusion bosonique :
+%La continuité de \(\varphi_{\{\theta_1 , \theta_2\}}\) à \(z_1 = z_2\), ainsi que le saut de sa dérivée transverse imposé par le potentiel delta, permettent de relier les coefficients \(A_{12}\) et \(A_{21}\). On obtient la condition de diffusion bosonique :
 
-\begin{eqnarray}
-	\frac{A_{21}}{A_{12}} & = & - \frac{ic(k_1 - k_2) + (k_1 - k_2)^2}{ic(k_1 - k_2) - (k_1 - k_2)^2}.
-\end{eqnarray}
+%\begin{eqnarray}
+%	\frac{A_{21}}{A_{12}} & = & - \frac{ic(k_1 - k_2) + (k_1 - k_2)^2}{ic(k_1 - k_2) - (k_1 - k_2)^2}.
+%\end{eqnarray}
 
-L’énergie totale est simplement la somme des énergies individuelles :
+%L’énergie totale est simplement la somme des énergies individuelles :
 
-\begin{eqnarray}
-	E = \frac{k_1^2 + k_2^2}{2},
-\end{eqnarray}
+%\begin{eqnarray}
+%	E = \frac{k_1^2 + k_2^2}{2},
+%\end{eqnarray}
 
-et les \(k_j\) doivent satisfaire les conditions aux limites périodiques, ce qui donne un système transcendantal pour les \(k_j\) dépendant du couplage \(c\) (voir chapitre sur l'équation de Bethe pour \(N\) particules).
+%et les \(k_j\) doivent satisfaire les conditions aux limites périodiques, ce qui donne un système transcendantal pour les \(k_j\) dépendant du couplage \(c\) (voir chapitre sur l'équation de Bethe pour \(N\) particules).
 
-\vspace{1em}
-Ce cas à deux particules constitue une étape fondamentale vers la compréhension complète du système à \(N\) bosons, où les structures d’interférences entre ondes multiples et les effets d’interactions deviennent de plus en plus riches.
+%\vspace{1em}
+%Ce cas à deux particules constitue une étape fondamentale vers la compréhension complète du système à \(N\) bosons, où les structures d’interférences entre ondes multiples et les effets d’interactions deviennent de plus en plus riches.
