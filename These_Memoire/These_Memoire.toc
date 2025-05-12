@@ -40,7 +40,8 @@
 \contentsline {subsubsection}{Opérateurs nombre de particules $\hat {\bm {Q}}$ et moment $\hat {\bm {P}}$}{10}{subsection.1.1.3}%
 \contentsline {subsubsection}{Propriétés}{11}{equation.1.58}%
 \contentsline {subsubsection}{L’état propre}{11}{equation.1.60}%
-\contentsline {subsection}{\numberline {1.1.4}Condition aux bords périodiques et équation de Bethe Ansatz}{11}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Équation de Bethe et distribution de rapidité}{11}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Condition aux bords périodiques et équation de Bethe Ansatz}{11}{subsection.1.2.1}%
 \contentsline {chapter}{\numberline {2}Relaxation des systèmes quantiques isolés et phénomènes d'équilibre}{13}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Équilibre thermique et ensemble de Gibbs}{13}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Thermodynamique du gaz de Lieb-Liniger à température nulle}{13}{subsection.2.1.1}%

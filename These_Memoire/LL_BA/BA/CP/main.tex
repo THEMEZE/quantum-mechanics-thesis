@@ -1,0 +1,23 @@
+Dans les deux sous-sections précédentes, nous avons étudié un nombre fini de bosons sur la droite réelle infinie, ce qui correspond à une densité de particules nulle. Cependant, pour accéder aux propriétés thermodynamiques du modèle, il est nécessaire de considérer une densité finie $N/L$. Cela peut être réalisé en imposant des conditions aux bords périodiques, en identifiant les points $x = 0$ et $x = L$ du système.
+
+Imposer des conditions périodiques sur la fonction d’onde de Bethe~\eqref{}, c’est-à-dire
+\[
+\varphi_{\{\theta_a\}}(x_1, \dots, x_{N-1}, L) = \varphi_{\{\theta_a\}}(0, x_1, \dots, x_{N-1}),
+\]
+mène aux équations de Bethe suivantes :
+\begin{equation}
+e^{i \theta_a L} \prod_{b \ne a} e^{i \Phi(\theta_a - \theta_b)} = (-1)^{N-1}, \quad a = 1, \dots, N,
+\label{eq:bethe_exp}
+\end{equation}
+où $\Phi(\theta_a - \theta_b)$ désigne la phase de diffusion à deux corps, définie à l'équation~\eqref{chap:1:eq:Phi}.
+
+En prenant le logarithme de chaque côté, on obtient un système de $N$ équations couplées non linéaires :
+\begin{equation}
+\theta_a + \frac{1}{L} \sum_{b \ne a} 2 \arctan\left( \frac{\theta_a - \theta_b}{c} \right) = p_a,
+\label{eq:bethe_log}
+\end{equation}
+avec les $p_a$ quantifiés selon la parité de $N$ :
+\[
+p_a \in \frac{2\pi}{L} \mathbb{Z} \quad \text{si $N$ est impair}, \qquad
+p_a \in \frac{2\pi}{L} \left( \mathbb{Z} + \tfrac{1}{2} \right) \quad \text{si $N$ est pair}.
+\]
