@@ -1,46 +1,77 @@
-Dans le cas thermique, on peut remarquer que $\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 $ et $\langle \operator{\mathcal{H}}_N \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 $. On peut donc réécrire $\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} }$
+\paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
+
+Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
+
+\begin{eqnarray*}
+	\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0  & et & \langle \operator{\mathcal{H}}_N \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
+\end{eqnarray*}
+%Dans le cas thermique, on peut remarquer que $\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 $ et $\langle \operator{\mathcal{H}}_N \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 $. On peut donc réécrire $\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} }$
+
+Par analogie, la combinaison pondérée des valeurs moyennes d’un ensemble d’observables ${ \operator{\mathcal{O}}i }{i \in \mathbb{N}}$, associée aux multiplicateurs de Lagrange ${ \beta_i }$, peut être réécrite sous la forme :
+
+\begin{eqnarray}
+	\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{i = 0}^\infty \alpha_i \sum_{a = 1 }^N \theta_a^i		
+\end{eqnarray}
+où les coefficients $\alpha_i$ résultent d’une recombinaison des $\beta_i$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Interprétation fonctionnelle et échange des sommes.}
+	
+Pour chaque $a \in \llbracket 1, N \rrbracket$, la série $\sum_i \alpha_i \theta_a^i$ converge pour des $\theta_a$ dans un domaine convenable, ce qui autorise l’échange de l’ordre des deux sommes : 
 	
 \begin{eqnarray}
-		\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{i = 0}^\infty \alpha_i \sum_{a = 1 }^N \theta_a^i		
-	\end{eqnarray}
+	\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{a = 1 }^N  w(\theta_a) 
+\end{eqnarray}
 	
-	et pour chaque $a \in \llbracket 1 , N  \rrbracket \colon \sum_i \alpha_i \theta_a^i$ converge donc on peut échanger les deux sommes soit 
-	
-	\begin{eqnarray}
-		\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{a = 1 }^N  w(\theta_a) 
-	\end{eqnarray}
-	
-	avec $f(\theta) =  \sum_{i = 0}^\infty \alpha_i  \theta^i$.	 Et on peut réecrire la matrice densité  :
-	
-	\begin{eqnarray}
-		\operator{\rho}[w] & = & \frac{e^{-\operator{Q}[w]}}{Z}, \\
-		e^{-\operator{Q}[w]} & = & 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
-	\end{eqnarray}
+avec $w(\theta) = \sum_{i=0}^\infty \alpha_i \theta^i$ une fonction réelle (sous hypothèses de convergence). On peut ainsi réécrire la contribution totale des charges conservées comme une somme de termes mono-particulaires dépendant de la rapidité.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Expression de la matrice densité généralisée.}
+La matrice densité peut alors être formulée sous la forme :	
+\begin{eqnarray}
+	\operator{\rho}[w] & = & \frac{e^{-\operator{Q}[w]}}{Z}, \\
+	e^{-\operator{Q}[w]} & = & 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+\end{eqnarray}
  
 	
-	pour une certaine fonction $w$ relié à la charge% $\operator{Q} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
+	%pour une certaine fonction $w$ relié à la charge% $\operator{Q} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
+où l'opérateur de charge associé à $w$ s’écrit :
 \begin{eqnarray}
-	\operator{Q} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert	
+	\operator{Q} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert,	
 \end{eqnarray}
-
-	Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ :% $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[w] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N w(\theta_a)} / Z $ avec $Z = \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}$.\\
-\begin{eqnarray}
-	\mathbb{P}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}[w] \vert  \{ \theta_a \} \rangle = Z^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}, 		
-\end{eqnarray}
-
-avec 
+et la fonction de partition $Z$ est donnée par :
 \begin{eqnarray}
 	Z  & = & \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}.		
 \end{eqnarray}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{ Probabilité associée à une configuration de rapidités.}
 
+	%Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ :% $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[w] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N w(\theta_a)} / Z $ avec $Z = \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}$.\\
+La probabilité d’occuper un état à $N$ particules caractérisé par les rapidités ${\theta_a}$ est alors :
+\begin{eqnarray}
+	\mathbb{P}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}[w] \vert  \{ \theta_a \} \rangle = Z^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
+\end{eqnarray}
+
+%avec 
+%\begin{eqnarray}
+%	Z  & = & \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}.		
+%\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Calcul de la moyenne généralisée d’un observable/}
+La valeur moyenne d’un observable $\operator{\mathcal{O}}$ dans l’ensemble généralisé s’écrit :
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
+\end{eqnarray}
 	
-	 Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
-	La moyenne GGE d'un observable s'écrit ,
+	% Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
+	%La moyenne GGE d'un observable s'écrit ,
 	%\begin{aff}
-	\begin{eqnarray}
-		\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
+	%\begin{eqnarray}
+	%	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
 		%& =  & \frac{ \sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N f(\theta_a) }  }{\sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a = 1}^N  f(\theta_a) } }
-	\end{eqnarray}
-	pour une certaine observable $\operator{\mathcal{O}}$.\\
+	%\end{eqnarray}
+	%pour une certaine observable $\operator{\mathcal{O}}$.\\
 	%\end{aff}
