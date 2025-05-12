@@ -1,5 +1,9 @@
-\paragraph{États propres et observables diagonales.}
-On note la configuration ${ \theta_a }_{a\in \llbracket 1 , N \rrbracket}$ des rapidités pour un état à $N$ particules fixées. Dans le chapitre précédent (??), on a vu que l'état $\vert { \theta_a } \rangle$ associé à cette configuration est une fonction propre des observables nombre et énergie (??). Ces observables sont diagonales dans la base des états propres :
+\paragraph{Configuration des états à N particules.}
+On introduit la configuration ${ \theta_a }_{a\in \llbracket 1 , N \rrbracket}$ des rapidités pour un nombre fixe $N$ de particules, et les états propres associés.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Observables diagonales dans la base des états propres.}
+Dans le chapitre précédent (??), on a vu que l'état $\vert { \theta_a } \rangle$ associé à cette configuration est une fonction propre des observables nombre et énergie (??). Ces observables sont diagonales dans la base des états propres :
 
 \begin{eqnarray}
 	\operator{\mathcal{N}} & = & \sum_{ \{\theta_a\} }   \left ( \sum_{a = 1}^N  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\\
@@ -10,7 +14,7 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les configurations.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Définition générale des observables diagonales.}
+\paragraph{Définition générale d'observables conservées.}
 On introduit une famille d'observables $\operator{\mathcal{O}}_i$ telles que les états $\vert { \theta_a } \rangle$ soient aussi fonctions propres de chacune de ces observables, avec pour valeurs propres $\langle \operator{\mathcal{O}}_i \rangle_{\{\theta_a \}} = \langle \{ \theta_a \} \vert\operator{\mathcal{O}}_i \vert \{ \theta_a \} \rangle$ :\\
 
 \begin{eqnarray}
@@ -20,7 +24,7 @@ On introduit une famille d'observables $\operator{\mathcal{O}}_i$ telles que les
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Principe de maximisation de l'entropie.}
-On cherche à maximiser l'entropie de Shannon de l’état statistique :
+On cherche à maximiser l'entropie de Shannon/ von Neuman de l’état statistique :
 \begin{eqnarray}
 	\mathcal{S} & = & -\mathrm{Tr} ( \operator{\rho} \ln \operator{\rho} ) , 	
 \end{eqnarray}
@@ -49,14 +53,14 @@ avec la fonction de partition
 Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'ensemble de Gibbs généralisé (GGE), oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{\mathcal{O}}_i \rangle $.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Distribution de probabilité sur les configurations.}
+\paragraph{Probabilité d’un état à rapidités fixées.}
 On peut alors définir la probabilité d’occurrence d’un état $\vert { \theta_a } \rangle$ :
 \begin{eqnarray}
 	\mathbb{P} ( \{ \theta_a \} ) & = & \mathrm{Tr} \left [\operator{\rho} \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert \rangle \right ] ~=~  \langle \{ \theta_a \} \vert	\operator{\rho} \vert \{ \theta_a \} \rangle ~=~ Z^{-1} \exp \left (- \sum_i \beta_i \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}} \right ) .
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Calcul des moyennes et des moments des observables.}
+\paragraph{Moyenne d’un observable et dérivées de $Z$.}
 On peut écrire la moyenne d’une observable comme une somme pondérée par cette probabilité, ou encore comme une dérivée de la fonction de partition :
 
 \begin{eqnarray}
@@ -70,8 +74,8 @@ Par le même raisonnement la moyenne de $\operator{\mathcal{O}}_i^n$ s'écrit :
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Variance et fluctuations.}
-Le cas $n=2$ permet d’accéder à la variance de l’observable :
+\paragraph{Moments d’ordre supérieur et fluctuations.}
+Le premier et second moments permettent d’accéder à la variance de l’observable :
 \begin{eqnarray}
 	\Delta_{\operator{\mathcal{O}}_i}^2 &=&  	\left \langle \left (\operator{\mathcal{O}}_i - \langle\operator{\mathcal{O}}_i \rangle \right )^2  \right \rangle  = 	\langle\operator{\mathcal{O}}_i^2 \rangle  -  \langle\operator{\mathcal{O}}_i \rangle^2 = \left . \frac{1}{Z} \frac{ \partial^2 Z }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2  \\
 		& = & \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z} \frac{\partial Z}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} =  \left . \frac{\partial^2 \ln Z  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}}  = - \left . 	\frac{\partial \langle\operator{\mathcal{O}}_i \rangle }{\partial \beta_i } \right )_{\beta_{j\neq i}}	.	
@@ -79,7 +83,7 @@ Le cas $n=2$ permet d’accéder à la variance de l’observable :
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Cas particulier de l’équilibre thermique.}
--- Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{E}} - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta = T^{-1}$. Avec $\mu$ le potentielle chimique et $T$ la temperatures pour un équilibre thermique--.\\
+-- Si $\operator{\mathcal{O}}_i = \operator{\mathcal{N}}$ alors $\beta_i = - \beta \mu $ et si $\operator{\mathcal{O}}_i = \operator{\mathcal{H}}_N - \mu \operator{\mathcal{N}} $ alors $\beta_i = \beta = T^{-1}$. Avec $\mu$ le potentielle chimique et $T$ la temperatures pour un équilibre thermique--.\\
 Dans le cas d’un équilibre thermique, on identifie certains multiplicateurs à des grandeurs thermodynamiques classiques comme l’inverse de la température  et le potentiel chimique :
 	
 	%avec $\sum_{a = 1}^N 1 \equiv \langle \operator{\mathcal{N}} \rangle_{ \{\theta_a \} }  \doteq  \langle \{ \theta_a \}\vert  \operator{\mathcal{N}} \vert\{ \theta_a\}\rangle  $ et $  \sum_{a = 1}^N  \varepsilon ( \theta_a ) \equiv \langle \operator{\mathcal{E}} \rangle_{\{\theta_a \}}  \doteq  \langle \{ \theta_a \}\vert  \operator{ \mathcal{E}}  \vert\{ \theta_a\}\rangle $.
