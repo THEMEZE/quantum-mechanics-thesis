@@ -2,7 +2,8 @@ Dans les systèmes intégrables, l’état stationnaire atteint après une évol
 
 \paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
 
-Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
+%Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
+Pour des systèmes à $N$ particules caractérisées par des rapidités $\{ \theta_a \}_{a = 1}^N$, les charges locales classiques — comme le nombre de particules ou l’énergie — s’expriment comme des sommes de puissances des rapidités :
 
 \begin{eqnarray*}
 	\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0  & et & \langle \operator{\mathcal{H}}_N \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
@@ -36,19 +37,19 @@ La fonction $w(\theta)$ agit comme une fonction génératrice de poids associée
 \paragraph{Expression de la matrice densité généralisée.}
 La matrice densité peut alors être formulée sous la forme :	
 \begin{eqnarray}
-	\operator{\rho}[w] & = & \frac{e^{-\operator{Q}[w]}}{Z}, \\
-	e^{-\operator{Q}[w]} & = & 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
+	\operator{\rho}[w] & = & \frac{e^{-\operator{\mathcal{Q}}[w]}}{Z[w]}, \\
+	e^{-\operator{\mathcal{Q}}[w]} & = & 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert 
 \end{eqnarray}
  
 	
-	%pour une certaine fonction $w$ relié à la charge% $\operator{Q} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
+	%pour une certaine fonction $w$ relié à la charge% $\operator{\mathcal{Q}} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
 où l'opérateur de charge associé à $w$ s’écrit :
 \begin{eqnarray}
-	\operator{Q} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert,	
+	\operator{\mathcal{Q}} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert,	
 \end{eqnarray}
-et la fonction de partition $Z$ est donnée par :
+et la fonction de partition $Z[w]$ est donnée par :
 \begin{eqnarray}
-	Z  & = & \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}.		
+	Z[w]  & = & \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}.		
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +58,7 @@ et la fonction de partition $Z$ est donnée par :
 	%Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ :% $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[w] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N w(\theta_a)} / Z $ avec $Z = \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}$.\\
 La probabilité d’occuper un état à $N$ particules caractérisé par les rapidités ${\theta_a}$ est alors :
 \begin{eqnarray}
-	\mathbb{P}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}[w] \vert  \{ \theta_a \} \rangle = Z^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
+	\mathbb{P}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}[w] \vert  \{ \theta_a \} \rangle = Z[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
 \end{eqnarray}
 
 Cela montre que le poids statistique d’une configuration factorise naturellement sur les pseudo-moments, avec un poids local $w(\theta)$ attribué à chaque particule.
@@ -72,7 +73,7 @@ Cela montre que le poids statistique d’une configuration factorise naturelleme
 \paragraph{Moyennes d'observables dans le GGE.}
 La valeur moyenne d’un observable $\operator{\mathcal{O}}$ dans l’ensemble généralisé s’écrit :
 \begin{eqnarray}
-	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
+	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{\mathcal{Q}}[w]})}{\text{Tr} (e^{-\operator{\mathcal{Q}}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
 \end{eqnarray}
 
 Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à déterminer les propriétés statistiques de toutes les observables diagonales dans cette base, incluant les charges conservées elles-mêmes.
@@ -81,7 +82,7 @@ Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à d�
 	%La moyenne GGE d'un observable s'écrit ,
 	%\begin{aff}
 	%\begin{eqnarray}
-	%	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
+	%	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{\mathcal{Q}}[w]})}{\text{Tr} (e^{-\operator{\mathcal{Q}}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
 		%& =  & \frac{ \sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N f(\theta_a) }  }{\sum_{\pi} \sum_{\vert \{\theta_a \}\rangle \vert \Pi }  e^{- \sum_{a = 1}^N  f(\theta_a) } }
 	%\end{eqnarray}
 	%pour une certaine observable $\operator{\mathcal{O}}$.\\
@@ -98,7 +99,9 @@ On distingue principalement deux types de charges conservées :
 
 
 D’un point de vue formel, les charges quasi-locales peuvent être vues comme des fonctionnelles analytiques $\operator{\mathcal{Q}}[w]$, définies par une densité dépendant d’une fonction test $w(\theta)$, à travers l’expression :
-
+\begin{eqnarray*}
+	\operator{\mathcal{Q}} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert.
+\end{eqnarray*}
 %La fonction $w$ est alors choisie dans une classe suffisamment régulière (par exemple analytique sur un domaine borné) pour garantir la convergence de la série génératrice associée aux charges conservées.
 
 L’introduction de ces charges quasi-locales dans la construction de la matrice densité d’équilibre permet de décrire plus finement les propriétés thermodynamiques et dynamiques des états stationnaires, notamment après des quenches quantiques. C’est ce qui motive leur inclusion dans la formulation du {\bf GGE (Generalized Gibbs Ensemble)}, au-delà des seules charges strictement locales.
@@ -106,7 +109,7 @@ L’introduction de ces charges quasi-locales dans la construction de la matrice
 \paragraph{Rôle dans le formalisme GGE.}
 Dans un état d'équilibre généralisé (GGE), on maximise l'entropie sous contrainte de toutes les charges conservées. La forme générale de la matrice densité est :
 \begin{eqnarray*}
-	\operator{\rho}_{GGE} & \propto & \exp \left (- \sum_i \beta \operator{\mathcal{O}}_i  \right) 	
+	\operator{\rho}_{GGE} & \propto & \exp \left (- \sum_i \beta_i \operator{\mathcal{O}}_i  \right) 	
 \end{eqnarray*}
 
 Si l’on se limite aux charges locales, cela peut suffire pour certains systèmes. Mais {\bf dans les systèmes intégrables}, {\em cela n’est pas toujours suffisant} pour capturer l'état stationnaire post-quench. Il faut alors inclure les {\bf charges quasi-locales}, qui jouent un rôle crucial dans la relaxation vers le GGE.
@@ -119,4 +122,4 @@ Les charges quasi-locales peuvent être représentées par des fonctions analyti
 \end{eqnarray*}
 
 
-correspond à une densité de charge extensible mais non strictement locale. Cela permet de construire une famille de matrices densité $\rho[w]$ qui incorporent correctement l'effet des charges quasi-locales.
+correspond à une densité de charge extensible mais non strictement locale. Cela permet de construire une famille de matrices densité $\operator{\rho}[w]$ qui incorporent correctement l'effet des charges quasi-locales.
