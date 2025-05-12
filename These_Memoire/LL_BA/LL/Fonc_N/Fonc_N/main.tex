@@ -1,4 +1,4 @@
-Pour un plus grand nombre de particules, les états propres de l'Hamiltonien \(\operator{H}\) (\ref{{chap:1:com.1}}) sur la ligne infinie sont des états de Bethe $\vert \{\theta_a\}\rangle \equiv \vert N \rangle $ étiquetés par un ensemble de $N$ nombres $\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket } $, appelés les rapidités. %Dans le domaine $x_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
+Pour un plus grand nombre de particules, les états propres de l'Hamiltonien \(\operator{H}\) (\ref{chap:1:com.1}) sur la ligne infinie sont des états de Bethe $\vert \{\theta_a\}\rangle $ étiquetés par un ensemble de $N$ nombres $\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket } $, appelés les rapidités. %Dans le domaine $x_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
 
 \begin{eqnarray}
 	\operator{H} \vert \{\theta_a\}\rangle & = & E \vert \{\theta_a\}\rangle 		
@@ -19,7 +19,7 @@ où la base spatiale à deux particule bosomique $\vert z_1 , \cdots ,  z_N \ran
 orthonormalisée car car avec en utilisant les relations de commutation (\ref{chap:1:com.1})  et la définition du vide de Fock (\ref{chap:eq.vide.fock}) il vient que 
 
 \begin{eqnarray}
-	\langle z_1 , \cdots z_N \vert z_1' ,  \cdots , z_N' \rangle  & = & ???? \operator{\delta}(z_1 -z_1')\operator{\delta}(z_2 -z_2')  +   \operator{\delta}(z_1 -z_2')\operator{\delta}(z_2 -z_1'),
+	\langle z_1 , \cdots z_N \vert z_1' ,  \cdots , z_N' \rangle  & = & ???? 
 \end{eqnarray}
 
 et si $z_i =  z_{i+1} $
@@ -46,7 +46,7 @@ est la fonction d’onde symétrique :
 et normalisée selon :
 
 \begin{eqnarray}
-	\langle \{\theta_a'\} \vert \{\theta_a\} \rangle ~=~ \int d^Nz\,  |\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N))|^2 = 1.
+	\langle \{\theta_a'\} \vert \{\theta_a\} \rangle ~=~ \int d^Nz\,  |\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N))|^2 = \delta_{\theta_1,\thetha_1'} \cdots \delta_{\theta_N,\thetha_N'}
 \end{eqnarray}
 
 L’action de \(\operator{H}\) (\ref{chap:1:ham.mod.2}) sur \(\vert \{\theta_a\} \rangle\) fournit une équation de Schrödinger pour la fonction d’onde à deux particules. Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
@@ -68,69 +68,70 @@ avec
 \end{eqnarray}
 
 
-...........................
+Dans le domaine $x_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
+
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = & \langle 0 \vert \Psi ( z_1 ) \cdots \Psi (z_N ) \vert \{ \theta_a \} \rangle \notag\\
 	& \propto & \sum_\sigma ( - 1 ) ^{ \vert \sigma \vert } \left ( \prod_{ 1 \leq a < b \leq N } ( \theta_{\sigma(b)} - \theta_{\sigma(a)} - ic ) \right ) e^{i \sum_j z_i \theta_{ \sigma(j)}}\label{eq:I-2-17},
 \end{eqnarray}
 
 et elle est étendue à d'autres domaines par symétrie $z_i \leftrightarrow z_j$ . Ici, la somme s'étend à toutes les permutations $\sigma$ des $N$ éléments (donc il y a $N!$ termes) et $(-1)^{|\sigma|}$ est la signature de la permutation. L'impulsion et l'énergie de l'état propre (\ref{eq:I-2-17}) sont :
-..............................
-Nous considérons maintenant un système composé de \(N\) bosons indistinguables dans une boîte unidimensionnelle de taille \(L\), avec des conditions aux limites périodiques. Les bosons interagissent via un potentiel de contact répulsif de constante \(c > 0\), selon l’Hamiltonien de Lieb–Liniger :
+%..............................
+%Nous considérons maintenant un système composé de \(N\) bosons indistinguables dans une boîte unidimensionnelle de taille \(L\), avec des conditions aux limites périodiques. Les bosons interagissent via un potentiel de contact répulsif de constante \(c > 0\), selon l’Hamiltonien de Lieb–Liniger :
 
-\begin{eqnarray}
-	\operator{H} & = & -\frac{1}{2} \sum_{j=1}^N \partial_{z_j}^2 + c \sum_{1 \leq j < k \leq N} \delta(z_j - z_k).
-\end{eqnarray}
+%\begin{eqnarray}
+%	\operator{H} & = & -\frac{1}{2} \sum_{j=1}^N \partial_{z_j}^2 + c \sum_{1 \leq j < k \leq N} \delta(z_j - z_k).
+%\end{eqnarray}
 
-Nous cherchons les fonctions d’onde propres \(\varphi_N(z_1, \dots, z_N)\) symétriques sous permutation, satisfaisant l’équation de Schrödinger :
+%Nous cherchons les fonctions d’onde propres \(\varphi_N(z_1, \dots, z_N)\) symétriques sous permutation, satisfaisant l’équation de Schrödinger :
 
-\begin{eqnarray}
-	\operator{H} \varphi_N(z_1, \dots, z_N) = E \varphi_N(z_1, \dots, z_N).
-\end{eqnarray}
+%\begin{eqnarray}
+%	\operator{H} \varphi_N(z_1, \dots, z_N) = E \varphi_N(z_1, \dots, z_N).
+%\end{eqnarray}
 
-L’**Ansatz de Bethe** consiste à écrire la solution dans chaque secteur d’ordre \(\mathcal{S}_N\) (\(z_{Q(1)} < z_{Q(2)} < \dots < z_{Q(N)}\)) comme une combinaison linéaire d’ondes planes :
+%L’**Ansatz de Bethe** consiste à écrire la solution dans chaque secteur d’ordre \(\mathcal{S}_N\) (\(z_{Q(1)} < z_{Q(2)} < \dots < z_{Q(N)}\)) comme une combinaison linéaire d’ondes planes :
 
-\begin{eqnarray}
-	\varphi_N(z_1, \dots, z_N) & = & \sum_{P \in \mathcal{S}_N} A_P \exp\left(i \sum_{j=1}^N k_{P_j} z_j \right), \qquad \text{pour } z_1 < z_2 < \dots < z_N,
-\end{eqnarray}
+%\begin{eqnarray}
+%	\varphi_N(z_1, \dots, z_N) & = & \sum_{P \in \mathcal{S}_N} A_P \exp\left(i \sum_{j=1}^N k_{P_j} z_j \right), \qquad \text{pour } z_1 < z_2 < \dots < z_N,
+%\end{eqnarray}
 
-où les \(k_j \in \mathbb{R}\) sont appelés **quasi-moments**, et les coefficients \(A_P\) sont déterminés par les conditions de raccord aux hyperplans \(z_i = z_j\).
+%où les \(k_j \in \mathbb{R}\) sont appelés **quasi-moments**, et les coefficients \(A_P\) sont déterminés par les conditions de raccord aux hyperplans \(z_i = z_j\).
 
-\paragraph{Conditions aux limites et équations de Bethe}
+%\paragraph{Conditions aux limites et équations de Bethe}
 
-En imposant la continuité de \(\varphi_N\) et la discontinuité de sa dérivée transverse à chaque hyperplan \(z_i = z_{i+1}\), on obtient un système de relations entre les coefficients \(A_P\), que l’on peut écrire comme des relations de diffusion à deux corps.
+%En imposant la continuité de \(\varphi_N\) et la discontinuité de sa dérivée transverse à chaque hyperplan \(z_i = z_{i+1}\), on obtient un système de relations entre les coefficients \(A_P\), que l’on peut écrire comme des relations de diffusion à deux corps.
 
-L’imposition des conditions aux limites périodiques sur chaque coordonnée \(z_j \in [0, L]\) donne lieu aux **équations de Bethe** :
+%L’imposition des conditions aux limites périodiques sur chaque coordonnée \(z_j \in [0, L]\) donne lieu aux **équations de Bethe** :
 
-\begin{eqnarray}
-	e^{i k_j L} & = & \prod_{\substack{\ell = 1 \\ \ell \neq j}}^N \frac{k_j - k_\ell + i c}{k_j - k_\ell - i c}, \qquad \text{pour } j = 1, \dots, N. \label{eq:bethe}
-\end{eqnarray}
+%\begin{eqnarray}
+%	e^{i k_j L} & = & \prod_{\substack{\ell = 1 \\ \ell \neq j}}^N \frac{k_j - k_\ell + i c}{k_j - k_\ell - i c}, \qquad \text{pour } j = 1, \dots, N. \label{eq:bethe}
+%\end{eqnarray}
 
-Ce système transcendantal couple les \(N\) quasi-moments \(k_j\). Une fois ces quantités déterminées, l’énergie propre du système est donnée par :
+%Ce système transcendantal couple les \(N\) quasi-moments \(k_j\). Une fois ces quantités déterminées, l’énergie propre du système est donnée par :
 
-\begin{eqnarray}
-	E & = & \frac{1}{2} \sum_{j=1}^N k_j^2.
-\end{eqnarray}
+%\begin{eqnarray}
+%	E & = & \frac{1}{2} \sum_{j=1}^N k_j^2.
+%\end{eqnarray}
 
-\paragraph{Propriétés mathématiques}
+%\paragraph{Propriétés mathématiques}
 
-Les solutions des équations de Bethe (\ref{eq:bethe}) forment un ensemble discret de configurations \(\{k_j\}\), qui peuvent être classées par leur moment total et leur énergie. Dans la limite thermodynamique (\(N, L \to \infty\), avec \(N/L = \rho\) fixé), les \(k_j\) se condensent en une **densité de rapidité** \(\rho(k)\) solution d’une équation intégrale dite **équation de Lieb** :
+%Les solutions des équations de Bethe (\ref{eq:bethe}) forment un ensemble discret de configurations \(\{k_j\}\), qui peuvent être classées par leur moment total et leur énergie. Dans la limite thermodynamique (\(N, L \to \infty\), avec \(N/L = \rho\) fixé), les \(k_j\) se condensent en une **densité de rapidité** \(\rho(k)\) solution d’une équation intégrale dite **équation de Lieb** :
 
-\begin{eqnarray}
-	\rho(k) + \frac{1}{2\pi} \int_{-Q}^{Q} \frac{2c\, \rho(k')}{c^2 + (k - k')^2} dk' = \frac{1}{2\pi},
-\end{eqnarray}
+%\begin{eqnarray}
+%	\rho(k) + \frac{1}{2\pi} \int_{-Q}^{Q} \frac{2c\, \rho(k')}{c^2 + (k - k')^2} dk' = \frac{1}{2\pi},
+%\end{eqnarray}
 
-où \(Q\) est le bord du support de la densité de rapidité, déterminé par la condition de normalisation :
+%où \(Q\) est le bord du support de la densité de rapidité, déterminé par la condition de normalisation :
 
-\begin{eqnarray}
-	\int_{-Q}^{Q} \rho(k)\, dk = \rho = \frac{N}{L}.
-\end{eqnarray}
+%\begin{eqnarray}
+%	\int_{-Q}^{Q} \rho(k)\, dk = \rho = \frac{N}{L}.
+%\end{eqnarray}
 
-Cette densité de rapidité détermine toutes les grandeurs thermodynamiques du modèle intégrable de Lieb–Liniger, notamment :
+%Cette densité de rapidité détermine toutes les grandeurs thermodynamiques du modèle intégrable de Lieb–Liniger, notamment :
 
-\begin{eqnarray}
-	E_0/N = \frac{1}{2\rho} \int_{-Q}^{Q} k^2\, \rho(k)\, dk.
-\end{eqnarray}
+%\begin{eqnarray}
+%	E_0/N = \frac{1}{2\rho} \int_{-Q}^{Q} k^2\, \rho(k)\, dk.
+%\end{eqnarray}
 
-\vspace{1em}
-Cette structure exacte fait du modèle de Lieb–Liniger un exemple paradigmatique de système intégrable en une dimension, avec des applications fondamentales en physique des gaz quantiques, hydrodynamique généralisée, et thermodynamique hors équilibre.
+%\vspace{1em}
+%Cette structure exacte fait du modèle de Lieb–Liniger un exemple paradigmatique de système intégrable en une dimension, avec des applications fondamentales en physique des gaz quantiques, hydrodynamique généralisée, et thermodynamique hors équilibre.
