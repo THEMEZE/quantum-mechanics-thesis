@@ -1,3 +1,7 @@
+
+
+
+
 \paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
 
 Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
@@ -23,7 +27,12 @@ Pour chaque $a \in \llbracket 1, N \rrbracket$, la série $\sum_i \alpha_i \thet
 	\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{a = 1 }^N  w(\theta_a) 
 \end{eqnarray}
 	
-avec $w(\theta) = \sum_{i=0}^\infty \alpha_i \theta^i$ une fonction réelle (sous hypothèses de convergence). On peut ainsi réécrire la contribution totale des charges conservées comme une somme de termes mono-particulaires dépendant de la rapidité.
+avec 
+\begin{eqnarray}
+	w(\theta) = \sum_{i=0}^\infty \alpha_i \theta^i.	
+\end{eqnarray}
+%une fonction réelle (sous hypothèses de convergence). On peut ainsi réécrire la contribution totale des charges conservées comme une somme de termes mono-particulaires dépendant de la rapidité.
+La fonction $w(\theta)$ agit comme une fonction génératrice de poids associée aux charges conservées du système.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Expression de la matrice densité généralisée.}
@@ -45,13 +54,15 @@ et la fonction de partition $Z$ est donnée par :
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{ Probabilité associée à une configuration de rapidités.}
+\paragraph{Probabilité associée à une configuration de rapidités.}
 
 	%Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ :% $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[w] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N w(\theta_a)} / Z $ avec $Z = \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}$.\\
 La probabilité d’occuper un état à $N$ particules caractérisé par les rapidités ${\theta_a}$ est alors :
 \begin{eqnarray}
 	\mathbb{P}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}[w] \vert  \{ \theta_a \} \rangle = Z^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
 \end{eqnarray}
+
+Cela montre que le poids statistique d’une configuration factorise naturellement sur les pseudo-moments, avec un poids local $w(\theta)$ attribué à chaque particule.
 
 %avec 
 %\begin{eqnarray}
@@ -60,11 +71,13 @@ La probabilité d’occuper un état à $N$ particules caractérisé par les rap
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Calcul de la moyenne généralisée d’un observable/}
+\paragraph{Moyennes d'observables dans le GGE.}
 La valeur moyenne d’un observable $\operator{\mathcal{O}}$ dans l’ensemble généralisé s’écrit :
 \begin{eqnarray}
 	\langle \operator{\mathcal{O}} \rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{Q}[w]})}{\text{Tr} (e^{-\operator{Q}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  f(\theta_a) } }
 \end{eqnarray}
+
+Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à déterminer les propriétés statistiques de toutes les observables diagonales dans cette base, incluant les charges conservées elles-mêmes.
 	
 	% Nous aimerions calculer les valeurs d'attente par rapport à cette matrice de densité, par exemple
 	%La moyenne GGE d'un observable s'écrit ,
@@ -75,3 +88,88 @@ La valeur moyenne d’un observable $\operator{\mathcal{O}}$ dans l’ensemble g
 	%\end{eqnarray}
 	%pour une certaine observable $\operator{\mathcal{O}}$.\\
 	%\end{aff}
+	
+\paragraph{Interpretation.}
+Dans les systèmes intégrables, l'abondance de quantités conservées impose des contraintes fortes sur la dynamique et les états d'équilibre atteints à long temps. Contrairement aux systèmes non intégrables, dont l’état d’équilibre est entièrement caractérisé par les quelques charges globales (comme l’énergie ou le nombre de particules), les systèmes intégrables nécessitent la prise en compte d’une {\bffamille infinie de  charges conservées}, notées $(\operator{\mathcal{O}}_i)_{i\in \mathbb{N}}$, afin de décrire correctement leur relaxation vers un état stationnaire.
+
+On distingue principalement deux types de charges conservées :
+\begin{itemize}[label = $\bullet$]
+	\item Les {\bf charges locales extensives}, dont la densité est strictement localisée dans l’espace (ou sur le réseau) et dont l’intégrale donne une quantité extensive ;
+	\item Les {\bf charges quasi-locales}, dont la densité n’est pas strictement locale mais reste suffisamment bien localisée pour que l’intégrale sur l’espace soit bien définie et extensive. Ces charges sont typiquement associées à des opérateurs dont le support s'étale sur une longueur finie, mais non nulle, et dont la décroissance spatiale rapide (souvent exponentielle) garantit une bonne intégrabilité.
+\end{itemize}
+
+
+D’un point de vue formel, les charges quasi-locales peuvent être vues comme des fonctionnelles analytiques 
+𝑄
+[
+𝑤
+]
+Q[w], définies par une densité dépendant d’une fonction test 
+𝑤
+(
+𝜃
+)
+w(θ), à travers l’expression :
+
+𝑄
+[
+𝑤
+]
+=
+∑
+{
+𝜃
+𝑎
+}
+(
+∑
+𝑎
+=
+1
+𝑁
+𝑤
+(
+𝜃
+𝑎
+)
+)
+∣
+{
+𝜃
+𝑎
+}
+⟩
+⟨
+{
+𝜃
+𝑎
+}
+∣
+.
+Q[w]= 
+{θ 
+a
+​
+ }
+∑
+​
+ ( 
+a=1
+∑
+N
+​
+ w(θ 
+a
+​
+ ))∣{θ 
+a
+​
+ }⟩⟨{θ 
+a
+​
+ }∣.
+La fonction 
+𝑤
+w est alors choisie dans une classe suffisamment régulière (par exemple analytique sur un domaine borné) pour garantir la convergence de la série génératrice associée aux charges conservées.
+
+L’introduction de ces charges quasi-locales dans la construction de la matrice densité d’équilibre permet de décrire plus finement les propriétés thermodynamiques et dynamiques des états stationnaires, notamment après des quenches quantiques. C’est ce qui motive leur inclusion dans la formulation du GGE (Generalized Gibbs Ensemble), au-delà des seules charges strictement locales.
