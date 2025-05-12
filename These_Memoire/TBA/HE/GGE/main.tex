@@ -22,7 +22,33 @@ sous la contrainte
 
 où $\langle \operator{\mathcal{O}}_i \rangle$ est la moyenne de l'observable $\operator{\mathcal{O}}_i$.
 
-Pour définir  
+Pour définir la matrice densité, on introduit les multiplicateur de Lagrange $\beta_i$ pour chaque contrainte, ce qui donne  
+\begin{eqnarray}
+	 \operator{\rho} &= & Z^{-1} \exp \left ( - \sum_i \beta_i \operator{\mathcal{O}}_i \right ) , 		
+\end{eqnarray}
+
+avec la fonction de partition 
+\begin{eqnarray}
+	Z & = & \mathrm{Tr} \left [ \exp \left ( - \sum_i \beta_i \operator{\mathcal{O}}_i \right ) \right ]. 	
+\end{eqnarray}
+
+Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'ensemble de Gibbs généralisé (GGE), oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{\mathcal{O}}_i \rangle$.
+
+On peut ainsi définie la probabilité d'etre dans l'état $\vert \{ \theta_a \} \rangle$ :
+\begin{eqnarray}
+	\mathbb{P} ( \{ \theta_a \} ) & = & \mathrm{Tr} \left [\operator{\rho} \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert \rangle \right ] ~=~  \langle \{ \theta_a \} \vert	\operator{\rho} \vert \{ \theta_a \} \rangle ~=~ Z^{-1} \exp \left (- \sum_i \beta_i \langle\operator{\mathcal{O}}_i\rangle_{\{\theta_a\}} \right ) .
+\end{eqnarray}
+
+Une autre manière d'écrire la moyenne de $\operator{\mathcal{O}}_i$ est 
+
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}}_i \rangle &= & 		
+\end{eqnarray}
+
+
+
+
+ 
 
 
 
