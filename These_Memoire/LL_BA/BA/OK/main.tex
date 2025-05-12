@@ -30,7 +30,10 @@ Maintenant interessons nons à la densité de particules dans l'espace des momen
 	\rho(\theta_a)  &=  &\lim_{L \to \infty} \frac{1}{L} \frac{1}{\theta_{a+1} - \theta_a} > 0.	
 \end{eqnarray*}
 
-À l'états fondamentale tous les vacances dans $[-K , K ]$  sont occupés donc $\rho = \rho_s$. La quantité $L\rho(\theta)d\theta$ est le nombre de rapidité dans la celule $[ \theta , \theta + d \theta ] $. La quantité $L \int_{-K}^K \rho (\theta ) \, d\theta $ est le nombre de particule $N$.On remplace la somme par une intégrale :
+À l'états fondamentale tous les vacances dans $[-K , +K ]$  sont occupés donc $\rho = \rho_s$. La quantité $L\rho(\theta)d\theta$ est le nombre de rapidité dans la celule $[ \theta , \theta + d \theta ] $. La quantité $L \int_{-K}^K \rho (\theta ) \, d\theta $ est le nombre de particule $N$.On remplace la somme par une intégrale :
 \begin{eqnarray*}
-	2\pi \rho  = 1 + \Delta \star \rho 	
+	\frac{1}{L}\sum_{b = 1}^N \Delta (\theta_a - \theta_b) ~=~ \int_{-K}^{+K}\Delta (\theta_a - \theta)\rho(\theta)\,d \theta
+\end{eqnarray*}
+\begin{eqnarray*}
+	2\pi \rho (\theta)  = 1 + \int_{-K}^{+K}\Delta (\theta - \theta')\rho(\theta')\,d \theta' 	
 \end{eqnarray*}
