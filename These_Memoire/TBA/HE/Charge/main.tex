@@ -1,6 +1,4 @@
-
-
-
+Dans les systèmes intégrables, l’état stationnaire atteint après une évolution hors d’équilibre n’est généralement pas décrit par un état de Gibbs classique, mais par un ensemble généralisé de Gibbs (GGE). Celui-ci est construit à partir de toutes les charges conservées du système
 
 \paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
 
@@ -90,7 +88,7 @@ Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à d�
 	%\end{aff}
 	
 \paragraph{Interpretation.}
-Dans les systèmes intégrables, l'abondance de quantités conservées impose des contraintes fortes sur la dynamique et les états d'équilibre atteints à long temps. Contrairement aux systèmes non intégrables, dont l’état d’équilibre est entièrement caractérisé par les quelques charges globales (comme l’énergie ou le nombre de particules), les systèmes intégrables nécessitent la prise en compte d’une {\bffamille infinie de  charges conservées}, notées $(\operator{\mathcal{O}}_i)_{i\in \mathbb{N}}$, afin de décrire correctement leur relaxation vers un état stationnaire.
+Dans les systèmes intégrables, l'abondance de quantités conservées impose des contraintes fortes sur la dynamique et les états d'équilibre atteints à long temps. Contrairement aux systèmes non intégrables, dont l’état d’équilibre est entièrement caractérisé par les quelques charges globales (comme l’énergie ou le nombre de particules), les systèmes intégrables nécessitent la prise en compte d’une {\bf famille infinie de  charges conservées}, notées $(\operator{\mathcal{O}}_i)_{i\in \mathbb{N}}$, afin de décrire correctement leur relaxation vers un état stationnaire.
 
 On distingue principalement deux types de charges conservées :
 \begin{itemize}[label = $\bullet$]
@@ -99,77 +97,26 @@ On distingue principalement deux types de charges conservées :
 \end{itemize}
 
 
-D’un point de vue formel, les charges quasi-locales peuvent être vues comme des fonctionnelles analytiques 
-𝑄
-[
-𝑤
-]
-Q[w], définies par une densité dépendant d’une fonction test 
-𝑤
-(
-𝜃
-)
-w(θ), à travers l’expression :
+D’un point de vue formel, les charges quasi-locales peuvent être vues comme des fonctionnelles analytiques $\operator{\mathcal{Q}}[w]$, définies par une densité dépendant d’une fonction test $w(\theta)$, à travers l’expression :
 
-𝑄
-[
-𝑤
-]
-=
-∑
-{
-𝜃
-𝑎
-}
-(
-∑
-𝑎
-=
-1
-𝑁
-𝑤
-(
-𝜃
-𝑎
-)
-)
-∣
-{
-𝜃
-𝑎
-}
-⟩
-⟨
-{
-𝜃
-𝑎
-}
-∣
-.
-Q[w]= 
-{θ 
-a
-​
- }
-∑
-​
- ( 
-a=1
-∑
-N
-​
- w(θ 
-a
-​
- ))∣{θ 
-a
-​
- }⟩⟨{θ 
-a
-​
- }∣.
-La fonction 
-𝑤
-w est alors choisie dans une classe suffisamment régulière (par exemple analytique sur un domaine borné) pour garantir la convergence de la série génératrice associée aux charges conservées.
+%La fonction $w$ est alors choisie dans une classe suffisamment régulière (par exemple analytique sur un domaine borné) pour garantir la convergence de la série génératrice associée aux charges conservées.
 
-L’introduction de ces charges quasi-locales dans la construction de la matrice densité d’équilibre permet de décrire plus finement les propriétés thermodynamiques et dynamiques des états stationnaires, notamment après des quenches quantiques. C’est ce qui motive leur inclusion dans la formulation du GGE (Generalized Gibbs Ensemble), au-delà des seules charges strictement locales.
+L’introduction de ces charges quasi-locales dans la construction de la matrice densité d’équilibre permet de décrire plus finement les propriétés thermodynamiques et dynamiques des états stationnaires, notamment après des quenches quantiques. C’est ce qui motive leur inclusion dans la formulation du {\bf GGE (Generalized Gibbs Ensemble)}, au-delà des seules charges strictement locales.
+
+\paragraph{Rôle dans le formalisme GGE.}
+Dans un état d'équilibre généralisé (GGE), on maximise l'entropie sous contrainte de toutes les charges conservées. La forme générale de la matrice densité est :
+\begin{eqnarray*}
+	\operator{\rho}_{GGE} & \propto & \exp \left (- \sum_i \beta \operator{\mathcal{O}}_i  \right) 	
+\end{eqnarray*}
+
+Si l’on se limite aux charges locales, cela peut suffire pour certains systèmes. Mais {\bf dans les systèmes intégrables}, {\em cela n’est pas toujours suffisant} pour capturer l'état stationnaire post-quench. Il faut alors inclure les {\bf charges quasi-locales}, qui jouent un rôle crucial dans la relaxation vers le GGE.
+
+\paragraph{D’un point de vue mathématique.} 
+Les charges quasi-locales peuvent être représentées par des fonctions analytiques bien choisies $w(\theta)$, comme dans ta section. La convergence de la série :
+
+\begin{eqnarray*}
+	w(\theta) & = & \sum_i \alpha_i \theta^i 		
+\end{eqnarray*}
+
+
+correspond à une densité de charge extensible mais non strictement locale. Cela permet de construire une famille de matrices densité $\rho[w]$ qui incorporent correctement l'effet des charges quasi-locales.
