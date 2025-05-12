@@ -82,6 +82,7 @@
 \contentsline {paragraph}{Interpretation.}{18}{equation.2.27}%
 \contentsline {paragraph}{Rôle dans le formalisme GGE.}{18}{equation.2.27}%
 \contentsline {paragraph}{D’un point de vue mathématique.}{18}{equation.2.27}%
+\contentsline {section}{\numberline {2.2}Thermodynamique de Bethe et relaxation}{18}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Dynamique hors-équilibre et hydrodynamique généralisée}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Hydrodynamique et régimes asymptotiques}{19}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Hydrodynamique classique des systèmes chaotiques}{19}{subsection.3.1.1}%
