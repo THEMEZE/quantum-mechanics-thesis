@@ -75,11 +75,15 @@ $\# \mbox{conf.}$ est jamais null donc on peut approximer, pour de grandes valeu
 
 Cette expression donne la contribution à l’{\bf entropie locale} (par unité de $\theta$) associée à la cellule autour de $\theta_a$.
 
-\paragraph{Entropie totale de Yang-Yang.}
+\paragraph{Entropie de Yang-Yang : définition .}
 %L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
-Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de Yang-Yang :
+%Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de Yang-Yang :
 
-L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
+%L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
+Le nombre total de micro-états compatibles avec une distribution macroscopique $\rho(\theta)$ est donné par le produit des nombres de configurations pour chaque cellule de rapidité $[\theta, \theta + \delta \theta]$.
+
+En prenant le logarithme et en remplaçant la somme par une intégrale, on obtient l'entropie totale de Yang-Yang. Pour alléger la notation, cette somme sur les tranches est notée :
+
 \begin{eqnarray}
 	\sum_a^{\theta-\mbox{\tiny tranches}}	
 \end{eqnarray}
@@ -97,38 +101,57 @@ avec
 \begin{eqnarray}
     \mathcal{S}_{YY}[\rho] & \doteq & \sum_a^{\theta-\mbox{\tiny tranches}} \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta_a) \delta \theta .
 \end{eqnarray}
-	
-Les variation de $w$ sont négligeables sur $\delta \theta $. Alors on notre l'énergie généralité%  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
+
+\paragraph{Énergie généralisée.}	
+Les variations de $w(\theta)$ étant négligeables sur chaque tranche de largeur $\delta\theta$, on peut approximer l’énergie généralisée comme :%  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
 
 \begin{eqnarray}
 	 \mathcal{W} & = & \sum_{a = 1}^N  w(\theta_a)	 ~ \sim ~ L\mathcal{W}[\rho] ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
 \end{eqnarray}
 
-Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+
+\paragraph{Observables locales dans la limite thermodynamique.}
+%Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+Si l’observable $\mathcal{O}$ est suffisamment locale, sa valeur d’attente dans un état propre ne dépend pas des détails microscopiques, mais seulement de la distribution de rapidité. On écrit donc :
 \begin{eqnarray}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
 \end{eqnarray}
-où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodinamique ($N,L \to \infty$ avec $N/L \to $ const).	
+où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodinamique ($N,L \to \infty$ avec $N/L \to $ const).\\
+
+
+Dans un ensemble général (GGE), la valeur moyenne de l’observable devient :	
 	
 \begin{eqnarray}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \# \mbox{micro-états.} e^{- L\mathcal{W}[\rho]    }}{ \displaystyle \sum_{\rho }  \# \mbox{micro-états.}e^{- L\mathcal{W}[\rho] } } ~ \approx  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
 \end{eqnarray}
-où $ \sum_{ \rho }$ est une sommes sur les distribution de rapidité $\rho$.\\
+où la somme $\sum\rho$ porte sur toutes les distributions possibles de rapidité $\rho$
 
-En faisant tandre $\delta \theta \to 0 $ , les somme devienen des integrales 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Passage à la limite continue.}
+%En faisant tandre $\delta \theta \to 0 $ , les somme devienen des integrales 
+En faisant tendre $\delta\theta \to 0$, les sommes deviennent des intégrales :
 \begin{eqnarray}
 \sum_a^{\theta-\mbox{\tiny tranches}}\delta \theta  & \underset{\delta \theta \to 0 }{\rightarrow} & \int d \theta ,	
 \end{eqnarray}
 
-soit l'entropie de Yang-Yang et l'énergie généralisé s'écrit 
+et l'entropie de Yang-Yang ainsi que l’énergie généralisée prennent la forme :
+
 \begin{eqnarray}
 	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) ,\\
 	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta 		
 \end{eqnarray}
 
-et la valeur moyenne des opservables $\langle \operator{\mathcal{O}} \rangle$ s'écrit commes une intégrale de chemin/formelle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Formule fonctionnelle pour les moyennes.}
 
-	
+%et la valeur moyenne des opservables $\langle \operator{\mathcal{O}} \rangle$ s'écrit commes une intégrale de chemin/formelle
+Finalement, la moyenne d'une observable dans le GGE s’écrit comme une intégrale fonctionnelle/ de chemin :
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}} \rangle & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \mathcal{O}[\rho]}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, \label{chap:TBA:eq:ensemble_average}
+\end{eqnarray}
+
+%avec $\mathcal{O}[\rho]$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$.	
+où $\mathcal{O}[\rho]$ est la valeur de l’observable dans un état propre caractérisé par la distribution $\rho$.
 
 	
 %	et 
