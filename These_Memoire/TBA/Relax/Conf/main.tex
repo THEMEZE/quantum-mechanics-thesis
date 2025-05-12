@@ -98,36 +98,51 @@ avec
     \mathcal{S}_{YY}[\rho] & \doteq & \sum_a^{\theta-\mbox{\tiny tranches}} \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta_a) \delta \theta .
 \end{eqnarray}
 	
-Les variation de $w$ sont négligeables sur $\delta \theta $. Alors o  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
+Les variation de $w$ sont négligeables sur $\delta \theta $. Alors on notre l'énergie généralité%  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
 
 \begin{eqnarray}
-	 \mathcal{W}[w] & = & \sum_{a = 1}^N  w(\theta_a)	 ~ \sim ~ L\mathcal{W}[w,\rho] ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
+	 \mathcal{W} & = & \sum_{a = 1}^N  w(\theta_a)	 ~ \sim ~ L\mathcal{W}[\rho] ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
 \end{eqnarray}
 
-	
-	
-\begin{eqnarray}
-	\langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\{\theta_a \} \vert \rho } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle \# \mbox{micro-états.} e^{- L\mathcal{W}[w,\rho]    }}{ \displaystyle \sum_{\{\theta_a \} \vert \rho }  \# \mbox{micro-états.}e^{- L\mathcal{W}[w,\rho] } } ~ \approx  ~ \frac{  \displaystyle \sum_{\{\theta_a \} \vert \rho } \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[w,\rho]) }}{ \displaystyle \sum_{\{\theta_a \} \vert \rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[w,\rho]) } },
-\end{eqnarray}
-où $ \sum_{\{\theta_a \} \vert \rho }$ est une sommes sur les configuration à distr
-	
 Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\Pi]},
+	\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
 \end{eqnarray}
+où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodinamique ($N,L \to \infty$ avec $N/L \to $ const).	
 	
-	et 
+\begin{eqnarray}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \# \mbox{micro-états.} e^{- L\mathcal{W}[\rho]    }}{ \displaystyle \sum_{\rho }  \# \mbox{micro-états.}e^{- L\mathcal{W}[\rho] } } ~ \approx  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
+\end{eqnarray}
+où $ \sum_{ \rho }$ est une sommes sur les distribution de rapidité $\rho$.\\
+
+En faisant tandre $\delta \theta \to 0 $ , les somme devienen des integrales 
+\begin{eqnarray}
+\sum_a^{\theta-\mbox{\tiny tranches}}\delta \theta  & \underset{\delta \theta \to 0 }{\rightarrow} & \int d \theta ,	
+\end{eqnarray}
+
+soit l'entropie de Yang-Yang et l'énergie généralisé s'écrit 
+\begin{eqnarray}
+	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) ,\\
+	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta 		
+\end{eqnarray}
+
+et la valeur moyenne des opservables $\langle \operator{\mathcal{O}} \rangle$ s'écrit commes une intégrale de chemin/formelle
+
 	
-	\begin{eqnarray}
-		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi} \# \mbox{microstates.}  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } },\\
-		& = & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ \mathcal{S}_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }\\
-		& = &  \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} P_{\{\Pi\}}
-	\end{eqnarray}
+
 	
-	avec la probabilité de la configuration $\{ \Pi \}$  : 
+%	et 
 	
-	\begin{eqnarray}
-		P_{\{\Pi\}} & = & \frac{e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta }}{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
-	\end{eqnarray}
+%	\begin{eqnarray}
+%		\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} \# \mbox{microstates.} e^{- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi} \# \mbox{microstates.}  e^{- \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } },\\
+%		& = & \frac{ \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]}  e^{ \mathcal{S}_{YY}[\Pi]- \sum_{a \vert tranche} f(\theta_a) \Pi ( \theta_a )  \delta \theta}    }{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }\\
+%		& = &  \sum_{\Pi} \langle \operator{\mathcal{O}}\rangle_{[\Pi]} P_{\{\Pi\}}
+%	\end{eqnarray}
 	
-	Il est tentant de définir une action  et une fonction de partition.
+%	avec la probabilité de la configuration $\{ \Pi \}$  : 
+	
+%	\begin{eqnarray}
+%		P_{\{\Pi\}} & = & \frac{e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta }}{ \sum_{\Pi}  e^{\mathcal{S}_{YY}[\Pi] - \sum_{a \vert tranche }  f(\theta_a) \Pi ( \theta_a ) \delta \theta } }
+%	\end{eqnarray}
+	
+%	Il est tentant de définir une action  et une fonction de partition.
