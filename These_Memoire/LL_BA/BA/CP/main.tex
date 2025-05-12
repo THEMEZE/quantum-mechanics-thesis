@@ -12,12 +12,18 @@ e^{i \theta_a L} \prod_{b \ne a} e^{i \Phi(\theta_a - \theta_b)} = (-1)^{N-1}, \
 où $\Phi(\theta_a - \theta_b)$ désigne la phase de diffusion à deux corps, définie à l'équation~\eqref{chap:1:eq:Phi}.
 
 En prenant le logarithme de chaque côté, on obtient un système de $N$ équations couplées non linéaires :
-\begin{equation}
-L\theta_a + \sum_{b \ne a}^N 2 \arctan\left( \frac{\theta_a - \theta_b}{c} \right) = 2\pi I_a ,
-\label{eq:bethe_log}
-\end{equation}
-avec les $I_a$ quantifiés selon la parité de $N$ :
-\[
-I_a \in  \mathbb{Z} \quad \text{si $N$ est impair}, \qquad
-I_a \in \left( \mathbb{Z} + \tfrac{1}{2} \right) \quad \text{si $N$ est pair}.
-\]
+%\begin{equation}
+%L\theta_a + \sum_{b \ne a}^N 2 \arctan\left( \frac{\theta_a - \theta_b}{c} \right) = 2\pi I_a ,
+%\label{eq:bethe_log}
+%\end{equation}
+%avec les $I_a$ quantifiés selon la parité de $N$ :
+%\[
+%I_a \in  \mathbb{Z} \quad \text{si $N$ est impair}, \qquad
+%I_a \in \left( \mathbb{Z} + \tfrac{1}{2} \right) \quad \text{si $N$ est pair}.
+%\]
+
+\begin{eqnarray}\label{chap:1:eq:EBA}
+	L \theta_a + \sum_{b = 1}^N \Phi ( \theta_a - \theta_b ) & = & 2\pi I_a ,	
+\end{eqnarray}
+
+où les nombres fermionique $I_a = a - (N+1)/2$ et $a \in \llbracket 1 , N  \rrbracket$ (ref ??).
