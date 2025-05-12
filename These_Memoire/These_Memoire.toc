@@ -37,57 +37,54 @@
 \contentsline {paragraph}{Lien entre phase de diffusion et décalage temporel : interprétation semi-classique. {\color {red}(à revoir)}}{9}{equation.1.41}%
 \contentsline {subsubsection}{Cas général à \(N\) particules : l'Ansatz de Bethe}{9}{equation.1.46}%
 \contentsline {subsection}{\numberline {1.1.3}Condition aux bords périodiques et équation de Bethe Ansatz}{10}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Description du modèle de Lieb-Liniger}{10}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2}Bethe Ansatz et solution exacte du modèle de Lieb-Liniger}{10}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Condition aux bords périodiques et équation de Bethe Ansatz}{11}{subsection.1.2.1}%
-\contentsline {chapter}{\numberline {2}Relaxation des systèmes quantiques isolés et phénomènes d'équilibre}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Équilibre thermique et ensemble de Gibbs}{13}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Thermodynamique du gaz de Lieb-Liniger à température nulle}{13}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Excitations élémentaires à température nulle}{14}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{14}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Entropie de Yang-Yang et principe de maximisation}{15}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{15}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Intégrabilité et charges conservées}{15}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Dynamique hors équilibre et relaxation des systèmes isolés}{15}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Physique statistique appliquée aux systèmes intégrables}{15}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Entropie de Yang-Yang généralisée}{16}{subsection.2.2.4}%
-\contentsline {chapter}{\numberline {3}Dynamique hors-équilibre et hydrodynamique généralisée}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Hydrodynamique et régimes asymptotiques}{17}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Hydrodynamique classique des systèmes chaotiques}{17}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Hydrodynamique des systèmes intégrables et distribution de rapidité}{17}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Équation d’hydrodynamique généralisée (GHD)}{17}{subsection.3.1.3}%
-\contentsline {chapter}{\numberline {4}Fluctuation de la distribution de rapidité dans des état d'équilibre}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Développement autour du point selle}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Définition de la fonction de corrélation}{20}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Fluctuations autour de la distribution moyenne et rôle de la Hessienne}{21}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fluctuations autour de la distribution moyenne}{22}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Fonction correlation du nombre d'atomes et de l'énergie}{23}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Protocoles experimentale}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Présentation de l’expérience}{25}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Piégeage transverses et longitudinale}{25}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Outil de sélection spatial}{25}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Dispositif expérimental}{28}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Préparation et Confinement du Gaz Ultra-Froid de $^{87}$Rb}{28}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Confinement Longitudinal et Stabilisation du Piège Quartique}{29}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Sélection Spatiale et Réalisation de la Coupure Bipartite}{29}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Dynamique Après Coupure}{30}{subsection.6.1.4}%
-\contentsline {section}{\numberline {6.2}Prédictions de la GHD}{30}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Données expérimentales}{31}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{32}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Détails sur les calculs}{35}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Facteur d’occupation et distribution de rapidité à l’équilibre thermique}{35}{subsection.6.5.1}%
-\contentsline {paragraph}{Détermination de $\mu $ à température fixée}{35}{equation.6.9}%
-\contentsline {subsection}{\numberline {6.5.2}Dynamique du contour dans l’espace des phases $(x, \theta )$}{36}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Simulation de la déformation du bord}{36}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Simulation de l’expansion}{37}{subsection.6.5.4}%
-\contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{39}{chapter.7}%
-\contentsline {section}{\numberline {7.1}calculs}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{39}{section.7.2}%
-\contentsline {chapter}{\numberline {A}Calcules Hamiltonien à N fixés}{41}{chapter.1}%
-\contentsline {section}{\numberline {A.1}deux particules}{41}{section.1.1}%
-\contentsline {section}{\numberline {A.2}N particules}{42}{section.1.2}%
-\contentsline {chapter}{\numberline {B}Vérification explicite de la condition aux limites}{45}{chapter.2}%
-\contentsline {chapter}{\numberline {C}Lien avec les équations de Bethe}{49}{chapter.3}%
-\contentsline {chapter}{Index}{51}{section*.15}%
-\contentsline {chapter}{Index of person names}{53}{section*.16}%
+\contentsline {chapter}{\numberline {2}Relaxation des systèmes quantiques isolés et phénomènes d'équilibre}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Équilibre thermique et ensemble de Gibbs}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Thermodynamique du gaz de Lieb-Liniger à température nulle}{11}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Excitations élémentaires à température nulle}{12}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Physique statistique de l’ensemble de Gibbs}{12}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Entropie de Yang-Yang et principe de maximisation}{13}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Équilibre non thermique et ensemble de Gibbs généralisé}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Intégrabilité et charges conservées}{13}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Dynamique hors équilibre et relaxation des systèmes isolés}{13}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Physique statistique appliquée aux systèmes intégrables}{13}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Entropie de Yang-Yang généralisée}{14}{subsection.2.2.4}%
+\contentsline {chapter}{\numberline {3}Dynamique hors-équilibre et hydrodynamique généralisée}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Hydrodynamique et régimes asymptotiques}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Hydrodynamique classique des systèmes chaotiques}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Hydrodynamique des systèmes intégrables et distribution de rapidité}{15}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Équation d’hydrodynamique généralisée (GHD)}{15}{subsection.3.1.3}%
+\contentsline {chapter}{\numberline {4}Fluctuation de la distribution de rapidité dans des état d'équilibre}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Développement autour du point selle}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Définition de la fonction de corrélation}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fluctuations autour de la distribution moyenne et rôle de la Hessienne}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fluctuations autour de la distribution moyenne}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Fonction correlation du nombre d'atomes et de l'énergie}{21}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Protocoles experimentale}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Présentation de l’expérience}{23}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Piégeage transverses et longitudinale}{23}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Outil de sélection spatial}{23}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho (x , \theta ) $ pour des systèmes hors équilibre}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dispositif expérimental}{26}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Préparation et Confinement du Gaz Ultra-Froid de $^{87}$Rb}{26}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Confinement Longitudinal et Stabilisation du Piège Quartique}{27}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Sélection Spatiale et Réalisation de la Coupure Bipartite}{27}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Dynamique Après Coupure}{28}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Prédictions de la GHD}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Données expérimentales}{29}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Sonder la distribution locale des rapidités}{30}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Détails sur les calculs}{33}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Facteur d’occupation et distribution de rapidité à l’équilibre thermique}{33}{subsection.6.5.1}%
+\contentsline {paragraph}{Détermination de $\mu $ à température fixée}{33}{equation.6.9}%
+\contentsline {subsection}{\numberline {6.5.2}Dynamique du contour dans l’espace des phases $(x, \theta )$}{34}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Simulation de la déformation du bord}{34}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Simulation de l’expansion}{35}{subsection.6.5.4}%
+\contentsline {chapter}{\numberline {7}Mise en place d'un confinement longitudinale dipolaire}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}calculs}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}laser , MOPA, etc .. Données}{37}{section.7.2}%
+\contentsline {chapter}{\numberline {A}Calcules Hamiltonien à N fixés}{39}{chapter.1}%
+\contentsline {section}{\numberline {A.1}deux particules}{39}{section.1.1}%
+\contentsline {section}{\numberline {A.2}N particules}{40}{section.1.2}%
+\contentsline {chapter}{\numberline {B}Vérification explicite de la condition aux limites}{43}{chapter.2}%
+\contentsline {chapter}{\numberline {C}Lien avec les équations de Bethe}{47}{chapter.3}%
+\contentsline {chapter}{Index}{49}{section*.15}%
+\contentsline {chapter}{Index of person names}{51}{section*.16}%
