@@ -1,0 +1,258 @@
+\usepackage[a4paper]{geometry}
+%\geometry{vmargin=3.8cm,hmargin=3.3cm} % marges verticales et horizontales
+%\geometry{left=2.5cm,right=2.5cm,top=1.5cm,bottom=2cm} % marges verticales et
+% horizontales ministérielles (minimales)
+\geometry{left=3cm,right=3cm,top=2.5cm} % proposition
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lettrine}
+\usepackage[export]{adjustbox}
+% Choix de la langue
+\usepackage[english,francais]{babel}
+%% Pour une thèse en français et en anglais
+% puis dans le corps du document utiliser...
+%\selectlanguage{francais} % pour écrire en français
+%\selectlanguage{english} % pour écrire en anglais
+% Lmodern et substitution des petites capitales grasses manquantes
+\usepackage{lmodern}
+\rmfamily
+\DeclareFontShape{T1}{lmr}{b}{sc}{<->ssub*cmr/bx/sc}{}
+\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}
+% Différents paquets pour les maths
+\usepackage{amssymb,amsmath,amsthm,amscd,esint}
+% Pour les figures
+\usepackage{subfig}
+%Pour la page de garde
+\usepackage{tabularx} % Permet d'utiliser l'environnement tabularx
+\usepackage{calc} % Pour pouvoir donner des formules dans les définitions de longueur
+\usepackage{graphicx} % Pour inclure des graphiques 
+\usepackage{epstopdf} % à combiner avec la commande pdflatex -shell-escape
+% Pour avoir des liens hypertexte dans le document compilé
+\usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue, bookmarks,bookmarksopen,bookmarksdepth=2]{hyperref}
+% Pour mettre la bibliographie dans la table des matières avec le bon numéro de page (voir plus loin)
+\usepackage[nottoc]{tocbibind}
+
+% Pour l'index des notations
+\usepackage{makeidx}
+\makeindex
+
+\usepackage[final]{pdfpages} 
+\usepackage{ifthen}
+\usepackage{versions}
+
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage{empheq}
+%\usepackage{ptdr-definitions} 
+%\usepackage[mediumspace,mediumqspace,squaren,Gray]{SIunits}
+\usepackage[free-standing-units]{siunitx}
+\DeclareSIUnit\parsec{pc}
+\usepackage{lscape}
+\usepackage{arydshln} % pour avoir des lignes tiretées dans les tableaux
+
+\usepackage{xcolor}
+\usepackage{framed}
+
+\usepackage{fourier-orns}
+
+\usepackage{soulutf8}
+
+\usepackage{eurosym} % pour le signe euro
+
+\usepackage{graphbox} % pour centrer verticalement les images
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EN-TETES ET PIEDS DE PAGE
+\usepackage{fancyhdr}
+\pagestyle{fancy}% pour activer le style de pages personnalisé
+\fancyhf{}%remise à zéro des en-tête et pied de page
+\setlength{\headheight}{14pt} % pour fixer la hauteur de l'espace réservé à l'en-tête du haut
+
+%%% Pas de numéro de page sur la première page des chapitres
+\makeatletter
+\let\ps@plain=\ps@empty
+\makeatother
+
+%===================== Style 1 =================================================
+%En-tête : 
+% * dans la boite de droite (R), pour les pages impaires (O)
+% * et dans la boite de gauche (L), pour les pages paires (E)
+% mettre le numéro de page (\thepage).
+\fancyhead[RO,LE]{% 
+\thepage
+}
+\fancyhead[LO]{\scshape \nouppercase{\rightmark}}  %%%Section
+\fancyhead[RE]{\scshape \nouppercase{\leftmark}} %%% Chapitre 
+\renewcommand{\headrulewidth}{.4pt}
+\fancyfoot[L]{Préparation à l’Agrégation de Physique}
+\fancyfoot[R]{Montrouge 2017 -- 2018}
+\renewcommand{\footrulewidth}{.4pt}
+
+
+
+%================================== Style 2 ====================================
+
+% \fancyfoot[RO,LE]{% Boite de droite (R), pages impaires(O) et Boites de gauche pages paires
+% \thepage
+% }
+% \fancyhead[CO]{\slshape \nouppercase{\rightmark}}  %%%Section
+% \fancyhead[CE]{\slshape \nouppercase{\leftmark}} %%% Chapitre 
+% \renewcommand{\headrulewidth}{.4pt}
+
+% Remarques generales :
+% nouppercase permet l'affichage en minuscules au lieu de majuscules
+% slshape permet l'affichage en lettres penchés
+% scshape permet l'affichage en petites capitales
+
+% Pour que les pages paires sans texte (par exemple, à la fin d'un chapitre et
+% avant un autre), ne contiennent ni en-tête ni pied de page (source :
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=reallyblank)
+%\let\origdoublepage\cleardoublepage
+%\newcommand{\clearemptydoublepage}{%
+%  \clearpage
+%  {\pagestyle{empty}\origdoublepage}%
+%}
+%\let\cleardoublepage\clearemptydoublepage
+
+% Réglage fin des notes de bas de page
+\FrenchFootnotes % pour les notes de bas de page à la française
+\AddThinSpaceBeforeFootnotes % pour avoir une espace fine entre le mot et l'appel de note
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CHAPITRE ETOILE
+%% avec référence dans la table des matières et les bons en-têtes
+%% il sert pour l'introduction, la page de notations.
+%\newcommand*\chapterstar[1]{%
+%  \chapter*{#1}%
+%  \addcontentsline{toc}{chapter}{#1}%
+%  \markboth{#1}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%% TITLE STYLES %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\huge\bfseries\color{black}}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries\color{black}}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries\color{black}}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\sffamily\bfseries\color{brown}}
+  {\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+  {\normalfont\sffamily\normalsize\bfseries\color{black}}
+  {\paragraph}{0em}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONNEMENTS DEDICACE ET EPIGRAPHE
+\newenvironment{dedicace}{%
+  \newpage\thispagestyle{empty}
+  \hfill\begin{minipage}{100mm}\begin{flushright}\it}{%
+  \end{flushright}\end{minipage}\vfill}
+
+\newenvironment{epigraphe}{%
+  \hfill\begin{minipage}{60mm}\begin{flushright}\footnotesize\it}{%
+  \end{flushright}\end{minipage}\hspace*{7mm}\vfill}
+  
+\numberwithin{equation}{section} % numérote les équations par section
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{epigraph}
+
+%\let\minitocORIG\minitoc
+%\renewcommand{\minitoc}{\minitocORIG \vspace{1.5em}}
+
+\usepackage{multirow}
+% \usepackage{slashbox}
+\usepackage{diagbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{brun}{rgb}{0.87,0.72,0.53}
+\definecolor{chamois}{rgb}{1.0,0.90,0.70}
+\newenvironment{cadrej}{\def\FrameCommand{{\color{brun}\vrule width 3pt}\colorbox{chamois}}\MakeFramed{\advance\hsize-\width \FrameRestore}}{\endMakeFramed} % http://www.ilemaths.net/forum-sujet-544770.html
+%\newenvironment{cadre}[1]{\fcolorbox{brun}{chamois}{\parbox{\linewidth}{#1}
+
+%\usepackage{boiboites}
+%\newboxedtest[boxcolor=black, background=blue!5, titlebackground=blue!20,
+%titleboxcolor = black]{cadre}%{Théorème}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins}
+\newcommand{\mytitle}[1]{                     %this will create the the box with the "title" of the exercise
+   \node[fill=blue!20,
+      rounded corners,
+      draw=black,
+      text=black,
+      line width=1pt,
+      inner sep=4pt,
+      anchor=west,
+      xshift=12pt]
+   at (frame.north west){\textbf{#1}};
+}
+
+\newtcolorbox{cadre}[1]{                       % this will create the main box
+   enhanced,
+   overlay unbroken and first={\mytitle{#1}},   % this will ensure that the title will not be printed two times in broken boxes
+   colframe=black,
+   colback=blue!5,
+   boxrule=1pt,
+   arc=3mm,
+   breakable,                               % this will make the box breaks when the end of the page is reached
+   top=15pt,
+   before=\vskip18pt,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VERSION PROF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifPRINTANSWER
+\PRINTANSWERfalse
+\newcommand{\printanswer}{\PRINTANSWERtrue}
+\newcommand{\noprintanswer}{\PRINTANSWERfalse}
+\reversemarginpar
+\ifundef{\ChoixDeVersion}{\def\ChoixDeVersion{etud}}{}% Pour définir une valeur par défaut.
+\ifthenelse{%
+  \equal{\ChoixDeVersion}{prof}
+  }
+  {%
+  \includeversion{prof}\excludeversion{etud}
+  \PRINTANSWERtrue
+  \newcommand{\bareme}[2][s]{%
+    %\hspace{0pt}\marginnote{\small{(#2 pt#1)}}\!\!%
+    \marginnote{\small{(#2 pt#1)}}
+  }
+  }
+  {%
+  }
+\ifthenelse{%
+  \equal{\ChoixDeVersion}{etud}
+  }
+  {%
+  \excludeversion{prof}\includeversion{etud}
+  \PRINTANSWERfalse
+  \newcommand{\bareme}[2][]{}
+  }
+  {%
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGIN NOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% outer step: position with respect to page margin
+%% inner step: margin with text in the box
+\newcommand\boiteMarge[1]{\ifodd\value{page}
+\begin{tikzpicture}[overlay]\node[anchor=base west,align=justify,fill=red!15,text width=2.2cm,inner sep=4pt,outer sep=-15pt] (hop) at (0,0) {$\triangleright$ #1};\fill[red!15] (hop.north east) -- +(0cm,0pt) |- (hop.south east);\end{tikzpicture}
+\else
+\begin{tikzpicture}[overlay]\node[anchor=base west,align=justify,fill=red!15,text width=2.2cm,inner sep=4pt,outer sep=-15pt] (hop) at (0,0) {$\triangleright$ #1};\fill[red!15] (hop.north west) -- +(0cm,0pt) |- (hop.south west);\end{tikzpicture}
+\fi}
+
+%%%%%%%%%%%%%%%%%%%%% SURLIGNAGE %%%%%%%%%%%%%%%%%%%%
+\newcommand\surl[1]{\ifPRINTANSWER
+\hl{#1}
+\else
+{#1}
+\fi}

@@ -1,53 +1,40 @@
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Introduction Générale}{\reset@font\mtcPfont 13}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie I – Fondements et cadre théorique}{\reset@font\mtcPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 1 – Systèmes quantiques intégrables}{\reset@font\mtcSPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 2 – Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSPfont 13}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie II – Thermodynamique de Bethe et relaxation}{\reset@font\mtcPfont 13}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section3 – Thermodynamique de Bethe (TBA)}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 4 – Relaxation vers la GGE et interprétation TBA}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Partie III – Études spécifiques et développements mathématiques}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 5 – Analyse mathématique de la fonction de Yang-Yang}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcSPfont\mtc@string\contentsline{subparagraph}{\noexpand \leavevmode Section 6 – Études de cas et applications}{\reset@font\mtcSPfont 14}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Conclusion Générale}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Annexes}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Bibliographie}{\reset@font\mtcPfont 14}{chapter.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSfont 14}{section.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Limit Thermodynamique}{\reset@font\mtcSSfont 14}{subsection.2.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Limite}{\reset@font\mtcSSSfont 14}{subsection.2.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Dynamique hors équilibre et notions d’équilibre}{\reset@font\mtcSfont 15}{section.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Limit Thermodynamique}{\reset@font\mtcSSfont 15}{subsection.2.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Limite}{\reset@font\mtcSSSfont 15}{subsection.2.1.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode The dressing}{\reset@font\mtcSSSfont 15}{subsection.2.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Notion d’état d’équilibre généralisé (GGE)}{\reset@font\mtcSSfont 15}{subsection.2.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Configuration des états à N particules.}{\reset@font\mtcPfont 15}{subsection.2.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Observables diagonales dans la base des états propres.}{\reset@font\mtcPfont 15}{subsection.2.1.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Définition générale d'observables conservées.}{\reset@font\mtcPfont 15}{equation.2.4}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Principe de maximisation de l'entropie.}{\reset@font\mtcPfont 15}{equation.2.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Notion d’état d’équilibre généralisé (GGE)}{\reset@font\mtcSSfont 16}{subsection.2.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Configuration des états à N particules.}{\reset@font\mtcPfont 16}{subsection.2.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Observables diagonales dans la base des états propres.}{\reset@font\mtcPfont 16}{subsection.2.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Définition générale d'observables conservées.}{\reset@font\mtcPfont 16}{equation.2.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Principe de maximisation de l'entropie.}{\reset@font\mtcPfont 16}{equation.2.6}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Définition de la matrice densité et de la fonction de partition.}{\reset@font\mtcPfont 16}{equation.2.8}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interprétation physique des multiplicateurs de Lagrange.}{\reset@font\mtcPfont 16}{equation.2.10}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Probabilité d’un état à rapidités fixées.}{\reset@font\mtcPfont 16}{equation.2.10}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyenne d’un observable et dérivées de $Z$.}{\reset@font\mtcPfont 16}{equation.2.11}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moments d’ordre supérieur et fluctuations.}{\reset@font\mtcPfont 16}{equation.2.13}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Cas particulier de l’équilibre thermique.}{\reset@font\mtcPfont 16}{equation.2.14}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interprétation physique des multiplicateurs de Lagrange.}{\reset@font\mtcPfont 17}{equation.2.10}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Probabilité d’un état à rapidités fixées.}{\reset@font\mtcPfont 17}{equation.2.10}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyenne d’un observable et dérivées de $Z$.}{\reset@font\mtcPfont 17}{equation.2.11}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moments d’ordre supérieur et fluctuations.}{\reset@font\mtcPfont 17}{equation.2.13}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Cas particulier de l’équilibre thermique.}{\reset@font\mtcPfont 17}{equation.2.14}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.3}Rôle des charges conservées extensives et quasi-locales}{\reset@font\mtcSSfont 17}{subsection.2.1.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Écriture des observables thermodynamiques comme sommes sur les rapidités.}{\reset@font\mtcPfont 17}{subsection.2.1.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interprétation fonctionnelle et échange des sommes.}{\reset@font\mtcPfont 17}{equation.2.19}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Expression de la matrice densité généralisée.}{\reset@font\mtcPfont 17}{equation.2.21}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Probabilité associée à une configuration de rapidités.}{\reset@font\mtcPfont 17}{equation.2.25}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyennes d'observables dans le GGE.}{\reset@font\mtcPfont 18}{equation.2.26}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interpretation.}{\reset@font\mtcPfont 18}{equation.2.27}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rôle dans le formalisme GGE.}{\reset@font\mtcPfont 18}{equation.2.27}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode D’un point de vue mathématique.}{\reset@font\mtcPfont 18}{equation.2.27}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Thermodynamique de Bethe et relaxation}{\reset@font\mtcSfont 18}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Statistique des macro-états : entropie de Yang-Yang et moyennes dans le GGE}{\reset@font\mtcSSfont 18}{subsection.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode I. Macro-états et entropie dans la TBA.}{\reset@font\mtcPfont 18}{subsection.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Distribution de rapidité comme macro-état.}{\reset@font\mtcPfont 19}{subsection.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Dénombrement local des configurations microcanoniques.}{\reset@font\mtcPfont 19}{subsection.2.2.1}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Estimation asymptotique à l’aide de Stirling.}{\reset@font\mtcPfont 19}{equation.2.28}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Entropie de Yang-Yang : définition .}{\reset@font\mtcPfont 20}{equation.2.32}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Énergie généralisée.}{\reset@font\mtcPfont 20}{equation.2.36}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Observables locales dans la limite thermodynamique.}{\reset@font\mtcPfont 20}{equation.2.37}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Passage à la limite continue.}{\reset@font\mtcPfont 20}{equation.2.39}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Formule fonctionnelle pour les moyennes.}{\reset@font\mtcPfont 21}{equation.2.41}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Équations intégrales de la TBA}{\reset@font\mtcSSfont 21}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyenne des observables dans l’ensemble généralisé de Gibbs.}{\reset@font\mtcPfont 21}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Approximation au point selle.}{\reset@font\mtcPfont 21}{subsection.2.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Développement fonctionnel au premier ordre.}{\reset@font\mtcPfont 21}{equation.2.44}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Équation intégrale de la TBA.}{\reset@font\mtcPfont 21}{equation.2.45}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Écriture des observables thermodynamiques comme sommes sur les rapidités.}{\reset@font\mtcPfont 18}{subsection.2.1.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interprétation fonctionnelle et échange des sommes.}{\reset@font\mtcPfont 18}{equation.2.19}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Expression de la matrice densité généralisée.}{\reset@font\mtcPfont 18}{equation.2.21}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Probabilité associée à une configuration de rapidités.}{\reset@font\mtcPfont 18}{equation.2.25}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyennes d'observables dans le GGE.}{\reset@font\mtcPfont 19}{equation.2.26}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Interpretation.}{\reset@font\mtcPfont 19}{equation.2.27}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Rôle dans le formalisme GGE.}{\reset@font\mtcPfont 19}{equation.2.27}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode D’un point de vue mathématique.}{\reset@font\mtcPfont 19}{equation.2.27}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Thermodynamique de Bethe et relaxation}{\reset@font\mtcSfont 19}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Statistique des macro-états : entropie de Yang-Yang et moyennes dans le GGE}{\reset@font\mtcSSfont 20}{subsection.2.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode I. Macro-états et entropie dans la TBA.}{\reset@font\mtcPfont 20}{subsection.2.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Distribution de rapidité comme macro-état.}{\reset@font\mtcPfont 20}{subsection.2.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Dénombrement local des configurations microcanoniques.}{\reset@font\mtcPfont 20}{subsection.2.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Estimation asymptotique à l’aide de Stirling.}{\reset@font\mtcPfont 20}{equation.2.28}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Entropie de Yang-Yang : définition .}{\reset@font\mtcPfont 21}{equation.2.32}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Énergie généralisée.}{\reset@font\mtcPfont 21}{equation.2.36}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Observables locales dans la limite thermodynamique.}{\reset@font\mtcPfont 21}{equation.2.37}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Passage à la limite continue.}{\reset@font\mtcPfont 22}{equation.2.39}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Formule fonctionnelle pour les moyennes.}{\reset@font\mtcPfont 22}{equation.2.41}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Équations intégrales de la TBA}{\reset@font\mtcSSfont 22}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Moyenne des observables dans l’ensemble généralisé de Gibbs.}{\reset@font\mtcPfont 22}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Approximation au point selle.}{\reset@font\mtcPfont 22}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Développement fonctionnel au premier ordre.}{\reset@font\mtcPfont 22}{equation.2.44}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Équation intégrale de la TBA.}{\reset@font\mtcPfont 22}{equation.2.45}}
