@@ -6,11 +6,11 @@ Le système considéré est constitué d’une seule particule quantique confin�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Détermination des états propres.}
 
-Nous cherchons à déterminer les états propres \(\vert \theta \rangle\) de l’Hamiltonien \(\operator{H}\), associés au quasi-moment \(\theta\), qui satisfont l’équation de Schrödinger stationnaire.
+Nous cherchons à déterminer les états propres \(\vert \theta \rangle\) de l’Hamiltonien \(\operator{H}\), associés au quasi-moment/mode \(\theta\), qui satisfont l’équation de Schrödinger stationnaire.
 
 
 \begin{eqnarray}
-	\operator{H} \vert \theta \rangle & = & E \vert \theta \rangle.
+	\operator{H} \vert \theta \rangle & = & \varepsilon(\theta) \vert \theta \rangle.
 \end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,7 +49,7 @@ La base $\vert z \rangle$ est orthonormale car avec en utilisant les relations d
 La fonction d’onde associée \(\varphi_{\{\theta \}}(z)\) est définie comme la projection :
 
 \begin{eqnarray}
-	\varphi_{\{\theta\}}(z) & = & \langle 0 \vert \operator{\Psi}(z) \vert 1 \rangle,
+	\varphi_{\{\theta\}}(z) & = & \langle 0 \vert \operator{\Psi}(z) \vert \theta \rangle,
 \end{eqnarray}
 
 et normalisée selon :
@@ -91,7 +91,7 @@ avec
 En reportant cela dans l’équation de Schrödinger, on obtient une équation différentielle linéaire :
 
 \begin{eqnarray}
-	- \frac{1}{2} \operator{\partial}_z^2 \varphi_{\{\theta\}}(z) & = & E \varphi_{\{\theta\}}(z). \label{chap:eq.onebody.schrod}
+	- \frac{1}{2} \operator{\partial}_z^2 \varphi_{\{\theta\}}(z) & = & \varepsilon(\theta) \varphi_{\{\theta\}}(z). \label{chap:eq.onebody.schrod}
 \end{eqnarray}
 
 %avec 
@@ -125,12 +125,32 @@ La fonction d’onde $\varphi_{\{\theta\}}(z)$ doit alors satisfaire :
 \end{eqnarray}
 ce qui impose une **périodicité** stricte. Les solutions admissibles de \eqref{chap:eq.onebody.schrod} sont alors des ondes planes :
 \begin{eqnarray}
-	\varphi_{\{\theta\}}(z) = \frac{1}{\sqrt{L}} e^{i \theta z},
+	\varphi_{\{\theta\}}(z) = a\,e^{i \theta z} + b\,e^{-i \theta z},
 \end{eqnarray}
 avec $\theta \in \frac{2\pi}{L} \mathbb{Z}$, imposé par la condition :
 \begin{eqnarray}
 	e^{i \theta(z+L)} = e^{i \theta z} \quad \Rightarrow \quad e^{i \theta L} = 1 \quad \Rightarrow \quad \theta = \frac{2\pi n}{L}, \quad n \in \mathbb{Z}.
 \end{eqnarray}
+
+.....................
+Ce choix se justifie rigoureusement car l’espace de Hilbert pertinent, \( L^2([0,L]) \) avec conditions aux limites périodiques, est engendré par les exponentielles complexes \( e^{i \theta z} \). Celles-ci forment une base orthonormée complète de cet espace (c’est l’objet du théorème de Fourier). Toute fonction périodique de carré intégrable peut donc s’écrire comme une combinaison linéaire (ou série de Fourier) de ces fonctions.
+
+Autrement dit, les seules fonctions propres \( \varphi_{\{\theta\}}(z) \) compatibles avec la structure mathématique imposée par les conditions périodiques sont de la forme :
+\(
+\varphi_{\{\theta\}}(z) \propto e^{i \theta z}.
+\)
+Il suffit donc d’étudier ces modes pour capturer l’ensemble des solutions admissibles.
+........................
+%L’espace de Hilbert \( L^2([0, L]) \), muni de conditions aux limites périodiques, est engendré par la base des exponentielles complexes \( \{ e^{i \frac{2\pi n}{L} z} \}_{n \in \mathbb{Z}} \). Ces fonctions sont les solutions propres de l’opérateur impulsion \( -i\partial_z \), et forment une base orthonormée complète (selon le théorème de Fourier).
+
+%On peut aussi dire que cet espace est engendré par les fonctions de la forme \( e^{\pm i\theta z} \), en posant \( \theta = \frac{2\pi n}{L} \), ce qui correspond à un choix symétrique entre les composantes sinusoïdales directes et inverses.
+
+%Ainsi, toute fonction \( \varphi(z) \in L^2([0,L]) \) vérifiant \( \varphi(z+L) = \varphi(z) \) peut s’écrire comme une combinaison linéaire (ou série de Fourier) de ces fonctions :
+%\[
+%\varphi(z) = \sum_{n \in \mathbb{Z}} c_n\, e^{i \frac{2\pi n}{L} z}.
+%\]
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -138,10 +158,10 @@ avec $\theta \in \frac{2\pi}{L} \mathbb{Z}$, imposé par la condition :
 
 L’énergie associée à une onde plane est donnée par :
 \begin{eqnarray}
-	E & = & \frac{\theta^2}{2} = \frac{2\pi^2 n^2}{L^2},
+	\varepsilon(\theta) & = & \frac{\theta^2}{2},% = \frac{2\pi^2 n^2}{L^2},
 \end{eqnarray}
 
-ce qui exprime l’énergie cinétique d’une particule libre de masse réduite $m = 1$, en fonction de son quasi-moment $\theta$.
+ce qui exprime l’énergie cinétique d’une particule libre de masse $m = 1$, en fonction de son quasi-moment $\theta$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Notation adoptée et interprétation.}
