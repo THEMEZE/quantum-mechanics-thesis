@@ -30,12 +30,12 @@ L’état à deux particules peut être écrit dans la base positionnelle de Foc
 où l'état $\vert z_1 , z_2 \rangle$ représente {\bf un état à deux particules bosoniques localisées en $z_1$ et $z_2$}. En base Fock, cela correspond à l’action de deux opérateurs de création :
 
 \begin{eqnarray}
-	\vert z_1 , z_2 \rangle  & = &  \prod_z\frac{(\operator{\Psi}^\dag(z))^{n_z}}{\sqrt{n_z !}} \vert 0 \rangle ,
+	\vert z_1 , z_2 \rangle  ~ = ~  \prod_z\frac{(\operator{\Psi}^\dag(z))^{n_z}}{\sqrt{n_z !}} \vert 0 \rangle ,\quad \vert z_1 \neq z_2 \rangle  ~ = ~  \operator{\Psi}^\dag(z_1) \operator{\Psi}^\dag(z_2)\vert 0 \rangle , \quad \vert z_1 = z_2 \rangle  ~ = ~ \frac{1}{\sqrt{2}} (\operator{\Psi}^\dag(z_1))^2\vert 0 \rangle .
 \end{eqnarray}
 
 où $\prod_z$ est {\bf un produit formelle sur les position $z$} possibles et $n_z \int \mathbb{N}$ est le nombre de particule à la position $z$ tel que $\int n_z = 2$ , et orthonormalisée car car avec en utilisant les relations de commutation (\ref{chap:1:com.1})  et la définition du vide de Fock (\ref{chap:eq.vide.fock}) il vient que 
 \begin{eqnarray}
-	\langle z_1 , z_2 \vert z_1' , z_2' \rangle  & = & \prod_z\delta_{n_z^{},n_z'}.
+	\langle z_1 , z_2 \vert z_1' , z_2' \rangle  ~ = ~ \prod_z\delta_{n_z^{},n_z'}, \quad \langle z_1 < z_2 \vert z_1' < z_2' \rangle  ~ = ~ \delta_{z_1,z_1'}\delta_{z_2,z_2'}, \quad \langle z_1 = z_2 \vert z_1' = z_2' \rangle  ~ = ~ \delta_{z_1,z_1'}.
 \end{eqnarray}
 
 %\begin{eqnarray}
@@ -55,21 +55,23 @@ où $\prod_z$ est {\bf un produit formelle sur les position $z$} possibles et $n
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Symétrie et normalisation de la fonction d’onde à deux particules.}
-\(\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2)\) tel que 
 
-\begin{eqnarray}
-	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert \prod_z  \frac{(\operator{\Psi}(z))^{n_z}}{\sqrt{n_z !}}\vert \{\theta_1, \theta_2\} \rangle
-\end{eqnarray}
+La fonction d’onde à deux particules est la fonction d’onde symétrique :
+%\(\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2)\) tel que 
+
+%\begin{eqnarray}
+%	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert \prod_z  \frac{(\operator{\Psi}(z))^{n_z}}{\sqrt{n_z !}}\vert \{\theta_1, \theta_2\} \rangle
+%\end{eqnarray}
 
 %\begin{eqnarray}
 %	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) & = & 	\langle 0 \vert  \operator{\Psi}(z_1) \operator{\Psi}(z_2)\vert \{\theta_1, \theta_2\} \rangle
 %\end{eqnarray}
 
 
-est la fonction d’onde symétrique :
+%est la fonction d’onde symétrique :
 
 \begin{eqnarray}
-	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \varphi_{\{\theta_1 , \theta_2\}}(z_2, z_1),
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) ~ = ~ 	\langle z_1 , z_2   \vert \{\theta_1, \theta_2\} \rangle, \quad \varphi_{\{\theta_1 , \theta_2\}}(z_1, z_2) = \varphi_{\{\theta_1 , \theta_2\}}(z_2, z_1),
 \end{eqnarray}
 
 et normalisée selon :
@@ -87,7 +89,7 @@ où $\prod_\theta$ est {\bf un produit formelle sur le modes $\theta$} possibles
 %\end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Réécriture de l’Hamiltonien à N particules.}
+\paragraph{Réécriture de l’Hamiltonien du champ.}
 
 L'Hamiltonien (\ref{chap:1:ham.mod}) peut être réécrit en effectuant une intégration par parties. 
 
@@ -116,7 +118,7 @@ Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fo
 avec 
 
 \begin{eqnarray}
-	\operator{\mathcal{H}}_2 & = &  - \frac{1}{2} \operator{\partial}_{z_1}^2 - \frac{1}{2} \operator{\partial}_{z_2}^2+ 	c  \operator{\delta}(z_1 - z_2). \label{chap:1:hal.mod.2.part.3} 		
+	\operator{\mathcal{H}}_2 & = &  - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2+ 	c  \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3} 		
 \end{eqnarray}
 
 
@@ -163,13 +165,13 @@ En première quantification, en utilisant les coordonnées du centre de masse et
 %}
 
 \begin{eqnarray*}
-	\frac{1}{2} \operator{\partial}_Z^2 + 	2\operator{\partial}_Y^2 & = & \operator{\partial}_{z_1}^2 + \operator{\partial}_{z_2}^2
+	\frac{1}{2} \partial_Z^2 + 	2\partial_Y^2 & = & \partial_{z_1}^2 + \partial_{z_2}^2
 \end{eqnarray*}
 
 l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux problèmes indépendants à une seule particule.
 
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
-	\operator{\mathcal{H}}_2 & = & 	-\frac{1}{4} \operator{\partial}_Z^2 - 	\operator{\partial}_Y^2 + c \operator{\delta} ( Y ) 
+	\operator{\mathcal{H}}_2 & = & 	-\frac{1}{4} \partial_Z^2 - 	\partial_Y^2 + c \delta ( Y ) 
 \end{eqnarray}
 
 
@@ -178,7 +180,7 @@ l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux pro
 Les états propres de l'hamiltonien du centre de masse de masse 2, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse réduite 1/2 en présence d'un potentiel delta en $Y = 0$. 
 
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
-	- 	\operator{\partial}_Y^2 \tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) & = & \tilde{\varepsilon}\tilde{\varphi}(Y) 
+	- 	\partial_Y^2 \tilde{\varphi}(Y) + c \delta ( Y )\tilde{\varphi}(Y) & = & \tilde{\varepsilon}\tilde{\varphi}(Y) 
 \end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Forme symétrique de la fonction d'onde pour bosons.}
@@ -228,7 +230,7 @@ En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée pr
 %}
 
 \begin{eqnarray*}
-	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\operator{\partial}_Y^2\tilde{\varphi}(Y) + c \operator{\delta} ( Y )\tilde{\varphi}(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  \tilde{\varepsilon}(\tilde{\theta})d Y ,\\
+	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\partial_Y^2\tilde{\varphi}(Y) + c \delta ( Y )\tilde{\varphi}(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  \tilde{\varepsilon}(\tilde{\theta})d Y ,\\
 	\\
 	\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 ) & = & 0 .
 \end{eqnarray*}
