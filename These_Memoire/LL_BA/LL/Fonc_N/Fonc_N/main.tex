@@ -13,12 +13,12 @@ L’état à deux particules peut être écrit dans la base positionnelle de Foc
 où la base spatiale à deux particule bosomique $\vert z_1 , \cdots ,  z_N \rangle$ s'écrit %pour $z_1 < \cdots <  z_N$
 
 \begin{eqnarray}
-	\vert z_1 , \cdots ,  z_N  \rangle  & = &  \prod_z\frac{(\operator{\Psi}^\dag(z))^{n_z}}{\sqrt{n_z !}} \vert 0 \rangle ,
+	\vert z_1 , \cdots ,  z_N  \rangle  ~ = ~  \prod_z\frac{(\operator{\Psi}^\dag(z))^{n_z}}{\sqrt{n_z !}} \vert 0 \rangle , \quad \\ \vert z_1 < \cdots <  z_N  \rangle  ~ = ~  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle, \quad \vert z_1 < \cdots z_i = z_{i+1} < \cdots  <  z_N  \rangle  ~ = ~  \operator{\Psi}^\dag(z_1) \cdots \frac{(\operator{\Psi}^\dag(z_i))^2}{\sqrt{2}} \operator{\Psi}^\dag(z_{i+2})\cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle
 \end{eqnarray}
 
 où $\prod_z$ est {\bf un produit formelle sur les position $z$} possibles et $n_z \int \mathbb{N}$ est le nombre de particule à la position $z$ tel que $\int n_z = 2$ , et orthonormalisée car car avec en utilisant les relations de commutation (\ref{chap:1:com.1})  et la définition du vide de Fock (\ref{chap:eq.vide.fock}) il vient que 
 \begin{eqnarray}
-	\langle z_1^{} , \cdots ,  z_N^{} \vert z_1' , \cdots ,  z_N' \rangle  & = & \prod_z\delta_{n_z^{},n_z'}.
+	\langle z_1^{} , \cdots ,  z_N^{} \vert z_1' , \cdots ,  z_N' \rangle  ~ = ~ \prod_z\delta_{n_z^{},n_z'}, \quad \langle z_1^{} < \cdots <  z_N^{} \vert z_1' < \cdots <  z_N' \rangle  ~ = ~ \delta_{z_1^{},z_1'}\cdots\delta_{z_N^{},z_N'} .
 \end{eqnarray}
 
  \(\varphi_{\{\theta_a\}}(z_1, \cdots ,  z_N)\) tel que 
@@ -55,11 +55,11 @@ L’action de \(\operator{H}\) (\ref{chap:1:ham.mod.2}) sur \(\vert \{\theta_a\}
 avec 
 
 \begin{eqnarray}
-	\operator{\mathcal{H}}_N & = &  - \sum_{i=1}^N \, \operator{\partial}_{z_i}^2 + 	c \sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j) 		
+	\operator{\mathcal{H}}_N & = &  - \sum_{i=1}^N \, \partial_{z_i}^2 + 	c \sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j) 		
 \end{eqnarray}
 
 
-Dans le domaine $x_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
+Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
 
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = & \langle 0 \vert \Psi ( z_1 ) \cdots \Psi (z_N ) \vert \{ \theta_a \} \rangle \notag\\
