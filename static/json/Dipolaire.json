@@ -1,14 +1,104 @@
 [
     {
-        "file1-1": "../docaranger/Dipolaire/9902072v1.pdf",
-        "page1-1": 1,
-        "file2-1": "../docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf",
-        "page2-1": 1
+        "file1-1": "../docaranger/Dipolaire/Dipolaire_moi.pdf",
+        "page1-1": 2,
+        "file2-1": "../docaranger/Dipolaire/Dipolaire_moi.pdf",
+        "page2-1": 4
     },
     {
-        "file1-2": "../docaranger/Dipolaire/1211.2673v2.pdf",
+        "file1-2": "../docaranger/Dipolaire/Potentiel Dipolaire.pdf",
         "page1-2": 1,
-        "file2-2": "",
-        "page2-2": ""
+        "file2-2": "../docaranger/Dipolaire/Potentiel Dipolaire article résumé.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/Dipolaire/9902072v1.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/Dipolaire/1211.2673v2.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/Dipolaire/1992CASTIN.pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-5": "../docaranger/Dipolaire/0709.0130.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/Dipolaire/1208.4291.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../docaranger/Dipolaire/1209.0613.pdf",
+        "page1-6": 1,
+        "file2-6": "../docaranger/Dipolaire/1211.2673.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../docaranger/Dipolaire/1211.2673v2.pdf",
+        "page1-7": 1,
+        "file2-7": "../docaranger/Dipolaire/1306.5605.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../docaranger/Dipolaire/1901.00480.pdf",
+        "page1-8": 1,
+        "file2-8": "../docaranger/Dipolaire/1905.08824.pdf",
+        "page2-8": 1
+    },
+    {
+        "file1-9": "../docaranger/Dipolaire/1992CASTIN.pdf",
+        "page1-9": 1,
+        "file2-9": "../docaranger/Dipolaire/2000BOUCHOULE.pdf",
+        "page2-9": 1
+    },
+    {
+        "file1-10": "../docaranger/Dipolaire/2103.05514.pdf",
+        "page1-10": 1,
+        "file2-10": "../docaranger/Dipolaire/2209.15013.pdf",
+        "page2-10": 1
+    },
+    {
+        "file1-11": "../docaranger/Dipolaire/2211.10196.pdf",
+        "page1-11": 1,
+        "file2-11": "../docaranger/Dipolaire/120670_GUO_2023_archivage.pdf",
+        "page2-11": 1
+    },
+    {
+        "file1-12": "../docaranger/Dipolaire/0307057.pdf",
+        "page1-12": 1,
+        "file2-12": "../docaranger/Dipolaire/9902072.pdf",
+        "page2-12": 1
+    },
+    {
+        "file1-13": "../docaranger/Dipolaire/9902072v1.pdf",
+        "page1-13": 1,
+        "file2-13": "../docaranger/Dipolaire/ComplexModes.pdf",
+        "page2-13": 1
+    },
+    {
+        "file1-14": "../docaranger/Dipolaire/DFB-Stock-list.pdf",
+        "page1-14": 1,
+        "file2-14": "../docaranger/Dipolaire/Dipolaire_moi.pdf",
+        "page2-14": 1
+    },
+    {
+        "file1-15": "../docaranger/Dipolaire/Kien et al. - 2013 - Dynamical polarizability of atoms in arbitrary lig.pdf",
+        "page1-15": 1,
+        "file2-15": "../docaranger/Dipolaire/PhotonsAtomesClaudeFabrepoly2011.pdf",
+        "page2-15": 1
+    },
+    {
+        "file1-16": "../docaranger/Dipolaire/rubidium87numbers.1.6.pdf",
+        "page1-16": 1,
+        "file2-16": "../docaranger/Dipolaire/SEDP_1997-1998____A5_0.pdf",
+        "page2-16": 1
+    },
+    {
+        "file1-17": "../docaranger/Dipolaire/téléchargement.pdf",
+        "page1-17": 1,
+        "file2-17": "../docaranger/Dipolaire/These.Evellin.pdf",
+        "page2-17": 1
     }
 ]
