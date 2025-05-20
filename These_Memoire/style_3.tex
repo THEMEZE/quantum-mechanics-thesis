@@ -1,9 +1,23 @@
 % !TEX encoding = IsoLatin
 %cette premiÃère ligne permet au compilateur (souvent, dÃépend du compilateur) \LaTeX de reconnaitre l'encodage de votre fichier.
-\documentclass[1pt,titlepage]{book}       %pour un livre
+\documentclass[10pt,titlepage]{book}       %pour un livre
 %\documentclass{report}
 %\documentclass[a3, 10pt,twoside]{article}          %pour un article
 %\documentclass[twocolumn,amsfonts,showpacs,superscriptaddress,nofootinbib,aps,nolongbibliography]{revtex4-2}
+
+% Pour changer la police, on peut utiliser par exemple :
+%\usepackage{mathptmx} % Police Times
+%\usepackage{palatino} % Autre exemple de police
+%\usepackage{libertine} % Libertine, élégante et bien lisible
+
+% Pour une meilleure gestion des caractères et de la langue :
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[french]{babel} % ou [english] selon la langue du document
+
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+
 
 \usepackage{array,multirow,graphicx}
 \usepackage[T1]{fontenc}  % For correct {}s in \texttt
@@ -127,7 +141,7 @@ decorations.pathreplacing}
 \setlength\textheight{22cm}         % hauteur du texte
 \setlength\oddsidemargin{\evensidemargin}
 
-%\geometry{a4paper, inner=3.5cm, outer=2.5cm, top=2.5cm, bottom=2.5cm, twoside} % proposition
+\geometry{a4paper, inner=3.5cm, outer=2.5cm, top=2.5cm, bottom=2.5cm, twoside} % proposition
 %\geometry{a4paper, right=0.5cm, left=0.5cm, top=0.5cm, bottom=1.5cm} % proposition
 %\geometry{outer=2.5cm, top=2.5cm, bottom=2.5cm} % proposition
 
@@ -367,8 +381,17 @@ innertopmargin=\topskip,
 \fancyhead[RE]{\scshape \nouppercase{\leftmark}}  % Chapitre
 \renewcommand{\headrulewidth}{.4pt}
 
+\usepackage{datetime} % Pour une date personnalisée
+\newdateformat{mydate}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
+\newdateformat{mydatetime}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR~à~\currenttime}
+\usepackage[useregional]{datetime2}
+%\DTMsetstyle{french} % ou autre style
+%\DTMsetup{showtimezone=false}
+
 \fancyfoot[L]{Thèse}
-\fancyfoot[R]{Palaiseau 2022 -- 2025}
+%\fancyfoot[R]{Paris, \mydatetime\today{} -- Période 2022--2025}
+\fancyfoot[R]{Paris, \DTMnow -- Période 2022--2025}
+%\fancyfoot[R]{Paris, le \DTMdate\today{} à \DTMcurrenttime -- Période 2022--2025}
 \renewcommand{\footrulewidth}{.4pt}
 
 % Supprimer les numéros sur la première page de chaque chapitre

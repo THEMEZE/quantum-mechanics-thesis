@@ -43,7 +43,7 @@ On développe de Taylor-Young à l’ordre quadratique :
 	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] + \frac{1}2 \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }	(\delta \rho)^2,
 	\label{chap:fluctu:eq:action}	
 \end{eqnarray*}
-CCC
+
 avec $-\left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }$ désigne la forme bilinéaire symétrique définie positive.
 
 %avec
@@ -308,7 +308,8 @@ avec une partie diagonale irrégulière
 avec une partie symétrique régulière
 
 \begin{eqnarray}
-	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\langle \rho_s(\theta) \rangle (1 - \langle \nu(\theta) \rangle) } + \frac{1}{\langle \rho_s(\theta') \rangle  (1 - \langle \nu(\theta') \rangle) }\right )\frac{\Delta(\theta - \theta')}{2\pi} + \int d \theta''  \frac{\langle \nu(\theta'') \rangle}{\langle \rho_s(\theta'') \rangle (1 - \langle \nu(\theta'') \rangle) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
+	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\langle \rho_s(\theta) \rangle (1 - \langle \nu(\theta) \rangle) } + \frac{1}{\langle \rho_s(\theta') \rangle  (1 - \langle \nu(\theta') \rangle) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
+	&&  + \int d \theta''  \frac{\langle \nu(\theta'') \rangle}{\langle \rho_s(\theta'') \rangle (1 - \langle \nu(\theta'') \rangle) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
 	\label{chap:fluctu:eq:reg}
 \end{eqnarray}
  
@@ -350,17 +351,19 @@ Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv})
 
 \begin{eqnarray*}
 	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1})(\theta , \theta') 	,\\
-	& = & 	(\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
+	& = & 	(\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \times \\
+	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
 \end{eqnarray*}
 
 où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
 En injectant cette dernier équation et \ref{chap:fluctu:eq:hessienner.inv.1} , dans (\ref{chap:fluctu:eq:fluctuations}) , il vient que une eqution implicite:
-\begin{eqnarray}
+\begin{eqnarray*}
 	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
-	&& (\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \langle \delta \rho(\cdot) \delta \rho(\theta') \rangle   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \langle \delta \rho(\cdot) \delta \rho(\theta') \rangle   \right )  \right ] \right \} (\theta).
-\end{eqnarray}
+	&& (\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \times \\
+	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta).
+\end{eqnarray*}
 
 
 
