@@ -1,5 +1,77 @@
-\subsection{Condition aux bords périodiques et équation de Bethe Ansatz}
-\input{LL_BA/BA/CP/main.tex}
+%\subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
+%\input{LL_BA/BA/Gaudin/main.tex}
+
+%Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d'onde est ({\color{blue} Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{blue}Lieb anz Liniger 1963}) :
+%
+%\begin{eqnarray}
+%	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = & \langle 0 \vert \Psi ( z_1 ) \cdots \Psi (z_N ) \vert \{ \theta_a \} \rangle \notag\\
+%	& \propto & \sum_\sigma ( - 1 ) ^{ \vert \sigma \vert } \left ( \prod_{ 1 \leq a < b \leq N } ( \theta_{\sigma(b)} - \theta_{\sigma(a)} - ic ) \right ) e^{i \sum_j z_i \theta_{ \sigma(j)}}\label{eq:I-2-17},
+%\end{eqnarray}
+
+%et elle est étendue à d'autres domaines par symétrie $z_i \leftrightarrow z_j$ . Ici, la somme s'étend à toutes les permutations $\sigma$ des $N$ éléments (donc il y a $N!$ termes) et $(-1)^{|\sigma|}$ est la signature de la permutation.
+
+%\subsection{Condition aux bords périodiques et équation de Bethe Ansatz}
+%\input{LL_BA/BA/CP/main.tex}
+
+
+\subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
+
+Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue}Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{black}Lieb et Liniger 1963}) :
+\begin{eqnarray}
+	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
+	& \propto & \sum_\sigma (-1)^{|\sigma|} \left( \prod_{1 \leq a < b \leq N} (\theta_{\sigma(b)} - \theta_{\sigma(a)} - i g) \right) e^{i \sum_{j=1}^{N} z_j \theta_{\sigma(j)}},\label{eq:I-2-17}
+\end{eqnarray}
+où la somme s'étend sur toutes les permutations $\sigma$ de $\{1,\dots,N\}$. Le facteur $(-1)^{|\sigma|}$ est la signature de la permutation, et les amplitudes dépendent des différences de quasi-moments $\theta_j$ ainsi que du couplage $c$.
+Cette fonction d’onde est ensuite étendue par symétrie aux autres domaines du type $z_{\pi(1)} < z_{\pi(2)} < \cdots < z_{\pi(N)}$ via des propriétés d’échange symétriques.
+
+\vspace{1em}
+
+\subsection{Conditions aux bords périodiques}
+
+Les équations précédentes ont été établies pour un système défini sur la droite réelle. Cependant, dans une perspective thermodynamique, il est essentiel de considérer une densité finie $ N/L$. Cela peut être obtenu en compactifiant l’espace sur un cercle de longueur $L$, i.e. en imposant les {\em conditions aux bords périodiques}.
+
+Concrètement, cela consiste à identifier $x = 0$ et $x = L$ et à exiger que la fonction d’onde soit périodique lorsqu’une particule fait le tour du système :
+\begin{equation}\label{eq:periodic}
+\varphi_{\{\theta_a\}}(x_1, \dots, x_{N-1}, L) = \varphi_{\{\theta_a\}}(0, x_1, \dots, x_{N-1}).
+\end{equation}
+Cette condition doit être satisfaite pour chaque particule. Or, déplacer la $j$-ième particule de $x_j$ à $x_j + L$ revient à la faire passer devant toutes les autres : cela introduit un facteur de diffusion à chaque croisement.
+
+\vspace{1em}
+
+\subsection{Équations de Bethe exponentielles}
+
+En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
+\begin{equation}
+	e^{i \theta_a L} \prod_{b \ne a} S(\theta_a - \theta_b) = (-1)^{N-1}, \quad a = 1, \dots, N,
+	\label{eq:bethe_exp}
+\end{equation}
+où la matrice diffusion $S(\theta) = \frac{\theta - i g}{-\theta - i g} = e^{i \Phi(\theta)}$ est l’amplitude de diffusion à deux corps, et $\Phi(\theta) = 2 \arctan\left( \frac{\theta}{c} \right)$ est la phase associée~\eqref{chap:1:eq:Phi}. Le signe $(-1)^{N-1}$ vient du fait que chaque permutation change la signature du déterminant dans la représentation de Gaudin.
+
+\vspace{1em}
+
+\subsection{Équations de Bethe logarithmiques}
+
+En prenant le logarithme du membre gauche et du membre droit de l’équation~\eqref{eq:bethe_exp}, on obtient :
+\begin{equation}\label{chap:1:eq:EBA}
+	L \theta_a + \sum_{b=1}^N \Phi(\theta_a - \theta_b) = 2\pi I_a, \qquad a = 1, \dots, N,
+\end{equation}
+où les $I_a \in \mathbb{Z}$ (ou $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres quantiques entiers. Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
+\[
+I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
+\]
+Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
+
+\vspace{1em}
+
+\subsection{Interprétation physique}
+
+Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
+
+Ce système d'équations détermine les états propres du système de Lieb–Liniger en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
+
+
+
+
 \subsection{Thermodynamique du gaz de Lieb-Liniger à température nulle}
 \input{LL_BA/BA/OK/main.tex}
 \subsection{Excitations élémentaires à température nulle}
