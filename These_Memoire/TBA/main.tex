@@ -1,6 +1,107 @@
-\section{Dynamique hors équilibre et notions d’équilibre}
-\subsection{Limit Thermodynamique}
-\input{TBA/HE/T/main}
+%------------------------------------------------------------------
+\section{Introduction générale}
+
+Dans les modèles quantiques intégrables, l’évolution vers l’équilibre, à partir d’un état initial arbitraire (et typiquement hors d’équilibre), ne conduit pas à une thermique de Gibbs classique.  
+En effet, du fait de l’existence d’une infinité de charges conservées en involution, les systèmes intégrables n’explorent qu’une sous-partie contrainte de l’espace des états accessibles.  
+Ils relaxent alors vers un état stationnaire décrit par une \emph{Ensemble Thermodynamique Généralisé} (GGE), qui encode la conservation de toutes ces quantités.
+
+Cette section pose les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
+Nous considérons ici un régime macroscopique à température (ou entropie) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
+
+Notre point de départ est la relation constitutive entre la densité de \emph{quasi-particules} (ou rapidités) $\rho(\theta)$ et la densité d’états disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
+Nous introduisons ensuite une opération clé de la TBA, appelée \emph{habillage} (\emph{dressing}), qui intervient systématiquement dans le calcul des observables physiques et permet de prendre en compte de manière non perturbative les effets des interactions.  
+Cette construction sera illustrée dans le cadre du modèle intégrable de Lieb–Liniger, qui décrit un gaz unidimensionnel de bosons avec interaction delta répulsive.
+
+Les outils développés ici seront fondamentaux pour formuler dans la section suivante le concept d’ensemble généralisé (GGE), et pour décrire la dynamique de relaxation des systèmes intégrables.
+
+
+%------------------------------------------------------------------
+\subsection{Limite thermodynamique}
+
+Dans la limite thermodynamique $N,L\to\infty$ à densité finie
+$N/L=\text{cst}$, les équations de Bethe discrètes se condensent en une
+équation intégrale pour les densités de rapidités :
+\begin{equation}
+2\pi \rho_s \;=\; 1 \;+\;\Delta \star \rho,
+\label{eq:TBA-rhos}
+\end{equation}
+où le symbole 
+\(
+[\Delta \star \rho](\theta)
+\)
+désigne la \textbf{convolution}
+\[
+[\Delta \star \rho](\theta)\;=\; \int_{-\infty}^{\infty}
+      \!d\theta'\; \Delta(\theta-\theta')\,\rho(\theta').
+\]
+Pour le modèle de \textbf{Lieb–Liniger} de couplage $g>0$.  
+%le noyau
+%\(
+%\Delta(\theta)=\dfrac{2g}{\theta^{2}+g^{2}}
+%\)
+%provient de la dérivée de la phase de diffusion
+%$S(\theta)=\dfrac{\theta-ic}{\theta+ic}$.
+
+%------------------------------------------------------------------
+\subsection{Opération de \emph{dressing}}
+\label{sec:dressing}
+
+\subsubsection{Définition}
+
+À toute fonction  $f(\theta)$ on associe sa version \emph{habillée}
+$f^{\mathrm{dr}}(\theta)$, solution de l’équation intégrale
+%\begin{align}
+%f^{\mathrm{dr}}(\theta) &= f(\theta) \;+\;
+%       \int_{-\infty}^{\infty}\!\frac{d\theta'}{2\pi}\;
+%             \Delta(\theta-\theta')\,\nu(\theta')\,f^{\mathrm{dr}}(\theta')
+%\nonumber\\
+%&= f(\theta)\;+\;\Bigl[\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr)
+%     \Bigr](\theta),
+%\label{eq:dressing}
+%\end{align}
+\begin{eqnarray}
+	f^{\mathrm{dr}} & = & f  \;+\;\Bigl[\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr)\Bigr] \label{eq:dressing}	
+\end{eqnarray}
+où $\Delta/2\pi$ est un noyau de convolution spécifique et 
+\(
+\nu=\dfrac{\rho}{\rho_s}
+\)
+est le \emph{facteur d’occupation}.
+
+\subsubsection{Interprétation physique}
+
+Le dressing incorpore \emph{à tous ordres} les rétrodiffusions entre
+quasi‑particules ; il encode ainsi les corrections
+d’interaction aux grandeurs physiques initiales $f(\theta)$.
+Dans le Lieb–Liniger, on l’utilise pour obtenir :
+
+* l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$,
+* la charge impulsion $p^{\mathrm{dr}}(\theta)$,
+* les susceptibilités (voir chap.\,\ref{chap:GGE}).
+
+\subsubsection{Exemple\,: densité de sites}
+
+En posant $f(\theta)=1$, l’équation~\eqref{eq:dressing} donne
+\(
+1^{\mathrm{dr}}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}}\bigr)
+\) soit 
+\[
+2\pi\rho_s=1^{\mathrm{dr}},
+\]
+ce qui n’est autre que la
+relation constitutive~\eqref{eq:TBA-rhos}.
+
+\vspace{1ex}
+La formalisation ci‑dessus fournit la brique de base pour la
+\textbf{hydrodynamique généralisée} et, dans la section suivante, pour la
+définition précise de l’\textbf{Ensemble d’Équilibre Généralised (GGE)}
+assurant la relaxation des systèmes intégrables hors‑équilibre.
+
+
+
+
+
+%\input{TBA/HE/T/main}
 \subsection{Notion d’état d’équilibre généralisé (GGE)}
 \input{TBA/HE/GGE/main}
 \subsection{Rôle des charges conservées extensives et quasi-locales}
