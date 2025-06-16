@@ -1,3 +1,33 @@
+\paragraph{Introduction.}
+Dans les systèmes quantiques intégrables, la dynamique unitaire à long temps ne conduit généralement pas à une thermalisation usuelle, au sens de l’ensemble canonique ou microcanonique. En effet, l'intégrabilité implique l'existence d'une infinité de charges conservées \( \operator{Q}_i \), en involution avec l’Hamiltonien \( \operator{H} \), i.e.
+\begin{eqnarray*}
+[\operator{Q}_i, \operator{H}] = 0,
+\end{eqnarray*}
+et entre elles : \( [\operator{Q}_i, \operator{Q}_j] = 0 \). Ces charges sont localement définies : chacune peut s’écrire sous la forme
+\begin{eqnarray*}
+\operator{Q}_i = \int dx\, \operator{q}_i(x),
+\end{eqnarray*}
+où \( \operator{q}_i(x) \) est une densité locale d’observable (ou "charge locale") à support fini. Cela signifie que pour tout \( i \), la densité \( \operator{q}_i(x) \) est une observable dont le support est contenu dans un sous-domaine borné de l’espace, noté \( \mathcal{S} \subset \mathbb{R} \).
+
+Cette propriété de localité est essentielle pour décrire l’état du système à l’échelle mésoscopique ou dans un sous-système \( \mathcal{S} \), c’est-à-dire lorsque l’on restreint l’étude à une région finie du système total, typiquement après un processus de relaxation ou de déphasage local. Dans ce cas, le sous-système n’est pas décrit par un état thermique standard (de type Gibbs), mais par une distribution prenant en compte **l’ensemble des charges locales conservées** qui agissent effectivement dans la région \( \mathcal{S} \). Cette construction mène à la notion d’**état d’équilibre généralisé** ou **GGE** (pour *Generalized Gibbs Ensemble*).
+
+L’état d’équilibre local généralisé est alors défini formellement par une matrice densité de la forme :
+\begin{eqnarray*}
+\operator{\rho}_{\mathcal{S}} = \frac{1}{Z_{\mathcal{S}}} \exp\left( -\sum_i \beta_i\, \operator{Q}_i^{(\mathcal{S})} \right),
+\end{eqnarray*}
+où \( \operator{Q}_i^{(\mathcal{S})} \) désigne la restriction de la charge \( \operator{Q}_i \) à la région \( \mathcal{S} \), c’est-à-dire :
+\begin{eqnarray*}
+\operator{Q}_i^{(\mathcal{S})} = \int_{\mathcal{S}} dx\, \operator{q}_i(x),
+\end{eqnarray*}
+et les coefficients \( \beta_i \in \mathbb{R} \) jouent le rôle de multiplicateurs de Lagrange associés à la conservation des \( \operator{Q}_i \) (on les interprète comme des "potentiels généralisés"). La constante \( Z_{\mathcal{S}} \) est le facteur de normalisation (ou "partition généralisée") :
+\begin{eqnarray*}
+Z_{\mathcal{S}} = \operatorname{Tr} \left[ \exp\left( -\sum_i \beta_i\, \operator{Q}_i^{(\mathcal{S})} \right) \right].
+\end{eqnarray*}
+
+Ce formalisme permet de décrire l’état macroscopique atteint par un système intégrable après relaxation unitaire, en particulier à la suite d’un *quench* quantique (changement soudain de paramètre). Contrairement à la situation standard où seule l’énergie est conservée, l’ensemble des charges \( \operator{Q}_i \) doit être pris en compte pour correctement prédire les observables locales dans l’état asymptotique.
+
+L’approche GGE est donc un outil fondamental pour la description de l’équilibre local dans les systèmes intégrables, et permet notamment de comprendre pourquoi la thermalisation habituelle échoue dans ce contexte.
+
 \paragraph{Configuration des états à N particules.}
 On introduit la configuration ${ \theta_a }_{a\in \llbracket 1 , N \rrbracket}$ des rapidités pour un nombre fixe $N$ de particules, et les états propres associés.
 
