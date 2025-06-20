@@ -99,26 +99,26 @@ Intéressons-nous maintenant à la {\em densité de particules dans l’espace d
 	\rho(\theta_a) = \lim_{L \to \infty} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
 \end{eqnarray*}
 Dans l’état fondamental, toutes les positions disponibles dans l’intervalle \( [-K, K] \) sont occupées. On a donc :
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap.1.rho.2}
 	\rho(\theta) = \rho_s(\theta).
-\end{eqnarray*}
+\end{eqnarray}
 
 La quantité \( L \rho(\theta) d\theta \) représente le nombre de rapidités dans la cellule infinitésimale \( [\theta, \theta + d\theta] \), tandis que
-\begin{eqnarray*}
+\(
 	N = L \int_{-K}^{K} \rho(\theta)\, d\theta
-\end{eqnarray*}
+\)
 donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe permet d’écrire :
 \begin{eqnarray*}
 	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \longrightarrow \int_{-K}^{K} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
 \end{eqnarray*}
 Ainsi, l'équation pour la densité d'états devient :
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap.1.rho.s.2}
 	2\pi \rho_s(\theta) = 1 + \int_{-K}^{K} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
-\end{eqnarray*}
+\end{eqnarray}
 et, comme \( \rho = \rho_s \), on obtient l’équation linéaire intégrale satisfaite par la densité de rapidités :
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap.1.rho.3}
 	\rho(\theta) - \int_{-K}^{K} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
-\end{eqnarray*}
+\end{eqnarray}
 
 
 %\input{LL_BA/BA/OK/main.tex}
