@@ -357,7 +357,7 @@ où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodinamique ($N,L \
 \medskip
 Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.1} devient alors :	
 	
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.2.moyenne.2}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \Omega[\rho] e^{- \sum_{a = 1}^N  w(\theta_a)    }}{ \displaystyle \sum_{\rho }   \Omega[\rho]\,e^{- \sum_{a = 1}^N  w(\theta_a) } } ,
 \end{eqnarray}
 où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distribution de rapidité $\rho$.
@@ -565,10 +565,10 @@ Cette quantité intervient dans la description hydrodynamique et les corrélatio
 
 \subparagraph{Exemple\,: densité de sites}
 
-En posant $f(\theta)=1$, l’équation~\eqref{eq:dressing} donne
+En prenant $f(\theta) = 1$ dans l’équation~\eqref{eq:dressing}, on obtient :
 \(
 1^{\mathrm{dr}}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}}\bigr)
-\) soit 
+\) soit directement : 
 \begin{eqnarray}
 	2\pi\rho_s = 1^{\mathrm{dr}},
 \end{eqnarray}
@@ -587,9 +587,254 @@ Cette formalisation constitue la brique de base de la \textbf{hydrodynamique gé
 
 
 
-\subsection{Statistique des macro-états : entropie de Yang-Yang et moyennes dans le GGE}
-\input{TBA/Relax/Conf/main}
+\subsection{Statistique des macro-états : entropie de Yang-Yang}
+
+\paragraph{Macro-états et entropie dans la TBA.}
+
+Dans la limite thermodynamique, dans le modèle statistique (GGE) , les moyenne, observables physiques deviennent des fonctionnelles de la {\bf distribution de rapidité}  $\rho(\theta)$ et du {\bf poing spectrale} $w(\theta)$ . Cette description est efficace car elle permet d’échapper au détail de chaque état propre. 
+%Toutefois, cette simplification laisse en suspens une question cruciale : 
+Mais dans ce modelle qui simplifie on veux {\bf la distribution de rapidité d’un système à l'équilibre thermique à température finie} que l'on notera $\langle \rho \rangle$ pour dire la dansité moyenne. Et les lien entre  $w$ et $\langle \rho \rangle$.  Le problème est étudier par par Yang et Yang en 1969. Pour saisir l'enssentielle, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$. Nous nous interrensons comme promis plus haut : à $\Omega(\theta)$ dans l'équation de moyenne \eqref{chap.2.moyenne.2}  ,  {\bf  nombre états propres microscopiques correspondent à une même distribution $\rho(\theta)$}.
+%{\bf quelle est la distribution de rapidité d’un système à l'équilibre thermique à température finie ?}. 
+%La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Pour répondre à cette question, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$.
+
+\paragraph{Motivation.}
+
+Dans la limite thermodynamique, une observable locale dans un \textit{Generalized Gibbs Ensemble} (GGE) dépend uniquement de deux objets continus :  (i)  la \textbf{distribution de rapidité} $\rho(\theta)$, (ii) le \textbf{poids spectral} $w(\theta)$, c.-à-d.\ la " température généralisée " assignée à chaque quasi‑particule.
+Cette reformulation est puissante car elle fait disparaître les détails d’un état propre individuel.  
+
+\medskip
+Cependant, pour décrire un \emph{vrai} équilibre à température finie, il faut la distribution à l'équilibre :
+\begin{eqnarray*}
+	\rho_{\mathrm{eq}}\;\doteq\;\langle \rho \rangle	 \quad \qquad\text{et son lien fonctionnel avec }w.
+\end{eqnarray*}
+%\[
+%\boxed{\;
+%  \rho_{\mathrm{eq}}\;=\;\langle \rho(\theta) \rangle
+%\;}
+%\qquad\text{et son lien fonctionnel avec }w(\theta).
+%\]
+La réponse fut donnée dans les travaux pionniers de \textsc{Yang \& Yang} (1969).  
+Leur approche repose sur l’analyse de la \textbf{structure statistique des états propres} partageant la même distribution $\rho(\theta)$.
+
+% : combien d’états microscopiquement distincts correspondent à ce même « macro‑état » ?
+
+\paragraph{Distribution de rapidité comme macro-état.}
+
+Chaque distribution de rapidité $\rho(\theta)$ ne correspond pas à un état propre unique, mais à un grand {\bf ensemble de micro-états} : différents choix des ensembles de quasi-moments $(\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket })_{N \in \mathbb{Z}} $ peuvent conduire à la même densité de distribution à l’échelle macroscopique. Ainsi, $\rho(\theta)$ doit être interprétée comme un {\bf macro-état}, qui agrège un très grand nombre d’états propres microscopiques.
+
+La question thermodynamique devient alors : {\bf Combien de micro-états microscopiquement distincts sont compatibles avec un même macro-état $\rho(\theta)$ ?} 
+
+\medskip
+Plus précisément, dans l’expression de moyenne des operateurs locaux \eqref{chap.2.moyenne.2}, apparaît le facteur
+\(
+\Omega[\rho]
+\),
+qui compte ces états propres.  
+La détermination de $\Omega[\rho]$ (ou équivalemment de l’entropie de Yang–Yang $\mathcal{S}_{YY}[\rho]$ car 
+\(
+\Omega[\rho] = e^{L\mathcal{S}_{YY}[\rho]}
+\)
+avec $L$ la taille du système
+) est donc la clé pour relier \emph{(i)} le poids spectral $w(\theta)$ imposé dans le GGE et \emph{(ii)} la distribution de rapidité moyenne $\rho_{\mathrm{eq}}(\theta)$ observée à l’équilibre.
+
+\paragraph{Dénombrement local des configurations microcanoniques.}
+Pour répondre à cette question, on subdivise l’axe des rapidités en petites tranches ou cellules de largeur $\delta \theta$, chacune centrée en un point $\theta_a$. Dans une tranche $[\theta_a, \theta_a + \delta\theta]$, on suppose que la densité $\rho(\theta)$ est à peu près constante. Le nombre de quasi-particules dans cette tranche est alors approximativement :
+\begin{eqnarray*}
+	N_a = L\rho(\theta_a) \delta \theta,
+\end{eqnarray*}
+et le nombre total d'états disponibles (i.e., le nombre d’états possibles si toutes les positions en moment étaient disponibles) est donné par la densité totale de niveaux 
+\begin{eqnarray*}
+	M_a = L\rho_s(\theta_a) \delta \theta.
+\end{eqnarray*}
+La densité de niveaux $\rho_s(\theta)$ tient compte du fait que les moments sont quantifiés de manière discrète, en raison des équations de Bethe (voir équation (??)).
+
+Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$ est donné par :
+	
+	
+	\begin{figure}[H]
+		\centering 
+		\begin{tikzpicture}
+			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/Occupation_code}	
+			\begin{scope}[transform canvas={scale=0.6}]
+			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/Figures/Occupation_theta_code}	
+			\end{scope}
+			
+			\draw[color = red , scale = 0.5 , draw = none ] (-13.5 , -1) rectangle (13 , 10) ; 
+				
+			
+		\end{tikzpicture}	
+		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
+	\end{figure}
+	
+	
+\begin{eqnarray}
+	\Omega(\theta_a) & \approx  & \binom{M_a}{N_a} ~= ~   \frac{[ L\rho_s ( \theta ) \delta \theta ] ! }{ [ L\rho ( \theta ) \delta \theta ] ! [( L\rho_s ( \theta ) - L\rho ( \theta ) )  \delta \theta ] ! }. 	
+\end{eqnarray}
+
+\paragraph{Estimation asymptotique à l’aide de Stirling.}
+
+En utilisant la formule de Stirling :
+\begin{eqnarray}
+	n! & \underset{n \to \infty}{\sim} &  n^n e^{-n} \sqrt{2\pi n}.,
+\end{eqnarray}	
+composé du fonction logarithmique, il vient cette équivalence : 
+\begin{eqnarray}
+	\ln n! & \underset{n \to \infty}{\rightarrow} & n \ln n \underbrace{- n + \ln \sqrt{2 \pi n }}_{o \left ( n \ln n \right ) } ,\\
+	&  \underset{n \to \infty}{\sim} & n \ln n  
+\end{eqnarray}
+	
+$\# \mbox{conf.}$ est jamais null donc on peut approximer, pour de grandes valeurs de $L$ et de $\delta\theta$  : 
+\begin{eqnarray}
+    \ln \Omega(\theta) & \underset{\underset{\rho (\theta )\leq  \rho_s (\theta )}{\rho \delta \theta  \to \infty}}{\sim}   & L [ \rho_s\ln \rho_s - \rho \ln \rho - (\rho_s - \rho ) \ln ( \rho_s - \rho) ] (\theta )\delta \theta .
+\end{eqnarray}
+
+Cette expression donne la contribution par unité de $\theta$ à l’{\bf entropie}  associée à la cellule autour de $\theta_a$.
+
+\paragraph{Entropie de Yang-Yang : définition .}
+%L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
+%Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de Yang-Yang :
+
+%L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
+%Le nombre total de micro-états compatibles avec une distribution macroscopique $\rho(\theta)$ est donné par le produit des nombres de configurations pour chaque cellule de rapidité $[\theta, \theta + \delta \theta]$.
+
+%En prenant la sum le logarithme des $\Omega(\theta)$ , on obtient l'entropie totale de Yang-Yang. Pour alléger la notation, cette somme sur les tranches est notée :
+
+Le nombre total de micro-états compatibles avec une distribution macroscopique donnée $\rho(\theta)$ est obtenu en prenant le produit des nombres de configurations pour chaque cellule de rapidité $[\theta_a, \theta_a + \delta \theta]$ : $ \Omega(\theta_a)$ .
+En prenant le logarithme de ce produit, on accède à l'entropie totale. Pour alléger la notation, cette somme sur les cellules est notée
+\(
+	\sum_a^{\theta-\mbox{\tiny cellules}}	
+\)
+où chaque $a$ indexe une cellule de rapidité $[\theta_a, \theta_a + \delta\theta]$.
+On écrit alors :
+\begin{eqnarray}
+    \ln \Omega[\rho] & = & \sum_a^{\theta-\mbox{\tiny cellules}} \ln \Omega(\theta_a), \\
+    & \approx &   L\mathcal{S}_{YY} [ \rho ] , 	
+\end{eqnarray}
+où l’on définit l’\textbf{entropie de Yang–Yang} par la formule discrétisée :
+\begin{eqnarray}
+    \mathcal{S}_{YY}[\rho] & \doteq & \sum_a^{\theta-\mbox{\tiny cellules}} \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta_a) \delta \theta .
+\end{eqnarray}
+
+%\paragraph{Énergie généralisée.}	
+%Les variations de $w(\theta)$ étant négligeables sur chaque tranche de largeur $\delta\theta$, on peut approximer l’énergie généralisée comme :%  $\sum_{a = 1}^N  f(\theta_a) = \sum_{a \vert tranche } f(\theta_a) \Pi( \theta_a)\delta \theta$.
+
+%\begin{eqnarray}
+%	 \mathcal{W} & = & \sum_{a = 1}^N  w(\theta_a)	 ~ \sim ~ L\mathcal{W}[\rho] ~=~ L \sum_a^{\theta-\mbox{\tiny tranches}}	 w(\theta_a) \rho(\theta_a) \delta \theta.
+%\end{eqnarray}
+
+\paragraph{Énergie généralisée par unité de longueur : définition.}
+
+Dans le cadre du Generalized Gibbs Ensemble (GGE), l’\textbf{énergie généralisée} associée à une distribution de rapidité $\rho(\theta)$ et à un poids spectral $w(\theta)$ est définie comme la somme des poids assignés à chaque quasi-particule. 
+Dans la limite thermodynamique, en supposant que $w(\theta)$ varie lentement sur chaque tranche $[\theta_a, \theta_a + \delta\theta]$ ,  cette somme soit l’\textbf{énergie généralisée par unité de longueur} $\mathcal{W}$ se se définit par :
+\begin{eqnarray}
+	L \mathcal{W}(\{\theta_a\}) \doteq  \sum_{a = 1}^N w(\theta_a) 
+	 \underset{\mbox{\tiny therm .}}{\sim}  L \mathcal{W}[\rho]  \doteq  L \sum_a^{\theta\text{-cellules}} w(\theta_a) \rho(\theta_a)\, \delta\theta. 
+\end{eqnarray}
+
+%La fonctionnelle
+%\(
+%\mathcal{W}[\rho] = \int d\theta\, w(\theta)\, \rho(\theta)
+%\)
+%représente donc l’énergie généralisée par unité de longueur, dans l’état macroscopique défini par la distribution $\rho$.
+
+
+\paragraph{Moyenne des Observables locales dans la limite thermodynamique.}
+
+Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.2} devient :	
+	
+\begin{eqnarray}\label{chap.2.moyenne.3}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} &  \approx &  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
+\end{eqnarray}
+où la somme $\sum\rho$ porte sur toutes les distributions possibles de rapidité $\rho$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Passage à la limite continue.}
+%En faisant tandre $\delta \theta \to 0 $ , les somme devienen des integrales 
+En faisant tendre $\delta\theta \to 0$, les sommes deviennent des intégrales 
+%\(
+%\sum_a^{\theta-\mbox{\tiny tranches}}\delta \theta   \underset{\delta \theta \to 0 }{\rightarrow}  \int d \theta ,	
+%\)
+et l'entropie de Yang-Yang ainsi que l’énergie généralisée par unité de longueur prennent la forme :
+\begin{eqnarray}
+	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) ,\\
+	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta 		
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Formule fonctionnelle pour les moyennes.}
+
+%et la valeur moyenne des opservables $\langle \operator{\mathcal{O}} \rangle$ s'écrit commes une intégrale de chemin/formelle
+Dans la limite thermodynamique $L \to \infty$, la somme sur les distributions de rapidité $\rho$ admissibles peut être approximée par une intégrale fonctionnelle sur l’espace des densités de rapidité continues, munie d’une mesure fonctionnelle $\mathcal{D}\rho$ : 
+\(
+\sum_{\rho } \sim \int \mathcal{D} \rho .
+\)
+Cette correspondance repose sur l’idée que les macro-états admissibles deviennent denses dans l’espace fonctionnel, et que le poids statistique associé à chaque configuration est donné par l’entropie de Yang–Yang.
+Finalement, la moyenne d'une observable dans le GGE \eqref{chap.2.moyenne.3} s’écrit comme une intégrale fonctionnelle/de chemin :
+\begin{eqnarray}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}. \label{chap:TBA:eq:ensemble_average}
+\end{eqnarray}
+
+%avec $\mathcal{O}[\rho]$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$.	
+%où $\mathcal{O}[\rho]$ est la valeur de l’observable dans un état propre caractérisé par la distribution $\rho$.
+
+%\input{TBA/Relax/Conf/main}
 \subsection{Équations intégrales de la TBA}
-\input{TBA/Relax/eqTBA/main}
+
+\paragraph{Moyenne des observables dans l’ensemble généralisé de Gibbs.}
+
+\paragraph{Approximation au point selle.}
+
+Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée par la configuration \( \rho_{eq} \) qui maximise le poids exponentiel. Il s’agit de la densité de rapidité la plus probable, solution d’un problème de maximisation :
+\begin{eqnarray}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & \approx &  \langle\operator{\mathcal{O}}\rangle_{[\rho_{eq} ]}.	
+	\label{chap:TBA:eq:ensemble_average:approx}
+\end{eqnarray}
+
+Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe l’action effective au voisinage de la distribution dominante.
+
+
+\paragraph{Développement fonctionnel au premier ordre.}
+
+On effectue un développement de Taylor fonctionnel de l'action à l’ordre linéaire :
+
+\begin{eqnarray*}
+	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] +  \left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \langle \rho \rangle }	(\delta \rho),
+	\label{chap:TBA:eq:action}	
+\end{eqnarray*}	
+
+
+La condition de stationnarité au point selle impose :
+
+\begin{eqnarray*}
+	\delta (\mathcal{S}_{YY} - \mathcal{W}) & = & 0  	
+\end{eqnarray*}
+
+soit 
+
+\begin{equation}
+\left. \frac{\delta \mathcal{S}_{YY}}{\delta \rho} \right|_{\rho = \langle \rho \rangle} = \left. \frac{\delta \mathcal{W}}{\delta \rho} \right|_{\rho = \langle \rho \rangle}.
+\end{equation}
+
+\paragraph{Équation intégrale de la TBA.}
+
+Cette égalité donne naissance à une équation intégrale pour le poids effectif \( w \), défini comme la dérivée fonctionnelle de l'énergie généralisée :
+
+\begin{eqnarray*}
+	w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~= ~\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~=~ \ln ( \langle \nu \rangle^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \langle \nu \rangle )
+\end{eqnarray*}
+
+où \( \star \) désigne la \textit{convolution} sur l’espace des rapidités. La densité de rapidité moyenne et la fonction d’occupation vérifient :
+
+\begin{equation}
+\langle \rho \rangle = \langle \nu \rangle \cdot \langle \rho_s \rangle
+\end{equation}
+et
+\begin{equation}
+\langle \nu \rangle = \frac{1}{1 + e^{\beta \epsilon(\theta)}}
+\end{equation}
+
+Cette dernière équation relie la fonction d’occupation \( \langle \nu \rangle \) à une pseudo-énergie \( \epsilon(\theta) \), caractéristique de la théorie thermodynamique de Bethe (TBA).
+
+%\input{TBA/Relax/eqTBA/main}
 
 
