@@ -756,7 +756,7 @@ En faisant tendre $\delta\theta \to 0$, les sommes deviennent des intégrales
 %\)
 et l'entropie de Yang-Yang ainsi que l’énergie généralisée par unité de longueur prennent la forme :
 \begin{eqnarray}
-	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) ,\\
+	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) , \label{chap.2.entropi.int}\\
 	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta 		
 \end{eqnarray}
 
@@ -769,10 +769,92 @@ Dans la limite thermodynamique $L \to \infty$, la somme sur les distributions de
 \sum_{\rho } \sim \int \mathcal{D} \rho .
 \)
 Cette correspondance repose sur l’idée que les macro-états admissibles deviennent denses dans l’espace fonctionnel, et que le poids statistique associé à chaque configuration est donné par l’entropie de Yang–Yang.
+La mesure fonctionnelle $\mathcal{D}\rho$ parcourt l’espace des densités
+$\rho(\theta)$ continues, \emph{chaque configuration étant pondérée par le
+facteur exponentiel}
+\(
+e^{\,L(\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho])}.
+\)
 Finalement, la moyenne d'une observable dans le GGE \eqref{chap.2.moyenne.3} s’écrit comme une intégrale fonctionnelle/de chemin :
 \begin{eqnarray}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}. \label{chap:TBA:eq:ensemble_average}
 \end{eqnarray}
+
+
+%----------------------
+%------------------------------------------------------------------
+%\paragraph{Passage de la somme discrète à l’intégrale fonctionnelle.}
+
+%Dans la limite thermodynamique $L\to\infty$, l’ensemble (discret) des
+%distributions de rapidité admissibles devient dense dans l’espace
+%fonctionnel ; la somme correspondante peut donc s’approximer par une
+%intégrale fonctionnelle :
+%\[
+%\sum_{\rho}\; \longrightarrow\; \int\! \mathcal{D}\rho .
+%\]
+%La mesure fonctionnelle $\mathcal{D}\rho$ parcourt l’espace des densités
+%$\rho(\theta)$ continues, \emph{chaque configuration étant pondérée par le
+%facteur exponentiel}
+%\(
+%e^{\,L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]},
+%\)
+%qui combine
+%\begin{itemize}
+%\item l’\textbf{entropie de Yang–Yang}
+%      $\displaystyle
+%        \mathcal{S}_{YY}[\rho]
+%        =\!\int d\theta\,
+%          \bigl[
+%            \rho_s\ln\rho_s
+%            -\rho\ln\rho
+%            -(\rho_s-\rho)\ln(\rho_s-\rho)
+%          \bigr]$,
+%\item le \textbf{coût énergétique généralisé}
+%      $\displaystyle
+%        \mathcal{W}[\rho]
+%        =\!\int d\theta\, w(\theta)\,\rho(\theta)$,
+%\end{itemize}
+%où $w(\theta)$ est le \emph{poids spectral} fixé par le GGE.
+
+%------------------------------------------------------------------
+%\paragraph{Moyenne d’une observable dans le GGE.}
+
+%On obtient alors la formule de champ moyen
+%\begin{equation}\label{eq:GGE-functional-average}
+%\bigl\langle\mathcal{O}\bigr\rangle_{\!{\rm GGE}}
+%=
+%\frac{\displaystyle
+%      \int \mathcal{D}\rho\;
+%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}\,
+%      \langle\mathcal{O}\rangle_{[\rho]}}
+%     {\displaystyle
+%      \int \mathcal{D}\rho\;
+%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}}.
+%\end{equation}
+
+%------------------------------------------------------------------
+\paragraph{Interprétation thermodynamique.}
+
+\begin{itemize}[label = $\bullet$] 
+\item $\mathcal{S}_{YY}[\rho]$ \emph{compte} le logarithme du nombre de
+      micro-états réalisant la distribution $\rho(\theta)$ :
+      c’est l’\textbf{entropie combinatoire}.
+\item $\mathcal{W}[\rho]$ mesure le \emph{coût énergétique généralisé}
+      associé à cette distribution, dicté par le poids spectral $w(\theta)$.
+\end{itemize}
+
+Leur différence
+\[
+(\mathcal{S}_{YY}-\mathcal{W})[\rho]
+\]
+joue donc le rôle d’une \emph{fonction thermodynamique effective}
+(analogue à une entropie libre).  
+L’exposant $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$ fixe la \textbf{probabilité relative} d’un
+macro-état $\rho(\theta)$ dans le GGE : le terme entropique favorise la
+multiplicité des états, tandis que le terme énergétique pénalise les
+configurations coûteuses — d’où la compétition caractéristique de
+l’équilibre statistique.
+
 
 %avec $\mathcal{O}[\rho]$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$.	
 %où $\mathcal{O}[\rho]$ est la valeur de l’observable dans un état propre caractérisé par la distribution $\rho$.
@@ -782,58 +864,266 @@ Finalement, la moyenne d'une observable dans le GGE \eqref{chap.2.moyenne.3} s�
 
 \paragraph{Moyenne des observables dans l’ensemble généralisé de Gibbs.}
 
-\paragraph{Approximation au point selle.}
+\paragraph{Approximation au point selle («\,méthode de la selle statique\,»)}
 
-Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée par la configuration \( \rho_{eq} \) qui maximise le poids exponentiel. Il s’agit de la densité de rapidité la plus probable, solution d’un problème de maximisation :
+Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée par la configuration \( \rho_{eq} \) qui maximise le poids exponentiel $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$  dans l'expression \eqref{chap:TBA:eq:ensemble_average}. Il s’agit de la densité de rapidité la plus probable, solution d’un problème de maximisation. On obtient à l’ordre principal
 \begin{eqnarray}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & \approx &  \langle\operator{\mathcal{O}}\rangle_{[\rho_{eq} ]}.	
 	\label{chap:TBA:eq:ensemble_average:approx}
 \end{eqnarray}
 
-Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe l’action effective au voisinage de la distribution dominante.
+Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe la \emph{fonction thermodynamique effective}, $\mathcal{S}_{YY}-\mathcal{W}$  au voisinage de la distribution dominante.
 
 
 \paragraph{Développement fonctionnel au premier ordre.}
 
-On effectue un développement de Taylor fonctionnel de l'action à l’ordre linéaire :
-
+%On effectue un développement de Taylor fonctionnel de l'action à l’ordre linéaire en $\rho = \rho_{eq} + \delta \rho$ :
+Écrivons
+\(
+\rho=\rho_{\text{eq}}+\delta\rho
+\)
+et développons $(\mathcal{S}_{YY}-\mathcal{W})[\rho]$ à l’ordre linéaire :
 \begin{eqnarray*}
-	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] +  \left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \langle \rho \rangle }	(\delta \rho),
+	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[ \rho_{eq}] - \mathcal{W}[ \rho_{eq}] +  \left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \rho_{eq} }	(\delta \rho) + \mathcal{O}(\delta \rho^2 ) ,
 	\label{chap:TBA:eq:action}	
 \end{eqnarray*}	
-
-
 La condition de stationnarité au point selle impose :
-
-\begin{eqnarray*}
-	\delta (\mathcal{S}_{YY} - \mathcal{W}) & = & 0  	
-\end{eqnarray*}
-
+\(
+	\left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \rho_{eq} }	  =  0  	
+\)
 soit 
-
 \begin{equation}
-\left. \frac{\delta \mathcal{S}_{YY}}{\delta \rho} \right|_{\rho = \langle \rho \rangle} = \left. \frac{\delta \mathcal{W}}{\delta \rho} \right|_{\rho = \langle \rho \rangle}.
+\left. \frac{\delta \mathcal{S}_{YY}}{\delta \rho} \right|_{\rho = \rho_{eq}} = \left. \frac{\delta \mathcal{W}}{\delta \rho} \right|_{\rho = \rho_{eq}}. \label{chap:TBA:eq:stationnarite}
 \end{equation}
 
+%%%%%%%%%%%%%%%%
+%-----------------------------------------------------
+
+%------------------------------------------------------------------
+%\subsection{Équations intégrales de la TBA}
+
+%\paragraph{Moyenne des observables dans le Generalized Gibbs Ensemble.}
+
+%Dans la limite thermodynamique, la moyenne d’une observable locale
+%s’écrit formellement comme une intégrale fonctionnelle sur les densités de
+%rapidité\,\footnote{%
+%La mesure fonctionnelle $\mathcal{D}\rho$ est la limite continue de la
+%somme discrète sur les macro-états admissibles, chacun étant pondéré par
+%le facteur combinatoire $e^{L\mathcal{S}_{YY}[\rho]}$.}
+%
+%\begin{equation}\label{eq:TBA:ensemble_average}
+%\left\langle \mathcal{O} \right\rangle_{\!\text{GGE}}
+%=\frac{\displaystyle
+%      \int\!\mathcal{D}\rho\;
+%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}\;
+%      \langle\mathcal{O}\rangle_{[\rho]}}
+%     {\displaystyle
+%      \int\!\mathcal{D}\rho\;
+%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}} .
+%\end{equation}
+
+%------------------------------------------------------------------
+%\paragraph{Approximation au point selle («\,méthode de la selle statique\,»).}
+
+%Lorsque $L\to\infty$, les intégrales \eqref{eq:TBA:ensemble_average}
+%sont dominées par la distribution
+%$\rho_{\text{eq}}$ qui \emph{maximise} l’exposant
+%\(
+%\Phi[\rho]=\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho].
+%\)
+%On obtient à l’ordre principal
+%\begin{equation}
+%\left\langle \mathcal{O} \right\rangle_{\!\text{GGE}}
+%\;\simeq\;
+%\langle \mathcal{O} \rangle_{[\rho_{\text{eq}}]} .
+%\label{eq:TBA:saddle_average}
+%\end{equation}
+
+%------------------------------------------------------------------
+%\paragraph{Condition de stationnarité et équation variationnelle.}
+
+%Écrivons
+%\(
+%\rho=\rho_{\text{eq}}+\delta\rho
+%\)
+%et développons $\Phi[\rho]$ à l’ordre linéaire :
+%\[
+%\Phi[\rho]\;=\;
+%\Phi[\rho_{\text{eq}}]
+%+
+%\int d\theta\,
+%\left.
+%\frac{\delta\Phi}{\delta\rho(\theta)}
+%\right|_{\rho_{\text{eq}}}
+%\delta\rho(\theta)
+%+O(\delta\rho^{2}).
+%\]
+%La stationnarité impose
+%\(
+%\dfrac{\delta\Phi}{\delta\rho(\theta)}\bigl|_{\rho_{\text{eq}}}=0,
+%\)
+%soit
+%\begin{equation}
+%\left.
+%\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}
+%\right|_{\rho_{\text{eq}}}
+%=
+%\left.
+%\frac{\delta\mathcal{W}}{\delta\rho(\theta)}
+%\right|_{\rho_{\text{eq}}}.
+%\label{eq:TBA:variational_condition}
+%\end{equation}
+
+%------------------------------------------------------------------
+%\paragraph{Forme explicite : introduction de la pseudo-énergie.}
+
+%Pour le modèle de Lieb–Liniger (et, plus généralement, pour un modèle
+%intégrable à noyau $\Delta$), on introduit la \emph{pseudo-énergie}
+%\[
+%\varepsilon(\theta)
+%\;=\;
+%w(\theta)
+%\;+\;\Bigl[\Delta\star\ln\!\bigl(1+e^{-\varepsilon}\bigr)\Bigr](\theta),
+%\]
+%obtenue en réécrivant \eqref{eq:TBA:variational_condition}.
+%Le \emph{facteur d’occupation}
+%\(
+%\nu(\theta)=\rho(\theta)/\rho_s(\theta)
+%\)
+%se donne alors par la statistique de type Fermi-Dirac
+%\[
+%\nu(\theta)=\frac1{1+e^{\varepsilon(\theta)}}.
+%\]
+
+%Les équations intégrales complètes de la \textbf{Thermodynamique de Bethe}
+%(TBA) sont donc
+%\begin{align}
+%2\pi\rho_s(\theta) &= 1 + \bigl[\Delta \star \rho\bigr](\theta),
+%\label{eq:TBA:rho_s}\\[4pt]
+%\rho(\theta) &= \frac{\rho_s(\theta)}{1+e^{\varepsilon(\theta)}},
+%\qquad
+%\varepsilon(\theta)=w(\theta)+\bigl[\Delta\star\ln(1+e^{-\varepsilon})\bigr](\theta).
+%\label{eq:TBA:epsilon}
+%\end{align}
+%Elles déterminent sans ambiguïté la distribution d’équilibre
+%$\rho_{\text{eq}}(\theta)$ en fonction du poids spectral $w(\theta)$.
+
+%\medskip
+%Ainsi, la méthode du point selle relie le \emph{poids spectral}
+%(caractéristique du GGE) à la distribution de rapidité la plus probable,
+%et permet d’évaluer les observables par la formule
+%\label{chap:TBA:eq:ensemble_average:approx}.
+
+
+%-----------------------------------------------------
+%%%%%%%%%%%%%%%%
+
+%\paragraph{Équation intégrale de la TBA.}
+
+%Cette égalité donne naissance à une équation intégrale pour le poids spectral \( w \), défini comme la dérivée fonctionnelle de l'énergie généralisée pris en $\rho_{eq}$ :
+%\(
+%w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho =  \rho_{eq} }
+%\)
+%qui par stationnarité (cf équation \eqref{chap:TBA:eq:stationnarite}) est égale à la dérivée fonctionnelle de l'entropie de Yang-Yang pris en $\rho_{eq}$ :
+%\(
+%\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \rho_{eq} }
+%\) 
+%qui lui vaux 
+%\(
+%\ln ( \nu_{eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{eq })
+%\)
+%avec le facteur d'ocupation à l'équilibre $\nu_{eq} = \rho_{eq}/{\rho_{eq}}_s$. Ainci on peux s'arreter sur l'équation 
+%\begin{eqnarray}
+%	w & = & \ln ( \nu_{eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{eq }).\label{chap:TBA:eq:w}
+%\end{eqnarray}
+
+%\medskip
+%Ainsi, la méthode du point selle relie le \emph{poids spectral}
+%(caractéristique du GGE) à la distribution de rapidité la plus probable,
+%et permet d’évaluer les observables par la formule
+%\eqref{chap:TBA:eq:ensemble_average:approx}.\\
+
+%\paragraph{Forme explicite : introduction de la pseudo-énergie.}
+
+%Le \emph{facteur d’occupation}
+%\(
+%\nu_{eq}
+%\)
+%se donne alors par la statistique de type Fermi-Dirac
+%\begin{eqnarray}
+%	\nu_{eq}=\frac1{1+e^{\epsilon}},\label{chap:TBA:eq:nu_eq}
+%\end{eqnarray}
+%où \emph{pseudo-énergie} 
+%\(
+%\epsilon
+%\)
+%se définie en intectant \eqref{chap:TBA:eq:nu_eq} dans \eqref{chap:TBA:eq:w} : 
+%\begin{eqnarray}
+%	\epsilon & = & w + \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\epsilon}).\label{chap:TBA:eq:e}	
+%\end{eqnarray}
+
+
+%---------------------------------
+%------------------------------------------------------------------
 \paragraph{Équation intégrale de la TBA.}
 
-Cette égalité donne naissance à une équation intégrale pour le poids effectif \( w \), défini comme la dérivée fonctionnelle de l'énergie généralisée :
+La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} implique :
+\begin{eqnarray}
+	\left.\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}} = \left.\frac{\delta\mathcal{W}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}}\;\doteq\;w(\theta),
+\end{eqnarray}
+En utilisant l’expression explicite de l’entropie de Yang–Yang \eqref{chap.2.entropi.int}, on obtient l’identité fonctionnelle
+\begin{eqnarray}
+	w & = & \ln ( \nu_{\!eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{\!eq}).\label{chap:TBA:eq:w}
+\end{eqnarray}
+où
+\(
+\nu_{\!eq}=\rho_{\!eq}/\rho_{s,\!eq}
+\)
+est le \textbf{facteur d’occupation} à l’équilibre.
+%------------------------------------------------------------------
+\paragraph{Forme pseudo-énergie.}
+La \textbf{pseudo-énergie} $\epsilon$ se donne alors par la statistique de type Fermi-Dirac
+\begin{eqnarray}
+	\epsilon =\ln(\nu^{-1}_{\!eq}-1),\qquad\nu_{\!eq}=\frac{1}{1+e^{\epsilon}}.\label{chap:TBA:eq:nu}%\tag{\text{TBA--$\nu$}} 
+\end{eqnarray}
+En réinjectant \eqref{chap:TBA:eq:nu} dans \eqref{chap:TBA:eq:w} on obtient
+l’équation intégrale canonique de la thermodynamique de Bethe :
+\begin{eqnarray}
+	\epsilon & = & w + \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\epsilon}).\label{chap:TBA:eq:e}%\tag{\text{TBA–-$\varepsilon$}}	
+\end{eqnarray}
+%\[
+%\boxed{\;
+%\varepsilon(\theta)
+%=
+%w(\theta)
+%+\frac{\Delta}{2\pi}\star\ln\!\bigl[1+e^{-\varepsilon(\theta)}\bigr]
+%\;}
+%\tag{TBA–$\varepsilon$}\label{eq:TBA:eq:e}
+%\]
 
-\begin{eqnarray*}
-	w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~= ~\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~=~ \ln ( \langle \nu \rangle^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \langle \nu \rangle )
-\end{eqnarray*}
+Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w(\theta)\), caractéristique du GGE.
 
-où \( \star \) désigne la \textit{convolution} sur l’espace des rapidités. La densité de rapidité moyenne et la fonction d’occupation vérifient :
+\medskip
+Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral} $w$  (caractéristique du GGE) au \emph{macro-état le plus probable} $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
 
-\begin{equation}
-\langle \rho \rangle = \langle \nu \rangle \cdot \langle \rho_s \rangle
-\end{equation}
-et
-\begin{equation}
-\langle \nu \rangle = \frac{1}{1 + e^{\beta \epsilon(\theta)}}
-\end{equation}
 
-Cette dernière équation relie la fonction d’occupation \( \langle \nu \rangle \) à une pseudo-énergie \( \epsilon(\theta) \), caractéristique de la théorie thermodynamique de Bethe (TBA).
+
+
+%\begin{eqnarray*}
+%	w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho =  \rho_{eq} } ~= ~\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } ~=~ \ln ( \langle \nu \rangle^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \langle \nu \rangle )
+%\end{eqnarray*}
+
+%où \( \star \) désigne la \textit{convolution} sur l’espace des rapidités. La densité de rapidité moyenne et la fonction d’occupation vérifient :
+
+%\begin{equation}
+%\langle \rho \rangle = \langle \nu \rangle \cdot \langle \rho_s \rangle
+%\end{equation}
+%et
+%\begin{equation}
+%\langle \nu \rangle = \frac{1}{1 + e^{\beta \epsilon(\theta)}}
+%\end{equation}
+
+%Cette dernière équation relie la fonction d’occupation \( \langle \nu \rangle \) à une pseudo-énergie \( \epsilon(\theta) \), caractéristique de la théorie thermodynamique de Bethe (TBA).
 
 %\input{TBA/Relax/eqTBA/main}
 
