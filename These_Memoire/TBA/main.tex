@@ -570,7 +570,7 @@ En prenant $f(\theta) = 1$ dans l’équation~\eqref{eq:dressing}, on obtient :
 1^{\mathrm{dr}}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}}\bigr)
 \) soit directement : 
 \begin{eqnarray}
-	2\pi\rho_s = 1^{\mathrm{dr}},
+	2\pi\rho_s = 1^{\mathrm{dr}},\label{eq:TBA-rhos-2}
 \end{eqnarray}
 ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
 
@@ -1084,12 +1084,12 @@ est le \textbf{facteur d’occupation} à l’équilibre.
 \paragraph{Forme pseudo-énergie.}
 La \textbf{pseudo-énergie} $\epsilon$ se donne alors par la statistique de type Fermi-Dirac
 \begin{eqnarray}
-	\epsilon =\ln(\nu^{-1}_{\!eq}-1),\qquad\nu_{\!eq}=\frac{1}{1+e^{\epsilon}}.\label{chap:TBA:eq:nu}%\tag{\text{TBA--$\nu$}} 
+	\beta \epsilon =\ln(\nu^{-1}_{\!eq}-1),\qquad\nu_{\!eq}=\frac{1}{1+e^{\beta \epsilon}}.\label{chap:TBA:eq:nu}%\tag{\text{TBA--$\nu$}} 
 \end{eqnarray}
 En réinjectant \eqref{chap:TBA:eq:nu} dans \eqref{chap:TBA:eq:w} on obtient
 l’équation intégrale canonique de la thermodynamique de Bethe :
 \begin{eqnarray}
-	\epsilon & = & w + \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\epsilon}).\label{chap:TBA:eq:e}%\tag{\text{TBA–-$\varepsilon$}}	
+	\beta \epsilon & = & w - \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\beta \epsilon}).\label{chap:TBA:eq:e}%\tag{\text{TBA–-$\varepsilon$}}	
 \end{eqnarray}
 %\[
 %\boxed{\;
@@ -1101,11 +1101,71 @@ l’équation intégrale canonique de la thermodynamique de Bethe :
 %\tag{TBA–$\varepsilon$}\label{eq:TBA:eq:e}
 %\]
 
-Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w(\theta)\), caractéristique du GGE.
+Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w\), caractéristique du GGE.
 
 \medskip
-Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral} $w$  (caractéristique du GGE) au \emph{macro-état le plus probable} $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
+Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du GGE) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
 
+
+\paragraph{Résolution numérique de l’équation TBA.}
+
+On se place à l’équilibre canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
+\begin{equation}
+  w(\theta)=\beta\bigl[\varepsilon(\theta)-\mu\bigr],\qquad\beta=\tfrac1T\; (k_B = 1 ),\quad\varepsilon(\theta)=\tfrac{\theta^{2}}{2}\;(m=1).\label{eq:TBA:w:canonical}
+\end{equation}
+En injectant \eqref{eq:TBA:w:canonical} dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire :
+\begin{eqnarray*}
+	\beta \epsilon & = & \beta (\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon} \right) ,\label{eq:num:TBA}
+\end{eqnarray*}
+Cette équation définit un opérateur contractant sur l’espace des fonctions
+\( \varepsilon(\theta) \) ; son Jacobien a une norme strictement
+inférieure à 1, garantissant la convergence de l’itération de Picard.
+
+\medskip
+\subparagraph{Algorithme d’itération.}  
+La structure contractante de l’équation garantit l’absence de cycles ou de points fixes multiples, assurant la convergence de l’itération vers l’unique solution admissible.
+L’équation \eqref{eq:num:TBA} est non linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
+\(
+  \epsilon_0 = \epsilon - \mu,
+\)
+puis on construit une suite de fonctions \(\varepsilon_n\) définie par
+\begin{eqnarray*}
+	\beta \epsilon_{n+1} & = & \beta \epsilon_0 -   \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon_n} \right) ,\quad n\ge0
+\end{eqnarray*}
+L’itération est poursuivie jusqu’à convergence, que l’on peut tester via le critère numérique
+\(
+  \beta \left\| \varepsilon_{n+1} - \varepsilon_n \right\|_\infty < 10^{-12},
+\)
+où \(\|\cdot\|_\infty\) désigne la norme \(L^\infty\) (ou un maximum discret après discrétisation).
+
+
+\medskip
+\subparagraph{Facteur d’occupation et densités.}  
+Une fois la pseudo-énergie \( \epsilon(\theta) \) convergée, le facteur d’occupation  à l'équilibre est obtenu en injectant $\epsilon$ dans l’équation \eqref{chap:TBA:eq:nu}, ce qui donne  $\nu_{\!eq}$.
+ 
+On en déduit ensuite la densité d'état à l'équilibre $\rho_{s,eq}$ via le {\bf dressing}  de la fonction constante $f(\theta) = 1$, selon \eqref{eq:TBA-rhos-2}, rappelée ici pour mémoire : $ 2\pi \rho_{s,eq}  =  1^{\mathrm{dr}}_{[\nu_{\! eq}]}$.\\
+
+L’opérateur de dressing \eqref{eq:dressing} étant linéaire, il se résout numériquement sous la forme :
+\begin{eqnarray*}
+	\left\{ \mathrm{id} - \frac{\Delta}{2\pi} \star ( \nu \ast \cdot ) \right\} f^{\mathrm{dr}}_{[\nu]} & = & f,\label{eq:TBA:rho_s:num}
+\end{eqnarray*}
+où $\mathrm{id} \colon f \mapsto f$ est l’identité fonctionnelle, et $\ast$ désigne la multiplication.
+Après discrétisation de la variable $\theta$, cette équation devient un système linéaire de type $Ax=b$ , facilement résoluble numériquement.
+
+La distribution de rapidité est alors obtenue par $\rho_{\!eq} = \nu_{\!eq} \ast \rho_{\! s,eq}$.\\
+
+\medskip
+Ainsi, pour tout couple \((T,\mu)\), l’algorithme fournit la pseudo-énergie \( \varepsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\mathrm{eq}} \) à l’équilibre thermique, prêts à être utilisés pour le calcul des observables.
+
+%\begin{equation}
+%  2\pi\,\rho_{s,\mathrm{eq}}
+%  = 1^{\mathrm{dr}}_{[\nu_{\mathrm{eq}}]}
+%  \quad\Longleftrightarrow\quad
+%  \bigl[\mathrm{id}-\tfrac{\Delta}{2\pi}\star(\nu_{\mathrm{eq}}\cdot)\bigr]
+%  \rho_{s,\mathrm{eq}}
+%  =\tfrac{1}{2\pi}.
+%  \label{eq:TBA:rho_s:num}
+%\end{equation}
 
 
 
@@ -1128,3 +1188,4 @@ Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spect
 %\input{TBA/Relax/eqTBA/main}
 
 
+		
