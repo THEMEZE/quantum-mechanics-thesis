@@ -71,7 +71,7 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les configurations.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Contexte et GGE dans les systèmes intégrables.}
 
-Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$ ([Rigol et al. 2007] ). Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné. L’intégrabilité implique ainsi une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de Lieb-Liniger). En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli complet des conditions initiales. Les points clés sont alors :
+Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$ ([Rigol et al. 2007] ) \cite{??}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné. L’intégrabilité implique ainsi une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de Lieb-Liniger) \cite{??}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli complet des conditions initiales. Les points clés sont alors :
 
 \begin{itemize}[label = $\bullet$]
 	\item {\bf Charges conservées} : infinité de locales $\operator{Q}_i$ satisfaisant et $[\operator{Q}_i , \operator{H} ] = 0$ et $[\operator{Q}_i , \operator{Q}_j ] = 0$.
@@ -79,19 +79,24 @@ Dans un système quantique {\bf intégrable}, il existe une infinité de charges
 	\item {\bf Relaxation non canonique} : après un {\em quench} (changement brutal de paramètre), le système évolue vers un état stationnaire qui n’est pas décrit par l’ensemble canonique habituel.
 \end{itemize}
 
-Pour décrire cet état, on introduit l’{\bf ensemble de Gibbs généralisé (GGE)}. Rigol et al. ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation.  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
+Pour décrire cet état, on introduit l’{\bf ensemble de Gibbs généralisé (GGE)}. Rigol et al. ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation \cite{??}.  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), 	
+	\operator{\rho}^{(\mathcal{S})} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
 \end{eqnarray}
 
-où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « températures généralisées ») associés aux charges locales conservées $\{\operator{Q}_i\}$. La fonction de partition $Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}[\exp ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} ) ]$ assure la normalisation. L’{\bf état GGE} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre macroscopique de paramètres $\beta_i$ thermodynamiques (une « température » par charge).
+où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « températures généralisées ») associés aux charges locales conservées $\{\operator{Q}_i\}$. La fonction de partition $Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}[\exp ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} ) ]$ assure la normalisation. L’{\bf état GGE} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{??}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre macroscopique de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{??}.
 
  \subparagraph{Interprétation des multiplicateurs de Lagrange.}
 Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'{\bf ensemble de Gibbs généralisé (GGE)}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})} \operator{Q}_i^{(\mathcal{S})}]   $.\\
 
-En résumé, la GGE généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes de , et non vers celles d’un Gibbs thermique ordinaire $\operator{\rho}^{(\mathcal{S})}$ . On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
+En résumé, la GGE généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes de $\operator{\rho}^{(\mathcal{S})}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{??}\cite{??}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
 
+\paragraph{Rappel sur le modèle de Lieb-Liniger et distribution de rapidités.}
+Comme rappelé au chapitre précédent, {\bf le modèle de  Lieb-Liniger} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{??}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$ , qui jouent le rôle de quasi-momenta ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne la fraction de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.\\
 
+Cette « distribution de rapidités » est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et laissé s’étendre, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{??} . Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{??}. \\
+
+Dans la GGE, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Charges conservées locales diagonales dans la base des états propres.}
@@ -589,11 +594,11 @@ Cette formalisation constitue la brique de base de la \textbf{hydrodynamique gé
 
 \subsection{Statistique des macro-états : entropie de Yang-Yang}
 
-\paragraph{Macro-états et entropie dans la TBA.}
+%\paragraph{Macro-états et entropie dans la TBA.}
 
-Dans la limite thermodynamique, dans le modèle statistique (GGE) , les moyenne, observables physiques deviennent des fonctionnelles de la {\bf distribution de rapidité}  $\rho(\theta)$ et du {\bf poing spectrale} $w(\theta)$ . Cette description est efficace car elle permet d’échapper au détail de chaque état propre. 
+%Dans la limite thermodynamique, dans le modèle statistique (GGE) , les moyenne, observables physiques deviennent des fonctionnelles de la {\bf distribution de rapidité}  $\rho(\theta)$ et du {\bf poing spectrale} $w(\theta)$ . Cette description est efficace car elle permet d’échapper au détail de chaque état propre. 
 %Toutefois, cette simplification laisse en suspens une question cruciale : 
-Mais dans ce modelle qui simplifie on veux {\bf la distribution de rapidité d’un système à l'équilibre thermique à température finie} que l'on notera $\langle \rho \rangle$ pour dire la dansité moyenne. Et les lien entre  $w$ et $\langle \rho \rangle$.  Le problème est étudier par par Yang et Yang en 1969. Pour saisir l'enssentielle, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$. Nous nous interrensons comme promis plus haut : à $\Omega(\theta)$ dans l'équation de moyenne \eqref{chap.2.moyenne.2}  ,  {\bf  nombre états propres microscopiques correspondent à une même distribution $\rho(\theta)$}.
+%Mais dans ce modelle qui simplifie on veux {\bf la distribution de rapidité d’un système à l'équilibre thermique à température finie} que l'on notera $\langle \rho \rangle$ pour dire la dansité moyenne. Et les lien entre  $w$ et $\langle \rho \rangle$.  Le problème est étudier par par Yang et Yang en 1969. Pour saisir l'enssentielle, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$. Nous nous interrensons comme promis plus haut : à $\Omega(\theta)$ dans l'équation de moyenne \eqref{chap.2.moyenne.2}  ,  {\bf  nombre états propres microscopiques correspondent à une même distribution $\rho(\theta)$}.
 %{\bf quelle est la distribution de rapidité d’un système à l'équilibre thermique à température finie ?}. 
 %La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Pour répondre à cette question, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$.
 
@@ -757,7 +762,7 @@ En faisant tendre $\delta\theta \to 0$, les sommes deviennent des intégrales
 et l'entropie de Yang-Yang ainsi que l’énergie généralisée par unité de longueur prennent la forme :
 \begin{eqnarray}
 	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) , \label{chap.2.entropi.int}\\
-	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta 		
+	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta \label{chap.2.W.int}		
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
