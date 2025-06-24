@@ -81,22 +81,22 @@ Dans un système quantique {\bf intégrable}, il existe une infinité de charges
 
 Pour décrire cet état, on introduit l’{\bf ensemble de Gibbs généralisé (GGE)}. Rigol et al. ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation \cite{??}.  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
 \end{eqnarray}
 
 où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « températures généralisées ») associés aux charges locales conservées $\{\operator{Q}_i\}$. La fonction de partition $Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}[\exp ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} ) ]$ assure la normalisation. L’{\bf état GGE} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{??}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre macroscopique de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{??}.
 
  \subparagraph{Interprétation des multiplicateurs de Lagrange.}
-Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'{\bf ensemble de Gibbs généralisé (GGE)}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})} \operator{Q}_i^{(\mathcal{S})}]   $.\\
+Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'{\bf ensemble de Gibbs généralisé (GGE)}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.\\
 
-En résumé, la GGE généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes de $\operator{\rho}^{(\mathcal{S})}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{??}\cite{??}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
+En résumé, la GGE généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes de $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{??}\cite{??}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
 
 \paragraph{Rappel sur le modèle de Lieb-Liniger et distribution de rapidités.}
 Comme rappelé au chapitre précédent, {\bf le modèle de  Lieb-Liniger} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{??}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$ , qui jouent le rôle de quasi-momenta ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne la fraction de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.\\
 
 Cette « distribution de rapidités » est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et laissé s’étendre, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{??} . Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{??}. \\
 
-Dans la GGE, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
+Dans la GGE, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Charges conservées locales diagonales dans la base des états propres.}
@@ -111,14 +111,14 @@ Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ est diagonale d
 \paragraph{Probabilité d’un état à rapidités fixées.}
 On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \theta_a \} }$ :
 \begin{eqnarray}
-	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}}  =  \bm{\mathrm{Tr}} \left [\operator{\rho}^{(\mathcal{S})} \ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \right ] =  \bra{\{\theta_a \}}	\operator{\rho}^{(\mathcal{S})} \ket{\{\theta_a \}}  = \frac{1}{Z^{(\mathcal{S})}} \exp \left (- \sum_i \beta_i \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \right ) .
+	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}}  =  \bm{\mathrm{Tr}} \left [\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \right ] =  \bra{\{\theta_a \}}	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \ket{\{\theta_a \}}  = \frac{1}{Z^{(\mathcal{S})}} \exp \left (- \sum_i \beta_i \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \right ) .
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Moyenne d’un charges conservées locales et dérivées de $Z^{(\mathcal{S})}$.}
 On peut écrire la moyenne d’une observable comme une somme pondérée par cette probabilité, ou encore comme une dérivée de la fonction de partition :
 \begin{eqnarray}
-	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~- \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }} ~=~ - 	\left . \frac{\partial  \ln Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	
+	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~- \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }} ~=~ - 	\left . \frac{\partial  \ln Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	
 \end{eqnarray}
 
 Par le même raisonnement la moyenne de $(\operator{Q}_i^{(\mathcal{S})})^n$ s'écrit :
@@ -131,10 +131,10 @@ Par le même raisonnement la moyenne de $(\operator{Q}_i^{(\mathcal{S})})^n$ s'�
 \paragraph{Moments d’ordre supérieur et fluctuations.}
 Le premier et second moments permettent d’accéder à la variance de l’observable :
 \begin{eqnarray}
-	\Delta_{\operator{Q}_i^{(\mathcal{S})}}^2 &=&  	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}}  = 	\langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}}^2 \nonumber  \\
+	\Delta_{\operator{Q}_i^{(\mathcal{S})}}^2 &=&  	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = 	\langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}^2 \nonumber  \\
 		& = & \left . \frac{1}{Z^{(\mathcal{S})}} \frac{ \partial^2 Z^{(\mathcal{S})} }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z^{(\mathcal{S})} }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2     \nonumber\\
 		&=&  \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} \nonumber \\
-		&=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} =  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
+		&=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} =  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -150,12 +150,12 @@ Dans le cas particulier de l’équilibre thermique standard (i.e. Gibbsien), le
 
 Dans ce cadre, les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $Z^{(\mathcal{S})}$ :
 \begin{eqnarray}
-	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T,\cdots},  & & \Delta^2_{\operator{Q}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T,\cdots} =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}}}{\partial \mu } \right )_{T,\cdots}\\
-	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{H} - \mu\operator{Q}} = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu , \cdots} =  -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}}}{\partial \beta } \right )_{\mu , \cdots}.		
+	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T,\cdots},  & & \Delta^2_{\operator{Q}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T,\cdots} =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{T,\cdots}\\
+	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{H} - \mu\operator{Q}} = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu , \cdots} =  -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu , \cdots}.		
 \end{eqnarray}
 En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
 \begin{eqnarray}
-	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu, \cdots}   \right ]\ln Z^{(\mathcal{S})},  \quad  \Delta^2_{\operator{H} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu,\cdots}  \right ]^2\ln Z^{(\mathcal{S})}.		
+	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu, \cdots}   \right ]\ln Z^{(\mathcal{S})},  \quad  \Delta^2_{\operator{H} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu,\cdots}  \right ]^2\ln Z^{(\mathcal{S})}.		
 \end{eqnarray}
 
 %%%%%%%%%%%%%
@@ -267,7 +267,7 @@ Ces charges sont extensives : leur densité locale $\operator{q}^{(\mathcal{S})
 \paragraph{Expression de la matrice densité généralisée.}
 La matrice densité généralisée s’écrit sous la forme :
 \begin{eqnarray}\label{chap.2.densite.1}
-	\operator{\rho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
 \end{eqnarray}	
 	%pour une certaine fonction $w$ relié à la charge% $\operator{\mathcal{Q}} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
 %où l'opérateur de charge associé à $w$ s’écrit :
@@ -285,7 +285,7 @@ et la fonction de partition $Z^{(\mathcal{S})}[w]$ est définie par :
 	%La probabilité d’occuper un état à $N$ particules caractérisé par les rapidités ${\theta_a}$ est alors :
 La probabilité d’occuper l’état $\ket{\{\theta \}}$ est donc
 \begin{eqnarray}
-	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}^{(\mathcal{S})}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}^{(\mathcal{S})}[w] \vert  \{ \theta_a \} \rangle = Z^{(\mathcal{S})}[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
+	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w] \vert  \{ \theta_a \} \rangle = Z^{(\mathcal{S})}[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
 \end{eqnarray}
 %Cela montre que le poids statistique d’une configuration factorise naturellement sur les pseudo-moments, avec un poids spectrale / energie génralisé $w(\theta)$ attribué à chaque particule.
 On voit ainsi que le poids statistique factorise naturellement sur les
@@ -303,7 +303,7 @@ pseudo‑moments, chaque particule étant pondérée par $w(\theta_a)$.
 Pour tout opérateur local $\operator{\mathcal{O}}$ diagonal dans la base de Bethe,
 la moyenne généralisée vaut
 \begin{eqnarray}\label{chap.2.moyenne.1}
-	\langle \operator{\mathcal{O}}\rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}{\text{Tr} (e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
+	\langle \operator{\mathcal{O}}\rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}{\text{Tr} (e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
 \end{eqnarray}
 %Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à déterminer les propriétés statistiques de toutes les observables diagonales dans cette base, incluant les charges conservées elles-mêmes.
 Ainsi, la connaissance de la fonction $w(\theta)$ suffit à déterminer
@@ -330,11 +330,11 @@ Toutes ces charges se réunissent dans l’opérateur fonctionnel
 , défini par un \emph{poids spectral}  $w(\theta)$ (cf. équations~\eqref{chap.2.charge.1}).
 Cette construction conduit naturellement à la matrice densité généralisée
 \(
-\operator{\rho}^{(\mathcal{S})}[w]  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
+\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
 \) 
 (cf. équations~\eqref{chap.2.densite.1}), et à la moyenne d’un opérateur local $\operator{\mathcal{O}}$ donnée par
 \(
-\langle \operator{\mathcal{O}}\rangle_{GGE}  \doteq  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}[w])
+\langle \operator{\mathcal{O}}\rangle_{GGE}  \doteq  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w])
 \)
 (cf. équations~\eqref{chap.2.moyenne.1}).
 La connaissance de $w(\theta)$ suffit donc pour prédire les valeurs moyennes de toutes les observables diagonales, y compris celles des charges elles‑mêmes ; c’est le cœur du {\bf Ensemble de Gibbs Généralisé (GGE pour Generalized Gibbs Ensemble)} .
@@ -343,6 +343,8 @@ La connaissance de $w(\theta)$ suffit donc pour prédire les valeurs moyennes de
 Cette base est désormais posée : dans la section suivante, nous passerons au \emph{thermodynamique de Bethe}.
 Nous verrons comment, dans la limite thermodynamique, les sommes sur les configurations de rapidités se transforment en intégrales sur des densités continues, comment apparaît l’entropie de Yang–Yang, et comment les moyennes de l’ensemble généralisé se réexpriment à l’aide de ces densités macroscopiques.
 C’est ce formalisme qui permettra d’analyser finement la relaxation post‑quench et de relier microscopie intégrable et hydrodynamique généralisée.
+
+
 
 %\input{TBA/HE/Charge/main}
 
@@ -859,6 +861,9 @@ macro-état $\rho(\theta)$ dans le GGE : le terme entropique favorise la
 multiplicité des états, tandis que le terme énergétique pénalise les
 configurations coûteuses — d’où la compétition caractéristique de
 l’équilibre statistique.
+
+
+
 
 
 %avec $\mathcal{O}[\rho]$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$.	
