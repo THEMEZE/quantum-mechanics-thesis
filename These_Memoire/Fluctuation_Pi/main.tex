@@ -4,17 +4,19 @@
 
 %Considérons un système homogène de taille $L$. Faisons l'hypothèse qu'après relaxation, le système est décrite par un ensemble généralisé de Gibbs (GGE). On a vus dans le chapire d'avant que la valeur moyenne des observables $\langle\operator{\mathcal{O}}\rangle$ dans un ensemble statistique s'écrit comme une intégrale formelle
 
-Considérons un système intégrable unidimensionnel, homogène, de longueur \(L\). Comme établi dans le chapitre~\ref{chap:relaxation}, sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). La moyenne d’une observable locale \(\langle\operator{\mathcal{O}}\rangle\) se formule alors comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
+Considérons un système intégrable unidimensionnel, homogène, de longueur \(L\). Comme établi dans le chapitre~\ref{chap:relaxation}, sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). Dans la limiter thermodynamiques la moyenne d’une observable locale $\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE}$ que pour plus de clairetais , dans les calcule future je noterais \(\langle\operator{\mathcal{O}}\rangle\) se formule alors comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
+
+%Considérons un système intégrable unidimensionnel, homogène, de longueur  \(L\). Comme discuté au chapitre~\ref{chap:relaxation}, sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). Dans la limite thermodynamique, la moyenne d’une observable locale, notée désormais \(\langle\operator{\mathcal{O}}\rangle\) pour alléger les notations, s’écrit comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\mathcal{O} \rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, \label{chap:fluctu:eq:ensemble_average}
+	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}} \rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, \label{chap:fluctu:eq:ensemble_average}
 \end{eqnarray}
-avec $\langle\mathcal{O} \rangle_{[\rho]}$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$, $\mathcal{S}_{YY}$ l'entropie de Yang-Yang \eqref{chap.2.entropi.int} et $\mathcal{W}$ l'énergie généralisé par unité de longueur \eqref{chap.2.W.int}.
+avec $\langle\operator{\mathcal{O}} \rangle_{[\rho]}$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$, $\mathcal{S}_{YY}$ l'entropie de Yang-Yang \eqref{chap.2.entropi.int} et $\mathcal{W}$ l'énergie généralisé par unité de longueur \eqref{chap.2.W.int}.
 
 \medskip
 
 Dans la limite thermodynamique \(L\to\infty\), cette moyenne fonctionelle \eqref{chap:fluctu:eq:ensemble_average} sur tous les profils de rapidité $\rho$, avec un poids $\propto e^{(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}$. Dans la limite thermodynamique $L \to \infty$ , cette intégrale est dominée par la configuration $ \rho_{eq}$ qui maximise le poids exponentiel, c’est-à-dire la distribution de rapidité la plus probable. Ainsi, la moyenne de l’observable s’écrit au premier ordre de la méthode du point selle :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & \approx & \langle\mathcal{O} \rangle_{[\rho_{eq}]}	
+	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & \approx & \langle\operator{\mathcal{O}} \rangle_{[\rho_{eq}]}	
 	\label{chap:fluctu:eq:ensemble_average:approx}
 \end{eqnarray}
 
@@ -37,7 +39,7 @@ Dans la limite thermodynamique \(L\to\infty\), cette moyenne fonctionelle \eqref
 
 %Plusieurs travaux récents ont souligné l’intérêt de sonder ces fluctuations. De Nardis et al. montrent que la mesure de la {\em structure dynamique} de la densité après quench permet de reconstruire entièrement l’état stationnaire, c’est-à-dire la distribution de rapidités du GGE \cite{??} . Concrètement, ils mettent en évidence que l’analyse du facteur de structure dynamique fournit accès à chacune des " {\em températures effectives} " $\beta_i$ et donc à la distribution macroscopique $\rho(\theta)$ \cite{??} \cite{??} . Ainsi, en mesurant les corrélations dynamiques du gaz (quantité accessible via spectroscopie ou fluctuations de densité), on peut tester si les fluctuations observées concordent avec celles prédites par la GGE. \\
 
-%En pratique, l’étude des fluctuations de $\rho(\theta)$ consiste à analyser la dispersion des vitesses (ou rapidités) sur des répétitions expérimentales du même quench. Si la GGE est correcte, la variance et les corrélations de ces fluctuations devraient correspondre aux prédictions de $\operator{\rho}^{(\mathcal{S})}$ \eqref{chap.TBA.op.rho.S}. À terme, une telle analyse permettrait de confirmer que l’état final du gaz suit bien la statistique GGE plutôt que la distribution thermique classique. En résumé, les fluctuations de la distribution de rapidités constituent un test clé de la validité de la GGE pour modéliser les résultats expérimentaux dans le modèle de Lieb-Liniger \cite{??}\cite{??}. \\
+%En pratique, l’étude des fluctuations de $\rho(\theta)$ consiste à analyser la dispersion des vitesses (ou rapidités) sur des répétitions expérimentales du même quench. Si la GGE est correcte, la variance et les corrélations de ces fluctuations devraient correspondre aux prédictions de $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ \eqref{chap.TBA.op.rho.S}. À terme, une telle analyse permettrait de confirmer que l’état final du gaz suit bien la statistique GGE plutôt que la distribution thermique classique. En résumé, les fluctuations de la distribution de rapidités constituent un test clé de la validité de la GGE pour modéliser les résultats expérimentaux dans le modèle de Lieb-Liniger \cite{??}\cite{??}. \\
 
 %-----------------------------------
 \paragraph{Pourquoi étudier les fluctuations ?}
@@ -60,7 +62,7 @@ Plusieurs travaux récents ont mis en lumière l’intérêt expérimental de so
 Ainsi, en mesurant les corrélations dynamiques du gaz — accessibles expérimentalement via la spectroscopie ou les fluctuations de densité — on peut tester si les fluctuations observées concordent avec celles prédites par la GGE.
 
 \medskip
-Concrètement, cela consiste à analyser la dispersion des vitesses (ou rapidités) sur plusieurs répétitions expérimentales d’un même quench. Si la GGE décrit correctement l’état stationnaire, la variance et les corrélations des fluctuations de \( \rho(\theta) \) devraient être en accord avec les prédictions du formalisme fluctuationnel issu de l’entropie \( \operator{\rho}^{(\mathcal{S})} \), cf.~\eqref{chap.TBA.op.rho.S}.
+Concrètement, cela consiste à analyser la dispersion des vitesses (ou rapidités) sur plusieurs répétitions expérimentales d’un même quench. Si la GGE décrit correctement l’état stationnaire, la variance et les corrélations des fluctuations de \( \rho(\theta) \) devraient être en accord avec les prédictions du formalisme fluctuationnel issu de l’entropie \( \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \), cf.~\eqref{chap.TBA.op.rho.S}.
 
 \medskip
 En résumé, l’étude des fluctuations de la distribution de rapidités fournit un test clé de la validité du GGE pour modéliser les résultats expérimentaux dans le modèle de Lieb–Liniger~\cite{??, ??}.
@@ -74,120 +76,293 @@ Ce chapitre est consacré à cette extension, qui permettra :
 \end{itemize}
 Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons l’action quadratique régissant \(\delta\rho\).  Les contraintes d’intégrabilité et la structure du noyau \(\Delta\) joueront un rôle clé dans la diagonalisation de cette action, ouvrant la voie aux prédictions quantitatives sur les fluctuations GGE.
 
-\section{Développement quadratique de l’action effective : formalisme variationnel}
 
-\subsection*{Expansion fonctionnelle autour de \(\rho_{\mathrm{eq}}\)}
+\subsection*{Principe de fluctuation-réponse dans un état diagonal}
 
-Comme rappelé dans l’introduction, la moyenne d’une observable dans le GGE
-est dominée, en \(L \to \infty\), par la distribution de rapidité
-\(\rho_{\mathrm{eq}}\) qui maximise l’action effective :
-\[
-\Phi[\rho] \coloneqq \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho].
-\]
-Nous nous intéressons à présent aux fluctuations autour de ce point
-selle, en développant fonctionnellement l’action à l’ordre 2 :
-\[
-\rho(\theta) = \rho_{\mathrm{eq}}(\theta) + \delta \rho(\theta).
-\]
+Soit un système intégrable dans un état d’équilibre généralisé (GGE), On a vus dans le chapitre \ref{} on à  défini par une matrice densité de la forme :
+\begin{eqnarray*}
+	\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w] \doteq  \frac{1}{Z^{(\mathcal{S})}[w]}\, e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]},\quad \text{où} \quad Z^{(\mathcal{S})}[w] \doteq \mathrm{Tr}\left(e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right).
+\end{eqnarray*}
 
-\paragraph{Développement de Taylor fonctionnel.}
+On a vus  que l’espérance d’une observable $\operator{\mathcal{Q}}^{(\mathcal{S})}[w_1]$ dans le GGE , noté dans le chapitre \ref{} par $\langle \operator{\mathcal{Q}}^{(\mathcal{S})}[w] \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]}$ que pour soucis d'aléger dans lé résonement on notéra $\langle \operator{\mathcal{Q}}[w_1] \rangle$, et j'enlève les $(\mathcal{S})$, le caractère locale étant maintenat inplicite , est donnée par :
+\begin{eqnarray*}
+	\langle \operator{\mathcal{Q}}[w_1] \rangle = \mathrm{Tr} \left[ \operator{\rho}_{\mathrm{GGE}}[w]\, \operator{\mathcal{Q}}[w_1] \right]
+= \frac{1}{Z[w]}\, \mathrm{Tr} \left[ e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[w_1] \right] =  -  \left . \frac{ \delta \ln Z [w] }{ \delta w_1  } \right|_{w}.	
+\end{eqnarray*}
 
-Sous une variation infinitésimale \(\delta \rho\), l’action
-s’écrit à l’ordre quadratique :
-\begin{equation}
-\Phi[\rho] = \Phi[\rho_{\mathrm{eq}}]
-+ \underbrace{\int d\theta\; \left.
-    \frac{\delta \Phi}{\delta \rho(\theta)}
-  \right|_{\rho=\rho_{\mathrm{eq}}}
-  \delta \rho(\theta)}_{\text{= 0 par stationnarité}}
-+ \frac{1}{2} \iint d\theta\,d\theta'\; \delta \rho(\theta)\,
-\mathcal{H}(\theta,\theta')\,\delta \rho(\theta')
-+ \mathcal{O}(\delta\rho^3),
-\label{eq:dev-fonctionnel-2}
-\end{equation}
-où \(\mathcal{H}\) est l’opérateur hessien de \(\Phi\) :
-\[
-\mathcal{H}(\theta,\theta') =
-\left. \frac{\delta^2 \Phi[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')}
-\right|_{\rho=\rho_{\mathrm{eq}}}.
-\]
+La dérivée fonctionnelle de l'espérance de la charge $\operator{\mathcal{Q}}[w_1]$ par rapport au potentiel conjugué $w_2$ est donnée par :
+\begin{eqnarray*}
+	\chi[w_1, w_2] \doteq - \left.\frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w =  \left . \frac{ \delta^2 \ln Z [w] }{ \delta w_1 \delta w_2 } \right|_{w}= \langle \operator{\mathcal{Q}}[w_1] \operator{\mathcal{Q}}[w_2] \rangle - \langle \operator{\mathcal{Q}}[w_1] \rangle \langle \operator{\mathcal{Q}}[w_2] \rangle .	
+\end{eqnarray*}
 
-\paragraph{Structure de \(\mathcal{H}\).}
-L’opérateur hessien s’écrit naturellement comme la différence :
-\[
-\mathcal{H} = \mathcal{H}^{(S)} - \mathcal{H}^{(W)},
-\]
-avec
-\begin{align*}
-\mathcal{H}^{(S)}(\theta,\theta') &=
-\left. \frac{\delta^2 \mathcal{S}_{YY}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}, \\
-\mathcal{H}^{(W)}(\theta,\theta') &=
-\left. \frac{\delta^2 \mathcal{W}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}.
-\end{align*}
+\paragraph{Démo.}
+\subparagraph{Charge généralisé sous forme intégrale.}
+Pour le démontrer on écrit la charge généralisé sous forme intégrale : 
+\begin{eqnarray*}
+\operator{\mathcal{Q}}[w] = L\int d\theta w(\theta) \operator{\rho}(\theta)
+\end{eqnarray*}
+où $\operator{\rho}(\theta)$ est l'opérateur densité spectale , agissant comme :
+\(
+\operator{\rho}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.
+\)
 
-\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
+\subparagraph{Dérivée fonctionnelle.}
+On dérive cette expression par rapport à $w_2$. En utilisant la dérivée d’un rapport :
+\(
+	\left.\frac{\delta}{\delta w_2} \left( \frac{A[w]}{Z[w]} \right) \right |_{w} = \frac{1}{Z[w]}\, \left.\frac{\delta A[w]}{\delta w_2} \right|_{w} - \frac{A[w]}{Z[w]^2}\, \left.\frac{\delta Z[w]}{\delta w_2}\right|_{w} ,
+\)
+avec $A[f] \equiv \mathrm{Tr}[e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[w_1]]$, on obtient :
+\begin{eqnarray*}
+	\left . \frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w
+	= \frac{1}{Z[w]}\, \frac{\delta A[w]}{\delta w_2}
+	- \langle \operator{\mathcal{Q}}[w_1] \rangle \cdot \frac{1}{Z[w]}\, \frac{\delta Z[w]}{\delta w_2}.
+\end{eqnarray*}
 
-Il est classique (cf. appendix~\ref{appendix:YYentropy}) que
-l’entropie de Yang–Yang admet un hessien diagonal en base des \(\theta\) :
-\begin{equation}
-\mathcal{H}^{(S)}(\theta,\theta') =
-\frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)\big(1-\nu_{\!eq}(\theta)\big)}.
-\label{eq:hessian-SYY}
-\end{equation}
+\subparagraph{Dérivées explicites.}
+Utilisons la propriété démontrée précédemment :
+\(
+	\frac{\delta \operator{\mathcal{Q}}[w]}{\delta w_2} = \operator{\mathcal{Q}}[f_2]	.
+\)
+En notant que la dérivée d’une exponentielle diagonale est simple :
+\(
+\frac{\delta}{\delta w_2} e^{-\operator{\mathcal{Q}}[w]} = - \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]},
+\)
+on obtient :
+\begin{eqnarray*}
+\frac{\delta A[w]}{\delta w_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[w_1] \right],
+\quad
+\frac{\delta Z[w]}{\delta w_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \right].
+\end{eqnarray*}
 
-Quant à l’énergie généralisée,
-si l’observable est extensive (fonctionnelle additive),
-le terme \(\mathcal{H}^{(W)}\) est symétrique, et typiquement local ou à noyau fini.
+\subparagraph{Regroupement.}
+En regroupant les termes, on trouve :
+\begin{eqnarray*}
+	\chi[w_1, w_2]&  \doteq & - \left.\frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w  \\
+&=& -\frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[w_1] \right]
++ \langle \operator{\mathcal{Q}}[w_1] \rangle \cdot \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \right] \\
+&=& \langle \operator{\mathcal{Q}}[w_2]\, \operator{\mathcal{Q}}[w_1] \rangle - \langle \operator{\mathcal{Q}}[w_1] \rangle\, \langle \operator{\mathcal{Q}}[w_2] \rangle.
+\end{eqnarray*}
+
+
+\subparagraph{Conclusion.} Dans un état diagonal tel que le GGE, la susceptibilité est égale à la covariance entre charges généralisées, illustrant le principe de \emph{fluctuation-réponse}.
+
+\subparagraph{Corrélation spectrale.}
+On peut alors exprimer la susceptibilité comme :
+\begin{eqnarray*}
+\chi[w_1, w_2] = \iint d\theta\, d\theta'\, w_1(\theta)\, w_2(\theta')\, C(\theta, \theta'),
+\end{eqnarray*}
+où la fonction de corrélation spectrale $C$ est définie par :
+\begin{eqnarray*}
+C(\theta, \theta') \doteq \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle
+= \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle - \langle \operator{\rho}(\theta) \rangle \langle \operator{\rho}(\theta') \rangle.
+\end{eqnarray*}
+La matrice $\chi[w_1, w_2]$ s’interprète donc comme la covariance de la densité spectrale projetée sur les fonctions test $w_1$ et $w_2$.
 
 \medskip
-Au total, les fluctuations du GGE au voisinage de \(\rho_{\mathrm{eq}}\)
-sont décrites, à l’ordre quadratique, par une théorie de champs gaussienne
-dont l’action effective est donnée par :
-\begin{equation}
-\delta^2 \Phi[\delta \rho] = \frac{1}{2} \iint d\theta\,d\theta'\; \delta \rho(\theta)\,
-\left[ \frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)(1-\nu_{\!eq}(\theta))} - \mathcal{H}^{(W)}(\theta,\theta') \right]
-\delta \rho(\theta').
-\label{eq:action-gaussienne}
-\end{equation}
+Un cas particulier d’intérêt est la susceptibilité d’une seule charge :
+\begin{eqnarray*}
+\chi[w] \equiv \chi[w, w] = \mathrm{Var}(\operator{\mathcal{Q}}[w]) = \langle \operator{\mathcal{Q}}[w]^2 \rangle - \langle \operator{\mathcal{Q}}[w] \rangle^2
+= \iint d\theta\, d\theta'\, w(\theta)\, w(\theta')\, C(\theta, \theta').
+\end{eqnarray*}
 
-Cette structure permet l’évaluation explicite des variances et corrélations
-d’observables (voir chap.~\ref{chap:observables}) ainsi que
-la dérivation des matrices de susceptibilité, au cœur de la description
-des fluctuations thermodynamiques et du transport.
+\subsection*{Passage au régime thermodynamique}
 
-\subsection*{Commentaires physiques}
+Dans l’approximation thermodynamique, l’opérateur de densité spectrale $\hat{\rho}(\theta)$ est remplacé par sa valeur moyenne macroscopique $\rho_{\mathrm{eq}}(\theta)$, représentant la densité continue de quasi-particules dans l’état d’équilibre.
 
-\begin{itemize}[label = $\bullet$]
-\item L’apparition de \(\nu_{\!eq}(1-\nu_{\!eq})\) dans le hessien
-  reflète une structure de type Fermi–Dirac,
-  même dans un système bosonique,
-  conséquence de l’exclusion statistique induite par l’intégrabilité.
-\item La matrice hessienne contrôle la réponse du système à une
-  variation infinitésimale de \(\rho\) et, par là, encode les
-  fluctuations statiques du GGE.
-\item Ce développement quadratique justifie le caractère
-  gaussien des fluctuations dans le régime thermodynamique,
-  et sera à la base des extensions hydrodynamiques de type MFT
-  (Macroscopic Fluctuation Theory).
+Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang-Yang $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte d’une charge généralisée fixée. Le poids spectral $w$ est fixé. On a vus dans les chapitre \ref{??} que la condition d’équilibre s’écrit alors :
+\(
+\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} =  w(\theta).
+\)
+
+\medskip
+\paragraph{Dérivée fonctionnelle.}
+On peut considérer cette équation comme une relation implicite définissant $w$ comme une fonctionnelle de $\rho$. La dérivée fonctionnelle de cette relation donne :
+\[
+\left.\frac{\delta w(\theta)}{\delta \rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}} \equiv \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}(\theta, \theta'),
+\]
+où $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$ est l'opérateur (généralement négatif) de courbure fonctionnelle de l'entropie.
+
+\paragraph{Inversion.}
+On en déduit que la réponse de $\rho$ à une variation du potentiel conjugué $w$ est donnée par l'inverse fonctionnel :
+\[
+\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \left( \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') \equiv L \chi(\theta, \theta').
+\]
+
+La fonction $\chi(\theta, \theta')$ définit la matrice de susceptibilité spectrale, qui décrit la réponse linéaire de la densité d’équilibre à une perturbation infinitésimale du potentiel conjugué. Par le principe de fluctuation-réponse, elle coïncide avec la matrice de corrélation des fluctuations thermodynamiques de la densité spectrale :
+\[
+\chi(\theta, \theta') = \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle.
+\]
+
+\paragraph{Interprétation physique.}
+La matrice $\chi(\theta, \theta')$ possède plusieurs interprétations équivalentes :
+\begin{itemize}
+  \item Elle mesure la réponse linéaire de la densité spectrale à une variation du potentiel conjugué :
+  \[
+  \chi(\theta, \theta') = \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
+  \]
+  \item Dans un état diagonal (comme le GGE), elle coïncide avec la matrice de corrélation, selon le principe fluctuation-réponse :
+  \[
+  \chi(\theta, \theta') = \langle \delta \hat{\rho}(\theta)\, \delta \hat{\rho}(\theta') \rangle.
+  \]
+  \item Dans la limite thermodynamique, où $\hat{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
+  \[
+  \chi(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle.
+  \]
 \end{itemize}
 
+\paragraph{Résumé.}
+L'équation variationnelle d'équilibre :
+\(
+\left.\frac{\delta \mathcal{S}_{YY}[\rho_{eq}]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = w(\theta)
+\)
+implique, par différentiation fonctionnelle et inversion de l’opérateur $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, que :
+\[
+\chi(\theta, \theta') = \left.\frac{\delta^2 \ln Z[w]}{\delta w(\theta)\, \delta w(\theta')} \right|_{w} = -\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = -\left( L \left. \frac{\delta^2 \mathcal{S}_{YY}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}} \right)^{-1}
+ = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle = C(\theta, \theta').
+\]
 
-\section{Développement autour du point selle}
+\noindent
+En résumé, dans la limite thermodynamique, la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ encode à la fois :
 
-Cette configuration vérifie donc l’{\bf équation de point selle} :
+\begin{itemize}
+  \item la réponse linéaire de la densité d'équilibre à une variation du poids qpectral $w(\theta)$ ;
+  \item la covariance (ou corrélation) entre densités spectrales ;
+  \item la courbure du potentiel thermodynamique générateur du GGE.
+\end{itemize}
 
-\begin{eqnarray*}
-	\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } 	 & = & \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle }.
-\end{eqnarray*}
+%\paragraph{Remarque : Sur la linéarité de la contrainte.}
+%Il est important de noter que la fonctionnelle de contrainte $\mathcal{W}[\rho] = \int w(\theta) \rho(\theta)\, d\theta$ est \emph{linéaire} en $\rho$ : le potentiel $w(\theta)$ y est une fonction test fixée et ne dépend pas de $\rho$. Par conséquent, sa dérivée fonctionnelle est simplement :
+%\[
+%\frac{\delta \mathcal{W}[\rho]}{\delta \rho(\theta)} = w(\theta), \qquad \text{et} \qquad \frac{\delta^2 \mathcal{W}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} = 0.
+%\]
+%Il ne faut donc \emph{pas} confondre cette structure linéaire avec l’équation d’équilibre
+%\[
+%\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = w(\theta),
+%\]
+%qui définit implicitement $w(\theta)$ comme une fonctionnelle de $\rho$. Dans ce second cadre, une variation de $\rho$ entraîne une variation de $w$, et on peut écrire :
+%\[
+%\frac{\delta w(\theta)}{\delta \rho(\theta')} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}.
+%\]
+%Ainsi, seule l'entropie $\mathcal{S}_{\mathrm{YY}}$ porte la courbure fonctionnelle, et non la contrainte linéaire $\mathcal{W}[\rho]$.
 
-On développe de Taylor-Young à l’ordre quadratique :
 
-\begin{eqnarray*}
-	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] + \frac{1}2 \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }	(\delta \rho)^2,
-	\label{chap:fluctu:eq:action}	
-\end{eqnarray*}
 
-avec $-\left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }$ désigne la forme bilinéaire symétrique définie positive.
+
+%\section{Développement quadratique de l’action effective : formalisme variationnel}
+%
+%\subsection*{Expansion fonctionnelle autour de \(\rho_{\mathrm{eq}}\)}
+
+%Comme rappelé dans l’introduction, la moyenne d’une observable dans le GGE
+%est dominée, en \(L \to \infty\), par la distribution de rapidité
+%\(\rho_{\mathrm{eq}}\) qui maximise l’action effective :
+%\[
+%\Phi[\rho] \coloneqq \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho].
+%\]
+%Nous nous intéressons à présent aux fluctuations autour de ce point
+%selle, en développant fonctionnellement l’action à l’ordre 2 :
+%\[
+%\rho(\theta) = \rho_{\mathrm{eq}}(\theta) + \delta \rho(\theta).
+%\]
+
+%\paragraph{Développement de Taylor fonctionnel.}
+
+%Sous une variation infinitésimale \(\delta \rho\), l’action
+%s’écrit à l’ordre quadratique :
+%\begin{equation}
+%\Phi[\rho] = \Phi[\rho_{\mathrm{eq}}]
+%+ \underbrace{\int d\theta\; \left.
+%    \frac{\delta \Phi}{\delta \rho(\theta)}
+%  \right|_{\rho=\rho_{\mathrm{eq}}}
+%  \delta \rho(\theta)}_{\text{= 0 par stationnarité}}
+%+ \frac{1}{2} \iint d\theta\,d\theta'\; \delta \rho(\theta)\,
+%\mathcal{H}(\theta,\theta')\,\delta \rho(\theta')
+%+ \mathcal{O}(\delta\rho^3),
+%\label{eq:dev-fonctionnel-2}
+%\end{equation}
+%où \(\mathcal{H}\) est l’opérateur hessien de \(\Phi\) :
+%\[
+%\mathcal{H}(\theta,\theta') =
+%\left. \frac{\delta^2 \Phi[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')}
+%\right|_{\rho=\rho_{\mathrm{eq}}}.
+%\]
+
+%\paragraph{Structure de \(\mathcal{H}\).}
+%L’opérateur hessien s’écrit naturellement comme la différence :
+%\[
+%\mathcal{H} = \mathcal{H}^{(S)} - \mathcal{H}^{(W)},
+%\]
+%avec
+%\begin{align*}
+%\mathcal{H}^{(S)}(\theta,\theta') &=
+%\left. \frac{\delta^2 \mathcal{S}_{YY}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}, \\
+%\mathcal{H}^{(W)}(\theta,\theta') &=
+%\left. \frac{\delta^2 \mathcal{W}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}.
+%\end{align*}
+%
+%\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
+%
+%Il est classique (cf. appendix~\ref{appendix:YYentropy}) que
+%l’entropie de Yang–Yang admet un hessien diagonal en base des \(\theta\) :
+%\begin{equation}
+%\mathcal{H}^{(S)}(\theta,\theta') =
+%\frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)\big(1-\nu_{\!eq}(\theta)\big)}.
+%\label{eq:hessian-SYY}
+%\end{equation}
+%
+%Quant à l’énergie généralisée,
+%si l’observable est extensive (fonctionnelle additive),
+%le terme \(\mathcal{H}^{(W)}\) est symétrique, et typiquement local ou à noyau fini.
+%
+%\medskip
+%Au total, les fluctuations du GGE au voisinage de \(\rho_{\mathrm{eq}}\)
+%sont décrites, à l’ordre quadratique, par une théorie de champs gaussienne
+%dont l’action effective est donnée par :
+%\begin{equation}
+%\delta^2 \Phi[\delta \rho] = \frac{1}{2} \iint d\theta\,d\theta'\; \delta \rho(\theta)\,
+%\left[ \frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)(1-\nu_{\!eq}(\theta))} - \mathcal{H}^{(W)}(\theta,\theta') \right]
+%\delta \rho(\theta').
+%\label{eq:action-gaussienne}
+%\end{equation}
+%
+%Cette structure permet l’évaluation explicite des variances et corrélations
+%d’observables (voir chap.~\ref{chap:observables}) ainsi que
+%la dérivation des matrices de susceptibilité, au cœur de la description
+%des fluctuations thermodynamiques et du transport.
+%
+%\subsection*{Commentaires physiques}
+%
+%\begin{itemize}[label = $\bullet$]
+%\item L’apparition de \(\nu_{\!eq}(1-\nu_{\!eq})\) dans le hessien
+%  reflète une structure de type Fermi–Dirac,
+%  même dans un système bosonique,
+%  conséquence de l’exclusion statistique induite par l’intégrabilité.
+%\item La matrice hessienne contrôle la réponse du système à une
+%  variation infinitésimale de \(\rho\) et, par là, encode les
+%  fluctuations statiques du GGE.
+%\item Ce développement quadratique justifie le caractère
+%  gaussien des fluctuations dans le régime thermodynamique,
+%  et sera à la base des extensions hydrodynamiques de type MFT
+%  (Macroscopic Fluctuation Theory).
+%\end{itemize}
+
+
+
+%\section{Développement autour du point selle}
+
+%Cette configuration vérifie donc l’{\bf équation de point selle} :
+
+%\begin{eqnarray*}
+%	\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle } 	 & = & \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho = \langle \rho \rangle }.
+%\end{eqnarray*}
+
+%On développe de Taylor-Young à l’ordre quadratique :
+
+%\begin{eqnarray*}
+%	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[\langle\rho\rangle] - \mathcal{W}[\langle\rho\rangle] + \frac{1}2 \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }	(\delta \rho)^2,
+%	\label{chap:fluctu:eq:action}	
+%\end{eqnarray*}
+
+%avec $-\left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\delta \rho)^2} \right|_{\rho = \langle \rho \rangle }$ désigne la forme bilinéaire symétrique définie positive.
 
 %avec
 %\begin{eqnarray*}
@@ -197,165 +372,153 @@ avec $-\left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{(\de
 %\delta \rho(\theta) \delta \rho(\theta').
 %\end{eqnarray*}
 
-Cette approximation fait de l’intégrale une {\bf intégrale gaussienne}.
+%Cette approximation fait de l’intégrale une {\bf intégrale gaussienne}.
 
 
-\section{Définition de la fonction de corrélation}
+%------------------------------------------------------------------
+%\section{Fonction de corrélation à deux points}
+%
+%\subsection*{Définition}
+%
+%Soient deux observables macroscopiques \(\operator{\mathcal{A}}\) et \(\operator{\mathcal{B}}\) (e.g. énergie, nombre de particules, courant, etc.). On définit leur \textbf{corrélation connectée} (parfois appelée \emph{fonction de corrélation à deux points}) par
+%\begin{equation}
+%  C_{\operator{\mathcal{A}},\operator{\mathcal{B}}}
+%  \;=\;
+%  \bigl\langle
+%    \bigl(\operator{\mathcal{A}}-\langle\operator{\mathcal{A}}\rangle\bigr)
+%    \bigl(\operator{\mathcal{B}}-\langle\operator{\mathcal{B}}\rangle\bigr)
+%  \bigr\rangle
+%  \label{eq:corr-conn}
+%\end{equation}
+%
+%\subsection*{Observables linéaires en \(\rho\)}
+%
+%Considérons à présent le développement à l’ordre linéaire de la valeur propre d’une observable fonctionnelle $\operator{\mathcal{A}}$ autour de la densité moyenne~$\rho_{eq} $ :
+%\begin{eqnarray*}
+%	\langle\operator{\mathcal{A}}\rangle_{[\rho]} \approx 	\langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]} + \langle\delta\operator{\mathcal{A}}\rangle_{[\rho_{eq}]}, \quad \mbox{soit} \quad \langle\delta\operator{\mathcal{A}}\rangle_{[\rho_{eq}]} \approx \langle \operator{\mathcal{A}} - \langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]}\rangle_{[\rho]}  
+%\end{eqnarray*}
+%avec
+%\begin{eqnarray*}
+%	\langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]} = \int d\theta\,\mathsf{a}(\theta)\,\rho_{eq}(\theta), \quad \mbox{et} \quad \langle\delta\operator{\mathcal{A}}\rangle_{[\rho_{eq}]} = \int d\theta\,\mathsf{a}(\theta)\,\delta \rho(\theta)
+%\end{eqnarray*} 
+%
+%où \(\mathsf{a}(\theta)\)  le densités spectrales associées à la valeur moyenne de le l'operateur $\operator{\mathcal{A}}$ .
+%
+%En s’appuyant sur les équations~\eqref{chap:fluctu:eq:ensemble_average}, \eqref{chap:fluctu:eq:ensemble_average:approx} et (\ref{eq:corr-conn}), et en remarquant que l’intégrale fonctionnelle est dominée par la contribution gaussienne autour du point selle, on obtient que la corrélation~\eqref{eq:corr-conn} est donnée par la formule des \textbf{fluctuations gaussiennes} :
+%\begin{eqnarray}
+%	C_{\operator{\mathcal{A}}, \operator{\mathcal{B}}} &=& \iint d\theta \, d\theta' \; \mathsf{a}(\theta) \, \mathsf{b}(\theta') \, 
+%	\left\langle \delta \rho(\theta) \, \delta \rho(\theta') \right\rangle.
+%	\label{eq:2point}
+%\end{eqnarray}
 
-%On considère deux observable $\operator{\mathcal{O}}$ et $\operator{\mathcal{R}}$ , et on s’intéresse à leur corrélation connectée (ou fonction de corrélation à deux points) :
-%Pour accéder aux fonctions de corrélation à deux points,
+\subsection*{Formalisme gaussien}
 
-Soient deux observables macroscopiques $\operator{\mathcal{A}}$ et $\operator{\mathcal{B}}$. On s’intéresse à leur corrélation connectée (ou fonction de corrélation à deux points), définie par :
+Une autre approche pour accéder aux fluctuations de la densité spectrale $\rho(\theta)$ dans un état de GGE consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
 
-\begin{eqnarray}
-	C_{\operator{\mathcal{A}} , \operator{\mathcal{B}} } & = & \langle  (\operator{\mathcal{A}} - \langle \operator{\mathcal{A}} \rangle  ) ( \operator{\mathcal{B}} - \langle \operator{\mathcal{B}} \rangle ) \rangle = \langle \operator{\mathcal{A}} \cdot  \operator{\mathcal{B}} \rangle -\langle \operator{\mathcal{A}} \rangle \langle   \operator{\mathcal{B}} \rangle . 
-	\label{chap:fluctu:eq:correlation}	
-\end{eqnarray}
-
-Considérons à présent le développement à l’ordre linéaire de la valeur propre d’une observable fonctionnelle $\operator{\mathcal{A}}$ autour de la densité moyenne~$\langle \rho \rangle$ :
+On peut alors développer l’action $\mathcal{S}_{YY} - \mathcal{W}$ à second ordre autour de ce point d'équilibre :
 \begin{eqnarray*}
-	\mathcal{A}[\rho] &=& \int d\theta \, \mathsf{a}(\theta) \, \rho(\theta),
+	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{eq}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})}{\delta \rho (\theta) }  \right\vert_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta'\mathcal{H}(\theta, \theta' )\delta \rho(\theta)\delta \rho(\theta') + \mathcal{O}(\delta \rho^3) 
 \end{eqnarray*}
-où $\mathsf{a}(\theta)$ désigne la densité spectrale associée à l’observable $\mathcal{A}$.
+où
+\(
+\displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})}{\delta\rho(\theta)\,\delta\rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}}
+\)
+est le \textit{hessien} de l’action effective.
 
-Une variation linéaire de $\rho$ induit alors une fluctuation de l’observable donnée par :
-
-\begin{eqnarray*}
-	\mathcal{A}[\rho] - 	\mathcal{A}[\rho] & \approx &\left. \frac{\delta 	\mathcal{A}}{\delta \rho} \right|_{ \rho = \langle \rho \rangle } \delta \rho = \delta\mathcal{A}[\rho] = \int d \theta \mathsf{a}(\theta) 	\delta \rho(\theta) , 	
-\end{eqnarray*}
-
-En s’appuyant sur les équations~(\ref{chap:fluctu:eq:ensemble_average}), (\ref{chap:fluctu:eq:ensemble_average:approx}) et (\ref{chap:fluctu:eq:action}), et en remarquant que l’intégrale fonctionnelle est dominée par la contribution gaussienne autour du point selle, on obtient que la corrélation~(\ref{chap:fluctu:eq:correlation}) est donnée par la formule des \textbf{fluctuations gaussiennes} :
-\begin{eqnarray}
-	C_{\operator{\mathcal{A}}, \operator{\mathcal{B}}} &=& \iint d\theta \, d\theta' \; \mathsf{a}(\theta) \, \mathsf{b}(\theta') \, 
-	\left\langle \delta \rho(\theta) \, \delta \rho(\theta') \right\rangle.
-	\label{eq:2point}
-\end{eqnarray}
-
-Sous l’approximation gaussienne autour du point col, la covariance des fluctuations est donnée par :
+Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluctuations est donnée par :
 \begin{eqnarray}
 \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle &=& \frac{
  \displaystyle \int \mathcal{D} \delta \rho \; \delta \rho(\theta) \, \delta \rho(\theta') 
     \, \exp \left[ 
-        \frac{L}{2} 
-        \iint  \; 
-        \delta \rho(\theta_1) \,  \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho(\theta_1)\delta \rho(\theta_2)} \right|_{\rho = \langle \rho \rangle } \, \delta \rho(\theta_2) 
+        -\frac{L}{2} 
+        \iint  d \theta_1 d \theta_2 \; 
+        \delta \rho(\theta_1) \, \mathcal{H}(\theta_1, \theta_2 )  \, \delta \rho(\theta_2) 
     \right]
 }{
     \displaystyle \int \mathcal{D} \delta \rho \; 
     \exp \left[ 
-        \frac{L}{2} 
-        \iint  \; 
-        \delta \rho(\theta_1) \, \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho(\theta_1)\delta \rho(\theta_2)} \right|_{\rho = \langle \rho \rangle } \, \delta \rho(\theta_2) 
+        -\frac{L}{2} 
+        \iint  d \theta_1 d \theta_2 \; 
+        \delta \rho(\theta_1) \, \mathcal{H}(\theta_1, \theta_2 )  \, \delta \rho(\theta_2) 
     \right]
 }, \nonumber \\
-&=& -\frac{1}{L} \left( \left. \frac{\delta^2 (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho(\cdot)\delta \rho(\cdot)} \right|_{\rho = \langle \rho \rangle } \right)^{-1}(\theta, \theta'), \label{eq:fluctuations}
+&=& \frac{1}{L} \mathcal{H}^{-1}(\theta, \theta' ), \label{eq:fluctuations}
 \end{eqnarray}
-
-
-Ces relations posent les bases d'une description quantifiée des fluctuations de densité de rapidité, essentielles pour tester expérimentalement la validité du GGE, comprendre les corrélations à longue distance, et accéder aux propriétés dynamiques fines des systèmes intégrables en une dimension.
-
------------------------------------------
-%------------------------------------------------------------------
-\section{Fonction de corrélation à deux points}
-
-\subsection*{Définition}
-
-Soient deux observables macroscopiques \(\operator{\mathcal{A}}\) et \(\operator{\mathcal{B}}\) (e.g. énergie, nombre de particules, courant, etc.). On définit leur \textbf{corrélation connectée} (parfois appelée \emph{fonction de corrélation à deux points}) par
-\begin{equation}
-  C_{\operator{\mathcal{A}},\operator{\mathcal{B}}}^{[\rho]}
-  \;=\;
-  \bigl\langle
-    \bigl(\operator{\mathcal{A}}-\langle\operator{\mathcal{A}}\rangle_{[\rho]}\bigr)
-    \bigl(\operator{\mathcal{B}}-\langle\operator{\mathcal{B}}\rangle_{[\rho]}\bigr)
-  \bigr\rangle_{[\rho]}
-  \;=\;
-  \langle\operator{\mathcal{A}}\operator{\mathcal{B}}\rangle_{[\rho]}
-  - \langle\operator{\mathcal{A}}\rangle_{[\rho]}\,\langle\operator{\mathcal{B}}\rangle_{[\rho]}.
-  \label{eq:corr-conn}
-\end{equation}
-
-\subsection*{Observables linéaires en \(\rho\)}
-
-Considérons à présent le développement à l’ordre linéaire de la valeur propre d’une observable fonctionnelle $\operator{\mathcal{A}}$ autour de la densité moyenne~$\rho_{eq} $ :
-\begin{eqnarray*}
-	\langle\operator{\mathcal{A}}\rangle_{[\rho]}= \underbrace{\int d\theta\,a(\theta)\,\rho_{eq}(\theta)}_{\langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]}}  +  \underbrace{\int d\theta\,a(\theta)\,\delta \rho(\theta)}_{\delta\langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]}}	
-\end{eqnarray*}
-
-où \(a(\theta)\)  le densités spectrales associées à la valeur moyenne de le l'operateur $\operator{\mathcal{A}}$ associé à la distribution à l'équilibre,  $\langle\operator{\mathcal{A}}\rangle_{[\rho_{eq}]}$ .
-
-\subsection*{Formalisme gaussien}
-
-Dans la limite thermodynamique,
-l’intégrale fonctionnelle du GGE est dominée
-par les fluctuations gaussiennes autour du point selle
-\(\rho_{\mathrm{eq}}\) :
-\[
-\Phi[\rho]
-\simeq
-\Phi[\rho_{\mathrm{eq}}]
-+\frac{L}{2}
-\iint d\theta\,d\theta'\;
-\delta\rho(\theta)\,
-\mathcal{H}(\theta,\theta')\,
-\delta\rho(\theta'),
-\]
-où
-\(
-\displaystyle
-\mathcal{H}=
-\left.\frac{\delta^{2}
-      (\mathcal{S}_{YY}-\mathcal{W})}{\delta\rho\,\delta\rho}\right|_{\rho_{\mathrm{eq}}}
-\)
-est le \textit{hessien} de l’action effective.
-
-L’intégrale gaussienne fournit
-\begin{equation}
-  \bigl\langle
-    \delta\rho(\theta)\,\delta\rho(\theta')
-  \bigr\rangle
-  =
-  -\frac{1}{L}\,\mathcal{H}^{-1}(\theta,\theta').
-  \label{eq:cov-rho}
-\end{equation}
-En reportant \eqref{eq:cov-rho} dans \eqref{eq:corr-conn},
-on obtient la formule générale
-\begin{equation}
-  C_{\mathcal{A},\mathcal{B}}
-  =
-  -\frac{1}{L}
-  \iint d\theta\,d\theta'\;
-  a(\theta)\,\mathcal{H}^{-1}(\theta,\theta')\,b(\theta').
-  \label{eq:2point}
-\end{equation}
-
-\subsection*{Lien avec les susceptibilités}
-
-Le hessien \(\mathcal{H}\) est l’analogue fonctionnel
-de la matrice de susceptibilité classique :
-pour deux charges conservées linéaires
-\(Q_i=\int d\theta\,q_i(\theta)\rho(\theta)\),
-on retrouve
-\[
-  \chi_{ij}
-  =
-  \frac{\partial\langle Q_i\rangle}{\partial\mu_j}
-  =
-  -\frac{1}{L}
-  \iint d\theta\,d\theta'\;
-  q_i(\theta)\,\mathcal{H}^{-1}(\theta,\theta')\,q_j(\theta').
-\]
-Ainsi, les corrélations \eqref{eq:2point} généralisent
-la relation fluctuation–réponse :
-elles encodent la réponse linéaire (susceptibilité)
-et les fluctuations thermiques d’une même matrice
-\(\mathcal{H}^{-1}\).
+confirmant ainsi que la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ coïncide avec l’inverse du hessien.
 
 \medskip
-Ces résultats posent les fondations d’une description quantitative des
-fluctuations de densité de rapidité — clé pour tester expérimentalement
-la validité du GGE, analyser les corrélations à longue portée et
-caractériser les propriétés dynamiques des modèles intégrables en
-une dimension.
+
+Ces relations posent les bases d'une description quantifiée des fluctuations de densité de rapidité, essentielles pour tester expérimentalement la validité du GGE, comprendre les corrélations à longue distance, et accéder aux propriétés dynamiques fines des systèmes intégrables en une dimension.\\
+
+Ce développement quadratique justifie le caractère gaussien des fluctuations dans le régime thermodynamique, et sera à la base des extensions hydrodynamiques de type MFT (Macroscopic Fluctuation Theory).
+
+\paragraph{Structure de \(\mathcal{H}\).}
+
+L’opérateur hessien de l’action effective se décompose naturellement comme la différence entre deux contributions fonctionnelles :
+\[
+\mathcal{H} = \mathcal{H}^{(\mathcal{W})} - \mathcal{H}^{(\mathcal{S}_{YY})},
+\]
+où
+\[
+\mathcal{H}^{(\mathcal{W})}(\theta,\theta') := \left. \frac{\delta^2 \mathcal{W}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}, 
+\quad \text{et} \quad 
+\mathcal{H}^{(\mathcal{S}_{YY})}(\theta,\theta') := \left. \frac{\delta^2 \mathcal{S}_{YY}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}.
+\]
+
+L’opérateur inverse \(\mathcal{H}^{-1}\) est défini par la relation fonctionnelle :
+\[
+(\mathcal{H}^{-1} \cdot \mathcal{H})(\theta, \theta') = (\mathcal{H} \cdot \mathcal{H}^{-1})(\theta, \theta') = \int d\theta'' \; \mathcal{H}(\theta, \theta'')\, \mathcal{H}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
+\]
+où \(\delta(\theta - \theta')\) désigne la distribution de Dirac, et non une variation.
+
+\medskip
+
+On remarque tout d’abord que \(\mathcal{H}^{(\mathcal{W})} = 0\), car l’énergie généralisée par unité de longueur s’écrit simplement comme un couplage linéaire en \(\rho\) :
+\[
+\mathcal{W}[\rho] = \int d\theta \, w(\theta)\, \rho(\theta),
+\]
+avec un poids spectral \(w(\theta)\) fixé \eqref{chap.2.W.int}. La seconde dérivée fonctionnelle de \(\mathcal{W}\) s’annule donc identiquement.
+
+En revanche, la courbure fonctionnelle provient entièrement de l'entropie de Yang–Yang, dont l’expression \eqref{chap.2.entropi.int} est donnée par :
+\[
+\mathcal{S}_{YY}[\rho] = \int d\theta \left[
+\rho_s(\theta) \ln \rho_s(\theta) - \rho(\theta) \ln \rho(\theta) - (\rho_s(\theta) - \rho(\theta)) \ln(\rho_s(\theta) - \rho(\theta))
+\right],
+\]
+où \(\rho_s(\theta)\) désigne la densité d’états accessibles (ou densité totale) liée à \(\rho\) par les équations de Bethe.
+
+Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne négative de l'entropie \(\mathcal{S}_{YY}\), et détermine complètement la covariance spectrale à l’équilibre.
+
+
+
+%\subsection*{Lien avec les susceptibilités}
+%
+%Le hessien \(\mathcal{H}\) est l’analogue fonctionnel
+%de la matrice de susceptibilité classique :
+%pour deux charges conservées linéaires
+%\(Q_i=\int d\theta\,q_i(\theta)\rho(\theta)\),
+%on retrouve
+%\[
+%  \chi_{ij}
+%  =
+%  \frac{\partial\langle Q_i\rangle}{\partial\mu_j}
+%  =
+%  -\frac{1}{L}
+%  \iint d\theta\,d\theta'\;
+%  q_i(\theta)\,\mathcal{H}^{-1}(\theta,\theta')\,q_j(\theta').
+%\]
+%Ainsi, les corrélations \eqref{eq:2point} généralisent
+%la relation fluctuation–réponse :
+%elles encodent la réponse linéaire (susceptibilité)
+%et les fluctuations thermiques d’une même matrice
+%\(\mathcal{H}^{-1}\).
+%
+%\medskip
+%Ces résultats posent les fondations d’une description quantitative des
+%fluctuations de densité de rapidité — clé pour tester expérimentalement
+%la validité du GGE, analyser les corrélations à longue portée et
+%caractériser les propriétés dynamiques des modèles intégrables en
+%une dimension.
 
 
 %\section*{Introduction}
@@ -497,121 +660,180 @@ une dimension.
 %    \mathcal{S}_{\text{eff}}[\rho] \approx \mathcal{S}_{\text{eff}}[\langle \rho \rangle] + \frac{1}{2} \int d\theta \, d\theta' \; \delta \rho(\theta) \, \mathcal{H}(\theta, \theta') \, \delta \rho(\theta'),
 %\end{equation}
 
-On note \( \mathcal{H}(\theta, \theta') \)  la Hessienne fonctionnelle de  \( \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] \)
 
-%où \( \mathcal{H}(\theta, \theta') \) désigne la Hessienne fonctionnelle de l’action effective, définie par :
 
+La Hessienne $ \mathcal{H}^{(\mathcal{S}_{YY})}$ se décompose alors
 \begin{eqnarray}
-    \mathcal{H}(\theta, \theta') = - \left. \frac{\delta^2}{\delta \rho(\theta) \, \delta \rho(\theta')} \left( \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] \right) \right|_{\rho = \langle \rho \rangle}.
-\end{eqnarray}
-
-La fonction de corrélation à deux points des fluctuations \( \delta \rho \) est alors donnée par l’inverse de la Hessienne :
-
-\begin{eqnarray}
-    \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle = \frac{1}{L} \, \mathcal{H}^{-1}(\theta, \theta'),
-    \label{chap:fluctu:eq:fluctuations}
-\end{eqnarray}
-
-où \( \mathcal{H}^{-1} \) est défini comme le noyau de l’opérateur inverse au sens fonctionnel :
-
-\begin{eqnarray}
-     (\mathcal{H}^{-1} \cdot  \mathcal{H})(\theta, \theta')  = (\mathcal{H}\cdot  \mathcal{H}^{-1})(\theta, \theta') = \int d\theta'' \; \mathcal{H}(\theta, \theta'') \, \mathcal{H}^{-1}(\theta'', \theta') = \delta(\theta - \theta')
-     \label{chap:fluctu:eq:hessienner.prod.inv} 
-\end{eqnarray}
-
-où le dernier $\delta$ ,désigne la fonction delta de Dirac, et non une différentielle.\\
-
-Dans un premier temps calculons $\mathcal{H}(\theta, \theta')$. Puisque l'énergie généralisé s'écrit
-
-\begin{eqnarray}
-	\mathcal{W}[\rho] & = & \int w(\theta) \rho(\theta) \, d \theta , 	
-\end{eqnarray}
-
-alors sa différentielle seconde est nulle et la Hessienne se réécrit alors 
-
-\begin{eqnarray}
-	\mathcal{H}(\theta, \theta') = - \left. \frac{\delta^2\mathcal{S}_{YY}[\rho]}{\delta \rho(\theta) \, \delta \rho(\theta')} \right|_{\rho = \langle \rho \rangle},		
-\end{eqnarray}
-
-alors en injectant l'entropie de Yang-Yang que je rappelle 
-
-\begin{eqnarray}
-	\mathcal{S}_{YY}[\rho] & = & \int d \theta \, \left ( \rho_s \ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) \right ) ( \theta ) 		
-\end{eqnarray}
-
-la Hessienne se décompose alors
-
-\begin{eqnarray}
-	\mathcal{H}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
+	\mathcal{H}^{(\mathcal{S}_{YY})}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
 	\label{chap:fluctu:eq:hessienne3} 	
 \end{eqnarray}
-
-avec une partie diagonale irrégulière
-
+avec une partie diagonale irrégulière reflètant une structure de type Fermi–Dirac, même dans un système bosonique,conséquence de l’exclusion statistique induite par l’intégrabilité,
 \begin{eqnarray}
-	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle) }\right )  \delta(\theta, \theta') 	
+	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 - \nu_{\! eq}(\theta)) }\right )  \delta(\theta, \theta') 	
 \end{eqnarray}
-
 avec une partie symétrique régulière
-
 \begin{eqnarray}
-	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\langle \rho_s(\theta) \rangle (1 - \langle \nu(\theta) \rangle) } + \frac{1}{\langle \rho_s(\theta') \rangle  (1 - \langle \nu(\theta') \rangle) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
-	&&  + \int d \theta''  \frac{\langle \nu(\theta'') \rangle}{\langle \rho_s(\theta'') \rangle (1 - \langle \nu(\theta'') \rangle) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
+	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\rho_{\! s , eq}(\theta) (1 - \nu_{\! eq}(\theta) ) } + \frac{1}{\rho_{\! s, eq}(\theta')   (1 - \nu_{\! eq}(\theta')) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
+	&&  + \int d \theta''  \frac{\nu_{\! eq}(\theta'')}{\rho_{\, s, eq}(\theta'')(1 - \nu_{\! eq}(\theta'')) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
 	\label{chap:fluctu:eq:reg}
 \end{eqnarray}
  
- en notant $\langle \rho \rangle = \langle \rho_s \rangle \langle \rho \rangle$.\\
+ en notant $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.\\
+
+
+
+%\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
+%
+%Il est classique (cf. appendix~\ref{appendix:YYentropy}) que
+%l’entropie de Yang–Yang admet un hessien diagonal en base des \(\theta\) :
+%\begin{equation}
+%\mathcal{H}^{(S)}(\theta,\theta') =
+%\frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)\big(1-\nu_{\!eq}(\theta)\big)}.
+%\label{eq:hessian-SYY}
+%\end{equation}
+%
+%Quant à l’énergie généralisée,
+%si l’observable est extensive (fonctionnelle additive),
+%le terme \(\mathcal{H}^{(W)}\) est symétrique, et typiquement local ou à noyau fini.
+%
+%\medskip
+%Au total, les fluctuations du GGE au voisinage de \(\rho_{\mathrm{eq}}\)
+%sont décrites, à l’ordre quadratique, par une théorie de champs gaussienne
+%dont l’action effective est donnée par :
+%\begin{equation}
+%\delta^2 \Phi[\delta \rho] = \frac{1}{2} \iint d\theta\,d\theta'\; \delta \rho(\theta)\,
+%\left[ \frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)(1-\nu_{\!eq}(\theta))} - \mathcal{H}^{(W)}(\theta,\theta') \right]
+%\delta \rho(\theta').
+%\label{eq:action-gaussienne}
+%\end{equation}
+%
+%Cette structure permet l’évaluation explicite des variances et corrélations
+%d’observables (voir chap.~\ref{chap:observables}) ainsi que
+%la dérivation des matrices de susceptibilité, au cœur de la description
+%des fluctuations thermodynamiques et du transport.
+%
+%\subsection*{Commentaires physiques}
+%
+%\begin{itemize}[label = $\bullet$]
+%\item L’apparition de \(\nu_{\!eq}(1-\nu_{\!eq})\) dans le hessien
+%  reflète une structure de type Fermi–Dirac,
+%  même dans un système bosonique,
+%  conséquence de l’exclusion statistique induite par l’intégrabilité.
+%\item La matrice hessienne contrôle la réponse du système à une
+%  variation infinitésimale de \(\rho\) et, par là, encode les
+%  fluctuations statiques du GGE.
+%\item Ce développement quadratique justifie le caractère
+%  gaussien des fluctuations dans le régime thermodynamique,
+%  et sera à la base des extensions hydrodynamiques de type MFT
+%  (Macroscopic Fluctuation Theory).
+%\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+%On note \( \mathcal{H}(\theta, \theta') \)  la Hessienne fonctionnelle de  \( \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] \)
+%
+%%où \( \mathcal{H}(\theta, \theta') \) désigne la Hessienne fonctionnelle de l’action effective, définie par :
+%
+%\begin{eqnarray}
+%    \mathcal{H}(\theta, \theta') = - \left. \frac{\delta^2}{\delta \rho(\theta) \, \delta \rho(\theta')} \left( \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] \right) \right|_{\rho = \langle \rho \rangle}.
+%\end{eqnarray}
+%
+%La fonction de corrélation à deux points des fluctuations \( \delta \rho \) est alors donnée par l’inverse de la Hessienne :
+%
+%\begin{eqnarray}
+%    \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle = \frac{1}{L} \, \mathcal{H}^{-1}(\theta, \theta'),
+%    \label{chap:fluctu:eq:fluctuations}
+%\end{eqnarray}
+%
+%où \( \mathcal{H}^{-1} \) est défini comme le noyau de l’opérateur inverse au sens fonctionnel :
+%
+%\begin{eqnarray}
+%     (\mathcal{H}^{-1} \cdot  \mathcal{H})(\theta, \theta')  = (\mathcal{H}\cdot  \mathcal{H}^{-1})(\theta, \theta') = \int d\theta'' \; \mathcal{H}(\theta, \theta'') \, \mathcal{H}^{-1}(\theta'', \theta') = \delta(\theta - \theta')
+%     \label{chap:fluctu:eq:hessienner.prod.inv} 
+%\end{eqnarray}
+%
+%où le dernier $\delta$ ,désigne la fonction delta de Dirac, et non une différentielle.\\
+%
+%Dans un premier temps calculons $\mathcal{H}(\theta, \theta')$. Puisque l'énergie généralisé s'écrit
+%
+%\begin{eqnarray}
+%	\mathcal{W}[\rho] & = & \int w(\theta) \rho(\theta) \, d \theta , 	
+%\end{eqnarray}
+%
+%alors sa différentielle seconde est nulle et la Hessienne se réécrit alors 
+%
+%\begin{eqnarray}
+%	\mathcal{H}(\theta, \theta') = - \left. \frac{\delta^2\mathcal{S}_{YY}[\rho]}{\delta \rho(\theta) \, \delta \rho(\theta')} \right|_{\rho = \langle \rho \rangle},		
+%\end{eqnarray}
+%
+%alors en injectant l'entropie de Yang-Yang que je rappelle 
+%
+%\begin{eqnarray}
+%	\mathcal{S}_{YY}[\rho] & = & \int d \theta \, \left ( \rho_s \ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) \right ) ( \theta ) 		
+%\end{eqnarray}
+%
+%la Hessienne se décompose alors
+%
+%\begin{eqnarray}
+%	\mathcal{H}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
+%	\label{chap:fluctu:eq:hessienne3} 	
+%\end{eqnarray}
+%
+%avec une partie diagonale irrégulière
+%
+%\begin{eqnarray}
+%	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\rho_{\! s , eq}(\theta) \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle) }\right )  \delta(\theta, \theta') 	
+%\end{eqnarray}
+%
+%avec une partie symétrique régulière
+%
+%\begin{eqnarray}
+%	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\rho_{\! s , eq}(\theta) (1 - \langle \nu(\theta) \rangle) } + \frac{1}{\langle \rho_s(\theta') \rangle  (1 - \langle \nu(\theta') \rangle) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
+%	&&  + \int d \theta''  \frac{\langle \nu(\theta'') \rangle}{\langle \rho_s(\theta'') \rangle (1 - \langle \nu(\theta'') \rangle) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
+%	\label{chap:fluctu:eq:reg}
+%\end{eqnarray}
+% 
+% en notant $\langle \rho \rangle = \langle \rho_s \rangle \langle \rho \rangle$.\\
  
  \section{Fluctuations autour de la distribution moyenne}
  
  On cherche alors \( \mathcal{H}^{-1} \) aussi sous la forme 
-
 \begin{eqnarray}
 	\mathcal{H}^{-1}(\theta, \theta') & = & \mathcal{D}^{-1}(\theta, \theta') + \mathcal{B}(\theta, \theta') 
 	\label{chap:fluctu:eq:hessienner.inv.1}	
 \end{eqnarray}
-
 avec une partie diagonale irrégulière
-
 \begin{eqnarray}
-	\mathcal{D}^{-1}(\theta, \theta') & = & (\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle))  \delta(\theta, \theta') 
+	\mathcal{D}^{-1}(\theta, \theta') & = & (\rho_{\! s , eq}(\theta)  \nu_{\! eq}(\theta)(1 -\nu_{\! eq}(\theta)))  \delta(\theta, \theta') 
 	 \label{chap:fluctu:eq:irreg.inv}	
 \end{eqnarray}
-
 tel que 
-
 \begin{eqnarray}
     (\mathcal{D}^{-1} \cdot  \mathcal{D})(\theta, \theta')  = (\mathcal{D}\cdot  \mathcal{D}^{-1})(\theta, \theta') =  \int d\theta'' \; \mathcal{D}(\theta, \theta'') \, \mathcal{D}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
     \label{chap:fluctu:eq:irreg.prod.inv}
 \end{eqnarray}
-
-
 avec une partie symetrique régulière $\mathcal{B}$.\\
-Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que 
-
+Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que cette série d'implication
 \begin{eqnarray}
 	\left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{H}^{-1} & =& \delta \\  \mathcal{H}^{-1}\cdot\mathcal{H} & =& \delta  \end{array} \right.  \Rightarrow	 \left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{B} & =& - \mathcal{V}\cdot\mathcal{D}^{-1} \\  \mathcal{B}\cdot\mathcal{H} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}  \end{array} \right. \Rightarrow \left \{\begin{array}{rcl} \mathcal{B} & =& - \mathcal{H}^{-1}\cdot\mathcal{V}\cdot \mathcal{D}^{-1}  \\  \mathcal{B} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1}  \end{array} \right.	
 \end{eqnarray}
-
 Du fait que tous ces fonctions ($\mathcal{H}$ , $\mathcal{D}$ , $\mathcal{V}$ et inverse ) soit symétriques alors l'equation ci-dessus ne forme qu'une et $\mathcal{B}$ étant donc symétrique .
 Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv}) 
-
 \begin{eqnarray*}
 	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1})(\theta , \theta') 	,\\
-	& = & 	(\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \times \\
-	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
+	& = & 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
+	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
 \end{eqnarray*}
-
 où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
-En injectant cette dernier équation et \ref{chap:fluctu:eq:hessienner.inv.1} , dans (\ref{chap:fluctu:eq:fluctuations}) , il vient que une eqution implicite:
+En injectant cette dernier équation et \ref{chap:fluctu:eq:hessienner.inv.1} , dans (\ref{chap:fluctu:eq:fluctuations}) , il vient que une éqution implicite:
 \begin{eqnarray*}
 	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
-	&& (\langle \rho_s(\theta) \rangle \langle \nu(\theta) \rangle (1 - \langle \nu(\theta) \rangle)) \times \\
-	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\langle \rho_s(\theta)\rangle  (1 - \langle\nu(\theta) \rangle )} +  \frac{1}{\langle\rho_s(\cdot) \rangle (1 - \langle \nu (\cdot ) \rangle )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\langle\nu(\cdot)\rangle}{\langle\rho_s(\cdot) \rangle ( 1 - \langle\nu(\cdot)\rangle )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta).
+	&& 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
+	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
 \end{eqnarray*}
-
 
 
 
