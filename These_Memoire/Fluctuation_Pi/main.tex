@@ -71,7 +71,7 @@ En résumé, l’étude des fluctuations de la distribution de rapidités fourni
 Ce chapitre est consacré à cette extension, qui permettra :
 \begin{itemize}[label = $\bullet$]
   \item d’obtenir les matrices de susceptibilité \(\chi_{ij}\)  et les corrélations gaussiennes du GGE ;
-  \item de relier ces fluctuations aux observables expérimentales  (temps de vol, bruit de densité, etc.) ;
+  %\item de relier ces fluctuations aux observables expérimentales  (temps de vol, bruit de densité, etc.) ;
   \item de fournir la base théorique des équations d’hydrodynamique généralisée au second ordre.
 \end{itemize}
 Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons l’action quadratique régissant \(\delta\rho\).  Les contraintes d’intégrabilité et la structure du noyau \(\Delta\) joueront un rôle clé dans la diagonalisation de cette action, ouvrant la voie aux prédictions quantitatives sur les fluctuations GGE.
@@ -79,29 +79,48 @@ Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons
 
 \section{Principe de fluctuation-réponse dans un état diagonal}
 
-Soit un système intégrable dans un état d’équilibre généralisé (GGE), On a vus dans le chapitre \ref{} on à  défini par une matrice densité de la forme :
+%Soit un système intégrable dans un état d’équilibre généralisé (GGE), On a vus dans le chapitre \ref{} on à  défini par une matrice densité de la forme :
+
+Considérons un système intégrable dans un état d’équilibre généralisé (GGE). Comme nous l'avons vu au chapitre~\ref{}, un tel état est décrit par une matrice densité de la forme :
+
 \begin{eqnarray*}
-	\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w] \doteq  \frac{1}{Z^{(\mathcal{S})}[w]}\, e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]},\quad \text{où} \quad Z^{(\mathcal{S})}[w] \doteq \mathrm{Tr}\left(e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right).
+	\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w] \doteq  \frac{1}{Z^{(\mathcal{S})}[w]}\, e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]},\quad \text{où} \quad Z^{(\mathcal{S})}[w] \doteq \mathrm{Tr}\left(e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right),
+\end{eqnarray*}
+où \( \operator{\mathcal{Q}}[w] \) est une charge généralisée déterminée par le poids/potentiel spectral \( w(\theta) \).\\
+
+Nous avons vu que l'espérance d'une charge généralisée \( \operator{\mathcal{Q}}[f_1] \) dans cet état, notée au chapitre~\ref{} \( \langle \operator{\mathcal{Q}}^{(\mathcal{S})}[f_1] \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]} \), peut être simplifiée, dans ce chapitre, en :
+\begin{eqnarray*}
+	\langle \operator{\mathcal{Q}}[f_1] \rangle = \mathrm{Tr} \left[ \operator{\rho}_{\mathrm{GGE}}[w]\, \operator{\mathcal{Q}}[f_1] \right]
+= \frac{1}{Z[w]}\, \mathrm{Tr} \left[ e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[f_1] \right] =  -  \left . \frac{ \delta \ln Z [w] }{ \delta f_1  } \right|_{w}.	
 \end{eqnarray*}
 
-On a vus  que l’espérance d’une observable $\operator{\mathcal{Q}}^{(\mathcal{S})}[w_1]$ dans le GGE , noté dans le chapitre \ref{} par $\langle \operator{\mathcal{Q}}^{(\mathcal{S})}[w] \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]}$ que pour soucis d'aléger dans lé résonement on notéra $\langle \operator{\mathcal{Q}}[w_1] \rangle$, et j'enlève les $(\mathcal{S})$, le caractère locale étant maintenat inplicite , est donnée par :
+Par souci de lisibilité, nous omettrons les indices \((\mathcal{S})\) : le caractère local des observables étant désormais implicite.
+
+
+%On a vus  que l’espérance d’une observable $\operator{\mathcal{Q}}^{(\mathcal{S})}[f_1]$ dans le GGE , noté dans le chapitre \ref{} par $\langle \operator{\mathcal{Q}}^{(\mathcal{S})}[f_1] \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]}$ que pour soucis d'aléger dans lé résonement on notéra $\langle \operator{\mathcal{Q}}[f_1] \rangle$, et j'enlève les $(\mathcal{S})$, le caractère locale étant maintenat inplicite , est donnée par :
+
+\medskip
+
+%La dérivée fonctionnelle de l'espérance de la charge $\operator{\mathcal{Q}}[f_1]$ par rapport au potentiel conjugué $f_2$ est donnée par :
+La dérivée fonctionnelle de l'espérance de \( \operator{\mathcal{Q}}[f_1] \) par rapport à une autre fonction test \( f_2 \), représentant un potentiel conjugué, donne la réponse linéaire croisée :
+
 \begin{eqnarray*}
-	\langle \operator{\mathcal{Q}}[w_1] \rangle = \mathrm{Tr} \left[ \operator{\rho}_{\mathrm{GGE}}[w]\, \operator{\mathcal{Q}}[w_1] \right]
-= \frac{1}{Z[w]}\, \mathrm{Tr} \left[ e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[w_1] \right] =  -  \left . \frac{ \delta \ln Z [w] }{ \delta w_1  } \right|_{w}.	
+	\chi[f_1, f_2] \doteq - \left.\frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle}{\delta f_2} \right )_w =  \left . \frac{ \delta^2 \ln Z [w] }{ \delta f_1 \delta f_2 } \right|_{w}= \langle \operator{\mathcal{Q}}[f_1] \operator{\mathcal{Q}}[f_2] \rangle - \langle \operator{\mathcal{Q}}[f_1] \rangle \langle \operator{\mathcal{Q}}[f_2] \rangle .	
 \end{eqnarray*}
 
-La dérivée fonctionnelle de l'espérance de la charge $\operator{\mathcal{Q}}[w_1]$ par rapport au potentiel conjugué $w_2$ est donnée par :
-\begin{eqnarray*}
-	\chi[w_1, w_2] \doteq - \left.\frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w =  \left . \frac{ \delta^2 \ln Z [w] }{ \delta w_1 \delta w_2 } \right|_{w}= \langle \operator{\mathcal{Q}}[w_1] \operator{\mathcal{Q}}[w_2] \rangle - \langle \operator{\mathcal{Q}}[w_1] \rangle \langle \operator{\mathcal{Q}}[w_2] \rangle .	
-\end{eqnarray*}
+Autrement dit, la dérivée fonctionnelle seconde du logarithme de la fonction de partition fournit la covariance des charges \( \operator{\mathcal{Q}}[f_1] \) et \( \operator{\mathcal{Q}}[f_2] \), illustrant le principe de fluctuation-réponse dans ce contexte diagonal.
 
-\paragraph{Démo.}
+\paragraph{Démonstration.}
+
+Pour établir le lien entre réponse linéaire et fluctuations, nous allons partir de l'expression intégrale des charges généralisées, puis montrer que la susceptibilité associée correspond bien à la fonction de corrélation des fluctuations de densité de rapidité.
+
+
 \subparagraph{Charge généralisé sous forme intégrale.}
 Pour le démontrer on écrit la charge généralisé sous forme intégrale : 
 \begin{eqnarray*}
-\operator{\mathcal{Q}}[w] = L\int d\theta w(\theta) \operator{\rho}(\theta)
+\operator{\mathcal{Q}}[f] = L\int d\theta f(\theta) \operator{\rho}(\theta)
 \end{eqnarray*}
-où $\operator{\rho}(\theta)$ est l'opérateur densité spectale , agissant comme :
+où $\operator{\rho}(\theta)$ est l'opérateur densité spectal , agissant comme :
 \(
 \operator{\rho}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.
 \)
@@ -109,38 +128,38 @@ où $\operator{\rho}(\theta)$ est l'opérateur densité spectale , agissant comm
 \subparagraph{Dérivée fonctionnelle.}
 On dérive cette expression par rapport à $w_2$. En utilisant la dérivée d’un rapport :
 \(
-	\left.\frac{\delta}{\delta w_2} \left( \frac{A[w]}{Z[w]} \right) \right |_{w} = \frac{1}{Z[w]}\, \left.\frac{\delta A[w]}{\delta w_2} \right|_{w} - \frac{A[w]}{Z[w]^2}\, \left.\frac{\delta Z[w]}{\delta w_2}\right|_{w} ,
+	\left.\frac{\delta}{\delta f_2} \left( \frac{A[w]}{Z[w]} \right) \right |_{w} = \frac{1}{Z[w]}\, \left.\frac{\delta A[w]}{\delta f_2} \right|_{w} - \frac{A[w]}{Z[w]^2}\, \left.\frac{\delta Z[w]}{\delta f_2}\right|_{w} ,
 \)
-avec $A[w] \equiv \mathrm{Tr}[e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[w_1]]$, on obtient :
+avec $A[w] \equiv \mathrm{Tr}[e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[f_1]]$, on obtient :
 \begin{eqnarray*}
-	\left . \frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w
-	= \frac{1}{Z[w]}\, \frac{\delta A[w]}{\delta w_2}
-	- \langle \operator{\mathcal{Q}}[w_1] \rangle \cdot \frac{1}{Z[w]}\, \frac{\delta Z[w]}{\delta w_2}.
+	\left . \frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle}{\delta f_2} \right )_w
+	= \frac{1}{Z[w]}\, \frac{\delta A[w]}{\delta f_2}
+	- \langle \operator{\mathcal{Q}}[f_1] \rangle \cdot \frac{1}{Z[w]}\, \frac{\delta Z[w]}{\delta f_2}.
 \end{eqnarray*}
 
 \subparagraph{Dérivées explicites.}
 Utilisons la propriété démontrée précédemment :
 \(
-	\frac{\delta \operator{\mathcal{Q}}[w]}{\delta w_2} = \operator{\mathcal{Q}}[w_2]	.
+	\frac{\delta \operator{\mathcal{Q}}[w]}{\delta f_2} = \operator{\mathcal{Q}}[f_2]	.
 \)
 En notant que la dérivée d’une exponentielle diagonale est simple :
 \(
-\frac{\delta}{\delta w_2} e^{-\operator{\mathcal{Q}}[w]} = - \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]},
+\frac{\delta}{\delta f_2} e^{-\operator{\mathcal{Q}}[w]} = - \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]},
 \)
 on obtient :
 \begin{eqnarray*}
-\frac{\delta A[w]}{\delta w_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[w_1] \right],
+\frac{\delta A[w]}{\delta f_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]} \operator{\mathcal{Q}}[f_1] \right],
 \quad
-\frac{\delta Z[w]}{\delta w_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \right].
+\frac{\delta Z[w]}{\delta f_2} = - \mathrm{Tr}\left[ \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]} \right].
 \end{eqnarray*}
 
 \subparagraph{Regroupement.}
 En regroupant les termes, on trouve :
 \begin{eqnarray*}
-	\chi[w_1, w_2]&  \doteq & - \left.\frac{\delta \langle \operator{\mathcal{Q}}[w_1] \rangle}{\delta w_2} \right )_w  \\
-&=& -\frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[w_1] \right]
-+ \langle \operator{\mathcal{Q}}[w_1] \rangle \cdot \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]} \right] \\
-&=& \langle \operator{\mathcal{Q}}[w_2]\, \operator{\mathcal{Q}}[w_1] \rangle - \langle \operator{\mathcal{Q}}[w_1] \rangle\, \langle \operator{\mathcal{Q}}[w_2] \rangle.
+	\chi[f_1, f_2]&  \doteq & - \left.\frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle}{\delta f_2} \right )_w  \\
+&=& -\frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[f_1] \right]
++ \langle \operator{\mathcal{Q}}[f_1] \rangle \cdot \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]} \right] \\
+&=& \langle \operator{\mathcal{Q}}[f_2]\, \operator{\mathcal{Q}}[f_1] \rangle - \langle \operator{\mathcal{Q}}[f_1] \rangle\, \langle \operator{\mathcal{Q}}[f_2] \rangle.
 \end{eqnarray*}
 
 
@@ -149,25 +168,25 @@ En regroupant les termes, on trouve :
 \subparagraph{Corrélation spectrale.}
 On peut alors exprimer la susceptibilité comme :
 \begin{eqnarray*}
-\chi[w_1, w_2] = L^2\iint d\theta\, d\theta'\, w_1(\theta)\, w_2(\theta')\, C(\theta, \theta'),
+\chi[f_1, f_2] = L^2\iint d\theta\, d\theta'\, f_1(\theta)\, f_2(\theta')\, C(\theta, \theta'),
 \end{eqnarray*}
 où la fonction de corrélation spectrale $C$ est définie par :
 \begin{eqnarray*}
 C(\theta, \theta') \doteq \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle
 = \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle - \langle \operator{\rho}(\theta) \rangle \langle \operator{\rho}(\theta') \rangle.
 \end{eqnarray*}
-La matrice $\chi[w_1, w_2]$ s’interprète donc comme la covariance de la densité spectrale projetée sur les fonctions test $w_1$ et $w_2$.
+La matrice $\chi[f_1, f_2]$ s’interprète donc comme la covariance de la densité spectrale projetée sur les fonctions test $w_1$ et $w_2$.
 
 \medskip
 Un cas particulier d’intérêt est la susceptibilité d’une seule charge :
 \begin{eqnarray*}
-\chi[w] \equiv \chi[w, w] = \mathrm{Var}(\operator{\mathcal{Q}}[w]) = \langle \operator{\mathcal{Q}}[w]^2 \rangle - \langle \operator{\mathcal{Q}}[w] \rangle^2
-= \iint d\theta\, d\theta'\, w(\theta)\, w(\theta')\, C(\theta, \theta').
+\chi[f] \equiv \chi[f, f] = \mathrm{Var}(\operator{\mathcal{Q}}[f]) = \langle \operator{\mathcal{Q}}[f]^2 \rangle - \langle \operator{\mathcal{Q}}[f] \rangle^2
+= \iint d\theta\, d\theta'\, f(\theta)\, f(\theta')\, C(\theta, \theta').
 \end{eqnarray*}
 
-\section{Passage au régime thermodynamique}
+\section{Passage au régime thermodynamique et rôle de la Hessienne}
 
-Dans l’approximation thermodynamique, l’opérateur de densité spectrale $\hat{\rho}(\theta)$ est remplacé par sa valeur moyenne macroscopique $\rho_{\mathrm{eq}}(\theta)$, représentant la densité continue de quasi-particules dans l’état d’équilibre.
+Dans l’approximation thermodynamique, l’opérateur de densité spectrale $\operator{\rho}(\theta)$ est remplacé par sa valeur moyenne macroscopique $\rho_{\mathrm{eq}}(\theta)$, représentant la densité continue de quasi-particules dans l’état d’équilibre.
 
 Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang-Yang $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte d’une charge généralisée fixée. Le poids spectral $w$ est fixé. On a vus dans les chapitre \ref{??} que la condition d’équilibre s’écrit alors :
 \(
@@ -202,9 +221,9 @@ La matrice $\chi(\theta, \theta')$ possède plusieurs interprétations équivale
   \]
   \item Dans un état diagonal (comme le GGE), elle coïncide avec la matrice de corrélation, selon le principe fluctuation-réponse :
   \[
-  \chi(\theta, \theta') = \langle \delta \hat{\rho}(\theta)\, \delta \hat{\rho}(\theta') \rangle.
+  \chi(\theta, \theta') = \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle.
   \]
-  \item Dans la limite thermodynamique, où $\hat{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
+  \item Dans la limite thermodynamique, où $\operator{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
   \[
   \chi(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle.
   \]
@@ -411,7 +430,7 @@ En résumé, dans la limite thermodynamique, la matrice de susceptibilité spect
 %	\label{eq:2point}
 %\end{eqnarray}
 
-\subsection{Formalisme gaussien}
+\section{Formalisme gaussien et rôle de la Hessienne}
 
 Une autre approche pour accéder aux fluctuations de la densité spectrale $\rho(\theta)$ dans un état de GGE consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
 
@@ -443,6 +462,7 @@ Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluc
     \right]
 }, \nonumber \\
 &=& \frac{1}{L} \mathcal{H}^{-1}(\theta, \theta' ), \label{eq:fluctuations}
+\label{chap:fluctu:eq:fluctuations}
 \end{eqnarray}
 confirmant ainsi que la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ coïncide avec l’inverse du hessien.
 
@@ -466,9 +486,10 @@ où
 \]
 
 L’opérateur inverse \(\mathcal{H}^{-1}\) est défini par la relation fonctionnelle :
-\[
-(\mathcal{H}^{-1} \cdot \mathcal{H})(\theta, \theta') = (\mathcal{H} \cdot \mathcal{H}^{-1})(\theta, \theta') = \int d\theta'' \; \mathcal{H}(\theta, \theta'')\, \mathcal{H}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
-\]
+\begin{eqnarray}
+	(\mathcal{H}^{-1} \cdot \mathcal{H})(\theta, \theta') = (\mathcal{H} \cdot \mathcal{H}^{-1})(\theta, \theta') = \int d\theta'' \; \mathcal{H}(\theta, \theta'')\, \mathcal{H}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
+	\label{chap:fluctu:eq:hessienner.prod.inv} 	
+\end{eqnarray}
 où \(\delta(\theta - \theta')\) désigne la distribution de Dirac, et non une variation.
 
 \medskip
@@ -652,7 +673,7 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 %	\label{fig.fluctu.A}
 %\end{figure}
 
-\section{Fluctuations autour de la distribution moyenne et rôle de la Hessienne}
+\section{Expression de la Hessienne}
 
 %Dans le cadre de l'approximation gaussienne autour du point selle \( \rho = \langle \rho \rangle \), les fluctuations de la densité \( \delta \rho(\theta) = \rho(\theta) - \langle \rho(\theta) \rangle \) sont contrôlées par le développement quadratique de l'action effective \( \mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] \). %La forme quadratique associée s’écrit alors :
 
@@ -796,7 +817,7 @@ avec une partie symétrique régulière
 % 
 % en notant $\langle \rho \rangle = \langle \rho_s \rangle \langle \rho \rangle$.\\
  
- \section{Fluctuations autour de la distribution moyenne}
+ \section{Fluctuations autour de la distribution moyenne et inversion de la Hessienne}
  
  On cherche alors \( \mathcal{H}^{-1} \) aussi sous la forme 
 \begin{eqnarray}
@@ -827,7 +848,7 @@ Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv})
 	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
 \end{eqnarray*}
 où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
-En injectant cette dernier équation et \ref{chap:fluctu:eq:hessienner.inv.1} , dans (\ref{chap:fluctu:eq:fluctuations}) , il vient que une éqution implicite:
+En injectant cette dernier équation et \eqref{chap:fluctu:eq:hessienner.inv.1} , dans \eqref{chap:fluctu:eq:fluctuations} , il vient que une éqution implicite:
 \begin{eqnarray*}
 	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
 	&& 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
@@ -947,7 +968,7 @@ Cette expression explicite des corrélations permet d'évaluer les fluctuations 
 
 
 
-\subsection{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
+\section{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
 
 \paragraph{Hypothèses.}
 On considère un potentiel spectral défini par une combinaison linéaire :
@@ -956,7 +977,7 @@ w(\theta) = \sum_j \beta_j f_j(\theta),
 \]
 où les \( \beta_j \) sont les multiplicateurs de Lagrange associés aux charges généralisées :
 \[
-\operator{Q}_i = \mathcal{Q}[f_i] = L \int d\theta\, f_i(\theta)\, \hat{\rho}(\theta),
+\operator{Q}_i = \mathcal{Q}[f_i] = L \int d\theta\, f_i(\theta)\, \operator{\rho}(\theta),
 \]
 et \( \operator{\rho}(\theta) \) est l’opérateur de densité spectrale.
 
@@ -1087,7 +1108,7 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 %Cela généralise l’idée de la **formule de fluctuation-réponse** : la réponse à un potentiel conjugué est gouvernée par les corrélations spontanées du système au point d’équilibre.
 %
 %\paragraph{✅ Conclusion.}
-%Pour toute charge \( \mathcal{Q}[f] = L \int f(\theta)\, \hat{\rho}(\theta)\, d\theta \), on a :
+%Pour toute charge \( \mathcal{Q}[f] = L \int f(\theta)\, \operator{\rho}(\theta)\, d\theta \), on a :
 %\[
 %\boxed{
 %\chi_{f,f} = -\frac{\partial \langle \mathcal{Q}[f] \rangle}{\partial \lambda} = L^2 \iint d\theta\, d\theta'\, f(\theta)\, \chi(\theta, \theta')\, f(\theta'),
