@@ -4,11 +4,11 @@
 
 %Considérons un système homogène de taille $L$. Faisons l'hypothèse qu'après relaxation, le système est décrite par un ensemble généralisé de Gibbs (GGE). On a vus dans le chapire d'avant que la valeur moyenne des observables $\langle\operator{\mathcal{O}}\rangle$ dans un ensemble statistique s'écrit comme une intégrale formelle
 
-Considérons un système intégrable unidimensionnel, homogène, de longueur \(L\). Comme établi dans le chapitre~(\ref{chap:relaxation}), sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). Dans la limiter thermodynamiques la moyenne d’une observable locale $\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE}$ que pour plus de clairetais , dans les calcule future je noterais \(\langle\operator{\mathcal{O}}\rangle\) se formule alors comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
+Considérons un système intégrable unidimensionnel, homogène, de longueur \(L\). Comme établi dans le chapitre~(\ref{chap:relaxation}), sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). Dans la limiter thermodynamiques la moyenne d’une observable locale $\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]}$ que pour plus de clairetais , dans les calcule future je noterais \(\langle\operator{\mathcal{O}}\rangle_w\) se formule alors comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
 
 %Considérons un système intégrable unidimensionnel, homogène, de longueur  \(L\). Comme discuté au chapitre~\ref{chap:relaxation}, sa relaxation vers un état stationnaire est décrite par un \textit{Generalized Gibbs Ensemble} (GGE). Dans la limite thermodynamique, la moyenne d’une observable locale, notée désormais \(\langle\operator{\mathcal{O}}\rangle\) pour alléger les notations, s’écrit comme une intégrale fonctionnelle sur les distributions de rapidité~\cite{YangYang1969} :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}} \rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, \label{chap:fluctu:eq:ensemble_average}
+	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}} \rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}, \label{chap:fluctu:eq:ensemble_average}
 \end{eqnarray}
 avec $\langle\operator{\mathcal{O}} \rangle_{[\rho]}$ la valeur de l’observable dans un état propre caractérisé par la distribution de rapidité $\rho$, $\mathcal{S}_{YY}$ l'entropie de Yang-Yang \eqref{chap.2.entropi.int} et $\mathcal{W}$ l'énergie généralisé par unité de longueur \eqref{chap.2.W.int}.
 
@@ -16,7 +16,7 @@ avec $\langle\operator{\mathcal{O}} \rangle_{[\rho]}$ la valeur de l’observabl
 
 Dans la limite thermodynamique \(L\to\infty\), cette moyenne fonctionelle \eqref{chap:fluctu:eq:ensemble_average} sur tous les profils de rapidité $\rho$, avec un poids $\propto e^{(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}$. Dans la limite thermodynamique $L \to \infty$ , cette intégrale est dominée par la configuration $ \rho_{eq}$ qui maximise le poids exponentiel, c’est-à-dire la distribution de rapidité la plus probable. Ainsi, la moyenne de l’observable s’écrit au premier ordre de la méthode du point selle :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{GGE} & \approx & \langle\operator{\mathcal{O}} \rangle_{[\rho_{eq}]}	
+	\underset{\mbox{\tiny therm.}}{\lim}\langle \operator{\mathcal{O}} \rangle_{\operator{\rho}_{\mathrm{GGE}}^{(\mathcal{S})}[w]} & \approx & \langle\operator{\mathcal{O}} \rangle_{[\rho_{eq}]}	
 	\label{chap:fluctu:eq:ensemble_average:approx}
 \end{eqnarray}
 
@@ -53,7 +53,8 @@ Toutefois, la seule connaissance de la distribution de rapidité moyenne \( \rho
 Cela nécessite de pousser le développement fonctionnel de la \emph{fonction thermodynamique effective} \( (\mathcal{S}_{YY} - \mathcal{W})[\rho] \) à l’ordre quadratique en \( \delta \rho \).
 
 \medskip
-Si la GGE décrit correctement la valeur moyenne de \( \rho(\theta) \) après relaxation, il est naturel de se demander si elle capture également les \emph{fluctuations} autour de cette moyenne. Autrement dit, notre objectif est de tester si la GGE constitue le \textit{bon ensemble statistique} pour l’état stationnaire, en analysant non seulement la distribution moyenne des quasi-particules, mais aussi ses fluctuations.
+Si la GGE décrit correctement la valeur moyenne de \( \rho(\theta) \) après relaxation, il est naturel de se demander si elle capture également les \emph{fluctuations} autour de cette moyenne. Autrement dit, notre objectif est de tester si la GGE constitue le \textit{bon ensemble statistique} pour l’état stationnaire, en analysant non seulement la distribution moyenne des quasi-particules, mais aussi ses fluctuations.\\
+
 
 %\medskip
 %Plusieurs travaux récents ont mis en lumière l’intérêt expérimental de sonder ces fluctuations. De Nardis et al.\ ont notamment montré que la mesure de la \textit{structure dynamique} de la densité, après un quench, permet de reconstruire entièrement l’état stationnaire, c’est-à-dire la distribution \( \rho(\theta) \) du GGE~\cite{??}. En particulier, l’analyse du facteur de structure dynamique permet d’extraire les différentes \textit{températures effectives} \( \beta_i \) du GGE, et donc d’accéder à la distribution macroscopique des quasi-particules~\cite{??, ??}.
@@ -91,10 +92,13 @@ Ce chapitre est consacré à cette extension, qui permettra :
   %\item de relier ces fluctuations aux observables expérimentales  (temps de vol, bruit de densité, etc.) ;
   \item de fournir la base théorique des équations d’hydrodynamique généralisée au second ordre.
 \end{itemize}
+
 Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons l’action quadratique régissant \(\delta\rho\).  Les contraintes d’intégrabilité et la structure du noyau \(\Delta\) joueront un rôle clé dans la diagonalisation de cette action, ouvrant la voie aux prédictions quantitatives sur les fluctuations GGE.
 
 
 \section{Fluctuation-réponse et susceptibilités dans les états d’équilibre généralisés}
+
+\subsection{Cadre général : GGE, observables et dérivées fonctionnelles}
 
 %Soit un système intégrable dans un état d’équilibre généralisé (GGE), On a vus dans le chapitre \ref{} on à  défini par une matrice densité de la forme :
 
@@ -122,13 +126,13 @@ Par souci de lisibilité, nous omettrons les indices \((\mathcal{S})\) : le cara
 La dérivée fonctionnelle de l'espérance de \( \operator{\mathcal{Q}}[f_1] \) par rapport à une autre fonction test \( f_2 \), représentant un potentiel conjugué, donne la réponse linéaire croisée :
 
 \begin{eqnarray*}
-	\chi_w[f_1, f_2] \doteq   \left . \frac{ \delta^2 \ln Z [w] }{ \delta f_1 \delta f_2 } \right)_{w} =  - \left.\frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle}{\delta f_2} \right )_w = C_w(f_1, f_2) , 	
+	\chi_w[f_1, f_2] \doteq   \left . \frac{ \delta^2 \ln Z [w] }{ \delta f_1 \delta f_2 } \right)_{w} =  - \left.\frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle}{\delta f_2} \right )_w = C_w[f_1, f_2] , 	
 \end{eqnarray*}
 
 avec le fonction corrélation à deux points : 
 
 \begin{eqnarray*}
-	C_w(f_1, f_2) \doteq  	\langle ( \operator{\mathcal{Q}}[f_1] - \langle \operator{\mathcal{Q}}[f_1] \rangle_w ) ( \operator{\mathcal{Q}}[f_2] - \langle \operator{\mathcal{Q}}[f_f] \rangle_w  ) \rangle_w = \langle \operator{\mathcal{Q}}[f_1] \operator{\mathcal{Q}}[f_2] \rangle_w - \langle \operator{\mathcal{Q}}[f_1] \rangle_w \langle \operator{\mathcal{Q}}[f_2] \rangle_w.
+	C_w[f_1, f_2] \doteq  	\langle ( \operator{\mathcal{Q}}[f_1] - \langle \operator{\mathcal{Q}}[f_1] \rangle_w ) ( \operator{\mathcal{Q}}[f_2] - \langle \operator{\mathcal{Q}}[f_f] \rangle_w  ) \rangle_w = \langle \operator{\mathcal{Q}}[f_1] \operator{\mathcal{Q}}[f_2] \rangle_w - \langle \operator{\mathcal{Q}}[f_1] \rangle_w \langle \operator{\mathcal{Q}}[f_2] \rangle_w.
 \end{eqnarray*}
 
 
@@ -181,20 +185,30 @@ on obtient :
 En regroupant les termes, on trouve :
 \begin{eqnarray*}
 	\chi_w[f_1, f_2]&  \doteq & - \left.\frac{\delta \langle \operator{\mathcal{Q}}[f_1] \rangle_w}{\delta f_2} \right )_w  \\
-&=& -\frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[f_1] \right]
-+ \langle \operator{\mathcal{Q}}[f_1] \rangle_w \cdot \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]} \right] \\
+&=& \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[w_2]\, e^{-\operator{\mathcal{Q}}[w]}\, \operator{\mathcal{Q}}[f_1] \right]
+- \langle \operator{\mathcal{Q}}[f_1] \rangle_w \cdot \frac{1}{Z[w]}\, \mathrm{Tr}\left[ \operator{\mathcal{Q}}[f_2]\, e^{-\operator{\mathcal{Q}}[w]} \right] \\
 &=& \langle \operator{\mathcal{Q}}[f_2]\, \operator{\mathcal{Q}}[f_1] \rangle_w - \langle \operator{\mathcal{Q}}[f_1] \rangle_w\, \langle \operator{\mathcal{Q}}[f_2] \rangle_w.
 \end{eqnarray*}
 
+\medskip
 
 \subparagraph{Conclusion.} Dans un état diagonal tel que le GGE, la susceptibilité est égale à la covariance entre charges généralisées, illustrant le principe de \emph{fluctuation-réponse}.
+%\paragraph{Remarques.}
+La matrice $\chi_w[f_1, f_2]$ s’interprète donc comme la covariance de la densité spectrale projetée sur les fonctions test $f_1$ et $f_2$.
+Un cas particulier d’intérêt est la susceptibilité d’une seule charge :
+\begin{eqnarray*}
+\chi_w[f] \equiv \chi_w[f, f] = \mathrm{Var}_w(\operator{\mathcal{Q}}[f]) = \langle \operator{\mathcal{Q}}[f]^2 \rangle_w - \langle \operator{\mathcal{Q}}[f] \rangle_w^2
+= L^2 \iint d\theta\, d\theta'\, f(\theta)\, C_w(\theta, \theta')\, f(\theta').
+\end{eqnarray*}
 
 
-\paragraph{Corrélations spectrales et susceptibilité.}
+\subsection{Corrélations spectrales et susceptibilité}
+
+%\paragraph{Corrélations spectrales et susceptibilité.}
 
 La susceptibilité fonctionnelle peut s’exprimer, dans la base des fonctions test, comme une forme bilinéaire projetée sur la fonction de corrélation spectrale :
 \begin{eqnarray*}
-\chi_w[f_1, f_2] = C_w[f_1, f_2] = L^2 \iint d\theta\, d\theta'\, f_1(\theta)\, f_2(\theta')\, C_w(\theta, \theta'),
+\chi_w[f_1, f_2] = C_w[f_1, f_2] = L^2 \iint d\theta\, d\theta'\, f_1(\theta)\, C_w(\theta, \theta')\, f_2(\theta'),
 \end{eqnarray*}
 où la fonction de corrélation spectrale \( C_w(\theta, \theta') \) est définie comme la covariance des fluctuations de densité spectrale :
 \begin{eqnarray*}
@@ -203,29 +217,97 @@ C_w(\theta, \theta') \doteq \langle \delta \operator{\rho}(\theta)\, \delta \ope
 
 Par ailleurs, l’espérance de la densité spectrale s’obtient comme une dérivée fonctionnelle du logarithme de la fonction de partition :
 \begin{eqnarray*}
-\langle \operator{\rho}(\theta) \rangle_w = - \frac{1}{L} \left. \frac{\delta \ln Z[w]}{\delta w(\theta)} \right)_w,
+\langle \operator{\rho}(\theta) \rangle_w = - \frac{1}{L} \left. \frac{\delta \ln Z[w]}{\delta w(\theta)} \right),
 \end{eqnarray*}
 et la susceptibilité spectrale, définie comme la réponse de \( \langle \rho(\theta) \rangle_w \) à une variation de \( w(\theta') \), s’écrit :
 \begin{eqnarray*}
-\chi(\theta, \theta') = \left. \frac{1}{L^2} \frac{\delta^2 \ln Z[w]}{\delta w(\theta)\, \delta w(\theta')} \right)_w = - \left. \frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta w(\theta')} \right)_w.
+\chi_w(\theta, \theta') = \left. \frac{1}{L^2} \frac{\delta^2 \ln Z[w]}{\delta w(\theta)\, \delta w(\theta')} \right) = - \left. \frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta w(\theta')} \right).
 \end{eqnarray*}
 
 Ainsi, dans l’état diagonal \( \operator{\rho}_{\mathrm{GGE}}[w] \), la susceptibilité spectrale coïncide avec la fonction de corrélation \( C_w(\theta, \theta') \), illustrant le principe de \emph{fluctuation-réponse}.
 
+\subsection{Vérification numérique : susceptibilité vs corrélation spectrale}
+
+Dans cette section, nous confrontons les deux expressions de la susceptibilité spectrale \( \chi_w(\theta, \theta') \) :
+\begin{itemize}[label = $\bullet$]
+    \item d'une part, son interprétation comme covariance des fluctuations de la densité spectrale : \( C_w(\theta, \theta') \),
+    \item d'autre part, son expression comme dérivée fonctionnelle seconde du logarithme de la fonction de partition : \( \chi_w(\theta, \theta') = - \frac{1}{L} \frac{\delta \langle \rho(\theta) \rangle_w}{\delta w(\theta')} \).
+\end{itemize}
+
+L'objectif est de vérifier numériquement l'identité :
+\[
+\chi_w(\theta, \theta') = C_w(\theta, \theta') \quad \text{(principe de fluctuation-réponse)},
+\]
+en utilisant un algorithme de Monte Carlo basé sur les états propres du modèle de Lieb-Liniger.
+
+\paragraph{Méthode numérique :} on fixe un poid/potentiel spectral quadratique
+\[
+w(\theta) = \tfrac{1}{2} \theta^2,
+\]
+et on fixe les paramètres physiques du système : \( N = 7 \) particules, \( L = 10 \) la taille du système, et \( c = 1 \) l’intensité des interactions.
+
+Les états propres du gaz sont obtenus par la résolution des équations de Bethe
+\[
+L \theta_j + \sum_{k \ne j} 2 \arctan \left( \frac{\theta_j - \theta_k}{c} \right) = 2 \pi I_j,
+\]
+où \( \{I_j\} \) sont des entiers (ou demi-entiers) représentant une configuration de type Bethe.\\
+
+À chaque étape du Monte Carlo :
+\begin{enumerate}
+    \item on propose une nouvelle configuration \( \{I_j\} \),
+    \item on résout les équations de Bethe pour obtenir \( \{ \theta_j \} \),
+    \item on accepte ou rejette la configuration selon le critère de Metropolis basé sur l’énergie \( \sum w(\theta_j) \).
+\end{enumerate}
+
+On enregistre à chaque étape la densité spectrale empirique :
+\[
+\rho(\theta) = \frac{1}{L} \sum_{j=1}^N \delta(\theta - \theta_j),
+\]
+en la binant sur une grille \( \{ \theta_i \} \). Cela permet de construire numériquement :
+\begin{itemize}
+    \item la moyenne \( \langle \operator{\rho}(\theta) \rangle_w \),
+    \item la covariance spectrale \( C_w(\theta, \theta') \).
+\end{itemize}
+
+\paragraph{Calcul numérique de \( \chi_w(\theta, \theta') \) par dérivée fonctionnelle.}
+
+Pour obtenir \( \chi_w(\theta, \theta') \) comme dérivée de \( \langle \operator{\rho}(\theta) \rangle_w \) par rapport à \( w(\theta') \), on procède de la manière suivante :
+\begin{itemize}
+    \item on perturbe localement le potentiel \( w(\theta) \rightarrow w(\theta) + \varepsilon\, \delta_{\theta'}(\theta) \),
+    \item on relance le Monte Carlo avec ce nouveau potentiel pour obtenir \( \langle \rho(\theta) \rangle_{w + \varepsilon \delta_{\theta'}} \),
+    \item on approxime la dérivée par différences finies :
+    \[
+    \chi_w(\theta, \theta') \approx -\frac{1}{L} \cdot \frac{ \langle \operator{\rho}(\theta) \rangle_{w + \varepsilon \delta_{\theta'}} -  \langle\operator{\rho} (\theta) \rangle_w }{ \varepsilon }.
+    \]
+\end{itemize}
+
+\paragraph{Comparaison numérique.}
+On obtient ainsi deux matrices de taille \( \texttt{nbins} \times \texttt{nbins} \) :
+\begin{itemize}
+    \item la matrice de corrélation empirique \( C_w(\theta, \theta') \),
+    \item la matrice de susceptibilité \( \chi_w(\theta, \theta') \) calculée par dérivée fonctionnelle.
+\end{itemize}
+
+On peut alors visualiser et comparer ces deux objets pour tester numériquement la validité du principe de fluctuation-réponse dans le cadre du GGE.\\
+
+Les deux matrices sont ensuite représentées sous forme d'images couleur pour visualiser leur structure et mettre en évidence leur éventuelle coïncidence.
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.32\textwidth]{chi_matrix.png}
+    %\includegraphics[width=0.32\textwidth]{C_matrix.png}
+    %\includegraphics[width=0.32\textwidth]{difference_matrix.png}
+    \caption{Comparaison des matrices : à gauche, susceptibilité \( \chi_w(\theta,\theta') \) obtenue par dérivée fonctionnelle ; au centre, corrélation spectrale \( C_w(\theta,\theta') \) estimée par fluctuations ; à droite, leur différence.}
+    \label{fig:comparison_chi_C}
+\end{figure}
+
+\paragraph{Discussion.}
+
+{\color{blue} { (\color{red}à revoir )} Les figures montrent une excellente concordance entre les deux matrices, confirmant numériquement le principe de fluctuation-réponse dans le cadre du GGE. La différence résiduelle visible sur la troisième image est due aux erreurs statistiques liées à la méthode Monte Carlo et à l’approximation par différences finies dans le calcul de la dérivée fonctionnelle.} 
 
 
-\medskip
 
 
-\paragraph{Remarques.}
-La matrice $\chi_w[f_1, f_2]$ s’interprète donc comme la covariance de la densité spectrale projetée sur les fonctions test $f_1$ et $f_2$.
-
-\medskip
-Un cas particulier d’intérêt est la susceptibilité d’une seule charge :
-\begin{eqnarray*}
-\chi_w[f] \equiv \chi_w[f, f] = \mathrm{Var}(\operator{\mathcal{Q}}[f]) = \langle \operator{\mathcal{Q}}[f]^2 \rangle_w - \langle \operator{\mathcal{Q}}[f] \rangle_w^2
-= L^2 \iint d\theta\, d\theta'\, f(\theta)\, f(\theta')\, C_w(\theta, \theta').
-\end{eqnarray*}
 
 \section{Limite thermodynamique, structure variationnelle et susceptibilités}
 
@@ -249,7 +331,7 @@ où $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$ est l'opérateur (généralement
 \paragraph{Inversion.}
 On en déduit que la réponse de $\rho$ à une variation du potentiel conjugué $w$ est donnée par l'inverse fonctionnel :
 \[
-\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \left( \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') \equiv - L \chi(\theta, \theta').
+\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \left( \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') \equiv - L \chi_w(\theta, \theta').
 \]
 
 %La fonction $\chi(\theta, \theta')$ définit la matrice de susceptibilité spectrale, qui décrit la réponse linéaire de la densité d’équilibre à une perturbation infinitésimale du potentiel conjugué. Par le principe de fluctuation-réponse, elle coïncide avec la matrice de corrélation des fluctuations thermodynamiques de la densité spectrale :
@@ -262,33 +344,33 @@ La matrice $\chi(\theta, \theta')$ possède plusieurs interprétations équivale
 \begin{itemize}[label = $\bullet$]
   \item Elle mesure la réponse linéaire de la densité spectrale à une variation du potentiel conjugué :
   \[
-  \chi(\theta, \theta') = - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
+  \chi_w(\theta, \theta') = - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
   \]
   \item Dans un état diagonal (comme le GGE), elle coïncide avec la matrice de corrélation, selon le principe fluctuation-réponse :
   \[
-  \chi(\theta, \theta') = \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle_w.
+  \chi_w(\theta, \theta') = \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle_w.
   \]
   \item Dans la limite thermodynamique, où $\operator{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
   \[
-  \chi(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w.
+  \chi_w(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w.
   \]
 \end{itemize}
 
 \paragraph{Résumé.}
 L'équation variationnelle d'équilibre :
 \(
-\left.\frac{\delta \mathcal{S}_{YY}[\rho_{eq}]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = w(\theta)
+\left.\frac{\delta \mathcal{S}_{YY}[\rho_{eq}]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta)
 \)
 implique, par différentiation fonctionnelle et inversion de l’opérateur $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, que :
 \[
-\chi(\theta, \theta') =   - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle  = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') .
+\chi_w(\theta, \theta') =   - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w  = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') .
 \]
 
 \noindent
 En résumé, dans la limite thermodynamique, la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ encode à la fois :
 
 \begin{itemize}[label = $\bullet$] 
-  \item la réponse linéaire de la densité d'équilibre à une variation du poids qpectral $w(\theta)$ ;
+  \item la réponse linéaire de la densité d'équilibre à une variation du poids spectral $w(\theta)$ ;
   \item la covariance (ou corrélation) entre densités spectrales ;
   \item la courbure du potentiel thermodynamique générateur du GGE.
 \end{itemize}
@@ -907,6 +989,47 @@ En injectant cette dernier équation et \eqref{chap:fluctu:eq:hessienner.inv.1} 
 Cette expression explicite des corrélations permet d'évaluer les fluctuations des grandeurs macroscopiques comme le nombre total de particules ou l'énergie, en les exprimant comme des observables linéaires de la densité \( \rho(\theta) \).
 
 
+\subsection{Vérification numérique thermodynamique : susceptibilité et corrélations}
+
+Dans cette section, nous proposons une vérification explicite de l'égalité fonctionnelle entre la susceptibilité spectrale \( \chi_w(\theta, \theta') \) et la fonction de corrélation spectrale \( C_w(\theta, \theta') \) dans le régime thermodynamique. Cette égalité exprime le principe de \emph{fluctuation-réponse} dans le cadre du GGE.
+
+\paragraph{Méthode.} On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de Bethe, dans un état d’équilibre généralisé déterminé par un poids spectral fixé \( w(\theta) \). À partir de ce poids, on résout numériquement les équations TBA pour déterminer les quantités thermodynamiques d'équilibre : la densité de quasi-particules \( \rho_{\mathrm{eq}}(\theta) \), la densité d'états \( \rho_{s,\mathrm{eq}}(\theta) \), et la fonction de remplissage \( \nu_{\mathrm{eq}}(\theta) = \rho_{\mathrm{eq}}(\theta) / \rho_{s,\mathrm{eq}}(\theta) \).
+
+\paragraph{Calcul de la susceptibilité.}
+À partir de \( \nu_{\mathrm{eq}} \), on calcule la courbure fonctionnelle de l'entropie de Yang-Yang.
+
+On inverse ensuite numériquement cet opérateur discretisé pour obtenir la matrice
+\[
+C_w(\theta, \theta') = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta').
+\]
+
+\paragraph{Calcul par différentiation numérique.}
+En parallèle, on calcule indépendamment la réponse linéaire
+\[
+\chi_w(\theta, \theta') = - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},
+\]
+par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( c \), \( N \), et \( L \) constants.
+
+\paragraph{Comparaison.}
+Les deux approches produisent des matrices \(\chi_w(\theta, \theta')\) que l’on compare numériquement. La coïncidence entre ces deux résultats valide la structure variationnelle de l'entropie de Yang-Yang et confirme que la réponse linéaire (calculée comme dérivée fonctionnelle) coïncide avec l’inverse de la courbure thermodynamique :
+\[
+\chi_w(\theta, \theta') = C_w(\theta, \theta') = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta').
+\]
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.32\textwidth]{chi_thermo_inverse.png}
+    %\includegraphics[width=0.32\textwidth]{chi_thermo_derivative.png}
+    %\includegraphics[width=0.32\textwidth]{chi_thermo_difference.png}
+    \caption{Vérification numérique dans le régime thermodynamique. Gauche : \(C_w\) par inversion de la courbure. Centre : \(\chi_w\) par dérivée fonctionnelle. Droite : écart relatif entre les deux.}
+    \label{fig:chi_thermodynamique}
+\end{figure}
+
+\paragraph{Conclusion.} Cette vérification confirme que dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang-Yang encode entièrement les fluctuations et les réponses spectrales du système. Elle constitue un test non trivial du principe de fluctuation-réponse dans les systèmes intégrables.
+
+
+
+
 
 
 %\section{Fluctuations autour du profil stationnaire}
@@ -1014,6 +1137,8 @@ Cette expression explicite des corrélations permet d'évaluer les fluctuations 
 
 \section{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
 
+\subsection{Réponse linéaire des charges : dérivées fonctionnelles et projections} 
+
 \paragraph{Hypothèses.}
 On considère un potentiel spectral défini par une combinaison linéaire :
 \[
@@ -1021,7 +1146,7 @@ w(\theta) = \sum_j \beta_j f_j(\theta),
 \]
 où les \( \beta_j \) sont les multiplicateurs de Lagrange associés aux charges généralisées :
 \[
-\operator{Q}_i = \mathcal{Q}[f_i] = L \int d\theta\, f_i(\theta)\, \operator{\rho}(\theta),
+\operator{Q}_i = \operator{\mathcal{Q}}[f_i] = L \int d\theta\, f_i(\theta)\, \operator{\rho}(\theta),
 \]
 et \( \operator{\rho}(\theta) \) est l’opérateur de densité spectrale.
 
@@ -1052,7 +1177,7 @@ En injectant dans l'expression précédente, on obtient :
 On définit alors la {\em matrice de susceptibilité croisée} \( \chi_{ij} \) par :
 \[
 \boxed{
-\chi_{ij} \doteq - \left. \frac{\partial \langle \operator{Q}_i \rangle_w }{ \partial \beta_j } \right)_{\beta_{k \ne j}} = - \left. \frac{\delta \langle \operator{\mathcal{Q}}[f_i] \rangle_w }{ \delta f_j } \right)_{w} \doteq  \chi[f_i , f_j ] = L^2 \iint d\theta\, d\theta'\, f_i(\theta)\, \chi_w(\theta, \theta')\, f_j(\theta')
+\chi_w[\operator{Q}_i , \operator{Q}_j] \doteq - \left. \frac{\partial \langle \operator{Q}_i \rangle_w }{ \partial \beta_j } \right)_{\beta_{k \ne j}} = - \left. \frac{\delta \langle \operator{\mathcal{Q}}[f_i] \rangle_w }{ \delta f_j } \right)_{w} \doteq  \chi_w[f_i , f_j ] = C_w[f_i , f_j] 
 }
 \]
 
@@ -1063,7 +1188,7 @@ Ce résultat relie :
   \item la projection de la matrice de susceptibilité spectrale locale \( \chi_w(\theta, \theta') \) sur \( f_i, f_j \).
 \end{itemize}
 
-\subsection{Cas particuliers : énergie et nombre de particules}
+\subsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
 
 Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). Le poids spectral prend alors la forme canonique :
 \(
@@ -1081,9 +1206,9 @@ Son facteur de Lagrange / potentiel conjugué dans \( w(\theta) \) est simplemen
 \[
 w(\theta) \supset -\beta \mu \cdot 1.
 \]
-La susceptibilité associée s’écrit alors :
+La susceptibilité  et les corrélations associée sont égaux:
 \[
-\chi_{\operator{Q},\operator{Q}} = \left . \frac{\partial \langle \operator{Q} \rangle_w}{\partial (\beta \mu)} \right)_\beta  = L^2 \iint d\theta\, d\theta'\, \chi_w(\theta, \theta').
+\chi_w[{\operator{Q},\operator{Q}}] \doteq \left . \frac{\partial \langle \operator{Q} \rangle_w}{\partial (\beta \mu)} \right)_\beta  = L^2 \iint d\theta\, d\theta'\, C_w(\theta, \theta') \doteq C_w(f_{\operator{Q}}, f_{\operator{Q}}).
 \]
 
 \paragraph{Cas de l’énergie.}
@@ -1097,7 +1222,7 @@ w(\theta) \supset \beta \varepsilon(\theta).
 \]
 On en déduit la susceptibilité thermique :
 \[
-\chi_{\operator{H},\operator{H}} := -\left.\frac{\partial \langle \operator{H} \rangle_w}{\partial \beta} \right)_{\beta \mu}  = L^2 \iint d\theta\, d\theta'\, \varepsilon(\theta)\, \chi_w(\theta, \theta')\, \varepsilon(\theta').
+\chi_{\operator{H},\operator{H}} \doteq -\left.\frac{\partial \langle \operator{H} \rangle_w}{\partial \beta} \right)_{\beta \mu}  = L^2 \iint d\theta\, d\theta'\, \varepsilon(\theta)\, C_w(\theta, \theta')\, \varepsilon(\theta') \doteq C_w(f_{\operator{H}}, f_{\operator{H}}).
 \]
 
 \paragraph{Évaluation numérique.}
@@ -1143,6 +1268,24 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.}
 	\label{fig.fluctu.A_com}
 \end{figure}
+
+
+
+\section*{Conclusion}
+
+{\color{blue} 
+Dans ce chapitre, nous avons étudié les fluctuations de la distribution de rapidité dans les états d’équilibre généralisés (GGE), en mettant en lumière le lien fondamental entre corrélations et réponse linéaire.
+
+Nous avons d’abord introduit le formalisme général des GGE, dans lequel les observables macroscopiques sont dérivées fonctionnellement du potentiel conjugué $w(\theta)$. Dans ce cadre, nous avons montré que la matrice de susceptibilité spectrale $\chi_w(\theta , \theta')$ décrit à la fois la réponse linéaire de la densité spectrale moyenne à une perturbation infinitésimale du potentiel, et les corrélations entre fluctuations de la densité, conformément au principe de fluctuation-réponse. Ce lien a été validé numériquement par des simulations de Monte-Carlo sur des ensembles de quasi-particules.
+
+Nous avons ensuite approfondi l’étude de la limite thermodynamique, où les fluctuations autour de l’état d’équilibre deviennent gaussiennes. Dans cette approximation, les susceptibilités s’expriment comme l’inverse de la courbure fonctionnelle de l’entropie de Yang-Yang, formalisée par l’opérateur hessien $\mathcal{H}^{\mathcal{S}_{YY}}$. Nous avons donné une formulation explicite de cet opérateur, ainsi que de sa matrice inverse.
+
+Enfin, nous avons relié ces objets locaux à des susceptibilités globales via une projection sur les fonctions test $f_i(\theta)$, en considérant le poid/potentiel spectral $w(\theta)$ comme une combinaison linéaire des charges $\operator{Q}_i$ . Ce formalisme nous a permis d’interpréter la dérivée de l’observable $\langle \operator{Q}_i \rangle_w$ par rapport au multiplicateur de Lagrange $\beta_i$ comme une dérivée fonctionnelle projetée de la matrice $\chi_w(\theta , \theta')$ , et d’en valider la structure par une comparaison numérique explicite sur l’énergie et le nombre de particules.
+
+{\color{red} ( je m'avence ... à voir ) } 
+Ce chapitre établit ainsi de manière rigoureuse et quantitative le lien entre dérivées fonctionnelles, susceptibilités et fluctuations dans les GGE, en fournissant à la fois des fondements théoriques et des validations numériques robustes.
+
+}
 
 %\paragraph{🔸 Remarque sur les corrélations globales.}
 %Dans les deux cas, les fluctuations totales \( \langle \delta N^2 \rangle \), \( \langle \delta E^2 \rangle \), ou croisées \( \langle \delta E\, \delta N \rangle \), sont données par les projections :
