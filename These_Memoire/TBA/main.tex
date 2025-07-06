@@ -1117,7 +1117,7 @@ Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de fa�
 Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du GGE) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
 
 
-\paragraph{Résolution numérique de l’équation TBA.}
+\paragraph{Résolution numérique de l’équation TBA.}\label{para-algho-TBA}
 
 On se place à l’équilibre canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
 \begin{equation}
@@ -1136,7 +1136,7 @@ inférieure à 1, garantissant la convergence de l’itération de Picard.
 La structure contractante de l’équation garantit l’absence de cycles ou de points fixes multiples, assurant la convergence de l’itération vers l’unique solution admissible.
 L’équation \eqref{eq:num:TBA} est non linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
 \(
-  \epsilon_0 = \epsilon - \mu,
+  \epsilon_0 = \varepsilon - \mu,
 \)
 puis on construit une suite de fonctions \(\varepsilon_n\) définie par
 \begin{eqnarray*}
@@ -1165,7 +1165,10 @@ Après discrétisation de la variable $\theta$, cette équation devient un syst�
 La distribution de rapidité est alors obtenue par $\rho_{\!eq} = \nu_{\!eq} \ast \rho_{\! s,eq}$.\\
 
 \medskip
-Ainsi, pour tout couple \((T,\mu)\), l’algorithme fournit la pseudo-énergie \( \varepsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\mathrm{eq}} \) à l’équilibre thermique, prêts à être utilisés pour le calcul des observables.
+Ainsi, pour tout couple \((T,\mu)\), l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\mathrm{eq}} \) à l’équilibre thermique, prêts à être utilisés pour le calcul des observables.
+
+\medskip
+Pour $w$ quelconque , l'algorythme est identique.
 
 %\begin{equation}
 %  2\pi\,\rho_{s,\mathrm{eq}}
