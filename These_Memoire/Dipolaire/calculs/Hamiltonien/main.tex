@@ -1,0 +1,112 @@
+%(cf. Complément HIII du tome 1 de Cohen-Tannoudji)\\
+
+\paragraph{Cadre sans potentiel vecteur.}
+
+Soit une particule de masse $m$ couplée à un champ électromagnétique. Dans une jauge $\mathcal{J} \equiv (\operatorvec{A}, \Phi)$, le quadrivecteur potentiel s’écrit $A^\mu = \left\{ A^0 \equiv \Phi/c,\, A^i \equiv \operatorvec{A} \right\}$. Si l’on définit la dérivée covariante comme $\mathcal{D}_\mu = \partial_\mu + \frac{iq}{\hbar} A_\mu = \{ \mathcal{D}_t \equiv \partial_t + \frac{iq}{\hbar} \Phi , \operatorvec{\mathcal{D}} = \operatorvec{\nabla} - \frac{iq}{\hbar} \operatorvec{A}  \} $, l’équation de Schrödinger régissant l’évolution de la fonction d’onde $\vert \psi \rangle$  prend la forme manifestement invariante :
+\begin{eqnarray*}
+	i\hbar \mathcal{D}_t \vert \psi \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}} \right)^2 \vert \psi \rangle, & soit &  i\hbar \partial_t \vert \psi \rangle = H_{\mathcal{J}} \vert \psi \rangle , ~\mbox{avec}~	H_{\mathcal{J}} = \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
+\end{eqnarray*}
+%avec  l’Hamiltonien associé est :
+
+%\begin{equation}
+%    H_{\mathcal{J}} = \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi.
+%\end{equation}
+
+%L’équation de Schrödinger régissant l’évolution de la fonction d’onde $\vert \psi \rangle$ s’écrit alors :
+%\begin{equation}
+%    i\hbar \partial_t \vert \psi \rangle = H_{\mathcal{J}} \vert \psi \rangle.
+%\end{equation}
+
+%\footnote{
+%\begin{Rema}
+%Si l’on définit la dérivée covariante comme :
+%\begin{equation}
+%    \mathcal{D}_\mu = \partial_\mu + \frac{iq}{\hbar} A_\mu,
+%\end{equation}
+%soit en composantes :
+%\[
+%\mathcal{D}_t = \partial_t + \frac{iq}{\hbar} \Phi, \quad \vec{\mathcal{D}} = \vec{\nabla} - \frac{iq}{\hbar} \vec{A},
+%\]
+%l’équation de Schrödinger prend la forme manifestement invariante :
+%\begin{equation}
+%    i\hbar \mathcal{D}_t \vert \psi \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \vec{\mathcal{D}} \right)^2 \vert \psi \rangle.
+%\end{equation}
+%\end{Rema}
+%}
+
+\paragraph{Hamiltonien simplifié.}
+
+Dans une autre jauge $\mathcal{J}'$, le potentiel s’écrit $A'^\mu = \{ \Phi'/c,\, \operatorvec{A}' \}$ avec $ A'_\mu = A_\mu - \partial_\mu \chi$, où $\chi$ est une fonction scalaire dépendant de l’espace et du temps. Un argument rapide pour garantir que cette transformation conserve les équations de Maxwell est que le tenseur électromagnétique
+\(
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+\)
+est invariant par changement de jauge. Dans cette nouvelle jauge , la dérivé corariante s'écrit $\mathcal{D}_\mu' = \partial_\mu + \frac{iq}{\hbar} A_\mu' = \{ \mathcal{D}_t' \equiv \partial_t + \frac{iq}{\hbar} ( \Phi - \partial_t \chi )   , \operatorvec{\mathcal{D}}' \equiv \operatorvec{\nabla} - \frac{iq}{\hbar} (\operatorvec{A} + \operatorvec{\nabla}\chi)\} $, l’équation de Schrödinger s'écrit
+\begin{eqnarray*}
+	i\hbar \mathcal{D}_t' \vert \psi' \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}}' \right)^2 \vert \psi' \rangle, & soit &  i\hbar \partial_t \vert \psi' \rangle = H_{\mathcal{J}'} \vert \psi' \rangle , ~\mbox{avec}~	H_{\mathcal{J}'} = -q\partial_t \chi + \tilde{H}_{\mathcal{J}},% \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
+\end{eqnarray*}
+avec $\vert \psi'\rangle = \operator{T}_\chi(t) \vert \psi\rangle$, $\operator{T}_\chi(t) \equiv \exp\left( \frac{iq}{\hbar} \chi(\operatorvec{R}, t) \right)$ et $\tilde{H}_{\mathcal{J}} = \operator{T}_\chi H_{\mathcal{J}}\operator{T}_\chi^\dag = \frac{1}{2m} ( \operatorvec{P} - q  ( \operatorvec{A} + \operatorvec{\nabla}\chi  )  )^2 + q \Phi $. Je choisie $\chi = - \operatorvec{R}\cdot\operatorvec{A}$ (ie $\mathcal{J}' \equiv (\operatorvec{A})$). $\operator{T}_\chi(t)$ devient un operateur translation de $iq \operatorvec{A}$ dans l’espace des impultion , et l'opérateur champs électrique transverse étant $\operatorvec{E}_\perp = - \partial_t \operatorvec{A}$. L'Hamiltonien $H_{\mathcal{J}'}$ devient :
+\begin{eqnarray*}
+	H_{\mathcal{J}'} & = & 	\tilde{H}_{\mathcal{J}}	+ V_{AR},
+\end{eqnarray*}
+avec $\tilde{H}_{\mathcal{J}} = \frac{1}{2m}\operatorvec{P}^2 +q \Phi$. L’opérateur de couplage atome-rayonnement quantifié est donné par :
+\(
+V_{AR} = - \operatorvec{D} \cdot \operatorvec{E}_\perp,
+\)
+où \(\operatorvec{D}\) est l’opérateur de moment dipolaire électrique, défini par :
+\(
+\operatorvec{D} = q \operatorvec{R}.
+\)
+
+%\begin{equation}
+%    A'_\mu = A_\mu - \partial_\mu \chi,
+%\end{equation}
+%où $\chi$ est une fonction scalaire dépendant de l’espace et du temps.
+
+
+
+%Dans cette nouvelle jauge, l’Hamiltonien devient :
+%\begin{align}
+%    H_{\mathcal{J}'} &= \frac{1}{2m} (\vec{P} - q \vec{A}' )^2 + q\Phi' \\
+%    &= \frac{1}{2m} (\vec{P} - q \vec{A} - q \vec{\nabla} \chi)^2 + q\Phi - q \partial_t \chi.
+%\end{align}
+
+%L’équation de Schrödinger associée est :
+%\begin{equation}
+%    i\hbar \partial_t \vert \psi' \rangle = H_{\mathcal{J}'} \vert \psi' \rangle,
+%\end{equation}
+%avec $\vert \psi' \rangle = T_\chi(t) \vert \psi \rangle$ et
+%\[
+%T_\chi(t) = \exp\left( \frac{iq}{\hbar} \chi(\vec{R}, t) \right).
+%\]
+
+%\footnote{
+%\begin{Rema}
+%En examinant le membre gauche, on a :
+%\begin{align}
+%    i\hbar \partial_t \vert \psi' \rangle &= i\hbar \left( \partial_t T_\chi \right) \vert \psi \rangle + i\hbar T_\chi \partial_t \vert \psi \rangle \\
+%    &= \left( - q \partial_t \chi + T_\chi H_{\mathcal{J}} T_\chi^\dag \right) \vert \psi' \rangle,
+%\end{align}
+%ce qui confirme que $H_{\mathcal{J}'} = T_\chi H_{\mathcal{J}} T_\chi^\dag - q \partial_t \chi$. 
+
+%Dans le cas particulier $\chi = -\vec{R} \cdot \vec{A}$, on trouve :
+%\begin{equation}
+%    \widetilde{H}_{\mathcal{J}} = \frac{\vec{P}^2}{2m} + q\Phi.
+%\end{equation}
+%Cela correspond à un opérateur de translation dans l’espace des impulsions :
+%\[
+%T_\chi^\dag \vert \vec{p} \rangle = \vert \vec{p} + q\vec{A} \rangle.
+%\]
+%\end{Rema}
+%}
+
+%\paragraph{Conclusion – Simplification par transformation de jauge}
+%Cette transformation de jauge permet de travailler dans un cadre où le potentiel vecteur est nul. Le Hamiltonien du système en est considérablement simplifié, et l'effet du champ électromagnétique externe se manifeste uniquement à travers un potentiel scalaire effectif. Cela facilite à la fois l'analyse théorique et l'interprétation physique du couplage lumière-matière dans ce régime.
+
+
+\paragraph{Conclusion – Simplification par transformation de jauge}
+\bigskip
+%\begin{tcolorbox}[colback=gray!10, colframe=black, title=Conclusion]
+La transformation de jauge que nous avons appliquée permet de travailler dans un cadre où le{\bf  potentiel vecteur} est nul. Dans cette jauge particulière, le Hamiltonien du système est considérablement simplifié, car le couplage au champ électromagnétique ne se fait plus par le terme de couplage minimal \((\operatorvec{P} - q \operatorvec{A})^2\), mais uniquement à travers un {\bf potentiel scalaire effectif}.
+
+Cette simplification rend l’analyse théorique plus accessible et facilite l’interprétation physique du rôle du champ électromagnétique, en le ramenant à une simple modulation de l’énergie potentielle.
+%\end{tcolorbox}

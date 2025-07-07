@@ -1,0 +1,416 @@
+%Pour le Rubibidium 87 à l'état fondamental , $J=1/2$ la composante tensorielle s’annule. Et de plus on impose un champ électrique classique quasi-monochromatique à polarisation rectiligne , soit le champ \eqref{chap:dipolaire:eq:elec.2} se réécrit :
+%\begin{eqnarray*}
+%	\operatorvec{E}_\perp ( \vec{r} , t ) & = & \mathcal{E} \vec{u} \cos(\omega t ) ,
+%\end{eqnarray*}
+%où ici le vecteur de polarisation $\vec{u}$ est réelle. En notant $\hbar\omega_{n'J' n J} = \hbar\omega_{n'J'} - \hbar \omega_{nJ}$  la différence d'énergie  angulaire entre $\ket{b} \equiv \ket{ n', J' } $ et $\ket{a} \equiv \ket{ n , J \equiv 1/2  } $, le terme d'interaction au second ordre \eqref{chap:dipolaire:eq:nrj2.1} devient 
+%\begin{eqnarray*}
+%	\delta E_{n,J}  & = &  -\frac{|\mathcal{E}|^2}{4\hbar} \sum_{n'J'} \Re\left[
+%		\frac{|\langle n',J'|\operatorvec{u}\cdot \operatorvec{D}|n,J\rangle|^2}{\omega_{n'J' n J}-\omega - i\gamma_{n'J' n J}/2}
+			+
+%		\frac{|\langle n J|\operatorvec{u}\cdot \operatorvec{D}|n'J'\rangle|^2}{\omega_{n'J' n J}+\omega + i\gamma_{n'J' n J}/2}
+%		\right],
+%\end{eqnarray*}
+
+%où $\gamma_{n'J'nJ} = \gamma_{n'J'} - \gamma_{nJ}$ est la largeur naturelle de transition. 
+
+
+%\subsubsection{Désaccords très importants}
+
+%Le nombre de niveaux d’énergie à considérer change suivant le désaccord du laser utilisé. Si
+%celui-ci est très grand, la structure fine (∼ 15 nm) ne peut-être résolue et les niveaux d’énergie à
+%considérer ne dépendent que du moment cinétique orbital total L~ . Les niveaux d’énergie |L, mLi,
+%ainsi que les coefficients de Clebsch-Gordan des transitions sont représentés sur la figure 1.1.
+%Une telle transition S → P se comporte, pour une polarisation donnée, comme un atome à deux
+%niveaux.
+
+%Fig. 1.1 – Structure des niveaux électroniques |L, mLi de l’atome de rubidium, et coefficients de
+%Clesbsch-Gordan associés
+
+
+
+%.....
+
+%\subsubsection{Structure fine}
+
+
+%Dans la base des vecteurs propres de moment cinétiques total $J$ (état $\ket{ n J m_J } $) on peut décomposer l'opérateur dipolaire composent spheriques
+
+%\begin{eqnarray*}
+%	\operatorvec{D} & = & \sum_{q=1}^1 D_q \vec{u}_q,	
+%\end{eqnarray*}
+
+%avec $\vec{u}_q$ le vecteur de polarisation unitaire, ($q = 0 , \pm 1 $ pour recpectivement  rectiligne  et circulaire). De plus $\operatorvec{D}\cdot\vec{u}_q$ n'agit uniquement que la partie orbitale $m_L \to m_L' = m_L + q $ soit 
+
+%\begin{eqnarray*}
+%	\brac{ m_L' , m_S' } \operatorvec{D}\cdot\vec{u}_q \ket{m_L' , m_S'} & \propto & \delta_{m_L' , m_L+q } %\delta_{m_S' , m_S }	
+%\end{eqnarray*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Champ électrique appliqué}
+
+Pour le rubidium-87 à l’état fondamental, l’état électronique est tel que $J = 1/2$ ($L=0$) . Dans ce cas, la composante tensorielle de l'opérateur dipolaire s'annule. 
+
+On considère qu’un champ électrique classique, quasi-monochromatique et à polarisation rectiligne, est appliqué à l’atome. Ce champ \eqref{chap:dipolaire:eq:elec.2}peut s’écrire :
+
+\begin{eqnarray*}
+	\operatorvec{E}_\perp(\vec{r}, t) & = & \mathcal{E} \vec{u} \cos(\omega t),
+\end{eqnarray*}
+
+où $\mathcal{E}$ est l’amplitude du champ, et $\vec{u}$ un vecteur de polarisation réel unitaire.
+
+
+\paragraph{Cas de désaccords très importants.}
+
+Lorsque le désaccord du laser est très grand, la structure fine (typiquement de l’ordre de $15 ~nm $) ne peut être résolue. Dans ce régime, seuls les niveaux caractérisés par le moment angulaire orbital total $L$ sont pertinents.
+
+\subparagraph{Décalage d’énergie au second ordre.}
+En notant $\hbar\omega_{ \scriptstyle nL \rightarrow n'L'} = \hbar\omega_{n'L'} - \hbar\omega_{nL}$ la différence d’énergie entre les états $\ket{e} \equiv \ket{n', L'}$ et $\ket{g} \equiv \ket{n, L=0}$, le décalage d’énergie au second ordre du perturbateur dipolaire s’écrit (voir équation~\eqref{chap:dipolaire:eq:nrj2.1}) :
+
+\begin{eqnarray}
+	\delta E_{n,L} & = & -\frac{|\mathcal{E}|^2}{4\hbar} \sum_{n'L'} \Re\left[
+		\frac{|\langle n',L'|\operatorvec{u} \cdot \operatorvec{D}|n,L\rangle|^2}{\omega_{\scriptstyle nL \rightarrow n'L} - \omega - i\gamma_{\scriptstyle n'L'nL}/2}
+		+
+		\frac{|\langle n,L|\operatorvec{u} \cdot \operatorvec{D}|n',L'\rangle|^2}{\omega_{\scriptstyle nL \rightarrow n'L} + \omega + i\gamma_{\scriptstyle n'L'nL}/2}
+	\right],\label{chap:dipolaire:eq:nrj2.2}
+\end{eqnarray}
+
+où $\gamma_{\scriptstyle  n'L'nL} = \gamma_{n'L'} + \gamma_{nL}$ est la différence des largeurs naturelles de transition.
+
+{\color{red} (à revoire)} Les états sont alors notés $\ket{L, m_L}$, et les coefficients de Clebsch–Gordan gouvernent les amplitudes de transition induites par le champ.
+Dans ce cas, une transition de type $S \rightarrow P$ se comporte, pour une polarisation donnée, comme une transition à deux niveaux effectifs. La figure~1.1 illustre la structure des niveaux $\ket{L, m_L}$ ainsi que les coefficients de Clebsch–Gordan associés aux différentes polarisations.
+
+\subparagraph{Structure orbitale et opérateur dipolaire.}
+
+Dans la base propre du moment orbital $L$ (état $\ket{L, m_L}$), on exprime les composantes sphériques de l’opérateur dipolaire comme :
+
+\begin{eqnarray*}
+	\operatorvec{D} & = & \sum_{q=-1}^{+1} D_q \operatorvec{u}_q,
+\end{eqnarray*}
+
+où $\operatorvec{u}_q$ le vecteur de polarisation unitaire ($q  = 0 , \pm 1 $ désigne les composantes rectigne,  circulaires droite,  et circulaire gauche).
+
+L'opérateur $\operatorvec{D} \cdot \operatorvec{u}_q$ n’agit que sur la partie orbitale de la fonction d’onde. Il modifie le moment orbital projeté $m_L$ :
+
+\begin{eqnarray*}
+	m_L \to m_L' ~=~ m_L + q ,   & soit &\bra{m_L'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{m_L} ~ \propto ~ \delta_{m_L', m_L + q}.
+\end{eqnarray*}
+
+\subparagraph{Application du théorème de Wigner-Eckart.}
+
+D’après le théorème de Wigner-Eckart, l’élément de matrice du moment dipolaire entre deux états d’un même multiplet peut se factoriser en un produit d’un facteur radial (appelé coefficient réduit) et d’un coefficient de Clebsch-Gordan. Cela permet de séparer la dépendance angulaire de la structure électronique.
+
+\begin{eqnarray}
+	\bra{L', m_{L}'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L, m_L} 
+	& = & \bra{L'}\!\|\operatorvec{D}\|\!\ket{J} \cdot \braket{L, 1; m_L, q | L', m_{L}'} ,
+	\label{eq:WignerEckart}
+\end{eqnarray}
+
+où $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$ est le coefficient réduit associé à la transition atomique (ici noté $d_{\scriptstyle 5S \rightarrow 5P}$ dans le cas du rubidium), et $\braket{L, 1; m_L, q | L', m_{L}'}$ est le coefficient de Clebsch-Gordan décrivant la conservation du moment cinétique orbital projeté.
+
+\subparagraph{Application au cas $5S \rightarrow 5P$ et $q = 0$. }
+
+Dans le cadre de la figure~1.1, on considère uniquement la transition entre les niveaux $L = 0$ (état $S$) et $L' = 1$ (état $P$) et la polarisation est rectiligne ($\vec{u} = \vec{u}_{q = 0}$  . On s’intéresse plus précisément à l’élément de matrice entre l’état fondamental $\ket{L=0, m_L = 0}$ et un état excité $\ket{L'=1, m_{L}'}$. L’élément pertinent est alors :
+
+\begin{eqnarray}
+	\bra{L' = 1, m_L'} \operatorvec{D} \cdot \operatorvec{u}_{q=0} \ket{L = 0, m_L = 0} 
+	& = & d_{\scriptstyle 5S \rightarrow 5P} \cdot \braket{L=0, 1; m_L = 0, q=0 | 1, m_L' } \\
+	& = & d_{\scriptstyle 5S \rightarrow 5P} \cdot \delta_{m_L', m_L + q}.
+	\label{eq:ClebschSimple}
+\end{eqnarray}
+
+%où $q$ désigne la composante du vecteur de polarisation (circulaire $q = \pm 1$, linéaire $q=0$), et $m$ est la projection orbitale de l’état excité.
+ Cette relation met en évidence que seule la composante de polarisation correspondant au changement de moment projeté orbital $m_L' = q = 0$ contribue à la transition, ce qui permet de sélectionner précisément les transitions optiques permises par la polarisation du champ incident.
+
+% (Insérer ici la figure avec \includegraphics et sa légende)
+\paragraph{Piégeage dipolaire d’un atome à deux niveaux — généralités.}
+
+%La force dipolaire résulte de l’interaction entre un champ électrique $\operatorvec{E}$ et une particule polarisable. Lorsqu’un atome neutre est plongé dans un tel champ, un moment dipolaire induit $\operatorvec{p}(t)$ se forme. Si le champ varie lentement par rapport à la dynamique interne de l’atome, alors $\operatorvec{p}(t)$ reste aligné avec $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
+\subparagraph{Introduction.}
+Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ développe un moment dipolaire induit $\operatorvec{p}(t)$. Si le champ varie lentement devant la dynamique interne de l’atome, le moment dipolaire reste aligné avec la composante transverse du champ, $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
+\(
+W(t) = -\frac{1}{2} \operatorvec{p}(t) \cdot \operatorvec{E}_\perp(t).
+\)
+
+Dans cette configuration, l’énergie potentielle est minimale là où l’intensité du champ est maximale. L’atome est alors attiré vers les régions de forte intensité du champ électrique : on parle de \textit{piège dipolaire optique}, ou encore de \textit{pince optique}.
+%L’atome est alors attiré vers les régions où l’intensité du champ est maximale. Ce phénomène est exploité dans les \textit{pièges dipolaires optiques}, également appelés \textit{pinces optiques}.
+
+%\subparagraph{Effet sur un système à deux niveaux.}
+
+%Considérons un système à deux niveaux \(|g\rangle\) et \(|e\rangle\), couplés par le champ électrique. L’interaction induit des transitions entre ces deux états, avec une amplitude gouvernée par l’élément de matrice du moment dipolaire \(\langle e \vert \operatorvec{D} \cdot \operatorvec{\mathcal{E}}\vert g \rangle\). En régime proche de la résonance, cette interaction peut être décrite efficacement par le modèle de Rabi, qui met en évidence les oscillations cohérentes entre les deux niveaux.
+
+\subparagraph{Système à deux niveaux et interaction avec le champ.}
+
+Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ et l’excité $\ket{e}$, couplés par le champ électrique. Le couplage est gouverné par l’élément de matrice dipolaire $\langle e \vert \operatorvec{D} \cdot \operatorvec{\mathcal{E}} \vert g \rangle$. Lorsque le champ est proche de la résonance, le système présente des oscillations de Rabi caractéristiques. Hors résonance, l’interaction se traduit par un décalage énergétique effectif des niveaux.
+
+\subparagraph{Expression du potentiel.}
+
+Hors résonance, et dans la limite d’un champ laser intense, le couplage au champ modifie l’énergie des états de manière effective. Ce décalage d’énergie est appelé « potentiel dipolaire » ou « décalage AC Stark ». Pour un état donné, ce potentiel est proportionnel à l’intensité du champ. Dans le cas d’un atome à deux niveaux, et sous certaines approximations détaillées plus bas, on montre que l'énergie \ref{chap:dipolaire:eq:nrj2.2} se dérive, le potentiel dipolaire s’écrit :
+
+
+\begin{eqnarray}
+	U_{\mathrm{dip}}(\operatorvec{r}) = -\frac{\vert \mathcal{E}\vert^2}{4\hbar}\frac{|\langle e \vert \operatorvec{D} \cdot \operatorvec{u}(\vec{r})\vert g \rangle|^2}{\Delta} = \frac{\hbar \, \Omega^2(\operatorvec{r})}{4 \Delta} 
+	= \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta},
+	\label{eq:Udip}
+\end{eqnarray}
+
+où $\Omega(\operatorvec{r}) = - \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\operatorvec{r}) / \hbar$ est la fréquence de Rabi, définissant le couplage entre le champ électrique (réel, ici entre $\ket{g} \equiv \ket{5S}$ et $\ket{e} \equiv \ket{5P}$), $\Delta = \omega - \omega_{\scriptstyle g \rightarrow e}$ est le désaccord du laser par rapport à la fréquence de transition atomique ; $I(\operatorvec{r}) = \varepsilon_0 c |\operatorvec{\mathcal{E}}(\operatorvec{r})|^2 / 2$ est l’intensité locale du champ laser ; $\Gamma$ est la largeur naturelle de la transition, donnée par :
+	\begin{eqnarray}
+		\Gamma = \frac{\omega_{\scriptstyle g \rightarrow e}^3}{3 \pi \varepsilon_0 \hbar c^3} d_{\scriptstyle g \rightarrow e} 
+		\label{eq:Gamma};
+	\end{eqnarray}
+	$I_{\mathrm{sat}}$ est l’intensité de saturation, définie par :
+	\begin{eqnarray}
+		I_{\mathrm{sat}} = \frac{\hbar \omega_{\scriptstyle g \rightarrow e}^3 \Gamma}{12 \pi c^2}.
+	\end{eqnarray}
+	
+%\subparagraph{Potentiel dipolaire optique}
+
+%Sous un champ laser décalé de la résonance atomique, et dans le régime de faible saturation, l’interaction se traduit par un potentiel effectif, appelé \textit{potentiel dipolaire} ou \textit{décalage AC Stark}. Pour un système à deux niveaux, ce potentiel s’écrit :
+%\begin{eqnarray}
+%U_{\mathrm{dip}}(\operatorvec{r}) 
+%& = & -\frac{|\operatorvec{\mathcal{E}}(\operatorvec{r})|^2}{4\hbar} \cdot \frac{|\langle e \vert \operatorvec{D} \cdot \operatorvec{u}(\operatorvec{r}) \vert g \rangle|^2}{\Delta} 
+%= \frac{\hbar \Omega^2(\operatorvec{r})}{4 \Delta} \nonumber \\
+%& = & \frac{\hbar \Gamma^2}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta},
+%\label{eq:Udip}
+%\end{eqnarray}
+%où :
+%\begin{itemize}
+%  \item $\Omega(\operatorvec{r}) = - \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\operatorvec{r}) / \hbar$ est la fréquence de Rabi ;
+%  \item $\Delta = \omega_L - \omega_{\tiny 5P5S}$ est le désaccord entre le laser et la transition atomique ;
+%  \item $I(\operatorvec{r}) = \frac{1}{2} \varepsilon_0 c |\operatorvec{\mathcal{E}}(\operatorvec{r})|^2$ est l’intensité locale du champ ;
+%  \item $\Gamma$ est la largeur naturelle de la transition :
+%  \[
+%  \Gamma = \frac{\omega_{5P5S}^3}{3 \pi \varepsilon_0 \hbar c^3} d_{5S5P} ;
+%  \]
+%  \item $I_{\mathrm{sat}} = \frac{\hbar \omega_0^3 \Gamma}{12 \pi c^2}$ est l’intensité de saturation.
+%\end{itemize}
+
+%\subparagraph{Conditions de validité.}
+
+%L’expression~\eqref{eq:Udip} est valable sous les hypothèses suivantes :
+%$|\Delta_L| \ll \omega_L, \omega_{5P5S}$ : le laser est quasi-résonant avec une seule transition, ce qui permet de restreindre le système à deux niveaux et de négliger les contributions hors-résonance ;
+%{\em Régime de grand désaccord en fréquence (détuning). } Dans le cas où le désaccord \(\Delta = \omega_L - \omega_{5P5S}\) est grand devant le taux de décroissance radiative \(\Gamma\), c’est-à-dire lorsque \(|\Delta| \gg \Gamma\), le désaccord est grand devant la largeur naturelle, ce qui autorise une approche perturbative , l’interaction avec le champ lumineux peut être traitée en perturbation du second ordre. Cette approche permet de projeter l’effet du champ lumineux sur l’état fondamental de l’atome, en négligeant les transitions réelles vers l’état excité.;
+%$\Omega \ll |\Delta_L|$ : on est dans le régime dit de \textit{faible saturation}.
+
+\subparagraph{Conditions de validité.}
+
+L'expression~\eqref{eq:Udip} pour le potentiel dipolaire est obtenue sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
+
+\begin{itemize}
+  \item \textbf{Sélectivité de la transition} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
+  
+  \item \textbf{Régime de grand désaccord en fréquence (large détuning)} : lorsque $|\Delta| \gg \Gamma$, c’est-à-dire lorsque le désaccord est grand devant la largeur naturelle de la transition, les excitations réelles vers l’état excité sont fortement supprimées. L’interaction lumière-matière peut alors être traitée en perturbation du second ordre : l’atome reste majoritairement dans son état fondamental, et l’effet du champ lumineux se manifeste sous la forme d’un potentiel effectif induit par des couplages virtuels.
+  
+  \item \textbf{Régime de faible saturation} : on suppose que la fréquence de Rabi $\Omega$ est beaucoup plus faible que le désaccord, i.e. $\Omega \ll |\Delta|$. Cette condition garantit que la population de l’état excité reste négligeable, ce qui justifie l’approximation adiabatique sur l’état fondamental.
+\end{itemize}
+
+
+%\subparagraph{Conditions de validité}
+
+%L’expression~\eqref{eq:Udip} repose sur les hypothèses suivantes :
+%\begin{itemize}
+%  \item $|\Delta| \ll \omega_L, \omega_{5P5S}$ : validité du modèle à deux niveaux ;
+%  \item $|\Delta| \gg \Gamma$ : justification de l’approximation perturbative ;
+%  \item $\Omega \ll |\Delta|$ : régime de faible saturation.
+%\end{itemize}
+
+%\subparagraph{Régime de grand désaccord en fréquence (détuning).}
+
+%Dans le cas où le désaccord \(\Delta = \omega_L - \omega_{5P5S}\) est grand devant le taux de décroissance radiative \(\Gamma\), c’est-à-dire lorsque \(|\Delta| \gg \Gamma\), l’interaction avec le champ lumineux peut être traitée en perturbation du second ordre. Cette approche permet de projeter l’effet du champ lumineux sur l’état fondamental de l’atome, en négligeant les transitions réelles vers l’état excité.
+
+
+\subparagraph{Interprétation physique.}
+
+Le potentiel \(U_{\mathrm{dip}}(\vec{r}) \) agit comme une modulation de l’énergie potentielle pour les atomes neutres. Selon le signe du désaccord \(\Delta\), les atomes sont attirés vers les régions de forte ou de faible intensité lumineuse :
+
+\begin{itemize}
+  \item Si $\Delta < 0$ (désaccord rouge), le potentiel est attractif, et les atomes se dirigent vers les maxima d’intensité.
+  \item Si $\Delta > 0$ (désaccord bleu), le potentiel est répulsif, et les atomes sont repoussés vers les minima d’intensité.
+\end{itemize}
+
+Ce phénomène est à la base des pièges dipolaires optiques, largement utilisés dans les expériences de refroidissement et de confinement d’atomes ultrafroids.
+
+
+\subparagraph{Confinement optique.}
+
+Ce potentiel dipolaire peut être utilisé pour piéger des atomes neutres. En focalisant le faisceau laser, on crée une variation spatiale de l’intensité lumineuse, et donc du potentiel dipolaire. Cela permet de construire des pièges optiques ou des réseaux d’interférences lumineuses appelés « réseaux optiques », où les atomes peuvent être confinés et manipulés avec une grande précision.
+
+
+
+
+%\subparagraph{Taux de diffusion spontanée}
+
+%L’interaction entre l’atome et le champ laser n’est pas purement conservative. L’atome peut absorber des photons du champ $\operatorvec{E}$ et les réémettre spontanément. Dans le régime précédent, le taux de diffusion spontanée s’écrit :
+
+%\begin{eqnarray}
+%	\Gamma_{\mathrm{sp}}(\operatorvec{r}) = \frac{\Gamma \, \Omega^2(\operatorvec{r})}{4 \delta_L^2} 
+%	= \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\delta_L^2}.
+%	\label{eq:GammaSp}
+%\end{eqnarray}
+
+%\subparagraph{Remarques sur le piégeage dipolaire}
+
+%Les équations~\eqref{eq:Udip} et~\eqref{eq:GammaSp} conduisent à deux observations essentielles :
+%\begin{itemize}
+%	\item \textbf{Signe du désaccord} : si $\delta_L < 0$ (désaccord rouge), le potentiel dipolaire est négatif, et les atomes sont attirés vers les zones d’intensité maximale. Si $\delta_L > 0$ (désaccord bleu), les atomes sont repoussés par la lumière ;
+%	\item \textbf{Dépendance en intensité et désaccord} : le potentiel varie comme $I / \delta_L$ tandis que le taux de diffusion varie comme $I / \delta_L^2$. Il est donc avantageux d’utiliser des désaccords importants avec des intensités élevées : cela permet d’obtenir un potentiel de piégeage significatif tout en minimisant les pertes dues à la diffusion. Ce régime est connu sous le nom de \textit{Far-Off Resonance Optical Trap} (FORT).
+%\end{itemize}
+
+\subparagraph{Taux de diffusion spontanée.}
+
+L’interaction avec le champ lumineux conduit à une absorption suivie d’une réémission spontanée. Le taux de diffusion dans le régime précédent est :
+\begin{eqnarray}
+\Gamma_{\mathrm{sp}}(\operatorvec{r}) = \frac{\Gamma \, \Omega^2(\operatorvec{r})}{4 \Delta^2}
+= \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta^2}.
+\label{eq:GammaSp}
+\end{eqnarray}
+
+\subparagraph{Bilan — compromis intensité / désaccord}
+
+Les expressions~\eqref{eq:Udip} et~\eqref{eq:GammaSp} révèlent un compromis fondamental : Le potentiel varie comme $I / \Delta$ ; Le taux de diffusion varie comme $I / \Delta^2$.
+Pour minimiser les pertes par diffusion tout en conservant un potentiel significatif, il est donc optimal d’utiliser un désaccord important avec une intensité élevée. %Ce régime est appelé \textit{FORT} (Far-Off Resonance Optical Trap).
+
+
+
+
+
+\paragraph{Structure fine et base des états $|L, S; J, m_J\rangle$.}
+
+Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital total $L$ et le moment angulaire de spin $S$ des électrons, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel le spin est fixé à $S = 1/2$.
+
+Lorsque le désaccord du faisceau laser devient comparable à la séparation entre les doublets de structure fine, il est nécessaire de prendre en compte le couplage spin-orbite. Celui-ci donne lieu à une levée de dégénérescence des niveaux d’énergie, conduisant à ce que l’on appelle la structure fine de l’atome. Dans ce régime, les états propres du système s’écrivent dans la base couplée $|L, S; J, m_J\rangle$, où $m_J$ est la projection de $J$ sur l’axe de quantification. Ces niveaux sont représentés sur la figure~1.2.
+
+\subparagraph{Décalage d’énergie au second ordre.}
+En notant $\hbar\omega_{ \scriptstyle nJ \rightarrow n'J'} = \hbar\omega_{n'J'} - \hbar\omega_{nJ}$ la différence d’énergie entre les états $\ket{e} \equiv \ket{n', J'}$ et $\ket{g} \equiv \ket{n, J=1/2}$, le décalage d’énergie au second ordre du perturbateur dipolaire s’écrit (voir équation~\eqref{chap:dipolaire:eq:nrj2.1}) :
+
+\begin{eqnarray}
+	\delta E_{n,J} & = & -\frac{|\mathcal{E}|^2}{4\hbar} \sum_{n'J'} \Re\left[
+		\frac{|\langle n',J'|\operatorvec{u} \cdot \operatorvec{D}|n,J\rangle|^2}{\omega_{\scriptstyle nJ \rightarrow n'J} - \omega - i\gamma_{\scriptstyle n'J'nJ}/2}
+		+
+		\frac{|\langle n,J|\operatorvec{u} \cdot \operatorvec{D}|n',J'\rangle|^2}{\omega_{\scriptstyle nJ \rightarrow n'J} + \omega + i\gamma_{\scriptstyle n'J'nJ}/2}
+	\right],\label{chap:dipolaire:eq:nrj2.3}
+\end{eqnarray}
+
+où $\gamma_{\scriptstyle  n'J'nJ} = \gamma_{n'J'} + \gamma_{nJ}$ est la différence des largeurs naturelles de transition.
+
+
+\subparagraph{Projection dans la base découplée.}
+
+Pour calculer les déplacements lumineux induits par un champ électromagnétique sur chacun des niveaux de structure fine, il est utile d'exprimer les états de la base couplée $|L, S; J, m_J\rangle$ dans la base découplée $|L, S; m_L, m_S\rangle$. Cette décomposition permet de faire apparaître explicitement les composantes orbitales et de spin, ce qui facilite l’évaluation des éléments de matrice du moment dipolaire.
+
+On utilise pour cela les coefficients de Clebsch-Gordan, qui relient les deux bases selon la relation :
+\begin{eqnarray}
+	|L, S; J, m_J\rangle  &=& \sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S  }}^{m_L + m_S = m_J} \langle L, m_L; S, m_S | J, m_J \rangle \; |L, m_L; S, m_S\rangle.
+\end{eqnarray}
+
+On calcule alors a l'aide de cette décomposition :
+
+\begin{eqnarray}
+	&&\bra{L' , S' ; J' , m_J' }  \operatorvec{D} \cdot \operatorvec{u}_q 	\ket{L , S ; J , m_J }  \\
+	&&~ = ~ \sum_{\substack{-L' \leq m_L' \leq L',\\, -S' \leq m_S', \leq S''}}^{m_L' + m_S'= m_J'}\sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S }}^{m_L + m_S = m_J} \overbrace{\bra{L',m_L';S',m_s'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L;S,m_s}}^{\propto \delta_{m_L',m_L+q}\delta_{m_S',m_S}} \langle J' , m_J' \vert L' , m_L' ; S' , m_S' \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle ,\\
+	&&~ = ~  \sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S}}^{\substack{ m_L + m_S = m_J, \\ m_L + q + m_S = m_J'}} \bra{L', m_L+q} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L}\langle J' , m_L + q + m_S \vert L' ,  m_L + q  ; S' ,  m_S \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle
+\end{eqnarray}
+
+
+\subparagraph{Application au cas $5S_{1/2} \rightarrow 5P_{1/2,\,3/2}$ avec $q = 0$.}
+
+
+Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital $L$ et le spin électronique $S$, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel $S = \tfrac12$.\\
+
+Considérons l’état fondamental $\ket{5\,^2S_{1/2},\,m_J = \pm \tfrac12}$, que l’on peut écrire de manière équivalente comme :
+\begin{eqnarray*}
+	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } ~\equiv~ \ket{ 5S , J=\tfrac12  , m_J= \pm \tfrac12  }  ~\equiv~ \ket{n=5 ; L=0 , S=\tfrac12 ;  J=\tfrac12  , m_J = \pm \tfrac12 }.
+\end{eqnarray*}
+
+Dans le but de faciliter les calculs, nous projetons cet état dans la base découplée $\ket{L,\,m_L;\,S,\,m_S}$. Étant donné que $L = 0$ pour l’état $S$, on a $m_L = 0$ nécessairement. L’état se réécrit donc simplement :
+
+%\begin{eqnarray*}
+%	\ket{  5{~}^2S , m_L = 0  , m_S= \pm \tfrac12  } ~\equiv~ \ket{ n=5  ; L=0 , m_L= \pm \tfrac12 ; S=1/2 , m_S= \pm \tfrac12 } 	
+%\end{eqnarray*}
+
+\begin{eqnarray*}
+	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } & = & \ket{  m_L = 0  , m_S= \pm \tfrac12  }  	
+\end{eqnarray*}
+
+
+Plusieurs notations sont utilisées afin de s’adapter aux préférences des lecteurs et de lever toute ambiguïté.
+On remarque ici que, dans le cas $L = 0$, l’état couplé coïncide avec l’état découplé, car le moment orbital ne contribue pas à la somme vectorielle du moment angulaire total.\\
+
+Continions avec les états exités $\ket{5\,^2P_{1/2},\,m_J'}$, que l’on peut écrire de manière équivalente comme :
+\begin{eqnarray*}
+	\ket{ 5{~}^2P_{J'} , m_J'  } ~\equiv~ \ket{ 5P , J'  , m_J' }  ~\equiv~ \ket{n=5 ; L'=1 , S'=\tfrac12 ;  J'  , m_J'  }.
+\end{eqnarray*}
+
+Pour rappel, les opérateurs de montée/descente agissant sur les états propres du moment angulaire vérifient la relation générale :
+
+
+\begin{eqnarray}
+	\operator{A}_\pm \vert n , A , m	_A \rangle & = & \hbar \sqrt{A(A+1) - m_A(m_A\pm 1 ) } \vert n , A , m	_A \pm 1  \rangle
+\end{eqnarray}
+
+où l'opérateur $\operator{A} \in \{ \operator{S} , \operator{L} , \operator{J} , \cdots \}$.
+
+Donc 
+
+\begin{eqnarray*} 
+	\ket{5\,^2P_{1/2},m_J' = \pm\tfrac12} &=& \mp\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=0,\,m_S'=\pm\tfrac12} \;\pm\;\sqrt{\tfrac{2}{3}}\,\ket{m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\ 
+	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac12} &=& +\sqrt{\tfrac{2}{3}}\,\ket{m_L'=0,\,m_S'=\pm\tfrac12} \;+\;\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\
+	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac32} &= & +\ket{m_L'=\pm 1 , m_S' = \pm \tfrac32}.  
+\end{eqnarray*}
+ 
+Cette notation sera utile par la suite pour analyser les transitions permises et les amplitudes associées lors de l’interaction dipolaire avec une lumière polarisée ($q = 0$ correspondant à une polarisation $\pi$). En se rappelant que dans ce cas %$d_{\scriptstyle 5S \rightarrow 5P} \doteq \bra{L'=1} \vert \operatorvec{D} \vert \ket{L=1} = \bra{L'=1 , m_L' =0 }  \operatorvec{D} \cdot \operatorvec{u} \ket{L=0 , m_L = 0 }$.
+\begin{eqnarray*}
+	d_{\scriptstyle 5S \rightarrow 5P} & \doteq &\bra{L'=1} \vert \operatorvec{D} \vert \ket{L=1} = \bra{L'=1 , m_L' =0 }  \operatorvec{D} \cdot \operatorvec{u} \ket{L=0 , m_L = 0 }	
+\end{eqnarray*}
+
+il vient que 
+
+\begin{eqnarray*}
+	\langle 5 {~}^2P_{1/2} , m_J' = \pm\tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert n {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \mp  \sqrt{\frac{1}{3}} d_{\scriptstyle 5S \rightarrow 5P},\\
+	\langle n {~}^2P_{3/2} , m_J' = \pm \tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert n {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \sqrt{\frac{2}{3}} d_{\scriptstyle 5S \rightarrow 5P} , \\
+	\langle n {~}^2P_{3/2} , m_J' = \pm \tfrac32 \vert \operatorvec{D} \cdot \operatorvec{u}\vert n {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle & = & 0 .
+\end{eqnarray*}
+
+
+%\subparagraph{Projection dans la base découplée.}
+%\paragraph{Lien avec le moment dipolaire réduit}
+
+%Grâce au théorème de Wigner–Eckart, on peut exprimer les éléments de matrice dipolaires dans la base $\ket{n, J, m_J}$ en fonction du moment dipolaire réduit :
+
+%\begin{eqnarray*}
+%	\langle n', J', m_{J'} | D_q | n, J, m_J \rangle
+%	& = & (-1)^{J' - m_{J'}} 
+%	\begin{pmatrix}
+%	J' & 1 & J \\
+%	-m_{J'} & q & m_J
+%	\end{pmatrix}
+%	\langle n', J' || \operatorvec{D} || n, J \rangle.
+%\end{eqnarray*}
+
+%Dans notre cas, $J = 1/2$, $J' \in \{1/2, 3/2\}$, $q = 0$, et $m_{J'} = m_J$. Les coefficients de Clebsch–Gordan correspondants se calculent explicitement et donnent :
+
+%\begin{itemize}
+%	\item Pour $J' = 1/2$ :
+%	\[
+%	\langle n, \tfrac{1}{2}, m_J | D_0 | n, \tfrac{1}{2}, m_J \rangle = (-1)^{1/2 - m_J} \sqrt{\tfrac{1}{3}} \langle n, \tfrac{1}{2} || \operatorvec{D} || n, \tfrac{1}{2} \rangle.
+%	\]
+	
+%	\item Pour $J' = 3/2$ :
+%	\[
+%	\langle n, \tfrac{3}{2}, m_J | D_0 | n, \tfrac{1}{2}, m_J \rangle = (-1)^{3/2 - m_J} \sqrt{\tfrac{2}{3}} \langle n, \tfrac{3}{2} || \operatorvec{D} || n, \tfrac{1}{2} \rangle.
+%	\]
+%\end{itemize}
+
+%Ces résultats sont essentiels pour évaluer les effets d’un champ électrique sur un atome dans une configuration de désaccord, notamment pour le calcul des shifts lumineux et des taux de transition.
+
+\subparagraph{Potentiel dipolaire}
+
+En négligeant le temps non-resonant et avec l'hipothèse  l'équation ???? devient :
+
+\begin{eqnarray*}
+	U_{\mathrm{dip}}(\operatorvec{r}) &  = & - \frac{ \vert \mathcal{E} \vert^2}{4 \hbar} \left( \frac{ \vert \langle n {~}^2P_{1/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert n {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_1} + \frac{ \vert\langle n {~}^2P_{3/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert n {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_2}  \right )\\ & = &  \frac{  d_{\scriptstyle 5S \rightarrow 5P}^2 \vert \mathcal{E} \vert^2 }{4 \hbar} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) \\&=& \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) I(\operatorvec{r}) ,		
+\end{eqnarray*}
+avec $\Delta_i = \omega -\omega_i $ avec $ i \in \{ 1 , 2 \}$ avec $\omega_1 = \omega_{n {~}^2P_{1/2} m_J = \pm  1/2}- \omega_{n {~}^2S_{1/2}, m_J = \pm  1/2}$ et $\omega_2 = \omega_{n {~}^2P_{3/2} m_J = \pm  1/2} - \omega_{n {~}^2S_{1/2}  m_J = \pm  1/2}$
+
+

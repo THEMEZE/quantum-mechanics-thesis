@@ -1,0 +1,329 @@
+\documentclass[8pt, landscape]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, graphicx, hyperref}
+\usepackage[french]{babel}
+%\usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm,nohead]{geometry}
+\usepackage[landscape,a3paper, left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm,nohead]{geometry}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+
+% Couleurs personnalisées
+\definecolor{level1}{RGB}{0,0,120}
+\definecolor{level2}{RGB}{0,100,0}
+\definecolor{level3}{RGB}{120,0,0}
+\definecolor{level4}{RGB}{80,80,0}
+\definecolor{level5}{RGB}{60,60,60}
+
+% Style de texte par niveau
+\newcommand{\textlevelone}{\color{level1}\sffamily\large}
+\newcommand{\textleveltwo}{\color{level2}\rmfamily\normalsize}
+\newcommand{\textlevelthree}{\color{level3}\ttfamily\small}
+\newcommand{\textlevelfour}{\color{level4}\itshape\footnotesize}
+\newcommand{\textlevelfive}{\color{level5}\scriptsize\upshape}
+
+% Style de label par niveau
+\setlist[enumerate,1]{label=\textcolor{level1}{\textbf{\arabic*.}}, leftmargin=1em, before=\textlevelone}
+\setlist[enumerate,2]{label=\textcolor{level2}{\textbf{\alph*)}}, leftmargin=2em, before=\textleveltwo}
+\setlist[enumerate,3]{label=\textcolor{level3}{\roman*)}, leftmargin=3em, before=\textlevelthree}
+\setlist[enumerate,4]{label=\textcolor{level4}{\Alph*)}, leftmargin=4em, before=\textlevelfour}
+
+%\setlist[itemize,1]{label=\textcolor{level1}{$\bullet$}, leftmargin=1em, before=\textlevelone}
+\setlist[itemize,1]{label=\textcolor{level5}{--}, leftmargin=5em, before=\textlevelfive}
+
+\setlist[itemize,2]{label=\textcolor{level2}{--}, leftmargin=2em, before=\textleveltwo}
+\setlist[itemize,3]{label=\textcolor{level3}{$\ast$}, leftmargin=3em, before=\textlevelthree}
+\setlist[itemize,4]{label=\textcolor{level4}{$\cdot$}, leftmargin=4em, before=\textlevelfour}
+
+%\geometry{a4paper, inner=3.5cm, outer=2.5cm, top=2.5cm, bottom=2.5cm, twoside} % proposition
+%\title{Titre de ta thèse}
+%\author{Ton Nom}
+%\date{\today}
+
+\begin{document}
+
+\begin{multicols}{3} % 3 colonnes
+
+\begin{enumerate}
+	\item Introduction générale
+
+	\item Modèle de Lieb-Liniger et approche Bethe Ansatz
+	
+		\begin{enumerate}
+			\item Rappel
+				\begin{enumerate}
+					\item Dynamique particule libre dans espace à une dimension , périodique
+					\item Première à seconde quantification
+						\begin{enumerate}
+							\item Outil pour le Bethe Antsatz
+						\end{enumerate}					
+				\end{enumerate}
+			\item Description du modèle de Lieb-Liniger 
+				\begin{enumerate}
+					\item Introduction au modèle de gaz de Bose unidimensionnel et Hamiltonien du modèle 
+						\begin{enumerate}
+							\item Champs de Bose
+							\item Expression de l’Hamiltonien
+							\item Commutation canonique
+							\item Équation du mouvement associée
+						\end{enumerate}	
+					\item Fonction d’onde et Hamiltonien et moment à N corps
+						\begin{enumerate}
+							\item Cas d’une particule libre dans une boîte périodique : base des états propres à une particule
+								\begin{itemize}
+									\item Contexte physique du système.
+									\item Détermination des états propres. 
+									\item État à une particule dans la base de Fock. 
+									\item Orthonormalité de la base. 
+									\item Fonction d’onde à une particule.
+									\item Hamiltonien dans le cas à une particule. 
+									\item Hamiltonien dans le cas à une particule et Action de l’Hamiltonien. 
+									\item Équation de Schrödinger différentielle.
+									\item Résolution avec conditions périodiques. 
+									\item Énergies quantifiées. 
+									\item Notation adoptée et interprétation. 
+								\end{itemize}
+							\item Deux particules
+								\begin{itemize}
+									\item Introduction au système à deux bosons avec interaction de contact. 
+									\item Forme générale de l’état à deux particules dans la base de Fock 
+									\item Définition et orthonormalisation de la base positionnelle bosonique. 
+									\item Symétrie et normalisation de la fonction d’onde à deux particules. 
+									\item Réécriture de l’Hamiltonien du champ. 
+									\item Action de l’Hamiltonien sur l’état à deux particules et Forme explicite de l’Hamiltonien effectif à deux corps
+									\item Changement de variables : coordonnées du centre de masse et relatives. 
+									\item Résolution du problème de centre de masse et de coordonnée relative.
+									\item Forme symétrique de la fonction d’onde pour bosons.
+									\item Condition de discontinuité à cause du potentiel delta. 
+									\item Détermination de la phase $\Phi$. 
+									\item Phase de diffusion à un corps.
+									\item Lien entre phase de diffusion et décalage temporel : interprétation semi-classique.
+									\item Retour aux coordonnées du laboratoire. 								
+								\end{itemize}
+							\item Cas général à N particules : l’Ansatz de Bethe	
+						\end{enumerate}
+					\item Opérateurs conservés (intégrales du mouvement) 
+						\begin{enumerate}
+							\item Opérateurs nombre de particules Q et moment P
+							\item Propriétés
+							\item L’état propre
+						\end{enumerate}
+				\end{enumerate}	
+			\item Équation de Bethe et distribution de rapidité
+				\begin{enumerate}
+					\item Condition aux bords périodiques et équation de Bethe Ansatz 
+					\item Thermodynamique du gaz de Lieb-Liniger à température nulle 
+					\item Excitations élémentaires à température nulle
+				\end{enumerate}
+		\end{enumerate}
+		
+	\item Théorie thermodynamique et équilibre généralisé
+		\begin{enumerate}
+			\item Dynamique hors équilibre et notions d’équilibre 
+				\begin{enumerate}
+					\item Limit Thermodynamique 
+						\begin{enumerate}
+							\item Limite
+							\item The dressing
+						\end{enumerate}
+					\item Notion d’état d’équilibre généralisé (GGE)
+						\begin{enumerate}
+							\item Configuration des états à N particules. 
+							\item Observables diagonales dans la base des états propres. 
+							\item Définition générale d’observables conservées.
+							\item Principe de maximisation de l’entropie.
+							\item Définition de la matrice densité et de la fonction de partition
+							\item Interprétation physique des multiplicateurs de Lagrange.
+							\item Probabilité d’un état à rapidités fixées.
+							\item Moyenne d’un observable et dérivées de Z.
+							\item Moments d’ordre supérieur et fluctuations.
+							\item Cas particulier de l’équilibre thermique.
+						\end{enumerate}
+					\item Rôle des charges conservées extensives et quasi-locales
+						\begin{enumerate}
+							\item Écriture des observables thermodynamiques comme sommes sur les rapidités.
+							\item Interprétation fonctionnelle et échange des sommes.
+							\item Expression de la matrice densité généralisée. 
+							\item Probabilité associée à une configuration de rapidités
+							\item Moyennes d’observables dans le GGE.
+							\item Interpretation. 
+							\item Rôle dans le formalisme GGE.
+							\item D’un point de vue mathématique.
+						\end{enumerate}
+				\end{enumerate}
+			\item Thermodynamique de Bethe et relaxation
+				\begin{enumerate}
+					\item Statistique des macro-états : entropie de Yang-Yang et moyennes dans le GGE
+						\begin{enumerate}
+							\item Macro-états et entropie dans la TBA.
+							\item Distribution de rapidité comme macro-état.
+							\item Dénombrement local des configurations microcanoniques.
+							\item Estimation asymptotique à l’aide de Stirling. 
+							\item Entropie de Yang-Yang : définition . 
+							\item Énergie généralisée. 
+							\item Observables locales dans la limite thermodynamique.
+							\item Passage à la limite continue.
+							\item Formule fonctionnelle pour les moyennes.
+						\end{enumerate}
+					\item Équations intégrales de la TBA
+						\begin{enumerate}
+							\item Moyenne des observables dans l’ensemble généralisé de Gibbs.
+								\begin{itemize}
+									\item Approximation au point selle.
+									\item Développement fonctionnel au premier ordre.
+									\item Équation intégrale de la TBA.
+								\end{itemize}
+						\end{enumerate}
+						
+				\end{enumerate}
+		\end{enumerate}
+		
+	\item Hydrodynamique généralisée
+		\begin{enumerate}
+			\item Hydrodynamique et régimes asymptotiques 
+				\begin{enumerate}
+					\item Hydrodynamique classique des systèmes chaotiques 
+					\item Hydrodynamique des systèmes intégrables et distribution de rapidité 
+					\item Équation d’hydrodynamique généralisée (GHD) 
+				\end{enumerate}
+		\end{enumerate}
+		
+	\item Fluctuations autour des états d’équilibre
+		\begin{enumerate}
+			\item Introduction
+			\item Développement autour du point selle
+			\item Définition de la fonction de corrélation 
+			\item Fluctuations autour de la distribution moyenne et rôle de la Hessienne
+			\item Fluctuations autour de la distribution moyenne
+			\item Fonction correlation du nombre d’atomes et de l’énergie 
+		\end{enumerate}
+		
+	\item Expériences sur les gaz 1D hors-équilibre
+		\begin{enumerate}
+			\item Présentation de l’expérience
+				\begin{enumerate}
+					\item Piégeage transverses et longitudinale 
+				\end{enumerate}
+			\item Outil de sélection spatial 
+		\end{enumerate}
+		
+	\item Protocoles expérimentaux avancés 
+		\begin{enumerate}
+			\item Dispositif expérimental
+				\begin{enumerate}
+					\item Préparation et Confinement du Gaz Ultra-Froid de 87Rb
+					\item Confinement Longitudinal et Stabilisation du Piège Quartique
+					\item Sélection Spatiale et Réalisation de la Coupure Bipartite 
+					\item Dynamique Après Coupure	
+				\end{enumerate}
+			\item Prédictions de la GHD 
+			\item Données expérimentales
+			\item Sonder la distribution locale des rapidités
+			\item Détails sur les calculs 
+				\begin{enumerate}
+					\item Facteur d’occupation et distribution de rapidité à l’équilibre thermique
+					\item Dynamique du contour dans l’espace des phases $(x,\theta)$
+					\item Simulation de la déformation du bord
+					\item Simulation de l’expansion
+				\end{enumerate}
+		\end{enumerate}
+		
+	\item Mise en place d’un confinement longitudinale dipolaire 
+		\begin{enumerate}
+			\item Calculs analytiques pour le confinement dipolaire
+				\begin{enumerate}
+					\item Transformation de jauge et simplification du Hamiltonien 
+						\begin{enumerate}
+							\item Cadre sans potentiel vecteur. 
+							\item Hamiltonien simplifié.
+							\item Conclusion – Simplification par transformation de jauge.
+						\end{enumerate}
+					\item Effet Stark dynamique et interaction dipolaire atomique 
+						\begin{enumerate}
+							\item Polarisabilité scalaire, vectorielle et tensorielle dans les états fins
+								\begin{itemize}
+									\item Interprétation physique
+									\item Cas des atomes alcalins (ex. Rubidium)
+								\end{itemize}
+						\end{enumerate}
+					\item Cas du Rubidium 87 dans une polarisation rectiligne 
+						\begin{enumerate}
+							\item Champ électrique appliqué 
+							\item Cas de désaccords très importants. 
+								\begin{itemize}
+									\item Décalage d’énergie au second ordre. 
+									\item Structure orbitale et opérateur dipolaire.
+									\item Application du théorème de Wigner-Eckart. 
+									\item Application au cas 5S $\to $ 5P et q= 0. 	
+								\end{itemize} 
+							\item Piégeage dipolaire d’un atome à deux niveaux — généralités.
+								\begin{itemize}
+									\item Introduction. 
+									\item Système à deux niveaux et interaction avec le champ. 
+									\item Expression du potentiel.
+									\item Conditions de validité.
+									\item Interprétation physique. 
+									\item Confinement optique. 
+									\item Taux de diffusion spontanée. 
+									\item Bilan — compromis intensité / désaccord  	
+								\end{itemize}
+							\item Structure fine et base des états $|L,S; J,m_J\rangle$.
+								\begin{itemize}
+									\item Décalage d’énergie au second ordre. 
+									\item Projection dans la base découplée. 
+									\item Application au cas 5S1/2 $\to$ 5P1/2,3/2 avec q = 0. 
+									\item Potentiel dipolaire 	
+								\end{itemize}
+
+						\end{enumerate}
+					\item Quelle longueur d’onde du laser?
+					\item Quelle Puissance du laser?
+				\end{enumerate}
+			\item laser , MOPA, etc .. Données
+		\end{enumerate}
+	\item Conclusion et perspectives
+
+\end{enumerate}
+
+\end{multicols}
+
+%\maketitle
+%\tableofcontents
+
+%\chapter*{Introduction générale}
+%\addcontentsline{toc}{chapter}{Introduction générale}
+
+%\chapter{Contexte scientifique et état de l’art}
+%\section{Introduction au domaine}
+%\section{Les principaux résultats existants}
+%\section{Problématique de la thèse}
+
+%\chapter{Méthodes théoriques et outils}
+%\section{Formalismes mathématiques utilisés}
+%\section{Outils numériques / expérimentaux}
+%\section{Validation des méthodes}
+
+%\chapter{Résultats principaux}
+%\section{Première étude / Modèle}
+%\section{Deuxième étude / Simulation}
+%\section{Analyse et discussion}
+
+%\chapter{Vers de nouvelles perspectives}
+%\section{Limites actuelles}
+%\section{Ouvertures théoriques / expérimentales}
+%\section{Applications potentielles}
+
+%\chapter*{Conclusion générale}
+%\addcontentsline{toc}{chapter}{Conclusion générale}
+
+%\appendix
+%\chapter{Annexes}
+%\section{Démonstrations complémentaires}
+%\section{Données supplémentaires}
+
+%\bibliographystyle{plain}
+%\bibliography{bibliographie}
+
+\end{document}
