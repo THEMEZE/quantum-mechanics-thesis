@@ -1,0 +1,38 @@
+\subsubsection{Opérateurs nombre de particules $\operator{Q}$ et moment $\operator{P}$}
+L'opérateur du nombre de particules $\operator{Q}$ et  moment $\operator{P}$ sont définis comme 
+\begin{eqnarray}
+	\operator{Q}  =  \int \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, d x, \quad 
+	\operator{P}  =  - \frac{i}2 \int \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [ \operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} dx \label{eq.1.7}
+\end{eqnarray}
+
+\subsubsection{Propriétés}
+Ce sont des opérateurs hermitiens et ils constituent des intégrales du mouvement
+\begin{eqnarray}
+	[ \operator{H} , \operator{Q} ] = 	[ \operator{H} , \operator{P} ] = O. 
+\end{eqnarray}
+
+Il convient de noter que dans le chapitre 2 , nous allons construire un nombre infini d'intégrales du mouvement.
+
+\subsubsection{L’état propre}
+Les fonctions propres $\vert \{\theta_a\}\rangle$ de l'Hamiltonien $\operator{H}$, le sont aussi pour $\operator{Q}$ et $\operator{P}$ :
+%Ici, $\vert \{\theta_a\}\rangle$ est une fonction symétrique de toutes les variables $z_j$. 
+%L'équation aux valeurs propres 
+\begin{eqnarray}
+	 \operator{Q} \ket{\{\theta_a\}} = N \ket{\{\theta_a\}}, \quad \operator{P} \ket{\{\theta_a\}} = p(\{\theta_a\}) \ket{\{\theta_a\}} , \quad  \operator{H} \ket{\{\theta_a\}} = \varepsilon(\{\theta_a\}) \ket{\{\theta_a\}},	
+\end{eqnarray}
+associer aux valeux propres respective s'ecrivant sous forme de puissance de $\theta_i$ :
+\begin{eqnarray}
+	N = \sum_{a = 1}^N \theta_a^0 , ~ p(\{\theta_a\}) = \sum_{a = 1}^N \theta_a^1 ,~\varepsilon(\{\theta_a\}) = \frac{1}{2}\sum_{a = 1}^N \theta_a^2.	
+\end{eqnarray}
+Les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+\begin{eqnarray}
+	\operator{Q}\ket{\{\theta_a\}} =  \sqrt{N!}\int d^Nz \, \operator{\mathcal{N}} \varphi_{\{\theta_a\}}(\{z_a\} )\ket{\{z_a\}}, \, \operator{P}\ket{\{\theta_a\}} =  \sqrt{N!}\int d^Nz \, \operator{\mathcal{P}}_N \varphi_{\{\theta_a\}}(\{z_a\} )\ket{\{z_a\}} 
+\end{eqnarray}
+avec 
+\begin{eqnarray}
+	\operator{ \mathcal{N}}  =  \sum_{k = 1}^N 1,~\operator{ \mathcal{P}}_N  =- i\sum_{k = 1}^N \operator{\partial}_{z_k}	
+\end{eqnarray}
+
+
+
+
