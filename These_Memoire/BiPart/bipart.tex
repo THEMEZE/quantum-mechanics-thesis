@@ -1,62 +1,4 @@
-%\def\relativepath{BiPart/} % ← chemin relatif depuis le main
-%
-%\graphicspath{{\relativepath Figures/}} % pour les images
-%\makeatletter
-%\def\inputfile#1{\input{\relativepath#1}} % pour les sous-fichiers
-%\makeatother
-%
-%%\makeatletter
-%\let\oldinput\input
-%\def\input#1{\oldinput{\relativepath#1}}
-%\makeatother
 
-% Utilisation :
-%\inputfile{texte.tex}
-%\includegraphics[width=\textwidth]{image1.png}
-
-
-
-%\chapter{Quench bipartite dans un gaz de Bose unidimensionnel}
-
-%\section*{Introduction}
-%
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=0.5\textwidth , page = 4 ]{BiPart/Figures/Shema.pdf}	
-%	\caption{a) Facteur d’occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à un état d’équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité linéique homogène $n_0 = 56~\mu\mathrm{m}^{-1}$. Ces paramètres correspondent à une potentielle chimique $\mu = 65~\mathrm{nK}$.
-%b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta), d\theta$, constante et égale à $n_0 = 56~\mu\mathrm{m}^{-1}$.
-%c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution thermique illustrée en a).}
-%	\label{fig:BiPart.insitut}
-%\end{figure}
-%
-%
-%Parmi les systèmes à N corps, les modèles intégrables occupent une place particulière, notamment dans le contexte des dynamiques hors d’équilibre et de la thermalisation généralisée. Contrairement aux systèmes génériques, ces modèles présentent une infinité de constantes du mouvement, empêchant la thermalisation au sens usuel. Cette contrainte conduit à l’émergence d’une thermalisation généralisée, décrite non par l’ensemble canonique, mais par un ensemble à entropie maximale sous contraintes, souvent formalisé par l’Ensemble de Gibbs Général (GGE) \index{Ensemble Thermodynamique Général (GGE)}\index[pers]{Ensemble Thermodynamique Général (GGE), Ensemble de Gibbs Général (GGE)}.
-%
-%Un exemple classique pour illustrer la dynamique non diffusante typique des systèmes intégrables est celui du pendule de Newton, où des chocs élastiques entre sphères de masses égales propagent l’énergie cinétique sans dissipation. Bien que ce système soit classique, il incarne le comportement régulier que l’on retrouve dans les systèmes intégrables quantiques, où les excitations se déplacent sans diffusion.
-%
-%Dans ce cadre, le problème de Riemann en hydrodynamique — c’est-à-dire l’évolution d’un système à partir de deux états homogènes juxtaposés — 
-%\begin{eqnarray*}
-%	\partial_t u + \partial_x f(u) & = & 0 ,
-%\end{eqnarray*}
-%avec initialement $u$ constante par morceau :
-%\begin{eqnarray*}
-%	u(t=0 , x) & = & \left \{\begin{array}{rcl} u_g & si& x<x_0 \\ u_d & si & x > x_0 \end{array} \right.	,
-%\end{eqnarray*}
-%
-%constitue un test fondamental de compréhension des équations d’évolution dans les systèmes intégrables. Sa résolution complète, longtemps restée partiellement ouverte, a été rendue possible par l’avènement de la Théorie Hydrodynamique Généralisée (GHD). Introduite dans le contexte des théories des champs intégrables (modèle de Sinh-Gordon, modèle de Lieb-Liniger) [??] et des chaînes quantiques (chaîne XXZ de Heisenberg) [??], la GHD a permis une avancée analytique majeure pour la description des dynamiques hors équilibre dans ces systèmes.
-%
-%Depuis, plusieurs solutions analytiques du problème de Riemann ont été obtenues. En particulier, une solution exacte pour un état initial particulier dans la chaîne XXZ [??], ainsi qu’une solution plus générale pour un gaz 1D de sphères dures, ont confirmé l’efficacité de la GHD pour décrire les processus de propagation balistique et de relaxation généralisée.
-%
-%Dans ce contexte, nous étudions la dynamique hors équilibre d’un gaz quantique unidimensionnel de bosons faiblement interactifs, confinés dans une géométrie 1D. Le système est décrit par le modèle intégrable de Lieb-Liniger, avec des interactions faibles et répulsives permettant l’émergence d’effets quantiques collectifs tout en restant dans un régime faiblement corrélé.
-%
-%La préparation initiale consiste à créer un gaz homogène à profil de densité constant (Fig.\ref{fig:BiPart.insitut}), à température contrôlée. Une opération de coupe abrupte est ensuite réalisée : la moitié gauche du système ($x<0$) est vidée, tandis que la moitié droite ($x>0$) reste occupée (Fig.\ref{fig:BiPart.coupure1}). Ce protocole, dit quench bipartite, engendre une discontinuité initiale dans la densité atomique, analogue au problème de Riemann pour un système doté d’un nombre infini de lois de conservation. Ce type de dynamique, qualifiée de domain wall dynamics, a été étudié dans la thèse de Léa Dubois \cite{DuboisThese}, qui a permis une première analyse expérimentale de ce protocole.
-%
-%Nous poursuivons et approfondissons cette étude, en analysant la dynamique unitaire du gaz à l’aide des outils de la GHD. Nous montrons que la propagation balistique de la discontinuité observée expérimentalement est bien capturée par la solution GHD du problème de Riemann, à température nulle comme finie. Le profil de densité mesuré à différents temps révèle une frontière qui se propage de manière linéaire, en bon accord avec les prédictions de la GHD (Fig.~\ref{fig:BiPart.coupure1} (e)-(g)). Des écarts résiduels sont néanmoins observés, que nous attribuons à des effets thermiques et à des imperfections instrumentales.
-%
-%Un aspect central de notre approche repose sur l’exploitation des solutions GHD pour reconstruire la distribution initiale de rapidités à partir des profils de densité mesurés dans la région de transition. Cette démarche constitue une forme de thermométrie généralisée et fournit un outil puissant pour sonder les états locaux du gaz.
-%
-%Enfin, nous développons une méthode expérimentale inédite permettant de mesurer localement le facteur d’occupation $\nu(x, \theta)$ dans la région de déformation. Nous observons une forte asymétrie de cette distribution : large et lisse du côté initialement occupé, coupée et abrupte du côté initialement vide, révélant ainsi la nature fondamentalement hors équilibre du système. Cette observation est en bon accord avec les prédictions théoriques de la GHD, même si la résolution spatiale limite la finesse des détails observables.
-%
 \section*{Introduction}
 
 
@@ -80,14 +22,9 @@ avec une condition initiale par morceaux :
 \end{eqnarray*}
 La résolution de ce problème dans un cadre intégrable est longtemps restée partiellement ouverte.
 
-%\paragraph{Le problème de Riemann quantique : un cadre paradigmatique.}
-%Dans un système quantique intégrable, le problème de Riemann consiste à connecter brusquement deux régions préparées dans des états thermodynamiques différents, généralement homogènes. Ce scénario, dit de quench bipartite, constitue un cadre paradigmatique pour sonder la dynamique hors équilibre dans les gaz quantiques unidimensionnels. Contrairement au cas classique, la présence d’un nombre infini de constantes du mouvement empêche l’établissement d’un état thermique usuel. La relaxation locale conduit alors à un état d’équilibre généralisé, spécifique à chaque région de l’espace-temps. Le problème de Riemann quantique permet ainsi d’étudier la propagation balistique d’informations, l’émergence d’un régime autosimilaire stationnaire, et la structure fine des distributions locales de quasi-particules. Il offre un terrain théorique idéal pour tester la validité de la Théorie Hydrodynamique Généralisée, tout en étant expérimentalement accessible grâce aux systèmes ultrafroids unidimensionnels.
-
 \paragraph{Le problème de Riemann quantique : un cadre paradigmatique.}
 
 Dans un système quantique intégrable, le problème de Riemann consiste à connecter brusquement deux régions préparées dans des états thermodynamiques différents, généralement homogènes. Ce scénario, dit de \emph{quench bipartite}, constitue un cadre paradigmatique pour sonder la dynamique hors équilibre dans les gaz quantiques unidimensionnels~\cite{doyon2017lecture,bertini2016transport}. Contrairement au cas classique, la présence d’un nombre infini de constantes du mouvement empêche l’établissement d’un état thermique usuel. La relaxation locale conduit alors à un état d’équilibre généralisé, spécifique à chaque région de l’espace-temps. Le problème de Riemann quantique permet ainsi d’étudier la propagation balistique d’informations, l’émergence d’un régime autosimilaire stationnaire, et la structure fine des distributions locales de quasi-particules. Il offre un terrain théorique idéal pour tester la validité de la Théorie Hydrodynamique Généralisée~\cite{castro2016emergent,doyon2017ghd}, tout en étant expérimentalement accessible grâce aux systèmes ultrafroids unidimensionnels.
-
-
 
 \paragraph{Apparition de la Théorie Hydrodynamique Généralisée (GHD) :}
 L’avènement de la GHD a marqué une avancée majeure dans la compréhension de la dynamique des systèmes intégrables. Introduite dans le contexte des théories des champs (modèle de Sinh-Gordon, modèle de Lieb-Liniger) et des chaînes quantiques (chaîne XXZ de Heisenberg) [références à insérer], elle permet de décrire analytiquement la propagation d’informations dans ces systèmes en intégrant les contraintes des charges conservées. Plusieurs solutions analytiques du problème de Riemann ont depuis été obtenues, notamment dans la chaîne XXZ et pour des gaz de sphères dures en 1D, confirmant la validité et la puissance prédictive de la GHD.
@@ -136,9 +73,6 @@ Nous structurons cette section en quatre sous-parties :
 \end{itemize}
 
 
-
-%\inputfile{sections/intro}
-
 \subsection{Préparation expérimentale et protocole de coupure}
 
 {\color{blue} 
@@ -149,11 +83,6 @@ Points clés :
 	\item Passage à un régime d’expansion libre unidimensionnelle après suppression du confinement longitudinal.
 \end{itemize}
 }
-
-
-%\inputfile{sections/disp_exp}
-
-
 
 \begin{figure}[!htb]
 \centering
@@ -266,9 +195,6 @@ Cette équation implicite peut être résolue numériquement pour obtenir $\thet
 
 Ainsi, dans le cadre de la GHD, la dynamique balistique résultant du quench bipartite est décrite par une solution auto-similaire paramétrée par une coupure en rapidité $\theta^*(v)$. Cette solution permet de prédire les profils de densité et d’occupation mesurables dans l’expérience. Elle fournit également un point de comparaison direct avec les données expérimentales obtenues à différents temps $t$, comme nous le verrons dans les sections suivantes.
 
-
-
-
 \subsection{Validation expérimentale de la dynamique hydrodynamique}
 \label{sec.don_exp}
 
@@ -344,109 +270,15 @@ La Fig.~\ref{fig:euler}(b) présente une telle comparaison pour $t = 10$~ms et $
 
 Ces observations expérimentales confirment que la dynamique induite par une coupure bipartite est bien décrite par la GHD à l’échelle d’Euler, dans un régime temporel intermédiaire bien identifié. La mise à l’échelle en $x/t$ permet une confrontation directe entre théorie et expérience, et ouvre la voie à des tests plus précis des effets thermiques et des corrections hors-échelle d’Euler.
 
+\subsection*{Résumé}
 
-%
-%{\color{blue}
-%\section{Sonder la distribution locale des rapidités}
-%%\inputfile{sections/Sonder_local}
-%\label{sec:local}
-%
-%
-%Points clés :
-%\begin{itemize}
-%	\item Protocole expérimental pour extraire une tranche locale du gaz après évolution.
-%	\item Expansion 1D de la tranche sélectionnée et reconstruction de la distribution de rapidités $\Pi(\theta)$.
-%	\item Comparaison avec les prédictions GHD : asymétrie, effet de la largeur finie de la tranche, et limitations dues à la résolution et aux effets diffusifs.
-%	\item Discussion sur les écarts observés et les hypothèses du modèle.
-%\end{itemize}
-%
-%
-%
-%
-%Pour un état initial du gaz correspondant à un facteur d'occupation lisse $\nu(\theta)$ (par exemple un état thermique), le facteur d'occupation $\nu^*(x/t,\theta)$ à rapport $x/t$ fixé est attendu comme étant fortement asymétrique en fonction de $\theta$, selon l'équation~\eqref{eq:nuetoile}. En effet, du côté droite, il présente une discontinuité du type saut, similaire à celle du facteur d'occupation de l’état fondamental, tandis que du côté gauche, il reste lisse. Afin de révéler ces caractéristiques particulières de l’état local du gaz, nous utilisons le protocole introduit dans la Réf.~\cite{dubois_probing_2024} pour sonder la distribution locale des rapidités, comme expliqué ci-après.
-%
-%Nous laissons d’abord le gaz se dilater pendant un temps $t=18~\mathrm{ms}$, de sorte que le bord s’étale sur une large zone d’environ $350~\mathrm{\mu m}$, comme illustré en Fig.~\ref{fig:BiPart.coupure1} (e)-(f) et  Fig ~\ref{fig:simul_deformation} (a).  
-%Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau de poussée~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
-%
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=\textwidth , page = 6 ]{BiPart/Figures/Shema.pdf}
-%	\caption{
-%(a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(s; \tau = 0^+),\ \theta_g(s; \tau = 0^+))$, et le bord droit en tiret-point par l’ensemble des points $(x_d(s; \tau = 0^+),\ \theta_d(s; \tau = 0^+))$. Le bord complet est donc la concaténation de ces deux ensembles. 
-%(b) Densité linéique spatiale $\tilde{n}(x)$ : en pointillés, $n(x; t = 18~\mathrm{ms})$ juste avant la sélection ; en ligne pleine, $\tilde{n}(x; \tau = 0^+)$, égal à $n(x; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$ et nul ailleurs. 
-%(c) Distribution de rapidité après sélection, $\Pi(\theta) = \int \rho(x,\theta ; \tau)\,\mathrm{d}x$, invariante sous l’évolution unidimensionnelle, représentée en rouge. La distribution localement résolue en $x_b(s; \tau = 0^+)$, $\rho(x_b(s; \tau = 0^+), \theta ; \tau = 0^+)$, est représentée en pointillés. Cette distribution est localement conservée, i.e., $\rho(x(s; \tau), \theta(s; \tau))$ reste inchangée au cours de l’évolution unidimensionnelle, indépendamment de $\tau$. 
-%(e) Distribution localement résolue $\rho(x, \theta ; \tau = 30~\mathrm{ms})$ après une évolution unidimensionnelle de $30~\mathrm{ms}$. Le bord gauche est représenté en pointillés par les points $(x_g(s; \tau = 30~\mathrm{ms}),\ \theta(s; \tau = 30~\mathrm{ms}))$, et le bord droit en tiret-point par $(x_d(s; \tau = 30~\mathrm{ms}),\ \theta(s; \tau = 30~\mathrm{ms}))$. 
-%(f) Densité spatiale $\tilde{n}(x; \tau = 30~\mathrm{ms})$. 
-%(g) Distribution de rapidité $\Pi(\theta)$ après la sélection (identique à celle de (c)).
-%}
-%	\label{fig:BiPart.coupure2}
-%	
-%\end{figure}
-% 
-%En Fig.~\ref{fig:simul_deformation}(a), nous présentons le profil de densité mesuré $1$ ms après la sélection de la tranche.  
-%L’ajustement à une fonction rectangulaire lissée donne $x_0 = 18\,\mu$m.  
-%Pour les calculs, la largeur $\ell$ sera déterminée à partir du nombre d’atomes sélectionnés (voir ci-dessous).  
-%Enfin, nous laissons cette tranche se dilater en 1D pendant un temps d’expansion $\tau$, puis nous mesurons la densité longitudinale $\tilde{n}(x,\tau)$.  
-%Celle-ci reflète la distribution totale des rapidités dans la tranche $\Pi(\theta) = \int \rho(x, \theta ; \tau > 0)\, dx = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x, \theta ; \tau = 0^+)\, dx$, car pour $\tau \rightarrow \infty$, on s’attend à ce que $\tau \tilde{n}( \tau * \theta - x_0  ;\tau) \simeq \Pi(\theta)$.  
-%L’asymétrie attendue de $\Pi$ devrait ainsi induire une asymétrie de la densité $\tilde{n}(x,\tau)$ en fonction de $x$.  
-%Nous observons effectivement cette asymétrie dans nos profils d’expansion, comme illustré en Fig.~\ref{fig:simul_deformation}(b) pour un temps d’expansion $\tau=30$ ms.
-%
-%\begin{figure}[!htb]
-%\centering
-%\begin{tikzpicture}
-%    \node[rectangle, draw = none] (bord) at (0,0) {
-%        \includegraphics[width=0.5\textwidth , page = 1]{BiPart/Figures/Figures}
-%    };
-%    \node[circle, draw=none, above=0cm of bord , shift={( -2.5cm , -0.5cm )} ] {(a)};
-%    
-%    \node[right=1mm of bord , shift={( -0.5cm , 0cm )}] (assy) {
-%        \includegraphics[width=0.5\textwidth , page = 2 ]{BiPart/Figures/Figures}
-%    };
-%    \node[circle, draw=none, above=0cm of assy , shift={( -2.5cm , -0.5cm )}] {(b)};
-%\end{tikzpicture}
-%\caption{(a) {\it Profil de bord et tranche sélectionnée.} Le profil de bord après $18\,\mathrm{ms}$ est montré en rouge. L'ajustement thermique donne une température $T = 560\,\mathrm{nK}$ (orange). Le profil de densité mesuré $1\,\mathrm{ms}$ après la sélection de la tranche est en bleu. (b) {\it Asymétrie du profil d’expansion de la tranche.} Le profil de densité après une expansion pendant $\tau = 30\,\mathrm{ms}$ est comparé à son image miroir. Le centre de symétrie $x_s = -17\,\mu$m minimise la distance quadratique $\delta^2 = \int dx\, (\tilde{n}(x) - \tilde{n}(2x_s - x))^2$.}
-%\label{fig:simul_deformation}
-%\end{figure}
-%
-%Pour aller au-delà de cette observation qualitative, nous effectuons un calcul GHD à l’échelle d’Euler du profil d’expansion, en supposant que l’état initial est thermique.  
-%La température est obtenue par ajustement du profil de bord avant la sélection de la tranche, comme indiqué en Fig.~\ref{fig:simul_deformation}(a), ce qui donne $T = 560$ nK.  
-%Le potentiel chimique est ajusté afin que la densité linéaire initiale corresponde à celle mesurée dans la région $x > 0$, avant l’élargissement du bord.  
-%À partir du profil initial, nous simulons à la fois l’élargissement du bord et l’expansion de la tranche en GHD, en supposant une découpe parfaite, c’est-à-dire $\nu(x,\theta) = 0$ pour $|x - x_0| > \ell/2$ et $\nu(x,\theta)$ inchangé sinon.  
-%La largeur $\ell$ est ajustée de sorte que le nombre d’atomes sélectionnés dans la simulation corresponde à celui mesuré expérimentalement après expansion, et on obtient $\ell = 24\,\mu$m.  
-%
-%Le profil d’expansion simulé est montré en Fig.~\ref{fig:simul_expansion}(a).  
-%Il présente une forte asymétrie, comme attendu, avec un bord droit abrupt et une densité nulle au-delà d’un certain point.  
-%Cependant, cette chute est moins marquée que celle prédite pour la distribution locale des rapidités $\rho(x_0,\theta)$ à $x = x_0$. Deux effets contribuent à cet élargissement :  
-%(i) la distribution en rapidité n’est pas homogène à l’intérieur de la tranche, si bien que $\Pi(\theta)$ diffère de $\ell \rho(x_0,\theta)$, comme le montre la comparaison entre la ligne marron pleine et la ligne pointillée en Fig.~\ref{fig:simul_expansion}(a) ;  
-%(ii) le temps d’expansion est fini, de sorte que le profil observé $\tilde{n}(x, {\tau} )$ ne correspond pas exactement à $\Pi((x-x_0)/\tau)/\tau$, comme le montre la comparaison entre les courbes marron et rouge.
-%
-%
-%
-%\begin{figure}[!htb]
-%\centering
-%\begin{tikzpicture}
-%    \node[rectangle, draw = none] (exp) at (0,0) {
-%       \includegraphics[width=0.5\textwidth , page = 3]{BiPart/Figures/Figures}
-%    };
-%    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
-%    
-%    \node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
-%       \includegraphics[width=0.5\textwidth , page = 4]{BiPart/Figures/Figures}
-%    };
-%    \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
-%\end{tikzpicture}
-%\caption{(a) {\it Profil de densité après expansion de la tranche : effets de la largeur finie et du temps d’expansion fini.} Courbe orange : profil obtenu par simulation GHD après expansion pendant $\tau = 30$ ms, avec $T = 560$ nK. Courbe marron : distribution asymptotique $\Pi((x - x_0)/\tau)/\tau$. Courbe pointillée noire : approximation $\ell \rho(x_0, (x - x_0)/\tau)/\tau$ dans le cas d’une tranche étroite. (b) {\it Comparaison aux données expérimentales.} En bleu : profil expérimental après expansion pendant $\tau = 30$ ms. En orange : simulation GHD avec $T = 560$ nK. En magenta : ajustement du profil expérimental donnant $T = 1550$ nK.}
-%\label{fig:simul_expansion}
-%\end{figure}
-%
-%Nous comparons ensuite le profil d'expansion simulé par la GHD avec les données expérimentales. Comme montré en Fig.~\ref{fig:simul_expansion}(b), le profil prédit reproduit les principales caractéristiques du profil d'expansion observé expérimentalement. Des écarts atteignant 25\,\% sont cependant visibles dans la partie centrale du profil. Afin d'obtenir un meilleur accord entre données et calculs, nous avons ajusté le profil d'expansion expérimental avec le calcul GHD en utilisant la température de l'état initial comme paramètre d'ajustement. Le résultat, représenté par la ligne magenta dans la Fig.~\ref{fig:simul_expansion}(b), donne une température $T=1550$~nK, plus de deux fois supérieure à celle obtenue en ajustant le profil au bord. Le profil au bord calculé pour cette température n'est pas compatible avec le profil expérimental, comme le montre la Fig.~\ref{fig:simul_expansion}(b).
-%
-%Une des raisons de l'échec de nos tentatives de reproduction du profil de densité après l'expansion de la tranche réside dans la présence de queues à droite du profil expérimental — voir le profil de densité dans la Fig.~\ref{fig:simul_expansion}(b). Ces queues sont absentes des calculs GHD à l’échelle d’Euler car la fonction d’occupation dans la tranche s’annule strictement au-delà d’une certaine rapidité. L’origine de ces queues reste incertaine. Elles pourraient être dues à des effets de bord associés à la procédure de sélection de tranche, les atomes en bordure étant chauffés par le faisceau de poussée. Il est également possible qu’un effet diffusif, non pris en compte dans la GHD à l’échelle d’Euler, intervienne au début de la déformation du bord, lorsque les gradients sont importants.
-%
-%}
+Nous avons étudié la dynamique hors équilibre d’un gaz unidimensionnel de bosons à la suite d’une coupure bipartite, créant une discontinuité initiale dans le profil de densité. Cette configuration, analogue au problème de Riemann quantique, engendre une évolution balistique décrite par la Théorie Hydrodynamique Généralisée (GHD).
 
+Sur le plan expérimental, nous avons mis en œuvre un protocole précis pour préparer un gaz homogène, le scinder spatialement à l’aide d’un DMD, puis le libérer dans un guide unidimensionnel. L’évolution du profil de densité $n(x,t)$ a été mesurée pour différents temps, révélant une structure auto-similaire caractéristique du régime hydrodynamique.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Côté théorique, nous avons présenté les équations de GHD dans leur forme convective, et montré que la solution du problème de Riemann s’exprime sous la forme d’une distribution auto-similaire $\nu(x/t, \theta)$. Cette structure permet de prédire analytiquement les profils de densité.
+
+La comparaison entre les données expérimentales et les prédictions de la GHD à température nulle montre une excellente correspondance dans un régime temporel intermédiaire bien défini ($t \in [6,18]$~ms). Ces résultats valident la GHD comme cadre pertinent pour décrire la relaxation balistique de systèmes quantiques intégrables, et ouvrent la voie à des explorations plus fines des effets thermiques et quantiques hors équilibre.
 
 
 
@@ -464,27 +296,8 @@ Points clés :
 
 }
 
-%L’évolution d’un gaz unidimensionnel après une coupure bipartite génère des états locaux fortement hors équilibre, dont la structure en rapidité présente des caractéristiques très distinctes de celles d’un état thermique ou du fondamental. En particulier, les solutions hydrodynamiques de type \eqref{eq:nuetoile} prédisent un facteur d'occupation $\nu^*(x/t,\theta)$ qui présente, du côté droite, une discontinuité abrupte en rapidité, signe de la nature d'un facteur d'occupation local à l’état fondamental. Tandis, du coté gauche, le facteur d'occumation est lisse en rapidité , signe de la nature d'un état local non fondamental.
-%
-%{\color{blue} (à enlever)
-%Pour un état initial du gaz correspondant à un facteur d'occupation lisse $\nu(\theta)$ (par exemple un état thermique), le facteur d'occupation $\nu^*(x/t,\theta)$ à rapport $x/t$ fixé est attendu comme étant fortement asymétrique en fonction de $\theta$, selon l'équation~\eqref{eq:nuetoile}. En effet, du côté droite, il présente une discontinuité du type saut, similaire à celle du facteur d'occupation de l’état fondamental, tandis que du côté gauche, il reste lisse. Afin de révéler ces caractéristiques particulières de l’état local du gaz, nous utilisons le protocole introduit dans la Réf.~\cite{dubois_probing_2024} pour sonder la distribution locale des rapidités, comme expliqué ci-après.
-%}
-%
-%Afin de révéler ces caractéristiques particulières de l’état local du gaz, nous voulions extraire la disyribution locale de rapidité, mesuré sur un bipartie aprés évolution. 
-%Le but de cette section est d'explique l’{\bf extraction expérimentalement cette distribution locale de rapidités}, {\bf les simulation de la dynamique à l'ai de la GHD} et de discuter la {\bf vérification de la présence de cette discontinuité}, indicatrice de la dynamique non triviale du système. Pour cela, nous mettons en œuvre un protocole expérimental permettant d’isoler une tranche du gaz à un instant donné, et d’observer son expansion ultérieure pour reconstruire la distribution des rapidités la (Protocale Réf.~\cite{dubois_probing_2024}), et en parralelle nous metopn enplace une sumutation GHD .
-%
-%Nous détaillons cette démarche en quatre étapes principales :
-%Nous partons experimentaleme d'un etat de bipartite après évolution  
-%\begin{itemize}
-%    \item Sélection d’une tranche du bord après une expansion initiale.
-%    \item Observation de l’asymétrie du profil d’expansion.
-%    \item Simulation théorique du profil à l’aide de la GHD.
-%    \item Discussion des écarts entre théorie et expérience.
-%\end{itemize}
 
 \subsection*{Introduction}
-
-%L’étude de la dynamique hors équilibre dans les systèmes quantiques unidimensionnels intégrables a récemment bénéficié d’un cadre théorique puissant : la théorie hydrodynamique généralisée (GHD). Ce formalisme permet de décrire l’évolution spatio-temporelle des distributions de quasi-particules caractérisées par leur rapidité, une grandeur conjuguée à l’impulsion dans ces systèmes.
 
 Dans le scénario de jonction bipartite — où deux parties du gaz, initialement préparées dans des états thermodynamiques distincts, sont soudainement mises en contact — la dynamique engendre des profils locaux fortement hors équilibre. En particulier, lorsque l’état initial consiste en un gaz homogène à droite et une région vide à gauche, la GHD prédit qu’à grand temps le système atteint un régime stationnaire autosimilaire, dans lequel les observables locales dépendent uniquement du rapport $\zeta = x/t$. Dans ce régime, la distribution locale des quasi-particules est décrite par un facteur d’occupation $\nu^*(\zeta,\theta)$, solution d’une équation de type~\eqref{eq:nuetoile}.
 
@@ -502,8 +315,6 @@ Nous structurons cette analyse en quatre étapes principales :
 \begin{itemize}
     \item Sélection d’une tranche localisée du gaz après un temps d’évolution donné.
     \item Observation du profil de vitesse après expansion libre, révélant une éventuelle asymétrie.
-    \item Simulation théorique de la distribution locale de rapidité à l’aide de la GHD.
-    \item Comparaison entre les mesures expérimentales et les prédictions théoriques.
 \end{itemize}
 
 
@@ -563,60 +374,6 @@ Dans l'idéal, on souhaiterait que l’intervalle de sélection soit suffisammen
 À partir de cette analyse, nous pouvons estimer que la largeur $\ell$ de la tranche sélectionnée est de l’ordre de $20$ à $30~\mu\mathrm{m}$. Or, pour une position centrale $x_0 \approx 18~\mu\mathrm{m}$, la densité atomique $\tilde{n}(x ; \tau = 0 )$ varie sensiblement sur cette échelle. La tranche sélectionnée n’est donc pas localement homogène, et la distribution de rapidité mesurée correspond en réalité à une moyenne spatiale de $\rho(x,\theta)$ sur un intervalle de largeur $\ell$ centré en $x_0$. Cette observation est essentielle pour l’interprétation des données et sera prise en compte dans la suite, en particulier dans les comparaisons avec les simulations hydrodynamiques.
 
 
-
-%\subsection{Expansion de la tranche et observation d’une asymétrie}
-%
-%{\color{blue}
-%En Fig.~\ref{fig:simul_deformation}(a), nous présentons le profil de densité mesuré $1$ ms après la sélection de la tranche.  
-%L’ajustement à une fonction rectangulaire lissée donne $x_0 = 18\,\mu$m.  
-%Pour les calculs, la largeur $\ell$ sera déterminée à partir du nombre d’atomes sélectionnés (voir ci-dessous).  
-%Enfin, nous laissons cette tranche se dilater en 1D pendant un temps d’expansion $\tau$, puis nous mesurons la densité longitudinale $\tilde{n}(x,\tau)$.  
-%Celle-ci reflète la distribution totale des rapidités dans la tranche $\Pi(\theta) = \int \rho(x, \theta ; \tau > 0)\, dx = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x, \theta ; \tau = 0^+)\, dx$, car pour $\tau \rightarrow \infty$, on s’attend à ce que $\tau \tilde{n}( \tau * \theta - x_0  ;\tau) \simeq \Pi(\theta)$.  
-%L’asymétrie attendue de $\Pi$ devrait ainsi induire une asymétrie de la densité $\tilde{n}(x,\tau)$ en fonction de $x$.  
-%Nous observons effectivement cette asymétrie dans nos profils d’expansion, comme illustré en Fig.~\ref{fig:simul_deformation}(b) pour un temps d’expansion $\tau=30$ ms.
-%}
-%
-%\paragraph{???.}
-%Après la sélection, la tranche est laissée en expansion libre en 1D pendant un temps $\tau$, avant de mesurer son profil d'expansion de densité $\tilde{n}(x,\tau)$. Cette expansion convertit une distribution spatiale observable en la distribution en rapidité.
-%Pour $\tau$ suffisamment grand, on s’attend à ce que :
-%\begin{equation}
-%\tau \tilde{n}(\tau \theta - x_0 ; \tau) \underset{\tau \to \infty}{\rightarrow} \Pi(\theta),
-%\end{equation}
-%où $\Pi(\theta)=\int \rho(x, \theta ; \tau \geq  0)\, dx$ est la distribution totale de rapidité dans la tranche sélectionnée, conservé au cours de d'expension 1D, en particulier :
-%\begin{equation}
-%\Pi(\theta) = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x,\theta , \tau = 0^+ )\, dx.
-%\end{equation}
-%
-%\paragraph{Asymetrie.}
-%Puisque la distribution locale $\rho(x,\theta , \tau = 0^+)$ est prédite comme étant fortement asymétrique, la forme de $\Pi(\theta)$ — et donc du profil d’expansion de densité — doit présenter une {\bf asymétrie} . Cette asymétrie est effectivement observée dans nos données expérimentales, comme illustré sur la Fig.~\ref{fig:simul_deformation}(b).
-%
-%\subparagraph{Homogéneité de la tranche.}
-%En fait plus la tranche est homogéne spatialement en densité d'atome, plus le profil d'expansion le seras apres un temps $\tau$ d'expansion 1D grand .  En effet dans les cas d'une homogénéité , on meseré , la distribution de rapidité en $x = x_0$ :
-%\begin{equation}
-%\tau \tilde{n}(\tau \theta - x_0 ; \tau) \underset{\tau \to \infty}{\simeq} \ell \rho(x,\theta , \tau = 0^+ ) ,
-%\end{equation}
-%dans ce cas on auras mes une discontinuité de $\tilde{n}$.
-%Pour avoir une tranche plus homagégne on peut en amont diminuer la taille $\ell$ de selection. Ou plus en amons augementer le temps $t$ de déformatopn du bord. 
-%On a vus que le temps $t$ est limité pour que on puisse considérer le système comme semi-infini.
-%\vspace{1em}
-%% INSERTION FIGURE
-%\begin{center}
-%\textit{[Figure qui compare , t bon et t trop long ]}
-%\end{center}
-%On peut faire $\ell$ plus petit mais , pour $\ell$ plus petit , il y auras moins d'atomes dans la selection , donc apres expansion 1D moins de signal. Il faudra donc plus moyenner. L'experiance est pas stage pour des longst temps .
-%\subparagraph{Temps d'expansion.}
-%On peut aussi s'apprche plus de $\Pi(\theta)$ pour un temps d'expansion 1D $\tau$ plus long. Mais ici on est limité par la taille du confinement 1D , soit par la taille du triplet de  micros file. Leurs taille longitudinale est d'environs de $1000 ~\mu m $. Dans la figure \ref{fig:simul_deformation}(b) , on constante que la taille du profil longitudinale apres expantion est de l'ordre de la $mm$.
-%Aussi des simulaion GHD , montrens qu'il faux un $\tau$ significativement plus grand que $30 ms$ pour que $\tau \tilde{n}$ soit significativement proche de $\Pi$ (\cite{dubois_probing_2024}).
-%
-%\subparagraph{Exitation.}
-%Pour constanter encolus d'assimétris, plus trivialement, on peut encore plus en amons , avans la déformation du bors , avant ment des fais les bipartition , produis un système moins dans l'état fondamentale.
-%
-%\begin{center}
-%\textit{[Figure assymetris dans différent parametre  ]}
-%\end{center}
-
-
-%-------------------------
 \subsection{Expansion de la tranche et observation d’une asymétrie}
 
 \paragraph{Principe de l’expansion et lien avec la distribution en rapidité}
@@ -634,8 +391,6 @@ Autrement dit, $\Pi(\theta)$ correspond à la distribution de rapidité intégr�
 \paragraph{Observation expérimentale de l’asymétrie}
 
 La théorie prédit que la distribution locale de quasi-particules $\rho(x,\theta)$ est fortement asymétrique en $\theta$. Cette asymétrie se retrouve dans $\Pi(\theta)$ et doit donc se manifester dans le profil d’expansion $\tilde{n}(x,\tau)$. Cette asymétrie est effectivement observée dans nos données expérimentales, comme illustré en Fig.~\ref{fig:simul_deformation}(b) pour un temps d’expansion $\tau = 30~\mathrm{ms}$. 
-
-%Dans cette figure il y a deux profile. L'une d'entre elle est la densité spatiale apres expansion 1D de $\tau$, $\tilde{n}(x,\tau)$ qui sur le graphe est noté $\tilde{n}(x)$ et l'autre est sa symetrie par raporp à l'axe $x = 2x_s$. Le bus de ce graph est de voir l'assymetrie. Pour cela on peut projeter $\tilde{n}(x)$ sur l'espace des fonction impaire de centre $x = x_s$. Pour cela, $\tilde{n}(x) = (\tilde{n}(x) + \tilde{n}(2x_s - x))/2 + (\tilde{n}(x) - \tilde{n}(2x_s - x))/2$ , où $(\tilde{n}(x) + \tilde{n}(2x_s - x))/2$ est une paire de centre $x =x_s$ et  $(\tilde{n}(x) - \tilde{n}(2x_s - x))/2$ est inpaire de centre $x = x_s$. Pour mesurer l'asymetrie , on ajuste $x_s$ pour la partie paiez contribue le plus, par raport à la partie impaire. Pour cela on ajuste $x_s$ pour maximiser une norme de la partie paire ie  minimiser une norme de la partie asymetrie ie minimiser la norme 2 $\int dx ( \tilde{n}(x) -  \tilde{n}(2x_s - x) )^2$.
 
 
 \subparagraph{Quantification de l’asymétrie par symétrisation.}
@@ -681,33 +436,35 @@ Enfin, une asymétrie plus marquée peut être obtenue en modifiant l’état in
 \begin{center}
 \textit{[Figure : asymétries observées pour différents états initiaux]}
 \end{center}
-%-----------------------------------------
+
+\subsection*{Résumé}
+
+Dans cette section, nous avons présenté un protocole permettant de sonder la distribution locale des quasi-particules dans un gaz unidimensionnel hors équilibre, en sélectionnant une tranche étroite après déformation du bord, puis en la laissant s’étendre librement. Cette procédure permet d’accéder indirectement à la distribution intégrée en rapidité $\Pi(\theta)$ dans la tranche, et de tester les prédictions de la GHD sur la structure locale du facteur d’occupation $\nu(x,\theta)$.
+
+L’analyse expérimentale révèle une forte asymétrie du profil d’expansion, signature d’une distribution de rapidité non thermique. La méthode de symétrisation introduite permet de quantifier cette asymétrie de manière robuste. Nous avons montré que l’homogénéité de la tranche sélectionnée, la durée d’expansion libre, ainsi que l’état initial du gaz influencent fortement l’observation de cette asymétrie.
+
+Enfin, ces résultats confirment qualitativement les prédictions de la GHD dans le régime stationnaire autosimilaire, en particulier l’existence d’une discontinuité du côté du gaz initialement présent, tout en mettant en évidence les limitations expérimentales et les effets hors modèle — notamment les contraintes liées à la sélection spatiale et à la durée d’expansion.
+
+\medskip
+
+Pour approfondir cette analyse, nous nous appuyons à présent sur des simulations numériques basées sur l’équation de GHD. Celles-ci permettent de modéliser la dynamique complète de la tranche sélectionnée, depuis la déformation du bord jusqu’à son expansion, et de confronter quantitativement les distributions mesurées aux prédictions théoriques.
 
 
-\subsection{Simulations numériques}
+\section{Simulations numériques}
 \label{sec:simulations}
 
-{\color{blue}
-Pour aller au-delà de cette observation qualitative, nous effectuons un calcul GHD à l’échelle d’Euler du profil d’expansion, en supposant que l’état initial est thermique.  
-La température est obtenue par ajustement du profil de bord avant la sélection de la tranche, comme indiqué en Fig.~\ref{fig:simul_deformation}(a), ce qui donne $T = 560$ nK.  
-Le potentiel chimique est ajusté afin que la densité linéaire initiale corresponde à celle mesurée dans la région $x > 0$, avant l’élargissement du bord.  
-À partir du profil initial, nous simulons à la fois l’élargissement du bord et l’expansion de la tranche en GHD, en supposant une découpe parfaite, c’est-à-dire $\nu(x,\theta) = 0$ pour $|x - x_0| > \ell/2$ et $\nu(x,\theta)$ inchangé sinon.  
-La largeur $\ell$ est ajustée de sorte que le nombre d’atomes sélectionnés dans la simulation corresponde à celui mesuré expérimentalement après expansion, et on obtient $\ell = 24\,\mu$m.  
+Cette section présente en détail les étapes nécessaires à la résolution numérique de l’équation de GHD dans le cadre des simulations effectuées.
 
-Le profil d’expansion simulé est montré en Fig.~\ref{fig:simul_expansion}(a).  
-Il présente une forte asymétrie, comme attendu, avec un bord droit abrupt et une densité nulle au-delà d’un certain point.  
-Cependant, cette chute est moins marquée que celle prédite pour la distribution locale des rapidités $\rho(x_0,\theta)$ à $x = x_0$. Deux effets contribuent à cet élargissement :  
-(i) la distribution en rapidité n’est pas homogène à l’intérieur de la tranche, si bien que $\Pi(\theta)$ diffère de $\ell \rho(x_0,\theta)$, comme le montre la comparaison entre la ligne marron pleine et la ligne pointillée en Fig.~\ref{fig:simul_expansion}(a) ;  
-(ii) le temps d’expansion est fini, de sorte que le profil observé $\tilde{n}(x, {\tau} )$ ne correspond pas exactement à $\Pi((x-x_0)/\tau)/\tau$, comme le montre la comparaison entre les courbes marron et rouge.
+Dans un premier temps, nous explicitons le calcul du facteur d’occupation $\nu(\theta)$ et de la densité de rapidité $\rho(\theta)$ à l’équilibre thermique, obtenus à partir d’un couple $(T, \mu)$ donné.
 
-}
+Nous décrivons ensuite l’évolution du système sous l’effet du potentiel de piégeage : en particulier, nous nous intéressons à la dynamique du contour délimitant la région occupée dans l’espace des phases $(x, \theta)$, en exploitant la conservation lagrangienne du facteur d’occupation.
 
-Cette section présente en détail les étapes nécessaires à la résolution numérique de l’équation de GHD dans le cadre des simulations effectuées. Dans un premier temps, nous explicitons le calcul du facteur d’occupation $\nu(\theta)$ et de la densité de rapidité $\rho(\theta)$ à l’équilibre thermique, obtenus à partir d’un couple $(T, \mu)$ donné. Nous décrivons ensuite la procédure permettant d’ajuster le potentiel chimique afin de reproduire la densité atomique mesurée expérimentalement. Enfin, nous détaillons le calcul de la dynamique du contour délimitant la région occupée dans l’espace $(x, \theta)$, en exploitant la conservation lagrangienne du facteur d’occupation.
+La simulation permet alors de suivre la déformation du bord au cours du temps. Une fois ce bord suffisamment évolué, nous extrayons une tranche du système pour en simuler l’expansion.
 
-%Cette section présente en détail la mise en œuvre numérique des équations de l’hydrodynamique généralisée (GHD) utilisées pour modéliser le système. Nous décrivons d’abord la résolution des équations thermodynamiques de Bethe-Ansatz (TBA) à l’équilibre, permettant d’obtenir le facteur d’occupation $\nu(\theta)$ et la densité de rapidité $\rho(\theta)$ pour un gaz homogène à température finie. Nous expliquons ensuite comment ajuster le potentiel chimique $\mu$ afin de reproduire une densité atomique $n_0$ mesurée expérimentalement. Enfin, nous introduisons les éléments nécessaires au calcul de la dynamique GHD dans l’espace des phases $(x,\theta)$.
+Enfin, nous comparons la distribution de rapidité issue de cette expansion numérique avec celle mesurée expérimentalement, dans des conditions analogues.
 
 
-\paragraph{Système homogène à l'équilibre thermique}
+\subsection{Système homogène à l'équilibre thermique}
 
 Nous considérons d’abord un gaz unidimensionnel homogène infini, à l’équilibre thermique, caractérisé par un couple de paramètres thermodynamiques $(T, \mu)$. La thermodynamique de Bethe-Ansatz permet de décrire un tel système par une équation intégrale sur le poids/potentiel spectral $w(\theta)$, donnée par :
 \begin{equation}
@@ -718,17 +475,6 @@ où $\beta = (k_B T)^{-1}$ est l’inverse de la température (en unités d’é
 À partir de $\nu_0(\theta)$, les densités de quasi-particules $\rho(\theta)$ et de niveaux disponibles $\rho_s(\theta)$ sont obtenues par un processus de {\bf habillage} (ou {\bf dressing}) standard (voir section~\ref{para-algho-TBA}). Ces grandeurs sont ensuite utilisées pour calculer les observables physiques.
 
 
-
-%\subparagraph{Détermination de $\mu$ à température fixée}
-%
-%Cependant, dans le cadre expérimental, la quantité accessible est la densité homogène $n_0$, par exemple $n_0 = 56~\mathrm{\mu m^{-1}}$ (voir Fig. \ref{fig:BiPart.insitut}). On veux donc passer du couple ($T$ , $n_0$) au couple ($T$ , $\mu$). Pour cela on fixe la température $T$ , on ajuste donc le potentiel chimique $\mu$ pour satisfaire la contrainte :
-%
-%\begin{eqnarray*}
-%	n_0 & = & \int \rho(\theta) \, d\theta.
-%\end{eqnarray*}
-%
-%Les données expérimentaux , $n_0 = 56~\mu\mathrm{m}^{-1}$, les résolution de TBA , pour $T = 560~\mathrm{nK}$ , donne les profile - \ref{fig:BiPart.insitut}(c).
-%Pour une système homodegene infinie $\nu(x,\theta) = \nu_0(\theta)$ (\ref{fig:BiPart.insitut}(a et c)). 
 
 \paragraph{Détermination du potentiel chimique à température fixée}
 
@@ -762,49 +508,8 @@ c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution therm
 	\label{fig:BiPart.insitut}
 \end{figure}
 
-%
-%{\color{blue}
-%
-%\paragraph{Dynamique du contour dans l’espace des phases $(x, \theta)$}
-%%Ayant $\nu_0$ , l'idée est de calculer la dynamique de bord puis  la dynamique du bord de la selection.
-%
-%Une fois le facteur d’occupation initial $\nu_0(\theta)$ déterminé, on calcule l’évolution temporelle du contour délimitant la région occupée dans l’espace des phases $(x, \theta)$. 
-%
-%En effet, l’équation fondamentale de la GHD (cf. Eq. \ref{eq:nuetoile}) implique que
-%
-%\begin{eqnarray*}
-%	\nu(x(s;t), \theta(s;t)) & = & \nu(x(s;0), \theta(s;0)),
-%\end{eqnarray*}
-%
-%ce qui signifie que $\nu$ est constant au cours du temps si on suit le couple $(x(s;t), \theta(s;t))$ — c’est la vision lagrangienne en hydrodynamique. La graduation fixe des axes donne la vision eulérienne. Cela implique également :
-%
-%\begin{eqnarray*}
-%	\partial_t \left( \begin{array}{c} x(s;t) \\ \theta(s;t) \end{array} \right) & = & \left( \begin{array}{c} v^{\mathrm{eff}}_{[\nu]}(\theta(s;t)) \\ 0 \end{array} \right),
-%\end{eqnarray*}
-%
-%d’où $\theta(s;t) = \theta(s;0) \equiv \theta(s)$.\\
-%On introduit alors le contour dynamique $\Gamma_t \doteq \{(x(s;t), \theta(s))$ délimitant, à l’instant $t$, la région où le facteur d’occupation est non nul $\}$. Par hypothèse initiale, $\nu(x, \theta; 0) = \nu_0(\theta)$ à l’intérieur du contour initial $\Gamma_0$ et nul à l’extérieur. Par conservation lagrangienne, cette propriété est préservée au cours du temps, et l’on a donc pour tout $t$ :
-% %On note le contour $\Gamma_t \doteq \{(x(s;t), \theta(s;t))\}$ à l'instant $t$ tel qu'initialement à l'interieur de ce contour le fateur d'ocupation est indépendant de $x$ et vaux $\nu_0(\theta)$ et null à l'extereur . Alors:
-%
-%\begin{eqnarray}
-%	\label{sec:calcule:eq:contour1}
-%	\nu(x, \theta ; t ) & = & \left \{ \begin{array}{rcl}\nu_0(\theta) & \mbox{si} & \mbox{$(x, \theta)$ à l'interieur de $\Gamma_t$}, \\ 0 & \mbox{si} & \mbox{$(x, \theta)$ à l'exterieur de $\Gamma_t$}\end{array} \right.
-%\end{eqnarray}
-%
-%%en particulier sur le contour : 
-%
-%%\begin{eqnarray*}
-%%	\nu(x(s;t), \theta(s) ). & = & 	\nu(\theta(s) ).
-%%\end{eqnarray*}
-%
-%
-%La dynamique de $\Gamma_t$ est ainsi entièrement déterminée par la vitesse efficace $v^{\mathrm{eff}}_{[\nu]}(\theta)$ associée au facteur d’occupation initial $\nu_0$. Cela permet de suivre l’évolution de la région occupée dans l’espace des phases $(x, \theta)$ à partir des seules données initiales.
-%
-%----------------------------
-%
-%} 
 
-\paragraph{Dynamique du contour dans l’espace des phases $(x, \theta)$.}
+\subsection{Dynamique du contour dans l’espace des phases $(x, \theta)$.}
 \label{sec:contour_GHD}
 
 Une fois le facteur d’occupation initial $\nu_0(\theta)$ déterminé, nous cherchons à décrire l’évolution temporelle de la région occupée dans l’espace des phases $(x,\theta)$. Cette région, notée $\Gamma_t$, est définie comme le support du facteur d’occupation $\nu(x,\theta,t)$ : elle contient l’ensemble des points pour lesquels $\nu$ est non nul à l’instant $t$.
@@ -857,52 +562,8 @@ Cette propriété est une conséquence directe du cadre intégrable sous-jacent 
 
 Enfin, notons que, dans ce cadre, la vitesse efficace $v^{\mathrm{eff}}_{[\nu]}(x,\theta,t)$ est fonctionnelle du facteur d’occupation \textit{instantané}. Toutefois, dans les cas où $\nu$ conserve sa structure initiale par blocs (comme ici avec un contour net), on peut exprimer cette vitesse uniquement à partir de $\nu_0$ sur chaque trajectoire, ce qui permet de déterminer toute la dynamique sans recalculer le champ $\nu$ à chaque pas de temps. Cette remarque est à la base des méthodes numériques efficaces employées dans nos simulations (voir section~\ref{sec:simu_bord}).
 
-%
-%{\color{blue}
-%-----------------------------------------------
-%
-%
-%\paragraph{Simulation de la déformation du bord} 
-%
-%Dans la partie "déformation du bord" (Fig. \ref{fig:BiPart.coupure1}), initialement, l'intérieur du contour correspond à $x > 0$. Il est donc suffisant d'étudier l'évolution du bord initialement situé en $(x_b(s, t = 0 ) = 0 , \theta_b(s))$. La bijectivité du contour -- c'est à dire de $x_b(s;t) \mapsto \theta_b(s;t)$ avec $(x_b(s;t) , \theta_b(s;t))$ dans le bord, reste bijective au cours du temps -- implique que la vitesse effective soit constante de $\theta$ : $v_{[\nu]}^{\mbox{\tiny eff}} ( \theta  ) = v$, d'où pour une particule quelconque  de position $(x(s;t) , \theta(s))$ 
-%
-%\begin{eqnarray*}
-%	\frac{x(s;t)}{t} & = &	v_{[\nu^\ast (  v(s) , \cdot )]}^{\mbox{\tiny eff}} ( \theta(s)  ) = v(s),
-%\end{eqnarray*}
-%
-%avec la mise à l’échelle $x\to v = x/t$ :
-%
-%\begin{eqnarray*}
-%	\nu(x(s,t),\theta(s)) & = &  \nu^\ast(v(s),\theta(s)), 
-%\end{eqnarray*}
-%
-%$nu^\ast$ est indépendante du temps. De plus (\ref{sec:calcule:eq:contour1}) deviens 
-%
-%\begin{eqnarray}
-%	\label{sec:calcule:eq:contour.bord}
-%	\nu^\ast(x_b(s;t)/t,\theta) & = & 	 \left \{ \begin{array}{rcl} \nu_0(\theta) & si & \theta < \theta_b(s) \\ 0 & si & \theta > \theta_b(s) \end{array}\right. .	
-%\end{eqnarray}
-%
-%
-% Ainsi, pour simuler la déformation du bord, il suffit de calculer la vitesse effective :
-%
-%\begin{eqnarray*}
-%	v_{[\nu^\ast]}^{\mbox{\tiny eff}} ( \theta  ) & = & \frac{\mathrm{id}^{\mathrm{dr}}_{[\nu^\ast]}(\theta)}{\mathrm{1}^{\mathrm{dr}}_{[\nu^\ast]}(\theta)}.
-%\end{eqnarray*}
-%
-%Une fois cette vitesse effectif obtenue, on peut en déduire la position du bord après un temps $t$ de déformation :
-%
-%\begin{eqnarray*}
-%	x(s;t) & = & v_{[\nu^\ast]}^{\mbox{\tiny eff}} ( \theta(s)  ) \cdot t.	
-%\end{eqnarray*}
-%
-%Connaissant le bord $(x_b(s;t) , \theta_b(s) )$ au temps $t$, on en déduit le facteur d’occupation $\nu$ avec (\ref{sec:calcule:eq:contour.bord})  (Fig. \ref{fig:BiPart.coupure1}(e)(g)), puis ${\rho_s}_{[\nu]} = \hbar/m 1^{\mathrm{dr}}_{[\nu]}$ et $\rho_{[\nu]} = \nu \ast {\rho_s}_{[\nu]}$   et donc la densité linéique $n_{[\nu]}(x;t) = \int \rho_{[\nu]}(x ,\theta ;t ) \, d \theta $ (Fig. \ref{fig:BiPart.coupure1}(e)(f)).
-%
-%Sachant que $n_0 = 56~\mathrm{\mu m}^{-1}$ et que $\mu$ dépend de $T$ et de $n_0$, on ajuste la température des simulations GHD sur les données expérimentales de la déformation du bord (Fig. \ref{fig:simul_deformation}). Cet ajustement donne $T = 560~\mathrm{nK}$.
-%}
-%
-%-----------------------------------
-\paragraph{Simulation de la déformation du bord}
+
+\subsection{Simulation de la déformation du bord}
 
 Dans la configuration initiale correspondant à l'expérience de déformation du bord (Fig.~\ref{fig:BiPart.coupure1}), la région occupée par le gaz correspond à \(x > 0\), avec un facteur d’occupation uniforme \(\nu(x,\theta; t=0) = \nu_0(\theta)\) pour \(x > 0\), et nul pour \(x < 0\). Le contour initial séparant ces deux domaines est donné par \((x = 0, \theta)\). L’évolution de ce front peut être entièrement décrite à l’aide de l’équation de GHD, en supposant que le contour reste bijectif au cours du temps.
 
@@ -959,40 +620,8 @@ Enfin, en fixant \(n_0 = 56~\mu\mathrm{m}^{-1}\), nous ajustons la température 
 	\label{fig:BiPart.coupure1}
 	
 \end{figure}
-%----------------------------
-%
-%
-%{\color{blue}
-%\paragraph{Simulation de l’expansion}
-%
-%Nous effectuons une sélection du système après la déformation du bord (Fig. \ref{fig:BiPart.coupure2}(a)) et nous procédons à une expansion unidimensionnelle de cette tranche (Fig. \ref{fig:BiPart.coupure2}(e)). Contrairement au cas de la déformation du bord, le contour n’est ici pas bijectif. La vitesse effective $v^{\mathrm{eff}}_{[\nu(x(s;\tau),\cdot)]}(\theta(s))$ dépend donc du temps d’expansion $\tau$.
-%
-%Pour contourner cela, nous découpons le contour en deux parties : le bord gauche $(x_g(s; t), \theta_g(s))$ et le bord droit $(x_d(s; t), \theta_d(s))$, de sorte que ces deux bords soient bijectifs (Fig. \ref{fig:BiPart.coupure2}(a) et (e)). Avec cette découpe, après une expansion unidimensionnelle d’une durée $\tau$, (\ref{sec:calcule:eq:contour1}) devient :
-%
-%\begin{eqnarray*}
-%	\label{sec:calcule:eq:contour.exp}
-%	\nu ( x(s;\tau), \theta ) & = & 
-%	\left\{ 
-%	\begin{array}{rcl}
-%	\nu_0(\theta) & \mbox{si} & \theta \in [\theta_g(s), \theta_d(s)] \\
-%	0 & \mbox{sinon} & 
-%	\end{array} 
-%	\right.
-%\end{eqnarray*}
-%
-%Ayant la connaissance de $v^{\mathrm{eff}}_{[\nu(x(s;\tau),\cdot)]}(\theta(s))$, on peut suivre l’évolution du contour, et donc de la densité spatiale $n(x;t)$ (Fig. \ref{fig:BiPart.coupure2}(f)). 
-%
-%Après avoir réalisé une simulation GHD avec $T = 560~\mathrm{nK}$, valeur obtenue via l’ajustement sur la déformation du bord, on compare cette simulation aux données expérimentales après $\tau = 30~\mathrm{ms}$ d’expansion. On compare alors la courbe orange aux données en bleu dans la Fig. \ref{fig:simul_expansion}(b). 
-%
-%La simulation ne reproduit pas bien les données, comme attendu : certains phénomènes physiques ne sont pas pris en compte dans les simulations GHD. Cela se manifeste notamment autour de $\pm 350~\mu\mathrm{m}$. 
-%
-%Nous avons donc effectué un ajustement direct de $T$ sur les données après expansion (courbe grise de la Fig. \ref{fig:simul_expansion}(b)).
-%
-%}
-%
-%-----------------------
 
-\paragraph{Simulation de l’expansion.}
+\subsection{Simulation de l’expansion.}
 
 Après la déformation du bord, une sélection spatiale est réalisée pour isoler une tranche du gaz (voir Fig.~\ref{fig:BiPart.coupure2}(a)), que l’on laisse ensuite se dilater librement en une dimension pendant un temps \(\tau\). Contrairement au cas de la déformation du bord, le contour de la région occupée dans $(x,\theta)$ n’est plus bijectif ($\partial \Gamma_t \ni (x,\theta) \mapsto \theta $ n'est pas injectif ): pour une position donnée de $x$, plusieurs rapidité $\theta$ peuvent exister telles que $(x,\theta)$ appartiennent au contour $\partial \Gamma_t$ de la région occupée.
 
@@ -1019,24 +648,20 @@ En suivant l’évolution de chaque point du contour via cette vitesse, on recon
 
 \medskip
 
-\subparagraph{Détermination de la taille de la tranche \(\ell\).}
+\paragraph{Détermination de la taille de la tranche \(\ell\).}
 
 Les simulations d’expansion conservent le nombre de particules à mieux que \(3\%\). Comme mentionné précédemment, lors de l’expérience, nous avons enregistré la position du centre de la tranche \(x_0\), mais pas sa largeur \(\ell\).  
 Nous avons donc choisi d’ajuster \(\ell\) de manière à ce qu’après expansion unidimensionnelle, le nombre total de particules prédit par les simulations coïncide avec celui mesuré expérimentalement dans la Fig.~\ref{fig:simul_expansion}(b).
 
 \medskip
 
-\subparagraph{Comparaison entre simulation et données expérimentales.}
-
 Une première simulation est réalisée avec la température \(T = 560~\mathrm{nK}\), obtenue précédemment par ajustement sur la déformation du bord.  
-Pour reproduire correctement le nombre total de particules après une expansion unidimensionnelle de durée \(\tau = 30~\mathrm{ms}\), la largeur de la tranche doit être fixée à \(\ell = 24~\mu\mathrm{m}\).  
-La comparaison avec les données expérimentales montre cependant un désaccord quantitatif, en particulier autour de \(x \simeq \pm 350~\mu\mathrm{m}\), comme visible dans la Fig.~\ref{fig:simul_expansion}(b). Des écarts atteignant jusqu’à \(25\%\) sont également observés dans la région centrale du profil.
-
-Afin d’obtenir un meilleur accord entre données expérimentales et calculs, nous avons ajusté la température de l’état initial en la considérant comme un paramètre libre, tout en réajustant simultanément la taille \(\ell\) de la tranche.  
-Le résultat de cet ajustement, représenté par la courbe magenta dans la Fig.~\ref{fig:simul_expansion}(b), conduit à une température effective \(T = 1550~\mathrm{nK}\), plus de deux fois supérieure à celle déduite de la déformation du bord.  
-Cependant, le profil au bord correspondant à cette température n’est pas compatible avec les données expérimentales, comme le montre la Fig.~\ref{fig:simul_deformation}(a).
+Pour reproduire correctement le nombre total de particules après une expansion unidimensionnelle de durée \(\tau = 30~\mathrm{ms}\), la largeur de la tranche doit être fixée à \(\ell = 24~\mu\mathrm{m}\). 
 
 \medskip
+
+Cette expansion unidimensionnelle est modélisée en supposant que le facteur d’occupation $\nu(x,\theta)$ est conservé localement au sein de la tranche sélectionnée. La figure~\ref{fig:BiPart.coupure2} illustre les différentes étapes de cette procédure.
+Dans un premier temps, la tranche est extraite du bord du système, tel qu’il a évolué jusqu’à l’instant $t = 18~ms$ dans le piège. L’évolution unidimensionnelle à partir de cette condition initiale repose sur le transport lagrangien du bord dans l’espace des phases $(x,\theta)$, en l’absence de piégeage.
 
 \begin{figure}[!htb]
 	\centering
@@ -1052,6 +677,42 @@ Cependant, le profil au bord correspondant à cette température n’est pas com
 	\label{fig:BiPart.coupure2}
 	
 \end{figure}
+
+
+\subsection{Comparaison aux données expérimentales et discussion}
+
+Nous comparons dans cette section les profils de densité obtenus par simulation GHD à ceux mesurés expérimentalement après expansion d’une tranche extraite du bord du système.
+
+\medskip
+
+La Fig.\ref{fig:simul_expansion}(a) montre le profil d’expansion simulé à partir d’un état initial à température $T = 560~nK$, déterminée indépendamment par ajustement sur la déformation du bord (cf. Fig.\ref{fig:simul_deformation}). Le profil présente une forte asymétrie caractéristique, avec un bord droit abrupt et une densité qui s'annule au-delà d’une certaine position. Toutefois, cette chute est moins abrupte que celle de la distribution locale des rapidités $\rho(x, \theta)$ au centre de la tranche. Deux effets principaux expliquent cet élargissement :
+\begin{itemize}
+	\item[(i)] La distribution de rapidité n’est pas homogène dans la tranche, si bien que la distribution intégrée $\Pi(\theta) = \int \rho(x,\theta) \, dx $  diffère de $\ell \rho(x , \theta )$ , comme visible sur la Fig.~\ref{fig:simul_expansion}(a), ligne pleine versus pointillée ;
+	\item[(ii)] Le temps d’expansion $\tau =30~ ms$ est fini, de sorte que la densité spatiale observée $\tilde{n}(x , \tau )$ diffère de la transformation directe $\Pi( (x-x_0)/\tau) /\tau $, comme le montre la comparaison entre les courbes rouge et marron dans la même figure.
+\end{itemize}
+
+\medskip
+
+La Fig.~\ref{fig:simul_expansion}(b) compare la densité simulée à $T=560~nK$ avec les données expérimentales. Bien que la forme générale du profil soit qualitativement bien reproduite, des écarts significatifs apparaissent, en particulier autour de $x \simeq \pm 350 ~\mu m$, et jusqu’à 25$\%$ dans la région centrale.
+
+\medskip
+
+Afin d’améliorer cet accord, nous avons traité la température $T$ de l’état initial comme un paramètre libre, conjointement à la largeur de tranche $\ell$. L’ajustement donne une température apparente de $T=1550~nK$, représentée par la ligne magenta dans la Fig.~\ref{fig:simul_expansion}(b). Cette valeur permet de mieux reproduire le profil d’expansion, en particulier dans les régions périphériques.
+
+Cependant, le profil au bord correspondant à cette température, présenté en Fig.~\ref{fig:simul_deformation}(a), est incompatible avec les observations expérimentales. En particulier, la courbure du bord simulé à cette température est beaucoup plus prononcée que celle mesurée. Ceci suggère que l’ajustement par température libre masque d'autres effets physiques non pris en compte dans le modèle.
+
+\medskip
+
+Une analyse plus fine du profil expérimental révèle la présence de queues asymétriques à droite, absentes des prédictions GHD à l’échelle d’Euler. Ces queues pourraient résulter de phénomènes hors du cadre du modèle, notamment :
+
+\begin{itemize}
+\item \textbf{Effets de sélection de tranche} : le faisceau de poussée utilisé pourrait chauffer localement les atomes en bordure, entraînant des distributions de rapidité plus étendues que prévu.
+\item \textbf{Effets diffusifs} : dans les régions de forts gradients, notamment au bord du gaz, des termes de diffusion (omnis présents dans la GHD à l’échelle d’Euler) pourraient devenir significatifs. De telles corrections ont été proposées récemment pour modéliser la GHD au-delà de l’approximation eulérienne.
+\end{itemize}
+
+\medskip
+
+En résumé, bien que la GHD reproduise globalement la forme du profil d’expansion, des écarts importants subsistent. Leur origine semble liée à des effets microscopiques non capturés par la description eulérienne — en particulier la dynamique hors équilibre aux bords — soulignant l’intérêt d’une extension du modèle pour mieux décrire ces régimes.
 
 
 \begin{figure}[!htb]
@@ -1071,59 +732,25 @@ Cependant, le profil au bord correspondant à cette température n’est pas com
 \label{fig:simul_expansion}
 \end{figure}
 
+\subsection*{Résumé}
 
-Une des raisons de l'échec de nos tentatives de reproduction du profil de densité après l'expansion de la tranche réside dans la présence de queues à droite du profil expérimental — voir le profil de densité dans la Fig.~\ref{fig:simul_expansion}(b). Ces queues sont absentes des calculs GHD à l’échelle d’Euler car la fonction d’occupation dans la tranche s’annule strictement au-delà d’une certaine rapidité. L’origine de ces queues reste incertaine. Elles pourraient être dues à des effets de bord associés à la procédure de sélection de tranche, les atomes en bordure étant chauffés par le faisceau de poussée. Il est également possible qu’un effet diffusif, non pris en compte dans la GHD à l’échelle d’Euler, intervienne au début de la déformation du bord, lorsque les gradients sont importants.
+Cette section a détaillé la mise en œuvre des simulations numériques basées sur l’hydrodynamique généralisée (GHD), permettant de modéliser finement la dynamique du système dans les régimes explorés expérimentalement.
 
-Ce désaccord reflète les limitations de la GHD dans ce contexte : les effets tels que les pertes, les imperfections de la sélection, ou la non-idéalité du confinement 1D ne sont pas pris en compte.
+Nous avons d’abord établi l’état initial du gaz à l’équilibre thermique, en déterminant les distributions $\nu(\theta)$ et $\rho(\theta)$ à partir de la densité et de la température expérimentales. En exploitant la conservation lagrangienne du facteur d’occupation, nous avons ensuite simulé la déformation du bord dans le piégeage, puis l’expansion unidimensionnelle d’une tranche extraite de ce bord.
 
-Nous procédons alors à un ajustement direct de la température sur les données d’expansion, ce qui permet une meilleure correspondance du profil simulé avec les données (courbe grise sur la Fig.~\ref{fig:simul_expansion}(b)).
+Les simulations reproduisent qualitativement les principaux traits observés expérimentalement, notamment l’asymétrie du profil d’expansion et la chute abrupte du bord droit. Cependant, des écarts significatifs subsistent, notamment dans les régions périphériques et dans la forme fine des profils. Ces différences soulignent les limites du modèle à l’échelle d’Euler, et suggèrent que des effets hors modèle — tels que la sélection de tranche, le chauffage local, ou des corrections diffusives — peuvent jouer un rôle non négligeable.
 
-----------------
+Ces résultats confirment la pertinence de la GHD pour décrire la dynamique collective d’un gaz unidimensionnel hors équilibre, tout en ouvrant la voie à des extensions du modèle pour capturer des effets plus fins, au-delà de l’approximation hydrodynamique idéale.
 
-%\input{BiPart/sections/calculs}
+\section*{Conclusion du chapitre}
 
+Ce chapitre a présenté une exploration conjointe expérimentale et théorique de la dynamique hors équilibre d’un gaz unidimensionnel de bosons, initiée par une coupure bipartite. Ce protocole génère un état initial présentant une discontinuité macroscopique de densité, dont l’évolution constitue une réalisation physique du problème de Riemann quantique.
 
-\subsubsection{Simulation GHD de l’expansion de la tranche}
+L’analyse repose sur la \emph{Théorie Hydrodynamique Généralisée} (GHD), cadre théorique récent permettant de décrire, à l’échelle d’Euler, la relaxation déterministe de systèmes quantiques intégrables. Nous avons montré que la GHD permet non seulement de prédire les profils de densité issus de la dynamique balistique du gaz, mais également de modéliser la distribution locale des quasi-particules, accessibles via un protocole de sélection spatiale.
 
+Les mesures expérimentales, validées par des simulations numériques basées sur la GHD, confirment l’existence d’une structure auto-similaire de la dynamique, ainsi que l’asymétrie caractéristique des distributions de rapidité hors équilibre. Les écarts résiduels entre théorie et expérience soulignent la nécessité de développer des extensions de la GHD, intégrant des effets hors d’équilibre plus subtils, tels que la diffusion, le chauffage local ou les défauts de sélection.
 
-
-Pour interpréter quantitativement les profils mesurés, nous simulons le protocole complet à l’aide de la GHD à l’échelle d’Euler. L’état initial est supposé **thermique**, avec une température ajustée sur le profil du bord mesuré avant la sélection (Fig.~\ref{fig:simul_deformation}(a)), ce qui conduit à $T = 560$~nK.
-
-La tranche est modélisée par une découpe parfaite de la distribution $\nu(x,\theta)$ : elle est mise à zéro hors de $[x_0 - \ell/2, x_0 + \ell/2]$, et laissée inchangée à l’intérieur. La largeur $\ell$ est déterminée pour reproduire le nombre total d’atomes sélectionnés, et vaut $\ell = 24~\mu$m dans notre cas.
-
-La simulation reproduit les principales caractéristiques du profil d’expansion, notamment l’**asymétrie nette** de la distribution (Fig.~\ref{fig:simul_expansion}(a)). Néanmoins, deux effets élargissent le profil simulé par rapport à une hypothétique reconstruction directe de $\rho(x_0,\theta)$ :
-\begin{enumerate}
-    \item $\Pi(\theta)$ intègre des contributions de $\rho(x,\theta)$ sur tout l’intervalle $[x_0 - \ell/2, x_0 + \ell/2]$ — elle n’est donc pas strictement locale.
-    \item Le temps d’expansion $\tau$ est fini, ce qui introduit un élargissement cinématique.
-\end{enumerate}
-
-
-
-
-
-
-
-\paragraph{4. Comparaison aux données expérimentales et discussion}
-
-La comparaison entre le profil mesuré et celui prédit par la GHD à $T=560$~nK est présentée en Fig.~\ref{fig:simul_expansion}(b). Bien que la forme globale soit reproduite, des écarts significatifs subsistent, notamment dans la partie centrale du profil (jusqu’à 25\,\%).
-
-Un ajustement du profil d’expansion avec la température comme paramètre libre donne une température apparente de $T = 1550$~nK. Toutefois, cette valeur surestime nettement la température initiale déduite du profil du bord, et ne permet pas de reproduire l’ensemble des observations.
-
-Ces écarts peuvent s’expliquer par des effets hors du cadre de la GHD eulérienne :
-\begin{itemize}
-    \item \textbf{Présence de queues à droite du profil expérimental} : absentes dans les prédictions, elles pourraient résulter d’un chauffage local par le faisceau de poussée utilisé pour la sélection.
-    \item \textbf{Effets diffusifs} : dans les régions à forts gradients, comme le bord du gaz, des corrections non eulériennes — telles que des termes de diffusion — pourraient devenir significatives.
-\end{itemize}
-
-\paragraph{Conclusion}
-
-Ce protocole permet de sonder la structure locale de la distribution en rapidité d’un gaz 1D hors équilibre, et met en évidence une forte asymétrie cohérente avec les prédictions de la GHD. La comparaison avec la théorie permet de quantifier les limites de l’approche eulérienne, et suggère des pistes pour affiner la modélisation, notamment en incluant des effets de diffusion ou des perturbations induites par la manipulation expérimentale.
-
-
-
-\section{Détails sur les calculs}
-%\inputfile{sections/calculs}
-
+Ainsi, ce travail établit une correspondance quantitative entre un cadre mathématique hydrodynamique issu de l’intégrabilité quantique et des observations expérimentales fines, consolidant la GHD comme un outil efficace pour décrire la relaxation déterministe de systèmes quantiques unidimensionnels, et ouvrant des perspectives pour explorer les limites de cette approche dans des régimes plus complexes.
  
 
 
