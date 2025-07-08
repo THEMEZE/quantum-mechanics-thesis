@@ -33,6 +33,21 @@
 Ce chapitre présente l’expérience utilisée pour étudier les gaz unidimensionnels de rubidium ultra-froids. Nous décrivons l’architecture du dispositif, les méthodes d’imagerie et d’analyse, ainsi que les protocoles expérimentaux auxquels j’ai participé. Le développement initial du refroidissement et du piégeage avant la puce a été réalisé par d’anciens doctorants. La mise en place du piégeage sur la puce et du système de sélection spatiale à l’aide d’un DMD a été initiée par Léa Dubois, alors en première année de doctorat à mon arrivée. Mon travail s’est concentré principalement sur la prise de données, l’analyse et la participation à certaines expériences spécifiques telles que l’expansion longitudinale et la mesure locale de la distribution de rapidité.
 
 
+\paragraph{Objectif du chapitre}  
+Ce chapitre a pour objectif de fournir une présentation synthétique et structurée du dispositif expérimental utilisé pour étudier la dynamique de gaz de Bose unidimensionnels ultra-froids. Il constitue un socle indispensable pour comprendre les protocoles expérimentaux développés au cours de ma thèse et les analyses présentées dans les chapitres suivants.
+
+\paragraph{Architecture générale}  
+Nous présentons d'abord l’architecture complète de l’expérience, depuis la production des atomes jusqu’à leur imagerie, en passant par les étapes de refroidissement, de piégeage magnétique sur puce, de manipulation optique, et de génération de potentiels. Cette description s’accompagne d’une mise en contexte des contributions historiques au dispositif.
+
+\paragraph{Contributions successives et personnelles}  
+Une attention particulière est portée à la répartition chronologique des contributions. Les étapes initiales (source atomique, MOT, piège DC) ont été développées par d’anciens doctorants. La mise en place du piégeage 1D sur puce ainsi que l’utilisation du DMD pour la sélection spatiale ont été réalisées au cours de la thèse de Léa Dubois. Mon travail s’inscrit dans cette continuité et concerne principalement la prise de données, l’analyse de protocoles dynamiques, ainsi que la participation à certaines opérations de maintenance et d’optimisation du système.
+
+\paragraph{Rôle du dispositif dans la thèse}  
+Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz quantiques 1D. Il constitue une plateforme particulièrement adaptée à l’étude de protocoles d’expansion, de sondes locales, ou de dynamiques guidées par la théorie hydrodynamique généralisée (GHD), qui sont au cœur de cette thèse.
+
+
+
+
 \section{Présentation générale de l’expérience}
 \subsection{Vue d’ensemble du dispositif}
 \begin{itemize}
@@ -49,25 +64,193 @@ Ce chapitre présente l’expérience utilisée pour étudier les gaz unidimensi
 \end{itemize}
 
 \section{Le dispositif expérimental}
+\subsection{Système laser et contrôle de fréquence}
+\label{sec:systeme_laser}
+
+\paragraph{Laser maître 1 : référence de fréquence}
+La référence principale de fréquence pour l'ensemble des faisceaux utilisés dans l'expérience est fournie par un laser à cavité étendue, développé au SYRTE. Ce laser est asservi par spectroscopie d’absorption saturée sur la transition D2 du $^{87}$Rb, au croisement des transitions $|F=2\rangle \rightarrow |F'=2,3\rangle$. Ce signal de référence est utilisé pour verrouiller les autres sources laser par battement optique.
+
+\paragraph{Laser repompeur}
+Un laser DFB (Distributed Feedback Diode) est utilisé pour produire le faisceau repompeur, permettant de transférer les atomes retombés dans l’état $|F=1\rangle$ vers l’état $|F=2\rangle$. Ce laser est asservi à une fréquence distante de 6\,GHz de celle du maître 1, en utilisant un montage de battement optique et mélange avec un oscillateur à 6.6\,GHz. Une diode Fabry-Perot injectée par la DFB permet d’amplifier la puissance au-delà de 100\,mW.
+
+\paragraph{Laser maître 2 : laser principal de manipulation}
+Un second laser à cavité étendue, identique au maître 1, est asservi par battement optique à la fréquence du maître 1. Il est amplifié par un amplificateur à semi-conducteur évasé (Tapered Amplifier), permettant d’atteindre une puissance de sortie supérieure à 1\,W. Ce faisceau est ensuite divisé en plusieurs branches pour alimenter :
+\begin{itemize}
+    \item le Piège Magnéto-Optique (PMO),
+    \item la mélasse optique,
+    \item le pompage optique,
+    \item l’imagerie par absorption,
+    \item le faisceau de sélection.
+\end{itemize}
+
+\paragraph{Contrôle de fréquence et polarisation}
+Les fréquences des différents faisceaux sont ajustées via des Modulateurs Acousto-Optiques (AOM), tandis que leur polarisation et leur intensité sont contrôlées à l’aide de cubes PBS en combinaison avec des lames demi-onde motorisées ou fixes. Cette configuration assure une grande flexibilité dans la mise en œuvre des différentes phases expérimentales.
+
+\paragraph{Remarque}
+Une description plus détaillée du montage laser et de son verrouillage peut être trouvée dans la thèse de A.~Johnson~\cite{Johnson2016}. L’ensemble a été maintenu et utilisé sans modifications majeures au cours de ma thèse.
+
+
 \subsection{Production et refroidissement des atomes (non détaillé ici, renvoi à d'autres travaux)}
+{\color{blue}
 \begin{itemize}
     \item Source chaude de rubidium, MOT, molasses optique.
     \item Refroidissement à des températures sub-$\mu~K$ Refroidissement sub-Doppler (détails renvoyés aux travaux précédents).
 \end{itemize}
+}
+Le dispositif expérimental permet de produire des gaz de rubidium ultra-froids, avec pour objectif final l’obtention de gaz unidimensionnels dans le régime quantique dégénéré. La production suit une séquence expérimentale déjà bien établie, initialement développée par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}), puis réoptimisée au début de la thèse de Léa-Dubois ~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
+
+\paragraph{Libération des atomes de rubidium}
+Les atomes de rubidium 87 sont libérés à partir d’un \emph{dispenser}, placé directement dans l’enceinte à vide, sur le côté de la monture de la puce atomique. Ce composant, parcouru par un courant de \( 4.5\,\mathrm{A} \) pendant environ \( 4.8\,\mathrm{s} \), émet un flux d’atomes thermiques dans la chambre à vide.
+
+\paragraph{Capture par piège magnéto-optique (PMO)}
+Les atomes thermiques sont ralentis et piégés à l’aide d’un piège magnéto-optique. Celui-ci utilise quatre faisceaux laser (dont deux sont réfléchis par la puce) et un champ quadrupolaire magnétique généré par des bobines. Le nuage ainsi formé se situe à quelques millimètres de la surface de la puce.
+
+\paragraph{Rapprochement vers la puce}
+Pour rapprocher les atomes de la puce, on transfère le champ quadrupolaire depuis les bobines vers un champ généré par le fil en forme de U de la puce (fil bleu dans la Fig.~\ref{fig:puce}). Ce fil est parcouru par un courant variant de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui rapproche le nuage à quelques centaines de micromètres de la surface.
+
+\paragraph{Mélasse optique}
+Une phase de mélasse optique permet un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire est utilisé à cette étape pour visualiser le nuage atomique, dont la taille dépasse le champ d’observation du système d’imagerie final.
+
+\paragraph{Pompage optique}
+Afin de polariser les atomes dans l’état magnétique \( |F=2,\,m_F=2\rangle \), un pompage optique est effectué avec un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \).
+
 
 \subsection{Piégeage magnétique sur puce}
+{\color{blue}
 \begin{itemize}
     \item Présentation de la puce atomique.
     \item Confinement transverse et longitudinal.
     \item Régime 1D : conditions d’accès (\(\hbar \omega_\perp \gg k_B T\)).
     \item Problèmes de rugosité, stabilité magnétique.
 \end{itemize}
+}
+
+\subsubsection{Piégeage magnétique sur puce}
+\label{sec:piegeage_puce}
+
+\paragraph{Principe général}
+Les atomes de rubidium sont piégés grâce à une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué contenant des micro-fils dans lesquels circulent des courants permettant de générer des champs magnétiques à géométrie contrôlée. Ce dispositif, développé dans les années 1990, permet une miniaturisation du système de piégeage et un accès à des confinements forts, particulièrement adaptés à l'étude de gaz de Bose unidimensionnels.
+
+\paragraph{Structure de la puce utilisée}
+La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (C2N). Elle repose sur un substrat de carbure de silicium sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine BCB, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\(\sim200\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
+
+\paragraph{Fils de piégeage et géométrie des champs}
+Plusieurs fils sont intégrés à la puce pour assurer les différentes étapes du piégeage et du transport des atomes : un fil en forme de Z est utilisé pour le piégeage initial (DC), tandis que trois micro-fils (symétriques et parallèles) sont utilisés pour former un guide unidimensionnel par courants alternatifs (AC). La géométrie des fils a été optimisée pour minimiser la dissipation de chaleur, limiter les couplages parasites et améliorer la symétrie du piège. Dans la zone d’intérêt, les atomes sont piégés à environ \(15\,\mu\mathrm{m}\) au-dessus des fils, soit à \(8\,\mu\mathrm{m}\) au-dessus de la surface de la puce.
+
+\paragraph{Confinement transverse et longitudinal}
+Le confinement transverse est assuré principalement par la géométrie des fils et la présence de champs magnétiques externes. Sa fréquence élevée permet d’atteindre des énergies de confinement \(\hbar \omega_\perp\) bien supérieures aux énergies thermiques et chimiques du système, condition nécessaire à l’accès au régime 1D :
+\[
+k_B T, \mu \ll \hbar \omega_\perp.
+\]
+Le confinement longitudinal, plus faible, est modulable par combinaison de champs magnétiques externes et courants dans les fils additionnels.
+
+\paragraph{Avantages du piégeage sur puce}
+Comparé aux systèmes utilisant des réseaux optiques 2D, le piégeage sur puce ne fournit qu’un seul tube, ce qui permet un meilleur accès aux fluctuations locales de densité et aux observables résolues spatialement. Ce type de dispositif est ainsi particulièrement adapté à l'étude de la thermodynamique et de la dynamique de gaz 1D isolés.
+
+\paragraph{Limitations et effets parasites}
+Parmi les limitations spécifiques au piégeage sur puce figurent la rugosité des potentiels magnétiques due aux imperfections des fils, qui peut induire des modulations parasites du confinement longitudinal. De plus, la stabilité du dispositif est sensible aux champs parasites magnétiques externes ainsi qu’aux échauffements dus aux courants continus.
+
+
+
+\paragraph{Chargement dans le piège DC}
+Après le pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans le fil en forme de Z de la puce (fil orange dans la Fig.~\ref{fig:puce}) et un champ magnétique externe. Ce piège, noté \emph{piège DC}, permet un confinement transverse important. Un refroidissement par évaporation radiofréquence est alors réalisé pendant environ \( 2.3\,\mathrm{s} \), ce qui abaisse la température du nuage à environ \( 1\,\mu\mathrm{K} \), pour un nombre d’atomes typiquement autour de \( 2.5 \times 10^5 \).
+
+\paragraph{Imagerie finale}
+À l’issue de ce refroidissement, les atomes sont observés avec le système d’imagerie final (voir Fig.~\ref{fig:imagerieFinale}), adapté aux tailles caractéristiques du gaz dans le piège. Une image typique de ce nuage est présentée en Fig.~\ref{fig:nuageDC}.
+
+\paragraph{Transfert vers le guide unidimensionnel}
+À la suite du premier refroidissement, les atomes sont transférés du piège DC vers un guide unidimensionnel produit par des courants alternatifs circulant dans trois micro-fils intégrés à la puce (fils jaunes dans la Fig.~\ref{fig:puce}). Ce transfert permet de réaliser un piège de type "guide 1D", où la dynamique longitudinale est découplée du confinement transverse.
+
+Ce dispositif a été mis en place au cours de la thèse de Léa Dubois~\cite{TheseLea}. J’ai utilisé ce guide dans le cadre des protocoles expérimentaux sur l’expansion longitudinale et les sondes locales de distribution de rapidité.
+
+\paragraph{Rampes de courant et compensation du mouvement}
+Pour effectuer un transfert adiabatique, cinq rampes de courant linéaires d'une durée de \( 50 \text{ à } 60\,\mathrm{ms} \) chacune sont appliquées successivement. Pendant cette opération :
+\begin{itemize}
+    \item les courants dans le fil Z (piège DC) diminuent progressivement ;
+    \item les courants dans les micro-fils du guide augmentent jusqu’à atteindre environ \( 50\,\mathrm{mA} \) ;
+    \item un courant initial de \( 0.5\,\mathrm{A} \) est appliqué dans deux autres fils notés \( D \) et \( D' \) (fils vert et bleu sur la Fig.~\ref{fig:puce}), puis ajusté pendant les rampes afin de maintenir fixe la position du centre de masse du nuage.
+\end{itemize}
+
+Ce protocole précis a permis d’optimiser la stabilité du transfert, en minimisant les oscillations résiduelles dans le guide 1D.
+
+\paragraph{Refroidissement final et accès au régime unidimensionnel}
+Une dernière phase de refroidissement par évaporation radiofréquence est ensuite réalisée dans le guide AC. Ce refroidissement, mené dans le piège à forte anisotropie, permet d’atteindre le régime unidimensionnel, caractérisé par la hiérarchie d’énergies :
+\[
+k_B T, \mu \ll \hbar \omega_\perp
+\]
+où \( \omega_\perp \) est la fréquence de confinement transverse, \( \mu \) le potentiel chimique et \( T \) la température du gaz.
+
+Les gaz obtenus contiennent typiquement entre \( 3 \times 10^3 \) et \( 1.5 \times 10^4 \) atomes, pour des températures de l’ordre de \( 50 \text{ à } 200\,\mathrm{nK} \). La Fig.~\ref{fig:gaz1D} montre un exemple de tel gaz observé avec le système d’imagerie final.
+
+
+\paragraph{Remarques expérimentales}
+Lorsque j’ai rejoint l’équipe, la première année thèse de Léa Dubois touchait à sa fin et le dispositif expérimental était en fonctionnement stable. Les différentes étapes du cycle (dispenser, PMO, mélasse, pompage optique, piège DC, transfert vers le guide, évaporation finale) avaient été mises en place et optimisées pendant les premières années de sa thèse, sous la supervision d’I. Bouchoule.Le cycle expérimental complet dure environ 15 secondes. Une description plus détaillée peut être trouvée dans la thèse d’A. Johnson~\cite{Johnson2016}.
+
+
+Pendant ma première année, j’ai principalement participé à la prise de données en collaboration avec Léa. Grâce à la qualité de son travail, le dispositif était globalement très fiable, ce qui a permis de mener des campagnes expérimentales riches sans intervention lourde. Néanmoins, cette stabilité avait pour contrepartie que je n’ai pas été directement impliqué dans la résolution des pannes complexes ou dans le reconditionnement complet de la manipulation, ce qui a limité ma formation sur les aspects de maintenance approfondie du dispositif.
+
+En revanche, peu avant la fin de la thèse de Léa et au début de ma troisième année, nous avons observé une chute significative du nombre d’atomes capturés. Sous la supervision d’I. Bouchoule, une intervention lourde a alors été décidée : nous avons cassé le vide pour diagnostiquer le problème. Il s’est avéré que les connecteurs du dispenser étaient endommagés. L’opération a été mise à profit pour installer un nouveau dispenser et remplacer la puce atomique.
+
+Cette opération a mobilisé plusieurs personnes du laboratoire et de ses partenaires : S. Bouchoule (C2N) et Anne [Nom complet à préciser] ont participé à la manipulation et à la pose de la puce, tandis que j’ai pu assister à l’étuvage de l’enceinte à vide avec F. Nogrette. Après cette intervention, j’ai suivi avec I. Bouchoule le réajustement progressif de la séquence de refroidissement : alignement des faisceaux, réglages de la mélasse, optimisation du chargement dans le piège DC, puis dans le guide.
+
+Cet épisode m’a permis de me confronter plus directement aux paramètres critiques du cycle d’évaporation et à la reprise d’une séquence complète. Toutefois, le départ de Léa, qui maîtrisait tous les aspects de la manipulation, a marqué une rupture importante dans la continuité des savoir-faire pratiques liés à cette expérience.
+
+
+\begin{center}
+	({fig:puce} — Schéma de la puce atomique avec fils U, Z, AC, D et D'.)
+\end{center}
+\begin{center}
+	({fig:imagerieFinale} — Schéma optique du système d’imagerie final)
+\end{center}
+\begin{center}
+	[{fig:nuageDC} — Image du gaz dans le piège DC après évaporation]
+\end{center}
+\begin{center}
+	[{fig:gaz1D} — Image typique d’un gaz dans le régime 1D]
+\end{center}
+
+
 
 \subsection{Génération de potentiels modulés}
 \begin{itemize}
     \item Courants modulés pour créer des pièges harmoniques ou quartiques.
     \item Découplage transverse/longitudinal.
 \end{itemize}
+
+\paragraph{Caractérisation des potentiels longitudinal et transverse}
+
+Pour atteindre le régime unidimensionnel, les potentiels de piégeage doivent être très asymétriques : un confinement transverse fort et un confinement longitudinal faible. La fréquence transverse \(\omega_\perp\) doit être suffisamment élevée pour geler les degrés de liberté dans cette direction, avec la condition \(\mu, k_B T \ll \hbar \omega_\perp\).
+
+\paragraph{Potentiel longitudinal}
+
+Le confinement longitudinal est produit par des courants continus ou modulés dans certains fils. Dans certains protocoles spécifiques, on utilise un potentiel quartique \( V_\parallel(x) = c_4 x^4 \). Le système reste dans le régime 1D tant que la longueur caractéristique longitudinale reste beaucoup plus grande que la transverse.
+
+\paragraph{Potentiel transverse}
+
+Le confinement transverse est réalisé à l’aide de trois micro-fils parallèles situés sur la puce : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). Cette configuration crée un piège transverse harmonique avec une fréquence \(\omega_\perp\) contrôlable par la valeur du champ \( B_0 \) et le courant. Les atomes sont piégés à environ \( d = 15~\mu\text{m} \) au-dessus de la puce. La fréquence maximale accessible expérimentalement est de l’ordre de \( \sim 100~\text{kHz} \).
+
+\paragraph{Effet de rugosité et suppression par modulation}
+
+La rugosité des micro-fils induit des fluctuations parasites du champ magnétique le long du guide. Pour supprimer cet effet, les courants sont modulés à haute fréquence (environ 400~kHz). Grâce à cette modulation rapide, les atomes ne ressentent que le potentiel moyen, dans lequel la composante parasite longitudinale du champ s’annule. Ce procédé permet d’obtenir un potentiel transverse régulier et stable, avec une fréquence efficace \[ f_\perp = \frac{f_\perp^{(0)}}{\sqrt{2}}. \]
+
+\paragraph{Découplage des confinements transverse et longitudinal.}
+Dans notre dispositif, le confinement transverse est assuré par les micro-fils modulés, tandis que le confinement longitudinal est généré par quatre fils extérieurs (D, D', d, d'). L’analyse du potentiel magnétique moyen montre que, sous l’hypothèse d’un champ de bobine homogène et dominant, les contributions transverse et longitudinale du potentiel sont découplées. Cette propriété est cruciale pour nos expériences : elle permet de modifier la géométrie du potentiel longitudinal sans perturber le confinement transverse, facilitant ainsi l’exploration de différentes configurations dynamiques.
+
+\paragraph{Piégeage longitudinal harmonique.}
+Un piège longitudinal harmonique est réalisé en appliquant des courants égaux dans les fils D et D', disposés de manière symétrique. Le champ magnétique longitudinal produit conduit à un potentiel quadratique local :
+\[
+V_\parallel(x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2,
+\]
+avec une fréquence $\omega_\parallel$ contrôlée par le courant et la géométrie de la puce. En pratique, des fréquences jusqu’à 150 Hz sont atteintes pour des courants de 4 A. Une correction peut être nécessaire pour prendre en compte un champ magnétique résiduel $B_{0v}$, responsable d’un déplacement du centre du nuage atomique.
+
+\paragraph{Piégeage longitudinal quartique.}
+L’ajout de deux fils supplémentaires (d et d') permet de modifier la forme du potentiel longitudinal jusqu’à l’ordre 4. En ajustant les courants dans les quatre fils, on peut annuler le terme quadratique et obtenir un potentiel quartique :
+\[
+V_\parallel(x) = a_0 + a_4 x^4.
+\]
+Cette configuration est particulièrement adaptée pour générer des profils de densité homogènes, comme requis dans certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière diabatique (changement rapide du potentiel), car un transfert adiabatique entraînait des pertes importantes.
+
+
 
 \section{Sélection spatiale avec DMD}
 \subsection{Motivation et principe}
@@ -138,7 +321,21 @@ Cette section peut être la plus personnelle, en précisant ton rôle à chaque 
 \end{itemize}
 Ce chapitre a présenté les éléments essentiels du dispositif expérimental, les méthodes d’imagerie, ainsi que les expériences auxquelles j’ai participé. L’ensemble constitue une plateforme performante pour l’étude de la dynamique de gaz 1D hors équilibre.
 
-\appendix
+\paragraph{Résumé de l’architecture expérimentale}  
+Nous avons décrit les éléments clés du dispositif utilisé : un système de refroidissement laser basé sur trois sources couplées, un piégeage magnétique sur puce optimisé pour réaliser des géométries unidimensionnelles, une plateforme de modulation de potentiel via un DMD, et un système d’imagerie haute résolution. L’ensemble permet une manipulation fine des nuages atomiques dans un cadre reproductible et stable.
+
+\paragraph{Méthodes d’analyse et robustesse}  
+L’imagerie par absorption, couplée à une analyse rigoureuse des profils atomiques, fournit des outils fiables pour extraire les grandeurs pertinentes : densités, tailles, températures, distributions de vitesses. Ces méthodes ont permis de confronter les résultats expérimentaux à des prédictions théoriques de type GHD ou Yang-Yang.
+
+\paragraph{Importance du dispositif pour la thèse}  
+Ce dispositif a été essentiel pour mener à bien les expériences présentées dans cette thèse. Il offre à la fois un contrôle local (grâce au DMD), un bon confinement transverse (grâce à la puce) et une imagerie précise. La plateforme est ainsi bien adaptée pour étudier des systèmes 1D fortement corrélés hors équilibre, et pour tester les prédictions de la physique statistique intégrable.
+
+\paragraph{Perspectives}  
+Malgré ses atouts, le dispositif présente des limitations techniques (rugosité magnétique, sensibilité à l’alignement, etc.) qui laissent entrevoir des pistes d’amélioration. Des développements futurs pourraient notamment viser à augmenter la résolution spatiale, automatiser davantage les séquences, ou explorer d'autres régimes dynamiques comme la turbulence ou les collisions de chocs quantiques.
+
+
+
+%\appendix
 \section*{Annexes}
 \begin{itemize}
     \item Schémas techniques (puce, DMD, optique).
