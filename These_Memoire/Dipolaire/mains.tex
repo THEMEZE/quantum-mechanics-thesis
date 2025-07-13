@@ -94,7 +94,7 @@ Dans cette configuration, l’énergie potentielle est minimale là où l’inte
 \centering
 \begin{tikzpicture}
     \node[rectangle, draw = none] (exp) at (0,0) {
-       \includegraphics[width=0.5\textwidth , page = 2]{Figures/Figures}
+       \includegraphics[width=0.3\textwidth , page = 2]{Figures/Figures}
     };
 %    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
     
@@ -408,12 +408,24 @@ où \( \ket{g, N+1} \) est un état fondamental avec \( N+1 \) photons, et \( \k
 \medskip
 
 Dans notre cas spécifique, nous utilisons un \textbf{faisceau laser à environ 770~nm}, soit légèrement \textbf{au bleu} des raies principales du rubidium 87 :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
   \item raie \textbf{D2} : \( \lambda = 780~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{3/2} \),
   \item raie \textbf{D1} : \( \lambda = 795~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{1/2} \).
 \end{itemize}
 
 Le faisceau à environ 770~nm est donc \textbf{hors résonance}, mais \textbf{pas trop éloigné} de ces transitions (désaccord de l’ordre de quelques dizaines de THz), ce qui garantit que la structure hyperfine peut être \textbf{négligée} dans un premier temps, et que l’interaction est bien décrite par la contribution dominante des raies D1 et D2. Dans ce régime de désaccord modéré, le potentiel dipolaire est obtenu comme une somme pondérée des contributions des transitions proches, et les autres transitions atomiques (plus énergétiques) peuvent être ignorées.
+
+% INSERTION FIGURE D1 D2  niveaux 
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}
+    	\node[rectangle, draw = none] (A) at (0,0) {
+       		\includegraphics[width=0.8\textwidth , page = 3]{Figures/Figures}
+    	};
+\end{tikzpicture}
+\caption{Structure fine (transitions D1 et D2)de l’atome de Rubidium $^{87}Rb$.}
+
+\end{figure}
 
 \subsubsection*{Expression des éléments de matrice dans l’interaction atome-champ cohérent}
 
@@ -512,9 +524,9 @@ En première approximation, on peut donc modéliser le Rubidium comme un systèm
 
 La structure des niveaux d’énergie est ensuite raffinée par les effets suivants :
 \begin{itemize}
-  \item \textbf{Structure fine} : Elle résulte du couplage spin-orbite entre le moment angulaire orbital $\vec{L}$ et le spin $\vec{S}$ de l’électron de valence. Ce couplage divise chaque niveau orbital (par exemple, le niveau $5p$) en deux sous-niveaux caractérisés par le moment angulaire total $J = L \pm \tfrac{1}{2}$. Ainsi, la transition $5s \leftrightarrow 5p$ donne naissance aux deux raies bien connues : D1 (transition $5s_{1/2} \to 5p_{1/2}$ à 795 nm) et D2 (transition $5s_{1/2} \to 5p_{3/2}$ à 780 nm).
+  \item[$\bullet$] \textbf{Structure fine} : Elle résulte du couplage spin-orbite entre le moment angulaire orbital $\vec{L}$ et le spin $\vec{S}$ de l’électron de valence. Ce couplage divise chaque niveau orbital (par exemple, le niveau $5p$) en deux sous-niveaux caractérisés par le moment angulaire total $J = L \pm \tfrac{1}{2}$. Ainsi, la transition $5s \leftrightarrow 5p$ donne naissance aux deux raies bien connues : D1 (transition $5s_{1/2} \to 5p_{1/2}$ à 795 nm) et D2 (transition $5s_{1/2} \to 5p_{3/2}$ à 780 nm).
   
-  \item \textbf{Structure hyperfine (non traitée ici)} : Elle résulte du couplage entre le moment angulaire total de l’électron ($\vec{J}$) et celui du noyau ($\vec{I}$), introduisant une subdivision supplémentaire des niveaux d’énergie. Bien que cette structure hyperfine soit essentielle dans certains contextes (résonances hyperfines, refroidissement laser, etc.), elle ne sera pas considérée ici car nous nous limitons à l’étude des effets associés à la structure fine.
+  \item[$\times$] \textbf{Structure hyperfine (non traitée ici)} : Elle résulte du couplage entre le moment angulaire total de l’électron ($\vec{J}$) et celui du noyau ($\vec{I}$), introduisant une subdivision supplémentaire des niveaux d’énergie. Bien que cette structure hyperfine soit essentielle dans certains contextes (résonances hyperfines, refroidissement laser, etc.), elle ne sera pas considérée ici car nous nous limitons à l’étude des effets associés à la structure fine.
 \end{itemize}
 
 Ce modèle à un électron actif simplifie grandement l’analyse des interactions entre le Rubidium et un champ laser, en particulier dans le cadre du piégeage dipolaire et des transitions induites par effet Stark.
@@ -558,7 +570,7 @@ Lorsque le désaccord du laser est très grand (i.e. $|\Delta| \gg$ structure fi
 	\centering
 	\begin{tikzpicture}
     	\node[rectangle, draw = none] (exp) at (0,0) {
-       		\includegraphics[width=0.7\textwidth , page = 3]{Figures/Figures}
+       		\includegraphics[width=0.7\textwidth , page = 4]{Figures/Figures}
     	};
 %    	\node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
     
@@ -671,7 +683,7 @@ Lorsque le désaccord du faisceau laser devient comparable à la séparation ent
 	\centering
 	\begin{tikzpicture}
     	\node[rectangle, draw = none] (exp) at (0,0) {
-       		\includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+       		\includegraphics[width=0.7\textwidth , page = 5]{Figures/Figures}
     	};
 %    	\node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
     
@@ -813,7 +825,7 @@ Ce résultat repose sur les hypothèses suivantes :
 
 \subsection{Choix du laser pour le piégeage dipolaire}
 
-Notre objectif est de réaliser un piégeage dipolaire optique pour des atomes de rubidium-87 confinés dans une géométrie unidimensionnelle. Pour cela, nous utilisons un potentiel dipolaire induit par un faisceau laser décalé vers le bleu des transitions atomiques D1 ($5S_{1/2} \rightarrow 5P_{1/2}$, à $\lambda_{D1} = 794.98~\text{nm}$) et D2 ($5S_{1/2} \rightarrow 5P_{3/2}$, à $\lambda_{D2} = 780.24~\text{nm}$). Le décalage spectral $\Delta > 0$ garantit que les atomes sont repoussés des zones d’intensité maximale, ce qui permet de construire une "boîte" optique où les atomes sont piégés entre plusieurs faisceaux divergents.
+Notre objectif est de réaliser un piégeage dipolaire optique pour des atomes de rubidium-87 confinés dans une géométrie unidimensionnelle. Pour cela, nous utilisons un potentiel dipolaire induit par un faisceau laser décalé vers le bleu des transitions atomiques D1 ($5S_{1/2} \rightarrow 5P_{1/2}$, à $\lambda_{D1} = 794.98~\text{nm}$) et D2 ($5S_{1/2} \rightarrow 5P_{3/2}$, à $\lambda_{D2} = 780.24~\text{nm}$). Le décalage spectral $\Delta > 0$ garantit que les atomes sont repoussés des zones d’intensité maximale, ce qui permet de construire une "boîte" optique où les atomes sont piégés entre plusieurs faisceaux.
 
 \begin{center}
 \textit{[Insérer ici un schéma des faisceaux bleus repoussant les atomes dans une boîte au centre]}
