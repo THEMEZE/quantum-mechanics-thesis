@@ -254,38 +254,202 @@ Cette configuration est particulièrement adaptée pour générer des profils de
 
 \section{Sélection spatiale avec DMD}
 \subsection{Motivation et principe}
+{\color{blue}
 \begin{itemize}
     \item Besoin de préparer des tranches homogènes.
     \item Intérêt dans les protocoles hors équilibre.
 \end{itemize}
+}
+
+\paragraph{Objectif du dispositif de sélection}
+
+L’outil de sélection spatiale a été conçu pour permettre une action locale sur le gaz atomique. Il présente deux objectifs principaux. D’une part, il permet de mesurer la distribution de rapidité localement résolue, en sélectionnant une tranche du gaz avant de la libérer et de suivre son expansion. D’autre part, il offre la possibilité de créer des situations hors équilibre en retirant une partie du gaz à l’équilibre, ce qui perturbe la configuration initiale et initie une dynamique.
+
+\paragraph{Intérêt pour les protocoles hors équilibre}
+
+Ce dispositif permet ainsi de générer des protocoles analogues à des configurations classiques comme le pendule de Newton, ou de sonder directement la dynamique d’un gaz de Lieb-Liniger dans des conditions contrôlées. Il constitue une brique essentielle pour les expériences de dynamique et de transport quantique.
+
 
 \subsection{Mise en place technique (initiée par Léa Dubois)}
+
+{\color{blue}
 \begin{itemize}
     \item Dispositif optique de projection.
     \item Contrôle numérique des motifs.
     \item Calibration et stabilité.
 \end{itemize}
+}
+
+\paragraph{Principe de sélection par pression de radiation}
+
+La sélection repose sur l’illumination d’une zone définie du gaz avec un faisceau quasi-résonant avec la transition cyclique \( F=2 \rightarrow F'=3 \) de la ligne D2 du rubidium. Les atomes subissent une pression de radiation due aux cycles absorption/émission spontanée, ce qui les pousse hors du piège ou les amène dans un état non piégé.
+
+\paragraph{Façonnage spatial du faisceau}
+
+La sélection doit être spatialement résolue. Le profil d’intensité dans le plan des atomes est de type binaire :
+\[
+I(x) = 
+\begin{cases}
+0 & \text{si } x \in [x_1, x_2] \\
+I_0 & \text{sinon}
+\end{cases}
+\]
+ce qui permet de préserver ou d’éjecter les atomes selon leur position longitudinale.
+
+\paragraph{Utilisation du DMD}
+
+Pour générer ce profil, un DMD (Digital Micromirror Device) est utilisé. Il s’agit d’une matrice de \(1024 \times 768\) micro-miroirs orientables individuellement (±12°). En inclinant ces miroirs, on contrôle localement la réflexion de la lumière. L’image du DMD est projetée directement sur le plan des atomes, en imagerie directe.
+
+\paragraph{Avantages du DMD}
+
+Le DMD permet une reconfiguration rapide et programmable du motif de lumière. Cette technologie est largement utilisée dans les expériences d’atomes froids pour produire des potentiels structurés, homogénéiser un faisceau ou adresser localement les atomes.
+
+\paragraph{Alternatives possibles}
+
+Il est possible, en théorie, d’atteindre un effet similaire par un transfert cohérent des atomes vers un état anti-piégé via un pulse micro-onde ou une transition Raman. Cependant, la méthode par pression de radiation est plus simple à mettre en œuvre et adaptée à nos objectifs expérimentaux.
+
+\paragraph{Principe de l’expulsion par pression de radiation}
+
+Un atome illuminé par un faisceau proche de la résonance peut être expulsé du piège soit par transition vers un état anti-piégé, soit par effet de pression de radiation. Cette dernière génère une accélération suffisante pour fournir une énergie cinétique supérieure à la profondeur du puits magnétique. Le nombre de photons diffusés nécessaire peut être estimé à partir de la conservation de l’impulsion : une vingtaine de photons suffisent typiquement à extraire un atome du piège dans nos conditions.
+
+\paragraph{Modèle de diffusion et estimation du seuil}
+
+Le taux de diffusion de photons est modélisé à l’aide d’un taux \(\Gamma_{\mathrm{sc}}\), dépendant de l’intensité \(I\), de l’intensité de saturation \(I_{\mathrm{sat}}\), d’un paramètre \(\alpha\) (lié à la polarisation et au champ magnétique) et du désaccord \(\delta\). À résonance, et pour un temps d’illumination \(\tau_p\), on peut estimer le nombre total de photons diffusés par atome par \(N_{\mathrm{sc}} = \tau_p \Gamma_{\mathrm{sc}}\).
+
+\paragraph{Mesures expérimentales de la puissance nécessaire}
+
+La puissance minimale nécessaire pour éjecter tous les atomes d’une zone illuminée est déterminée en fixant un temps d’illumination donné, puis en variant l’intensité du faisceau. L’analyse est réalisée après un délai d’attente de \(\sim 10\) ms, pour s’assurer que seuls les atomes encore piégés soient détectés. Il est observé que 99$\%$ des atomes sont retirés à partir d’un rapport \(I/I_{\mathrm{sat}} \simeq 0.12\).
+
+\paragraph{Mesures de photons diffusés par fluorescence}
+
+La quantité de photons diffusés est également mesurée par l’analyse du signal de fluorescence capté par la caméra. En calibrant le rapport entre photons détectés et photons diffusés (en tenant compte de l’efficacité optique du système), le nombre moyen de photons nécessaires pour éjecter un atome est confirmé expérimentalement autour de 20. Un ajustement du modèle de diffusion permet d’estimer le paramètre \(\alpha \simeq 0.4\).
+
+\paragraph{Saturation et effets Doppler}
+
+À fort temps d’illumination (\(\tau_p > 150\,\mu\)s), une saturation du nombre de photons diffusés est observée, interprétée comme un effet géométrique : les atomes accélérés atteignent physiquement la puce atomique et cessent de contribuer au signal. Une correction Doppler peut être introduite dans le modèle, mais reste négligeable (\(< 5\%\)) dans les régimes expérimentaux utilisés.
+
+\paragraph{Limitations expérimentales de la sélection}
+
+Plusieurs effets peuvent limiter l'efficacité ou la propreté de la sélection :
+\begin{itemize}
+    \item La diffraction liée à la taille finie de l’objectif entraîne un flou de l’ordre de \(1{-}2\,\mu\)m au bord des zones éclairées.
+    \item Une diffusion parasite par la puce peut se produire à forte intensité si tout le DMD est illuminé ; cela est évité en réduisant la taille transverse du faisceau à quelques micro-miroirs seulement.
+    \item Des inhomogénéités d’éclairement dues à la gaussienne du faisceau et au speckle peuvent conduire à une sur-illumination de certaines zones. Un effort a été fait pour homogénéiser l’intensité en sortie de fibre.
+    \item La réabsorption des photons diffusés pourrait entraîner un échauffement du gaz restant. Un désaccord en fréquence de 15 MHz a été testé pour éviter ce phénomène, sans effet visible sur la température du gaz.
+\end{itemize}
+
+\paragraph{Mesures de l’impact sur le gaz restant}
+
+La température du gaz sélectionné est comparée avant et après sélection via l’analyse des fluctuations de densité après temps de vol. Aucun changement significatif de température ni d’élargissement n’a été observé. Ces résultats suggèrent que, dans les conditions expérimentales utilisées, la sélection ne perturbe pas significativement les atomes restants.
+
+
+
 
 \subsection{Utilisation dans les protocoles}
+
+{\color{blue}
 \begin{itemize}
     \item Formes utilisées : boîtes, barrières, coupures.
     \item Préparation initiale contrôlée du gaz.
     \item Exemples de protocoles expérimentaux utilisant le DMD
 \end{itemize}
+}
+
+\paragraph{Sélection locale et mesure de rapidité}
+
+En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue de \(\rho(x,t \to \infty) \sim \rho(v)\).
+
+\paragraph{Génération d’états hors équilibre}
+
+La sélection permet également de créer des discontinuités dans le profil de densité, et donc d’initier une dynamique hors équilibre. Par exemple, on peut ne conserver que deux paquets séparés de gaz, qui vont alors osciller l’un vers l’autre. Cette configuration est analogue à un pendule de Newton quantique.
+
+\paragraph{Formes utilisées}
+
+Les motifs projetés par le DMD peuvent prendre différentes formes : boîtes, barrières, coupures, etc. Cette flexibilité rend l’outil extrêmement précieux pour explorer diverses configurations initiales et protocoles dynamiques.
+
+\paragraph{Contrôle logiciel du DMD}
+
+Le pilotage du DMD repose sur l’utilisation d’un module intégré fourni par Vialux (V7001-SuperSpeed), qui comprend les bibliothèques logicielles ALP-4. Plusieurs configurations du DMD peuvent être chargées en mémoire au début de chaque cycle expérimental, puis sélectionnées en cours de séquence à l’aide d’un signal digital. Le temps de commutation des miroirs est inférieur à \(30\,\mu\mathrm{s}\), ce qui est compatible avec les protocoles étudiés.
+
+\paragraph{Partage du faisceau avec la voie d’imagerie}
+
+Le faisceau utilisé pour la sélection spatiale est prélevé à partir du faisceau sonde déjà accordé sur la transition \(F=2 \rightarrow F'=3\) de la raie D2. Le partage est réalisé à l’aide d’un cube séparateur de polarisation placé en aval d’une lame demi-onde, permettant de contrôler la puissance injectée dans la fibre optique. Ce choix simplifie la mise en œuvre en évitant d’ajouter une source laser supplémentaire.
+
+\paragraph{Blocage du faisceau de sélection}
+
+Deux systèmes permettent de couper le faisceau de sélection pendant le cycle expérimental :
+\begin{itemize}
+    \item un cache mécanique (type électro-aimant), utilisé pour un blocage longue durée ;
+    \item un modulateur acousto-optique (AOM), permettant de produire des impulsions brèves de quelques dizaines de \(\mu\mathrm{s}\), en amont du séparateur.
+\end{itemize}
+Pour garantir que le faisceau ne perturbe pas l’imagerie, le cache mécanique reste fermé pendant l’utilisation du faisceau sonde.
+
+\paragraph{Montage optique de projection}
+
+Le faisceau façonné par le DMD est projeté dans le plan des atomes à l’aide d’un système optique permettant de sélectionner l’ordre 0 de diffraction. L’ensemble des optiques est dimensionné (diamètre \(50\,\mathrm{mm}\)) pour limiter la diffraction. L’alignement est effectué en superposant le faisceau de sélection à la voie d’imagerie.
+
+\paragraph{Grandissement et champ couvert}
+
+Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dans le plan des atomes, soit plus que la longueur typique d’un nuage (\(\sim 400\,\mu\mathrm{m}\) pour \(f_{\parallel}=5\,\mathrm{Hz}\)). Le grandissement est déterminé par les focales utilisées : une focale \(f_1 = 750\,\mathrm{mm}\) du côté du DMD, et \(f = 32\,\mathrm{mm}\) pour l’objectif côté atomes, donnant \(G = f/f_1 \approx 0.043\).
+
+\paragraph{Visualisation et interface}
+
+Le contrôle du DMD s’effectue via une interface graphique permettant de prévisualiser les configurations de miroirs. Une capture d’écran de cette interface est présentée dans la Fig.~\ref{fig:dmd_interface}, où la zone active réfléchie est visualisée en rouge. Cette interface est pilotée de manière automatisée pendant le déroulement de la séquence expérimentale.
+
 
 \section{Techniques d’imagerie et d’analyse}
 \subsection{Imagerie par absorption}
+{\color{blue}
 \begin{itemize}
     \item Imagerie \textit{in situ} et après temps de vol.
     \item Résolution, limites instrumentales.
 \end{itemize}
+}
+
+\paragraph{Système d’imagerie par absorption}
+
+L’imagerie est réalisée à l’aide d’une caméra CCD à déplétion profonde, optimisée pour une grande efficacité quantique à la longueur d’onde de 780 nm. On utilise des techniques d’imagerie par absorption permettant d’extraire la densité optique \( D(x, z) \), elle-même reliée à la densité atomique 3D via la loi de Beer-Lambert. Le profil de densité linéaire \( n(x) \) est obtenu par intégration sur les directions transverses.
+
+\paragraph{Imagerie après temps de vol}
+
+En appliquant un champ magnétique vertical (\( B = 8\,\mathrm{G} \)), la polarisation du faisceau peut être rendue circulaire (\( \sigma^+ \)) pour adresser la transition fermée \( |F=2, m_F=2\rangle \rightarrow |F'=3, m_F'=3\rangle \). Cette configuration assure une meilleure définition de la section efficace d’absorption. Un temps de vol de quelques ms est utilisé avant l’imagerie, permettant également de décomprimer le nuage.
+
+\paragraph{Imagerie in situ}
+
+Sans champ magnétique, les atomes sont imagés à $7~\mu m$ de la puce, ce qui implique une double absorption du faisceau incident et réfléchi. Dans ce cas, la transition n’est pas fermée, ce qui nécessite une calibration du facteur de conversion entre la densité mesurée et la densité réelle. Un ajustement linéaire permet de relier les profils in situ aux profils obtenus après temps de vol.
+
+\paragraph{Choix des paramètres d’imagerie}
+
+L’intensité du faisceau sonde est choisie typiquement à \( I_0/I_{\mathrm{sat}} \approx 0.3 \) pour optimiser le rapport signal sur bruit tout en restant dans une zone de linéarité acceptable. Dans ces conditions, le nombre de photons diffusés est de l’ordre de \( N_{\mathrm{sc}} \approx 230 \) et le rayon de diffusion reste comparable à la résolution du système d’imagerie (\( \sim 2.6\,\mu \mathrm{m} \)).
+
+\paragraph{Limites du modèle de Beer-Lambert}
+
+La validité de la loi de Beer-Lambert repose sur une approximation à une particule. Dans le cas des gaz fortement denses ou quasi 1D, les effets collectifs, les réabsorptions et les couplages dipolaires peuvent invalider ce modèle. Pour cette raison, même pour l’imagerie in situ, un temps de vol court (\( \sim 1\,\mathrm{ms} \)) est souvent appliqué afin de diluer le gaz transversalement.
+
+\paragraph{Défauts et instabilités expérimentales}
+
+Plusieurs limitations instrumentales ont été identifiées :
+\begin{itemize}
+    \item La caméra initialement utilisée montrait des motifs parasites aléatoires ainsi qu’un offset variant au cours du temps. Le remplacement de la caméra a permis de résoudre ces problèmes.
+    \item Des franges d’interférences apparaissaient lors de la division des images d’absorption, probablement dues à des effets Fabry-Pérot dans les optiques. Le désaxage du faisceau d’imagerie a permis d’en limiter l’impact.
+    \item Des photons résiduels, même en l’absence de faisceau sonde, ont été détectés. Ces derniers proviennent vraisemblablement de diffusions multiples dans le système optique.
+\end{itemize}
+
+\paragraph{Conclusion}
+
+La combinaison de l’imagerie in situ et après temps de vol, ainsi qu’une calibration soigneuse des paramètres optiques et expérimentaux, permettent d’accéder à des profils de densité fiables malgré les limites intrinsèques du système d’imagerie. Une attention particulière a été portée à la réduction des artefacts expérimentaux afin de garantir la précision des mesures.
+
 
 \subsection{Analyse des profils}
+
+{\color{blue}
 \begin{itemize}
     \item Extraction des densités, tailles, températures.
     \item Distribution longitudinale.
     \item Estimation de la température par ajustement Yang-Yang (optionnel si pertinent).
 \end{itemize}
+}
+
 
 \section{Expériences et protocoles étudiés}
 Cette section peut être la plus personnelle, en précisant ton rôle à chaque fois.

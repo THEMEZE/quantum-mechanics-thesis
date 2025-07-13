@@ -7,6 +7,24 @@ Dans cette section, nous présentons l’implémentation expérimentale et théo
 
 Le formalisme utilisé repose sur une description quantique du couplage dipolaire entre un champ laser classique quasi-monochromatique et un atome à deux niveaux. Nous déduisons l’Hamiltonien effectif en seconde quantification sans faire appel à des transformations de jauge. L’objectif est d’obtenir une expression exploitable pour le potentiel optique ressenti par les atomes dans le régime de grand désaccord.
 
+% INSERTION FIGURE 2 niveaux 
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}
+    \node[rectangle, draw = none] (exp) at (0,0) {
+       \includegraphics[width=0.5\textwidth , page = 2]{Figures/Figures}
+    };
+%    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
+    
+%    \node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
+%       \includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%    };
+%    \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
+\end{tikzpicture}
+\caption{Structure à deux niveaux : $\ket{g}$ pour l’état fondamental ("ground") et $\ket{e}$ pour l’état excité ("excited"). La différence d’énergie entre les deux niveaux, notée $\hbar \omega_{e \rightarrow g}$, est représentée, ainsi que la transition induite par le couplage laser de fréquence $\omega$. Dans cet exemple, la transition est dans le bleu.}
+
+\end{figure}
+
 \vspace{1em}
 % INSERTION FIGURE
 \begin{center}
@@ -70,6 +88,24 @@ Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ dévelo
 \)
 
 Dans cette configuration, l’énergie potentielle est minimale là où l’intensité du champ est maximale. L’atome est alors attiré vers les régions de forte intensité du champ électrique : on parle de \textit{piège dipolaire optique}, ou encore de \textit{pince optique}.
+
+% INSERTION FIGURE 2 niveaux 
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}
+    \node[rectangle, draw = none] (exp) at (0,0) {
+       \includegraphics[width=0.5\textwidth , page = 2]{Figures/Figures}
+    };
+%    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
+    
+%    \node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
+%       \includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%    };
+%    \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
+\end{tikzpicture}
+\caption{Structure à deux niveaux : $\ket{g}$ pour l’état fondamental ("ground") et $\ket{e}$ pour l’état excité ("excited"). La différence d’énergie entre les deux niveaux, notée $\hbar \omega_{e \rightarrow g}$, est représentée, ainsi que la transition induite par le couplage laser de fréquence $\omega$. Dans cet exemple, la transition est dans le bleu.}
+
+\end{figure}
 
 
 \subsection{Système à deux niveaux et interaction avec le champ.}
@@ -365,9 +401,9 @@ Cette hypothèse permet de simplifier l’analyse perturbative de l’interactio
 
 Dans ce régime, l’interaction dipolaire sélectionne efficacement les couplages entre les états atomiques et photoniques \textbf{ayant une différence d’un seul photon} :
 \[
-\operator{H}_{\text{int}} : \ket{d, N+1} \longleftrightarrow \ket{e_i, N},
+\operator{H}_{\text{int}} : \ket{g, N+1} \longleftrightarrow \ket{e_i, N},
 \]
-où \( \ket{f, N+1} \) est un état fondamental avec \( N+1 \) photons, et \( \ket{e_i, N} \) un état excité \( e_i \) avec \( N \) photons.
+où \( \ket{g, N+1} \) est un état fondamental avec \( N+1 \) photons, et \( \ket{e_i, N} \) un état excité \( e_i \) avec \( N \) photons.
 
 \medskip
 
@@ -431,40 +467,40 @@ qui permet d’exprimer l’amplitude du champ électrique \( E_0 \) en fonction
 \]
 Ce terme relie l’état atomique \( \ket{g} \) au niveau excité \( \ket{e_i} \), avec un couplage proportionnel à l’amplitude du champ classique et à l’élément de matrice dipolaire entre les deux états. C’est ce terme qui entre au numérateur dans l’expression de la correction d’énergie au second ordre , ce qui donne lieu au potentiel dipolaire optique.\\
 
-{\color{blue} {\color{red} (pour d on travaille avec L)} 
-\subsubsection{Structure des états électroniques et théorème de Wigner-Eckart}
-
-Les états électroniques d’un atome sont caractérisés par des nombres quantiques liés à leur structure fine. Un état est noté \( \ket{n, J, m} \), où :
-\begin{itemize}[label = $\bullet$]
-  \item \( n \) est le nombre quantique principal, qui détermine l’énergie orbitale globale ;
-  \item \( J \) est le moment angulaire total (résultant du couplage spin-orbite \( \vec{J} = \vec{L} + \vec{S} \)) ;
-  \item \( m \in [-J, J] \) est la projection du moment angulaire total sur un axe de quantification, généralement pris comme l’axe \( z \).
-\end{itemize}
-
-L’opérateur dipolaire électrique \( \operatorvec{D} \) est une observable vectorielle, c’est-à-dire un opérateur de rang 1 au sens des tenseurs sphériques. Cela permet d’utiliser le \textbf{théorème de Wigner-Eckart} pour factoriser les éléments de matrice en une partie géométrique et une partie dynamique. Pour une transition entre deux états électroniques \( \ket{n_g, J_g, m_{J_g}} \) et \( \ket{n_e, J_e, m_{J_e}} \), l’élément de matrice dipolaire projeté sur une direction de polarisation \( \vec{\epsilon} \) s’écrit :
-
-\[
-\bra{n_e, J_e, m_{J_e}} \operatorvec{D} \cdot \vec{u} \ket{n_g, J_g, m_g} = d_{n_g J_g  \leftrightarrow  n_eJ_e} \cdot \braket{J_g, 1; m_g, q | J_e, m_e},
-\]
-
-où :
-\begin{itemize}[label =$\bullet$]
-  \item \( d_{n_g J_g  \leftrightarrow  n_eJ_e}  \) est l’élément de matrice réduit. Il ne dépend pas des projections \( m \), ni du type de polarisation, mais uniquement des orbitales atomiques et du moment angulaire total. Il contient l’information dynamique de la transition, souvent calculée ou mesurée expérimentalement.
-  \item \( \braket{J_g, 1; m_g, q | J_e, m_e} \) est un \textbf{coefficient de Clebsch-Gordan}, qui encode les règles de sélection angulaires et dépend :
-  \begin{itemize}[label =$\circ$]
-    \item de \( q = 0, \pm1 \), indexant la composante du champ selon les polarisations \( \pi \) (\( q = 0 \)) ou \( \sigma^{\pm} \) (\( q = \pm1 \)) ;
-    \item des valeurs de \( J_g, J_e \), et des projections \( m_g, m_e \).
-  \end{itemize}
-\end{itemize}
-
-Ainsi, l’amplitude de transition dépend à la fois :
-\begin{enumerate}
-  \item du couplage entre les enveloppes électroniques (contenu dans \( d_{n_g J_g  \leftrightarrow  n_eJ_e} \)) ;
-  \item de la géométrie angulaire (par la polarisation du champ et les sous-niveaux magnétiques des états).
-\end{enumerate}
-
-Ce formalisme est essentiel pour calculer précisément les amplitudes de transition et les forces dipolaires induites par un champ laser polarisé, notamment dans des atomes à structure fine/ hyperfine comme le Rubidium 87. Il permet de traiter l’ensemble des transitions atomiques pertinentes dans un gaz d’atomes refroidis et piégés, sans avoir à traiter individuellement chaque sous-niveau magnétique.
-}
+%{\color{blue} {\color{red} (pour d on travaille avec L)} 
+%\subsubsection{Structure des états électroniques et théorème de Wigner-Eckart}
+%
+%Les états électroniques d’un atome sont caractérisés par des nombres quantiques liés à leur structure fine. Un état est noté \( \ket{n, J, m} \), où :
+%\begin{itemize}[label = $\bullet$]
+%  \item \( n \) est le nombre quantique principal, qui détermine l’énergie orbitale globale ;
+%  \item \( J \) est le moment angulaire total (résultant du couplage spin-orbite \( \vec{J} = \vec{L} + \vec{S} \)) ;
+%  \item \( m \in [-J, J] \) est la projection du moment angulaire total sur un axe de quantification, généralement pris comme l’axe \( z \).
+%\end{itemize}
+%
+%L’opérateur dipolaire électrique \( \operatorvec{D} \) est une observable vectorielle, c’est-à-dire un opérateur de rang 1 au sens des tenseurs sphériques. Cela permet d’utiliser le \textbf{théorème de Wigner-Eckart} pour factoriser les éléments de matrice en une partie géométrique et une partie dynamique. Pour une transition entre deux états électroniques \( \ket{n_g, J_g, m_{J_g}} \) et \( \ket{n_e, J_e, m_{J_e}} \), l’élément de matrice dipolaire projeté sur une direction de polarisation \( \vec{\epsilon} \) s’écrit :
+%
+%\[
+%\bra{n_e, J_e, m_{J_e}} \operatorvec{D} \cdot \vec{u} \ket{n_g, J_g, m_g} = d_{n_g J_g  \leftrightarrow  n_eJ_e} \cdot \braket{J_g, 1; m_g, q | J_e, m_e},
+%\]
+%
+%où :
+%\begin{itemize}[label =$\bullet$]
+%  \item \( d_{n_g J_g  \leftrightarrow  n_eJ_e}  \) est l’élément de matrice réduit. Il ne dépend pas des projections \( m \), ni du type de polarisation, mais uniquement des orbitales atomiques et du moment angulaire total. Il contient l’information dynamique de la transition, souvent calculée ou mesurée expérimentalement.
+%  \item \( \braket{J_g, 1; m_g, q | J_e, m_e} \) est un \textbf{coefficient de Clebsch-Gordan}, qui encode les règles de sélection angulaires et dépend :
+%  \begin{itemize}[label =$\circ$]
+%    \item de \( q = 0, \pm1 \), indexant la composante du champ selon les polarisations \( \pi \) (\( q = 0 \)) ou \( \sigma^{\pm} \) (\( q = \pm1 \)) ;
+%    \item des valeurs de \( J_g, J_e \), et des projections \( m_g, m_e \).
+%  \end{itemize}
+%\end{itemize}
+%
+%Ainsi, l’amplitude de transition dépend à la fois :
+%\begin{enumerate}
+%  \item du couplage entre les enveloppes électroniques (contenu dans \( d_{n_g J_g  \leftrightarrow  n_eJ_e} \)) ;
+%  \item de la géométrie angulaire (par la polarisation du champ et les sous-niveaux magnétiques des états).
+%\end{enumerate}
+%
+%Ce formalisme est essentiel pour calculer précisément les amplitudes de transition et les forces dipolaires induites par un champ laser polarisé, notamment dans des atomes à structure fine/ hyperfine comme le Rubidium 87. Il permet de traiter l’ensemble des transitions atomiques pertinentes dans un gaz d’atomes refroidis et piégés, sans avoir à traiter individuellement chaque sous-niveau magnétique.
+%}
 
 \section{Cas du Rubidium 87 dans une polarisation rectiligne}
 
@@ -517,6 +553,23 @@ Cette structure matricielle du potentiel dipolaire joue un rôle central dans la
 
 Lorsque le désaccord du laser est très grand (i.e. $|\Delta| \gg$ structure fine, typiquement de l’ordre de $15\,\mathrm{nm}$ pour le rubidium), les différentes composantes de la structure fine ne peuvent plus être résolues par le champ lumineux. Autrement dit, les photons du faisceau laser ne "voient" plus la séparation entre, par exemple, les niveaux $5P_{1/2}$ et $5P_{3/2}$. Dans ce régime de désaccord très important, les niveaux excités sont décrits uniquement par leur moment angulaire orbital $L$, sans distinction de $J$ ou $F$. Ce régime permet de simplifier la description du couplage lumière-matière : seules les transitions entre niveaux caractérisés par les nombres quantiques orbitaux $L$ et leurs projections $m_L$ sont pertinentes.
 
+% INSERTION FIGURE L=0 , L = 1  niveaux 
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}
+    	\node[rectangle, draw = none] (exp) at (0,0) {
+       		\includegraphics[width=0.7\textwidth , page = 3]{Figures/Figures}
+    	};
+%    	\node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
+    
+%    	\node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
+%       	\includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%    	};
+%    	\node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] 	{(b)};
+\end{tikzpicture}
+\caption{Structure des niveaux électroniques $\ket{L, m_L}$ de l’atome de rubidium.}
+
+\end{figure}
 
 \vspace{1em}
 % INSERTION FIGURE
@@ -533,16 +586,20 @@ Dans ce contexte, il est utile de travailler dans la base $\ket{L, m_L}$, propre
 
 L’opérateur dipolaire, en tant que vecteur, peut être exprimé dans la base sphérique :
 \begin{eqnarray*}
-\operatorvec{D} &=& \sum_{q = -1}^{+1} D_q\, \vec{u}_q,
+\operatorvec{D} &=& \sum_{q = -1}^{+1} \operator{D}_q\, \vec{u}_q,
 \end{eqnarray*}
 où $q = 0, \pm 1$ désigne respectivement les composantes de polarisation rectiligne ($\pi$), circulaire droite ($\sigma^+$) et circulaire gauche ($\sigma^-$), et $\vec{u}_q$ est le vecteur de polarisation associé.
 
-Dans cette base, seule la composante $D_q$ correspondant au changement $m_L \to m_L' = m_L + q$ est active :
+Dans cette base, seule la composante $\operator{D}_q$ correspondant au changement $m_L \to m_L' = m_L + q$ est active :
 \begin{eqnarray*}
 \bra{m_L'} \operatorvec{D} \cdot \vec{u}_q \ket{m_L} \propto \delta_{m_L', m_L + q}.
 \end{eqnarray*}
 
 \paragraph{Application du théorème de Wigner-Eckart.}
+
+L’opérateur dipôle électrique $\operatorvec{D}$ est un opérateur vectoriel, que l’on peut exprimer en termes de composantes sphériques $\operator{D}_q$ avec $q = 0 , \pm 1 $, correspondant aux polarisations $\pi$  et $\sigma^\pm$.
+
+\medskip
 
 Le théorème de Wigner-Eckart permet d’évaluer les éléments de matrice de l’opérateur dipolaire entre états de moment angulaire en factorisant la dépendance radiale et angulaire :
 \begin{eqnarray}
@@ -552,17 +609,39 @@ Le théorème de Wigner-Eckart permet d’évaluer les éléments de matrice de 
 \end{eqnarray}
 où $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$ est l’élément de matrice réduit, qui encode la dépendance radiale (par exemple $d_{\scriptstyle 5S \rightarrow 5P}$ pour le rubidium), et $\braket{L, 1; m_L, q | L', m_{L}'}$ est le coefficient de Clebsch-Gordan associé à la conservation du moment cinétique orbital projeté.
 
+\medskip
+Pour une polarisation linéaire parallèle à l’axe $z$, on a $q=0$ (polarisation $\pi$).
+
 \subparagraph{Application au cas $5S \rightarrow 5P$ et avec une polarisation $\pi$.}
 
-Prenons le cas spécifique de la transition $5S \rightarrow 5P$, pour une polarisation rectiligne ($q = 0$). On s’intéresse au couplage entre l’état fondamental $\ket{L = 0, m_L = 0}$ et un état excité $\ket{L' = 1, m_L'}$. L’élément de matrice devient alors :
+%Prenons le cas spécifique de la transition $5S \rightarrow 5P$, pour une polarisation rectiligne ($q = 0$). On s’intéresse au couplage entre l’état fondamental $\ket{L = 0, m_L = 0}$ et un état excité $\ket{L' = 1, m_L'}$. L’élément de matrice devient alors :
+
+Considérons la transition électronique entre les niveaux $5S$ et $5P$ du rubidium 87, en négligeant la structure fine (i.e., on travaille dans la base des moments angulaires orbitaux $\ket{L , m_L  } $
+Dans cette approximation, l'état fondamental est noté $\ket{L = 0, m_L = 0}$ , et l’état excité $\ket{L' = 1, m_{L'}}$ , car la transition dipolaire électrique autorise $\Delta L = \pm 1 $.
+
+
+
+L’élément de matrice s’écrit alors, en utilisant le théorème de Wigner-Eckart :
 \begin{eqnarray}
 \bra{L' = 1, m_L'} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0}
 & = & d_{\scriptstyle 5S \leftrightarrow 5P} \cdot \braket{L=0, 1; m_L = 0, q=0 | 1, m_L' }.
 \end{eqnarray}
-Le coefficient de Clebsch-Gordan impose $m_L' = 0$, ce qui implique que seule la composante $q = 0$ (polarisation rectiligne) contribue à cette transition spécifique :
+où :
+\begin{itemize}
+	\item $d_{\scriptstyle 5S \leftrightarrow 5P} = \braket{L' = 1 \vert \Vert \operator{D}_0 \Vert \vert L =0 }$  est l’élément de matrice réduit,  indépendant de $m_L$ ou de la polarisation $q$ ;
+	\item $\braket{L=0, 1; m_L = 0, q=0 | 1, m_L' }$ est un \textbf{coefficient de Clebsch-Gordan}.
+\end{itemize}
+Ce dernier impose une condition stricte de conservation de la projection du moment angulaire : $m_{L'} = m_L + q = 0 + 0  = 0 $. Par conséquent, seule la composante $m_{L'} = 0 $  de l’état excité est couplée à $\ket{L = 0 , m_L = 0}$ sous l’action du champ $\pi$-polarisé. Et comme $\braket{0,1;0,0|1,0}=1$, on obtient finalement :
+%Ce dernier impose une condition stricte de conservation de la projection du moment angulaire :
+%
+%Le \textbf{coefficient de Clebsch-Gordan}, qui encode les règles de sélection angulaires et dépend :
+%  \begin{itemize}[label =$\circ$]
+%    \item de \( q = 0, \pm1 \), indexant la composante du champ selon les polarisations \( \pi \) (\( q = 0 \)) ou \( \sigma^{\pm} \) (\( q = \pm1 \)) ;
+%    \item des valeurs de \( J_g, J_e \), et des projections \( m_g, m_e \).
+%  \end{itemize}
+%Le \textbf{coefficient de Clebsch-Gordan} : $\braket{L=0, 1; m_L = 0, q=0 | 1, m_L' } = \delta_{m_L', m_L + q}$ impose $m_L' = 0$, ce qui implique que seule la composante $q = 0$ (polarisation rectiligne) contribue à cette transition spécifique  :
 \begin{eqnarray}
-\Rightarrow \bra{L' = 1, m_L'=0} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0}
-= d_{\scriptstyle 5S \leftrightarrow 5P} \cdot \delta_{m_L', m_L + q} .
+ d_{\scriptstyle 5S \leftrightarrow 5P} = \bra{L' = 1, m_L'=0} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0} .
 \end{eqnarray}
 
 Cette analyse met en évidence le rôle de la polarisation du champ lumineux dans la sélection des transitions permises, et montre que dans le régime de très grand désaccord, la structure fine peut être ignorée au profit d’une description plus simple en termes de nombres quantiques orbitaux.
@@ -586,6 +665,24 @@ Le moment angulaire électronique total $J$ résulte du couplage entre le moment
 
 Lorsque le désaccord du faisceau laser devient comparable à la séparation entre les doublets de structure fine, il est nécessaire de prendre en compte le couplage spin-orbite. Celui-ci donne lieu à une levée de dégénérescence des niveaux d’énergie, conduisant à ce que l’on appelle la structure fine de l’atome. Dans ce régime, les états propres du système s’écrivent dans la base couplée $|L, S; J, m_J\rangle$, où $m_J$ est la projection de $J$ sur l’axe de quantification. Ces niveaux sont représentés sur la figure~1.2.
 
+
+% INSERTION FIGURE D1 D2  niveaux 
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}
+    	\node[rectangle, draw = none] (exp) at (0,0) {
+       		\includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+    	};
+%    	\node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
+    
+%    	\node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
+%       	\includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%    	};
+%    	\node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] 	{(b)};
+\end{tikzpicture}
+\caption{Structure fine (niveaux $\ket{J, m_J}$) de l’atome de rubidium.}
+
+\end{figure}
 \vspace{1em}
 % INSERTION FIGURE
 \begin{center}
