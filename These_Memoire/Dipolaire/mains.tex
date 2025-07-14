@@ -8,22 +8,22 @@ Dans cette section, nous présentons l’implémentation expérimentale et théo
 Le formalisme utilisé repose sur une description quantique du couplage dipolaire entre un champ laser classique quasi-monochromatique et un atome à deux niveaux. Nous déduisons l’Hamiltonien effectif en seconde quantification sans faire appel à des transformations de jauge. L’objectif est d’obtenir une expression exploitable pour le potentiel optique ressenti par les atomes dans le régime de grand désaccord.
 
 % INSERTION FIGURE 2 niveaux 
-\begin{figure}[!htb]
-\centering
-\begin{tikzpicture}
-    \node[rectangle, draw = none] (exp) at (0,0) {
-       \includegraphics[width=0.5\textwidth , page = 2]{Figures/Figures}
-    };
-%    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
-    
-%    \node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
-%       \includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%\begin{figure}[!htb]
+%\centering
+%\begin{tikzpicture}
+%    \node[rectangle, draw = none] (exp) at (0,0) {
+%       \includegraphics[width=0.5\textwidth , page = 2]{Figures/Figures}
 %    };
-%    \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
-\end{tikzpicture}
-\caption{Structure à deux niveaux : $\ket{g}$ pour l’état fondamental ("ground") et $\ket{e}$ pour l’état excité ("excited"). La différence d’énergie entre les deux niveaux, notée $\hbar \omega_{e \rightarrow g}$, est représentée, ainsi que la transition induite par le couplage laser de fréquence $\omega$. Dans cet exemple, la transition est dans le bleu.}
-
-\end{figure}
+%%    \node[circle, draw=none, above=0cm of exp , shift={( -2.5cm , -0.5cm )} ] {(a)};
+%    
+%%    \node[right=1mm of exp , shift={( -0.5cm , 0cm )}] (pi) {
+%%       \includegraphics[width=0.5\textwidth , page = 4]{Figures/Figures}
+%%    };
+%%    \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
+%\end{tikzpicture}
+%\caption{Structure à deux niveaux : $\ket{g}$ pour l’état fondamental ("ground") et $\ket{e}$ pour l’état excité ("excited"). La différence d’énergie entre les deux niveaux, notée $\hbar \omega_{e \rightarrow g}$, est représentée, ainsi que la transition induite par le couplage laser de fréquence $\omega$. Dans cet exemple, la transition est dans le bleu.}
+%
+%\end{figure}
 
 \vspace{1em}
 % INSERTION FIGURE
@@ -990,7 +990,7 @@ Trois sources laser ont été sélectionnées pour la réalisation de la boîte 
 \begin{itemize}
     \item \textbf{DFB} à $\lambda = 772.5~\text{nm}$, puissance $P = 75~\text{mW}$.
     \item \textbf{DBR} à $\lambda = 778.0~\text{nm}$, puissance $P = 60~\text{mW}$. 
-    \item \textbf{DBR} à $\lambda = 770.5~\text{nm}$, puissance $P = 32~\text{mW}$(,également utilisé pour certaines étapes du montage).
+    \item \textbf{DBR} à $\lambda = 770.5~\text{nm}$, puissance $P = 32~\text{mW}$.
 \end{itemize}
 
 \medskip
@@ -1036,6 +1036,19 @@ Ce constat a notamment motivé l’ajout d’un amplificateur optique (TA — Ta
 
 \subsection{Amplification par Tapered Amplifier (TA)}
 
+% INSERTION FIGURE  
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}
+    	\node[rectangle, draw = none] (A) at (0,0) {
+       		\includegraphics[width=0.8\textwidth , page = 7]{Figures/Figures}
+    	};
+\end{tikzpicture}
+\caption{Schéma global de l’amplification}
+\label{fig:TA_setup}
+
+\end{figure}
+
 \subsubsection*{Principe et motivation}
 
 Afin de compenser le déficit de puissance du laser DBR à $770.5~\text{nm}$ — notamment dans le scénario initialement envisagé avec un waist focalisé important — un amplificateur optique de type \textit{Tapered Amplifier} (TA) a été ajouté en aval de la source laser.
@@ -1058,7 +1071,7 @@ L'utilisation d’un TA s’accompagne de plusieurs contraintes expérimentales 
 
 \subsubsection*{Mise en œuvre expérimentale}
 
-Le schéma global de l’amplification est présenté sur la figure~\ref{fig:TA_setup} (non incluse ici).
+Le schéma global de l’amplification est présenté sur la figure~\ref{fig:TA_setup} .
 
 \begin{itemize}[label=$\triangleright$]
     \item \textbf{Laser seed :} le laser DBR à $770.5~\text{nm}$ est stabilisé en température et en courant à l’aide du contrôleur Thorlabs ITC-510, et injecté dans le TA à l’aide d’une optique de couplage sur table optique.
