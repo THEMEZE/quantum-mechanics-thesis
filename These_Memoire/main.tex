@@ -1,200 +1,29 @@
-
-%\include{Title}
-
-
-%\makeatletter
-
-%\makeindex[intoc=true]
-%\makeindex[name=pers,title=Index of person names,intoc=true]
+\input{preamble}
 
 \begin{document}
 
-%\fontsize{12pt}{10pt}\selectfont % 14pt de taille avec interligne de 17pt
-
-%\maketitle\\
-
-%\input{exp}
-
-%\begin{abstract}
-
-%\end{abstract}
-
-%\renewcommand{\contentsname}{}%{\vspace{-3cm}} % Ajuste la valeur si besoin
-
-%\begingroup
-%\renewcommand{\contentsname}{\vspace{-4cm}}
-%\tableofcontents
-%\endgroup
 
 
-%\dominitoc % Active les mini-tables des matières
-
+\frontmatter
+\input{chapters/00_intro}
 \tableofcontents
-
 \bigskip
+\mainmatter
 
-%\listoffigures
+\input{chapters/01_LL_BA}
+\input{chapters/02_GGE_TBA}
+\input{chapters/03_GHD}
+\input{chapters/04_GGE_Fluctuation}
+\input{chapters/05_Disp_Exp}
+\input{chapters/06_Bipart}
+\input{chapters/07_Dipolaire}
 
-%\maketitle\\
+\input{chapters/08_conclusion}
+\appendix
+\input{chapters/99_annexes}
 
-%\newpage
+\bibliographystyle{unsrt}
+\bibliography{thesis}
 
-%\input{intro.tex}
-                
-%\chapter*{Preface}           
-%\input{preface}
-
-%parti 1 
-%\part{Théorie}
-
-%\chapter{
-%\input{Theory/main}
-
-%\input{Plan_detailler}
-
-
-
-\chapter{Modèle de Lieb-Liniger et approche Bethe Ansatz}
-\minitoc
-\input{LL_BA/main.tex}
-
-%%\input{The_Coordinate_Bethe_Ansatz}
-%%\chapter*{Introduction}
-%\input{intro_LL_BA}
-
-%\section{Introduction au gaz de bosons unidimensionnels}
-
-
-
-%%\input{desc_GB1D}
-
-%\subsection*{Introduction}
-%%\input{intro_desc_GB1D}
-
-%\subsection{Description du modèle de Lieb-Liniger}
-%\input{desc_LL}
-%\subsection{Propriétés fondamentales et régimes asymptotiques}
-%%\section{Théorie linéarisée pour le régime de quasi-condensat}
-%%\subsection{Équation de Gross-Pitaevskii}
-%%\subsection{Transformation de Bogoliubov pour système homogène}
-
-%\section{Bethe Ansatz et solution exacte du modèle de Lieb-Liniger}
-%%\minitoc
-%\subsection{Problème à deux corps}
-%\subsection{Problème à N corps}
-%\subsection{Condition aux bords périodiques et équation de Bethe Ansatz}
-%\input{cond_bord_periodique}
-
-\chapter{Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe}\label{chap:relaxation}
-\minitoc
-%\input{TBA/plan}
-\input{TBA/main}
-
-
-
-
-%\section{Équilibre thermique et ensemble de Gibbs}
-
-%\subsection{Thermodynamique du gaz de Lieb-Liniger à température nulle}
-%\input{therm_zero}
-
-
-%\input{exc_zero}
-%\subsection{Physique statistique de l’ensemble de Gibbs}
-%%\input{Therm_model}
-
-%\input{Gaz_de_bosons_unidimensionnel/Limite_thermodinamique_a_temperature_non-nulle/Ensemble_de_Gibbs/Rappel_de_Physique_statistique/main}
-%%\section{Chaos quantique et brisure de l’intégrabilité}
-%\subsection{Entropie de Yang-Yang et principe de maximisation}
-
-%\section{Équilibre non thermique et ensemble de Gibbs généralisé}
-
-%\subsection{Intégrabilité et charges conservées}
-%\subsection{Dynamique hors équilibre et relaxation des systèmes isolés}
-%\subsection{Physique statistique appliquée aux systèmes intégrables}
-%\input{Gaz_de_bosons_unidimensionnel/Limite_thermodinamique_a_temperature_non-nulle/Ensemble_de_Gibbs_Generalisee/Rappel_de_Physique_statistique/main}
-%\subsection{Entropie de Yang-Yang généralisée}
-
-
-
-\chapter{Dynamique hors-équilibre et hydrodynamique généralisée}
-\minitoc
-\input{GHD/plan_GHD}
-
-
-%\section{Hydrodynamique et régimes asymptotiques}
-
-%\subsection{Hydrodynamique classique des systèmes chaotiques}
-%\subsection{Hydrodynamique des systèmes intégrables et distribution de rapidité}
-%\subsection{Équation d’hydrodynamique généralisée (GHD)}
-
-\chapter{Fluctuation de la distribution de rapidité dans des état d'équilibre} 
-\input{Fluctuation_Pi/main}
-
-%%\chapter{Fluctuations et corrections à l’hydrodynamique généralisée}
-%%\minitoc
-%%\section{Fluctuations de la distribution de rapidité}
-%%\input{Gaz_de_bosons_unidimensionnel/Fluctuation_Pi/main}
-%%\section{Ordre 2 des corrections et rôle de l’entropie de Yang-Yang}
-%%\section{Confrontation entre hydrodynamique classique et hydrodynamique généralisée}
-
-\chapter{Dispositif expérimental et méthodes d’analyse}
-\minitoc
-\input{Exp/exp}
-
-
-\chapter{Étude du protocal de bi-partition : Mesure de distribution de rapidités locales $\rho(x , \theta ) $  pour des systèmes hors équilibre}
-\minitoc
-%%\input{BiPart/article_Wall}
-\input{BiPart/bipart}
-%\input{BiPart/bipart_brouillon}
-
-
-\chapter{Mise en place d'un confinement longitudinale dipolaire}
-\minitoc
-\input{Dipolaire/mains}
-
-%\section{calculs}
-%\input{Dipolaire/calculs/mains}
-%	\input{Dipolaire/calculs/laser}
-
-
-
-
-
-%\section{laser , MOPA, etc .. Données}
-
-%\appendix
-
-%\chapter{Calcules Hamiltonien à N fixés}
-%\section{deux particules}\label{annex:2.part}
-%\input{LL_BA/LL/Fonc_N/Fonc_deux/annex}
-%\section{N particules}\label{annex:N.part}
-%\input{LL_BA/LL/Fonc_N/Fonc_N/annex}
-
-%\chapter{Exemple : action de $\operator{P}$ sur l’état $\vert \psi_N\rangle$}
-%\input{LL_BA/LL/Def_proof_P_N/main}
-
-%\chapter{Aaction de $\operator{H}$ sur l’état $\vert \psi_N\rangle$}
-%\input{LL_BA/LL/Def_proof_H_N/main}
-
-%\chapter{Vérification explicite de la condition aux limites}
-%\input{LL_BA/LL/Cond_lim/main}
-%\chapter{Lien avec les équations de Bethe}
-%\input{LL_BA/LL/Link_eq_Bethe/main}
-
-%\chapter{Energie}
-%\input{Dipolaire/calculs/annex_2}
-%\chapter{Taux}
-%\input{Dipolaire/calculs/annex_3}
-
-
-%\newpage
-%\printindex
-%\printindex[pers]
-
-\bibliographystyle{unsrt}  % ou alpha, abbrv, plain, etc.
-\bibliography{biblio}      % sans l'extension .bib
-
-			            
 \end{document}
+
