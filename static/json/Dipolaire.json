@@ -110,7 +110,13 @@
     {
         "file1-19": "../docaranger/Dipolaire/6j-Symv3.pdf",
         "page1-19": 1,
-        "file2-19": "",
-        "page2-19": ""
+        "file2-19": "../docaranger/Dipolaire/polyNLO_M1_Dubreuil_211117.pdf",
+        "page2-19": 1
+    },
+    {
+        "file1-20": "../docaranger/Dipolaire/Cours_2013.pdf",
+        "page1-20": 1,
+        "file2-20": "../docaranger/Dipolaire/WvW-2008a.pdf",
+        "page2-20": 1
     }
 ]

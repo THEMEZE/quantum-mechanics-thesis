@@ -4,5 +4,53 @@
         "page1-1": 1,
         "file2-1": "../docaranger/GGE/1710.11289v3.pdf",
         "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/GGE/Mallick_2024_J._Stat._Mech._2024_074001.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/GGE/Fluctuations de la densité de rapidité dans le GGE.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/GGE/Mallick_2024_J._Stat._Mech._2024_074001.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/GGE/Fluctuations de la densité de rapidités dans le gaz de Lieb–Liniger.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/GGE/1611.08225v2.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/GGE/1704.06649v3.pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-5": "../docaranger/GGE/Condition d’équilibre et fonctionnelle de Yang–Yang.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/GGE/SciPostPhys_1_2_015.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../docaranger/GGE/1505.03080v2.pdf",
+        "page1-6": 1,
+        "file2-6": "../docaranger/GGE/vdoc.pub_thermodynamics-of-one-dimensional-solvable-models.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../docaranger/GGE/Contexte et formules de base.pdf",
+        "page1-7": 1,
+        "file2-7": "../docaranger/GGE/2001.03065v2.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../docaranger/GGE/9708087v1.pdf",
+        "page1-8": 1,
+        "file2-8": "../docaranger/GGE/P-2016-03-k.pdf",
+        "page2-8": 1
+    },
+    {
+        "file1-9": "../docaranger/GGE/1606.02951v3.pdf",
+        "page1-9": 1,
+        "file2-9": "",
+        "page2-9": 1
     }
 ]

@@ -10,5 +10,65 @@
         "page1-2": 1,
         "file2-2": "../docaranger/hydrodynamique/Bulletin de l'AAPPS.pdf",
         "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/hydrodynamique/1611.08225v2.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/hydrodynamique/1703.05971v2.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/hydrodynamique/1803.05903v3.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/hydrodynamique/s43673-023-00095-2.pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-5": "../docaranger/hydrodynamique/M1PFONDA_MF_2023_poly.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/hydrodynamique/lecturesGHD.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../docaranger/hydrodynamique/SciPostPhys_2_2_014.pdf",
+        "page1-6": 1,
+        "file2-6": "../docaranger/hydrodynamique/castro-alvaredo2016.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../docaranger/hydrodynamique/2211.16555v1.pdf",
+        "page1-7": 1,
+        "file2-7": "../docaranger/hydrodynamique/1704.05482v1.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../docaranger/hydrodynamique/1910.00570v2.pdf",
+        "page1-8": 1,
+        "file2-8": "../docaranger/hydrodynamique/2307.09307v1.pdf",
+        "page2-8": 1
+    },
+    {
+        "file1-9": "../docaranger/hydrodynamique/1711.00873v3.pdf",
+        "page1-9": 1,
+        "file2-9": "../docaranger/hydrodynamique/PhysRevX.15.010501.pdf",
+        "page2-9": 1
+    },
+    {
+        "file1-10": "../docaranger/hydrodynamique/1912.08496v2.pdf",
+        "page1-10": 1,
+        "file2-10": "../docaranger/hydrodynamique/SciPostPhysLectNotes_18.pdf",
+        "page2-10": 1
+    },
+    {
+        "file1-11": "../docaranger/hydrodynamique/1605.09790v4.pdf",
+        "page1-11": 1,
+        "file2-11": "../docaranger/hydrodynamique/1605.07331v3.pdf",
+        "page2-11": 1
+    },
+    {
+        "file1-12": "../docaranger/hydrodynamique/2411.04922v2.pdf",
+        "page1-12": 1,
+        "file2-12": "../docaranger/hydrodynamique/",
+        "page2-12": 1
     }
 ]
