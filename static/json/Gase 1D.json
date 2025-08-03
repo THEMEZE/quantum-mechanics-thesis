@@ -48,9 +48,15 @@
         "page2-8": 2
     },
     {
-        "file1-9": "../docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf",
+        "file1-9": "../docaranger/Gase 1D/10.1103@physreva.70.043629.pdf",
         "page1-9": 1,
-        "file2-9": "",
-        "page2-9": ""
+        "file2-9": "../docaranger/Gase 1D/9904398v1.pdf",
+        "page2-9": 1
+    },
+    {
+        "file1-10": "../docaranger/InverseScatering/Quantum Inverse Scattering Method And Correlation Functions.pdf",
+        "page1-10": 1,
+        "file2-10": "../docaranger/Gase 1D/Korepin, N_ M_ Bogoliubov, A_ G_ Izergin Quantum inverse scattering method and correlation functions 1997.pdf",
+        "page2-10": 1
     }
 ]

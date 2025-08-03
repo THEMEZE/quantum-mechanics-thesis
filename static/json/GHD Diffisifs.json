@@ -22,5 +22,17 @@
         "page1-4": 1,
         "file2-4": "../docaranger/hydrodynamique/2108.02509v2.pdf",
         "page2-4": 32
+    },
+    {
+        "file1-5": "../docaranger/GHD Diffisifs/2506.05279v1.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/GHD Diffisifs/2007.04861v2.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../docaranger/GHD Diffisifs/1807.02414v2.pdf",
+        "page1-6": 1,
+        "file2-6": "",
+        "page2-6": 32
     }
 ]

@@ -22,5 +22,29 @@
         "page1-4": 1,
         "file2-4": "../docaranger/Integrabilite/SciPostPhys_3_3_023.pdf",
         "page2-4": 1
+    },
+    {
+        "file1-5": "../docaranger/Integrabilite/Notes_hyperbolique.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/Integrabilite/PhysRevX.6.041065.pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-6": "../docaranger/Integrabilite/Introduction_to_classical_integrable_sys.pdf",
+        "page1-6": 1,
+        "file2-6": "../docaranger/Integrabilite/1606.02946v2.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../docaranger/Integrabilite/Introduction to classical integrable systems.pdf",
+        "page1-7": 1,
+        "file2-7": "../docaranger/Integrabilite/Zamolodchikov.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../docaranger/Integrabilite/9708087v1.pdf",
+        "page1-8": 1,
+        "file2-8": "",
+        "page2-8": 1
     }
 ]

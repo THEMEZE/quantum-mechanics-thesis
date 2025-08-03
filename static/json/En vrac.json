@@ -4,5 +4,47 @@
         "page1-1": 1,
         "file2-1": "../docaranger/En vrac/jkp.pdf",
         "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/En vrac/cvc.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/En vrac/Field Theory Chapter 5.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/En vrac/Partie 3 topologie et calcul diff.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/En vrac/BU-647-M.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/En vrac/Initiation-a-LaTeX-de-Stephane-Pasquet.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/En vrac/Roger_A.Horn. _Matrix_Analysis_2nd_edition(BookSee.org).pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-5": "../docaranger/En vrac/VisualTikZ-fr.pdf",
+        "page1-5": 1,
+        "file2-5": "../docaranger/En vrac/schur-comp.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../docaranger/En vrac/schur.pdf",
+        "page1-6": 1,
+        "file2-6": "../docaranger/En vrac/second_quantization.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../docaranger/En vrac/BALAN.TEX2.pdf",
+        "page1-7": 1,
+        "file2-7": "../docaranger/En vrac/tikz-optics.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../docaranger/En vrac/2406.17569v1.pdf",
+        "page1-8": 1,
+        "file2-8": "../docaranger/En vrac/",
+        "page2-8": 1
     }
 ]

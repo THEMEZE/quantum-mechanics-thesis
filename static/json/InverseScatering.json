@@ -62,7 +62,13 @@
     {
         "file1-11": "../docaranger/InverseScatering/boson.pdf",
         "page1-11": 1,
-        "file2-11": "",
-        "page2-11": ""
+        "file2-11": "../docaranger/InverseScatering/total_fr_2025.pdf",
+        "page2-11": 1
+    },
+    {
+        "file1-12": "../docaranger/InverseScatering/Cadre semi-classique (NLSE et paires de Lax).pdf",
+        "page1-12": 1,
+        "file2-12": "",
+        "page2-12": ""
     }
 ]
