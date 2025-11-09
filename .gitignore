@@ -14,3 +14,11 @@
 secret_key.txt
 credentials.json
 
+These_Memoire/figures/06_Bipart/Shema_light.pdf
+docaranger/Relativite_Generale/Électrodynamique Classique et Quantique.pdf
+
+# Ignorer tout dans MemoireThese
+/These_Memoire/*
+
+# Sauf main.pdf
+!/These_Memoire/main.pdf

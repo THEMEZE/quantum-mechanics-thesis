@@ -26,3 +26,18 @@ Pour exécuter un script Python, utilisez la commande suivante :
 
 ```sh
 python3 idée1/codes/python/idée1.py
+```
+### Pour eviter les fichier lourd 
+```
+./cleanup_large_files.sh --apply
+```
+
+### ⚙️ Git Mise à jour
+```
+git add .
+git commit -m "Mise à jour"
+git push
+```
+
+
+
