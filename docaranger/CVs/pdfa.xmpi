@@ -58,7 +58,7 @@
    </pdfaExtension:schemas> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:pdf="http://ns.adobe.com/pdf/1.3/"> 
-   <pdf:Producer>XeTeX</pdf:Producer> 
+   <pdf:Producer>pdfTeX</pdf:Producer> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
@@ -73,15 +73,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2025-11-10T16:09:50+01:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2025-11-10T16:09:50+01:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2025-11-10T16:09:50+01:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2025-11-10T17:00:51+01:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2025-11-10T17:00:51+01:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2025-11-10T17:00:51+01:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:7559053B-90F7-3A58-DF51-C02887F9F791</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:FDCE9017-E63F-E3B1-A906-F215752B7092</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:5DDD33FF-4F25-70BC-7AB3-F195806537FE</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 
