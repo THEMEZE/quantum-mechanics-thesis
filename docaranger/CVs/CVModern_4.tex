@@ -1,0 +1,148 @@
+% !TEX TS-program = xelatex
+\documentclass[11pt,a4paper,ragged2e]{altacv}
+
+% Page layout
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+\setlength{\parindent}{0pt}
+
+% Fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Colors
+\definecolor{cvred}{HTML}{B71C1C}
+\definecolor{headerblue}{HTML}{1565C0}
+\definecolor{cvgreen}{HTML}{2E7D32}
+
+% Personal info
+\name{Guillaume Thémèze}
+\tagline{PhD Candidate in Quantum Physics}
+\photo{3cm}{DSC_0549.JPG} % Replace with your picture
+\personalinfo{%
+  \email{guillaume.themeze@institutoptique.fr}
+  \phone{+33 6 25 69 08 44}
+  \location{Paris, France}
+  \github{github.com/GuillaumeTHEMEZE}
+}
+
+\begin{document}
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+\columnratio{0.6}
+\begin{paracol}{2}
+
+% ===================== LEFT COLUMN ======================
+\cvsection{Education}
+\cvevent{2022 -- 2025}{PhD in Quantum Physics}{Institut d’Optique / Charles Fabry Lab}{}
+Out-of-equilibrium dynamics of one-dimensional bosonic gases. Combined theoretical, numerical, and experimental approaches.
+
+\divider
+
+\cvevent{2018 -- 2022}{Magistère of Fundamental Physics}{Université Paris-Saclay}{}
+Specialization in Quantum, Light, Matter, Nanoscience (QLMN).  
+Also followed the MEEF Physics-Chemistry program at ENS Ulm (teacher training, agrégation preparation).
+
+\divider
+
+\cvevent{2015 -- 2018}{Preparatory Classes (MPSI/MP)}{Lycée Leconte de Lisle (Réunion) \& Lycée La Martinière (Lyon)}{}
+
+\cvsection{Skills}
+\cvtag{Quantum Physics}
+\cvtag{Quantum Gases}
+\cvtag{Statistical Physics}
+\cvtag{Numerical Simulations}
+\cvtag{General Relativity}
+\cvtag{Experimental Physics}
+\cvtag{Theoretical Physics}
+\cvtag{Mathematical Physics}
+
+\divider
+
+\cvtag{Python}
+\cvtag{Julia}
+\cvtag{C++}
+\cvtag{LaTeX/TikZ}
+\cvtag{HPC}
+
+\divider
+
+\cvtag{Deep Learning}
+\cvtag{Machine Learning}
+\cvtag{Algorithm Optimization}
+\cvtag{Data Analysis}
+
+\divider
+
+\cvtag{Django}
+\cvtag{Flutter}
+\cvtag{Web Dev (HTML, CSS, JS)}
+
+\cvsection{Languages}
+\cvskill{French}{5}
+\cvskill{English}{3.0}
+
+\cvsection{Interests}
+\cvtag{Portrait Drawing}
+\cvtag{Photography}
+\cvtag{Drone Videography}
+\cvtag{Hiking}
+\cvtag{Paragliding}
+
+\switchcolumn
+
+% ===================== RIGHT COLUMN ======================
+\cvsection{Research Experience}
+\cvevent{2022 -- 2025}{PhD Research in Quantum Physics / M2 Internship}{Institut d’Optique / Charles Fabry Lab}{}
+Study of out-of-equilibrium dynamics of one-dimensional Bose gases. 
+Combined theoretical, numerical modeling, and experimental approaches. 
+%Theoretical modeling, numerical simulations, and comparison with experiments.
+
+\divider
+
+%\cvevent{2022}{M2 Internship}{Institut d’Optique / LCF}{}
+%Dynamics of quantum gases.  
+%Modeling, numerical simulations, and collaboration with experimental team.
+
+%\divider
+
+\cvevent{2020}{M1 Internship}{Université Paris-Saclay}{}
+Bibliographic and numerical project: maximal expansion of Schwarzschild and Kerr black holes.  
+Theoretical analysis and numerical simulations during COVID lockdown.
+
+\divider
+
+\cvevent{2019}{L3 Internship}{École Polytechnique / Plasma Physics Lab}{}
+Study of electric discharges in plasmas.  
+Theoretical and numerical modeling.
+
+\cvsection{Teaching Experience}
+\cvevent{2022 -- 2025}{Teaching Assistant}{Institut d’Optique / CentraleSupélec / Polytech}{}
+\begin{itemize}
+  \item Tutorials in Quantum Mechanics and Signal Processing (BSc level).
+  \item Practical classes in Lasers at Polytech(MSc level).
+  \item More than 150 hours of teaching.
+\end{itemize}
+
+\cvsection{Extra Training}
+\begin{itemize}
+  \item Advanced training in Quantum Gases.
+  \item Software development (Django, Flutter, Web).
+  \item Artificial Intelligence, Deep Learning, Algorithm optimization.
+\end{itemize}
+
+\cvsection{Selected Publications}
+\begin{itemize}
+\item L. Dubois, G. Thémèze, F. Nogrette, J. Dubail, and I. Bouchoule, \textit{Probing the local rapidity distribution of a 1D Bose gas}, (2025)
+\item L. Dubois, G. Thémèze, J. Dubail, and I. Bouchoule, \textit{Experimental Investigation of a Bipartite Quench in a 1D Bose gas}, (2024)
+\end{itemize}
+
+\cvsection{Referees}
+\cvref{Prof. Isabelle Bouchoule}{Institut d’Optique}{isabelle.bouchoule@institutoptique.fr}{Paris, France}
+\divider
+\cvref{Prof. Jen-Raimbau Dubail}{Université de Genève}{jen-raimbau.dubail@unige.ch}{Geneva, Switzerland}
+
+\end{paracol}
+\end{document}
+

@@ -1,0 +1,161 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Dubois_2024}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=6d1fced133363141f131855ab78075fb}{%
+           family={Dubois},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2e646415737a86df8f0c05b3118700d1}{%
+           family={Thémèze},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8d2fb27894732a3cc277166f0070aafa}{%
+           family={Nogrette},
+           familyi={N\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3ba41cf6ce391e058090753d25d0731c}{%
+           family={Dubail},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=00054ff7b1e57c38d057c720f968a4ac}{%
+           family={Bouchoule},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society (APS)}%
+      }
+      \strng{namehash}{a7c735556aa5b1ca2e58b6165f9fff87}
+      \strng{fullhash}{fd89279efeba6bab608334ce4c75333d}
+      \strng{fullhashraw}{fd89279efeba6bab608334ce4c75333d}
+      \strng{bibnamehash}{a7c735556aa5b1ca2e58b6165f9fff87}
+      \strng{authorbibnamehash}{a7c735556aa5b1ca2e58b6165f9fff87}
+      \strng{authornamehash}{a7c735556aa5b1ca2e58b6165f9fff87}
+      \strng{authorfullhash}{fd89279efeba6bab608334ce4c75333d}
+      \strng{authorfullhashraw}{fd89279efeba6bab608334ce4c75333d}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1079-7114}
+      \field{journaltitle}{Physical Review Letters}
+      \field{month}{9}
+      \field{number}{11}
+      \field{title}{Probing the Local Rapidity Distribution of a One-Dimensional Bose Gas}
+      \field{volume}{133}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1103/physrevlett.133.113402
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.133.113402
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.133.113402
+      \endverb
+    \endentry
+    \entry{Dubois_2025}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=3c2de40f1bde636524937f0eb7bb9638}{%
+           family={Dubois},
+           familyi={D\bibinitperiod},
+           given={Léa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a252f5a8af736f91d30f196b3fd377ce}{%
+           family={Thémèze},
+           familyi={T\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9c4876a04a20b357c7abe02feb34af16}{%
+           family={Dubail},
+           familyi={D\bibinitperiod},
+           given={Jérôme},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8df7ed46d62009a0f5b9f2a182ed824}{%
+           family={Bouchoule},
+           familyi={B\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{524b5c60ed0729a3d6a4e8bac2b16fe9}
+      \strng{fullhash}{5eea27d8a5f0f2b6469e544393142a06}
+      \strng{fullhashraw}{5eea27d8a5f0f2b6469e544393142a06}
+      \strng{bibnamehash}{524b5c60ed0729a3d6a4e8bac2b16fe9}
+      \strng{authorbibnamehash}{524b5c60ed0729a3d6a4e8bac2b16fe9}
+      \strng{authornamehash}{524b5c60ed0729a3d6a4e8bac2b16fe9}
+      \strng{authorfullhash}{5eea27d8a5f0f2b6469e544393142a06}
+      \strng{authorfullhashraw}{5eea27d8a5f0f2b6469e544393142a06}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cond-mat.quant-gas}
+      \field{eprinttype}{arXiv}
+      \field{title}{Experimental Investigation of a Bipartite Quench in a 1D Bose gas}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2505.05839
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2505.05839
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2505.05839
+      \endverb
+    \endentry
+    \entry{themeze2024seminar}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=a252f5a8af736f91d30f196b3fd377ce}{%
+           family={Thémèze},
+           familyi={T\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{fullhash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{fullhashraw}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{bibnamehash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{authorbibnamehash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{authornamehash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{authorfullhash}{a252f5a8af736f91d30f196b3fd377ce}
+      \strng{authorfullhashraw}{a252f5a8af736f91d30f196b3fd377ce}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Talk at Institut d’Optique Graduate School, Palaiseau, 11 April 2024, 13:15, Auditorium. Quantum Gases Group, Charles Fabry Laboratory}
+      \field{title}{Seminar: Study of the Out-of-Equilibrium Dynamics of One-Dimensional Bose Gases}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

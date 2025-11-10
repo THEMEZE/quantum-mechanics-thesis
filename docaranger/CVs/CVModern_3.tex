@@ -1,0 +1,160 @@
+% !TEX TS-program = xelatex
+% Compile with xelatex
+\documentclass[11pt,a4paper,ragged2e]{altacv}
+
+
+
+
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+\setlength{\parindent}{0pt}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" mmayer.tex
+
+
+% Colors
+\definecolor{cvred}{HTML}{B71C1C}
+\definecolor{headerblue}{HTML}{1565C0}
+\definecolor{cvgreen}{HTML}{2E7D32}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\name{Guillaume Thémèze}
+\tagline{PhD Candidate in Quantum Physics}
+\photo{3cm}{DSC_0549.JPG} % <-- Replace with your picture
+\personalinfo{%
+  \email{guillaume.themeze@institutoptique.fr}
+  \phone{+33 6 25 69 08 44}
+  \location{Paris, France}
+  \github{github.com/GuillaumeTHEMEZE}
+  %\linkedin{linkedin.com/in/guillaumethemeze}
+}
+
+\begin{document}
+\makecvheader
+
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+% ===================== LEFT COLUMN ======================
+\cvsection{Education}
+\cvevent{2022 -- 2025}{PhD in Quantum Physics}{Institut d’Optique / Charles Fabry Lab}{}
+    Out-of-equilibrium dynamics of one-dimensional bosonic gases. Theoretical, numerical and experimental approaches.
+%Out-of-equilibrium dynamics of one-dimensional bosonic gases. Combined theoretical, numerical, and experimental approaches.
+
+\divider
+
+\cvevent{2018 -- 2022}{Magistère of Fundamental Physics}{Université Paris-Saclay}{}
+Specialization in Quantum, Light, Matter, Nanoscience (QLMN).  
+Also followed the MEEF Physics-Chemistry program at ENS Ulm (teacher training, agrégation preparation).
+
+\divider
+
+\cvevent{2015 -- 2018}{Preparatory Classes (MPSI/MP)}{Lycée Leconte de Lisle (Réunion) \& Lycée La Martinière (Lyon)}{}
+
+\cvsection{Skills}
+\cvtag{Quantum Physics}
+\cvtag{Quantum Gases}
+\cvtag{Statistical Physics}
+\cvtag{Numerical Simulations}
+\cvtag{General Relativity}
+\cvtag{Experimental Physics}
+\cvtag{Theoretical Physics}
+\cvtag{Mathematical Physics}
+
+\divider
+
+\cvtag{Python}
+\cvtag{Julia}
+\cvtag{C++}
+\cvtag{LaTeX/TikZ}
+\cvtag{HPC}
+
+\divider
+
+\cvtag{Deep Learning}
+\cvtag{Machine Learning}
+\cvtag{Algorithm Optimization}
+\cvtag{Data Analysis}
+
+\divider
+
+\cvtag{Django}
+\cvtag{Flutter}
+\cvtag{Web Dev (HTML, CSS, JS)}
+
+\cvsection{Languages}
+\cvskill{French}{5}
+\cvskill{English}{3.0}
+
+\cvsection{Interests}
+\cvtag{Portrait Drawing}
+\cvtag{Photography}
+\cvtag{Drone Videography}
+\cvtag{Hiking}
+\cvtag{Paragliding}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+% ===================== RIGHT COLUMN ======================
+\cvsection{Research Experience}
+\cvevent{2022 -- 2025}{PhD Research}{Institut d’Optique / LCF}{}
+Study of out-of-equilibrium dynamics of one-dimensional Bose gases.  
+Theoretical modeling, numerical simulations, and comparison with experiments.
+
+\divider
+
+\cvevent{2022}{M2 Internship}{Institut d’Optique / LCF}{}
+Dynamics of quantum gases.  
+Modeling, numerical simulations, and collaboration with experimental team (year of Alain Aspect's Nobel Prize).
+
+\divider
+
+\cvevent{2020}{M1 Internship}{Université Paris-Saclay}{}
+Bibliographic and numerical project: maximal expansion of Schwarzschild and Kerr black holes.  
+Theoretical analysis and numerical simulations during COVID lockdown.
+
+\divider
+
+\cvevent{2019}{L3 Internship}{École Polytechnique / Plasma Physics Lab}{}
+Study of electric discharges in plasmas.  
+Theoretical and numerical modeling.
+
+\cvsection{Teaching Experience}
+\cvevent{2022 -- 2025}{Teaching Assistant}{Institut d’Optique / CentraleSupélec}{}
+\begin{itemize}
+  \item Tutorials in Quantum Mechanics and Signal Processing (BSc level).
+  \item Practical classes in Lasers at Polytechnique (MSc level).
+  \item More than 150 hours of teaching.
+\end{itemize}
+
+\cvsection{Extra Training}
+\begin{itemize}
+  \item Advanced training in Quantum Gases.
+  \item Software development (Django, Flutter, Web).
+  \item Artificial Intelligence, Deep Learning, Algorithm optimization.
+\end{itemize}
+
+\end{paracol}
+
+\end{document}
+

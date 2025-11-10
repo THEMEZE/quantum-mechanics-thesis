@@ -1,0 +1,429 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.4, 30 July 2025) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,withhyper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.25cm,bottom=1.25cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\iftutex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+#\colorlet{tagline}{PastelRed}
+#\colorlet{heading}{DarkPastelRed}
+#\colorlet{headingrule}{GoldenEarth}
+#\colorlet{subheading}{PastelRed}
+#\colorlet{accent}{PastelRed}
+#\colorlet{emphasis}{SlateGrey}
+#\colorlet{body}{LightGrey}
+
+\colorlet{tagline}{black!90!white}
+\colorlet{heading}{black!80!white}
+\colorlet{headingrule}{black!70!white}
+\colorlet{subheading}{black!60!white}
+\colorlet{accent}{black!50!white}
+\colorlet{emphasis}{black!40!white}
+\colorlet{body}{LightGrey}
+
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Guillaume THÉMÈZE}
+\tagline{Ph.D. in Quantum Physics}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{DSC_0549.JPG}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{guillaume.themeze@gmail.com}
+  \phone{+33 6 25 69 08 44}
+  %\mailaddress{Paris, France}
+  \location{Paris, France}
+  %\homepage{www.homepage.com}
+  % \twitter{@twitterhandle}
+  %\xtwitter{@x-handle}
+  %\linkedin{your_id}
+  \github{THEMEZE}
+  %\orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  %\NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  %\gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  %\mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 5.5:4.5.
+\columnratio{0.55}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+% ================= Research Experience ===================
+
+\cvsection{Research Experience}
+
+\cvevent{Ph.D. Research / Doctoral Researcher}{Institut d’Optique Graduate School (IOGS) / Charles Fabry Laboratory (LCF)}{2022--2025}{Palaiseau}
+\begin{itemize}
+\item Out-of-equilibrium quantum gases: combined theoretical, numerical and experimental work. Development of models, simulations, and local density measurements.
+%\item See \cite{Dubois_2024,Dubois_2025,themeze2024seminar} for details.
+\end{itemize}
+
+\divider
+
+\cvevent{Master 2 Internship / Research Intern}{(IOGS)/ (LCF)}{2022}{Palaiseau}
+\begin{itemize}
+\item Dynamics of a one-dimensional bosonic gas. Theoretical modeling, simulations, and experimental measurements.
+\end{itemize}
+
+\divider
+
+\cvevent{Master 1 Internship / Research Intern}{Université Paris-Saclay}{2020}{Orsay}
+\begin{itemize}
+\item Bibliographic and numerical project: maximal expansion of Schwarzschild and Kerr black holes. Theoretical and numerical analysis during COVID lockdown.
+\end{itemize}
+
+\divider
+
+\cvevent{Bachelor Internship / Research Intern}{l'École Polytechnique (l'X)  / Plasma Physics Laboratory (LPP) }{2019}{Palaiseau}
+\begin{itemize}
+\item Study of electric discharges in plasma. Theoretical and numerical modeling.
+\end{itemize}
+
+\divider
+
+% ================= Teaching Experience ===================
+\cvsection{Teaching Experience}
+\cvevent{Teaching Assistant / TD/TP Instructor}{Institut Polytechnique de Paris (IP Paris) / (IOGS) /SupOptique \& Polytech }{2023--2025}{Palaiseau/Orsay}
+\begin{itemize}
+\item Tutorials in Quantum Mechanics and Signal Processing at SupOptique (BSc level).
+\item Practical classes in lasers at Polytech (MSc level).
+\item Over 150 hours of teaching experience.
+\end{itemize}
+
+
+
+% ================= Projects ===================
+%\cvsection{Projects}
+
+%\cvevent{Project 1}{Funding agency/institution}{}{}
+%\begin{itemize}
+%\item Details
+%\end{itemize}
+
+%\divider
+
+%\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+%A short abstract would also work.
+
+%\medskip
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+\newpage
+
+% ================= A Day of My Life ===================
+\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{1.6cm}{0.5cm}{%
+  6/8em/accent!30/{Sleep},
+  7/10em/accent!60/{Research \& Thesis Work},
+  3/8em/accent!50/{Teaching \& Mentoring},
+  3/8em/accent!40/{Programming \& Development},
+  2/8em/accent!20/{Sports \& Outdoor activities (Hiking, Paragliding)},
+  3/8em/accent!35/{Creative hobbies}% (Drawing, Photography, Drone videos)
+}
+
+% ================= Most Proud of ===================
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{Research Contribution}{Co-author of a Physical Review Letters article on 1D quantum gases, highlighting both theoretical and experimental expertise.}
+
+\divider
+
+\cvachievement{\faChalkboardTeacher}{Teaching Experience}{Over 150 hours of tutorials and practicals in quantum mechanics, signal processing, and laser physics at SupOptique and Polytech Paris.}
+
+\divider
+
+\cvachievement{\faProjectDiagram}{Interdisciplinary Skills}{Bridging physics, mathematics, and software development: numerical simulations, AI, and collaborative research projects.}
+
+\divider
+
+\cvachievement{\faGlobe}{International Collaboration}{Active participation in seminars, conferences, and teamwork in leading research groups on quantum gases.}
+
+
+% ================= Strengths ===================
+
+\cvsection{Strengths}
+
+% Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
+
+\textbf{Physics \& Research:}
+\cvtag{Mathematics} Pure mathematics (analysis, algebra, geometry, mathematical elegance); applied mathematics for physics (modeling, optimization, statistics).
+\cvtag{Theoretical Physic} quantum mechanics and quantum gases; quantum field theory; statistical field theory; statistical physics; general relativity;personal interest in string theory, M-theory, supersymmetry, and quantum gravity.\\
+\cvtag{Experimental Physics} laser physics, optics, and measurements on 1D bosonic gases.\\
+\cvtag{Teaching} mathematics and physics tutorials, practicals, and lectures.
+
+%\divider%\smallskip
+
+\textbf{Programming:}
+\cvtag{Python}
+\cvtag{Julia}
+\cvtag{C++}
+\cvtag{\LaTeX /TikZ}
+%High-Performance Computing (HPC)
+numerical simulations, optimization\\
+
+%\divider%\smallskip
+
+\textbf{AI \& Data:}
+\cvtag{Machine Learning \& Deep Learning}
+\cvtag{algorithm optimization}
+\cvtag{data analysis}\\
+
+%\divider%\smallskip
+
+\textbf{Software Development:}
+\cvtag{Django (Python)}
+\cvtag{Flutter (mobile apps)}
+\cvtag{Web (HTML, CSS, JavaScript)}\\
+
+%\divider%\smallskip
+
+\textbf{Languages:}
+\cvtag{French (native)}
+\cvtag{English (scientific writing)}\\
+
+%\divider%\smallskip
+
+\textbf{Personal interests:}
+\cvtag{Portrait drawing}
+\cvtag{Photography}
+\cvtag{Drone videography}
+\cvtag{Hiking}
+\cvtag{Paragliding}
+\cvtag{DIY computing (Raspberry Pi, NAS)}\\
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+% ================= Education ===================
+
+\cvsection{Education}
+
+\cvevent{Ph.D.\ in Quantum Physics}{Institut d’Optique Graduate School (IOGS) / Charles Fabry Laboratory (LCF)}{2022--2025}{Palaiseau}
+    Thesis on the out-of-equilibrium dynamics of one-dimensional bosonic gases.
+
+\divider
+
+\cvevent{M.Sc.\ Research-Oriented \ Master 2 Quantum, Light, Matter, Nanoscience (QLMN) }{(IOGS) / Université Paris-Saclay}{2021--2022}{Palaiseau}
+
+\divider
+
+\cvevent{M.Sc.\ Teacher-Oriented \ Master 2 Métiers de l'enseignement, de l'éducation et de la formation (MEEF) Physics-Chemistry }{École Normale Supérieure (ENS) Ulm \& Université Paris-Saclay}{2020--2021}{Paris/Montrouge}
+    Teacher Training and Agrégation Preparation. Specialized program in pedagogy and preparation for the French national competitive exam (agrégation de physique-chimie). This year also validated the Magistère’s MSc requirement (M2 in Fundamental Physics).
+
+\divider
+
+\cvevent{B.Sc. \& M.Sc.\ Research-Oriented \ Magistère in Fundamental Physics (L3--M2)}{Université Paris-Sud}{2018--2021}{Orsay}
+    Selective Excellence Program. Intensive training in theoretical and experimental physics, research internships, and complementary courses (languages, computing, management).
+
+\divider
+
+\cvevent{Preparatory Classes (MPSI/MP)}{Lycée Leconte de Lisle (Réunion) \& Lycée La Martinière (Lyon)}{2015--2018}{Lyon \& Réunion}
+        Intensive training in Math and Physics.
+        
+%\divider
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+\newpage
+
+
+% ================= My Life Philosophy ===================
+
+\cvsection{My Life Philosophy}
+
+\begin{quote}
+``Seeking elegance in both physics and mathematics, while turning complexity into clarity.''\\
+%``Curiosity drives me to explore, rigor allows me to understand, and creativity helps me go further.''\\
+%``I believe progress comes from the balance between deep focus, collaboration, and imagination.''\\
+``Exploring the unknown with rigor, passion, and creativity.''\\
+\end{quote}
+
+
+
+
+
+
+% ================= Languages ===================
+
+\cvsection{Languages}
+
+\cvskill{French}{5}
+\divider
+
+\cvskill{English}{3}
+\divider
+
+\cvskill{Réunionnais}{5}
+\divider
+
+
+
+%\cvskill{German}{3.5} %% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+% ================= Publications ===================
+\cvsection{Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+\mynames{Lim/Lian\bibnamedelima Tze,
+  Wong/Lian\bibnamedelima Tze,
+  Lim/Tracy,
+  Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+%\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Preprints}},type=misc]
+
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+
+
+% ================= Referees ===================
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Prof.\ Isabelle Bouchoule}{LCF}{isabelle.bouchoule@institutoptique.fr}
+%{Address Line 1\\Address Line 2}
+
+\divider
+
+\cvref{MCF (HDR).\ Jean-Luc Raimbault}{l'X, LPP / Faculté des Sciences d’Orsay, Paris-Saclay}{jean-luc.raimbault@lpp.polytechnique.fr}
+%{Address Line 1\\Address Line 2}
+
+
+\end{paracol}
+
+
+\end{document}

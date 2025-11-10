@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper]{article}
+%\documentclass[11pt,a4paper,ragged2e]{altacv}
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{geometry}
+% Page layout
+\geometry{left=1.cm,right=1.cm,top=1.0cm,bottom=1.0cm,columnsep=0cm}
+%\geometry{margin=1.5cm}
+\usepackage{array}
+\usepackage{changepage}
+
+% Custom colors
+\definecolor{cvred}{HTML}{B71C1C}
+\definecolor{headerblue}{HTML}{1565C0}
+\definecolor{cvgreen}{HTML}{2E7D32}
+
+% Custom commands for events
+\newcommand{\cvdegree}[6]{%
+  \textbf{#1} & \textbf{#2} -- #3 \\ 
+  & \textit{#4} {\color{headerblue}} \\ 
+  & #5 \\[0.6em]
+}
+
+\newcommand{\cvevent}[6]{%
+  \textbf{#1} & \textbf{#2} -- #3 \\ 
+  & \textit{#4} {\color{cvred}} \\ 
+  & #5 \\[0.6em]
+}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+%\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+% Bibliography
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{sample.bib}
+
+\begin{document}
+
+% ================= Header ===================
+\begin{center}
+    {\Huge \textbf{Guillaume Thémèze} | PhD in Quantum Physics} \\[0.3em]
+    \faMapMarker*~Paris, France \quad
+    \faAt~guillaume.themeze@gmail.com \quad
+    \faPhone*~+33 6 25 69 08 44 \quad
+    \faGithub~github.com/THEMEZE
+\end{center}
+
+%\vspace{1em}
+
+% ================= Education ===================
+\section*{Education}
+\begin{tabular}{r p{0.8\textwidth}}
+    %\cvdegree{2022--2025}{PhD in Quantum Physics}{Doctoral Researcher}{Institut d’Optique Graduate School (IOGS) / Charles Fabry Laboratory (LCF) }{Out-of-equilibrium dynamics of one-dimensional bosonic gases. Theoretical, numerical and experimental approaches.}{} \\
+    
+    \cvdegree{2022--2025}{PhD in Quantum Physics}{Doctoral Researcher}{Institut d’Optique Graduate School (IOGS) / Charles Fabry Laboratory (LCF)}{Thesis on the out-of-equilibrium dynamics of one-dimensional bosonic gases.}{}\\
+
+    
+    %\cvdegree{2018--2022}{Magistère of Fundamental Physics}{MSc equivalent}{Université Paris-Sud}{Specialization in Quantum, Light, Matter, Nanoscience (QLMN). Also followed the MEEF Physics-Chemistry program at ENS Ulm (teacher training and agrégation preparation).}{} \\
+    
+    \cvdegree{2021--2022}{Master 2 Quantum, Light, Matter, Nanoscience (QLMN)}{Research-Oriented MSc}{(IOGS) / Université Paris-Saclay}{Specialization in quantum physics, optics, nanoscience, and condensed matter.}{}\\
+    
+    \cvdegree{2020--2021}{Master 2 Métiers de l'enseignement, de l'éducation et de la formation (MEEF) Physics-Chemistry}{Teacher Training and Agrégation Preparation}{École Normale Supérieure (ENS) Ulm \& Université Paris-Saclay}{Specialized program in pedagogy and preparation for the French national competitive exam (agrégation de physique-chimie). This year also validated the Magistère’s MSc requirement (M2 in Fundamental Physics).}{}\\
+    
+    \cvdegree{2018--2021}{Magistère in Fundamental Physics (L3--M2)}{Selective Excellence Program}{Université Paris-Sud}{Intensive training in theoretical and experimental physics, research internships, and complementary courses (languages, computing, management).}{}\\
+
+    \cvdegree{2015--2018}{Preparatory Classes (MPSI/MP)}{Intensive training in Math and Physics}{Lycée Leconte de Lisle (Réunion) \& Lycée La Martinière (Lyon)}{}{} \\
+\end{tabular}
+
+\vspace{-1em}
+
+% ================= Research Experience ===================
+\section*{Research Experience}
+\begin{tabular}{r p{0.8\textwidth}}
+    \cvevent{2022--2025}{PhD Research}{Doctoral Researcher}{(IOGS)/ (LCF)}{Out-of-equilibrium quantum gases: combined theoretical, numerical and experimental work. Development of models, simulations, and local density measurements.See \cite{Dubois_2024,Dubois_2025,themeze2024seminar} for details.
+}{}\\
+
+    \cvevent{2022}{Master 2 Internship}{Research Intern}{(IOGS)/ (LCF)}{Dynamics of a one-dimensional bosonic gas. Theoretical modeling, simulations, and experimental measurements.}{} \\
+    
+    \cvevent{2020}{Master 1 Internship}{Research Intern}{Université Paris-Saclay}{Bibliographic and numerical project: maximal expansion of Schwarzschild and Kerr black holes. Theoretical and numerical analysis during COVID lockdown.}{} \\
+    
+    \cvevent{2019}{Bachelor Internship}{Research Intern}{l'École Polytechnique (l'X)  / Plasma Physics Laboratory (LPP) }{Study of electric discharges in plasma. Theoretical and numerical modeling.}{} \\
+\end{tabular}
+
+\vspace{-1em}
+
+% ================= Teaching Experience ===================
+%\section*{Teaching Experience}
+%\begin{tabular}{r p{0.8\textwidth}}
+%    \cvevent{2023--2025}{Teaching Assistant}{TD/TP Instructor}{Institut Polytechnique de Paris (IP Paris) / (IOGS) /SupOptique \& Polytech }{Tutorials in Quantum Mechanics and Signal Processing at SupOptique (BSc level). Practical classes in lasers at Polytech (MSc level). Over 150 hours of teaching experience.}{} \\
+%\end{tabular}
+
+\vspace{-1em}
+
+% ================= Teaching Experience ===================
+\section*{Teaching Experience}
+\begin{tabular}{r p{0.8\textwidth}}
+    \cvevent{2023--2025}{Teaching Assistant}{TD/TP Instructor}{(IOGS) (SupOptique, Institut Polytechnique de Paris (IP Paris)) \& Polytech Paris-Saclay}{%
+    \vspace{-0.5em}
+    \begin{adjustwidth}{-4em}{-10em} % gauche, droite
+    \begin{itemize}\itemsep0.1em
+        \item Tutorials in \textbf{Quantum Mechanics} and \textbf{Signal Processing} (BSc, L3 level) at SupOptique.
+        \item Practical classes in \textbf{Laser Physics} (MSc, M1 \& M2 levels) at Polytech Paris-Saclay.
+        \item Over \textbf{150 hours} of teaching experience.
+    \end{itemize}
+    \end{adjustwidth}}{} \\
+\end{tabular}
+
+
+\vspace{-1em}
+
+% ================= Extra Training  ===================
+\section*{Extra Training}
+\begin{itemize}\itemsep0.1em
+  %\item Advanced training in Quantum Gases.
+  \item Software development best practices: project structuring, version control (Git), documentation, collaborative workflow (Django, Flutter, Web).
+  \item Artificial Intelligence: Deep Learning, Machine Learning, algorithm optimization.
+  \item Scientific communication and public speaking (thesis defense preparation).
+  \item Time and priority management for research and projects.
+\end{itemize}
+
+% ================= Skills ===================
+\section*{Skills}
+%\textbf{Physics \& Research:} Math-Physics ,Théorique Physics, Quantum gases, Quantum Mechanics, Statistical Physics, Relativity Générale, Experimental Physics, Enseinement (Math-Physics) . \\[0.3em]
+%\textbf{Physics \& Research:}
+%\begin{itemize}\itemsep0.2em
+%    \item \textbf{Mathematics:} pure mathematics (analysis, algebra, geometry, mathematical elegance); applied mathematics for physics (modeling, optimization, statistics).
+%    \item \textbf{Theoretical Physics:} quantum mechanics and quantum gases; quantum field theory; statistical field theory; statistical physics; general relativity.
+%    \item \textbf{Experimental Physics:} laser physics, optics, and measurements on 1D bosonic gases.
+%    \item \textbf{Teaching:} mathematics and physics tutorials, practicals, and lectures.
+%\end{itemize}
+
+%\textbf{Programming:} Python, Julia, C++, LaTeX/TikZ, HPC, Numerical simulations, Optimization. \\[0.3em]
+%\textbf{AI \& Data:} Deep Learning, Machine Learning, Algorithm optimization, Data analysis. \\[0.3em]
+%\textbf{Software Development:} Django (Python), Flutter (mobile), Web (HTML, CSS, JavaScript). \\[0.3em]
+%\textbf{Languages:} French (native), English (fluent, scientific). \\[0.3em]
+%\textbf{Personal interests:} Portrait drawing, Photography, Drone videography, Hiking, Paragliding. \\
+
+\textbf{Physics \& Research:}
+\begin{adjustwidth}{-0em}{0em} % gauche, droite
+\begin{itemize}\itemsep0.2em
+    \item \textbf{Mathematics:} Pure mathematics (analysis, algebra, geometry, mathematical elegance); applied mathematics for physics (modeling, optimization, statistics).
+    \item \textbf{Theoretical Physics:} quantum mechanics and quantum gases; quantum field theory; statistical field theory; statistical physics; general relativity;
+          personal interest in string theory, M-theory, supersymmetry, and quantum gravity.
+    \item \textbf{Experimental Physics:} laser physics, optics, and measurements on 1D bosonic gases.
+    \item \textbf{Teaching:} mathematics and physics tutorials, practicals, and lectures.
+\end{itemize}
+\end{adjustwidth}
+
+\smallskip
+%{~}\linebreak
+\noindent % <-- empêche le retrait du paragraphe
+\textbf{Programming:} Python, Julia, C++, \LaTeX /TikZ, High-Performance Computing (HPC), numerical simulations, optimization. \\[0.3em]
+\textbf{AI \& Data:} Machine Learning and Deep Learning, algorithm optimization, data analysis. \\[0.3em]
+\textbf{Software Development:} Django (Python), Flutter (mobile apps), Web (HTML, CSS, JavaScript). \\[0.3em]
+\textbf{Languages:} French (native), English (fluent, scientific writing). \\[0.3em]
+\textbf{Personal interests:} Portrait drawing, Photography, Drone videography, Hiking, Paragliding, DIY computing (Raspberry Pi, NAS). \\
+
+
+\section*{Publications}
+
+\nocite{*}
+
+% Articles publiés
+\printbibliography[
+    type=article,
+    title={Journal Articles},
+    resetnumbers=false
+]
+
+% Préprints (ici misc = arXiv)
+\printbibliography[
+    type=misc,
+    title={Preprints},
+    resetnumbers=false
+]
+
+% Séminaires et conférences
+\printbibliography[
+    type=inproceedings,
+    title={Talks and Seminars},
+    resetnumbers=false
+]
+
+
+
+
+\end{document}

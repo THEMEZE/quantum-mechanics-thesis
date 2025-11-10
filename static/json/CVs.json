@@ -1,0 +1,26 @@
+[
+    {
+        "file1-1": "../docaranger/CVs/CVModern_2.pdf",
+        "page1-1": 1,
+        "file2-1": "../docaranger/CVs/CVModern_5.pdf",
+        "page2-1": 1
+    },
+    {
+        "file1-2": "../docaranger/CVs/CVModern.pdf",
+        "page1-2": 1,
+        "file2-2": "../docaranger/CVs/CVModern_1.pdf",
+        "page2-2": 1
+    },
+    {
+        "file1-3": "../docaranger/CVs/CVModern_3.pdf",
+        "page1-3": 1,
+        "file2-3": "../docaranger/CVs/CVModern_4.pdf",
+        "page2-3": 1
+    },
+    {
+        "file1-4": "../docaranger/CVs/main.pdf",
+        "page1-4": 1,
+        "file2-4": "../docaranger/CVs/main.pdf",
+        "page2-4": 1
+    }
+]
