@@ -17,11 +17,120 @@ credentials.json
 These_Memoire/figures/06_Bipart/Shema_light.pdf
 docaranger/Relativite_Generale/Électrodynamique Classique et Quantique.pdf
 
-# Ignorer tout dans These_Memoire
-These_Memoire/*
-Presentation-These/*
+# # Ignorer tout dans These_Memoire
+# These_Memoire/*
+# Presentation-These/*
 
-# Sauf certains fichiers/dossiers spécifiques
+# # Sauf certains fichiers/dossiers spécifiques
+# !These_Memoire/main.pdf
+# !These_Memoire/pdf_decoupe/
+# !Presentation-These/main.pdf
+
+
+########################################
+#           PYTHON
+########################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+########################################
+#           LATEX / TEXPAD
+########################################
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.xdv
+*.pdfsync
+
+# Texpad-specific
+*.tpd
+*.texpadtmp
+
+########################################
+#           VS CODE
+########################################
+.vscode/
+.history/
+*.code-workspace
+
+########################################
+#           MACOS
+########################################
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+########################################
+#           GENERATED MEDIA
+########################################
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.mov
+*.avi
+
+########################################
+#           PROJECT STRUCTURE
+########################################
+# Ignorer tout dans These_Memoire sauf certains fichiers
+These_Memoire/*
 !These_Memoire/main.pdf
 !These_Memoire/pdf_decoupe/
+
+# Ignorer tout dans Presentation-These sauf main.pdf
+Presentation-These/*
 !Presentation-These/main.pdf
+
+########################################
+#           HTML / WEB PROJECT
+########################################
+node_modules/
+static/json/*.json
+*.cache
+*.tmp
+*.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+########################################
+#           MISC
+########################################
+*.bak
+*.tmp
+*.swp
+*.swo
+*.orig
