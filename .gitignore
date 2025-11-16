@@ -17,11 +17,11 @@ credentials.json
 These_Memoire/figures/06_Bipart/Shema_light.pdf
 docaranger/Relativite_Generale/Électrodynamique Classique et Quantique.pdf
 
-# Ignorer tout dans MemoireThese
+# Ignorer tout dans These_Memoire
 /These_Memoire/*
 /Presentation-These/*
 
-# Sauf main.pdf
+# Sauf certains fichiers/dossiers spécifiques
 !/These_Memoire/main.pdf
-!/These_Memoire/pdf_decoupe/*
+!/These_Memoire/pdf_decoupe/
 !/Presentation-These/main.pdf
