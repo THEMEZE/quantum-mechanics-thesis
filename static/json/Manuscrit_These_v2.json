@@ -1,14 +1,86 @@
 [
     {
         "file1-1": "../These_Memoire/main.pdf",
-        "page1-1": 1,
+        "page1-1": 30,
         "file2-1": "../docaranger/Manuscrit_These_v2/manuscrit_corr.pdf",
-        "page2-1": 1
+        "page2-1": 30
     },
     {
         "file1-2": "../docaranger/Manuscrit_These_v2/rapport__ED572_THEMEZE_Guillaume_153841 (1).pdf",
         "page1-2": 1,
         "file2-2": "../docaranger/Manuscrit_These_v2/rapport__ED572_THEMEZE_Guillaume_153841.pdf",
         "page2-2": 1
+    },
+    {
+        "file1-3": "../Presentation-These/main.pdf",
+        "page1-3": 1,
+        "file2-3": "../Presentation-These/main.pdf",
+        "page2-3": 10
+    },
+    {
+        "file1-4": "../These_Memoire/pdf_decoupes/Titre.pdf",
+        "page1-4": 1,
+        "file2-4": "../These_Memoire/pdf_decoupes/Remerciements.pdf",
+        "page2-4": 1
+    },
+    {
+        "file1-5": "../These_Memoire/pdf_decoupes/Acronymes.pdf",
+        "page1-5": 1,
+        "file2-5": "../These_Memoire/pdf_decoupes/Sommaire.pdf",
+        "page2-5": 1
+    },
+    {
+        "file1-6": "../These_Memoire/pdf_decoupes/Introduction.pdf",
+        "page1-6": 1,
+        "file2-6": "../These_Memoire/pdf_decoupes/1_ Modèle de Lieb-Liniger et approche Bethe Ansatz.pdf",
+        "page2-6": 1
+    },
+    {
+        "file1-7": "../These_Memoire/pdf_decoupes/2_ Relaxation et Équilibre dans les Systèmes Quantiques Intégrables _ Une Approche par la Thermodynamique de Bethe.pdf",
+        "page1-7": 1,
+        "file2-7": "../These_Memoire/pdf_decoupes/3_ Dynamique hors-équilibre et hydrodynamique généralisée.pdf",
+        "page2-7": 1
+    },
+    {
+        "file1-8": "../These_Memoire/pdf_decoupes/4_ Fluctuation de la distribution de rapidité dans des états d_équilibre.pdf",
+        "page1-8": 1,
+        "file2-8": "../These_Memoire/pdf_decoupes/5_ Dispositif expérimental.pdf",
+        "page2-8": 1
+    },
+    {
+        "file1-9": "../These_Memoire/pdf_decoupes/6_ Étude du protocole de bi-partition _ Mesure de distribution de rapidités locales rho_x_θ_ pour des systèmes hors équilibre.pdf",
+        "page1-9": 1,
+        "file2-9": "../These_Memoire/pdf_decoupes/7_ Mise en place d_un confinement longitudinal dipolaire.pdf",
+        "page2-9": 1
+    },
+    {
+        "file1-10": "../These_Memoire/pdf_decoupes/Conclusion.pdf",
+        "page1-10": 1,
+        "file2-10": "../These_Memoire/pdf_decoupes/Annex A - Action de P et H sur l_état de Bethe.pdf",
+        "page2-10": 1
+    },
+    {
+        "file1-11": "../These_Memoire/pdf_decoupes/Annex B - Réduction GHD vers transport d_Euler.pdf",
+        "page1-11": 1,
+        "file2-11": "../These_Memoire/pdf_decoupes/Annex C - Dérivation alternative des fluctuations de rho.pdf",
+        "page2-11": 1
+    },
+    {
+        "file1-12": "../These_Memoire/pdf_decoupes/Annex D - Propriétés des facteurs d_homothétie.pdf",
+        "page1-12": 1,
+        "file2-12": "../These_Memoire/pdf_decoupes/Annex E - Polarisabilité dynamique et potentiel dipolaire optique.pdf",
+        "page2-12": 1
+    },
+    {
+        "file1-13": "../These_Memoire/pdf_decoupes/Annex F - Moment tensoriel J_1_2.pdf",
+        "page1-13": 1,
+        "file2-13": "../These_Memoire/pdf_decoupes/Annex F - Moment tensoriel J_1_2.pdf",
+        "page2-13": 1
+    },
+    {
+        "file1-14": "../These_Memoire/pdf_decoupes/Bibliographie.pdf",
+        "page1-14": 1,
+        "file2-14": "../These_Memoire/pdf_decoupes/Résumé.pdf",
+        "page2-14": 1
     }
 ]

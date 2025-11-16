@@ -2,7 +2,7 @@
 
 # === Configuration ===
 SRC="/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main"
-DEST="/Volumes/NO NAME/quantum-mechanics-thesis-main"
+DEST="/Volumes/NO NAME/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main"
 LOGFILE="/Volumes/NO NAME/backup_these.log"
 
 # Créer un dossier de destination horodaté pour garder les anciennes versions

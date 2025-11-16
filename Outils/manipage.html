@@ -420,7 +420,7 @@ justify-items: start;  */
         <label for="jsonSelect" class="text_jsonSelect">Sélectionnez un fichier JSON :</label>
         <select class="jsonSelect" id="jsonSelect"> <!-- On retire onchange et on utilise le bouton -->
             <option value="">-- Ne rien charger --</option> <!-- Option par défaut -->
-            <option value="../static/json/Manuscrit These Memoire.json" selected>-- Manuscrit These Memoire --</option>
+            <option value="../static/json/Manuscrit_These_v2.json" selected>-- Manuscrit These Memoire v2 --</option>
             <!-- Option par défaut -->
         </select>
 
@@ -517,6 +517,30 @@ justify-items: start;  */
                 // Code à exécuter lorsque le bouton est cliqué
                 loadPdfList();
             });
+
+            // Fonction pour pré-sélectionner une option basée sur l’URL
+            document.addEventListener("DOMContentLoaded", function () {
+                const select = document.getElementById("jsonSelect");
+
+                // Récupère les paramètres de l’URL
+                const params = new URLSearchParams(window.location.search);
+                const load = params.get("load"); // ex : ?load=CVs
+
+                if (load) {
+                    // Cherche une option dont le texte ou la valeur contient le nom demandé
+                    for (let option of select.options) {
+                        if (option.text.trim() === load || option.value.includes(load)) {
+                            select.value = option.value;
+                            break;
+                        }
+                    }
+                }
+            });
+
+            // Simuler un clic sur le bouton ou lancer la fonction de chargement
+            const loadButton = document.getElementById("loadButton");
+            if (loadButton) loadButton.click();
+            else loadPdfList();
 
 
             // Déclarer un tableau pour stocker les données des PDF
@@ -720,6 +744,8 @@ justify-items: start;  */
                 "../docaranger/hydrodynamique/1605.09790v4.pdf",
                 "../docaranger/hydrodynamique/1605.07331v3.pdf",
                 "../docaranger/hydrodynamique/2411.04922v2.pdf",
+                "../docaranger/hydrodynamique/Notes_hyperbolique.pdf",
+
                 "../docaranger/Dipolaire/Dipolaire_moi.pdf",
                 "../docaranger/Dipolaire/Potentiel Dipolaire.pdf",
                 "../docaranger/Dipolaire/Potentiel Dipolaire article résumé.pdf",
@@ -827,6 +853,29 @@ justify-items: start;  */
                 "../docaranger/Manuscrit_These_v2/manuscrit_corr.pdf",
                 "../docaranger/Manuscrit_These_v2/rapport__ED572_THEMEZE_Guillaume_153841 (1).pdf",
                 "../docaranger/Manuscrit_These_v2/rapport__ED572_THEMEZE_Guillaume_153841.pdf",
+                "../Presentation-These/main.pdf",
+                "../These_Memoire/pdf_decoupes/Titre.pdf",
+                "../These_Memoire/pdf_decoupes/Remerciements.pdf",
+                "../These_Memoire/pdf_decoupes/Acronymes.pdf",
+                "../These_Memoire/pdf_decoupes/Sommaire.pdf",
+                "../These_Memoire/pdf_decoupes/Introduction.pdf",
+                "../These_Memoire/pdf_decoupes/1_ Modèle de Lieb-Liniger et approche Bethe Ansatz.pdf",
+                "../These_Memoire/pdf_decoupes/2_ Relaxation et Équilibre dans les Systèmes Quantiques Intégrables _ Une Approche par la Thermodynamique de Bethe.pdf",
+                "../These_Memoire/pdf_decoupes/3_ Dynamique hors-équilibre et hydrodynamique généralisée.pdf",
+                "../These_Memoire/pdf_decoupes/4_ Fluctuation de la distribution de rapidité dans des états d'équilibre.pdf",
+                "../These_Memoire/pdf_decoupes/5_ Dispositif expérimental.pdf",
+                "../These_Memoire/pdf_decoupes/6_ Étude du protocole de bi-partition _ Mesure de distribution de rapidités locales rho_x_θ_ pour des systèmes hors équilibre.pdf",
+                "../These_Memoire/pdf_decoupes/7_ Mise en place d_un confinement longitudinal dipolaire.pdf",
+                "../These_Memoire/pdf_decoupes/Conclusion.pdf",
+                "../These_Memoire/pdf_decoupes/Annex A - Action de P et H sur l_état de Bethe.pdf",
+                "../These_Memoire/pdf_decoupes/Annex B - Réduction GHD vers transport d_Euler.pdf",
+                "../These_Memoire/pdf_decoupes/Annex C - Dérivation alternative des fluctuations de rho.pdf",
+                "../These_Memoire/pdf_decoupes/Annex D - Propriétés des facteurs d'homothétie.pdf",
+                "../These_Memoire/pdf_decoupes/Annex E - Polarisabilité dynamique et potentiel dipolaire optique.pdf",
+                "../These_Memoire/pdf_decoupes/Annex F - Moment tensoriel J_1_2.pdf",
+                "../These_Memoire/pdf_decoupes/Annex F - Moment tensoriel J_1_2.pdf",
+                "../These_Memoire/pdf_decoupes/Bibliographie.pdf",
+                "../These_Memoire/pdf_decoupes/Résumé.pdf",
 
                 "../docaranger/CVs/CVModern.pdf",
                 "../docaranger/CVs/CVModern_1.pdf",
@@ -1355,6 +1404,11 @@ justify-items: start;  */
             // loadPdfList();
 
         })();
+
+
+
+
+
     </script>
 
 
