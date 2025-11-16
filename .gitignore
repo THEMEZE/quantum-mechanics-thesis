@@ -108,6 +108,7 @@ venv/
 # Ignorer tout dans These_Memoire sauf certains fichiers
 These_Memoire/*
 !These_Memoire/main.pdf
+!These_Memoire/README.md
 !These_Memoire/pdf_decoupe/
 !These_Memoire/pdf_decoupe/**
 
