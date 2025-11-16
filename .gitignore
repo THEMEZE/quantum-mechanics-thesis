@@ -109,8 +109,10 @@ venv/
 These_Memoire/*
 !These_Memoire/main.pdf
 !These_Memoire/README.md
-!These_Memoire/pdf_decoupe/
-!These_Memoire/pdf_decoupe/**/
+!These_Memoire/pdf_decoupes/
+!These_Memoire/pdf_decoupes/*
+!These_Memoire/pdf_decoupes/*.pdf
+!These_Memoire/pdf_decoupes/**/*.pdf
 
 # Ignorer tout dans Presentation-These sauf main.pdf
 Presentation-These/*
